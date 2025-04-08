@@ -24,6 +24,7 @@ export default function Home() {
           <a href="#" className="text-white hover:text-gray-300">faq</a>
           <a href="#" className="text-white hover:text-gray-300">about</a>
           <a href="#" className="text-white hover:text-gray-300">the lounge</a>
+          <a href="#" className="text-white hover:text-gray-300">dummy</a>
         </nav>
       </header>
 
