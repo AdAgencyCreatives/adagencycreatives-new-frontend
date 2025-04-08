@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <main className="relative w-full min-h-screen bg-black text-white font-serif overflow-hidden">
+    <main className="relative w-full min-h-screen bg-black text-white overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 z-0">
         <video
@@ -20,7 +20,7 @@ export default function Home() {
         <div className="">
           <img src="/aac-logo-header.png" alt="Logo" className="w-20 h-20 hover:rotate-45 transition-transform duration-5000" />
         </div>
-        <nav className="flex gap-6 text-sm font-bold">
+        <nav className="flex gap-6 font-bold">
           <a href="#" className="text-white hover:text-gray-300">faq</a>
           <a href="#" className="text-white hover:text-gray-300">about</a>
           <a href="#" className="text-white hover:text-gray-300">the lounge</a>
@@ -70,7 +70,7 @@ export default function Home() {
       </section>
 
       {/* Bottom Nav */}
-      <footer className="absolute bottom-6 left-0 right-0 px-6 flex justify-between items-end text-sm font-semibold">
+      <footer className="absolute bottom-6 left-0 right-0 px-6 flex justify-between items-end font-semibold">
         <a href="#" className="hover:underline">search jobs</a>
         <a href="#" className="hover:underline">hire talent</a>
       </footer>
