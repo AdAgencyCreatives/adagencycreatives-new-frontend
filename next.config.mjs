@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    output: 'standalone', // Recommended for production
+    output: 'export',
     // If you're hosting in a subdirectory:
     // basePath: '/your-subdirectory',
     // assetPrefix: '/your-subdirectory',
