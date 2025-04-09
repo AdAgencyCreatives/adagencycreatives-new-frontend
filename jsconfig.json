@@ -1,7 +1,12 @@
 {
   "compilerOptions": {
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "checkJs": true,
     "paths": {
-      "@/*": ["./*"]
-    }
+      "pageComponents/*": ["pageComponents/*"],
+      "components/*": ["components/*"],
+      "icons/*": ["icons/*"]
+    },
   }
 }
