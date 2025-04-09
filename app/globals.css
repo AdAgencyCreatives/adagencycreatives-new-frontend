@@ -8,8 +8,11 @@
 @font-face {
   font-family: 'Hass75';
   src: url('/fonts/hass/NeueHaasGrotText-75Bold-Trial.otf') format('opentype');
-  /* font-weight: 700; */
-  /* font-style: normal; */
+}
+
+@font-face {
+  font-family: 'AltaRegular';
+  src: url('/fonts/alta/Alta_regular.woff') format('woff');
 }
 
 @theme inline {
@@ -23,6 +26,7 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --primary: #FFCD1A
   }
 }
 
