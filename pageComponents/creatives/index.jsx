@@ -26,11 +26,11 @@ const CreativesPage = () => {
     <div className="bg-black text-white">
       {/* Hero */}
       <section className="text-center py-24 bg-black bg-dots">
-        <h1 className="text-6xl font-bold mb-4">Creatives</h1>
-        <div className="space-x-6 text-lg text-yellow-400 mt-4">
-          <a href="#" className="hover:underline">create profile</a>
-          <a href="#" className="hover:underline">search jobs</a>
-          <a href="#" className="hover:underline">resources</a>
+        <h1 className="text-[14rem] font-bold mb-4">Creatives</h1>
+        <div className="space-x-5 text-[1.7rem] text-yellow-400 mt-4">
+          <a href="#">create pro®file</a>
+          <a href="#">search jobs</a>
+          <a href="#">resources</a>
         </div>
       </section>
 

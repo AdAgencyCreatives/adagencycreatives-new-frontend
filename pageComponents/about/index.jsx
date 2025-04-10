@@ -1,15 +1,15 @@
 const AboutPage = () => {
   return (
     <>
-      <section className="max-w-6xl w-full space-y-6">
-        <h2 className="text-6xl sm:text-7xl font-extrabold text-white text-right">About</h2>
+      <section>
+        <h2 className="text-[6.5rem] font-extrabold text-white text-right leading-20">About</h2>
 
-        <p className="text-lg sm:text-xl font-medium leading-relaxed text-right">
+        <p className="text-3xl font-medium leading-10 text-right">
           <span className="text-yellow-400 font-bold">AD AGENCY CREATIVES</span>{' '}
-          IS AN EMPOWERMENT PLATFORM DESIGNED TO GET CREATIVES HIRED BY AGENCIES IN THE U.S. WE
-          LEVERAGE THE EXPERTISE OF CREATIVE RECRUITERS TO{' '}
+          IS AN EMPOWERMENT PLATFORM DESIGNED TO GET CREATIVES <br />
+          HIRED BY AGENCIES IN THE U.S. WE LEVERAGE THE EXPERTISE OF CREATIVE RECRUITERS<br />
           <span className="text-yellow-400 font-bold">
-            HELP AGENCIES AND BRANDS WITH CREATIVE TALENT.
+            TO HELP AGENCIES AND BRANDS WITH CREATIVE TALENT.
           </span>
         </p>
 
