@@ -12,16 +12,17 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.75/build/spline-viewer.js"></script>
+      </head>
       <body
         className="antialiased"
       >
         <main className="relative w-full min-h-screen bg-black text-white overflow-hidden">
-          {/* <spline-viewer url="https://prod.spline.design/8Kk8n4FoXe4tjJBu/scene.splinecode"></spline-viewer> */}
           <Header />
           {children}
           <Footer />
         </main>
-        <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.75/build/spline-viewer.js"></script>
       </body>
     </html>
   );
