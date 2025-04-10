@@ -14,7 +14,7 @@ export default function Accordion({ items }) {
   return (
     <div className="w-full divide-y divide-gray-700">
       {items.map((item, index) => (
-        <div key={index} className="py-4">
+        <div key={index} className="py-2">
           <button
             onClick={() => toggle(index)}
             className="w-full flex justify-between items-center text-left font-semibold text-white hover:text-yellow-400 transition"
@@ -41,7 +41,7 @@ export default function Accordion({ items }) {
                 transition={{ duration: 0.3, ease: 'easeInOut' }}
                 className="overflow-hidden"
               >
-                <div className="mt-2 text-gray-300 text-sm">{item.content}</div>
+                <div className="mt-2 text-gray-300 font-wix text-[18px] py-6 px-10">{item.content}</div>
               </motion.div>
             )}
           </AnimatePresence>

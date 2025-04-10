@@ -10,8 +10,8 @@ const faqItems = [
 
 const FAQPage = () => {
   return (
-    <div className="p-10 h-screen">
-      <div className="rounded-3xl border border-gray-700 sm:px-10 bg-black/50 backdrop-blur p-10 h-full">
+    <div className="py-10">
+      <div className="rounded-3xl border-[#6e6e6e] border-1 shadow-[0_1px_7px_1px_rgba(255,255,255,0.6)] bg-black/50 backdrop-blur p-10 h-screen">
         <div className="text-right text-yellow-400 text-2xl font-semibold mb-8">
           faq
         </div>

@@ -1,8 +1,7 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Wix_Madefor_Text } from "next/font/google";
 import "./globals.css";
 import Header from "pageComponents/layout/Header";
 import Footer from "pageComponents/layout/Footer";
-
 
 export const metadata = {
   title: "Ad Agency Creatives is a community for advertising creatives.",
@@ -18,9 +17,9 @@ export default function RootLayout({ children }) {
       <body
         className="antialiased"
       >
-        <main className="relative w-full min-h-screen bg-black text-white overflow-hidden">
+        <main className="relative w-full min-h-screen bg-black text-white">
           <Header />
-          {children}
+          <div className="max-w-full max-w-[1600px] mx-auto px-10 overflow-hidden">{children}</div>
           <Footer />
         </main>
       </body>

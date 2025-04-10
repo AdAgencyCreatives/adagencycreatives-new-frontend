@@ -13,10 +13,15 @@ module.exports = {
       fontFamily: {
         hass75: ['Hass75', 'sans-serif'],
         alta: ['AltaRegular', 'sans-serif'],
+        wix: ['var(--font-wix)', 'sans-serif'],
       },
       colors: {
-        primary: 'var(--primary)'
-      }
+        primary: 'var(--primary)',
+        default: '#6e6e6e'
+      },
+      boxShadow: {
+        white: '0 1px 4px rgba(0, 0, 0, 0.6)',
+      },
     },
   },
 };
