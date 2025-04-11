@@ -17,9 +17,9 @@ export default function RootLayout({ children }) {
       <body
         className="antialiased"
       >
-        <main className="relative w-full min-h-screen bg-black text-white">
+        <main className="relative w-full min-h-screen bg-black text-white overflow-hidden">
           <Header />
-          <div className="max-w-full max-w-[1600px] mx-auto px-10 overflow-hidden">{children}</div>
+          <div className="max-w-full max-w-[1600px] mx-auto px-10">{children}</div>
           <Footer />
         </main>
       </body>

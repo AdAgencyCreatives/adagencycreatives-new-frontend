@@ -41,16 +41,6 @@ body {
   font-size: 24px;
 }
 
-/* @media(min-width: 1367px) {
-  section.home .left-content {
-    padding-left: 200px !important;
-  }
-
-  section.home .right-content {
-    padding-right: 200px !important;
-  }
-} */
-
 .spline-container {
   position: absolute;
   top: -25%;

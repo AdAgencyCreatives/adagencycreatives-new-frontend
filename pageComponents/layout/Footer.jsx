@@ -1,12 +1,12 @@
 const Footer = () => {
   return (
-    <footer className="absolute bottom-1 left-0 right-0 text-center text-xs text-gray-400 space-y-1">
+    <footer className="absolute left-1/2 transform -translate-x-1/2 w-max z-11 bottom-10 text-center text-xs text-gray-400 space-y-1">
       <div className="space-x-4">
-        <a href="#" className="hover:underline">privacy policy</a>
-        <a href="#" className="hover:underline">user agreement</a>
-        <a href="#" className="hover:underline">contact us</a>
+        <a href="#" className="font-alta uppercase text-[13px] xl:text-[14px] 2xl:text-[17px] transition delay-150 duration-300 ease-in-out text-[#424242] hover:text-[#FFFFFF]">privacy policy</a>
+        <a href="#" className="font-alta uppercase text-[13px] xl:text-[14px] 2xl:text-[17px] transition delay-150 duration-300 ease-in-out text-[#424242] hover:text-[#FFFFFF]">user agreement</a>
+        <a href="#" className="font-alta uppercase text-[13px] xl:text-[14px] 2xl:text-[17px] transition delay-150 duration-300 ease-in-out text-[#424242] hover:text-[#FFFFFF]">contact us</a>
       </div>
-      <p>© 2025 BY AD AGENCY CREATIVES. POWERED BY ANZO.STUDIO®</p>
+      <p className="font-alta uppercase text-[13px] xl:text-[14px] 2xl:text-[17px] transition delay-150 duration-300 ease-in-out text-[#6E6E6E] hover:text-[#FFFFFF]">© 2025 BY AD AGENCY CREATIVES. POWERED BY ANZO.STUDIO®</p>
     </footer>
   );
 }
