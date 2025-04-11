@@ -1,5 +1,5 @@
-import CreativesPage from "pageComponents/creatives";
+import Creatives from "pageComponents/creatives";
 
-export default function creatives () {
-  return <CreativesPage />;
+export default function creativesPage () {
+  return <Creatives />;
 }
