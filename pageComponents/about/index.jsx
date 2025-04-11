@@ -1,4 +1,4 @@
-const AboutPage = () => {
+const About = () => {
   return (
     <>
       <section>
@@ -26,7 +26,7 @@ const AboutPage = () => {
   );
 }
 
-export default AboutPage;
+export default About;
 
 
   

@@ -21,7 +21,7 @@ const featuredCreatives = [
   // Add more...
 ];
 
-const CreativesPage = () => {
+const Creatives = () => {
   return (
     <div className="bg-black text-white">
       {/* Hero */}
@@ -124,4 +124,4 @@ const CreativesPage = () => {
   );
 };
 
-export default CreativesPage;
+export default Creatives;

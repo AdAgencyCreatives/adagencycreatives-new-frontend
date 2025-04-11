@@ -6,6 +6,8 @@
   --background: #ffffff;
   --foreground: #171717;
   --font-wix: 'Wix Madefor Text', sans-serif;
+  --ad-gray: #6e6e6e;
+  --ad-box-shadow: 0 1px 7px 1px rgba(255,255,255,0.6);
 }
 
 @font-face {
@@ -43,9 +45,9 @@ body {
 
 .spline-container {
   position: absolute;
-  top: -25%;
+  /* top: -25%;
   width: 150%;
-  height: 150%;
+  height: 150%; */
   box-sizing: border-box;
   overflow: hidden;
   border-radius: 100%;

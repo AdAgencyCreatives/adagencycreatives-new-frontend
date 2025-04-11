@@ -1,5 +1,5 @@
-import FAQPage from "pageComponents/faq";
+import FAQ from "pageComponents/faq";
 
-export default function FAQ () {
-  return <FAQPage />;
+export default function FAQPage () {
+  return <FAQ />;
 }
