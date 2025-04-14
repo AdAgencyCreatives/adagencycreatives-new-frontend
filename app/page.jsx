@@ -24,7 +24,9 @@ export default function Home() {
           <div className="relative flex flex-1 flex-col justify-center aspect-square">
             <div className="spline-container spline-container-left w-[150%] h-[150%]" dangerouslySetInnerHTML={{ __html: '<spline-viewer url="https://prod.spline.design/8Kk8n4FoXe4tjJBu/scene.splinecode"></spline-viewer>' }}></div>
             <div className="relative flex flex-1 flex-col justify-center aspect-square">
-              <h1 className="text-5xl md:text-6xl font-alta tracking-wide">CREATIVES</h1>
+              <Link href="/creatives" className="cursor-pointer">
+                <h1 className="text-5xl md:text-6xl font-alta tracking-wide">CREATIVES</h1>
+              </Link>
               <div className="border-b border-white my-4"></div>
               <Link href="/creatives-signin" className="inline-flex items-center justify-start text-white gap-4 cursor-pointer">
                 <LiaSignInAltSolid className="text-[36px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a]" />
@@ -57,7 +59,7 @@ export default function Home() {
       {/* Bottom Nav */}
       <div className="absolute z-11 bottom-6 left-0 right-0 px-6 flex justify-between items-end font-semibold">
         <Link href="/jobs-directory" className="text-[19px] xl:text-[21px] 2xl:text-[29px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a]">search jobs</Link>
-        <Link href="#" className="text-[19px] xl:text-[21px] 2xl:text-[29px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a]">hire talent</Link>
+        <Link href="/creatives-directory" className="text-[19px] xl:text-[21px] 2xl:text-[29px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a]">hire talent</Link>
       </div>
     </div>
   );
