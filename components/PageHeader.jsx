@@ -22,7 +22,7 @@ const PageHeader = ({ page, subPage, heading }) => {
           )}
         </div>
 
-        <h1 className="text-[197px] leading-60 font-extrabold mb-40">{heading}</h1>
+        <h1 className="text-[197px] leading-60 font-bold">{heading}</h1>
       </div>
     </div>
   );

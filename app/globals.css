@@ -60,3 +60,10 @@ body {
 .spline-container-right {
   right: -35%;
 }
+
+.image-mask {
+  mask-image: url("http://localhost:3000/image-mask.svg");
+  mask-position: 0% 0%;
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+}

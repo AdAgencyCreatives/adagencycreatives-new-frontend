@@ -1,33 +1,62 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
+import JobLoopItem from 'pageComponents/jobs/loop/item';
+import CreativeLoopItem from './loop/item';
+import PageHeader from 'components/PageHeader';
 
 const featuredJobs = [
-  { title: 'Junior Designer', agency: 'AD AGENCY CORP', location: 'NYC / REMOTE' },
-  { title: 'UX Designer', agency: 'AD AGENCY CORP', location: 'NYC / REMOTE' },
-  { title: 'Creative Director', agency: 'AD AGENCY CORP', location: 'NYC / REMOTE' },
-  { title: 'Copywriter', agency: 'AD AGENCY CORP', location: 'NYC / REMOTE' },
-  { title: 'Art Director', agency: 'AD AGENCY CORP', location: 'NYC / REMOTE' },
+  { title: 'Senior UX User Experience Designer', image: '/job1.avif', agency: 'AD AGENCY CORP', location: 'NEW YORK, NY' },
+  { title: 'Junior Motion Graphics Designer', image: '/job2.avif', agency: 'AD AGENCY CORP', location: 'NEW YORK, NY' },
+  { title: 'Creative Director', image: '/job3.avif', agency: 'AD AGENCY CORP', location: 'NEW YORK, NY' },
+  { title: 'Creative Director', image: '/job4.avif', agency: 'AD AGENCY CORP', location: 'NEW YORK, NY' },
+  { title: 'Creative Director', image: '/job5.avif', agency: 'AD AGENCY CORP', location: 'NEW YORK, NY' },
+  { title: 'Creative Director', image: '/job6.avif', agency: 'AD AGENCY CORP', location: 'NEW YORK, NY' },
+  { title: 'Creative Director', image: '/job7.avif', agency: 'AD AGENCY CORP', location: 'NEW YORK, NY' },
+  { title: 'Creative Director', image: '/job8.avif', agency: 'AD AGENCY CORP', location: 'NEW YORK, NY' },
 ];
 
-const resources = ['Internships', 'Portfolio', 'Inspiration', 'Writers', 'Designers', 'Business'];
+const resources = [
+  { title: 'internships', image: '/resource1.avif', href: '/resources-internship' },
+  { title: 'inspiration', image: '/resource1.avif', href: '/resources-inspiration' },
+  { title: 'portfolio', image: '/resource1.avif', href: '/resources-portfolio' },
+  { title: 'WRITERS', image: '/resource1.avif', href: '/resources-writers' },
+  { title: 'DESIGNERS', image: '/resource1.avif', href: '/resources-designers' },
+  { title: 'business', image: '/resource1.avif', href: '/resources-business' }
+];
 
 const featuredAgencies = ['Gamarance', 'Helvetor', 'RODOND'];
 
 const featuredCreatives = [
-  { name: 'Jane Doe', title: 'Junior Designer', location: 'NYC / REMOTE' },
-  { name: 'John Smith', title: 'Senior UX Designer', location: 'NYC / REMOTE' },
-  { name: 'Amy Li', title: 'Creative Director', location: 'NYC / REMOTE' },
-  // Add more...
+  { title: 'Senior UX User Experience Designer', image: '/creative1.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' },
+  { title: 'Junior Motion Graphics Designer', image: '/creative2.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' },
+  { title: 'Creative Director', image: '/creative3.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' },
+  { title: 'Creative Director', image: '/creative3.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' },
+  { title: 'Creative Director', image: '/creative3.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' },
+  { title: 'Creative Director', image: '/creative3.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' },
+  { title: 'Creative Director', image: '/creative3.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' },
+  { title: 'Creative Director', image: '/creative3.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' },
+  { title: 'Senior UX User Experience Designer', image: '/creative1.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' },
+  { title: 'Junior Motion Graphics Designer', image: '/creative2.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' },
+  { title: 'Creative Director', image: '/creative3.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' },
+  { title: 'Creative Director', image: '/creative3.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' },
+  { title: 'Creative Director', image: '/creative3.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' },
+  { title: 'Creative Director', image: '/creative3.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' },
+  { title: 'Creative Director', image: '/creative3.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' },
+  { title: 'Creative Director', image: '/creative3.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' },
 ];
 
 const Creatives = () => {
   return (
     <div className="bg-black text-white">
       {/* Hero */}
-      <section className="text-center py-24 bg-black bg-dots">
-        <h1 className="text-[14rem] font-bold mb-4">Creatives</h1>
-        <div className="space-x-5 text-[1.7rem] text-yellow-400 mt-4">
+      <section className="relative py-40 text-center">
+        <PageHeader
+          page=""
+          heading="Creatives"
+        />
+        <div className="space-x-5 text-[1.7rem] text-yellow-400 mt-20">
           <a href="#">create pro®file</a>
           <a href="#">search jobs</a>
           <a href="#">resources</a>
@@ -35,15 +64,22 @@ const Creatives = () => {
       </section>
 
       {/* Featured Jobs */}
-      <section className="py-20 px-6">
-        <h2 className="text-4xl font-bold mb-10">Featured Jobs</h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+      <section className="py-10">
+        <h2 className="text-7xl font-bold mb-10">Featured Jobs</h2>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {featuredJobs.map((job, idx) => (
-            <div key={idx} className="bg-zinc-900 p-4 rounded-2xl border border-white/10 text-center">
-              <div className="mb-2 text-yellow-400 text-sm">{job.title}</div>
-              <div className="text-white font-semibold">{job.agency}</div>
-              <div className="text-sm text-gray-400">{job.location}</div>
-            </div>
+            <>
+              {idx === 6 && (
+                <div key={`perfect-${idx}`} className="col-span-2 text-center flex flex-col justify-center gap-10">
+                  <h2 className="text-[48px] leading-[62px]">Haven't<br />Found<br />The Perfect<br />Job?</h2>
+                  <div>
+                  <Link href="/" className="border-yellow-400 border-4 uppercase text-yellow-400 rounded-full text-sm px-8 py-4 cursor-pointer hover:border-white hover:bg-yellow-400 hover:text-white">Advanced Search</Link>
+                  </div>
+                </div>
+              )}
+            
+              <JobLoopItem key={idx} job={job} />
+            </>
           ))}
         </div>
       </section>
@@ -51,30 +87,56 @@ const Creatives = () => {
       {/* Resources */}
       <section className="py-20 px-6 bg-zinc-950">
         <h2 className="text-4xl font-bold mb-10">Resources</h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-          {resources.map((r, i) => (
-            <div key={i} className="border border-white/20 p-6 rounded-lg hover:border-yellow-400 transition">
-              <div className="text-lg font-semibold text-white">{r}</div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Featured Agencies */}
-      <section className="py-20 px-6">
-        <h2 className="text-4xl font-bold mb-10">Featured Agencies</h2>
-        <div className="flex gap-6 overflow-auto">
-          {featuredAgencies.map((agency, i) => (
-            <div key={i} className="min-w-[200px] bg-zinc-800 p-8 rounded-lg text-center text-white font-semibold text-xl">
-              {agency}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
+          {resources.map((resources, idx) => (
+            <div key={idx} className="rounded-2xl border-white border-20 shadow-(--ad-box-shadow) hover:border-yellow-400 transition relative">
+              <Image src={resources.image} width="257" height="257" alt="" className="rounded-2xl bg-black w-full" />
+              <div className="absolute bottom-2 left-2">
+                <Image src="/aac-logo-white.avif" width="48" height="48" alt="" />
+                <div className="text-white lowercase">{resources.title}</div>
+              </div>
             </div>
           ))}
         </div>
       </section>
 
       {/* Featured Creatives */}
-      <section className="py-20 px-6 bg-zinc-950">
+      <section className="py-10">
         <h2 className="text-4xl font-bold mb-10">Featured Creatives</h2>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          {featuredCreatives.map((creative, idx) => (
+            <>
+              {idx === 6 && (
+                <div key={`ad-agency-${idx}`} className="col-span-2 text-center flex flex-col justify-center gap-10">
+                  <h2 className="text-[48px] leading-[62px]">
+                    We are<br />
+                    <span className="font-alta">AD AGENCY</span><br />
+                    <span className="font-alta">CREATIVES</span>
+                  </h2>
+                  <div>
+                    <Link href="/" className="border-yellow-400 border-4 uppercase text-yellow-400 rounded-full text-sm px-8 py-4 cursor-pointer hover:border-white hover:bg-yellow-400 hover:text-white">Advanced Search</Link>
+                  </div>
+                </div>
+              )}
+
+              {idx === 15 && (
+                <div key={`profile-${idx}`} className="col-span-2 text-center flex flex-col justify-center gap-10">
+                  <h2 className="text-[48px] leading-[62px]">Want<br />Your Pro®file<br />Featured?</h2>
+                  <div>
+                    <Link href="/" className="border-yellow-400 border-4 uppercase text-yellow-400 rounded-full text-sm px-8 py-4 cursor-pointer hover:border-white hover:bg-yellow-400 hover:text-white">See How</Link>
+                  </div>
+                </div>
+              )}
+            
+              <CreativeLoopItem key={idx} creative={creative} />
+            </>
+          ))}
+        </div>
+      </section>
+
+      {/* Featured Creatives */}
+      <section className="py-20 px-6 bg-zinc-950">
+        <h2 className="text-4xl font-bold mb-10 text-right">Featured Creatives</h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
           {featuredCreatives.map((c, i) => (
             <div key={i} className="bg-zinc-900 p-4 rounded-2xl text-center">
@@ -92,7 +154,7 @@ const Creatives = () => {
         <h2 className="text-4xl font-bold">Create Pro<span className="text-yellow-400">®</span>file</h2>
         <p className="mt-4 text-lg text-gray-300">Create. Inspire. <span className="text-yellow-400">Get Hired!</span></p>
         
-        <div className="grid md:grid-cols-3 gap-12 text-left mt-16 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-12 text-left mt-16">
           <div>
             <h3 className="text-xl font-bold mb-2">1. Create Profile</h3>
             <p className="text-gray-400">Claim your space in the club...</p>
