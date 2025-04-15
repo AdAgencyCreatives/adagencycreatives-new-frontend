@@ -16,6 +16,11 @@
 }
 
 @font-face {
+  font-family: 'Hass65';
+  src: url('/fonts/hass/NeueHaasGrotText-65Medium-Trial.otf') format('opentype');
+}
+
+@font-face {
   font-family: 'AltaRegular';
   src: url('/fonts/alta/Alta_regular.woff') format('woff');
 }
@@ -26,6 +31,7 @@
   --font-wix: var(--font-wix);
   --font-alta: 'AltaRegular';
   --font-hass75: 'Hass75';
+  --font-hass65: 'Hass65';
 }
 
 @media (prefers-color-scheme: dark) {
