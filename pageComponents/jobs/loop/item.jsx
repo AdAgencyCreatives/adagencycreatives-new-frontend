@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const JobLoopItem = ({ job }) => {
   return (
-    <div className="relative px-4 py-6 rounded-2xl border-white border-2 shadow-(--ad-box-shadow) text-center flex flex-col justify-between items-center gap-10">
+    <div className="relative px-4 py-6 rounded-4xl border-white border-2 shadow-(--ad-box-shadow) text-center flex flex-col justify-between items-center gap-10">
       <div className="relative w-[256px] h-[256px] flex items-center px-4">
         <Image src={job.image} width="256" height="162" alt={job.title} className="image-mask" />
       </div>
