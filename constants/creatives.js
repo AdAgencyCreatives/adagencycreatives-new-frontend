@@ -1,0 +1,18 @@
+export const featuredCreatives = [
+  { title: 'Senior UX User Experience Designer', image: '/creatives/creative1.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' },
+  { title: 'Junior Motion Graphics Designer', image: '/creatives/creative2.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' },
+  { title: 'Creative Director', image: '/creatives/creative3.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' },
+  { title: 'Creative Director', image: '/creatives/creative4.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' },
+  { title: 'Creative Director', image: '/creatives/creative5.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' },
+  { title: 'Creative Director', image: '/creatives/creative6.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' },
+  { title: 'Creative Director', image: '/creatives/creative7.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' },
+  { title: 'Creative Director', image: '/creatives/creative8.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' },
+  { title: 'Senior UX User Experience Designer', image: '/creatives/creative9.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' },
+  { title: 'Junior Motion Graphics Designer', image: '/creatives/creative10.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' },
+  { title: 'Creative Director', image: '/creatives/creative11.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' },
+  { title: 'Creative Director', image: '/creatives/creative12.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' },
+  { title: 'Creative Director', image: '/creatives/creative13.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' },
+  { title: 'Creative Director', image: '/creatives/creative14.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' },
+  { title: 'Creative Director', image: '/creatives/creative15.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' },
+  { title: 'Creative Director', image: '/creatives/creative16.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' },
+];
