@@ -9,7 +9,7 @@ const Header = () => {
       <nav className="flex gap-6 font-bold">
         <Link href="/faq" className="text-[19px] xl:text-[21px] 2xl:text-[29px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a] cursor-pointer">faq</Link>
         <Link href="/about" className="text-[19px] xl:text-[21px] 2xl:text-[29px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a] cursor-pointer">about</Link>
-        <Link href="#" className="text-[19px] xl:text-[21px] 2xl:text-[29px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a] cursor-pointer">the lounge</Link>
+        <Link href="/thelounge" className="text-[19px] xl:text-[21px] 2xl:text-[29px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a] cursor-pointer">the lounge</Link>
       </nav>
     </header>
   );

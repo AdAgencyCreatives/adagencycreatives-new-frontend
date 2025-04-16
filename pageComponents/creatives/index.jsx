@@ -6,47 +6,10 @@ import JobLoopItem from 'pageComponents/jobs/loop/item';
 import CreativeLoopItem from './loop/item';
 import PageHeader from 'components/PageHeader';
 import ResourceLoopItem from 'pageComponents/resources/loop/item';
-
-const featuredJobs = [
-  { title: 'Senior UX User Experience Designer', image: '/job1.avif', agency: 'AD AGENCY CORP', location: 'NEW YORK, NY' },
-  { title: 'Junior Motion Graphics Designer', image: '/job2.avif', agency: 'AD AGENCY CORP', location: 'NEW YORK, NY' },
-  { title: 'Creative Director', image: '/job3.avif', agency: 'AD AGENCY CORP', location: 'NEW YORK, NY' },
-  { title: 'Creative Director', image: '/job4.avif', agency: 'AD AGENCY CORP', location: 'NEW YORK, NY' },
-  { title: 'Creative Director', image: '/job5.avif', agency: 'AD AGENCY CORP', location: 'NEW YORK, NY' },
-  { title: 'Creative Director', image: '/job6.avif', agency: 'AD AGENCY CORP', location: 'NEW YORK, NY' },
-  { title: 'Creative Director', image: '/job7.avif', agency: 'AD AGENCY CORP', location: 'NEW YORK, NY' },
-  { title: 'Creative Director', image: '/job8.avif', agency: 'AD AGENCY CORP', location: 'NEW YORK, NY' },
-];
-
-const resources = [
-  { title: 'internships', image: '/resource1.avif', href: '/resources-internship' },
-  { title: 'inspiration', image: '/resource1.avif', href: '/resources-inspiration' },
-  { title: 'portfolio', image: '/resource1.avif', href: '/resources-portfolio' },
-  { title: 'WRITERS', image: '/resource1.avif', href: '/resources-writers' },
-  { title: 'DESIGNERS', image: '/resource1.avif', href: '/resources-designers' },
-  { title: 'business', image: '/resource1.avif', href: '/resources-business' }
-];
-
-const featuredAgencies = ['Gamarance', 'Helvetor', 'RODOND'];
-
-const featuredCreatives = [
-  { title: 'Senior UX User Experience Designer', image: '/creative1.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' },
-  { title: 'Junior Motion Graphics Designer', image: '/creative2.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' },
-  { title: 'Creative Director', image: '/creative3.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' },
-  { title: 'Creative Director', image: '/creative4.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' },
-  { title: 'Creative Director', image: '/creative5.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' },
-  { title: 'Creative Director', image: '/creative6.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' },
-  { title: 'Creative Director', image: '/creative7.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' },
-  { title: 'Creative Director', image: '/creative8.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' },
-  { title: 'Senior UX User Experience Designer', image: '/creative9.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' },
-  { title: 'Junior Motion Graphics Designer', image: '/creative10.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' },
-  { title: 'Creative Director', image: '/creative11.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' },
-  { title: 'Creative Director', image: '/creative12.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' },
-  { title: 'Creative Director', image: '/creative13.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' },
-  { title: 'Creative Director', image: '/creative14.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' },
-  { title: 'Creative Director', image: '/creative15.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' },
-  { title: 'Creative Director', image: '/creative16.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' },
-];
+import { featuredJobs } from 'constants/jobs';
+import { featuredCreatives } from 'constants/creatives';
+import { featuredAgencies } from 'constants/agencies';
+import AgenciesLoopItem from 'pageComponents/agencies/loop/item';
 
 const Creatives = () => {
   return (
@@ -57,7 +20,7 @@ const Creatives = () => {
           page=""
           heading="Creatives"
         />
-        <div className="space-x-5 text-[1.7rem] text-yellow-400 mt-20">
+        <div className="space-x-6 text-[1.7rem] text-yellow-400 mt-20">
           <a href="#">create pro®file</a>
           <a href="#">search jobs</a>
           <a href="#">resources</a>
@@ -86,9 +49,23 @@ const Creatives = () => {
       </section>
 
       {/* Resources */}
-      <section className="pt-20 pb-40">
-        <h2 className="text-8xl font-bold mb-10 text-right pb-60">Resources</h2>
-        <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-20 w-full items-center mx-[16px]">
+      <section className="py-20">
+        <h2 className="text-8xl font-bold mb-10 text-right pb-40">Resources</h2>
+        <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-20 w-full items-center mx-[16px] relative py-20">
+          {/* Background */}
+          <div className="absolute inset-0 z-0">
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover opacity-30 z-0"
+            >
+              <source src="/videos/resources-bg.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+
           {/* <!-- Column 1: 1 item --> */}
           <div>
             <ResourceLoopItem 
@@ -121,26 +98,31 @@ const Creatives = () => {
         </div>
       </section>
 
-      <section className="border-y-2 border-white py-20">
-        <h2 className="text-8xl font-bold">Featured Agencies</h2>
-        <div className="flex gap-40 overflow-x-scroll pb-2">
-          <div className="flex items-center justify-center shrink-0 w-[332px] h-[332px] border-(--ad-gray) border-2 shadow-(--ad-box-shadow) rounded-4xl bg-black/50">
-            <Image src="/agency1.svg" width="220" height="220" alt="" />
+      <section className="border-y-2 border-white py-20 relative">
+        {/* Background */}
+        <div className="absolute inset-0 z-0">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover opacity-30 z-0"
+          >
+            <source src="/videos/agencies-bg.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div className="relative z-1">
+          <h2 className="text-8xl font-bold">Featured Agencies</h2>
+          <div className="flex gap-46 overflow-x-scroll pb-4 -mt-3">
+            {featuredAgencies.map((agency, idx) => (
+              <AgenciesLoopItem key={idx} agency={agency} />
+            ))}
           </div>
-          <div className="flex items-center justify-center shrink-0 w-[332px] h-[332px] border-(--ad-gray) border-2 shadow-(--ad-box-shadow) rounded-4xl bg-black/50">
-            <Image src="/agency1.svg" width="220" height="220" alt="" />
-          </div>
-          <div className="flex items-center justify-center shrink-0 w-[332px] h-[332px] border-(--ad-gray) border-2 shadow-(--ad-box-shadow) rounded-4xl bg-black/50">
-            <Image src="/agency1.svg" width="220" height="220" alt="" />
-          </div>
-          <div className="flex items-center justify-center shrink-0 w-[332px] h-[332px] border-(--ad-gray) border-2 shadow-(--ad-box-shadow) rounded-4xl bg-black/50">
-            <Image src="/agency1.svg" width="220" height="220" alt="" />
-          </div>
-          <div className="flex items-center justify-center shrink-0 w-[332px] h-[332px] border-(--ad-gray) border-2 shadow-(--ad-box-shadow) rounded-4xl bg-black/50">
-            <Image src="/agency1.svg" width="220" height="220" alt="" />
-          </div>
-          <div className="flex items-center justify-center shrink-0 w-[332px] h-[332px] border-(--ad-gray) border-2 shadow-(--ad-box-shadow) rounded-4xl bg-black/50">
-            <Image src="/agency1.svg" width="220" height="220" alt="" />
+          <div className="flex items-center justify-end mt-4">
+            <Image src="/aac-logo-yellow.png" alt="" width="67" height="67" className="hover:rotate-45 transition-transform duration-3000" />
+            <div className="border-yellow-400 border-2 w-10"></div>
+            <Link href="/" className="border-yellow-400 border-4 uppercase text-yellow-400 rounded-full text-sm px-10 py-4 cursor-pointer hover:border-white hover:bg-yellow-400 hover:text-white">Get Featured</Link>
           </div>
         </div>
       </section>
@@ -205,7 +187,7 @@ const Creatives = () => {
 
         <div className="mx-[16px] grid grid-cols-3 gap-10 justify-between outline outline-[16px] shadow-(--ad-box-shadow) outline-while rounded-2xl mt-30 py-2 px-20 mb-10 relative">
           <div>
-            <Image src="/creative17.avif" width="720" height="720" alt="" className="image-mask" />
+            <Image src="/creatives/creative17.avif" width="720" height="720" alt="" className="image-mask" />
           </div>
           <div className="space-y-4 pt-10 pb-20">
             <div>
@@ -218,9 +200,9 @@ const Creatives = () => {
             <Link href="/" className="font-wix text-[18px] text-yellow-400 underline">Read more...</Link>
           </div>
           <div>
-            <div className="max-w-[256px] mx-auto -mt-16 bg-black relative z-1">
+            <div className="max-w-[265px] mx-auto -mt-16 bg-black relative z-1">
               <CreativeLoopItem 
-                creative={{ title: 'Senior UX User Experience Designer', image: '/creative1.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' }}
+                creative={{ title: 'Senior UX User Experience Designer', image: '/creatives/creative1.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' }}
               />
             </div>
           </div>
