@@ -11,7 +11,7 @@ const SignUp = ({ role }) => {
   };
 
   return (
-    <div className="text-center space-y-6 max-w-[721px] mx-auto pt-40 relative">
+    <div className="text-center space-y-6 max-w-[721px] mx-auto pt-[100px] relative">
       <PageHeader
         page={role}
         subPage={{ text: 'signin', url: `/${role}-signin` }}

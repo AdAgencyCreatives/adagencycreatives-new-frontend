@@ -1,29 +1,11 @@
 import PageHeader from "components/PageHeader";
 import CreativeLoopItem from "./loop/item";
 import Link from "next/link";
-
-const featuredCreatives = [
-  { title: 'Senior UX User Experience Designer', image: '/creative1.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' },
-  { title: 'Junior Motion Graphics Designer', image: '/creative2.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' },
-  { title: 'Creative Director', image: '/creative3.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' },
-  { title: 'Creative Director', image: '/creative3.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' },
-  { title: 'Creative Director', image: '/creative3.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' },
-  { title: 'Creative Director', image: '/creative3.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' },
-  { title: 'Creative Director', image: '/creative3.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' },
-  { title: 'Creative Director', image: '/creative3.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' },
-  { title: 'Senior UX User Experience Designer', image: '/creative1.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' },
-  { title: 'Junior Motion Graphics Designer', image: '/creative2.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' },
-  { title: 'Creative Director', image: '/creative3.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' },
-  { title: 'Creative Director', image: '/creative3.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' },
-  { title: 'Creative Director', image: '/creative3.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' },
-  { title: 'Creative Director', image: '/creative3.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' },
-  { title: 'Creative Director', image: '/creative3.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' },
-  { title: 'Creative Director', image: '/creative3.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' },
-];
+import { featuredCreatives } from "constants/creatives";
 
 const CreativesDirectory = () => {
   return (
-    <>
+    <div className="max-w-[1600px] mx-auto px-10 pt-40">
       <div className="text-center space-y-6 max-w-[1014px] mx-auto pt-40 relative">
         <PageHeader
           page="creatives"
@@ -73,7 +55,7 @@ const CreativesDirectory = () => {
           ))}
         </div>
       </section>
-    </>
+    </div>
   );
 };
 

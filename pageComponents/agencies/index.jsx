@@ -9,7 +9,7 @@ import CreativeLoopItem from 'pageComponents/creatives/loop/item';
 
 const Agencies = () => {
   return (
-    <div className="bg-black text-white">
+    <div className="bg-black text-white pt-[100px]">
       {/* Hero */}
       <section className="relative py-40 text-center">
         <PageHeader
@@ -24,7 +24,7 @@ const Agencies = () => {
       </section>
 
       {/* Featured Creatives */}
-      <section className="py-10">
+      <section className="py-20 max-w-[1600px] mx-auto px-10">
         <h2 className="text-8xl font-bold mb-10">Featured Creatives</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {featuredCreatives.map((creative, idx) => (
@@ -54,57 +54,58 @@ const Agencies = () => {
       </section>
 
       {/* Plans */}
-      <section className="py-20">
-        <h2 className="text-8xl font-bold mb-10 text-right pb-40">Plans</h2>
-        <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-20 w-full items-center mx-[16px] relative py-20">
-          {/* Background */}
-          <div className="absolute inset-0 z-0">
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="absolute inset-0 w-full h-full object-cover opacity-30 z-0"
-            >
-              <source src="/videos/resources-bg.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
+      <section className="py-20 relative border-white border-y-2">
+        {/* Background */}
+        <div className="absolute inset-0 z-0">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover opacity-50 z-0"
+          >
+            <source src="/videos/plans-bg.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div className="max-w-[1600px] mx-auto px-10 relative z-1">
+          <h2 className="text-8xl font-bold mb-10 text-right">Plans</h2>
+          <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-20 items-center">
+            {/* <!-- Column 1: 1 item --> */}
+            <div>
+              <ResourceLoopItem 
+                resource={{ title: 'single', image: '/resource1.avif', href: '/resources-internship' }}
+              />
+            </div>
 
-          {/* <!-- Column 1: 1 item --> */}
-          <div>
-            <ResourceLoopItem 
-              resource={{ title: 'single', image: '/resource1.avif', href: '/resources-internship' }}
-            />
-          </div>
+            {/* <!-- Column 2: 4 items stacked vertically --> */}
+            <div className="col-span-2 space-y-4 grid grid-cols-2 gap-20 items-start">
+              <ResourceLoopItem 
+                resource={{ title: 'multiple', image: '/resource1.avif', href: '/resources-inspiration' }}
+              />
+              <ResourceLoopItem 
+                resource={{ title: 'pro', image: '/resource1.avif', href: '/resources-portfolio' }}
+              />
+              <ResourceLoopItem 
+                resource={{ title: 'premium', image: '/resource1.avif', href: '/resources-writers' }}
+              />
+              <ResourceLoopItem 
+                resource={{ title: 'monthly', image: '/resource1.avif', href: '/resources-designers' }}
+              />
+            </div>
 
-          {/* <!-- Column 2: 4 items stacked vertically --> */}
-          <div className="col-span-2 space-y-4 grid grid-cols-2 gap-20 items-start">
-            <ResourceLoopItem 
-              resource={{ title: 'multiple', image: '/resource1.avif', href: '/resources-inspiration' }}
-            />
-            <ResourceLoopItem 
-              resource={{ title: 'pro', image: '/resource1.avif', href: '/resources-portfolio' }}
-            />
-            <ResourceLoopItem 
-              resource={{ title: 'premium', image: '/resource1.avif', href: '/resources-writers' }}
-            />
-            <ResourceLoopItem 
-              resource={{ title: 'monthly', image: '/resource1.avif', href: '/resources-designers' }}
-            />
-          </div>
-
-          {/* <!-- Column 4: 1 item --> */}
-          <div>
-            <ResourceLoopItem 
-              resource={{ title: 'FAQs', image: '/resource1.avif', href: '/resources-business' }}
-            />
+            {/* <!-- Column 4: 1 item --> */}
+            <div>
+              <ResourceLoopItem 
+                resource={{ title: 'FAQs', image: '/resource1.avif', href: '/resources-business' }}
+              />
+            </div>
           </div>
         </div>
       </section>
 
       {/* Post a Job */}
-      <section className="py-20">
+      <section className="py-20 max-w-[1600px] mx-auto px-10">
         <h2 className="text-8xl font-bold">Post a Job</h2>
         <p className="text-3xl uppercase font-hass65 py-20">Our Method</p>
         <p className="mt-4 text-4xl text-gray-300">Post. Attract. <span className="text-yellow-400">Hire!</span></p>
