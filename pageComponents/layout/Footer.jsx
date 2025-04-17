@@ -7,7 +7,7 @@ const Footer = () => {
         <a href="#" className="font-alta uppercase text-[13px] xl:text-[14px] 2xl:text-[17px] transition delay-150 duration-300 ease-in-out text-[#424242] hover:text-[#FFFFFF]">contact us</a>
       </div>
       <p className="font-alta uppercase text-[13px] xl:text-[14px] 2xl:text-[17px] transition delay-150 duration-300 ease-in-out text-[#6E6E6E] hover:text-[#FFFFFF]">© {(new Date()).getFullYear()} BY AD AGENCY CREATIVES</p>
-      <p>This is just a dummy line for testing</p>
+      <p>This is just a dummy line for testing.</p>
     </footer>
   );
 }
