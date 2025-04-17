@@ -46,7 +46,9 @@ export default function Home() {
         <div className="relative flex flex-1 flex-col justify-center aspect-square text-right">
           <div className="spline-container spline-container-right w-[150%] h-[150%]" dangerouslySetInnerHTML={{ __html: '<spline-viewer url="https://prod.spline.design/8Kk8n4FoXe4tjJBu/scene.splinecode"></spline-viewer>' }}></div>
           <div className="relative flex flex-1 flex-col justify-center aspect-square">
-            <h1 className="text-5xl md:text-6xl font-alta tracking-wide">AGENCIES</h1>
+            <Link href="/agencies" className="cursor-pointer">
+              <h1 className="text-5xl md:text-6xl font-alta tracking-wide">AGENCIES</h1>
+            </Link>
             <div className="border-b border-white my-4"></div>
             <Link href="/agencies-signin" className="inline-flex items-center justify-end text-white gap-4 cursor-pointer">
               <span className="text-[19px] xl:text-[21px] 2xl:text-[24px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a]">sign in</span>
