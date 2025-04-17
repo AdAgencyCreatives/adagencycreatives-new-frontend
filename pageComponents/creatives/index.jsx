@@ -13,9 +13,9 @@ import AgenciesLoopItem from 'pageComponents/agencies/loop/item';
 
 const Creatives = () => {
   return (
-    <div className="bg-black text-white">
+    <div className="bg-black text-white pt-[100px]">
       {/* Hero */}
-      <section className="relative py-40 text-center">
+      <section className="relative py-40 text-center max-w-[1600px] mx-auto px-10">
         <PageHeader
           page=""
           heading="Creatives"
@@ -28,7 +28,7 @@ const Creatives = () => {
       </section>
 
       {/* Featured Jobs */}
-      <section className="py-10">
+      <section className="py-10 max-w-[1600px] mx-auto px-10">
         <h2 className="text-8xl font-bold mb-10">Featured Jobs</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {featuredJobs.map((job, idx) => (
@@ -49,9 +49,9 @@ const Creatives = () => {
       </section>
 
       {/* Resources */}
-      <section className="py-20">
-        <h2 className="text-8xl font-bold mb-10 text-right pb-40">Resources</h2>
-        <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-20 w-full items-center mx-[16px] relative py-20">
+      <section className="py-20 max-w-[1600px] mx-auto px-10">
+        <h2 className="text-8xl font-bold mb-10 text-right pb-20">Resources</h2>
+        <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-15 w-full items-center relative py-20">
           {/* Background */}
           <div className="absolute inset-0 z-0">
             <video
@@ -112,7 +112,7 @@ const Creatives = () => {
             Your browser does not support the video tag.
           </video>
         </div>
-        <div className="relative z-1">
+        <div className="relative z-1 max-w-[1600px] mx-auto px-10">
           <h2 className="text-8xl font-bold">Featured Agencies</h2>
           <div className="flex gap-46 overflow-x-scroll pb-4 -mt-3">
             {featuredAgencies.map((agency, idx) => (
@@ -128,7 +128,7 @@ const Creatives = () => {
       </section>
 
       {/* Featured Creatives */}
-      <section className="py-10">
+      <section className="py-10 max-w-[1600px] mx-auto px-10">
         <h2 className="text-8xl font-bold mb-10 text-right">Featured Creatives</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {featuredCreatives.map((creative, idx) => (
@@ -162,7 +162,7 @@ const Creatives = () => {
       </section>
 
       {/* Create Profile */}
-      <section className="py-20">
+      <section className="py-20 max-w-[1600px] mx-auto px-10">
         <h2 className="text-8xl font-bold">Create Pro®file</h2>
         <p className="text-3xl uppercase font-hass65 py-20">Our Method</p>
         <p className="mt-4 text-4xl text-gray-300">Create. Inspire. <span className="text-yellow-400">Get Hired!</span></p>

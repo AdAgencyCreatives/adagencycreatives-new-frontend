@@ -10,7 +10,7 @@ const faqItems = [
 
 const FAQ = () => {
   return (
-    <div className="py-10">
+    <section className="max-w-[1600px] mx-auto px-10 pt-40">
       <div className="rounded-3xl border-(--ad-gray) border-1 shadow-(--ad-box-shadow) bg-black/50 backdrop-blur p-10 h-screen">
         <div className="text-right text-yellow-400 text-2xl font-semibold mb-8">
           faq
@@ -18,7 +18,7 @@ const FAQ = () => {
 
         <Accordion items={faqItems} />
       </div>
-    </div>
+    </section>
   );
 }
 

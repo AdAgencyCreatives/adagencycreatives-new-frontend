@@ -9,12 +9,14 @@ import { featuredAgencies } from 'constants/agencies';
 import AgenciesLoopItem from 'pageComponents/agencies/loop/item';
 import SpotlightLoopItem from 'pageComponents/spotlights/loop/item';
 import CreativeLoopItem from 'pageComponents/creatives/loop/item';
+import PublicationLoopItem from 'pageComponents/publications/loop/item';
+import ResourceLoopItem from 'pageComponents/resources/loop/item';
 
 const TheLounge = () => {
   return (
     <div className="bg-black text-white">
       {/* Hero */}
-      <section className="relative py-40 text-center relative">
+      <section className="relative pt-[100px] h-screen flex flex-col justify-center text-center relative">
         {/* Background */}
         <div className="absolute inset-0 z-0">
           <video
@@ -22,14 +24,16 @@ const TheLounge = () => {
             loop
             muted
             playsInline
-            className="absolute inset-0 w-full h-full object-cover opacity-30 z-0"
+            className="absolute inset-0 w-full h-full object-cover z-0"
           >
-            <source src="/videos/resources-bg.mp4" type="video/mp4" />
+            <source src="/videos/thelounge-bg.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
-        <div className="relative z-1">
-          <h1 className="text-[197px] leading-60 font-bold">The Lounge</h1>
+        <div className="absolute inset-0 z-1 bg-[url(/dots.gif)] bg-auto bg-repeat bg-center opacity-40"></div>
+        <div className="absolute inset-0 z-2" style={{ background: 'radial-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 1) 100%)' }}></div>
+        <div className="relative z-3">
+          <h1 className="text-[197px] leading-60 font-bold text-yellow-400">The Lounge</h1>
           <div className="space-x-6 text-[1.7rem] text-white mt-20">
             <a href="#">spotlight</a>
             <a href="#">chat</a>
@@ -41,9 +45,9 @@ const TheLounge = () => {
       </section>
 
       {/* Resources */}
-      <section className="py-20">
-        <h2 className="text-8xl font-bold mb-10 text-right pb-40">Spotlight</h2>
-        <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-20 w-full items-center mx-[16px] relative py-20">
+      <section className="py-20 max-w-[1600px] mx-auto px-10">
+        <h2 className="text-8xl font-bold mb-10 text-right ">Spotlight</h2>
+        <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-20 w-full items-center relative py-20">
           {/* Background */}
           <div className="absolute inset-0 z-0">
             <video
@@ -93,11 +97,16 @@ const TheLounge = () => {
           <SpotlightLoopItem 
             spotlight={{ title: 'art director', name: 'AnZO VALLANTE', image: '/resource1.avif', href: '/resources-inspiration' }}
           />
+          <div className="absolute bottom-16 left-0 text-8xl space-y-8">
+            <p className="">Gather.</p>
+            <p>Inspire.</p>
+            <p className="text-yellow-400">Do Cool $#*t!</p>
+          </div>
         </div>
       </section>
 
       {/* Featured Creatives */}
-      <section className="py-10">
+      <section className="py-20 max-w-[1600px] mx-auto px-10">
         <h2 className="text-8xl font-bold mb-10 text-right">Featured</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {featuredCreatives.map((creative, idx) => (
@@ -127,6 +136,121 @@ const TheLounge = () => {
               <CreativeLoopItem key={idx} creative={creative} />
             </>
           ))}
+        </div>
+      </section>
+
+      {/* Resources */}
+      <section className="py-20 border-white border-y-2 relative">
+        {/* Background */}
+        <div className="absolute inset-0 z-0">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover opacity-50 z-0"
+          >
+            <source src="/videos/plans-bg.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div className="max-w-[1600px] mx-auto px-10 relative z-1">
+          <h2 className="text-8xl font-bold">News</h2>
+          <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-15 w-full items-center relative">
+            {/* <!-- Column 1: 1 item --> */}
+            <div>
+              <ResourceLoopItem 
+                resource={{ title: '10 tips to get hired', image: '/resource1.avif', href: '/resources-internship' }}
+              />
+            </div>
+
+            {/* <!-- Column 2: 4 items stacked vertically --> */}
+            <div className="col-span-2 space-y-4 grid grid-cols-2 gap-15 items-start">
+              <ResourceLoopItem 
+                resource={{ title: 'where is market', image: '/resource1.avif', href: '/resources-inspiration' }}
+              />
+              <ResourceLoopItem 
+                resource={{ title: 'best portfolio', image: '/resource1.avif', href: '/resources-portfolio' }}
+              />
+              <ResourceLoopItem 
+                resource={{ title: 'what to say in bio', image: '/resource1.avif', href: '/resources-writers' }}
+              />
+              <ResourceLoopItem 
+                resource={{ title: 'how to run interview', image: '/resource1.avif', href: '/resources-designers' }}
+              />
+            </div>
+
+            {/* <!-- Column 4: 1 item --> */}
+            <div>
+              <ResourceLoopItem 
+                resource={{ title: '10 tips to get hired', image: '/resource1.avif', href: '/resources-business' }}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Publications */}
+      <section className="py-20 max-w-[1600px] mx-auto px-10">
+        <h2 className="text-8xl font-bold text-right">Publications</h2>
+        <div className="flex gap-15 w-full items-center relative pb-20 mb-10 border-white border-b-2">
+          {/* Background */}
+          <div className="absolute inset-0 z-0">
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover opacity-30 z-0"
+            >
+              <source src="/videos/resources-bg.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div className="space-y-16 mt-80">
+          <PublicationLoopItem 
+            publication={{ image: '/publications/publication1.avif', href: '/resources-internship' }}
+          />
+          <PublicationLoopItem 
+            publication={{ image: '/publications/publication2.avif', href: '/resources-inspiration' }}
+          />
+          <PublicationLoopItem 
+            publication={{ image: '/publications/publication3.avif', href: '/resources-inspiration' }}
+          />
+          </div>
+          <div className="space-y-16">
+          <PublicationLoopItem 
+            publication={{ image: '/publications/publication4.avif', href: '/resources-inspiration' }}
+          />
+          <PublicationLoopItem 
+            publication={{ image: '/publications/publication5.avif', href: '/resources-portfolio' }}
+          />
+          <PublicationLoopItem 
+            publication={{ image: '/publications/publication6.avif', href: '/resources-writers' }}
+          />
+          </div>
+          <div className="space-y-16 mt-80">
+          <PublicationLoopItem 
+            publication={{ image: '/publications/publication7.avif', href: '/resources-designers' }}
+          />
+          <PublicationLoopItem 
+            publication={{ image: '/publications/publication8.avif', href: '/resources-business' }}
+          />
+          <PublicationLoopItem 
+            publication={{ image: '/publications/publication9.avif', href: '/resources-inspiration' }}
+          />
+          </div>
+          <div className="space-y-16">
+          <PublicationLoopItem 
+            publication={{ image: '/publications/publication10.avif', href: '/resources-inspiration' }}
+          />
+          <PublicationLoopItem 
+            publication={{ image: '/publications/publication11.avif', href: '/resources-inspiration' }}
+          />
+          <PublicationLoopItem
+            publication={{ image: '/publications/publication12.avif', href: '/resources-inspiration' }}
+          />
+          </div>
         </div>
       </section>
     </div>

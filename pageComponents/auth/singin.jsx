@@ -12,20 +12,20 @@ const SignIn = ({ role }) => {
   };
 
   return (
-    <div className="text-center space-y-6 max-w-[721px] mx-auto pt-40 relative">
-      <PageHeader
-        page={role}
-        subPage={{ text: 'register', url: `/${role}-signup` }}
-        heading="Sign In"
-      />
+      <div className="text-center space-y-6 max-w-[721px] mx-auto pt-[100px] relative">
+        <PageHeader
+          page={role}
+          subPage={{ text: 'register', url: `/${role}-signup` }}
+          heading="Sign In"
+        />
 
-      <AnimatedForm
-        steps={loginSteps}
-        initialValues={loginInitialValues}
-        validations={loginValidations}
-        onSubmit={handleSubmit}
-      />
-    </div>
+        <AnimatedForm
+          steps={loginSteps}
+          initialValues={loginInitialValues}
+          validations={loginValidations}
+          onSubmit={handleSubmit}
+        />
+      </div>
   );
 };
 

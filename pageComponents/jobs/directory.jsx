@@ -1,21 +1,11 @@
 import PageHeader from "components/PageHeader";
 import JobLoopItem from "./loop/item";
 import Link from "next/link";
-
-const featuredJobs = [
-  { title: 'Senior UX User Experience Designer', image: '/job1.avif', agency: 'AD AGENCY CORP', location: 'NEW YORK, NY' },
-  { title: 'Junior Motion Graphics Designer', image: '/job2.avif', agency: 'AD AGENCY CORP', location: 'NEW YORK, NY' },
-  { title: 'Creative Director', image: '/job3.avif', agency: 'AD AGENCY CORP', location: 'NEW YORK, NY' },
-  { title: 'Creative Director', image: '/job4.avif', agency: 'AD AGENCY CORP', location: 'NEW YORK, NY' },
-  { title: 'Creative Director', image: '/job5.avif', agency: 'AD AGENCY CORP', location: 'NEW YORK, NY' },
-  { title: 'Creative Director', image: '/job6.avif', agency: 'AD AGENCY CORP', location: 'NEW YORK, NY' },
-  { title: 'Creative Director', image: '/job7.avif', agency: 'AD AGENCY CORP', location: 'NEW YORK, NY' },
-  { title: 'Creative Director', image: '/job8.avif', agency: 'AD AGENCY CORP', location: 'NEW YORK, NY' },
-];
+import { featuredJobs } from "constants/jobs";
 
 const JobsDirectory = () => {
   return (
-    <>
+    <section className="max-w-[1600px] mx-auto px-10 pt-40">
       <div className="text-center space-y-6 max-w-[1014px] mx-auto pt-40 relative">
         <PageHeader
           page="jobs"
@@ -53,7 +43,7 @@ const JobsDirectory = () => {
           ))}
         </div>
       </section>
-    </>
+    </section>
   );
 };
 
