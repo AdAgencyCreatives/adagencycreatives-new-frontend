@@ -1,18 +1,22 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
-import JobLoopItem from 'pageComponents/jobs/loop/item';
-import { featuredJobs } from 'constants/jobs';
 import { featuredCreatives } from 'constants/creatives';
-import { featuredAgencies } from 'constants/agencies';
-import AgenciesLoopItem from 'pageComponents/agencies/loop/item';
 import SpotlightLoopItem from 'pageComponents/spotlights/loop/item';
 import CreativeLoopItem from 'pageComponents/creatives/loop/item';
 import PublicationLoopItem from 'pageComponents/publications/loop/item';
 import ResourceLoopItem from 'pageComponents/resources/loop/item';
+import ListViewIcon from 'icons/ListViewIcon';
+import GridViewIcon from 'icons/GridViewIcon';
+import SearchIcon from 'icons/SearchIcon';
+import DropdownButton from 'components/DropdownButton';
 
 const TheLounge = () => {
+
+  const handleSelect = (option) => {
+    console.log('You selected:', option)
+  }
+
   return (
     <div className="bg-black text-white">
       {/* Hero */}
@@ -139,6 +143,51 @@ const TheLounge = () => {
         </div>
       </section>
 
+      {/* News */}
+      <section className="py-20 border-white border-y-2 relative">
+        {/* Background */}
+        <div className="absolute inset-0 z-0">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover opacity-50 z-0"
+          >
+            <source src="/videos/chat-bg.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div className="max-w-[1600px] mx-auto px-10 relative z-1">
+          <h2 className="text-8xl font-bold mb-20">Chat</h2>
+          <div className="flex justify-between">
+            <div>
+              <DropdownButton
+                label="All members"
+                options={['All members', 'Admins']}
+                onSelect={handleSelect}
+              />
+            </div>
+            <div className="flex gap-6 items-center">
+              <GridViewIcon />
+              <ListViewIcon />
+              <div className="flex justify-between border-b-1 border-white items-center gap-2">
+                <div className="flex gap-2 text-[14px] items-center">
+                  <SearchIcon />
+                  <input type="text" className="font-wix w-3xs m-2 outline-none" placeholder="Find a member..." />
+                </div>
+                <div className="bg-black rounded-full font-wix text-[14px]">0</div>
+              </div>
+            </div>
+          </div>
+          <div className="text-center min-h-[50vh] justify-center flex flex-col">
+            <p className="font-wix mb-4 text-[26px]">No members found.</p>
+            <p className="font-wix mb-4 text-[16px]">Try another search.</p>
+          </div>
+        </div>
+      </section>
+
+
       {/* Resources */}
       <section className="py-20 border-white border-y-2 relative">
         {/* Background */}
@@ -150,7 +199,7 @@ const TheLounge = () => {
             playsInline
             className="absolute inset-0 w-full h-full object-cover opacity-50 z-0"
           >
-            <source src="/videos/plans-bg.mp4" type="video/mp4" />
+            <source src="/videos/news-bg.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
