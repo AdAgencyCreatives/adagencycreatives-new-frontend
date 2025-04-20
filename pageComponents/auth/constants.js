@@ -117,7 +117,7 @@ export const creativeRegisterValidations = [
 export const agencyRegisterSteps = [
   {
     fields: [
-      { name: "agency_name", label: "Company Name", type: "text", placeholder: "type your first name" },
+      { name: "agency_name", label: "Company Name", type: "text", placeholder: "type your company name" },
     ],
   },
   {
