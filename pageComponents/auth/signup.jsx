@@ -8,6 +8,7 @@ import {
   registerValidations,
 } from "./constants";
 import { useState, useContext, useEffect } from "react";
+import { Context as AnimatedAlertContext } from "contexts/AnimatedAlertContext";
 import { Context as AuthContext } from "contexts/AuthContext";
 import SignOutLink from "../../components/SignOutLink";
 import { useRouter } from "next/navigation";
@@ -18,6 +19,8 @@ const SignUp = ({ role }) => {
   const [apiResponse, setApiResponse] = useState(null);
 
   const router = useRouter();
+
+  const { showAnimatedAlert } = useContext(AnimatedAlertContext);
 
   const {
     state: { user },
@@ -39,10 +42,44 @@ const SignUp = ({ role }) => {
     } catch (error) {}
   };
 
+  const SuccessMessage = () => {
+    return (
+      <div>
+        Hello,
+        <br />
+        <br />
+        Thank you for successfully registering. You'll receive an email with
+        next steps.
+        <br />
+        <br />
+        It could be a few business days for us to verify your registration
+        request. Be on the look out for our email.
+        <br />
+        <br />
+        In the meantime, enjoy exploring our home page.
+        <br />
+        <br />- Ad Agency Creatives
+      </div>
+    );
+  };
+
   useEffect(() => {
     if (apiResponse?.type == "success") {
+      showAnimatedAlert({
+        type: "success",
+        title: "Sign Up Success",
+        message: <SuccessMessage />,
+        autoDismiss: false,
+        dismissTime: 5000,
+      });
     } else if (apiResponse?.type == "error") {
-      
+      showAnimatedAlert({
+        type: "error",
+        title: "Sign Up Failed",
+        message: apiResponse?.data?.message || "",
+        autoDismiss: false,
+        dismissTime: 5000,
+      });
     }
   }, [apiResponse]);
 
@@ -68,41 +105,6 @@ const SignUp = ({ role }) => {
             onSubmit={handleSubmit}
             isLoading={isLoading}
           />
-          {apiResponse?.type == "success" && (
-            <AnimatedAlert
-              type="success"
-              title="Sign In Success"
-              message={
-                <div>
-                  Hello,
-                  <br />
-                  <br />
-                  Thank you for successfully registering. You'll receive an
-                  email with next steps.
-                  <br />
-                  <br />
-                  It could be a few business days for us to verify your
-                  registration request. Be on the look out for our email.
-                  <br />
-                  <br />
-                  In the meantime, enjoy exploring our home page.
-                  <br />
-                  <br />- Ad Agency Creatives
-                </div>
-              }
-              autoDismiss={false}
-              dismissTime={5000}
-            />
-          )}
-          {apiResponse?.type == "error" && (
-            <AnimatedAlert
-              type="error"
-              title="Sign Up Failed"
-              message={apiResponse?.data?.message || ""}
-              autoDismiss={false}
-              dismissTime={5000}
-            />
-          )}
         </>
       )}
     </div>

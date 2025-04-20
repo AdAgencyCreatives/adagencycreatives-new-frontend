@@ -9,8 +9,6 @@ const { LiaSignInAltSolid } = require("react-icons/lia");
 import { useContext, useEffect, useState } from "react";
 import { Context as AnimatedAlertContext } from "contexts/AnimatedAlertContext";
 import { Context as AuthContext } from "contexts/AuthContext";
-import AnimatedAlert from "components/AnimatedAlert";
-import Link from "next/link";
 import SignOutLink from "../../components/SignOutLink";
 
 const SignIn = ({ role }) => {
