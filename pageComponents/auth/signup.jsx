@@ -3,16 +3,18 @@
 import AnimatedForm from "components/AnimatedForm";
 import PageHeader from "components/PageHeader";
 import {
-  registerInitialValues,
-  registerSteps,
-  registerValidations,
+  creativeRegisterInitialValues,
+  creativeRegisterSteps,
+  creativeRegisterValidations,
+  agencyRegisterInitialValues,
+  agencyRegisterSteps,
+  agencyRegisterValidations,
 } from "./constants";
 import { useState, useContext, useEffect } from "react";
 import { Context as AnimatedAlertContext } from "contexts/AnimatedAlertContext";
 import { Context as AuthContext } from "contexts/AuthContext";
 import SignOutLink from "../../components/SignOutLink";
 import { useRouter } from "next/navigation";
-import AnimatedAlert from "components/AnimatedAlert";
 
 const SignUp = ({ role }) => {
   const [isLoading, setLoading] = useState(false);
@@ -99,9 +101,19 @@ const SignUp = ({ role }) => {
       ) : (
         <>
           <AnimatedForm
-            steps={registerSteps}
-            initialValues={registerInitialValues}
-            validations={registerValidations}
+            steps={
+              role == "creatives" ? creativeRegisterSteps : agencyRegisterSteps
+            }
+            initialValues={
+              role == "creatives"
+                ? creativeRegisterInitialValues
+                : agencyRegisterInitialValues
+            }
+            validations={
+              role == "creatives"
+                ? creativeRegisterValidations
+                : agencyRegisterValidations
+            }
             onSubmit={handleSubmit}
             isLoading={isLoading}
           />
