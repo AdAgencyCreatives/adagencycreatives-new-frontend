@@ -34,7 +34,7 @@ const AnimatedForm = ({
       onSubmit={onSubmit}
     >
       {({ validateForm }) => (
-        <Form className="flex items-center justify-end max-w-sm mx-auto mb-40 z-2 relative">
+        <Form className="flex items-center justify-end max-w-sm mx-auto mb-40 relative z-2  h-[300px] pb-[200px]">
           {/* Fields */}
           {steps.map((stepConfig, index) => (
             <div

@@ -255,17 +255,16 @@ const reloadUserData = (dispatch) => {
   };
 };
 
-const logout = (dispatch) => {
+const logout = (dispatch, state) => {
   return (cb) => {
+const user = state.user;
     clearToken();
-    // Cookies.remove("token");
-    // Cookies.remove("role");
-    // Cookies.remove("cookie_token");
+    setUserData(dispatch, null);
     dispatch({
       type: "set_token",
       payload: { token: null, role: null },
     });
-    cb();
+    cb(user);
   };
 };
 
