@@ -1,11 +1,9 @@
-"use Client";
-
 import { Wix_Madefor_Text } from "next/font/google";
 import "./globals.css";
 import Header from "pageComponents/layout/Header";
 import Footer from "pageComponents/layout/Footer";
 import ClientUseContextWrapper from "./ClientUseContextWrapper";
-import { Provider as AuthProvider } from "../contexts/AuthContext";
+import ClientProviderWrapper from "./ClientProviderWrapper";
 
 export const metadata = {
   title: "Ad Agency Creatives is a community for advertising creatives.",
@@ -22,7 +20,7 @@ export default function RootLayout({ children }) {
         ></script>
       </head>
       <body className="antialiased">
-        <AuthProvider>
+        <ClientProviderWrapper>
           <ClientUseContextWrapper>
             <main className="relative w-full min-h-screen bg-black text-white">
               <Header />
@@ -30,7 +28,7 @@ export default function RootLayout({ children }) {
               <Footer />
             </main>
           </ClientUseContextWrapper>
-        </AuthProvider>
+        </ClientProviderWrapper>
       </body>
     </html>
   );
