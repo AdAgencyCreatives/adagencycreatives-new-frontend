@@ -5,7 +5,7 @@ import "./globals.css";
 import Header from "pageComponents/layout/Header";
 import Footer from "pageComponents/layout/Footer";
 import ClientUseContextWrapper from "./ClientUseContextWrapper";
-import { Provider as AuthProvider } from "contexts/AuthContext";
+import { Provider as AuthProvider } from "../contexts/AuthContext";
 
 export const metadata = {
   title: "Ad Agency Creatives is a community for advertising creatives.",
