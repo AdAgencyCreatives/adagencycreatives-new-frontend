@@ -42,12 +42,14 @@ const SignIn = ({ role }) => {
       showAnimatedAlert({
         type: "success",
         title: "Sign In Success",
-        message: apiResponse?.data?.message || "Redirecting to The Lounge...",
+        message:
+          apiResponse?.data?.message ||
+          `Redirecting to ${role == "creatives" ? "The Lounge" : "Home"}...`,
         autoDismiss: true,
         dismissTime: 1500,
       });
       window.setTimeout(() => {
-        router.push("/thelounge");
+        router.push(role == "creatives" ? "/thelounge" : "/");
       }, 1500);
     } else if (apiResponse?.type == "error") {
       showAnimatedAlert({
