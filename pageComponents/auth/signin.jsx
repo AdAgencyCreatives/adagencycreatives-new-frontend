@@ -7,6 +7,7 @@ import { loginInitialValues, loginSteps, loginValidations } from "./constants";
 import AnimatedForm from "components/AnimatedForm";
 const { LiaSignInAltSolid } = require("react-icons/lia");
 import { useContext, useEffect, useState } from "react";
+import { Context as AnimatedAlertContext } from "contexts/AnimatedAlertContext";
 import { Context as AuthContext } from "contexts/AuthContext";
 import AnimatedAlert from "components/AnimatedAlert";
 import Link from "next/link";
@@ -14,31 +15,50 @@ import SignOutLink from "../../components/SignOutLink";
 
 const SignIn = ({ role }) => {
   const [isLoading, setLoading] = useState(false);
-  const [signinResponse, setSigninResponse] = useState(null);
+  const [apiResponse, setApiResponse] = useState(null);
+
+  const router = useRouter();
+
+  const { showAnimatedAlert } = useContext(AnimatedAlertContext);
 
   const {
     state: { user },
-    signin, logout
+    signin,
   } = useContext(AuthContext);
-  const router = useRouter();
 
   const handleSubmit = async (values) => {
-    setSigninResponse(null);
+    setApiResponse(null);
     setLoading(true);
     try {
       await signin(values, (data) => {
-        setSigninResponse(data);
+        setApiResponse(data);
         setLoading(false);
       });
     } catch (error) {}
   };
 
   useEffect(() => {
-    if (signinResponse?.type == "success") {
-      router.push("/");
-    } else if (signinResponse?.type == "error") {
+    if (apiResponse?.type == "success") {
+      showAnimatedAlert({
+        type: "success",
+        title: "Sign In Success",
+        message: apiResponse?.data?.message || "Redirecting to The Lounge...",
+        autoDismiss: true,
+        dismissTime: 1500,
+      });
+      window.setTimeout(() => {
+        router.push("/thelounge");
+      }, 1500);
+    } else if (apiResponse?.type == "error") {
+      showAnimatedAlert({
+        type: "error",
+        title: "Sign In Failed",
+        message: apiResponse?.data?.message || "",
+        autoDismiss: false,
+        dismissTime: 5000,
+      });
     }
-  }, [signinResponse]);
+  }, [apiResponse]);
 
   return (
     <div className="text-center space-y-6 max-w-[721px] mx-auto pt-[200px] relative">
@@ -61,25 +81,6 @@ const SignIn = ({ role }) => {
             onSubmit={handleSubmit}
             isLoading={isLoading}
           />
-
-          {signinResponse?.type == "success" && (
-            <AnimatedAlert
-              type="success"
-              title="Sign In Success"
-              message={"Awesome!!!"}
-              autoDismiss={true}
-              dismissTime={3000}
-            />
-          )}
-          {signinResponse?.type == "error" && (
-            <AnimatedAlert
-              type="error"
-              title="Sign In Failed"
-              message={signinResponse?.data?.message || ""}
-              autoDismiss={false}
-              dismissTime={5000}
-            />
-          )}
         </>
       )}
     </div>

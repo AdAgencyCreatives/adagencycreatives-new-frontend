@@ -2,7 +2,7 @@ const GridViewIcon = () => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" style={{ fillRule: 'evenodd', fill: '#fff' }}>
       <defs></defs>
-      <g id="Symbols" stroke="none" stroke-width="1" fill-rule="evenodd">
+      <g id="Symbols" stroke="none" strokeWidth="1" fillRule="evenodd">
         <g id="Filter-Header" transform="translate(-559.000000, -7.000000)">
           <g id="Search-and-Sort" transform="translate(0.000000, 5.000000)">
             <g id="Layouts" transform="translate(559.000000, 2.000000)">

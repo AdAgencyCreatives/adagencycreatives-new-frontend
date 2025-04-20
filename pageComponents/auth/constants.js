@@ -1,5 +1,40 @@
 import * as Yup from "yup";
 
+// Add custom password validation method to Yup
+Yup.addMethod(Yup.string, 'password', function(message) {
+  return this.test('password', message || 'password does not meet requirements', function(value) {
+    const { path, createError } = this;
+    
+    if (!value) return true; // Skip validation if no value
+    
+    // Password requirements
+    const hasUpperCase = /[A-Z]/.test(value);
+    const hasLowerCase = /[a-z]/.test(value);
+    const hasNumber = /[0-9]/.test(value);
+    const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(value);
+    const isLongEnough = value.length >= 8;
+    
+    // Check all requirements
+    if (!isLongEnough) {
+      return createError({ path, message: 'password must be at least 8 characters long' });
+    }
+    if (!hasUpperCase) {
+      return createError({ path, message: 'password must contain at least one uppercase letter' });
+    }
+    if (!hasLowerCase) {
+      return createError({ path, message: 'password must contain at least one lowercase letter' });
+    }
+    if (!hasNumber) {
+      return createError({ path, message: 'password must contain at least one number' });
+    }
+    if (!hasSpecialChar) {
+      return createError({ path, message: 'password must contain at least one special character' });
+    }
+    
+    return true;
+  });
+});
+
 export const loginSteps = [
   {
     fields: [
@@ -69,9 +104,9 @@ export const registerValidations = [
   Yup.object({ first_name: Yup.string().required("first name is required") }),
   Yup.object({ last_name: Yup.string().required("last name is required") }),
   Yup.object({ email: Yup.string().email().required("email is required") }),
-  Yup.object({ password: Yup.string().min(6).required("password is required") }),
+  Yup.object({ password: Yup.string().password().required("password is required") }),
   Yup.object({
-    cpassword: Yup.string()
+    cpassword: Yup.string().password()
       .required("Confirm your password")
       .oneOf([Yup.ref("password"), null], "Passwords must match"),
   }),

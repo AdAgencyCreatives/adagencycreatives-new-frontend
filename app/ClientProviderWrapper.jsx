@@ -1,9 +1,15 @@
 // app/ClientComponentWrapper.js
 "use client";
 
+import { Provider as AnimatedAlertContext } from "contexts/AnimatedAlertContext";
 import { Provider as AuthProvider } from "contexts/AuthContext";
 
 export default function ClientProviderWrapper({ children }) {
-
-  return <AuthProvider>{children}</AuthProvider>;
+  return (
+    <>
+      <AnimatedAlertContext>
+        <AuthProvider>{children}</AuthProvider>
+      </AnimatedAlertContext>
+    </>
+  );
 }

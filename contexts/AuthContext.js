@@ -134,15 +134,11 @@ const setPageClass = (dispatch) => {
 };
 
 const signup = (dispatch) => {
-  return async (data, role) => {
+  return async (data, role, cb = (data) => { }) => {
     resetFormMessage(dispatch)();
     try {
-      const formData = prepareFields(data);
+      const formData = data;
       formData.role = role;
-      if (formData.password !== formData.cpassword) {
-        setErrorMessage(dispatch, "The passwords do not match");
-        throw "passwords do not match";
-      }
 
       const response = await api.post("/users", formData);
 
@@ -151,9 +147,11 @@ const signup = (dispatch) => {
         payload: { type: "success", message: getRegisterSuccessMessage() },
       });
       logActivity(response.data.uuid, "signup", "You signed up as " + response.data.role + ", via email: " + response.data.email, "{user_id:" + response.data.uuid + "}");
+      cb({ type: "success", data: response.data });
     } catch (error) {
+      console.log(error);
+      cb({ type: "error", data: error.response.data });
       setErrorMessage(dispatch, error.response.data.message);
-      throw error
     }
   };
 };
@@ -172,7 +170,7 @@ const getRoleId = (role) => {
 };
 
 const signin = (dispatch) => {
-  return async (data, cb) => {
+  return async (data, cb=(data)=>{}) => {
     resetFormMessage(dispatch)();
     try {
       const response = await api.post("/login", data);
@@ -200,9 +198,9 @@ const signin = (dispatch) => {
         payload: { type: "success", message: getLoginSuccessMessage() },
       });
       logActivity(response.data.user.uuid, "signin", "You signed in as " + response.data.user.role + ", via email: " + response.data.user.email, "{user_id:" + response.data.user.uuid + "}");
-      cb({type: "success", data: response.data});
+      cb({ type: "success", data: response.data });
     } catch (error) {
-      cb({type: "error", data: error.response.data});
+      cb({ type: "error", data: error.response.data });
       const response = error.response.data;
       setErrorMessage(dispatch, response.message, response?.status ?? null, response?.locked_end ?? null);
     }
@@ -257,7 +255,7 @@ const reloadUserData = (dispatch) => {
 
 const logout = (dispatch, state) => {
   return (cb) => {
-const user = state.user;
+    const user = state.user;
     clearToken();
     setUserData(dispatch, null);
     dispatch({

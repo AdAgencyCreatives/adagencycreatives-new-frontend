@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { LiaSignInAltSolid } from "react-icons/lia";
@@ -27,6 +27,12 @@ const AnimatedForm = ({
     });
   };
 
+  const inputRefs = useRef([]);
+
+  const focusOnField = (index) => {
+    inputRefs.current[index]?.focus();
+  };
+
   return (
     <Formik
       initialValues={initialValues}
@@ -34,7 +40,7 @@ const AnimatedForm = ({
       onSubmit={onSubmit}
     >
       {({ validateForm }) => (
-        <Form className="flex items-center justify-end max-w-sm mx-auto mb-40 relative z-2  h-[300px] pb-[200px]">
+        <Form className="flex items-center justify-end max-w-sm mx-auto mb-40 relative z-2">
           {/* Fields */}
           {steps.map((stepConfig, index) => (
             <div
@@ -47,12 +53,13 @@ const AnimatedForm = ({
                   : "translate-x-full opacity-0 pointer-events-none"
               }`}
             >
-              {stepConfig.fields.map((field) => (
+              {stepConfig.fields.map((field, index) => (
                 <div key={field.name}>
                   {/* <label className="block mb-1 text-sm font-medium text-gray-700">
                     {field.label}
                   </label> */}
                   <Field
+                    ref={(el) => (inputRefs.current[index] = el)}
                     name={field.name}
                     type={field.type}
                     placeholder={field.placeholder}
