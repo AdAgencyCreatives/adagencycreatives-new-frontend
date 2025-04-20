@@ -2,7 +2,7 @@ export default function TailwindCircularLoader({ size }) {
   return (
     <div className="flex justify-center items-center">
       <svg
-        className={`mr-3 -ml-1 size-${size} animate-spin text-[#ffcd1a]`}
+        className={`mr-3 -ml-1 ${"size-" + size} animate-spin text-[#ffcd1a]`}
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"

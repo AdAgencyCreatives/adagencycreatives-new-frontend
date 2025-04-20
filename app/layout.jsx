@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
       </head>
       <body className="antialiased">
         <ClientProviderWrapper>
-          <ClientUseContextWrapper>
+        <ClientUseContextWrapper>
             <main className="relative w-full min-h-screen bg-black text-white">
               <Header />
               <div className="max-w-full overflow-hidden">{children}</div>

@@ -67,7 +67,6 @@ const AnimatedForm = ({
               ))}
             </div>
           ))}
-
           {/* Buttons */}
           <div className="flex justify-between relative z-10">
             {step > 0 && (
@@ -97,7 +96,7 @@ const AnimatedForm = ({
             )}
           </div>
           {isLoading && (
-            <div className="absolute w-full me-auto">
+            <div className="absolute pb-25 w-full me-auto z-999999">
               <TailwindCircularLoader size={10} />
             </div>
           )}
