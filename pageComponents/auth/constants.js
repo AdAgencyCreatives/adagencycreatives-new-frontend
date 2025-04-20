@@ -55,7 +55,7 @@ export const loginInitialValues = {
 
 export const loginValidations = [
   Yup.object({ email: Yup.string().email().required("Email is required") }),
-  Yup.object({ password: Yup.string().password().required("Password is required") }),
+  Yup.object({ password: Yup.string().min(8, "password must be at least 8 characters long").required("Password is required") }),
 ];
 
 export const registerSteps = [
