@@ -1,17 +1,29 @@
-'use client';
+"use client";
 
 import { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { LiaSignInAltSolid } from "react-icons/lia";
+import TailwindCircularLoader from "./TailwindCircularLoader";
 
-const AnimatedForm = ({ steps, initialValues, validations, onSubmit }) => {
+const AnimatedForm = ({
+  steps,
+  initialValues,
+  validations,
+  onSubmit,
+  isLoading,
+}) => {
   const [step, setStep] = useState(0);
   const isLastStep = step === steps.length - 1;
 
+  const handleBack = () => {
+    setStep((s) => Math.max(0, s - 1));
+  };
+
   const handleNext = (validateForm) => {
     validateForm().then((errors) => {
-      if (Object.keys(errors).length === 0) setStep((s) => s + 1);
+      if (Object.keys(errors).length === 0)
+        setStep((s) => Math.min(steps.length - 1, s + 1));
     });
   };
 
@@ -58,32 +70,37 @@ const AnimatedForm = ({ steps, initialValues, validations, onSubmit }) => {
 
           {/* Buttons */}
           <div className="flex justify-between relative z-10">
-            {/* {step > 0 && (
-              <button 
+            {step > 0 && (
+              <a
                 type="button"
-                onClick={() => setStep(step - 1)}
-                className="ml-2 text-white text-[37px] pb-6"
+                onClick={() => handleBack()}
+                className="ml-2 text-white text-[37px] py-6 scale-x-[-1] cursor-pointer"
               >
                 <LiaSignInAltSolid />
-              </button>
-            )} */}
-            {!isLastStep ? (
-              <button 
-                type="button"
-                onClick={() => handleNext(validateForm)}
-                className="ml-2 text-white text-[37px] py-6"
+              </a>
+            )}
+            {isLastStep ? (
+              <button
+                type="submit"
+                className="ml-2 text-white text-[37px] py-6 cursor-pointer"
               >
                 <LiaSignInAltSolid />
               </button>
             ) : (
-              <button 
-                type="submit"
-                className="ml-2 text-white text-[37px] py-6"
+              <a
+                type="button"
+                onClick={() => handleNext(validateForm)}
+                className="ml-2 text-white text-[37px] py-6 cursor-pointer"
               >
                 <LiaSignInAltSolid />
-              </button>
+              </a>
             )}
           </div>
+          {isLoading && (
+            <div className="absolute w-full me-auto">
+              <TailwindCircularLoader size={10} />
+            </div>
+          )}
         </Form>
       )}
     </Formik>

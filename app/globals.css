@@ -73,6 +73,10 @@ input:autofill {
   -webkit-text-fill-color: white;
 }
 
+button {
+  cursor: pointer;
+}
+
 .spline-container {
   position: absolute;
   /* top: -25%;

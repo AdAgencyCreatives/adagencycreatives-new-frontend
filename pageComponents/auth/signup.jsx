@@ -3,9 +3,12 @@
 import AnimatedForm from "components/AnimatedForm";
 import PageHeader from "components/PageHeader";
 import { registerInitialValues, registerSteps, registerValidations } from "./constants";
+import { useState } from "react";
 
 const SignUp = ({ role }) => {
 
+  const [isLoading, setLoading] = useState(false);
+    
   const handleSubmit = (values) => {
     console.log("Register:", values);
   };
@@ -23,6 +26,7 @@ const SignUp = ({ role }) => {
         initialValues={registerInitialValues}
         validations={registerValidations}
         onSubmit={handleSubmit}
+        isLoading={isLoading}
       />
     </div>
   );
