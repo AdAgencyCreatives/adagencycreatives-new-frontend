@@ -47,7 +47,7 @@ const SignUp = ({ role }) => {
   }, [apiResponse]);
 
   return (
-    <div className="text-center space-y-6 max-w-[721px] mx-auto pt-[200px] relative">
+    <div className="text-center space-y-6 max-w-[721px] mx-auto pt-[300px] pb-[150px] relative">
       <PageHeader
         page={role}
         subPage={{ text: "signin", url: `/${role}-signin` }}
