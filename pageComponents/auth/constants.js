@@ -122,12 +122,12 @@ export const agencyRegisterSteps = [
   },
   {
     fields: [
-      { name: "first_name", label: "Contact First Name", type: "text", placeholder: "what's your contact first name?" },
+      { name: "first_name", label: "Contact First Name", type: "text", placeholder: "what's your first name?" },
     ],
   },
   {
     fields: [
-      { name: "last_name", label: "Contact Last Name", type: "text", placeholder: "what's your contact last name?" },
+      { name: "last_name", label: "Contact Last Name", type: "text", placeholder: "what's your last name?" },
     ],
   },
   {
