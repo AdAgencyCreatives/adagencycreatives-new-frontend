@@ -61,32 +61,32 @@ export const loginValidations = [
 export const creativeRegisterSteps = [
   {
     fields: [
-      { name: "first_name", label: "First Name", type: "text", placeholder: "type your first name" },
+      { name: "first_name", label: "First Name", type: "text", placeholder: "what's your first name?" },
     ],
   },
   {
     fields: [
-      { name: "last_name", label: "Last Name", type: "text", placeholder: "type your last name" },
+      { name: "last_name", label: "Last Name", type: "text", placeholder: "what's your last name?" },
     ],
   },
   {
     fields: [
-      { name: "email", label: "Email", type: "email", placeholder: "type your e-mail" },
+      { name: "email", label: "Email", type: "email", placeholder: "what's your email address?" },
     ],
   },
   {
     fields: [
-      { name: "password", label: "Password", type: "password", placeholder: "type your password" },
+      { name: "password", label: "Password", type: "password", placeholder: "set your private password?" },
     ],
   },
   {
     fields: [
-      { name: "cpassword", label: "Confirm Password", type: "password", placeholder: "type your confirm password" },
+      { name: "cpassword", label: "Confirm Password", type: "password", placeholder: "confirm your password" },
     ],
   },
   {
     fields: [
-      { name: "portfolio_site", label: "Portfolio Site", type: "url", placeholder: "type your portfolio site" },
+      { name: "portfolio_site", label: "Portfolio Site", type: "url", placeholder: "what's your portfolio site?" },
     ],
   },
 ];
@@ -117,37 +117,37 @@ export const creativeRegisterValidations = [
 export const agencyRegisterSteps = [
   {
     fields: [
-      { name: "agency_name", label: "Company Name", type: "text", placeholder: "type your company name" },
+      { name: "agency_name", label: "Company Name", type: "text", placeholder: "what's your company name?" },
     ],
   },
   {
     fields: [
-      { name: "first_name", label: "Contact First Name", type: "text", placeholder: "type your contact first name" },
+      { name: "first_name", label: "Contact First Name", type: "text", placeholder: "what's your contact first name?" },
     ],
   },
   {
     fields: [
-      { name: "last_name", label: "Contact Last Name", type: "text", placeholder: "type your contact last name" },
+      { name: "last_name", label: "Contact Last Name", type: "text", placeholder: "what's your contact last name?" },
     ],
   },
   {
     fields: [
-      { name: "email", label: "Email", type: "email", placeholder: "type your e-mail" },
+      { name: "email", label: "Email", type: "email", placeholder: "what's your email address?" },
     ],
   },
   {
     fields: [
-      { name: "password", label: "Password", type: "password", placeholder: "type your password" },
+      { name: "password", label: "Password", type: "password", placeholder: "set your private password" },
     ],
   },
   {
     fields: [
-      { name: "cpassword", label: "Confirm Password", type: "password", placeholder: "type your confirm password" },
+      { name: "cpassword", label: "Confirm Password", type: "password", placeholder: "confirm your password" },
     ],
   },
   {
     fields: [
-      { name: "linkedin_profile", label: "LinkedIn Profile", type: "url", placeholder: "type your linkedin profile" },
+      { name: "linkedin_profile", label: "LinkedIn Profile", type: "url", placeholder: "what's your linkedin profile?" },
     ],
   },
 ];
