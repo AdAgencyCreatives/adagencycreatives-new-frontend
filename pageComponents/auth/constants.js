@@ -108,7 +108,7 @@ export const creativeRegisterValidations = [
   Yup.object({
     cpassword: Yup.string().password()
       .required("Confirm your password")
-      .oneOf([Yup.ref("password"), null], "Passwords must match"),
+      .oneOf([Yup.ref("password"), null], "passwords must match"),
   }),
   Yup.object({ portfolio_site: Yup.string().required("portfolio site is required") }),
 ];
@@ -171,7 +171,7 @@ export const agencyRegisterValidations = [
   Yup.object({
     cpassword: Yup.string().password()
       .required("Confirm your password")
-      .oneOf([Yup.ref("password"), null], "Passwords must match"),
+      .oneOf([Yup.ref("password"), null], "passwords must match"),
   }),
   Yup.object({ linkedin_profile: Yup.string().required("linkedin profile is required") }),
 ];
