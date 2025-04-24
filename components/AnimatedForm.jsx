@@ -57,7 +57,7 @@ const AnimatedForm = ({
           {steps.map((stepConfig, index) => (
             <div
               key={index}
-              className={`absolute w-full transition-all duration-500 ease-in-out transform px-30  ${
+              className={`absolute w-full transition-all duration-500 ease-in-out transform px-20  ${
                 step === index
                   ? "translate-x-0 opacity-100"
                   : step > index
