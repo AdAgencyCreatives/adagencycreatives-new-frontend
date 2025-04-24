@@ -28,7 +28,7 @@ const SignOutLink = ({}) => {
 
   return (
     <a
-      className="text-[19px] xl:text-[21px] 2xl:text-[29px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a] cursor-pointer"
+      className="text-[19px] xl:text-[21px] 2xl:text-[29px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a] cursor-pointer underline"
       onClick={handleSignOut}
     >
       sign out

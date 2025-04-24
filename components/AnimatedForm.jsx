@@ -40,12 +40,24 @@ const AnimatedForm = ({
       onSubmit={onSubmit}
     >
       {({ validateForm }) => (
-        <Form className="flex items-center justify-end max-w-sm mx-auto mb-40 relative z-2">
+        <Form className="flex items-start justify-between max-w-xl mx-auto mb-40 relative z-2 group">
+          {/* Back Button */}
+          <div className="flex justify-between relative z-10 opacity-0 translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500 ease-in-out">
+            {step > 0 && (
+              <a
+                type="button"
+                onClick={() => handleBack()}
+                className="text-white text-[37px] py-6 scale-x-[-1] cursor-pointer"
+              >
+                <LiaSignInAltSolid />
+              </a>
+            )}
+          </div>
           {/* Fields */}
           {steps.map((stepConfig, index) => (
             <div
               key={index}
-              className={`absolute w-full transition-all duration-500 ease-in-out transform ${
+              className={`absolute w-full transition-all duration-500 ease-in-out transform px-30  ${
                 step === index
                   ? "translate-x-0 opacity-100"
                   : step > index
@@ -63,7 +75,7 @@ const AnimatedForm = ({
                     name={field.name}
                     type={field.type}
                     placeholder={field.placeholder}
-                    className="bg-transparent border-b border-white outline-none w-full text-[19px] text-white placeholder-white font-wix py-6 focus:bg-black/50"
+                    className="bg-transparent border-b-2 border-white outline-none w-full text-[19px] text-white placeholder-white font-wix py-6 focus:bg-black/50"
                   />
                   <ErrorMessage
                     name={field.name}
@@ -76,15 +88,6 @@ const AnimatedForm = ({
           ))}
           {/* Buttons */}
           <div className="flex justify-between relative z-10">
-            {step > 0 && (
-              <a
-                type="button"
-                onClick={() => handleBack()}
-                className="ml-2 text-white text-[37px] py-6 scale-x-[-1] cursor-pointer"
-              >
-                <LiaSignInAltSolid />
-              </a>
-            )}
             {isLastStep ? (
               <button
                 type="submit"
@@ -103,7 +106,7 @@ const AnimatedForm = ({
             )}
           </div>
           {isLoading && (
-            <div className="absolute pb-25 w-full me-auto z-999999">
+            <div className="absolute pb-25 w-full me-auto z-20">
               <TailwindCircularLoader size={10} />
             </div>
           )}
