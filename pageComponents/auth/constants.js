@@ -147,7 +147,7 @@ export const agencyRegisterSteps = [
   },
   {
     fields: [
-      { name: "linkedin_profile", label: "LinkedIn Profile", type: "url", placeholder: "what's your linkedin profile?" },
+      { name: "linkedin_profile", label: "LinkedIn Profile", type: "url", placeholder: "what's your linked in profile link?" },
     ],
   },
 ];

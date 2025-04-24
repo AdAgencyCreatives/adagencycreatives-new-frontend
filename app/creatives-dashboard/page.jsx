@@ -1,5 +1,5 @@
-import CreativesDirectory from "pageComponents/creatives/directory";
+import CreativesDashboard from "pageComponents/creatives/dashboard";
 
-export default function CreativesDirectoryPage () {
-  return <CreativesDirectory />;
+export default function CreativesDashboardPage () {
+  return <CreativesDashboard />;
 }

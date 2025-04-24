@@ -22,6 +22,10 @@ module.exports = {
       boxShadow: {
         white: '0 1px 4px rgba(0, 0, 0, 0.6)',
       },
+      animation: {
+        'spin-slow': 'spin 2s linear infinite', // default is 1s
+        'spin-slower': 'spin 4s linear infinite',
+      },
     },
   },
 };
