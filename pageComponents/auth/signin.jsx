@@ -37,13 +37,13 @@ const SignIn = ({ role }) => {
 
   useEffect(() => {
     if (apiResponse?.type == "success") {
-      showAnimatedAlert({
-        type: "success",
-        title: "Sign In Success",
-        message: apiResponse?.data?.message || `Redirecting to ${role == "creatives" ? "Creatives Dashboard" : "Agencies Dashboard"}...`,
-        autoDismiss: true,
-        dismissTime: 500,
-      });
+      // showAnimatedAlert({
+      //   type: "success",
+      //   title: "Sign In Success",
+      //   message: apiResponse?.data?.message || `Redirecting to ${role == "creatives" ? "Creatives Dashboard" : "Agencies Dashboard"}...`,
+      //   autoDismiss: true,
+      //   dismissTime: 500,
+      // });
       router.push(role == "creatives" ? "/creatives-dashboard" : "/agencies-dashboard");
     } else if (apiResponse?.type == "error") {
       showAnimatedAlert({
