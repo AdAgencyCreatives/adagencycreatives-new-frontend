@@ -1,6 +1,6 @@
 export const sidebarMenu = [
-  { label: "DASHBOARD", href: "/creatives" },
-  { label: "create pro®file", href: "/creatives-profile" },
+  { label: "DASHBOARD", href: "/agencies-dashboard" },
+  { label: "create pro®file", href: "/agencies-profile" },
   { label: "messages", href: "#" },
   { label: "job posting", href: "#" },
   { label: "CHANGE PASSWORD", href: "#" },
@@ -10,22 +10,22 @@ export const sidebarMenu = [
 
 export const topMenu = [
   { label: "top creatives", href: "/creatives" },
-  { label: "messages", href: "/creatives-profile" },
+  { label: "messages", href: "#" },
   { label: "featured", href: "#" },
-  { label: "view pro®file", href: "#" }
+  { label: "view pro®file", href: "/agencies-profile" }
 ];
 
 export const profileMenu = [
-  { label: "message ME", href: "/creatives" },
-  { label: "add me", href: "/creatives-profile" },
+  { label: "message ME", href: "#" },
+  { label: "add me", href: "#" },
   { label: "CREATE YOUR pro®file", href: "#" }
 ];
 
 export const infoMenu = [
-  { label: "video", href: "/creatives" },
-  { label: "photo", href: "/creatives-profile" },
+  { label: "video", href: "#" },
+  { label: "photo", href: "#" },
   { label: "current work", href: "#" },
-  { label: "dashboard", href: "#" },
+  { label: "dashboard", href: "/agencies-dashboard" },
   { label: "education", href: "#" }
 ];
 

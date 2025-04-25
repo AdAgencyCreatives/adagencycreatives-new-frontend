@@ -1,5 +1,5 @@
 export const sidebarMenu = [
-  { label: "pro DASHBOARD", href: "/creatives" },
+  { label: "pro DASHBOARD", href: "/creatives-dashboard" },
   { label: "pro®file", href: "/creatives-profile" },
   { label: "my resume", href: "#" },
   { label: "JOB messages", href: "#" },
@@ -13,23 +13,23 @@ export const sidebarMenu = [
 ];
 
 export const topMenu = [
-  { label: "applied jobs", href: "/creatives" },
-  { label: "new messages", href: "/creatives-profile" },
+  { label: "applied jobs", href: "#" },
+  { label: "new messages", href: "#" },
   { label: "pro®file viewed", href: "#" },
   { label: "friends", href: "#" }
 ];
 
 export const profileMenu = [
-  { label: "message ME", href: "/creatives" },
-  { label: "add me", href: "/creatives-profile" },
+  { label: "message ME", href: "#" },
+  { label: "add me", href: "#" },
   { label: "CREATE YOUR pro®file", href: "#" }
 ];
 
 export const infoMenu = [
-  { label: "video", href: "/creatives" },
-  { label: "photo", href: "/creatives-profile" },
+  { label: "video", href: "#" },
+  { label: "photo", href: "#" },
   { label: "current work", href: "#" },
-  { label: "dashboard", href: "#" },
+  { label: "dashboard", href: "/creatives-dashboard" },
   { label: "education", href: "#" }
 ];
 
