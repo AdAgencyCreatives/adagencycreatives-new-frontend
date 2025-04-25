@@ -173,5 +173,5 @@ export const agencyRegisterValidations = [
       .required("Confirm your password")
       .oneOf([Yup.ref("password"), null], "passwords must match"),
   }),
-  Yup.object({ linkedin_profile: Yup.string().required("linkedin profile is required") }),
+  Yup.object({ linkedin_profile: Yup.string().required("linked in profile link is required") }),
 ];
