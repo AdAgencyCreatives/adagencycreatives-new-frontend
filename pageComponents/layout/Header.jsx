@@ -54,7 +54,7 @@ const Header = () => {
         >
           the lounge
         </Link>
-        {user && <SignOutLink />}
+        {user && <SignOutLink placement={"header"} />}
       </nav>
     </header>
   );

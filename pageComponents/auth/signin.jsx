@@ -32,7 +32,7 @@ const SignIn = ({ role }) => {
         setApiResponse(data);
         setLoading(false);
       });
-    } catch (error) {}
+    } catch (error) { }
   };
 
   useEffect(() => {
@@ -42,13 +42,11 @@ const SignIn = ({ role }) => {
         title: "Sign In Success",
         message:
           apiResponse?.data?.message ||
-          `Redirecting to ${role == "creatives" ? "The Lounge" : "Home"}...`,
+          `Redirecting to ${role == "creatives" ? "Creatives Dashboard" : "Agencies Dashboard"}...`,
         autoDismiss: true,
         dismissTime: 1500,
       });
-      window.setTimeout(() => {
-        router.push(role == "creatives" ? "/thelounge" : "/");
-      }, 1500);
+      router.push(role == "creatives" ? "/creatives-dashboard" : "/agencies-dashboard");
     } else if (apiResponse?.type == "error") {
       showAnimatedAlert({
         type: "error",
