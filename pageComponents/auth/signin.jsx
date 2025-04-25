@@ -40,9 +40,7 @@ const SignIn = ({ role }) => {
       showAnimatedAlert({
         type: "success",
         title: "Sign In Success",
-        message:
-          apiResponse?.data?.message ||
-          `Redirecting to ${role == "creatives" ? "Creatives Dashboard" : "Agencies Dashboard"}...`,
+        message: apiResponse?.data?.message || `Redirecting to ${role == "creatives" ? "Creatives Dashboard" : "Agencies Dashboard"}...`,
         autoDismiss: true,
         dismissTime: 1500,
       });
