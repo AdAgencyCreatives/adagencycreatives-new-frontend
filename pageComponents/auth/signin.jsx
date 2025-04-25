@@ -42,7 +42,7 @@ const SignIn = ({ role }) => {
         title: "Sign In Success",
         message: apiResponse?.data?.message || `Redirecting to ${role == "creatives" ? "Creatives Dashboard" : "Agencies Dashboard"}...`,
         autoDismiss: true,
-        dismissTime: 1500,
+        dismissTime: 500,
       });
       router.push(role == "creatives" ? "/creatives-dashboard" : "/agencies-dashboard");
     } else if (apiResponse?.type == "error") {
