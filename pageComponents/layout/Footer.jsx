@@ -6,9 +6,6 @@ const Footer = () => {
   const pathname = usePathname();
   const isHomePage = pathname === "/" || pathname === "/home" || pathname === "/home/";
 
-  console.log("Current Pathname:", pathname); // Debugging line
-  console.log("Is Home Page:", isHomePage); // Debugging line
-
   return (
     <>
       {isHomePage ? (
