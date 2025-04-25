@@ -24,7 +24,7 @@ const Header = () => {
 
   return (
     <header
-      className={`flex items-center justify-between py-6 px-10 z-30 ${scrolled ? "bg-black/50" : "bg-transparent"
+      className={`flex items-center justify-between py-6 px-10 z-30 ${scrolled ? "bg-black/75" : "bg-transparent"
         } fixed w-full top-0`}
     >
       <Link href="/" className="cursor-pointer">

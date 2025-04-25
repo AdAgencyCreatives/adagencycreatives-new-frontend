@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { useContext, useEffect, useState } from "react";
 import { Context as AuthContext } from "contexts/AuthContext";
 
-const SignOutLink = ({placement}) => {
+const SignOutLink = ({placement=""}) => {
   const {
     state: { user },
     logout,
