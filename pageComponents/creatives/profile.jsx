@@ -5,15 +5,22 @@ import { profileMenu, infoMenu, user } from './constants';
 const CreativesProfile = () => {
   return (
     <section className="max-w-[1600px] mx-auto px-10 pt-40">
-      <div className="grid grid-cols-3 gap-14">
-        <div className="rounded-4xl border-(--ad-gray) border shadow-(--ad-box-shadow) px-10 py-10 text-center col-span-2">
+      <div className="grid grid-cols-3 gap-14 relative">
+        <div
+          className="spline-container inset-0 m-auto z-0"
+          dangerouslySetInnerHTML={{ __html: '<spline-viewer url="https://prod.spline.design/8Kk8n4FoXe4tjJBu/scene.splinecode"></spline-viewer>' }}
+        ></div>
+        <div 
+          className="rounded-4xl border-(--ad-gray) border shadow-(--ad-box-shadow) px-10 py-10 text-center col-span-2 bg-black/30 relative z-1"
+          style={{ backdropFilter: "var(--backdrop-filter, none)" }}
+        >
           <div className="flex gap-10 items-start">
             <div className="relative flex flex-col justify-between items-center gap-16 w-3xs shrink-0">
               <div className="relative flex items-center">
                 <Image src={user.image} width="256" height="162" alt={user.title} className="image-mask" />
               </div>
               <div className="w-[67px] h-[67px] absolute top-0 right-0 left-0 bottom-0 flex justify-center mx-auto my-auto">
-                  <Image src="/aac-logo.png" width="67" height="67" alt={user.title} className="hover:rotate-45 transition-transform duration-3000" />
+                <Image src="/aac-logo.png" width="67" height="67" alt={user.title} className="hover:rotate-45 transition-transform duration-3000" />
               </div>
               <div>
                 <div className="font-alta font-bold text-[30px] text-yellow-400">{user.name}</div>
@@ -37,7 +44,10 @@ const CreativesProfile = () => {
             </div>
           </div>
         </div>
-        <div className="rounded-4xl border-(--ad-gray) border shadow-(--ad-box-shadow) px-10 py-10">
+        <div 
+          className="rounded-4xl border-(--ad-gray) border shadow-(--ad-box-shadow) px-10 py-10 bg-black/30 relative z-1"
+          style={{ backdropFilter: "var(--backdrop-filter, none)" }}
+        >
           <div className="flex flex-col gap-14">
             <div>
               <p className="font-alta font-bold uppercase text-base text-yellow-400 mb-2">Years of Experience</p>

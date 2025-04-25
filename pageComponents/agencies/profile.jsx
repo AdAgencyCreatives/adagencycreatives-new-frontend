@@ -6,8 +6,15 @@ import SocialItem from 'components/SocialItem';
 const AgenciesProfile = () => {
   return (
     <section className="max-w-[1600px] mx-auto px-10 pt-40">
-      <div className="grid grid-cols-3 gap-14">
-        <div className="rounded-4xl border-(--ad-gray) border shadow-(--ad-box-shadow) px-10 py-10 text-center col-span-2">
+      <div className="grid grid-cols-3 gap-14 relative">
+        <div
+          className="spline-container inset-0 m-auto z-0"
+          dangerouslySetInnerHTML={{ __html: '<spline-viewer url="https://prod.spline.design/8Kk8n4FoXe4tjJBu/scene.splinecode"></spline-viewer>' }}
+        ></div>
+        <div 
+          className="rounded-4xl border-(--ad-gray) border shadow-(--ad-box-shadow) px-10 py-10 text-center col-span-2 bg-black/30 relative z-1"
+          style={{ backdropFilter: "var(--backdrop-filter, none)" }}
+        >
           <div className="flex gap-10 items-start">
             <div className="relative flex flex-col justify-between items-center gap-16 w-3xs shrink-0">
               <div className="relative flex items-center">
@@ -38,7 +45,10 @@ const AgenciesProfile = () => {
             </div>
           </div>
         </div>
-        <div className="rounded-4xl border-(--ad-gray) border shadow-(--ad-box-shadow) px-10 py-10">
+        <div 
+          className="rounded-4xl border-(--ad-gray) border shadow-(--ad-box-shadow) px-10 py-10 bg-black/30 relative z-1"
+          style={{ backdropFilter: "var(--backdrop-filter, none)" }}
+        >
           <div className="flex flex-col gap-14">
             <div>
               <p className="font-alta font-bold uppercase text-base text-yellow-400 mb-2">Workplace Preference</p>

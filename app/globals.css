@@ -40,6 +40,7 @@
   --font-alta: 'AltaRegular';
   --font-hass75: 'Hass75';
   --font-hass65: 'Hass65';
+  --backdrop-filter: blur(1px);
 }
 
 @media (prefers-color-scheme: dark) {
