@@ -15,12 +15,12 @@ const Creatives = () => {
   return (
     <div className="bg-black text-white pt-[100px]">
       {/* Hero */}
-      <section className="relative py-40 text-center max-w-[1600px] mx-auto px-10">
+      <section className="relative py-40 text-center mx-auto px-10">
         <PageHeader
           page=""
           heading="Creatives"
         />
-        <div className="space-x-6 text-[1.7rem] text-yellow-400 mt-20">
+        <div className="space-x-4 md:space-x-6 mt-6 md:mt-20 text-sm md:text-[1.7rem] text-yellow-400 relative z-1">
           <a href="#">create pro®file</a>
           <a href="#">search jobs</a>
           <a href="#">resources</a>
@@ -28,8 +28,8 @@ const Creatives = () => {
       </section>
 
       {/* Featured Jobs */}
-      <section className="py-10 max-w-[1600px] mx-auto px-10">
-        <h2 className="text-8xl font-bold mb-10">Featured Jobs</h2>
+      <section className="p-6 md:py-10 md:px-10 mx-auto">
+        <h2 className="text-[22px] md:text-[78px] 3xl:text-[104px] 4xl:text-[139px] font-bold mb-10">Featured Jobs</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {featuredJobs.map((job, idx) => (
             <>
@@ -50,7 +50,7 @@ const Creatives = () => {
 
       {/* Resources */}
       <section className="py-20 max-w-[1600px] mx-auto px-10">
-        <h2 className="text-8xl font-bold mb-10 text-right pb-20">Resources</h2>
+        <h2 className="text-[22px] md:text-[78px] 3xl:text-[104px] 4xl:text-[139px] font-bold mb-10 text-right pb-20">Resources</h2>
         <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-15 w-full items-center relative py-20">
           {/* Background */}
           <div className="absolute inset-0 z-0">
@@ -113,7 +113,7 @@ const Creatives = () => {
           </video>
         </div>
         <div className="relative z-1 max-w-[1600px] mx-auto px-10">
-          <h2 className="text-8xl font-bold">Featured Agencies</h2>
+          <h2 className="text-[22px] md:text-[78px] 3xl:text-[104px] 4xl:text-[139px] font-bold">Featured Agencies</h2>
           <div className="flex gap-46 overflow-x-scroll pb-4 -mt-3">
             {featuredAgencies.map((agency, idx) => (
               <AgenciesLoopItem key={idx} agency={agency} />
@@ -129,7 +129,7 @@ const Creatives = () => {
 
       {/* Featured Creatives */}
       <section className="py-10 max-w-[1600px] mx-auto px-10">
-        <h2 className="text-8xl font-bold mb-10 text-right">Featured Creatives</h2>
+        <h2 className="text-[22px] md:text-[78px] 3xl:text-[104px] 4xl:text-[139px] font-bold mb-10 text-right">Featured Creatives</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {featuredCreatives.map((creative, idx) => (
             <>
@@ -163,7 +163,7 @@ const Creatives = () => {
 
       {/* Create Profile */}
       <section className="py-20 max-w-[1600px] mx-auto px-10">
-        <h2 className="text-8xl font-bold">Create Pro®file</h2>
+        <h2 className="text-[22px] md:text-[78px] 3xl:text-[104px] 4xl:text-[139px] font-bold">Create Pro®file</h2>
         <p className="text-3xl uppercase font-hass65 py-20">Our Method</p>
         <p className="mt-4 text-4xl text-gray-300">Create. Inspire. <span className="text-yellow-400">Get Hired!</span></p>
         

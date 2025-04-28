@@ -4,6 +4,7 @@
     "baseUrl": ".",
     "checkJs": true,
     "paths": {
+      "contexts/*": ["contexts/*"],
       "pageComponents/*": ["pageComponents/*"],
       "components/*": ["components/*"],
       "icons/*": ["icons/*"]

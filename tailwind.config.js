@@ -8,7 +8,8 @@ module.exports = {
         './components/**/**/*.{js,ts,jsx,tsx}',
         './pageComponents/**/*.{js,ts,jsx,tsx}',
         './pageComponents/**/**/*.{js,ts,jsx,tsx}',
-        './icons/**'
+        './icons/**',
+        './contexts/**/**/*.{js,ts,jsx,tsx}',
       ],
       fontFamily: {
         hass75: ['Hass75', 'sans-serif'],
