@@ -14,17 +14,17 @@ export default function Accordion({ items }) {
   return (
     <div className="w-full divide-y divide-gray-700">
       {items.map((item, index) => (
-        <div key={index} className="py-2">
+        <div key={index} className="py-2 border-b border-[#6E6E6E]">
           <button
             onClick={() => toggle(index)}
-            className="w-full flex justify-between items-center text-left font-semibold text-white hover:text-yellow-400 transition"
+            className="w-full flex justify-between items-center text-left md:font-bold text-white hover:text-yellow-400 transition text-lg 3xl:text-2xl 4xl:text-3xl"
           >
             <span>{item.title}</span>
-            <HiChevronDown
+            {/* <HiChevronDown
               className={`w-5 h-5 transition-transform duration-300 ${
                 openIndex === index ? 'rotate-180' : ''
               }`}
-            />
+            /> */}
           </button>
 
           <AnimatePresence initial={false}>
@@ -41,7 +41,7 @@ export default function Accordion({ items }) {
                 transition={{ duration: 0.3, ease: 'easeInOut' }}
                 className="overflow-hidden"
               >
-                <div className="mt-2 text-gray-300 font-wix text-[18px] py-6 px-10">{item.content}</div>
+                <div className="mt-2 text-gray-300 font-wix text-sm md:text-lg 3xl:text-2xl 4xl:text-[32px] py-2 px-0 md:py-6 md:px-10">{item.content}</div>
               </motion.div>
             )}
           </AnimatePresence>

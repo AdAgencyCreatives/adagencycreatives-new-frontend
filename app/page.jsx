@@ -18,7 +18,7 @@ export default function Home() {
         </video>
       </div>
       {/* Center Split Section */}
-      <section className="w-[78%] mx-auto z-9 flex flex-col md:flex-row px-0 md:px-10 xl:px-15 2xl:px-50 items-center justify-center h-full w-full gap-10 md:gap-0 home">
+      <section className="w-[78%] mx-auto z-9 grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] px-0 md:px-10 xl:px-15 2xl:px-50 items-center justify-between h-full w-full gap-10 md:gap-0 home">
         {/* Left Column */}
         <div className="flex flex-1 w-1.0 h-1.0 order-2 md:order-1">
           <div className="relative flex flex-1 flex-col justify-center md:aspect-square">
@@ -39,7 +39,7 @@ export default function Home() {
               <div className="flex gap-4 justify-center md:justify-start items-center">
                 <Link
                   href="/jobs-directory"
-                  className="text-[19px] xl:text-[21px] 2xl:text-[29px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a] block md:hidden"
+                  className="text-lg transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a] block md:hidden"
                 >
                   search jobs
                 </Link>
@@ -49,8 +49,8 @@ export default function Home() {
                   className="inline-flex items-center justify-start text-white gap-4 cursor-pointer flex-row-reverse md:flex-row"
                 >
                   <LiaSignInAltSolid className="text-[36px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a]" />
-                  <span className="text-[19px] xl:text-[21px] 2xl:text-[24px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a]">
-                    sign in
+                  <span className="text-lg 3xl:text-2xl 4xl:text-[32px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a]">
+                    Sign in
                   </span>
                 </Link>
               </div>
@@ -59,15 +59,15 @@ export default function Home() {
         </div>
 
         {/* Center Logo */}
-        <div className="relative shrink-0 order-1 md:order-2 p-20 md:p-0">
+        <div className="relative shrink-0 order-1 md:order-2 p-20 md:p-0 w-[112px] md:w-[300px] 3xl:w-[400px] 4xl:w-[533px]">
           <div
-            className="absolute inset-0 w-[100%] h-[100%] inline-block md:hidden rounded-full overflow-hidden"
+            className="absolute inset-0 w-[224px] h-[224px] mx-auto my-auto inline-block md:hidden rounded-full overflow-hidden z-0 aspect-square"
             dangerouslySetInnerHTML={{
               __html:
                 '<spline-viewer url="https://prod.spline.design/8Kk8n4FoXe4tjJBu/scene.splinecode"></spline-viewer>',
             }}
           ></div>
-          <div className="w-30 h-30 md:w-90 md:h-90">
+          <div className="w-[112px] md:w-[300px] 3xl:w-[400px] 4xl:w-[533px] mx-auto z-1 relative">
             <Link href={"/thelounge"}>
               <img
                 src="/aac-logo-round.png"
@@ -100,7 +100,7 @@ export default function Home() {
             <div className="flex gap-4 justify-center md:justify-end items-center">
               <Link
                 href="/creatives-directory"
-                className="text-[19px] xl:text-[21px] 2xl:text-[29px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a] block md:hidden"
+                className="text-lg transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a] block md:hidden"
               >
                 hire talent
               </Link>
@@ -109,8 +109,8 @@ export default function Home() {
                 href="/agencies-signin"
                 className="inline-flex items-center justify-end text-white gap-4 cursor-pointer"
               >
-                <span className="text-[19px] xl:text-[21px] 2xl:text-[24px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a]">
-                  sign in
+                <span className="text-lg 3xl:text-2xl 4xl:text-[32px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a]">
+                  Sign in
                 </span>
                 <LiaSignInAltSolid className="text-[36px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a]" />
               </Link>
