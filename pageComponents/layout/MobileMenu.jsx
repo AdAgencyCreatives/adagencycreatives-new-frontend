@@ -45,7 +45,7 @@ const MobileMenu = () => {
 
       {/* Sidebar */}
       <div
-        className={`p-4 space-y-4 overflow-y-auto	z-20 fixed top-0 left-0 w-80 h-full bg-neutral transform transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : '-translate-x-full'
+        className={`p-4 space-y-4 overflow-y-auto	z-20 fixed top-0 left-0 w-full h-full bg-black transform transition-transform duration-500 ease-in-out ${isOpen ? 'translate-x-0' : '-translate-x-full'
           }`}
       >
         <div className="flex items-center justify-between">
