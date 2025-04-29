@@ -5,7 +5,10 @@ import { useRouter } from "next/navigation";
 import { useContext, useEffect, useState } from "react";
 import { Context as AuthContext } from "contexts/AuthContext";
 
-const SignOutLink = ({placement=""}) => {
+/**
+ * @param {{ placement: string; setIsOpen?: import("react").Dispatch<import("react").SetStateAction<boolean>> }} props
+ */
+const SignOutLink = ({ placement="", setIsOpen }) => {
   const {
     state: { user },
     logout,
@@ -23,6 +26,8 @@ const SignOutLink = ({placement=""}) => {
           router.push("/");
         }
       });
+
+      setIsOpen && setIsOpen(false);
     } catch (error) {}
   };
 

@@ -4,7 +4,10 @@ import { usePathname, useRouter } from "next/navigation";
 import { useContext } from "react";
 import { Context as AuthContext } from "contexts/AuthContext";
 
-const PrimaryMenu = () => {
+/**
+ * @param {{ setIsOpen?: import("react").Dispatch<import("react").SetStateAction<boolean>> }} props
+ */
+const PrimaryMenu = ({ setIsOpen }) => {
   const pathname = usePathname();
   const isHomePage = pathname === "/";
   const isCreativesPage = pathname === "/creatives";
@@ -36,6 +39,7 @@ const PrimaryMenu = () => {
       <Link
         href="/faq"
         className="text-[19px] xl:text-[21px] 2xl:text-[29px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a] cursor-pointer"
+        onClick={() => setIsOpen && setIsOpen(false)}
       >
         faq
       </Link>
@@ -44,12 +48,14 @@ const PrimaryMenu = () => {
           <Link
             href="/creatives"
             className="text-[19px] xl:text-[21px] 2xl:text-[29px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a] cursor-pointer"
+            onClick={() => setIsOpen && setIsOpen(false)}
           >
             creatives
           </Link>
           <Link
             href="/agencies"
             className="text-[19px] xl:text-[21px] 2xl:text-[29px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a] cursor-pointer"
+            onClick={() => setIsOpen && setIsOpen(false)}
           >
             agencies
           </Link>
@@ -59,6 +65,7 @@ const PrimaryMenu = () => {
         <Link
           href="/about"
           className="text-[19px] xl:text-[21px] 2xl:text-[29px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a] cursor-pointer"
+          onClick={() => setIsOpen && setIsOpen(false)}
         >
           about
         </Link>
@@ -68,6 +75,7 @@ const PrimaryMenu = () => {
           <Link
             href="#"
             className="text-[19px] xl:text-[21px] 2xl:text-[29px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a] cursor-pointer"
+            onClick={() => setIsOpen && setIsOpen(false)}
           >
             search
           </Link>
@@ -75,6 +83,7 @@ const PrimaryMenu = () => {
             <Link
               href="#"
               className="text-[19px] xl:text-[21px] 2xl:text-[29px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a] cursor-pointer"
+              onClick={() => setIsOpen && setIsOpen(false)}
             >
               featured jobs
             </Link>
@@ -83,6 +92,7 @@ const PrimaryMenu = () => {
             <Link
               href="#"
               className="text-[19px] xl:text-[21px] 2xl:text-[29px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a] cursor-pointer"
+              onClick={() => setIsOpen && setIsOpen(false)}
             >
               featured creatives
             </Link>
@@ -93,11 +103,12 @@ const PrimaryMenu = () => {
         <Link
           href="/thelounge"
           className="text-[19px] xl:text-[21px] 2xl:text-[29px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a] cursor-pointer"
+          onClick={() => setIsOpen && setIsOpen(false)}
         >
           the lounge
         </Link>
       )}
-      {user && <SignOutLink placement={"header"} />}
+      {user && <SignOutLink placement="header" setIsOpen={setIsOpen} />}
     </nav>
   );
 };
