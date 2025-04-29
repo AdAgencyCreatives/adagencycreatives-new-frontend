@@ -58,7 +58,7 @@ const MobileMenu = () => {
           </Link>
           <XMarkIcon className="w-8 ml-2" onClick={toggleSidebar} />
         </div>
-        <PrimaryMenu />
+        <PrimaryMenu setIsOpen={setIsOpen} />
       </div>
 
       {/* Overlay (closes sidebar when clicked) */}
