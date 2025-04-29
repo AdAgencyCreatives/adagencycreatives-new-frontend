@@ -49,7 +49,11 @@ const MobileMenu = () => {
           }`}
       >
         <div className="flex items-center justify-between">
-          <Link href="/" className="cursor-pointer">
+          <Link 
+            href="/" 
+            className="cursor-pointer"
+            onClick={() => setIsOpen(false)}
+          >
             <img
               src="/aac-logo-header.png"
               alt="Logo"
