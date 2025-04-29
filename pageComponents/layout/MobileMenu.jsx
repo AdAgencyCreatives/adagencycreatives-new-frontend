@@ -52,7 +52,7 @@ const MobileMenu = () => {
           <Link 
             href="/" 
             className="cursor-pointer"
-            onClick={() => setIsOpen && setIsOpen(false)}
+            onClick={() => setIsOpen(false)}
           >
             <img
               src="/aac-logo-header.png"
