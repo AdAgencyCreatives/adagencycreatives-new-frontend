@@ -59,7 +59,7 @@ export default function Home() {
         </div>
 
         {/* Center Logo */}
-        <div className="relative shrink-0 order-1 md:order-2 p-20 md:p-0 w-[112px] md:w-[300px] 3xl:w-[400px] 4xl:w-[533px]">
+        <div className="relative shrink-0 order-1 md:order-2 p-20 md:p-0">
           <div
             className="absolute inset-0 w-[224px] h-[224px] mx-auto my-auto inline-block md:hidden rounded-full overflow-hidden z-0 aspect-square"
             dangerouslySetInnerHTML={{

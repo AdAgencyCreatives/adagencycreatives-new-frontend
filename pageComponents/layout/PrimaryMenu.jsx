@@ -24,7 +24,7 @@ const PrimaryMenu = () => {
   } = useContext(AuthContext);
   
   return (
-    <nav className="flex flex-col md:flex-row gap-6 font-bold">
+    <nav className="flex flex-col items-center md:flex-row gap-6 font-bold">
       {/* {!isHomePage && (
         <Link
           href="/"
