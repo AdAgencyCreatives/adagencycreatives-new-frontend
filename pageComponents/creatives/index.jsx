@@ -11,6 +11,7 @@ import { featuredCreatives } from 'constants/creatives';
 import { featuredAgencies } from 'constants/agencies';
 import AgenciesLoopItem from 'pageComponents/agencies/loop/item';
 import { useEffect, useState } from 'react';
+import CreativeLoopItem2 from './loop/item2';
 
 const Creatives = () => {
   const [width, setWidth] = useState(0);
@@ -127,17 +128,17 @@ const Creatives = () => {
             Your browser does not support the video tag.
           </video>
         </div>
-        <div className="relative z-1 px-10">
-          <h2 className="text-[22px] md:text-[78px] 3xl:text-[104px] 4xl:text-[139px] font-bold">Featured Agencies</h2>
-          <div className="flex gap-46 overflow-x-scroll pb-4 -mt-3">
+        <div className="relative z-1 px-6 md:px-10">
+          <h2 className="text-[22px] md:text-[78px] 3xl:text-[104px] 4xl:text-[139px] 2xl:px-20 3xl:px-40 font-bold">Featured Agencies</h2>
+          <div className="flex gap-6 md:gap-51 3xl:gap-60 4xl:gap-90 overflow-x-scroll py-10 -mt-3 2xl:mx-20 3xl:mx-40 overflow-hidden">
             {featuredAgencies.map((agency, idx) => (
               <AgenciesLoopItem key={idx} agency={agency} />
             ))}
           </div>
-          <div className="flex items-center justify-end mt-4">
+          <div className="flex items-center justify-end mt-4 2xl:px-20 3xl:px-40">
             <Image src="/aac-logo-yellow.png" alt="" width="67" height="67" className="hover:rotate-45 transition-transform duration-3000" />
             <div className="border-yellow-400 border-2 w-10"></div>
-            <Link href="/" className="border-yellow-400 border-4 uppercase text-yellow-400 rounded-full text-sm px-10 py-4 cursor-pointer hover:border-white hover:bg-yellow-400 hover:text-white">Get Featured</Link>
+            <Link href="/" className="border-yellow-400 border-4 uppercase text-yellow-400 rounded-full text-[8px] md:text-lg 3xl:text-2xl 4xl:text-[28px] px-8 py-4 3xl:px-12 4xl:px-16 4xl:py-6 cursor-pointer hover:border-white hover:bg-yellow-400 hover:text-white">Get Featured</Link>
           </div>
         </div>
       </section>
@@ -189,7 +190,7 @@ const Creatives = () => {
       </section>
 
       {/* Create Profile */}
-      <section className="py-20 px-6 md:px-10">
+      <section className="md:py-20 px-6 md:px-10">
         <h2 id="create-profile" className="text-[22px] md:text-[78px] 3xl:text-[104px] 4xl:text-[143px] 2xl:px-20 3xl:px-40 font-bold">Create Pro®file</h2>
         <p className="text-xs md:text-3xl 3xl:text-[40px] 4xl:text-[52.5px] uppercase font-hass65 py-20">Our Method</p>
         <p className="mt-4 text-sm md:text-[42px] 3xl:text-[56px] 4xl:text-[75px] text-gray-300">Create. Inspire. <span className="text-yellow-400">Get Hired!</span></p>
@@ -211,30 +212,32 @@ const Creatives = () => {
             <p className="text-white text-xs md:text-base 3xl:text-2xl 4xl:text-[32px]">Let your work open doors.<br />Brands, agencies, and visionary clients are already here - searching, browsing, booking. With a Pro®file, you're instantly visible and ready to be contacted, commissioned, or called in. Whether it’s a dream gig or a long-term collab, this is where it begins. With our help, on your terms.</p>
           </div>
         </div>
-
-        <div className="mx-[16px] grid grid-cols-3 gap-10 justify-between outline outline-[16px] shadow-(--ad-box-shadow) outline-while rounded-2xl mt-30 py-2 px-20 mb-10 relative">
-          <div>
-            <Image src="/creatives/creative17.avif" width="720" height="720" alt="" className="image-mask" />
-          </div>
-          <div className="space-y-4 pt-10 pb-20">
+        
+        <div className="md:px-10 2xl:px-20 3xl:px-40">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-1 md:gap-10 justify-between outline outline-4 md:outline-8 2xl:outline-16 shadow-(--ad-box-shadow) outline-while rounded-2xl mt-30 px-2 md:px-10 py-2 pb-10 md:pb-20 mb-2 relative mx-[4px] md:mx-[16px]">
+            <div className="max-md:hidden">
+              <Image src="/creatives/creative17.avif" width="720" height="720" alt="" className="image-mask" />
+            </div>
+            <div className="space-y-4 md:pt-10 pb-20">
+              <div>
+                <h2 className="font-alta text-lg md:text-[34px] 3xl:text-[46px] 4xl:text-[60px]">ANZO VALLANTE</h2>
+                <p className="lowercase text-yellow-400 text-xs md:text-2xl 3xl:text-3xl 4xl:text-[38px]">Creative Director</p>
+              </div>
+              <p className="font-alta text-xs md:text-sm 3xl:text-lg 4xl:text-2xl">NEW YORK, NY</p>
+              <p className="font-alta text-xs md:text-lg 3xl:text-[32px] 4xl:text-[32px] text-yellow-400">ABOUT</p>
+              <p className="font-wix text-xs md:text-base 3xl:text-2xl 4xl:text-[28px]">I'm an Associate Creative Director based in New York City; with a focus on art direction, brand storytelling, and concepting big ideas. I’ve been fortunate to work with brands like Keds, Louis XIII, Marantz, Wrangler, J.Crew, and USTA, crafting campaigns that blend creativity with strategy.</p>
+              <Link href="/" className="font-wix text-xs md:text-base 3xl:text-2xl 4xl:text-[28px] text-yellow-400 underline">Read more...</Link>
+            </div>
             <div>
-              <h2 className="font-alta font-bold text-[44px] leading-[40px]">ANZO VALLANTE</h2>
-              <p className="lowercase text-yellow-400">Creative Director</p>
+              <div className="max-w-[130px] md:max-w-[220px] 3xl:max-w-[295px] 4xl:max-w-[393px] mx-auto -mt-12 3xl:-mt-16 bg-black relative z-1">
+                <CreativeLoopItem2 
+                  creative={{ title: 'Senior UX User Experience Designer', image: '/creatives/creative1.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' }}
+                />
+              </div>
             </div>
-            <p className="font-alta text-[16px] font-bold">NEW YORK, NY</p>
-            <p className="font-alta text-[16px] text-yellow-400 font-bold">ABOUT</p>
-            <p className="font-wix text-[18px]">I'm an Associate Creative Director based in New York City; with a focus on art direction, brand storytelling, and concepting big ideas. I’ve been fortunate to work with brands like Keds, Louis XIII, Marantz, Wrangler, J.Crew, and USTA, crafting campaigns that blend creativity with strategy.</p>
-            <Link href="/" className="font-wix text-[18px] text-yellow-400 underline">Read more...</Link>
-          </div>
-          <div>
-            <div className="max-w-[265px] mx-auto -mt-16 bg-black relative z-1">
-              <CreativeLoopItem 
-                creative={{ title: 'Senior UX User Experience Designer', image: '/creatives/creative1.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' }}
-              />
+            <div className="absolute text-center w-full bottom-10">
+              <Link href="/" className="border-yellow-400 border-4 uppercase text-yellow-400 rounded-full text-xs 3xl:text-lg 4xl:text-2xl uppercase px-10 md:px-40 py-4 cursor-pointer hover:border-white hover:bg-yellow-400 hover:text-white">CREATE PRO®FILE</Link>
             </div>
-          </div>
-          <div className="absolute text-center w-full bottom-8">
-            <Link href="/" className="border-yellow-400 border-4 uppercase text-yellow-400 rounded-full text-[16px] uppercase px-40 py-4 cursor-pointer hover:border-white hover:bg-yellow-400 hover:text-white">CREATE PRO®FILE</Link>
           </div>
         </div>
       </section>
