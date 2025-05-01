@@ -130,7 +130,7 @@ const TheLounge = () => {
 
               {idx === 15 && (
                 <div key={`profile-${idx}`} className="col-span-2 text-center flex flex-col justify-center gap-10">
-                  <h2 className="text-[48px] leading-[62px]">Want<br />Your Pro®file<br />Featured?</h2>
+                  <h2 className="text-[48px] leading-[62px]">Want<br />Your ProFile™<br />Featured?</h2>
                   <div>
                     <Link href="/" className="border-yellow-400 border-4 uppercase text-yellow-400 rounded-full text-sm px-8 py-4 cursor-pointer hover:border-white hover:bg-yellow-400 hover:text-white">See How</Link>
                   </div>

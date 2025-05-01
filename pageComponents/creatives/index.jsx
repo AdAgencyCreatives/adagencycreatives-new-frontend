@@ -32,7 +32,7 @@ const Creatives = () => {
           heading="Creatives"
         />
         <div className="space-x-4 md:space-x-6 mt-6 md:mt-20 text-sm md:text-2xl 3xl:text-[32px] 4xl:text-[42.67px] text-yellow-400 relative z-1">
-          <a href="#create-profile">create pro®file</a>
+          <a href="#create-profile">create ProFile™</a>
           <a href="#search-jobs">search jobs</a>
           <a href="#resources">resources</a>
         </div>
@@ -167,7 +167,7 @@ const Creatives = () => {
 
               {width > 767 && idx === 15 && (
                 <div key={`profile-${idx}`} className="col-span-2 text-center flex flex-col justify-center gap-10">
-                  <h2 className="text-2xl md:text-[44px] md:leading-[58.5px] 3xl:text-[57.07px] 3xl:leading-[78px] 4xl:text-[76.09px] 4xl:leading-[104px]">Want<br />Your Pro®file<br />Featured?</h2>
+                  <h2 className="text-2xl md:text-[44px] md:leading-[58.5px] 3xl:text-[57.07px] 3xl:leading-[78px] 4xl:text-[76.09px] 4xl:leading-[104px]">Want<br />Your ProFile™<br />Featured?</h2>
                   <div>
                     <Link href="/" className="border-yellow-400 border-4 uppercase text-yellow-400 rounded-full text-xs md:text-sm 3xl:text-lg 4xl:text-2xl px-8 py-4 3xl:px-12 4xl:px-16 4xl:py-6 cursor-pointer hover:border-white hover:bg-yellow-400 hover:text-white">See How</Link>
                   </div>
@@ -178,7 +178,7 @@ const Creatives = () => {
 
               {width < 767 && idx === 15 && (
                 <div key={`profile-${idx}`} className="col-span-2 text-center flex flex-col justify-center gap-10">
-                  <h2 className="text-2xl md:text-[44px] md:leading-[58.5px] 3xl:text-[57.07px] 3xl:leading-[78px] 4xl:text-[76.09px] 4xl:leading-[104px]">Want<br />Your Pro®file<br />Featured?</h2>
+                  <h2 className="text-2xl md:text-[44px] md:leading-[58.5px] 3xl:text-[57.07px] 3xl:leading-[78px] 4xl:text-[76.09px] 4xl:leading-[104px]">Want<br />Your ProFile™<br />Featured?</h2>
                   <div>
                     <Link href="/" className="border-yellow-400 border-4 uppercase text-yellow-400 rounded-full text-xs md:text-sm 3xl:text-lg 4xl:text-2xl px-8 py-4 3xl:px-12 4xl:px-16 4xl:py-6 cursor-pointer hover:border-white hover:bg-yellow-400 hover:text-white">See How</Link>
                   </div>
@@ -191,25 +191,25 @@ const Creatives = () => {
 
       {/* Create Profile */}
       <section className="md:py-20 px-6 md:px-10">
-        <h2 id="create-profile" className="text-[22px] md:text-[78px] 3xl:text-[104px] 4xl:text-[143px] 2xl:px-20 3xl:px-40 font-bold">Create Pro®file</h2>
+        <h2 id="create-profile" className="text-[22px] md:text-[78px] 3xl:text-[104px] 4xl:text-[143px] 2xl:px-20 3xl:px-40 font-bold">Create ProFile™</h2>
         <p className="text-xs md:text-3xl 3xl:text-[40px] 4xl:text-[52.5px] uppercase font-hass65 py-20">Our Method</p>
         <p className="mt-4 text-sm md:text-[42px] 3xl:text-[56px] 4xl:text-[75px] text-gray-300">Create. Inspire. <span className="text-yellow-400">Get Hired!</span></p>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-left mt-16">
           <div className="font-wix flex flex-col gap-4">
             <h3 className="text-[38px] md:text-[142px] 3xl:text-[190px] 4xl:text-[253.33px] font-bold">1</h3>
-            <p className="text-yellow-400 font-hass75 text-xs md:text-lg 3xl:text-2xl 4xl:text-[32px] uppercase">CREATE PRO®FILE</p>
+            <p className="text-yellow-400 font-hass75 text-xs md:text-lg 3xl:text-2xl 4xl:text-[32px] uppercase">CREATE ProFile™</p>
             <p className="text-white text-xs md:text-base 3xl:text-2xl 4xl:text-[32px]">Claim your space on the web.<br />Design your own stunning profile page - crafted to impress, built to connect. Add your work, your voice, your values. You’ll instantly get a sleek webpage with your personal link and a downloadable version ready to share anywhere - from DMs to boardrooms. It's free. It’s yours. It’s the start of everything.</p>
           </div>
           <div className="font-wix flex flex-col gap-4">
             <h3 className="text-[38px] md:text-[142px] 3xl:text-[190px] 4xl:text-[253.33px] font-bold">2</h3>
             <p className="text-yellow-400 font-hass75 text-xs md:text-lg 3xl:text-2xl 4xl:text-[32px] uppercase">GET FEATURED & SHOWCASE</p>
-            <p className="text-white text-xs md:text-base 3xl:text-2xl 4xl:text-[32px]">Be seen where it matters.<br />Your Pro®file becomes part of a curated network - handpicked creatives, thinkers, and builders. Stand out in The Lounge, and The Agencies Homepage where talent is more than a portfolio - it’s a presence. No chasing. No noise. Just the right eyes on your work.</p>
+            <p className="text-white text-xs md:text-base 3xl:text-2xl 4xl:text-[32px]">Be seen where it matters.<br />Your ProFile™ becomes part of a curated network - handpicked creatives, thinkers, and builders. Stand out in The Lounge, and The Agencies Homepage where talent is more than a portfolio - it’s a presence. No chasing. No noise. Just the right eyes on your work.</p>
           </div>
           <div className="font-wix flex flex-col gap-4">
             <h3 className="text-[38px] md:text-[142px] 3xl:text-[190px] 4xl:text-[253.33px] font-bold">3</h3>
             <p className="text-yellow-400 font-hass75 text-xs md:text-lg 3xl:text-2xl 4xl:text-[32px] uppercase">GET HIRED</p>
-            <p className="text-white text-xs md:text-base 3xl:text-2xl 4xl:text-[32px]">Let your work open doors.<br />Brands, agencies, and visionary clients are already here - searching, browsing, booking. With a Pro®file, you're instantly visible and ready to be contacted, commissioned, or called in. Whether it’s a dream gig or a long-term collab, this is where it begins. With our help, on your terms.</p>
+            <p className="text-white text-xs md:text-base 3xl:text-2xl 4xl:text-[32px]">Let your work open doors.<br />Brands, agencies, and visionary clients are already here - searching, browsing, booking. With a ProFile™, you're instantly visible and ready to be contacted, commissioned, or called in. Whether it’s a dream gig or a long-term collab, this is where it begins. With our help, on your terms.</p>
           </div>
         </div>
         
@@ -236,7 +236,7 @@ const Creatives = () => {
               </div>
             </div>
             <div className="absolute text-center w-full bottom-10">
-              <Link href="/" className="border-yellow-400 border-4 uppercase text-yellow-400 rounded-full text-xs 3xl:text-lg 4xl:text-2xl uppercase px-10 md:px-40 py-4 cursor-pointer hover:border-white hover:bg-yellow-400 hover:text-white">CREATE PRO®FILE</Link>
+              <Link href="/" className="border-yellow-400 border-4 uppercase text-yellow-400 rounded-full text-xs 3xl:text-lg 4xl:text-2xl uppercase px-10 md:px-40 py-4 cursor-pointer hover:border-white hover:bg-yellow-400 hover:text-white">CREATE ProFile™</Link>
             </div>
           </div>
         </div>
