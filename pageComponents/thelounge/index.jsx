@@ -66,40 +66,40 @@ const TheLounge = () => {
             </video>
           </div>
           <SpotlightLoopItem 
-            spotlight={{ title: 'art director', name: 'AnZO VALLANTE', image: '/resource1.avif', href: '/resources-internship' }}
+            spotlight={{ title: 'art director', name: 'Matthew Marcos', image: '/resource1.avif', href: '/resources-internship' }}
           />
           <SpotlightLoopItem 
-            spotlight={{ title: 'art director', name: 'AnZO VALLANTE', image: '/resource1.avif', href: '/resources-inspiration' }}
+            spotlight={{ title: 'art director', name: 'Matthew Marcos', image: '/resource1.avif', href: '/resources-inspiration' }}
           />
           <SpotlightLoopItem 
-            spotlight={{ title: 'art director', name: 'AnZO VALLANTE', image: '/resource1.avif', href: '/resources-inspiration' }}
+            spotlight={{ title: 'art director', name: 'Matthew Marcos', image: '/resource1.avif', href: '/resources-inspiration' }}
           />
           <SpotlightLoopItem 
-            spotlight={{ title: 'art director', name: 'AnZO VALLANTE', image: '/resource1.avif', href: '/resources-inspiration' }}
-          />
-          <div></div>
-          <SpotlightLoopItem 
-            spotlight={{ title: 'art director', name: 'AnZO VALLANTE', image: '/resource1.avif', href: '/resources-portfolio' }}
-          />
-          <SpotlightLoopItem 
-            spotlight={{ title: 'art director', name: 'AnZO VALLANTE', image: '/resource1.avif', href: '/resources-writers' }}
-          />
-          <SpotlightLoopItem 
-            spotlight={{ title: 'art director', name: 'AnZO VALLANTE', image: '/resource1.avif', href: '/resources-designers' }}
+            spotlight={{ title: 'art director', name: 'Matthew Marcos', image: '/resource1.avif', href: '/resources-inspiration' }}
           />
           <div></div>
-          <div></div>
           <SpotlightLoopItem 
-            spotlight={{ title: 'art director', name: 'AnZO VALLANTE', image: '/resource1.avif', href: '/resources-business' }}
+            spotlight={{ title: 'art director', name: 'Matthew Marcos', image: '/resource1.avif', href: '/resources-portfolio' }}
           />
           <SpotlightLoopItem 
-            spotlight={{ title: 'art director', name: 'AnZO VALLANTE', image: '/resource1.avif', href: '/resources-inspiration' }}
+            spotlight={{ title: 'art director', name: 'Matthew Marcos', image: '/resource1.avif', href: '/resources-writers' }}
+          />
+          <SpotlightLoopItem 
+            spotlight={{ title: 'art director', name: 'Matthew Marcos', image: '/resource1.avif', href: '/resources-designers' }}
           />
           <div></div>
           <div></div>
+          <SpotlightLoopItem 
+            spotlight={{ title: 'art director', name: 'Matthew Marcos', image: '/resource1.avif', href: '/resources-business' }}
+          />
+          <SpotlightLoopItem 
+            spotlight={{ title: 'art director', name: 'Matthew Marcos', image: '/resource1.avif', href: '/resources-inspiration' }}
+          />
+          <div></div>
+          <div></div>
           <div></div>
           <SpotlightLoopItem 
-            spotlight={{ title: 'art director', name: 'AnZO VALLANTE', image: '/resource1.avif', href: '/resources-inspiration' }}
+            spotlight={{ title: 'art director', name: 'Matthew Marcos', image: '/resource1.avif', href: '/resources-inspiration' }}
           />
           <div className="absolute bottom-16 left-0 text-8xl space-y-8">
             <p className="">Gather.</p>

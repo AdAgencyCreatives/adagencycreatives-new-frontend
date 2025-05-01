@@ -220,7 +220,7 @@ const Creatives = () => {
             </div>
             <div className="space-y-4 md:pt-10 pb-20">
               <div>
-                <h2 className="font-alta text-lg md:text-[34px] 3xl:text-[46px] 4xl:text-[60px]">ANZO VALLANTE</h2>
+                <h2 className="font-alta text-lg md:text-[34px] 3xl:text-[46px] 4xl:text-[60px]">Matthew Marcos</h2>
                 <p className="lowercase text-yellow-400 text-xs md:text-2xl 3xl:text-3xl 4xl:text-[38px]">Creative Director</p>
               </div>
               <p className="font-alta text-xs md:text-sm 3xl:text-lg 4xl:text-2xl">NEW YORK, NY</p>
@@ -231,7 +231,7 @@ const Creatives = () => {
             <div>
               <div className="max-w-[130px] md:max-w-[220px] 3xl:max-w-[295px] 4xl:max-w-[393px] mx-auto -mt-12 3xl:-mt-16 bg-black relative z-1">
                 <CreativeLoopItem2 
-                  creative={{ title: 'Senior UX User Experience Designer', image: '/creatives/creative1.avif', agency: 'ANZO VALLANTE', location: 'NEW YORK, NY' }}
+                  creative={{ title: 'Senior UX User Experience Designer', image: '/creatives/creative1.avif', agency: 'Matthew Marcos', location: 'NEW YORK, NY' }}
                 />
               </div>
             </div>
