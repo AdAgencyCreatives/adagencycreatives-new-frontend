@@ -25,7 +25,7 @@ const Header = () => {
         <img
           src="/aac-logo-header.png"
           alt="Logo"
-          className="w-20 h-20 hover:rotate-45 transition-transform duration-3000"
+          className="w-20 h-20 hover:rotate-45 transition-transform duration-3000 border-[3px] border-[solid] border-[white] rounded-[100%]"
         />
       </Link>
       <div className="hidden md:inline-block">
