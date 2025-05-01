@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const CreativeLoopItem = ({ creative }) => {
   return (
-    <div className="relative p-2 md:px-4 md:py-6 4xl:px-8 4xl:py-20 rounded-4xl border-white border-2 shadow-(--ad-box-shadow) text-center flex flex-col justify-between items-center gap-10">
+    <div className="relative p-2 md:px-4 md:py-6 4xl:px-8 4xl:py-20 rounded-2xl md:rounded-4xl border-white border-2 shadow-(--ad-box-shadow) text-center flex flex-col justify-between items-center gap-10">
       <div className="relative w-[124px] h-[124px] md:w-[256px] md:h-[256px] 4xl:w-[416px] flex items-center px-4">
         <Image src={creative.image} width="256" height="162" alt={creative.title} className="image-mask mx-auto" />
       </div>
