@@ -23,7 +23,7 @@ const Header = () => {
     >
       <Link href="/" className="cursor-pointer">
         <img
-          src="/aac-logo-header.png"
+          src="/aac-logo-round.png"
           alt="Logo"
           className="w-20 h-20 hover:rotate-45 transition-transform duration-3000"
         />

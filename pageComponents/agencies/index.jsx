@@ -146,14 +146,14 @@ const Agencies = () => {
             <p className="text-white text-xs md:text-base 3xl:text-2xl 4xl:text-[32px]">Don’t chase - attract.<br />Instantly connect with top creative talent - no noise, no chasing. Just clarity, presence, and a clean path to the right fit. Post your role in a space built to draw in the right minds, effortlessly. Your job listing becomes more than a post - it becomes a signal. Smart. Simple. Seen.</p>
           </div>
           <div className="font-wix flex flex-col gap-4">
-            <h3 className="text-[38px] md:text-[142px] 3xl:text-[190px] 4xl:text-[253.33px] font-bold">2</h3>
-            <p className="text-yellow-400 font-hass75 text-xs md:text-lg 3xl:text-2xl 4xl:text-[32px] uppercase">GET FEATURED & SHOWCASE</p>
-            <p className="text-white text-xs md:text-base 3xl:text-2xl 4xl:text-[32px]">Showcase your agency.<br />This isn’t just a listing - it’s your presence in a curated space built for visibility and recognition. Your Pro®file connects your brand, culture, and creative energy in one place that speaks volumes. Get featured. Be remembered. This is where standout agencies meet standout talent.</p>
+            <h3 className="text-[190px] font-bold leading-[171px]">2</h3>
+            <p className="text-yellow-400 font-hass75 text-[14px] uppercase">GET FEATURED & SHOWCASE</p>
+            <p className="text-white text-[18px]">Showcase your agency.<br />This isn’t just a listing - it’s your presence in a curated space built for visibility and recognition. Your ProFile™ connects your brand, culture, and creative energy in one place that speaks volumes. Get featured. Be remembered. This is where standout agencies meet standout talent.</p>
           </div>
           <div className="font-wix flex flex-col gap-4">
-            <h3 className="text-[38px] md:text-[142px] 3xl:text-[190px] 4xl:text-[253.33px] font-bold">3</h3>
-            <p className="text-yellow-400 font-hass75 text-xs md:text-lg 3xl:text-2xl 4xl:text-[32px] uppercase">HIRE</p>
-            <p className="text-white text-xs md:text-base 3xl:text-2xl 4xl:text-[32px]">Find who you're really looking for.<br />No endless scrolling. No guessing games. Just a curated network of standout creatives - ready to jump in, lead, or elevate your next project. Message directly. Review Pro®files. Build your dream team. This is hiring, reimagined. On your terms, at your pace, with talent that gets it.</p>
+            <h3 className="text-[190px] font-bold leading-[171px]">3</h3>
+            <p className="text-yellow-400 font-hass75 text-[14px] uppercase">HIRE</p>
+            <p className="text-white text-[18px]">Find who you're really looking for.<br />No endless scrolling. No guessing games. Just a curated network of standout creatives - ready to jump in, lead, or elevate your next project. Message directly. Review ProFile™s. Build your dream team. This is hiring, reimagined. On your terms, at your pace, with talent that gets it.</p>
           </div>
         </div>
         
@@ -182,6 +182,9 @@ const Agencies = () => {
             <div className="absolute text-center w-full bottom-10">
               <Link href="/" className="border-yellow-400 border-4 uppercase text-yellow-400 rounded-full text-xs 3xl:text-lg 4xl:text-2xl uppercase px-10 md:px-40 py-4 cursor-pointer hover:border-white hover:bg-yellow-400 hover:text-white">CREATE PRO®FILE</Link>
             </div>
+          </div>
+          <div className="absolute text-center w-full bottom-8">
+            <Link href="/" className="border-yellow-400 border-4 uppercase text-yellow-400 rounded-full text-[16px] uppercase px-40 py-4 cursor-pointer hover:border-white hover:bg-yellow-400 hover:text-white">CREATE ProFile™</Link>
           </div>
         </div>
       </section>

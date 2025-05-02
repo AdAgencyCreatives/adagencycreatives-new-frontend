@@ -1,6 +1,6 @@
 export const sidebarMenu = [
   { label: "DASHBOARD", href: "/agencies-dashboard" },
-  { label: "create pro®file", href: "/agencies-profile" },
+  { label: "create ProFile™", href: "/agencies-profile" },
   { label: "messages", href: "#" },
   { label: "job posting", href: "#" },
   { label: "CHANGE PASSWORD", href: "#" },
@@ -12,13 +12,13 @@ export const topMenu = [
   { label: "top creatives", href: "/creatives" },
   { label: "messages", href: "#" },
   { label: "featured", href: "#" },
-  { label: "view pro®file", href: "/agencies-profile" }
+  { label: "view ProFile™", href: "/agencies-profile" }
 ];
 
 export const profileMenu = [
   { label: "message ME", href: "#" },
   { label: "add me", href: "#" },
-  { label: "CREATE YOUR pro®file", href: "#" }
+  { label: "CREATE YOUR ProFile™", href: "#" }
 ];
 
 export const infoMenu = [

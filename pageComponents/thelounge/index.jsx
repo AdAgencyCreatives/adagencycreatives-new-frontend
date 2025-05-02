@@ -66,40 +66,40 @@ const TheLounge = () => {
             </video>
           </div>
           <SpotlightLoopItem 
-            spotlight={{ title: 'art director', name: 'AnZO VALLANTE', image: '/resource1.avif', href: '/resources-internship' }}
+            spotlight={{ title: 'art director', name: 'Matthew Marcos', image: '/resource1.avif', href: '/resources-internship' }}
           />
           <SpotlightLoopItem 
-            spotlight={{ title: 'art director', name: 'AnZO VALLANTE', image: '/resource1.avif', href: '/resources-inspiration' }}
+            spotlight={{ title: 'art director', name: 'Matthew Marcos', image: '/resource1.avif', href: '/resources-inspiration' }}
           />
           <SpotlightLoopItem 
-            spotlight={{ title: 'art director', name: 'AnZO VALLANTE', image: '/resource1.avif', href: '/resources-inspiration' }}
+            spotlight={{ title: 'art director', name: 'Matthew Marcos', image: '/resource1.avif', href: '/resources-inspiration' }}
           />
           <SpotlightLoopItem 
-            spotlight={{ title: 'art director', name: 'AnZO VALLANTE', image: '/resource1.avif', href: '/resources-inspiration' }}
-          />
-          <div></div>
-          <SpotlightLoopItem 
-            spotlight={{ title: 'art director', name: 'AnZO VALLANTE', image: '/resource1.avif', href: '/resources-portfolio' }}
-          />
-          <SpotlightLoopItem 
-            spotlight={{ title: 'art director', name: 'AnZO VALLANTE', image: '/resource1.avif', href: '/resources-writers' }}
-          />
-          <SpotlightLoopItem 
-            spotlight={{ title: 'art director', name: 'AnZO VALLANTE', image: '/resource1.avif', href: '/resources-designers' }}
+            spotlight={{ title: 'art director', name: 'Matthew Marcos', image: '/resource1.avif', href: '/resources-inspiration' }}
           />
           <div></div>
-          <div></div>
           <SpotlightLoopItem 
-            spotlight={{ title: 'art director', name: 'AnZO VALLANTE', image: '/resource1.avif', href: '/resources-business' }}
+            spotlight={{ title: 'art director', name: 'Matthew Marcos', image: '/resource1.avif', href: '/resources-portfolio' }}
           />
           <SpotlightLoopItem 
-            spotlight={{ title: 'art director', name: 'AnZO VALLANTE', image: '/resource1.avif', href: '/resources-inspiration' }}
+            spotlight={{ title: 'art director', name: 'Matthew Marcos', image: '/resource1.avif', href: '/resources-writers' }}
+          />
+          <SpotlightLoopItem 
+            spotlight={{ title: 'art director', name: 'Matthew Marcos', image: '/resource1.avif', href: '/resources-designers' }}
           />
           <div></div>
           <div></div>
+          <SpotlightLoopItem 
+            spotlight={{ title: 'art director', name: 'Matthew Marcos', image: '/resource1.avif', href: '/resources-business' }}
+          />
+          <SpotlightLoopItem 
+            spotlight={{ title: 'art director', name: 'Matthew Marcos', image: '/resource1.avif', href: '/resources-inspiration' }}
+          />
+          <div></div>
+          <div></div>
           <div></div>
           <SpotlightLoopItem 
-            spotlight={{ title: 'art director', name: 'AnZO VALLANTE', image: '/resource1.avif', href: '/resources-inspiration' }}
+            spotlight={{ title: 'art director', name: 'Matthew Marcos', image: '/resource1.avif', href: '/resources-inspiration' }}
           />
           <div className="absolute bottom-16 left-0 text-8xl space-y-8">
             <p className="">Gather.</p>
@@ -130,7 +130,7 @@ const TheLounge = () => {
 
               {idx === 15 && (
                 <div key={`profile-${idx}`} className="col-span-2 text-center flex flex-col justify-center gap-10">
-                  <h2 className="text-[48px] leading-[62px]">Want<br />Your Pro®file<br />Featured?</h2>
+                  <h2 className="text-[48px] leading-[62px]">Want<br />Your ProFile™<br />Featured?</h2>
                   <div>
                     <Link href="/" className="border-yellow-400 border-4 uppercase text-yellow-400 rounded-full text-sm px-8 py-4 cursor-pointer hover:border-white hover:bg-yellow-400 hover:text-white">See How</Link>
                   </div>
