@@ -38,7 +38,7 @@ const PrimaryMenu = ({ setIsOpen }) => {
       )} */}
       <Link
         href="/faq"
-        className="text-[19px] xl:text-[21px] 2xl:text-[29px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a] cursor-pointer"
+        className="text-[18px] xl:text-[20px] 2xl:text-[24px] 3xl:text-[32px] 4xl:text-[42.67px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a] cursor-pointer"
         onClick={() => setIsOpen && setIsOpen(false)}
       >
         faq
@@ -47,14 +47,14 @@ const PrimaryMenu = ({ setIsOpen }) => {
         <>
           <Link
             href="/creatives"
-            className="text-[19px] xl:text-[21px] 2xl:text-[29px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a] cursor-pointer"
+            className="text-[18px] xl:text-[20px] 2xl:text-[24px] 3xl:text-[32px] 4xl:text-[42.67px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a] cursor-pointer"
             onClick={() => setIsOpen && setIsOpen(false)}
           >
             creatives
           </Link>
           <Link
             href="/agencies"
-            className="text-[19px] xl:text-[21px] 2xl:text-[29px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a] cursor-pointer"
+            className="text-[18px] xl:text-[20px] 2xl:text-[24px] 3xl:text-[32px] 4xl:text-[42.67px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a] cursor-pointer"
             onClick={() => setIsOpen && setIsOpen(false)}
           >
             agencies
@@ -64,7 +64,7 @@ const PrimaryMenu = ({ setIsOpen }) => {
       {MOST_COMMON_PATHS.includes(pathname) && (
         <Link
           href="/about"
-          className="text-[19px] xl:text-[21px] 2xl:text-[29px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a] cursor-pointer"
+          className="text-[18px] xl:text-[20px] 2xl:text-[24px] 3xl:text-[32px] 4xl:text-[42.67px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a] cursor-pointer"
           onClick={() => setIsOpen && setIsOpen(false)}
         >
           about
@@ -74,7 +74,7 @@ const PrimaryMenu = ({ setIsOpen }) => {
         <>
           <Link
             href="#"
-            className="text-[19px] xl:text-[21px] 2xl:text-[29px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a] cursor-pointer"
+            className="text-[18px] xl:text-[20px] 2xl:text-[24px] 3xl:text-[32px] 4xl:text-[42.67px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a] cursor-pointer"
             onClick={() => setIsOpen && setIsOpen(false)}
           >
             search
@@ -82,7 +82,7 @@ const PrimaryMenu = ({ setIsOpen }) => {
           {isJobDirectory && (
             <Link
               href="#"
-              className="text-[19px] xl:text-[21px] 2xl:text-[29px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a] cursor-pointer"
+              className="text-[18px] xl:text-[20px] 2xl:text-[24px] 3xl:text-[32px] 4xl:text-[42.67px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a] cursor-pointer"
               onClick={() => setIsOpen && setIsOpen(false)}
             >
               featured jobs
@@ -91,7 +91,7 @@ const PrimaryMenu = ({ setIsOpen }) => {
           {isCreativesDirectory && (
             <Link
               href="#"
-              className="text-[19px] xl:text-[21px] 2xl:text-[29px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a] cursor-pointer"
+              className="text-[18px] xl:text-[20px] 2xl:text-[24px] 3xl:text-[32px] 4xl:text-[42.67px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a] cursor-pointer"
               onClick={() => setIsOpen && setIsOpen(false)}
             >
               featured creatives
@@ -102,7 +102,7 @@ const PrimaryMenu = ({ setIsOpen }) => {
       {!isTheLounge && (
         <Link
           href="/thelounge"
-          className="text-[19px] xl:text-[21px] 2xl:text-[29px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a] cursor-pointer"
+          className="text-[18px] xl:text-[20px] 2xl:text-[24px] 3xl:text-[32px] 4xl:text-[42.67px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a] cursor-pointer"
           onClick={() => setIsOpen && setIsOpen(false)}
         >
           the lounge
