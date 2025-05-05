@@ -37,13 +37,18 @@ const TheLounge = () => {
         <div className="absolute inset-0 z-1 bg-[url(/dots.gif)] bg-auto bg-repeat bg-center opacity-40"></div>
         <div className="absolute inset-0 z-2" style={{ background: 'radial-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 1) 100%)' }}></div>
         <div className="relative z-3">
-          <h1 className="text-[197px] leading-60 font-bold text-yellow-400">The Lounge</h1>
-          <div className="space-x-6 text-[1.7rem] text-white mt-20">
-            <a href="#">spotlight</a>
-            <a href="#">chat</a>
-            <a href="#">featured</a>
-            <a href="#">news</a>
-            <a href="#">publications</a>
+          <h1 className="text-5xl md:text-9xl 2xl:text-[182px] 3xl:text-[242px] 4xl:text-[323.4px] font-bold text-yellow-400">The Lounge</h1>
+          <div className="hidden md:block space-x-6 2xl:space-x-[36px] 3xl:space-x-[48px] 4xl:space-x-[64px] mt-4 md:mt-10 3xl:mt-20 text-sm md:text-2xl 3xl:text-[32px] 4xl:text-[42.67px] text-white relative z-1">
+            <a href="">spotlight</a>
+            <a href="">chat</a>
+            <a href="">featured</a>
+            <a href="">news</a>
+            <a href="">publications</a>
+          </div>
+          <div className="block md:hidden space-x-6 2xl:space-x-[36px] 3xl:space-x-[48px] 4xl:space-x-[64px] mt-4 md:mt-10 3xl:mt-20 text-sm md:text-2xl 3xl:text-[32px] 4xl:text-[42.67px] text-white relative z-1">
+            <a href="">hire creatives</a>
+            <a href="">choose a plan</a>
+            <a href="">post a job</a>
           </div>
         </div>
       </section>

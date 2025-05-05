@@ -26,12 +26,12 @@ const Creatives = () => {
   return (
     <div className="bg-black text-white pt-[100px]">
       {/* Hero */}
-      <section className="relative md:h-screen flex flex-col justify-center py-20 2xl:py-40 text-center px-10">
+      <section className="relative md:h-screen flex flex-col justify-center py-20 2xl:py-40 text-center px-4 md:px-10">
         <PageHeader
           page=""
           heading="Creatives"
         />
-        <div className="space-x-6 2xl:space-x-[36px] 3xl:space-x-[48px] 4xl:space-x-[64px] mt-6 md:mt-10 3xl:mt-20 text-sm md:text-2xl 3xl:text-[32px] 4xl:text-[42.67px] text-yellow-400 relative z-1">
+        <div className="space-x-6 2xl:space-x-[36px] 3xl:space-x-[48px] 4xl:space-x-[64px] mt-4 md:mt-10 3xl:mt-20 text-sm md:text-2xl 3xl:text-[32px] 4xl:text-[42.67px] text-yellow-400 relative z-1">
           <a href="#create-profile" className=''>create ProFile<sup className='font-hass65 text-[8px] md:text-[10px] xl:text-[10px] 3xl:text-[16px] 4xl:text-[18px] relative md:-top-[12px] 3xl:-top-[16px]'>TM</sup></a>
           <a href="#search-jobs">search jobs</a>
           <a href="#resources">resources</a>
@@ -40,17 +40,29 @@ const Creatives = () => {
 
       {/* Featured Jobs */}
       <section className="p-6 md:py-10 md:px-10 mx-auto relative z-1" id="search-jobs">
-        <h2 className="text-[22px] md:text-[78px] 3xl:text-[104px] 4xl:text-[139px] font-bold mb-10 2xl:px-20 3xl:px-40 py-10 2xl:mb-20 3xl:mb-30">Featured Jobs</h2>
+        <h2 className="text-[22px] md:text-[78px] 3xl:text-[104px] 4xl:text-[139px] font-bold mb-0 2xl:px-20 3xl:px-40 py-7 2xl:mb-20 3xl:mb-30">Featured Jobs</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {featuredJobs.map((job, idx) => (
             <>
               {idx === 6 && (
-                <div key={`perfect-${idx}`} className="col-span-2 text-center flex flex-col justify-center gap-10 max-md:py-10">
-                  <h2 className="text-2xl md:text-[44px] md:leading-[58.5px] 3xl:text-[57.07px] 3xl:leading-[78px] 4xl:text-[76.09px] 4xl:leading-[104px]">Haven't<br />Found<br />The Perfect<br />Job?</h2>
-                  <div>
+                <div key={`perfect-${idx}`} className="relative col-span-2 text-center flex flex-col justify-center gap-10 max-md:py-10">
+                  <div className="block md:hidden inset-0 absolute w-full h-full overflow-hidden">
+                    <video
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="inset-0 object-[0%_30%] absolute top-1/2 left-1/2 w-full h-full transform -translate-x-1/2 -translate-y-1/2 object-center z-[-1]"
+                      >
+                      <source src="/videos/resources-bg.mp4" type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                  <h2 className="relative z-1 text-2xl md:text-[44px] md:leading-[58.5px] 3xl:text-[57.07px] 3xl:leading-[78px] 4xl:text-[76.09px] 4xl:leading-[104px]">Haven't<br />Found<br />The Perfect<br />Job?</h2>
+                  <div className='relative z-1 '>
                   <Link 
                     href="/" 
-                    className="border-yellow-400 border-4 uppercase text-yellow-400 rounded-full text-xs md:text-sm 3xl:text-lg 4xl:text-2xl px-8 py-4 3xl:px-12 4xl:px-16 4xl:py-6 cursor-pointer hover:border-white hover:bg-yellow-400 hover:text-white"
+                    className="border-yellow-400 border-2 md:border-4 uppercase text-yellow-400 rounded-full font-sans sm:font-semibold md:font-hass75 md:font-bold text-xs md:text-sm 3xl:text-lg 4xl:text-2xl px-8 py-4 3xl:px-12 4xl:px-16 4xl:py-6 cursor-pointer hover:border-white hover:bg-yellow-400 hover:text-white"
                   >
                       Advanced Search
                   </Link>
@@ -66,8 +78,8 @@ const Creatives = () => {
 
       {/* Resources */}
       <section className="py-20 mx-auto px-6 md:px-10" id="resources">
-        <h2 className="text-[22px] md:text-[78px] 3xl:text-[104px] 4xl:text-[139px] font-bold mb-10 text-right pb-20 2xl:px-20 3xl:px-40 2xl:mb-20">Resources</h2>
-        <div className="grid grid-cols-4 gap-1 md:gap-4 2xl:gap-10 w-full items-center relative py-0 md:py-20 2xl:px-20 3xl:px-40">
+        <h2 className="text-[22px] md:text-[78px] 3xl:text-[104px] 4xl:text-[139px] font-bold mb-0 text-right py-11 2xl:mb-20 3xl:mb-30">Resources</h2>
+        <div className="grid grid-cols-4 gap-x-[12px] md:gap-x-[54px] 3xl:gap-x-[72px] 4xl:gap-x-[92px] w-full items-center relative py-0 md:py-20 2xl:px-20 3xl:px-40">
           {/* Background */}
           <div className="absolute inset-0 z-0">
             <video
@@ -90,7 +102,7 @@ const Creatives = () => {
           </div>
 
           {/* <!-- Column 2: 4 items stacked vertically --> */}
-          <div className="col-span-2 space-y-4 grid grid-cols-2 gap-1 md:gap-4 2xl:gap-10 items-start">
+          <div className="col-span-2 space-y-4 grid grid-cols-2 items-start gap-x-[14px] md:gap-x-[54px] 3xl:gap-x-[72px] 4xl:gap-x-[92px]">
             <ResourceLoopItem 
               resource={{ title: 'inspiration', image: '/resource1.avif', href: '/resources-inspiration' }}
             />
@@ -114,7 +126,9 @@ const Creatives = () => {
         </div>
       </section>
 
-      <section className="border-y-2 border-white py-20 relative">
+      <section className="border-y-0 border-white py-8 sm:py-20 relative">
+      <div className="absolute top-0 left-[50%] transform -translate-x-[50%] translate-y-0 border-white border-1 w-[88%] h-px m-auto hidden sm:block"></div>
+      <div className="absolute bottom-0 left-[50%] transform -translate-x-[50%] translate-y-0 border-white border-1 w-[90%] h-px m-auto hidden sm:block"></div>
         {/* Background */}
         <div className="absolute inset-0 z-0">
           <video
@@ -129,16 +143,16 @@ const Creatives = () => {
           </video>
         </div>
         <div className="relative z-1 px-6 md:px-10">
-          <h2 className="text-[22px] md:text-[78px] 3xl:text-[104px] 4xl:text-[139px] 2xl:px-20 3xl:px-40 font-bold 2xl:mb-20 3xl:mb-30 4xl:mb-40">Featured Agencies</h2>
+          <h2 className="text-[22px] md:text-[78px] 3xl:text-[104px] 4xl:text-[139px] 2xl:px-20 3xl:px-40 font-bold mb-0 2xl:mb-20 3xl:mb-30 4xl:mb-40 absolute sm:relative sm:top-auto -top-12 ">Featured Agencies</h2>
           <div className="flex gap-6 md:gap-51 3xl:gap-60 4xl:gap-90 overflow-x-scroll py-10 -mt-3 2xl:mx-20 3xl:mx-40 overflow-hidden">
             {featuredAgencies.map((agency, idx) => (
               <AgenciesLoopItem key={idx} agency={agency} />
             ))}
           </div>
-          <div className="flex items-center justify-end mt-4 2xl:px-20 3xl:px-40">
+          <div className="flex items-center justify-end mt-5 md:mt-20 2xl:mt-45 3xl:mt-60 4xl:mt-80 2xl:px-20 3xl:px-40">
             {/* <Image src="/aac-logo-yellow.png" alt="" width="67" height="67" className="hover:rotate-45 transition-transform duration-3000" />
             <div className="border-yellow-400 border-2 w-10"></div> */}
-            <Link href="/" className="border-yellow-400 border-4 uppercase text-yellow-400 rounded-full text-[8px] md:text-lg 3xl:text-2xl 4xl:text-[28px] px-8 py-4 3xl:px-12 4xl:px-16 4xl:py-6 cursor-pointer hover:border-white hover:bg-yellow-400 hover:text-white">Get Featured</Link>
+            <Link href="/" className="border-yellow-400 bg-black border-2 md:border-4 uppercase text-yellow-400 rounded-full font-sans sm:font-semibold md:font-hass75 md:font-bold text-[8.2px] md:text-lg 3xl:text-2xl 4xl:text-[28px] px-10 py-2 3xl:px-12 4xl:px-16 4xl:py-6 cursor-pointer hover:border-white hover:bg-yellow-400 hover:text-white ">Get Featured</Link>
           </div>
         </div>
       </section>
@@ -151,7 +165,7 @@ const Creatives = () => {
             <>
               {idx === 6 && (
                 <div key={`ad-agency-${idx}`} className="col-span-2 text-center flex flex-col justify-around gap-10 max-md:py-10">
-                  <h2 className="text-2xl md:text-[44px] md:leading-[58.5px] 3xl:text-[57.07px] 3xl:leading-[78px] 4xl:text-[76.09px] 4xl:leading-[104px]">
+                  <h2 className="text-2xl md:text-[44px] md:leading-[58.5px] 3xl:text-[57.07px] 3xl:leading-[78px] 4xl:text-[76.09px] 4xl:leading-[104px] font-bold">
                     We are<br />
                     <span className="font-alta">AD AGENCY</span><br />
                     <span className="font-alta">CREATIVES</span>
@@ -159,7 +173,7 @@ const Creatives = () => {
                   <div>
                     <Link 
                       href="/" 
-                      className="border-yellow-400 border-4 uppercase text-yellow-400 rounded-full text-xs md:text-sm 3xl:text-lg 4xl:text-2xl px-8 py-4 3xl:px-12 4xl:px-16 4xl:py-6 cursor-pointer hover:border-white hover:bg-yellow-400 hover:text-white"
+                      className="border-yellow-400 border-2 md:border-4 uppercase text-yellow-400 rounded-full font-sans sm:font-semibold md:font-hass75 md:font-bold text-xs md:text-sm 3xl:text-lg 4xl:text-2xl px-12 py-2 md:px-14  md:py-2.5 2xl:px-24 3xl:px-25.5 4xl:px-33.5 4xl:py-5 cursor-pointer hover:border-white hover:bg-yellow-400 hover:text-white"
                     >JOIN US</Link>
                   </div>
                 </div>
@@ -167,9 +181,9 @@ const Creatives = () => {
 
               {width > 767 && idx === 15 && (
                 <div key={`profile-${idx}`} className="col-span-2 text-center flex flex-col justify-around gap-10">
-                  <h2 className="text-2xl md:text-[44px] md:leading-[58.5px] 3xl:text-[57.07px] 3xl:leading-[78px] 4xl:text-[76.09px] 4xl:leading-[104px]">Want<br />Your ProFile<sup className='font-hass65 text-[8px] md:text-[12px] xl:text-[14px] 3xl:text-[18px] 4xl:text-[20px] relative -top-[10px] md:-top-[20px] 3xl:-top-[30px] 4xl:-top-[40px]'>TM</sup><br />Featured?</h2>
+                  <h2 className="text-2xl md:text-[44px] md:leading-[58.5px] 3xl:text-[57.07px] 3xl:leading-[78px] 4xl:text-[76.09px] 4xl:leading-[104px] font-bold">Want<br />Your ProFile<sup className='font-hass65 text-[8px] md:text-[12px] xl:text-[14px] 3xl:text-[18px] 4xl:text-[20px] relative -top-[10px] md:-top-[20px] 3xl:-top-[30px] 4xl:-top-[40px]'>TM</sup><br />Featured?</h2>
                   <div>
-                    <Link href="/" className="border-yellow-400 border-4 uppercase text-yellow-400 rounded-full text-xs md:text-sm 3xl:text-lg 4xl:text-2xl px-8 py-4 3xl:px-12 4xl:px-16 4xl:py-6 cursor-pointer hover:border-white hover:bg-yellow-400 hover:text-white">See How</Link>
+                    <Link href="/" className="border-yellow-400 border-2 md:border-4 uppercase text-yellow-400 rounded-full font-sans sm:font-semibold md:font-hass75 md:font-bold text-xs md:text-sm 3xl:text-lg 4xl:text-2xl px-12 py-2 md:px-14  md:py-2.5 2xl:px-24 3xl:px-25.5 4xl:px-33.5 4xl:py-5 cursor-pointer hover:border-white hover:bg-yellow-400 hover:text-white">See How</Link>
                   </div>
                 </div>
               )}
@@ -182,9 +196,9 @@ const Creatives = () => {
 
               {width < 767 && idx === 15 && (
                 <div key={`profile-${idx}`} className="col-span-2 text-center flex flex-col justify-center gap-10">
-                  <h2 className="text-2xl md:text-[44px] md:leading-[58.5px] 3xl:text-[57.07px] 3xl:leading-[78px] 4xl:text-[76.09px] 4xl:leading-[104px]">Want<br />Your ProFile<sup className='font-hass65 text-[10px] md:text-[12px] xl:text-[14px] 3xl:text-[18px] 4xl:text-[20px] relative -top-[10px] md:-top-[20px] 3xl:-top-[30px] 4xl:-top-[40px]'>TM</sup><br />Featured?</h2>
+                  <h2 className="text-2xl md:text-[44px] md:leading-[58.5px] 3xl:text-[57.07px] 3xl:leading-[78px] 4xl:text-[76.09px] 4xl:leading-[104px] font-bold">Want<br />Your <br /> ProFile<sup className='font-hass65 text-[10px] md:text-[12px] xl:text-[14px] 3xl:text-[18px] 4xl:text-[20px] relative -top-[10px] md:-top-[20px] 3xl:-top-[30px] 4xl:-top-[40px]'>TM</sup><br />Featured?</h2>
                   <div>
-                    <Link href="/" className="border-yellow-400 border-4 uppercase text-yellow-400 rounded-full text-xs md:text-sm 3xl:text-lg 4xl:text-2xl px-8 py-4 3xl:px-12 4xl:px-16 4xl:py-6 cursor-pointer hover:border-white hover:bg-yellow-400 hover:text-white">See How</Link>
+                    <Link href="/" className="border-yellow-400 border-2 md:border-4 uppercase text-yellow-400 rounded-full font-sans sm:font-semibold md:font-hass75 md:font-bold text-xs md:text-sm 3xl:text-lg 4xl:text-2xl px-12 py-2 md:px-14  md:py-2.5 2xl:px-24 3xl:px-25.5 4xl:px-33.5 4xl:py-5 cursor-pointer hover:border-white hover:bg-yellow-400 hover:text-white">See How</Link>
                   </div>
                 </div>
               )}
@@ -196,51 +210,57 @@ const Creatives = () => {
       {/* Create Profile */}
       <section className="md:py-20 px-6 md:px-10">
         <h2 id="create-profile" className="text-[22px] md:text-[78px] 3xl:text-[104px] 4xl:text-[143px] 2xl:pl-20 3xl:pl-40 font-bold relative inline-block">Create ProFile<sup className='font-hass65 text-[10px] md:text-[14px] xl:text-[18px] 3xl:text-[22px] 4xl:text-[26px] relative -top-[10px] md:-top-[30px] 3xl:-top-[50px] 4xl:-top-[60px]'>TM</sup></h2>
-        <p className="text-xs md:text-3xl 3xl:text-[40px] 4xl:text-[52.5px] uppercase font-hass65 py-20">Our Method</p>
-        <p className="mt-4 text-sm md:text-[42px] 3xl:text-[56px] 4xl:text-[75px] text-white">Create. Inspire. <span className="text-yellow-400">Get Hired!</span></p>
+        <p className="text-xs md:text-3xl 3xl:text-[40px] 4xl:text-[52.5px] uppercase font-hass65 py-3 md:pb-9 md:pb-11.5 2xl:pt-13 2xl:pb-21.5 3xl:pt-27.5 3xl:pb-29 4xl:pt-24.5 4xl:pb-39.5">Our Method</p>
+        <p className="text-sm md:text-[42px] 3xl:text-[56px] 4xl:text-[75px] text-white">Create. Inspire. <span className="text-yellow-400">Get Hired!</span></p>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-left mt-16">
-          <div className="font-wix flex flex-col gap-4">
-            <h3 className="text-[38px] md:text-[142px] 3xl:text-[190px] 4xl:text-[253.33px] font-bold">1</h3>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-left mt-8 md:mt-16 2xl:mt-30 3xl:mt-40 4xl:mt-53">
+          <div className="font-wix flex flex-col gap-1 md:gap-2 2xl:gap-3 3xl:gap-4">
+            <h3 className="text-[38px] md:text-[142px] 3xl:text-[190px] 4xl:text-[253.33px] font-bold leading-[1] md:leading-[150px] 3xl:leading-[180px] 4xl:leading-[215px]">1</h3>
             <p className="text-yellow-400 font-hass75 text-xs font-bold md:text-lg 3xl:text-2xl 4xl:text-2xl ">CREATE ProFile<sup className='font-hass65 text-[8px] md:text-[10px] 3xl:text-[12px] relative -top-[6px] md:-top-[10px]'>TM</sup></p>
             <p className="text-white text-xs md:text-base 3xl:text-2xl 4xl:text-[32px]">Claim your space on the web.<br />Design your own stunning profile page - crafted to impress, built to connect. Add your work, your voice, your values. You’ll instantly get a sleek webpage with your personal link and a downloadable version ready to share anywhere - from DMs to boardrooms. It's free. It’s yours. It’s the start of everything.</p>
           </div>
-          <div className="font-wix flex flex-col gap-4">
-            <h3 className="text-[38px] md:text-[142px] 3xl:text-[190px] 4xl:text-[253.33px] font-bold">2</h3>
+          <div className="font-wix flex flex-col gap-1 md:gap-2 2xl:gap-3 3xl:gap-4">
+            <h3 className="text-[38px] md:text-[142px] 3xl:text-[190px] 4xl:text-[253.33px] font-bold leading-[1] md:leading-[150px] 3xl:leading-[180px] 4xl:leading-[215px]">2</h3>
             <p className="text-yellow-400 font-hass75 text-xs font-bold md:text-lg 3xl:text-2xl 4xl:text-2xl uppercase">GET FEATURED & SHOWCASE</p>
             <p className="text-white text-xs md:text-base 3xl:text-2xl 4xl:text-[32px]">Be seen where it matters.<br />Your Pro®file becomes part of a curated network - handpicked creatives, thinkers, and builders. Stand out in The Lounge, and The Agencies Homepage where talent is more than a portfolio - it’s a presence. No chasing. No noise. Just the right eyes on your work.</p>
           </div>
-          <div className="font-wix flex flex-col gap-4">
-            <h3 className="text-[38px] md:text-[142px] 3xl:text-[190px] 4xl:text-[253.33px] font-bold">3</h3>
+          <div className="font-wix flex flex-col gap-1 md:gap-2 2xl:gap-3 3xl:gap-4">
+            <h3 className="text-[38px] md:text-[142px] 3xl:text-[190px] 4xl:text-[253.33px] font-bold leading-[1] md:leading-[150px] 3xl:leading-[180px] 4xl:leading-[215px]">3</h3>
             <p className="text-yellow-400 font-hass75 text-xs font-bold md:text-lg 3xl:text-2xl 4xl:text-2xl uppercase">GET HIRED</p>
             <p className="text-white text-xs md:text-base 3xl:text-2xl 4xl:text-[32px]">Let your work open doors.<br />Brands, agencies, and visionary clients are already here - searching, browsing, booking. With a Pro®file, you're instantly visible and ready to be contacted, commissioned, or called in. Whether it’s a dream gig or a long-term collab, this is where it begins. With our help, on your terms.</p>
           </div>
         </div>
         
-        <div className="md:px-10 2xl:px-20 3xl:px-40">
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-1 md:gap-10 justify-between outline outline-4 md:outline-8 2xl:outline-16 shadow-(--ad-box-shadow) outline-while rounded-2xl mt-30 px-2 md:px-10 py-2 pb-10 md:pb-20 mb-2 relative mx-[4px] md:mx-[16px]">
-            <div className="max-md:hidden">
-              <Image src="/creatives/creative17.avif" width="720" height="720" alt="" className="image-mask" />
-            </div>
-            <div className="space-y-4 md:pt-10 pb-20">
+        <div className="md:px-10 2xl:px-20 3xl:px-40 md:pt-10 2xl:pt-30 3xl:pt-40 4xl:pt-63">
+          <div className='outline outline-4 md:outline-8 2xl:outline-16 shadow-(--ad-box-shadow) outline-while rounded-2xl mt-12 md:mt-30 px-2 md:px-10 py-2 pb-10 md:pb-20 mb-2 relative mx-[4px] md:mx-[16px]'>
+            
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-1 md:gap-10 justify-between ">
+              <div className="max-md:hidden">
+                <Image src="/creatives/creative17.avif" width="720" height="720" alt="" className="image-mask" />
+              </div>
+              <div className=" md:pt-10 pb-10 md:pb-14 2xl:pb-20 3xl:pb-24 4xl:pb-28">
+                <div>
+                  <h2 className="font-alta text-lg md:text-[34px] 3xl:text-[46px] 4xl:text-[60px]">Matthew Marcos</h2>
+                  <p className="lowercase text-yellow-400 text-xs md:text-2xl 3xl:text-3xl 4xl:text-[38px] my-2 md:my-4">Creative Director</p>
+                </div>
+                <p className="font-alta text-xs md:text-sm 3xl:text-lg 4xl:text-2xl">NEW YORK, NY</p>
+                <p className="font-alta text-xs md:text-lg 3xl:text-[32px] 4xl:text-[32px] text-yellow-400 mt-4 mb-2 md:my-4">ABOUT</p>
+                <p className="font-wix text-xs md:text-base 3xl:text-2xl 4xl:text-[28px]">I'm an Associate Creative Director based in New York City; with a focus on art direction, brand storytelling, and concepting big ideas. I’ve been fortunate to work with brands like Keds, Louis XIII, Marantz, Wrangler, J.Crew, and USTA, crafting campaigns that blend creativity with strategy.</p>
+                <Link href="/" className="font-wix text-xs md:text-base 3xl:text-2xl 4xl:text-[28px] text-yellow-400 underline mt-6">Read more...</Link>
+              </div>
               <div>
-                <h2 className="font-alta text-lg md:text-[34px] 3xl:text-[46px] 4xl:text-[60px]">Matthew Marcos</h2>
-                <p className="lowercase text-yellow-400 text-xs md:text-2xl 3xl:text-3xl 4xl:text-[38px]">Creative Director</p>
-              </div>
-              <p className="font-alta text-xs md:text-sm 3xl:text-lg 4xl:text-2xl">NEW YORK, NY</p>
-              <p className="font-alta text-xs md:text-lg 3xl:text-[32px] 4xl:text-[32px] text-yellow-400">ABOUT</p>
-              <p className="font-wix text-xs md:text-base 3xl:text-2xl 4xl:text-[28px]">I'm an Associate Creative Director based in New York City; with a focus on art direction, brand storytelling, and concepting big ideas. I’ve been fortunate to work with brands like Keds, Louis XIII, Marantz, Wrangler, J.Crew, and USTA, crafting campaigns that blend creativity with strategy.</p>
-              <Link href="/" className="font-wix text-xs md:text-base 3xl:text-2xl 4xl:text-[28px] text-yellow-400 underline">Read more...</Link>
-            </div>
-            <div>
-              <div className="max-w-[130px] md:max-w-[220px] 3xl:max-w-[295px] 4xl:max-w-[393px] mx-auto -mt-12 3xl:-mt-16 bg-black relative z-1">
-                <CreativeLoopItem2 
-                  creative={{ title: 'Senior UX User Experience Designer', image: '/creatives/creative1.avif', agency: 'Matthew Marcos', location: 'NEW YORK, NY' }}
-                />
+                <div className="max-w-[130px] md:max-w-[220px] 3xl:max-w-[295px] 4xl:max-w-[393px] mx-auto -mt-12 3xl:-mt-16 bg-black relative z-1">
+                  <CreativeLoopItem2 
+                    creative={{ title: 'Senior UX User Experience Designer', image: '/creatives/creative1.avif', agency: 'Matthew Marcos', location: 'NEW YORK, NY' }}
+                  />
+                </div>
               </div>
             </div>
-            <div className="absolute text-center w-full bottom-10">
-              <Link href="/" className="border-yellow-400 border-4 uppercase text-yellow-400 rounded-full text-xs 3xl:text-lg 4xl:text-2xl uppercase px-10 md:px-40 py-4 cursor-pointer hover:border-white hover:bg-yellow-400 hover:text-white">CREATE PROFILE<sup className='font-hass65 relative text-[8px] 3xl:text-[12px] 4xl:text-[12px] -top-[3px] 3xl:-top-[5px] 4xl:-top-[10px]'>TM</sup></Link>
+            <div className="relative xl:-left-20 text-center w-full bottom-0">
+              <Link href="/" className="block w-[90%] w-[45%] md:w-[40%] m-auto border-yellow-400 border-2 md:border-4 uppercase text-yellow-400 rounded-full font-sans sm:font-semibold md:font-hass75 md:font-bold  text-xs 3xl:text-lg 4xl:text-2xl uppercase px-10 xl:px-30 3xl:px-40 md:py-4 py-2 cursor-pointer hover:border-white hover:bg-yellow-400 hover:text-white">Post a Job</Link>
+              <footer className="flex flex-row justify-center w-full z-11 py-[10px] text-gray-400 space-y-1">
+                <p className="font-sans font-normal uppercase mt-2 px-12 md:px-2 text-[13px] xl:text-[16px] 3xl:text-[20px] 4xl:text-[26px] transition delay-150 duration-300 ease-in-out text-[#6E6E6E] hover:text-[#FFFFFF]">© {(new Date()).getFullYear()} Ad Agency Creatives. All Rights Reserved.</p>
+              </footer>
             </div>
           </div>
         </div>

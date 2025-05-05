@@ -115,6 +115,19 @@ button {
   mask-repeat: no-repeat;
 }
 
+.image-mask2 {
+  mask-image: url("/image-mask.svg");
+  mask-position: 0% 0%;
+  mask-size: 100% 120%;
+  mask-repeat: no-repeat;
+}
+.shadow-light{
+  box-shadow: 0 2.29px 7.61px 1.29px #c2c2c2;
+}
 .agency-bg {
   color: --alpha(#000 / 30%);
+}
+
+.resource-bg{
+  background: url("/resources-bg.mp4") no-repeat center/center cover;
 }

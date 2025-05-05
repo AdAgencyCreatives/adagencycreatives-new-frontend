@@ -6,8 +6,9 @@ import Link from 'next/link';
 import Image from "next/image";
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import PrimaryMenu from './PrimaryMenu';
+import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 
-const MobileMenu = () => {
+const MobileMenu = ({isHomePage}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(null);
   const [dropdown1Open, setDropdown1Open] = useState(null);
@@ -29,10 +30,13 @@ const MobileMenu = () => {
   };
 
   return (
-    <div className="relative">
+    <div className="relative flex items-center">
       {/* Toggle Button */}
+      <button className={`${isHomePage ? 'hidden sm:block me-2' : 'hidden'}`}>
+        <MagnifyingGlassIcon className={`${isHomePage ? 'w-5 md:w-6 3xl:w-8.5 4xl:w-10.5' : 'w-9'} ml-2 `} />
+      </button>
       <button
-        className="focus:outline-none lg:hidden inline-block"
+        className={`focus:outline-none ${isHomePage ? 'block' : 'lg:hidden inline-block'}`}
 
       >
         {/* {isOpen ? 
@@ -40,7 +44,7 @@ const MobileMenu = () => {
         : 
           <Bars3Icon className="w-8 ml-2" onClick={toggleSidebar} />
         } */}
-        <Bars3Icon className="w-8 ml-2" onClick={toggleSidebar} />
+        <Bars3Icon className={`${isHomePage ? 'w-10 md:w-8 3xl:w-11 4xl:w-15' : 'w-9'} ml-2 `} onClick={toggleSidebar} />
       </button>
 
       {/* Sidebar */}
