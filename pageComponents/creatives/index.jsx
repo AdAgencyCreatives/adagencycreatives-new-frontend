@@ -46,13 +46,13 @@ const Creatives = () => {
             <>
               {idx === 6 && (
                 <div key={`perfect-${idx}`} className="relative col-span-2 text-center flex flex-col justify-center gap-10 max-md:py-10">
-                  <div className="block md:hidden inset-0 absolute w-full h-full overflow-hidden">
+                  <div className="block md:hidden inset-0 absolute h-full overflow-hidden w-[70%] mx-auto">
                     <video
                       autoPlay
                       loop
                       muted
                       playsInline
-                      className="inset-0 object-[0%_30%] absolute top-1/2 left-1/2 w-full h-full transform -translate-x-1/2 -translate-y-1/2 object-center z-[-1]"
+                      className="inset-0 absolute top-1/2 left-1/2 w-full h-full transform -translate-x-1/2 -translate-y-1/2 object-center z-[-1]"
                       >
                       <source src="/videos/resources-bg.mp4" type="video/mp4" />
                       Your browser does not support the video tag.
@@ -128,7 +128,7 @@ const Creatives = () => {
 
       <section className="border-y-0 border-white py-8 sm:py-20 relative">
       <div className="absolute top-0 left-[50%] transform -translate-x-[50%] translate-y-0 border-white border-1 w-[88%] h-px m-auto hidden sm:block"></div>
-      <div className="absolute bottom-0 left-[50%] transform -translate-x-[50%] translate-y-0 border-white border-1 w-[90%] h-px m-auto hidden sm:block"></div>
+      <div className="absolute bottom-0 left-[50%] transform -translate-x-[50%] translate-y-0 border-white border-1 w-[88%] h-px m-auto hidden sm:block"></div>
         {/* Background */}
         <div className="absolute inset-0 z-0">
           <video
@@ -164,7 +164,19 @@ const Creatives = () => {
           {featuredCreatives.map((creative, idx) => (
             <>
               {idx === 6 && (
-                <div key={`ad-agency-${idx}`} className="col-span-2 text-center flex flex-col justify-around gap-10 max-md:py-10">
+                <div key={`ad-agency-${idx}`} className="relative col-span-2 text-center flex flex-col justify-around gap-10 max-md:py-10">
+                  <div className="block md:hidden inset-0 absolute h-full overflow-hidden w-[70%] mx-auto">
+                    <video
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="inset-0 absolute top-1/2 left-1/2 w-full h-full transform -translate-x-1/2 -translate-y-1/2 object-center z-[-1]"
+                      >
+                      <source src="/videos/resources-bg.mp4" type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
                   <h2 className="text-2xl md:text-[44px] md:leading-[58.5px] 3xl:text-[57.07px] 3xl:leading-[78px] 4xl:text-[76.09px] 4xl:leading-[104px] font-bold">
                     We are<br />
                     <span className="font-alta">AD AGENCY</span><br />
@@ -180,7 +192,19 @@ const Creatives = () => {
               )}
 
               {width > 767 && idx === 15 && (
-                <div key={`profile-${idx}`} className="col-span-2 text-center flex flex-col justify-around gap-10">
+                <div key={`profile-${idx}`} className="relative col-span-2 text-center flex flex-col justify-around gap-10">
+                  <div className="block md:hidden inset-0 absolute h-full overflow-hidden w-[70%] mx-auto">
+                    <video
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="inset-0 absolute top-1/2 left-1/2 w-full h-full transform -translate-x-1/2 -translate-y-1/2 object-center z-[-1]"
+                      >
+                      <source src="/videos/resources-bg.mp4" type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
                   <h2 className="text-2xl md:text-[44px] md:leading-[58.5px] 3xl:text-[57.07px] 3xl:leading-[78px] 4xl:text-[76.09px] 4xl:leading-[104px] font-bold">Want<br />Your ProFile<sup className='font-hass65 text-[8px] md:text-[12px] xl:text-[14px] 3xl:text-[18px] 4xl:text-[20px] relative -top-[10px] md:-top-[20px] 3xl:-top-[30px] 4xl:-top-[40px]'>TM</sup><br />Featured?</h2>
                   <div>
                     <Link href="/" className="border-yellow-400 border-2 md:border-4 uppercase text-yellow-400 rounded-full font-sans sm:font-semibold md:font-hass75 md:font-bold text-xs md:text-sm 3xl:text-lg 4xl:text-2xl px-12 py-2 md:px-14  md:py-2.5 2xl:px-24 3xl:px-25.5 4xl:px-33.5 4xl:py-5 cursor-pointer hover:border-white hover:bg-yellow-400 hover:text-white">See How</Link>
@@ -195,7 +219,19 @@ const Creatives = () => {
               <CreativeLoopItem key={idx} creative={creative} />
 
               {width < 767 && idx === 15 && (
-                <div key={`profile-${idx}`} className="col-span-2 text-center flex flex-col justify-center gap-10">
+                <div key={`profile-${idx}`} className="relative col-span-2 text-center flex flex-col justify-center gap-10">
+                  <div className="block md:hidden inset-0 absolute h-full overflow-hidden w-[70%] mx-auto">
+                    <video
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="inset-0 absolute top-1/2 left-1/2 w-full h-full transform -translate-x-1/2 -translate-y-1/2 object-center z-[-1]"
+                      >
+                      <source src="/videos/resources-bg.mp4" type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
                   <h2 className="text-2xl md:text-[44px] md:leading-[58.5px] 3xl:text-[57.07px] 3xl:leading-[78px] 4xl:text-[76.09px] 4xl:leading-[104px] font-bold">Want<br />Your <br /> ProFile<sup className='font-hass65 text-[10px] md:text-[12px] xl:text-[14px] 3xl:text-[18px] 4xl:text-[20px] relative -top-[10px] md:-top-[20px] 3xl:-top-[30px] 4xl:-top-[40px]'>TM</sup><br />Featured?</h2>
                   <div>
                     <Link href="/" className="border-yellow-400 border-2 md:border-4 uppercase text-yellow-400 rounded-full font-sans sm:font-semibold md:font-hass75 md:font-bold text-xs md:text-sm 3xl:text-lg 4xl:text-2xl px-12 py-2 md:px-14  md:py-2.5 2xl:px-24 3xl:px-25.5 4xl:px-33.5 4xl:py-5 cursor-pointer hover:border-white hover:bg-yellow-400 hover:text-white">See How</Link>
@@ -208,7 +244,7 @@ const Creatives = () => {
       </section>
 
       {/* Create Profile */}
-      <section className="md:py-20 px-6 md:px-10">
+      <section className="md:py-20 px-6 md:px-10 mb-20">
         <h2 id="create-profile" className="text-[22px] md:text-[78px] 3xl:text-[104px] 4xl:text-[143px] 2xl:pl-20 3xl:pl-40 font-bold relative inline-block">Create ProFile<sup className='font-hass65 text-[10px] md:text-[14px] xl:text-[18px] 3xl:text-[22px] 4xl:text-[26px] relative -top-[10px] md:-top-[30px] 3xl:-top-[50px] 4xl:-top-[60px]'>TM</sup></h2>
         <p className="text-xs md:text-3xl 3xl:text-[40px] 4xl:text-[52.5px] uppercase font-hass65 py-3 md:pb-9 md:pb-11.5 2xl:pt-13 2xl:pb-21.5 3xl:pt-27.5 3xl:pb-29 4xl:pt-24.5 4xl:pb-39.5">Our Method</p>
         <p className="text-sm md:text-[42px] 3xl:text-[56px] 4xl:text-[75px] text-white">Create. Inspire. <span className="text-yellow-400">Get Hired!</span></p>
@@ -232,7 +268,7 @@ const Creatives = () => {
         </div>
         
         <div className="md:px-10 2xl:px-20 3xl:px-40 md:pt-10 2xl:pt-30 3xl:pt-40 4xl:pt-63">
-          <div className='outline outline-4 md:outline-8 2xl:outline-16 shadow-(--ad-box-shadow) outline-while rounded-2xl mt-12 md:mt-30 px-2 md:px-10 py-2 pb-10 md:pb-20 mb-2 relative mx-[4px] md:mx-[16px]'>
+          <div className='outline outline-4 md:outline-8 2xl:outline-16 shadow-(--ad-box-shadow) outline-while rounded-2xl mt-12 md:mt-30 px-2 md:px-10 py-2 pb-4 md:pb-4 mb-2 relative mx-[4px] md:mx-[16px]'>
             
             <div className="grid grid-cols-2 md:grid-cols-3 gap-1 md:gap-10 justify-between ">
               <div className="max-md:hidden">
@@ -256,8 +292,8 @@ const Creatives = () => {
                 </div>
               </div>
             </div>
-            <div className="relative xl:-left-20 text-center w-full bottom-0">
-              <Link href="/" className="block w-[90%] w-[45%] md:w-[40%] m-auto border-yellow-400 border-2 md:border-4 uppercase text-yellow-400 rounded-full font-sans sm:font-semibold md:font-hass75 md:font-bold  text-xs 3xl:text-lg 4xl:text-2xl uppercase px-10 xl:px-30 3xl:px-40 md:py-4 py-2 cursor-pointer hover:border-white hover:bg-yellow-400 hover:text-white">Post a Job</Link>
+            <div className="relative  text-center w-full bottom-0">
+              <Link href="/" className="block w-[90%] w-[45%] md:w-[40%] m-auto border-yellow-400 border-2 md:border-4 uppercase text-yellow-400 rounded-full font-sans md:font-hass75 font-bold text-xs 2xl:text-lg 3xl:text-lg 4xl:text-2xl uppercase px-10 xl:px-30 3xl:px-40 md:py-4 py-2 cursor-pointer hover:border-white hover:bg-yellow-400 hover:text-white">create ProFile<sup className='font-hass65 text-[6px] md:text-[10px] xl:text-[8px] 3xl:text-[10px] 4xl:text-[14px] relative -top-[4px] md:-top-[8px] 3xl:-top-[6px] 4xl:-top-[9px]'>TM</sup></Link>
               <footer className="flex flex-row justify-center w-full z-11 py-[10px] text-gray-400 space-y-1">
                 <p className="font-sans font-normal uppercase mt-2 px-12 md:px-2 text-[13px] xl:text-[16px] 3xl:text-[20px] 4xl:text-[26px] transition delay-150 duration-300 ease-in-out text-[#6E6E6E] hover:text-[#FFFFFF]">© {(new Date()).getFullYear()} Ad Agency Creatives. All Rights Reserved.</p>
               </footer>
