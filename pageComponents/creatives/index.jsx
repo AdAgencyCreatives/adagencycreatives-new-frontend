@@ -70,7 +70,7 @@ const Creatives = () => {
                 </div>
               )}
             
-              <JobLoopItem key={idx} job={job} className={idx > 5 ? 'md:block hidden' : ''}/>
+              <JobLoopItem key={idx} job={job} className={idx > 5 ? 'md:flex hidden' : ''}/>
             </>
           ))}
         </div>

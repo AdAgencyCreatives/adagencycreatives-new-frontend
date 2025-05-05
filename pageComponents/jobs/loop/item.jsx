@@ -16,7 +16,7 @@ const JobLoopItem = ({ job, className }) => {
             <img src="/aac-logo-yellow.png"  alt={job.title} className='w-[37px] h-[37px] lg:w-[45px] lg:h-[45px] xl:w-[48px] xl:h-[48px] md:w-[50px] md:h-[50px] 2xl:w-[61px] 2xl:h-[61px] 3xl:w-[81px] 3xl:h-[81px] 4xl:w-[108px] 4xl:h-[108px]'/>
         </div>
       </div>
-      <div className='mt-2.5 2xl:mt-4 3xl:mt-5.5 4xl:mt-7 px-[9.86px] md:px-[12.38px] 2xl:px-[16.38px] 3xl:px-[21.71px] 4xl:px-[29.22px]'>
+      <div className='mt-2.5 2xl:mt-4 3xl:mt-5.5 4xl:mt-7 px-[9.86px] md:px-[12.38px] 2xl:px-[16.38px] 3xl:px-[21.71px] 4xl:px-[29.22px] w-full'>
         <div className="font-alta font-normal text-base sm:text-[16px] md:text-[20px] 2xl:text-[28px] 3xl:text-[38px] 4xl:text-[42.67px] hover:text-yellow-400">{job.agency}</div>
         <div className="text-white font-inter leading-[16px] md:leading-[20px] 2xl:leading-[24px] 3xl:leading-[25px] 4xl:leading-[34.67px] font-bold text-[10px] md:text-[14px] 2xl:text-[16px] 3xl:text-[20px] 4xl:text-[25.21px] hover:text-yellow-400 lowercase">{job.title}</div>
         <div className="my-[7.63px] md:my-2 2xl:my-[12px] 3xl:my-[15.67px] 4xl:my-[22.34px] border-b-[0.91px] md:border-b-[1.15px] 2xl:border-b-[1.5px] 3xl:border-b-[1.99px] 4xl:border-b-[2.67px] w-[100%] mx-auto" />
