@@ -6,7 +6,7 @@ const ResourceLoopItem = ({ resource }) => {
       <Image src={resource.image} width="257" height="257" alt="" className="rounded-2xl bg-black w-full invisible" />
       <div className="absolute bottom-2 left-2 md:bottom-5 md:left-5">
         <Image src="/aac-logo-white.avif" width="48" height="48" alt="" className="w-[12px] h-[12px] md:w-[48px] md:h-[48px] 3xl:w-[55px] 3xl:h-[55px] 4xl:w-[73px] 4xl:h-[73px]" />
-        <p className="text-white lowercase text-[10px] md:text-[22px] 3xl:text-3xl 4xl:text-[38px] mt-1 sm:mb-4">{resource.title}</p>
+        <p className="text-white lowercase text-[10px] md:text-[22px] 3xl:text-3xl 4xl:text-[38px] mt-1 sm:mb-4 font-bold font-inter">{resource.title}</p>
       </div>
     </div>
   );

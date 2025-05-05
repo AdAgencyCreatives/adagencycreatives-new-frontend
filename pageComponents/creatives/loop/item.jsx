@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const CreativeLoopItem = ({ creative }) => {
   return (
-    <div className="relative p-2 md:px-4 md:py-6 4xl:px-8 4xl:py-20 rounded-2xl md:rounded-4xl border-white border-2 shadow-(--ad-box-shadow) text-center flex flex-col justify-between items-center gap-10 mb-4">
+    <div className="relative p-2  py-5 mb:py-[15.75px] 2xl:py-[33.75px] 3xl:py-[44.74px] 4xl:py-[60px] rounded-2xl md:rounded-4xl border-white border-2 shadow-(--ad-box-shadow) text-center flex flex-col justify-between items-center gap-2 4xl:gap-4 mb-4">
       {/* <div className="relative w-[124px] h-[124px] md:w-[256px] md:h-[256px] 4xl:w-[416px] flex items-center px-4">
         <Image src={creative.image} width="256" height="162" alt={creative.title} className="image-mask mx-auto" />
       </div>
@@ -16,11 +16,11 @@ const CreativeLoopItem = ({ creative }) => {
             <img src="/aac-logo-white.avif"  alt={creative.title} className='w-[37px] h-[37px] lg:w-[45px] lg:h-[45px] xl:w-[48px] xl:h-[48px] md:w-[50px] md:h-[50px] 2xl:w-[61px] 2xl:h-[61px] 3xl:w-[81px] 3xl:h-[81px] 4xl:w-[108px] 4xl:h-[108px]'/>
         </div>
       </div>
-      <div>
-        <div className="font-alta text-base md:text-[30px] 3xl:text-[38px] 4xl:text-[50px] hover:text-yellow-400">{creative.agency}</div>
-        <div className="text-white font-bold text-[10px] md:text-[20px] 3xl:text-[20px] 4xl:text-[25.21px] hover:text-yellow-400 lowercase">{creative.title}</div>
-        <div className="my-2 2xl:my-3.5 3xl:my-4.5 4xl:my-5.5 border-b-2 w-[100%] mx-auto" />
-        <div className="font-alta font-bold text-[10px] md:text-[16px] 3xl:text-[18px] 4xl:text-[22.97px] hover:text-yellow-400">{creative.location}</div>
+      <div className='mt-2.5 2xl:mt-4 3xl:mt-5.5 4xl:mt-7 px-[9.86px] md:px-[12.38px] 2xl:px-[16.38px] 3xl:px-[21.71px] 4xl:px-[29.22px]'>
+        <div className="font-alta font-normal text-base sm:text-[16px] md:text-[20px] 2xl:text-[28px] 3xl:text-[38px] 4xl:text-[42.67px] hover:text-yellow-400">{creative.agency}</div>
+        <div className="text-white font-inter leading-[16px] md:leading-[20px] 2xl:leading-[24px] 3xl:leading-[25px] 4xl:leading-[34.67px] font-bold text-[10px] md:text-[14px] 2xl:text-[16px] 3xl:text-[20px] 4xl:text-[25.21px] hover:text-yellow-400 lowercase">{creative.title}</div>
+        <div className="my-[7.63px] md:my-2 2xl:my-[12px] 3xl:my-[15.67px] 4xl:my-[22.34px] border-b-[0.91px] md:border-b-[1.15px] 2xl:border-b-[1.5px] 3xl:border-b-[1.99px] 4xl:border-b-[2.67px] w-[100%] mx-auto" />
+        <div className="font-alta leading-[14px] md:leading-[16px] 2xl:leading-[20px] 3xl:leading-[28px] 4xl:leading-[36.4px] text-[10px] md:text-[12px] 2xl:text-[14px] 3xl:text-[18px] 4xl:text-[22.97px] hover:text-yellow-400">{creative.location}</div>
       </div>
     </div>
   );
