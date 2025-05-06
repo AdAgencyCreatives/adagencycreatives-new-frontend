@@ -158,7 +158,7 @@ const Creatives = () => {
       </section>
 
       {/* Featured Creatives */}
-      <section className="py-10 px-6 md:px-10 ">
+      <section className="py-10 px-6 md:px-10">
         <h2 className="text-[22px] md:text-[78px] 3xl:text-[104px] 4xl:text-[139px] font-bold text-right mb-0 2xl:px-20 3xl:px-40 pt-0 pb-6.75 2xl:mb-20 3xl:mb-30 font-inter leading-[25.78px] 2xl:leading-[99px] 3xl:leading-[132px] 4xl:leading-[176px] px-9">Featured Creatives</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {featuredCreatives.map((creative, idx) => (
