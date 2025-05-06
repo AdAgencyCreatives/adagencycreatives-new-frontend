@@ -1,9 +1,12 @@
 
 import Image from 'next/image';
 
-const CreativeLoopItem = ({ creative }) => {
+/**
+ * @param {{ creative: { image: string, agency: string, title: string, location: string }, className?: string }} props
+ */
+const CreativeLoopItem = ({ creative, className }) => {
   return (
-    <div className="relative py-5 mb:py-[15.75px] 2xl:py-[33.75px] 3xl:py-[44.74px] 4xl:py-[60px] rounded-3xl md:rounded-4xl border-white border-2 shadow-(--ad-box-shadow) text-center flex flex-col justify-between items-center gap-2 4xl:gap-4">
+    <div className={`relative py-5 mb:py-[15.75px] 2xl:py-[33.75px] 3xl:py-[44.74px] 4xl:py-[60px] rounded-3xl md:rounded-4xl border-white border-2 shadow-(--ad-box-shadow) text-center flex flex-col justify-between items-center gap-2 4xl:gap-4 ${className}`}>
       {/* <div className="relative w-[124px] h-[124px] md:w-[256px] md:h-[256px] 4xl:w-[416px] flex items-center px-4">
         <Image src={creative.image} width="256" height="162" alt={creative.title} className="image-mask mx-auto" />
       </div>
