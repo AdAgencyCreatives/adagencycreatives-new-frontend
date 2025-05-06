@@ -6,8 +6,9 @@ const Footer = () => {
   const pathname = usePathname();
   const isHomePage = pathname === "/" || pathname === "/home" || pathname === "/home/";
   const isCreatives = pathname === "/creatives";
+  const isAgencies = pathname === "/agencies";
 
-  if (isCreatives) {
+  if (isCreatives || isAgencies) {
     return <></>;
   }
 
