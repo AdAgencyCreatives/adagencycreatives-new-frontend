@@ -136,3 +136,23 @@ button {
 .resource-bg{
   background: url("/resources-bg.mp4") no-repeat center/center cover;
 }
+
+.zoom-35 {
+  zoom: 0.35;
+}
+
+@media (min-width: 768px) {
+  .zoom-60 {
+    zoom: 0.6;
+  }
+}
+@media (min-width: 1440px) {
+  .zoom-90 {
+    zoom: 0.9;
+  }
+}
+@media (min-width: 1920px) {
+  .zoom-80 {
+    zoom: 0.8;
+  }
+}

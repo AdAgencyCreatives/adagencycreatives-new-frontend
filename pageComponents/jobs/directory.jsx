@@ -5,8 +5,8 @@ import { jobsDirectory } from "constants/jobs";
 
 const JobsDirectory = () => {
   return (
-    <div className="bg-black text-white pt-[100px]">
-      <section className="2xl:max-w-[1000px] 3xl:max-w-[1300px] 4xl:max-w-[1800px] mx-auto px-10 md:pt-40 flex items-center justify-center">
+    <div className="bg-black text-white pt-[104px] 2xl:pt-[124px] 3xl:pt-[150px] 4xl:pt-[184px]">
+      {/* <section className="2xl:max-w-[1000px] 3xl:max-w-[1300px] 4xl:max-w-[1800px] mx-auto px-10 md:pt-40 flex items-center justify-center">
         <div className="text-center space-y-6 w-full mx-auto pt-30 md:pt-40 relative">
           <PageHeader
             page="jobs"
@@ -24,10 +24,26 @@ const JobsDirectory = () => {
             </div>
           </div>
         </div>
+      </section> */}
+      <section className="relative md:h-screen flex flex-col justify-center py-19 2xl:pb-40 2xl:pt-16 text-center px-4 md:px-10 2xl:max-w-[1000px] 3xl:max-w-[1300px] 4xl:max-w-[1800px] mx-auto md:-top-10 2xl:top-0">
+        <PageHeader
+          page="jobs"
+          heading="Directory"
+        />
+        <div className="w-[75%] md:w-[87%] 4xl:w-[83%] mx-auto z-2 relative text-left">
+          <label className="font-wix text-xs md:text-base 2xl:text-[22px] 3xl:text-3xl 4xl:text-[40px] text-[#c2c2c2]">Search</label>
+          <div className="flex items-center justify-center">
+            <input
+              type="email"
+              placeholder="title, name, location, etc."
+              className="bg-transparent border-b border-white outline-none w-full text-white placeholder-white font-wix py-[12px] md:py-[16px] 2xl:py-[22px] 3xl:py-[30px] 4xl:py-[40px] focus:bg-black/50 text-sm md:text-lg 2xl:text-[22px] 3xl:text-3xl 4xl:text-[40px]"
+            />
+          </div>
+        </div>
       </section>
       {/* Featured Jobs */}
       <section className="p-6 md:px-10 mx-auto relative z-1 pb-8 pb md:pb-18 2xl:pb-24 3xl:pb-35 4xl:pb-46">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 pt-25 2xl:pt-14 3xl:pt-40 4xl:pt-80">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 pt-10 2xl:pt-14 3xl:pt-20 4xl:pt-25">
           {jobsDirectory.map((job, idx) => (
             <>
               {idx === 16 && (
