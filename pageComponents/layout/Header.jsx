@@ -31,21 +31,9 @@ const Header = () => {
           className="w-14 h-14 2xl:w-19 2xl:h-19 3xl:w-25.5 3xl:h-25.5 4xl:w-34 4xl:h-34 hover:rotate-45 transition-transform duration-3000"
         />
       </Link>
-      {isHomePage ? (
-        <div className="inline-block">
-          <MobileMenu isHomePage={isHomePage} />
-        </div>
-      ) : (
-        <>
-          {/* PrimaryMenu on desktop, MobileMenu on mobile */}
-          <div className="hidden md:inline-block">
-            <PrimaryMenu />
-          </div>
-          <div className="inline-block md:hidden">
-            <MobileMenu isHomePage={null} />
-          </div>
-        </>
-      )}
+      <div className="inline-block">
+        <MobileMenu isHomePage={true} />
+      </div>
     </header>
   );
 };

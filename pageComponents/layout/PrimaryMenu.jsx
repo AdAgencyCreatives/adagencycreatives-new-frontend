@@ -5,9 +5,9 @@ import { useContext } from "react";
 import { Context as AuthContext } from "contexts/AuthContext";
 
 /**
- * @param {{ setIsOpen?: import("react").Dispatch<import("react").SetStateAction<boolean>> }} props
+ * @param {{ setIsOpen?: import("react").Dispatch<import("react").SetStateAction<boolean>>, user }} props
  */
-const PrimaryMenu = ({ setIsOpen }) => {
+const PrimaryMenu = ({ setIsOpen, user }) => {
   const pathname = usePathname();
   const isHomePage = pathname === "/";
   const isCreativesPage = pathname === "/creatives";
@@ -21,13 +21,9 @@ const PrimaryMenu = ({ setIsOpen }) => {
   const isTheLounge = pathname === "/thelounge";
 
   const MOST_COMMON_PATHS = ["/", "/creatives-signin", "/creatives-signup", "/agencies-signin", "/agencies-signup", "/thelounge", "/faq", "/about"];
-
-  const {
-    state: { user },
-  } = useContext(AuthContext);
   
   return (
-    <nav className="flex flex-col items-center md:flex-row gap-6 font-bold">
+    <nav className="flex flex-col gap-[21px] font-bold relative">
       {/* {!isHomePage && (
         <Link
           href="/"
@@ -38,7 +34,7 @@ const PrimaryMenu = ({ setIsOpen }) => {
       )} */}
       <Link
         href="/faq"
-        className="text-[18px] xl:text-[20px] 2xl:text-[24px] 3xl:text-[32px] 4xl:text-[42.67px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a] cursor-pointer"
+        className="text-[24px] 3xl:text-[32px] 4xl:text-[42px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a] cursor-pointer"
         onClick={() => setIsOpen && setIsOpen(false)}
       >
         faq
@@ -47,14 +43,14 @@ const PrimaryMenu = ({ setIsOpen }) => {
         <>
           <Link
             href="/creatives"
-            className="text-[18px] xl:text-[20px] 2xl:text-[24px] 3xl:text-[32px] 4xl:text-[42.67px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a] cursor-pointer"
+            className="text-[24px] 3xl:text-[32px] 4xl:text-[42px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a] cursor-pointer"
             onClick={() => setIsOpen && setIsOpen(false)}
           >
             creatives
           </Link>
           <Link
             href="/agencies"
-            className="text-[18px] xl:text-[20px] 2xl:text-[24px] 3xl:text-[32px] 4xl:text-[42.67px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a] cursor-pointer"
+            className="text-[24px] 3xl:text-[32px] 4xl:text-[42.67px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a] cursor-pointer"
             onClick={() => setIsOpen && setIsOpen(false)}
           >
             agencies
@@ -64,7 +60,7 @@ const PrimaryMenu = ({ setIsOpen }) => {
       {MOST_COMMON_PATHS.includes(pathname) && (
         <Link
           href="/about"
-          className="text-[18px] xl:text-[20px] 2xl:text-[24px] 3xl:text-[32px] 4xl:text-[42.67px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a] cursor-pointer"
+          className="text-[24px] 3xl:text-[32px] 4xl:text-[42.67px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a] cursor-pointer"
           onClick={() => setIsOpen && setIsOpen(false)}
         >
           about
@@ -74,7 +70,7 @@ const PrimaryMenu = ({ setIsOpen }) => {
         <>
           <Link
             href="#"
-            className="text-[18px] xl:text-[20px] 2xl:text-[24px] 3xl:text-[32px] 4xl:text-[42.67px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a] cursor-pointer"
+            className="text-[24px] 3xl:text-[32px] 4xl:text-[42.67px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a] cursor-pointer"
             onClick={() => setIsOpen && setIsOpen(false)}
           >
             search
@@ -82,7 +78,7 @@ const PrimaryMenu = ({ setIsOpen }) => {
           {isJobDirectory && (
             <Link
               href="#"
-              className="text-[18px] xl:text-[20px] 2xl:text-[24px] 3xl:text-[32px] 4xl:text-[42.67px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a] cursor-pointer"
+              className="text-[24px] 3xl:text-[32px] 4xl:text-[42.67px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a] cursor-pointer"
               onClick={() => setIsOpen && setIsOpen(false)}
             >
               featured jobs
@@ -91,7 +87,7 @@ const PrimaryMenu = ({ setIsOpen }) => {
           {isCreativesDirectory && (
             <Link
               href="#"
-              className="text-[18px] xl:text-[20px] 2xl:text-[24px] 3xl:text-[32px] 4xl:text-[42.67px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a] cursor-pointer"
+              className="text-[24px] 3xl:text-[32px] 4xl:text-[42.67px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a] cursor-pointer"
               onClick={() => setIsOpen && setIsOpen(false)}
             >
               featured creatives
@@ -102,7 +98,7 @@ const PrimaryMenu = ({ setIsOpen }) => {
       {!isTheLounge && (
         <Link
           href="/thelounge"
-          className="text-[18px] xl:text-[20px] 2xl:text-[24px] 3xl:text-[32px] 4xl:text-[42.67px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a] cursor-pointer"
+          className="text-[24px] 3xl:text-[32px] 4xl:text-[42.67px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a] cursor-pointer"
           onClick={() => setIsOpen && setIsOpen(false)}
         >
           the lounge
