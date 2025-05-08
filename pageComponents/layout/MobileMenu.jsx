@@ -13,7 +13,7 @@ import MenuIcon from 'icons/MenuIcon';
 import { Context as AuthContext } from "contexts/AuthContext";
 import SplineGraphic from 'components/SplineGraphic';
 
-const MobileMenu = ({isHomePage}) => {
+const MobileMenu = ({ isHomePage }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(null);
   const [dropdown1Open, setDropdown1Open] = useState(null);
@@ -63,8 +63,8 @@ const MobileMenu = ({isHomePage}) => {
       >
         <div>
           <div className="flex items-center justify-end max-md:justify-between mb-[32px] 3xl:mb-[42.67px] 4xl:mb-[56.89px]">
-            <Link 
-              href="/" 
+            <Link
+              href="/"
               className="cursor-pointer md:hidden"
               onClick={() => setIsOpen(false)}
             >
@@ -75,21 +75,25 @@ const MobileMenu = ({isHomePage}) => {
               />
             </Link>
             <div className="flex flex-row gap-[32px] 3xl:gap-[42.67px] 4xl:gap-[56.89px]">
-              <ChatIcon />
-              <CloseIcon onClick={toggleSidebar} />
+              <button>
+                <ChatIcon />
+              </button>
+              <button>
+                <CloseIcon onClick={toggleSidebar} />
+              </button>
             </div>
           </div>
           <PrimaryMenu setIsOpen={setIsOpen} user={user} />
         </div>
         {!user && (
           <div className="flex flex-col gap-[12px] 3xl:gap-[16px] 4xl:gap-[21.33px]">
-            <Link 
-              href="/" 
+            <Link
+              href="/"
               className="font-bold text-[14px] 3xl:text-[18px] 4xl:text-[24px] leading-[19.26px] 3xl:leading-[25.68px] 4xl:leading-[34.24px] p-[8px] 3xl:p-[10.63px] 4xl:p-[14px] border-[2.96px] 3xl:border-[3.95px] 4xl:border-[5.27px] block text-center border-white rounded-full bg-yellow-400 hover:bg-transparent hover:text-yellow-400 hover:border-yellow-400 uppercase"
             >
               Sign In
             </Link>
-            <Link 
+            <Link
               href="/"
               className="font-bold text-[14px] 3xl:text-[18px] 4xl:text-[24px] leading-[19.26px] 3xl:leading-[25.68px] 4xl:leading-[34.24px] p-[8px] 3xl:p-[10.63px] 4xl:p-[14px] border-[2.96px] 3xl:border-[3.95px] 4xl:border-[5.27px] block text-center border-yellow-400 text-yellow-400 rounded-full bg-transparent hover:bg-yellow-400 hover:text-white hover:border-white uppercase"
             >
