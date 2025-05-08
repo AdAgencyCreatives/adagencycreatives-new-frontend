@@ -180,14 +180,17 @@ button {
   }
 }
 
-.text-brand-yellow {
+.text-brand-yellow,
+.text-brand-yellow:hover {
   color: var(--primary);
 }
 
-.bg-brand-yellow {
+.bg-brand-yellow,
+.bg-brand-yellow:hover {
   background-color: var(--primary);
 }
 
-.border-brand-yellow {
+.border-brand-yellow,
+.border-brand-yellow:hover {
   border-color: var(--primary)A;
 }
