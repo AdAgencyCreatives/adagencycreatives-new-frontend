@@ -1,3 +1,4 @@
+"use client"
 import { Wix_Madefor_Text } from "next/font/google";
 import "./globals.css";
 import Header from "pageComponents/layout/Header";
