@@ -4,6 +4,7 @@ import Header from "pageComponents/layout/Header";
 import Footer from "pageComponents/layout/Footer";
 import ClientUseContextWrapper from "./ClientUseContextWrapper";
 import ClientProviderWrapper from "./ClientProviderWrapper";
+import { usePathname } from "next/navigation";
 
 export const metadata = {
   title: "Ad Agency Creatives is a community for advertising creatives.",
@@ -11,6 +12,10 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+
+  const pathname = usePathname();
+  const isHomePage = pathname === "/" || pathname === "/home" || pathname === "/home/";
+
   return (
     <html lang="en">
       <head>
@@ -21,10 +26,10 @@ export default function RootLayout({ children }) {
       </head>
       <body className="antialiased">
         <ClientProviderWrapper>
-        <ClientUseContextWrapper>
-            <main className="flex relative w-full min-h-screen bg-black text-white">
+          <ClientUseContextWrapper>
+            <main className={`${isHomePage && "flex "}relative w-full min-h-screen bg-black text-white`}>
               <Header />
-              <div className="flex flex-1 max-w-full overflow-hidden">{children}</div>
+              <div className={`${isHomePage && "flex flex-1 "} max-w-full overflow-hidden`}>{children}</div>
               <Footer />
             </main>
           </ClientUseContextWrapper>
