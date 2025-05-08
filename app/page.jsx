@@ -3,7 +3,7 @@ import { LiaSignInAltSolid } from "react-icons/lia";
 
 export default function Home() {
   return (
-    <div className="px-10 flex flex-col justify-center items-center relative min-h-screen">
+    <div className="px-10 flex flex-col justify-center items-center relative min-h-[90vh] my-[220px]">
       {/* Background */}
       <div className="absolute inset-0 z-0 w-[88%] mx-auto">
         <video
@@ -18,7 +18,10 @@ export default function Home() {
         </video>
       </div>
       {/* Center Split Section */}
-      <section className="w-[78%] mx-auto z-9 grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] px-0 md:px-10 xl:px-15 2xl:px-50 items-center justify-between h-full w-full gap-10 md:gap-0 home">
+      <div className="absolute inset-0 h-[101%] z-1 w-[88%] mx-auto" style={{ background: 'radial-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 1) 100%)' }}></div>
+      <section 
+        className="w-[78%] mx-auto z-9 grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] px-0 md:px-10 xl:px-15 2xl:px-50 4xl:px-40 items-center justify-between h-full w-full gap-10 md:gap-0"
+      >
         {/* Left Column */}
         <div className="flex flex-1 w-1.0 h-1.0 order-2 md:order-1">
           <div className="relative flex flex-1 flex-col justify-center md:aspect-square">
@@ -49,7 +52,7 @@ export default function Home() {
                   className="inline-flex items-center justify-start text-white gap-4 cursor-pointer flex-row-reverse md:flex-row"
                 >
                   <LiaSignInAltSolid className="text-[36px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a]" />
-                  <span className="text-lg 3xl:text-2xl 4xl:text-[32px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a]">
+                  <span className="text-lg 3xl:text-2xl 4xl:text-[32px] font-bold transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a]">
                     Sign in
                   </span>
                 </Link>
@@ -109,7 +112,7 @@ export default function Home() {
                 href="/agencies-signin"
                 className="inline-flex items-center justify-end text-white gap-4 cursor-pointer"
               >
-                <span className="text-lg 3xl:text-2xl 4xl:text-[32px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a]">
+                <span className="text-lg 3xl:text-2xl 4xl:text-[32px] font-bold transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a]">
                   Sign in
                 </span>
                 <LiaSignInAltSolid className="text-[36px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a]" />
@@ -120,20 +123,7 @@ export default function Home() {
       </section>
 
       {/* Bottom Nav */}
-      <div className="absolute z-11 bottom-6 left-0 right-0 px-6 justify-between items-end font-semibold hidden md:flex w-full">
-        <Link
-          href="/jobs-directory"
-          className="text-[19px] xl:text-[21px] 2xl:text-[29px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a]"
-        >
-          search jobs
-        </Link>
-        <Link
-          href="/creatives-directory"
-          className="text-[19px] xl:text-[21px] 2xl:text-[29px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a]"
-        >
-          hire talent
-        </Link>
-      </div>
+      {/* <div className="absolute z-11 bottom-6 left-0 right-0 px-10 4xl:px-[61.33px] justify-between items-end font-semibold hidden md:flex w-full"></div> */}
     </div>
   );
 }

@@ -21,14 +21,14 @@ const Header = () => {
   
   return (
     <header
-      className={`flex items-center justify-between py-6 px-10 z-30 ${scrolled ? "bg-black/75" : "bg-transparent"
+      className={`flex items-center justify-between py-6 4xl:py-[42.67px] px-10 4xl:px-[61.33px] z-30 ${scrolled ? "bg-black/75" : "bg-transparent"
         } fixed w-full top-0`}
     >
       <Link href="/" className="cursor-pointer">
         <img
           src="/aac-logo-round.png"
           alt="Logo"
-          className="w-14 h-14 2xl:w-19 2xl:h-19 3xl:w-25.5 3xl:h-25.5 4xl:w-34 4xl:h-34 hover:rotate-45 transition-transform duration-3000"
+          className="w-[56px] h-[56px] 2xl:w-[76px] 2xl:h-[76px] 3xl:w-[100px] 3xl:h-[100px] 4xl:w-[135.11px] 4xl:h-[135.11px] hover:rotate-45 transition-transform duration-3000"
         />
       </Link>
       <div className="inline-block">

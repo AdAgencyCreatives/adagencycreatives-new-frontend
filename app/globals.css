@@ -60,7 +60,7 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: 'Hass75';
+  font-family: var(--font-inter);
   font-size: 24px;
 }
 
