@@ -14,11 +14,11 @@ const PageHeader = ({ page, subPage, heading }) => {
         <div className="text-sm md:text-base 2xl:text-[32px] 3xl:text-[40px] 4xl:text-6xl text-left mb-[16px] md:mb-[18px] 3xl:mb-[24px] 4xl:mb-[32px]">
           {subPage ? (
             <Link href={subPage?.url ?? '#'} className="cursor-pointer">
-              <span className="text-[#FFCD1A] font-bold">{page} </span>
+              <span className="text-brand-yellow font-bold">{page} </span>
               <span className="underline">{subPage.text}</span>
             </Link>
           ) : (
-            <span className="text-[#FFCD1A] font-bold">{page}</span>
+            <span className="text-brand-yellow font-bold">{page}</span>
           )}
         </div>
 

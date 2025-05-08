@@ -42,7 +42,7 @@ export default function Home() {
               <div className="flex gap-4 justify-center md:justify-start items-center mt-6">
                 <Link
                   href="/jobs-directory"
-                  className="font-bold text-lg transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a] block md:hidden"
+                  className="font-bold text-lg transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow block md:hidden"
                 >
                   search jobs
                 </Link>
@@ -51,8 +51,8 @@ export default function Home() {
                   href="/creatives-signin"
                   className="inline-flex items-center justify-start text-white gap-4 cursor-pointer flex-row-reverse md:flex-row"
                 >
-                  <LiaSignInAltSolid className="text-[36px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a]" />
-                  <span className="font-bold text-lg 3xl:text-2xl 4xl:text-[32px] font-bold transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a]">
+                  <LiaSignInAltSolid className="text-[36px] transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow" />
+                  <span className="font-bold text-lg 3xl:text-2xl 4xl:text-[32px] font-bold transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow">
                     Sign in
                   </span>
                 </Link>
@@ -103,7 +103,7 @@ export default function Home() {
             <div className="flex gap-4 justify-center md:justify-end items-center mt-6">
               <Link
                 href="/creatives-directory"
-                className="font-bold text-lg transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a] block md:hidden"
+                className="font-bold text-lg transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow block md:hidden"
               >
                 hire talent
               </Link>
@@ -112,10 +112,10 @@ export default function Home() {
                 href="/agencies-signin"
                 className="inline-flex items-center justify-end text-white gap-4 cursor-pointer"
               >
-                <span className="font-bold text-lg 3xl:text-2xl 4xl:text-[32px] font-bold transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a]">
+                <span className="font-bold text-lg 3xl:text-2xl 4xl:text-[32px] font-bold transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow">
                   Sign in
                 </span>
-                <LiaSignInAltSolid className="text-[36px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a]" />
+                <LiaSignInAltSolid className="text-[36px] transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow" />
               </Link>
             </div>
           </div>

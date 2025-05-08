@@ -36,7 +36,7 @@ const CreativesDirectory = () => {
                 <div className="col-span-2 text-center flex flex-col justify-center gap-10">
                   <h2 className="text-[48px] leading-[62px]">Haven't<br />Found<br />The Perfect<br />Match?</h2>
                   <div>
-                    <Link href="/" className="border-[#FFCD1A] border-4 uppercase text-[#FFCD1A] rounded-full text-sm px-8 py-4 cursor-pointer hover:border-white hover:bg-[#FFCD1A] hover:text-white">Advanced Search</Link>
+                    <Link href="/" className="border-brand-yellow border-4 uppercase text-brand-yellow rounded-full text-sm px-8 py-4 cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white">Advanced Search</Link>
                   </div>
                 </div>
               )}
@@ -45,7 +45,7 @@ const CreativesDirectory = () => {
                 <div className="col-span-2 text-center flex flex-col justify-center gap-10">
                   <h2 className="text-[48px] leading-[62px]">Why<br />Search?<br />Post & Attract!</h2>
                   <div>
-                    <Link href="/" className="border-[#FFCD1A] border-4 uppercase text-[#FFCD1A] rounded-full text-sm px-8 py-4 cursor-pointer hover:border-white hover:bg-[#FFCD1A] hover:text-white">Post A Job</Link>
+                    <Link href="/" className="border-brand-yellow border-4 uppercase text-brand-yellow rounded-full text-sm px-8 py-4 cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white">Post A Job</Link>
                   </div>
                 </div>
               )}

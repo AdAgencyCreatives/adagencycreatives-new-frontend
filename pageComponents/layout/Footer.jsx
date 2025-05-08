@@ -20,7 +20,7 @@ const Footer = () => {
           <div className="flex justify-between">
             <Link
               href="/jobs-directory"
-              className="hidden md:block text-[19px] xl:text-[21px] 2xl:text-[29px] 4xl:text-[32px] font-bold font-inter transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a]"
+              className="hidden md:block text-[19px] xl:text-[21px] 2xl:text-[29px] 4xl:text-[32px] font-bold font-inter transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow"
             >
               search jobs
             </Link>
@@ -34,7 +34,7 @@ const Footer = () => {
             </div>
             <Link
               href="/creatives-directory"
-              className="hidden md:block text-[19px] xl:text-[21px] 2xl:text-[29px] 4xl:text-[32px] font-bold font-inter transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a]"
+              className="hidden md:block text-[19px] xl:text-[21px] 2xl:text-[29px] 4xl:text-[32px] font-bold font-inter transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow"
             >
               hire talent
             </Link>

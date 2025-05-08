@@ -23,23 +23,23 @@ const CreativesProfile = () => {
                 <Image src="/aac-logo.png" width="67" height="67" alt={user.title} className="hover:rotate-45 transition-transform duration-3000" />
               </div>
               <div>
-                <div className="font-alta font-bold text-[30px] text-[#FFCD1A]">{user.name}</div>
-                <div className="text-white font-semibold text-[20px] hover:text-[#FFCD1A] lowercase leading-[26px]">{user.title}</div>
+                <div className="font-alta font-bold text-[30px] text-brand-yellow">{user.name}</div>
+                <div className="text-white font-semibold text-[20px] hover:text-brand-yellow lowercase leading-[26px]">{user.title}</div>
                 <div className="my-3 border-b-2 w-[60%] mx-auto" />
-                <div className="font-alta font-bold text-[16px] text-[#FFCD1A]">{user.location}</div>
+                <div className="font-alta font-bold text-[16px] text-brand-yellow">{user.location}</div>
               </div>
             </div>
             <div className="text-left">
               <ul className="flex justify-between mb-10">
                 {profileMenu.map((item) => {
                   return (
-                    <li className="lowercase text-[#FFCD1A] hover:text-white">
+                    <li className="lowercase text-brand-yellow hover:text-white">
                       <Link href={item.href}>{item.label}</Link>
                     </li>
                   )
                 })}
               </ul>
-              <p className="font-alta text-[16px] text-[#FFCD1A] font-bold mb-2">ABOUT</p>
+              <p className="font-alta text-[16px] text-brand-yellow font-bold mb-2">ABOUT</p>
               <p className="font-wix text-[18px]" dangerouslySetInnerHTML={{ __html: user.about }}></p>
             </div>
           </div>
@@ -50,24 +50,24 @@ const CreativesProfile = () => {
         >
           <div className="flex flex-col gap-14">
             <div>
-              <p className="font-alta font-bold uppercase text-base text-[#FFCD1A] mb-2">Years of Experience</p>
-              <p className="lowercase hover:text-[#FFCD1A] text-white text-xl">{user.experience}</p>
+              <p className="font-alta font-bold uppercase text-base text-brand-yellow mb-2">Years of Experience</p>
+              <p className="lowercase hover:text-brand-yellow text-white text-xl">{user.experience}</p>
             </div>
             <div>
-              <p className="font-alta font-bold uppercase text-base text-[#FFCD1A] mb-2">Industry Experience</p>
-              <p className="lowercase hover:text-[#FFCD1A] text-white text-xl">{user.industry}</p>
+              <p className="font-alta font-bold uppercase text-base text-brand-yellow mb-2">Industry Experience</p>
+              <p className="lowercase hover:text-brand-yellow text-white text-xl">{user.industry}</p>
             </div>
             <div>
-              <p className="font-alta font-bold uppercase text-base text-[#FFCD1A] mb-2">Media Experience</p>
-              <p className="lowercase hover:text-[#FFCD1A] text-white text-xl">{user.media}</p>
+              <p className="font-alta font-bold uppercase text-base text-brand-yellow mb-2">Media Experience</p>
+              <p className="lowercase hover:text-brand-yellow text-white text-xl">{user.media}</p>
             </div>
             <div>
-              <p className="font-alta font-bold uppercase text-base text-[#FFCD1A] mb-2">Type of Work</p>
-              <p className="lowercase hover:text-[#FFCD1A] text-white text-xl">{user.work}</p>
+              <p className="font-alta font-bold uppercase text-base text-brand-yellow mb-2">Type of Work</p>
+              <p className="lowercase hover:text-brand-yellow text-white text-xl">{user.work}</p>
             </div>
             <div>
-              <p className="font-alta font-bold uppercase text-base text-[#FFCD1A] mb-2">Strengths</p>
-              <p className="lowercase hover:text-[#FFCD1A] text-white text-xl">{user.strength}</p>
+              <p className="font-alta font-bold uppercase text-base text-brand-yellow mb-2">Strengths</p>
+              <p className="lowercase hover:text-brand-yellow text-white text-xl">{user.strength}</p>
             </div>
           </div>
         </div>
@@ -90,15 +90,15 @@ const CreativesProfile = () => {
             <ul className="flex justify-between mb-20">
               {infoMenu.map((item) => {
                 return (
-                  <li className="lowercase text-[#FFCD1A] hover:text-white">
+                  <li className="lowercase text-brand-yellow hover:text-white">
                     <Link href={item.href}>{item.label}</Link>
                   </li>
                 )
               })}
             </ul>
-            <p className="font-alta text-[16px] text-[#FFCD1A] font-bold mb-2">Info</p>
+            <p className="font-alta text-[16px] text-brand-yellow font-bold mb-2">Info</p>
             <p className="font-wix text-[18px]" dangerouslySetInnerHTML={{ __html: user.info }}></p>
-            <Link href="/" className="border-[#FFCD1A] border-4 uppercase text-[#FFCD1A] rounded-full text-base px-20 py-4 cursor-pointer hover:border-white hover:bg-[#FFCD1A] hover:text-white mt-10 mb-20 inline-block">CTA</Link>
+            <Link href="/" className="border-brand-yellow border-4 uppercase text-brand-yellow rounded-full text-base px-20 py-4 cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white mt-10 mb-20 inline-block">CTA</Link>
           </div>
         </div>
       </div>

@@ -179,3 +179,15 @@ button {
     zoom: 1.2;
   }
 }
+
+.text-brand-yellow {
+  color: var(--primary);
+}
+
+.bg-brand-yellow {
+  background-color: var(--primary);
+}
+
+.border-brand-yellow {
+  border-color: var(--primary)A;
+}

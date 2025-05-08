@@ -20,10 +20,10 @@ const CreativeLoopItem = ({ creative, className }) => {
         </div>
       </div>
       <div className='mt-2.5 2xl:mt-4 3xl:mt-5.5 4xl:mt-7 px-[9.86px] md:px-[12.38px] 2xl:px-[16.38px] 3xl:px-[21.71px] 4xl:px-[29.22px] w-full'>
-        <div className="font-alta font-normal text-base sm:text-[16px] md:text-[20px] 2xl:text-[28px] 3xl:text-[38px] 4xl:text-[42.67px] hover:text-[#FFCD1A]">{creative.agency}</div>
-        <div className="text-white font-inter leading-[16px] md:leading-[20px] 2xl:leading-[24px] 3xl:leading-[25px] 4xl:leading-[34.67px] font-bold text-[10px] md:text-[14px] 2xl:text-[16px] 3xl:text-[20px] 4xl:text-[25.21px] hover:text-[#FFCD1A] lowercase">{creative.title}</div>
+        <div className="font-alta font-normal text-base sm:text-[16px] md:text-[20px] 2xl:text-[28px] 3xl:text-[38px] 4xl:text-[42.67px] hover:text-brand-yellow">{creative.agency}</div>
+        <div className="text-white font-inter leading-[16px] md:leading-[20px] 2xl:leading-[24px] 3xl:leading-[25px] 4xl:leading-[34.67px] font-bold text-[10px] md:text-[14px] 2xl:text-[16px] 3xl:text-[20px] 4xl:text-[25.21px] hover:text-brand-yellow lowercase">{creative.title}</div>
         <div className="my-[7.63px] md:my-2 2xl:my-[12px] 3xl:my-[15.67px] 4xl:my-[22.34px] border-b-[0.91px] md:border-b-[1.15px] 2xl:border-b-[1.5px] 3xl:border-b-[1.99px] 4xl:border-b-[2.67px] w-[100%] mx-auto" />
-        <div className="font-alta leading-[14px] md:leading-[16px] 2xl:leading-[20px] 3xl:leading-[28px] 4xl:leading-[36.4px] text-[10px] md:text-[12px] 2xl:text-[14px] 3xl:text-[18px] 4xl:text-[22.97px] hover:text-[#FFCD1A]">{creative.location}</div>
+        <div className="font-alta leading-[14px] md:leading-[16px] 2xl:leading-[20px] 3xl:leading-[28px] 4xl:leading-[36.4px] text-[10px] md:text-[12px] 2xl:text-[14px] 3xl:text-[18px] 4xl:text-[22.97px] hover:text-brand-yellow">{creative.location}</div>
       </div>
     </div>
   );
