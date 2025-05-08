@@ -1,10 +1,7 @@
 import { Wix_Madefor_Text } from "next/font/google";
 import "./globals.css";
-import Header from "pageComponents/layout/Header";
-import Footer from "pageComponents/layout/Footer";
 import ClientUseContextWrapper from "./ClientUseContextWrapper";
 import ClientProviderWrapper from "./ClientProviderWrapper";
-import { usePathname } from "next/navigation";
 import LayoutWrapper from "./LayoutWrapper";
 
 export const metadata = {
@@ -13,8 +10,6 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-
-
   return (
     <html lang="en">
       <head>
