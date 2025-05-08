@@ -85,13 +85,13 @@ const MobileMenu = ({isHomePage}) => {
           <div className="flex flex-col gap-[12px] 3xl:gap-[16px] 4xl:gap-[21.33px]">
             <Link 
               href="/" 
-              className="text-[14px] 3xl:text-[18px] 4xl:text-[24px] leading-[19.26px] 3xl:leading-[25.68px] 4xl:leading-[34.24px] p-[8px] 3xl:p-[10.63px] 4xl:p-[14px] border-[2.96px] 3xl:border-[3.95px] 4xl:border-[5.27px] block text-center border-white rounded-full bg-yellow-400 hover:bg-transparent hover:text-yellow-400 hover:border-yellow-400 uppercase"
+              className="font-bold text-[14px] 3xl:text-[18px] 4xl:text-[24px] leading-[19.26px] 3xl:leading-[25.68px] 4xl:leading-[34.24px] p-[8px] 3xl:p-[10.63px] 4xl:p-[14px] border-[2.96px] 3xl:border-[3.95px] 4xl:border-[5.27px] block text-center border-white rounded-full bg-yellow-400 hover:bg-transparent hover:text-yellow-400 hover:border-yellow-400 uppercase"
             >
               Sign In
             </Link>
             <Link 
               href="/"
-              className="text-[14px] 3xl:text-[18px] 4xl:text-[24px] leading-[19.26px] 3xl:leading-[25.68px] 4xl:leading-[34.24px] p-[8px] 3xl:p-[10.63px] 4xl:p-[14px] border-[2.96px] 3xl:border-[3.95px] 4xl:border-[5.27px] block text-center border-yellow-400 text-yellow-400 rounded-full bg-transparent hover:bg-yellow-400 hover:text-white hover:border-white uppercase"
+              className="font-bold text-[14px] 3xl:text-[18px] 4xl:text-[24px] leading-[19.26px] 3xl:leading-[25.68px] 4xl:leading-[34.24px] p-[8px] 3xl:p-[10.63px] 4xl:p-[14px] border-[2.96px] 3xl:border-[3.95px] 4xl:border-[5.27px] block text-center border-yellow-400 text-yellow-400 rounded-full bg-transparent hover:bg-yellow-400 hover:text-white hover:border-white uppercase"
             >
               Register
             </Link>
@@ -102,7 +102,7 @@ const MobileMenu = ({isHomePage}) => {
       {/* Overlay (closes sidebar when clicked) */}
       {isOpen && (
         <div
-          className="fixed inset-0 bg-transparent z-10"
+          className="fixed inset-0 bg-black opacity-[70%] z-10"
           onClick={toggleSidebar}
         ></div>
       )}

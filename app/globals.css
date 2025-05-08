@@ -140,7 +140,9 @@ button {
 .zoom-35 {
   zoom: 0.35;
 }
-
+.zoom-home{
+  zoom: 0.5;
+}
 @media (min-width: 768px) {
   .zoom-60 {
     zoom: 0.6;
@@ -150,9 +152,21 @@ button {
   .zoom-90 {
     zoom: 0.9;
   }
+  .zoom-home{
+    zoom: 0.65;
+  }
 }
 @media (min-width: 1920px) {
   .zoom-80 {
     zoom: 0.8;
+  }
+  .zoom-home{
+    zoom: 0.85;
+  }
+}
+
+@media (min-width: 2560px){
+  .zoom-home{
+    zoom: 1.2;
   }
 }

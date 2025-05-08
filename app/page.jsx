@@ -3,7 +3,7 @@ import { LiaSignInAltSolid } from "react-icons/lia";
 
 export default function Home() {
   return (
-    <div className="px-10 flex flex-col justify-center items-center relative min-h-[90vh] my-[220px]">
+    <div className="px-10 flex flex-col justify-start md:justify-center items-center relative min-h-[90vh] my-[150px] md:my-[220px]">
       {/* Background */}
       <div className="absolute inset-0 z-0 w-[88%] mx-auto">
         <video
@@ -20,13 +20,13 @@ export default function Home() {
       {/* Center Split Section */}
       <div className="absolute inset-0 h-[101%] z-1 w-[88%] mx-auto" style={{ background: 'radial-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 1) 100%)' }}></div>
       <section 
-        className="w-[78%] mx-auto z-9 grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] px-0 md:px-10 xl:px-15 2xl:px-50 4xl:px-40 items-center justify-between h-full w-full gap-10 md:gap-0"
+        className="w-[78%] mx-auto z-9 grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] px-0 md:px-10 xl:px-15 2xl:px-40 3xl:px-50 4xl:px-64 items-center justify-between h-full w-full gap-10 md:gap-0"
       >
         {/* Left Column */}
         <div className="flex flex-1 w-1.0 h-1.0 order-2 md:order-1">
           <div className="relative flex flex-1 flex-col justify-center md:aspect-square">
             <div
-              className="spline-container spline-container-left w-[150%] h-[150%] hidden md:inline-block"
+              className="zoom-home spline-container spline-container-left w-[150%] h-[150%] hidden md:inline-block"
               dangerouslySetInnerHTML={{
                 __html:
                   '<spline-viewer url="https://prod.spline.design/8Kk8n4FoXe4tjJBu/scene.splinecode"></spline-viewer>',
@@ -39,10 +39,10 @@ export default function Home() {
                 </h1>
               </Link>
               <div className="border-b border-white my-4 hidden md:block"></div>
-              <div className="flex gap-4 justify-center md:justify-start items-center">
+              <div className="flex gap-4 justify-center md:justify-start items-center mt-6">
                 <Link
                   href="/jobs-directory"
-                  className="text-lg transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a] block md:hidden"
+                  className="font-bold text-lg transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a] block md:hidden"
                 >
                   search jobs
                 </Link>
@@ -52,7 +52,7 @@ export default function Home() {
                   className="inline-flex items-center justify-start text-white gap-4 cursor-pointer flex-row-reverse md:flex-row"
                 >
                   <LiaSignInAltSolid className="text-[36px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a]" />
-                  <span className="text-lg 3xl:text-2xl 4xl:text-[32px] font-bold transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a]">
+                  <span className="font-bold text-lg 3xl:text-2xl 4xl:text-[32px] font-bold transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a]">
                     Sign in
                   </span>
                 </Link>
@@ -64,10 +64,10 @@ export default function Home() {
         {/* Center Logo */}
         <div className="relative shrink-0 order-1 md:order-2 p-20 md:p-0">
           <div
-            className="absolute inset-0 w-[224px] h-[224px] mx-auto my-auto inline-block md:hidden rounded-full overflow-hidden z-0 aspect-square"
+            className="absolute inset-0 w-full h-[600px] mx-auto my-auto inline-block md:hidden rounded-full overflow-hidden z-0 aspect-square zoom-home"
             dangerouslySetInnerHTML={{
               __html:
-                '<spline-viewer url="https://prod.spline.design/8Kk8n4FoXe4tjJBu/scene.splinecode"></spline-viewer>',
+                '<spline-viewer url="https://prod.spline.design/8Kk8n4FoXe4tjJBu/scene.splinecode" classname="w-full h-full"></spline-viewer>',
             }}
           ></div>
           <div className="w-[112px] md:w-[300px] 3xl:w-[400px] 4xl:w-[533px] mx-auto z-1 relative">
@@ -87,7 +87,7 @@ export default function Home() {
         {/* Right Column */}
         <div className="relative flex flex-1 flex-col justify-center md:aspect-square text-right order-4">
           <div
-            className="spline-container spline-container-right w-[150%] h-[150%] hidden md:inline-block"
+            className="zoom-home spline-container spline-container-right w-[150%] h-[150%] hidden md:inline-block"
             dangerouslySetInnerHTML={{
               __html:
                 '<spline-viewer url="https://prod.spline.design/8Kk8n4FoXe4tjJBu/scene.splinecode"></spline-viewer>',
@@ -100,10 +100,10 @@ export default function Home() {
               </h1>
             </Link>
             <div className="border-b border-white my-4 hidden md:block"></div>
-            <div className="flex gap-4 justify-center md:justify-end items-center">
+            <div className="flex gap-4 justify-center md:justify-end items-center mt-6">
               <Link
                 href="/creatives-directory"
-                className="text-lg transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a] block md:hidden"
+                className="font-bold text-lg transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a] block md:hidden"
               >
                 hire talent
               </Link>
@@ -112,7 +112,7 @@ export default function Home() {
                 href="/agencies-signin"
                 className="inline-flex items-center justify-end text-white gap-4 cursor-pointer"
               >
-                <span className="text-lg 3xl:text-2xl 4xl:text-[32px] font-bold transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a]">
+                <span className="font-bold text-lg 3xl:text-2xl 4xl:text-[32px] font-bold transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a]">
                   Sign in
                 </span>
                 <LiaSignInAltSolid className="text-[36px] transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a]" />
