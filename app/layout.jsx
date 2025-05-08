@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
           <ClientUseContextWrapper>
             <main className={`${isHomePage && "flex "}relative w-full min-h-screen bg-black text-white`}>
               <Header />
-              <div className={`${isHomePage && "flex flex-1 "} max-w-full overflow-hidden`}>{children}</div>
+              <div className={`${isHomePage && "flex flex-1 "}max-w-full overflow-hidden`}>{children}</div>
               <Footer />
             </main>
           </ClientUseContextWrapper>
