@@ -30,7 +30,7 @@ const Footer = () => {
                 <a href="#" className="font-inter font-bold lowercase text-[14px] 2xl:text-[18px] 3xl:text-[24px] 4xl:text-[32px] transition delay-150 duration-300 ease-in-out text-[#C2C2C2] hover:text-[#FFFFFF] leading-[20px]">user agreement</a>
                 <a href="#" className="font-inter font-bold lowercase text-[14px] 2xl:text-[18px] 3xl:text-[24px] 4xl:text-[32px] transition delay-150 duration-300 ease-in-out text-[#C2C2C2] hover:text-[#FFFFFF] leading-[20px]">contact us</a>
               </div>
-              <p className="px-16 md:px-0 mt-2 3xl:mt-3 4xl:mt-4 font-inter font-normal capitalize text-[14px] 3xl:text-[18] 4xl:text-[24px] transition delay-150 duration-300 ease-in-out text-[#6E6E6E] hover:text-[#FFFFFF]">© {(new Date()).getFullYear()} BY AD AGENCY CREATIVES. All Rights Reserved.</p>
+              <p className="px-16 md:px-0 mt-2 3xl:mt-3 4xl:mt-4 font-inter font-normal capitalize text-[14px] 3xl:text-[18] 4xl:text-[24px] transition delay-150 duration-300 ease-in-out text-[#6E6E6E] hover:text-[#FFFFFF]">© {(new Date()).getFullYear()} Ad Agency Creatives. All Rights Reserved.</p>
             </div>
             <Link
               href="/creatives-directory"
@@ -42,7 +42,7 @@ const Footer = () => {
         </footer>
       ) : (
         <footer className="flex flex-row justify-center w-full z-11 py-[10px] text-xs text-gray-400 space-y-1">
-          <p className="font-alta uppercase text-[13px] xl:text-[14px] 2xl:text-[17px] transition delay-150 duration-300 ease-in-out text-[#6E6E6E] hover:text-[#FFFFFF]">© {(new Date()).getFullYear()} BY AD AGENCY CREATIVES.</p>
+          <p className="font-alta uppercase text-[13px] xl:text-[14px] 2xl:text-[17px] transition delay-150 duration-300 ease-in-out text-[#6E6E6E] hover:text-[#FFFFFF]">© {(new Date()).getFullYear()} Ad Agency Creatives.</p>
         </footer>
       )}
     </>
