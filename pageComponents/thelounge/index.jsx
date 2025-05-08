@@ -37,7 +37,7 @@ const TheLounge = () => {
         <div className="absolute inset-0 z-1 bg-[url(/dots.gif)] bg-auto bg-repeat bg-center opacity-40"></div>
         <div className="absolute inset-0 z-2" style={{ background: 'radial-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 1) 100%)' }}></div>
         <div className="relative z-3">
-          <h1 className="text-5xl md:text-9xl 2xl:text-[182px] 3xl:text-[242px] 4xl:text-[323.4px] font-bold text-yellow-400">The Lounge</h1>
+          <h1 className="text-5xl md:text-9xl 2xl:text-[182px] 3xl:text-[242px] 4xl:text-[323.4px] font-bold text-[#FFCD1A]">The Lounge</h1>
           <div className="hidden md:block space-x-6 2xl:space-x-[36px] 3xl:space-x-[48px] 4xl:space-x-[64px] mt-4 md:mt-10 3xl:mt-20 text-sm md:text-2xl 3xl:text-[32px] 4xl:text-[42.67px] text-white relative z-1">
             <a href="">spotlight</a>
             <a href="">chat</a>
@@ -109,7 +109,7 @@ const TheLounge = () => {
           <div className="absolute bottom-16 left-0 text-8xl space-y-8">
             <p className="">Gather.</p>
             <p>Inspire.</p>
-            <p className="text-yellow-400">Do Cool $#*t!</p>
+            <p className="text-[#FFCD1A]">Do Cool $#*t!</p>
           </div>
         </div>
       </section>
@@ -128,7 +128,7 @@ const TheLounge = () => {
                     <span className="font-alta">CREATIVES</span>
                   </h2>
                   <div>
-                    <Link href="/" className="border-yellow-400 border-4 uppercase text-yellow-400 rounded-full text-sm px-8 py-4 cursor-pointer hover:border-white hover:bg-yellow-400 hover:text-white">Advanced Search</Link>
+                    <Link href="/" className="border-[#FFCD1A] border-4 uppercase text-[#FFCD1A] rounded-full text-sm px-8 py-4 cursor-pointer hover:border-white hover:bg-[#FFCD1A] hover:text-white">Advanced Search</Link>
                   </div>
                 </div>
               )}
@@ -137,7 +137,7 @@ const TheLounge = () => {
                 <div key={`profile-${idx}`} className="col-span-2 text-center flex flex-col justify-center gap-10">
                   <h2 className="text-[48px] leading-[62px]">Want<br />Your ProFile™<br />Featured?</h2>
                   <div>
-                    <Link href="/" className="border-yellow-400 border-4 uppercase text-yellow-400 rounded-full text-sm px-8 py-4 cursor-pointer hover:border-white hover:bg-yellow-400 hover:text-white">See How</Link>
+                    <Link href="/" className="border-[#FFCD1A] border-4 uppercase text-[#FFCD1A] rounded-full text-sm px-8 py-4 cursor-pointer hover:border-white hover:bg-[#FFCD1A] hover:text-white">See How</Link>
                   </div>
                 </div>
               )}

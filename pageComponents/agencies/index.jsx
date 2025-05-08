@@ -27,7 +27,7 @@ const Agencies = () => {
           page=""
           heading="Agencies"
         />
-        <div className="space-x-6 2xl:space-x-[36px] 3xl:space-x-[48px] 4xl:space-x-[64px] mt-1 md:mt-10 3xl:mt-20 text-sm md:text-2xl 3xl:text-[32px] 4xl:text-[42.67px] text-yellow-400 relative z-1">
+        <div className="space-x-6 2xl:space-x-[36px] 3xl:space-x-[48px] 4xl:space-x-[64px] mt-1 md:mt-10 3xl:mt-20 text-sm md:text-2xl 3xl:text-[32px] 4xl:text-[42.67px] text-[#FFCD1A] relative z-1">
           <a href="#creatives" className=''>hire creatives</a>
           <a href="#plans">choose a plan</a>
           <a href="#post-job">post a job</a>
@@ -58,7 +58,7 @@ const Agencies = () => {
                   <div className='relative z-1 '>
                   <Link 
                     href="/" 
-                    className="border-yellow-400 border-2 md:border-4 uppercase text-yellow-400 rounded-full font-inter sm:font-semibold md:font-hass75 md:font-bold text-xs md:text-sm 3xl:text-lg 4xl:text-2xl px-4 py-1.5 3xl:px-12 4xl:px-16 4xl:py-6 cursor-pointer hover:border-white hover:bg-yellow-400 hover:text-white"
+                    className="border-[#FFCD1A] border-2 md:border-4 uppercase text-[#FFCD1A] rounded-full font-inter sm:font-semibold md:font-hass75 md:font-bold text-xs md:text-sm 3xl:text-lg 4xl:text-2xl px-4 py-1.5 3xl:px-12 4xl:px-16 4xl:py-6 cursor-pointer hover:border-white hover:bg-[#FFCD1A] hover:text-white"
                   >
                       Advanced Search
                   </Link>
@@ -86,7 +86,7 @@ const Agencies = () => {
                     Why<br />Search?<br />Post & Attract!
                   </h2>
                   <div>
-                    <Link href="/" className="border-yellow-400 border-2 md:border-4 uppercase text-yellow-400 rounded-full font-sans sm:font-semibold md:font-hass75 md:font-bold text-xs md:text-sm 3xl:text-lg 4xl:text-2xl px-12 py-2 md:px-14  md:py-2.5 2xl:px-24 3xl:px-25.5 4xl:px-33.5 4xl:py-5 cursor-pointer hover:border-white hover:bg-yellow-400 hover:text-white">POST A JOB</Link>
+                    <Link href="/" className="border-[#FFCD1A] border-2 md:border-4 uppercase text-[#FFCD1A] rounded-full font-sans sm:font-semibold md:font-hass75 md:font-bold text-xs md:text-sm 3xl:text-lg 4xl:text-2xl px-12 py-2 md:px-14  md:py-2.5 2xl:px-24 3xl:px-25.5 4xl:px-33.5 4xl:py-5 cursor-pointer hover:border-white hover:bg-[#FFCD1A] hover:text-white">POST A JOB</Link>
                   </div>
                 </div>
               )}
@@ -115,7 +115,7 @@ const Agencies = () => {
                     className="relative z-1 pb-0 pt-10 2xl:pb-16.5 2xl:pt-14.5 3xl:pb-22.5 3xl:pt-19.5 4xl:pt-26 4xl:pb-30 font-arial font-bold text-2xl md:text-4xl 2xl:text-[42.8px] 3xl:text-[58.5px] 4xl:text-[76.09px] md:leading-[58.5px] 3xl:leading-[78px] 4xl:leading-[104px]"
                   >Why<br />Search?<br />Post & Attract!</h2>
                   <div>
-                    <Link href="/" className="border-yellow-400 border-0 outline-[2.05px] md:border-4 uppercase text-yellow-400 rounded-full font-sans sm:font-semibold md:font-hass75 md:font-bold text-xs md:text-sm 3xl:text-lg 4xl:text-2xl px-11.25 py-1.5 md:px-14  md:py-2.5 2xl:px-24 3xl:px-25.5 4xl:px-33.5 4xl:py-5 cursor-pointer hover:border-white hover:bg-yellow-400 hover:text-white font-inter">See How</Link>
+                    <Link href="/" className="border-[#FFCD1A] border-0 outline-[2.05px] md:border-4 uppercase text-[#FFCD1A] rounded-full font-sans sm:font-semibold md:font-hass75 md:font-bold text-xs md:text-sm 3xl:text-lg 4xl:text-2xl px-11.25 py-1.5 md:px-14  md:py-2.5 2xl:px-24 3xl:px-25.5 4xl:px-33.5 4xl:py-5 cursor-pointer hover:border-white hover:bg-[#FFCD1A] hover:text-white font-inter">See How</Link>
                   </div>
                 </div>
               )}
@@ -175,10 +175,10 @@ const Agencies = () => {
           </div>
           <div className="flex items-center justify-end 2xl:px-20 3xl:px-40">
             <Image src="/aac-logo-yellow.png" alt="" width="500" height="500" className="hover:rotate-45 transition-transform duration-3000 w-[35px] h-351px] md:w-[80px] md:h-[80px] 3xl:w-[106px] 3xl:h-[106px] 4xl:w-[142px] 4xl:h-[142px]"/>
-            <div className="border-yellow-400 border-b-[1.21px] md:border-b-[4.65px] 3xl:border-b-[6.2px] 4xl:border-b-[8.27px] w-4 md:w-10"></div>
+            <div className="border-[#FFCD1A] border-b-[1.21px] md:border-b-[4.65px] 3xl:border-b-[6.2px] 4xl:border-b-[8.27px] w-4 md:w-10"></div>
             <Link 
               href="/" 
-              className="border-yellow-400 bg-black border-[1.21px] md:border-[4.65px] 3xl:border-[6.2px 4xl:border-[8.27px] md:border-4 uppercase text-yellow-400 rounded-full font-inter 4xl:font-bold 2xl:leading-[22.78px] 3xlleading-[32px] text-[10px] md:text-lg 3xl:text-2xl 4xl:text-[32px] px-5 py-1 md:px-16 md:py-[13px] 2xl:px-17.5 2xl:py-4 3xl:px-23 3xl:py-5 4xl:px-30 4xl:py-6.75 cursor-pointer hover:border-white hover:bg-yellow-400 hover:text-white"
+              className="border-[#FFCD1A] bg-black border-[1.21px] md:border-[4.65px] 3xl:border-[6.2px 4xl:border-[8.27px] md:border-4 uppercase text-[#FFCD1A] rounded-full font-inter 4xl:font-bold 2xl:leading-[22.78px] 3xlleading-[32px] text-[10px] md:text-lg 3xl:text-2xl 4xl:text-[32px] px-5 py-1 md:px-16 md:py-[13px] 2xl:px-17.5 2xl:py-4 3xl:px-23 3xl:py-5 4xl:px-30 4xl:py-6.75 cursor-pointer hover:border-white hover:bg-[#FFCD1A] hover:text-white"
             >
               Get Featured
             </Link>
@@ -190,22 +190,22 @@ const Agencies = () => {
       <section className="md:py-20 px-6 md:px-10 my-3" id="post-job">
         <h2 id="create-profile" className="text-[22px] md:text-[78px] 3xl:text-[104px] 4xl:text-[143px] 2xl:pl-20 3xl:pl-40 font-bold relative inline-block font-inter">Post a Job</h2>
         <p className="text-xs md:text-3xl 3xl:text-[40px] 4xl:text-[52.5px] uppercase font-inter font-bold py-3 md:pb-9 md:pb-11.5 2xl:pt-13 2xl:pb-21.5 3xl:pt-27.5 3xl:pb-29 4xl:pt-24.5 4xl:pb-39.5">Our Method</p>
-        <p className="text-sm md:text-[42px] 3xl:text-[56px] 4xl:text-[75px] text-white font-arial font-bold">Post. Attract. <span className="text-yellow-400">Hire!</span></p>
+        <p className="text-sm md:text-[42px] 3xl:text-[56px] 4xl:text-[75px] text-white font-arial font-bold">Post. Attract. <span className="text-[#FFCD1A]">Hire!</span></p>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-12 text-left mt-8 md:mt-16 2xl:mt-30 3xl:mt-40 4xl:mt-53">
           <div className="font-wix flex flex-col gap-[5.62] md:gap-2 2xl:gap-5.5 3xl:gap-7 4xl:gap-9.5">
             <h3 className="text-[38px] md:text-[142px] 3xl:text-[190px] 4xl:text-[253.33px] font-bold leading-[1] md:leading-[150px] 3xl:leading-[180px] 4xl:leading-[215px]">1</h3>
-            <p className="text-yellow-400 font-hass75 text-xs font-bold md:text-lg 3xl:text-2xl 4xl:text-2xl font-inter ">CREATE A JOB</p>
+            <p className="text-[#FFCD1A] font-hass75 text-xs font-bold md:text-lg 3xl:text-2xl 4xl:text-2xl font-inter ">CREATE A JOB</p>
             <p className="text-white text-[13.5px] md:text-base 3xl:text-2xl 4xl:text-[32px] font-inter font-normal">Don’t chase - attract.<br />Instantly connect with top creative talent - no noise, no chasing. Just clarity, presence, and a clean path to the right fit. Post your role in a space built to draw in the right minds, effortlessly. Your job listing becomes more than a post - it becomes a signal. Smart. Simple. Seen.</p>
           </div>
           <div className="font-wix flex flex-col gap-[5.62] md:gap-2 2xl:gap-5.5 3xl:gap-7 4xl:gap-9.5">
             <h3 className="text-[38px] md:text-[142px] 3xl:text-[190px] 4xl:text-[253.33px] font-bold leading-[1] md:leading-[150px] 3xl:leading-[180px] 4xl:leading-[215px]">2</h3>
-            <p className="text-yellow-400 font-hass75 text-xs font-bold md:text-lg 3xl:text-2xl 4xl:text-2xl uppercase font-inter ">GET FEATURED & SHOWCASE</p>
+            <p className="text-[#FFCD1A] font-hass75 text-xs font-bold md:text-lg 3xl:text-2xl 4xl:text-2xl uppercase font-inter ">GET FEATURED & SHOWCASE</p>
             <p className="text-white text-[13.5px] md:text-base 3xl:text-2xl 4xl:text-[32px] font-inter font-normal">Showcase your agency.<br />This isn’t just a listing - it’s your presence in a curated space built for visibility and recognition. Your ProFile™ connects your brand, culture, and creative energy in one place that speaks volumes. Get featured. Be remembered. This is where standout agencies meet standout talent.</p>
           </div>
           <div className="font-wix flex flex-col gap-[5.62] md:gap-2 2xl:gap-5.5 3xl:gap-7 4xl:gap-9.5">
             <h3 className="text-[38px] md:text-[142px] 3xl:text-[190px] 4xl:text-[253.33px] font-bold leading-[1] md:leading-[150px] 3xl:leading-[180px] 4xl:leading-[215px]">3</h3>
-            <p className="text-yellow-400 font-hass75 text-xs font-bold md:text-lg 3xl:text-2xl 4xl:text-2xl uppercase font-inter ">HIRE</p>
+            <p className="text-[#FFCD1A] font-hass75 text-xs font-bold md:text-lg 3xl:text-2xl 4xl:text-2xl uppercase font-inter ">HIRE</p>
             <p className="text-white text-[13.5px] md:text-base 3xl:text-2xl 4xl:text-[32px] font-inter font-normal">Find who you're really looking for.<br />No endless scrolling. No guessing games. Just a curated network of standout creatives - ready to jump in, lead, or elevate your next project. Message directly. Review ProFile™s. Build your dream team. This is hiring, reimagined. On your terms, at your pace, with talent that gets it.</p>
           </div>
         </div>
@@ -220,14 +220,14 @@ const Agencies = () => {
               <div className=" md:pt-10 pb-10 md:pb-14 2xl:pb-20 3xl:pb-24 4xl:pb-28">
                 <div>
                   <h2 className="font-alta text-lg md:text-[34px] 3xl:text-[46px] 4xl:text-[60px]">AD CORP.</h2>
-                  <p className="lowercase font-inter text-yellow-400 text-xs md:text-2xl 3xl:text-3xl 4xl:text-[38px] my-2 md:my-4">Creative Director</p>
+                  <p className="lowercase font-inter text-[#FFCD1A] text-xs md:text-2xl 3xl:text-3xl 4xl:text-[38px] my-2 md:my-4">Creative Director</p>
                 </div>
                 <p className="font-alta text-xs md:text-sm 3xl:text-lg 4xl:text-2xl">Orlando, FL</p>
-                <p className="font-alta text-xs md:text-lg 3xl:text-[32px] 4xl:text-[32px] text-yellow-400 mt-4 mb-2 md:my-4">ABOUT</p>
+                <p className="font-alta text-xs md:text-lg 3xl:text-[32px] 4xl:text-[32px] text-[#FFCD1A] mt-4 mb-2 md:my-4">ABOUT</p>
                 <p className="font-inter leading-[14px] md:leading-[24px] 3xl:leading-[32px] 4xl:leading-[40px] text-[11px] md:text-base 3xl:text-2xl 4xl:text-[28px]">
                   I'm an Associate Creative Director based in New York City; with a focus on art direction, brand storytelling, and concepting big ideas. I’ve been fortunate to work with brands like Keds, Louis XIII, Marantz, Wrangler, J.Crew, and USTA, crafting campaigns
                 </p>
-                <Link href="/" className="font-inter text-xs md:text-base 3xl:text-2xl 4xl:text-[28px] text-yellow-400 underline mt-6">Read more...</Link>
+                <Link href="/" className="font-inter text-xs md:text-base 3xl:text-2xl 4xl:text-[28px] text-[#FFCD1A] underline mt-6">Read more...</Link>
               </div>
               <div>
                 <div className="max-w-[130px] md:max-w-[220px] 3xl:max-w-[295px] 4xl:max-w-[393px] mx-auto -mt-12 3xl:-mt-16 bg-black relative z-1">
@@ -238,7 +238,7 @@ const Agencies = () => {
               </div>
             </div>
             <div className="relative  text-center w-full bottom-0">
-              <Link href="/" className="block w-[80%] md:w-[40%] m-auto border-yellow-400 border-2 md:border-4 uppercase text-yellow-400 rounded-full font-inter font-bold text-xs 2xl:text-lg 3xl:text-lg 4xl:text-2xl uppercase px-5 xl:px-30 3xl:px-40 md:py-4 py-2 cursor-pointer hover:border-white hover:bg-yellow-400 hover:text-white">
+              <Link href="/" className="block w-[80%] md:w-[40%] m-auto border-[#FFCD1A] border-2 md:border-4 uppercase text-[#FFCD1A] rounded-full font-inter font-bold text-xs 2xl:text-lg 3xl:text-lg 4xl:text-2xl uppercase px-5 xl:px-30 3xl:px-40 md:py-4 py-2 cursor-pointer hover:border-white hover:bg-[#FFCD1A] hover:text-white">
                 POST A JOB
                 {/* create ProFile<sup className='font-hass65 text-[6px] md:text-[10px] xl:text-[8px] 3xl:text-[10px] 4xl:text-[14px] relative -top-[4px] md:-top-[8px] 3xl:-top-[6px] 4xl:-top-[9px]'>TM</sup> */}
               </Link>

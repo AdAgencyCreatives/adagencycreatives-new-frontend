@@ -31,7 +31,7 @@ const Creatives = () => {
           page=""
           heading="Creatives"
         />
-        <div className="space-x-6 2xl:space-x-[36px] 3xl:space-x-[48px] 4xl:space-x-[64px] mt-1 md:mt-10 3xl:mt-20 text-sm md:text-2xl 3xl:text-[32px] 4xl:text-[42.67px] text-yellow-400 relative z-1">
+        <div className="space-x-6 2xl:space-x-[36px] 3xl:space-x-[48px] 4xl:space-x-[64px] mt-1 md:mt-10 3xl:mt-20 text-sm md:text-2xl 3xl:text-[32px] 4xl:text-[42.67px] text-[#FFCD1A] relative z-1">
           <a href="#create-profile" className=''>create ProFile<sup className='font-hass65 text-[8px] md:text-[10px] xl:text-[10px] 3xl:text-[16px] 4xl:text-[18px] relative md:-top-[12px] 3xl:-top-[16px]'>TM</sup></a>
           <a href="#search-jobs">search jobs</a>
           <a href="#resources">resources</a>
@@ -62,7 +62,7 @@ const Creatives = () => {
                   <div className='relative z-1 '>
                   <Link 
                     href="/" 
-                    className="border-yellow-400 border-2 md:border-4 uppercase text-yellow-400 rounded-full font-inter sm:font-semibold md:font-hass75 md:font-bold text-xs md:text-sm 3xl:text-lg 4xl:text-2xl px-4 py-1.5 3xl:px-12 4xl:px-16 4xl:py-6 cursor-pointer hover:border-white hover:bg-yellow-400 hover:text-white"
+                    className="border-[#FFCD1A] border-2 md:border-4 uppercase text-[#FFCD1A] rounded-full font-inter sm:font-semibold md:font-hass75 md:font-bold text-xs md:text-sm 3xl:text-lg 4xl:text-2xl px-4 py-1.5 3xl:px-12 4xl:px-16 4xl:py-6 cursor-pointer hover:border-white hover:bg-[#FFCD1A] hover:text-white"
                   >
                       Advanced Search
                   </Link>
@@ -151,8 +151,8 @@ const Creatives = () => {
           </div>
           <div className="flex items-center justify-end mt-5 md:mt-20 2xl:mt-45 3xl:mt-60 4xl:mt-80 2xl:px-20 3xl:px-40">
             {/* <Image src="/aac-logo-yellow.png" alt="" width="67" height="67" className="hover:rotate-45 transition-transform duration-3000" />
-            <div className="border-yellow-400 border-2 w-10"></div> */}
-            <Link href="/" className="border-yellow-400 bg-black border-2 md:border-4 uppercase text-yellow-400 rounded-full font-sans sm:font-semibold md:font-hass75 md:font-bold text-[8.2px] md:text-lg 3xl:text-2xl 4xl:text-[28px] px-10 py-2 3xl:px-12 4xl:px-16 4xl:py-6 cursor-pointer hover:border-white hover:bg-yellow-400 hover:text-white ">Get Featured</Link>
+            <div className="border-[#FFCD1A] border-2 w-10"></div> */}
+            <Link href="/" className="border-[#FFCD1A] bg-black border-2 md:border-4 uppercase text-[#FFCD1A] rounded-full font-sans sm:font-semibold md:font-hass75 md:font-bold text-[8.2px] md:text-lg 3xl:text-2xl 4xl:text-[28px] px-10 py-2 3xl:px-12 4xl:px-16 4xl:py-6 cursor-pointer hover:border-white hover:bg-[#FFCD1A] hover:text-white ">Get Featured</Link>
           </div>
         </div>
       </section>
@@ -185,7 +185,7 @@ const Creatives = () => {
                   <div>
                     <Link 
                       href="/" 
-                      className="border-yellow-400 border-0 outline-[2.05px] md:border-4 uppercase text-yellow-400 rounded-full font-sans sm:font-semibold md:font-hass75 md:font-bold text-xs md:text-sm 3xl:text-lg 4xl:text-2xl px-12.5 py-2 md:px-14  md:py-2.5 2xl:px-24 3xl:px-25.5 4xl:px-33.5 4xl:py-5 cursor-pointer hover:border-white hover:bg-yellow-400 hover:text-white"
+                      className="border-[#FFCD1A] border-0 outline-[2.05px] md:border-4 uppercase text-[#FFCD1A] rounded-full font-sans sm:font-semibold md:font-hass75 md:font-bold text-xs md:text-sm 3xl:text-lg 4xl:text-2xl px-12.5 py-2 md:px-14  md:py-2.5 2xl:px-24 3xl:px-25.5 4xl:px-33.5 4xl:py-5 cursor-pointer hover:border-white hover:bg-[#FFCD1A] hover:text-white"
                     >JOIN US</Link>
                   </div>
                 </div>
@@ -207,7 +207,7 @@ const Creatives = () => {
                   </div>
                   <h2 className="text-2xl md:text-[44px] md:leading-[58.5px] 3xl:text-[57.07px] 3xl:leading-[78px] 4xl:text-[76.09px] 4xl:leading-[104px] font-bold">Want<br />Your ProFile<sup className='font-hass65 text-[8px] md:text-[12px] xl:text-[14px] 3xl:text-[18px] 4xl:text-[20px] relative -top-[10px] md:-top-[20px] 3xl:-top-[30px] 4xl:-top-[40px]'>TM</sup><br />Featured?</h2>
                   <div>
-                    <Link href="/" className="border-yellow-400 border-2 md:border-4 uppercase text-yellow-400 rounded-full font-sans sm:font-semibold md:font-hass75 md:font-bold text-xs md:text-sm 3xl:text-lg 4xl:text-2xl px-12 py-2 md:px-14  md:py-2.5 2xl:px-24 3xl:px-25.5 4xl:px-33.5 4xl:py-5 cursor-pointer hover:border-white hover:bg-yellow-400 hover:text-white">See How</Link>
+                    <Link href="/" className="border-[#FFCD1A] border-2 md:border-4 uppercase text-[#FFCD1A] rounded-full font-sans sm:font-semibold md:font-hass75 md:font-bold text-xs md:text-sm 3xl:text-lg 4xl:text-2xl px-12 py-2 md:px-14  md:py-2.5 2xl:px-24 3xl:px-25.5 4xl:px-33.5 4xl:py-5 cursor-pointer hover:border-white hover:bg-[#FFCD1A] hover:text-white">See How</Link>
                   </div>
                 </div>
               )}
@@ -234,7 +234,7 @@ const Creatives = () => {
                   </div>
                   <h2 className="text-2xl md:text-[44px] md:leading-[58.5px] 3xl:text-[57.07px] 3xl:leading-[78px] 4xl:text-[76.09px] 4xl:leading-[104px] font-bold mt-[48px] md:mt-0 font-inter">Want<br />Your <br /> ProFile<sup className='font-hass65 text-[10px] md:text-[12px] xl:text-[14px] 3xl:text-[18px] 4xl:text-[20px] relative -top-[10px] md:-top-[20px] 3xl:-top-[30px] 4xl:-top-[40px]'>TM</sup><br />Featured?</h2>
                   <div>
-                    <Link href="/" className="border-yellow-400 border-0 outline-[2.05px] md:border-4 uppercase text-yellow-400 rounded-full font-sans sm:font-semibold md:font-hass75 md:font-bold text-xs md:text-sm 3xl:text-lg 4xl:text-2xl px-11.25 py-1.5 md:px-14  md:py-2.5 2xl:px-24 3xl:px-25.5 4xl:px-33.5 4xl:py-5 cursor-pointer hover:border-white hover:bg-yellow-400 hover:text-white font-inter">See How</Link>
+                    <Link href="/" className="border-[#FFCD1A] border-0 outline-[2.05px] md:border-4 uppercase text-[#FFCD1A] rounded-full font-sans sm:font-semibold md:font-hass75 md:font-bold text-xs md:text-sm 3xl:text-lg 4xl:text-2xl px-11.25 py-1.5 md:px-14  md:py-2.5 2xl:px-24 3xl:px-25.5 4xl:px-33.5 4xl:py-5 cursor-pointer hover:border-white hover:bg-[#FFCD1A] hover:text-white font-inter">See How</Link>
                   </div>
                 </div>
               )}
@@ -247,22 +247,22 @@ const Creatives = () => {
       <section className="md:py-20 px-6 md:px-10 mb-20">
         <h2 id="create-profile" className="text-[22px] md:text-[78px] 3xl:text-[104px] 4xl:text-[143px] 2xl:pl-20 3xl:pl-40 font-bold relative inline-block font-inter">Create ProFile<sup className='text-[10px] md:text-[14px] xl:text-[18px] 3xl:text-[22px] 4xl:text-[26px] relative -top-[10px] md:-top-[30px] 3xl:-top-[50px] 4xl:-top-[60px]'>TM</sup></h2>
         <p className="text-xs md:text-3xl 3xl:text-[40px] 4xl:text-[52.5px] uppercase font-inter font-bold py-3 md:pb-9 md:pb-11.5 2xl:pt-13 2xl:pb-21.5 3xl:pt-27.5 3xl:pb-29 4xl:pt-24.5 4xl:pb-39.5">Our Method</p>
-        <p className="text-sm md:text-[42px] 3xl:text-[56px] 4xl:text-[75px] text-white font-arial font-bold">Create. Inspire. <span className="text-yellow-400">Get Hired!</span></p>
+        <p className="text-sm md:text-[42px] 3xl:text-[56px] 4xl:text-[75px] text-white font-arial font-bold">Create. Inspire. <span className="text-[#FFCD1A]">Get Hired!</span></p>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-12 text-left mt-8 md:mt-16 2xl:mt-30 3xl:mt-40 4xl:mt-53">
           <div className="font-wix flex flex-col gap-[5.62] md:gap-2 2xl:gap-5.5 3xl:gap-7 4xl:gap-9.5">
             <h3 className="text-[38px] md:text-[142px] 3xl:text-[190px] 4xl:text-[253.33px] font-bold leading-[1] md:leading-[150px] 3xl:leading-[180px] 4xl:leading-[215px]">1</h3>
-            <p className="text-yellow-400 font-hass75 text-xs font-bold md:text-lg 3xl:text-2xl 4xl:text-2xl font-inter ">CREATE ProFile<sup className='font-hass65 text-[8px] md:text-[10px] 3xl:text-[12px] relative -top-[6px] md:-top-[10px]'>TM</sup></p>
+            <p className="text-[#FFCD1A] font-hass75 text-xs font-bold md:text-lg 3xl:text-2xl 4xl:text-2xl font-inter ">CREATE ProFile<sup className='font-hass65 text-[8px] md:text-[10px] 3xl:text-[12px] relative -top-[6px] md:-top-[10px]'>TM</sup></p>
             <p className="text-white text-[13.5px] md:text-base 3xl:text-2xl 4xl:text-[32px] font-inter font-normal">Claim your space on the web.<br />Design your own stunning profile page - crafted to impress, built to connect. Add your work, your voice, your values. You’ll instantly get a sleek webpage with your personal link and a downloadable version ready to share anywhere - from DMs to boardrooms. It's free. It’s yours. It’s the start of everything.</p>
           </div>
           <div className="font-wix flex flex-col gap-[5.62] md:gap-2 2xl:gap-5.5 3xl:gap-7 4xl:gap-9.5">
             <h3 className="text-[38px] md:text-[142px] 3xl:text-[190px] 4xl:text-[253.33px] font-bold leading-[1] md:leading-[150px] 3xl:leading-[180px] 4xl:leading-[215px]">2</h3>
-            <p className="text-yellow-400 font-hass75 text-xs font-bold md:text-lg 3xl:text-2xl 4xl:text-2xl uppercase font-inter ">GET FEATURED & SHOWCASE</p>
+            <p className="text-[#FFCD1A] font-hass75 text-xs font-bold md:text-lg 3xl:text-2xl 4xl:text-2xl uppercase font-inter ">GET FEATURED & SHOWCASE</p>
             <p className="text-white text-[13.5px] md:text-base 3xl:text-2xl 4xl:text-[32px] font-inter font-normal">Be seen where it matters.<br />Your ProFile™ becomes part of a curated network - handpicked creatives, thinkers, and builders. Stand out in The Lounge, and The Agencies Homepage where talent is more than a portfolio - it’s a presence. No chasing. No noise. Just the right eyes on your work.</p>
           </div>
           <div className="font-wix flex flex-col gap-[5.62] md:gap-2 2xl:gap-5.5 3xl:gap-7 4xl:gap-9.5">
             <h3 className="text-[38px] md:text-[142px] 3xl:text-[190px] 4xl:text-[253.33px] font-bold leading-[1] md:leading-[150px] 3xl:leading-[180px] 4xl:leading-[215px]">3</h3>
-            <p className="text-yellow-400 font-hass75 text-xs font-bold md:text-lg 3xl:text-2xl 4xl:text-2xl uppercase font-inter ">GET HIRED</p>
+            <p className="text-[#FFCD1A] font-hass75 text-xs font-bold md:text-lg 3xl:text-2xl 4xl:text-2xl uppercase font-inter ">GET HIRED</p>
             <p className="text-white text-[13.5px] md:text-base 3xl:text-2xl 4xl:text-[32px] font-inter font-normal">Let your work open doors.<br />Brands, agencies, and visionary clients are already here - searching, browsing, booking. With a ProFile™, you're instantly visible and ready to be contacted, commissioned, or called in. Whether it’s a dream gig or a long-term collab, this is where it begins. With our help, on your terms.</p>
           </div>
         </div>
@@ -277,12 +277,12 @@ const Creatives = () => {
               <div className=" md:pt-10 pb-10 md:pb-14 2xl:pb-20 3xl:pb-24 4xl:pb-28">
                 <div>
                   <h2 className="font-alta text-lg md:text-[34px] 3xl:text-[46px] 4xl:text-[60px]">Matthew Marcos</h2>
-                  <p className="lowercase font-inter text-yellow-400 text-xs md:text-2xl 3xl:text-3xl 4xl:text-[38px] my-2 md:my-4">Creative Director</p>
+                  <p className="lowercase font-inter text-[#FFCD1A] text-xs md:text-2xl 3xl:text-3xl 4xl:text-[38px] my-2 md:my-4">Creative Director</p>
                 </div>
                 <p className="font-alta text-xs md:text-sm 3xl:text-lg 4xl:text-2xl">NEW YORK, NY</p>
-                <p className="font-alta text-xs md:text-lg 3xl:text-[32px] 4xl:text-[32px] text-yellow-400 mt-4 mb-2 md:my-4">ABOUT</p>
+                <p className="font-alta text-xs md:text-lg 3xl:text-[32px] 4xl:text-[32px] text-[#FFCD1A] mt-4 mb-2 md:my-4">ABOUT</p>
                 <p className="font-inter leading-[14px] md:leading-[24px] 3xl:leading-[32px] 4xl:leading-[40px] text-[11px] md:text-base 3xl:text-2xl 4xl:text-[28px]">I'm an Associate Creative Director based in New York City; with a focus on art direction, brand storytelling, and concepting big ideas.I’ve been fortunate to work with brands like Keds, Louis XIII, Marantz, Wrangler, J.Crew, and USTA, crafting campaigns </p>
-                <Link href="/" className="font-inter text-xs md:text-base 3xl:text-2xl 4xl:text-[28px] text-yellow-400 underline mt-6">Read more...</Link>
+                <Link href="/" className="font-inter text-xs md:text-base 3xl:text-2xl 4xl:text-[28px] text-[#FFCD1A] underline mt-6">Read more...</Link>
               </div>
               <div>
                 <div className="max-w-[130px] md:max-w-[220px] 3xl:max-w-[295px] 4xl:max-w-[393px] mx-auto -mt-12 3xl:-mt-16 bg-black relative z-1">
@@ -293,7 +293,7 @@ const Creatives = () => {
               </div>
             </div>
             <div className="relative  text-center w-full bottom-0">
-              <Link href="/" className="block w-fit md:w-[40%] m-auto border-yellow-400 border-2 md:border-4 uppercase text-yellow-400 rounded-full font-inter font-bold text-xs 2xl:text-lg 3xl:text-lg 4xl:text-2xl uppercase px-5 xl:px-30 3xl:px-40 md:py-4 py-2 cursor-pointer hover:border-white hover:bg-yellow-400 hover:text-white">create ProFile<sup className='font-hass65 text-[6px] md:text-[10px] xl:text-[8px] 3xl:text-[10px] 4xl:text-[14px] relative -top-[4px] md:-top-[8px] 3xl:-top-[6px] 4xl:-top-[9px]'>TM</sup></Link>
+              <Link href="/" className="block w-fit md:w-[40%] m-auto border-[#FFCD1A] border-2 md:border-4 uppercase text-[#FFCD1A] rounded-full font-inter font-bold text-xs 2xl:text-lg 3xl:text-lg 4xl:text-2xl uppercase px-5 xl:px-30 3xl:px-40 md:py-4 py-2 cursor-pointer hover:border-white hover:bg-[#FFCD1A] hover:text-white">create ProFile<sup className='font-hass65 text-[6px] md:text-[10px] xl:text-[8px] 3xl:text-[10px] 4xl:text-[14px] relative -top-[4px] md:-top-[8px] 3xl:-top-[6px] 4xl:-top-[9px]'>TM</sup></Link>
               <footer className="flex flex-row justify-center w-full z-11 py-[10px] text-gray-400 space-y-1">
                 <p className="font-sans font-normal uppercase mt-2 px-12 md:px-2 text-[13px] xl:text-[16px] 3xl:text-[20px] 4xl:text-[26px] transition delay-150 duration-300 ease-in-out text-[#6E6E6E] hover:text-[#FFFFFF]">© {(new Date()).getFullYear()} Ad Agency Creatives. All Rights Reserved.</p>
               </footer>

@@ -12,7 +12,7 @@ const FAQ = () => {
   return (
     <section className="mx-auto px-10 pt-40">
       <div className="rounded-4xl border-(--ad-gray) border-1 shadow-(--ad-box-shadow) bg-black/50 backdrop-blur py-6 px-6 md:py-30 md:px-36 h-screen">
-        <div className="text-right text-yellow-400 font-semibold mb-8 text-lg 3xl:text-[32px] 4xl:text-[42px]">
+        <div className="text-right text-[#FFCD1A] font-semibold mb-8 text-lg 3xl:text-[32px] 4xl:text-[42px]">
           faq
         </div>
 

@@ -11,14 +11,14 @@ const Dashboard = ({ user, sidebarMenu, topMenu }) => {
             <Image src="/aac-logo.png" width="67" height="67" alt="" className="absolute right-4 bottom-4 hover:rotate-45 transition-transform duration-3000" />
           </div>
           <div className="font-alta font-bold">
-            <h1 className="text-3xl hover:text-yellow-400">{user.name}</h1>
-            <p className="uppercase text-base hover:text-yellow-400">{user.status}</p>
+            <h1 className="text-3xl hover:text-[#FFCD1A]">{user.name}</h1>
+            <p className="uppercase text-base hover:text-[#FFCD1A]">{user.status}</p>
           </div>
           <div>
             <ul className="py-8">
             {sidebarMenu.map((item) => {
               return (
-                <li className="lowercase text-yellow-400 hover:text-white py-3">
+                <li className="lowercase text-[#FFCD1A] hover:text-white py-3">
                   <Link href={item.href}>{item.label}</Link>
                 </li>
               )
@@ -30,7 +30,7 @@ const Dashboard = ({ user, sidebarMenu, topMenu }) => {
           <ul className="flex justify-between">
             {topMenu.map((item) => {
               return (
-                <li className="lowercase text-yellow-400 hover:text-white">
+                <li className="lowercase text-[#FFCD1A] hover:text-white">
                   <Link href={item.href}>{item.label}</Link>
                 </li>
               )
@@ -40,20 +40,20 @@ const Dashboard = ({ user, sidebarMenu, topMenu }) => {
         <div className="rounded-4xl border-(--ad-gray) border shadow-(--ad-box-shadow) px-10 py-10">
           <div className="flex flex-col gap-14">
             <div>
-              <p className="font-alta font-bold uppercase text-base text-yellow-400 mb-2">YOUR PLAN</p>
-              <p className="lowercase hover:text-yellow-400 text-white text-xl">{user.plan}</p>
+              <p className="font-alta font-bold uppercase text-base text-[#FFCD1A] mb-2">YOUR PLAN</p>
+              <p className="lowercase hover:text-[#FFCD1A] text-white text-xl">{user.plan}</p>
             </div>
             <div>
-              <p className="font-alta font-bold uppercase text-base text-yellow-400 mb-2">UPGRADE PLAN TO</p>
-              <p className="lowercase hover:text-yellow-400 text-white text-xl">{user.upgradeTo}</p>
+              <p className="font-alta font-bold uppercase text-base text-[#FFCD1A] mb-2">UPGRADE PLAN TO</p>
+              <p className="lowercase hover:text-[#FFCD1A] text-white text-xl">{user.upgradeTo}</p>
             </div>
             <div>
-              <p className="font-alta font-bold uppercase text-base text-yellow-400 mb-2">ADVENTAGES</p>
-              <p className="lowercase hover:text-yellow-400 text-white text-xl" dangerouslySetInnerHTML={{ __html: user.advantages }}></p>
+              <p className="font-alta font-bold uppercase text-base text-[#FFCD1A] mb-2">ADVENTAGES</p>
+              <p className="lowercase hover:text-[#FFCD1A] text-white text-xl" dangerouslySetInnerHTML={{ __html: user.advantages }}></p>
             </div>
             <div>
-              <p className="font-alta font-bold uppercase text-base text-yellow-400 mb-2">BALANCE</p>
-              <p className="lowercase hover:text-yellow-400 text-white text-xl">{user.balance}</p>
+              <p className="font-alta font-bold uppercase text-base text-[#FFCD1A] mb-2">BALANCE</p>
+              <p className="lowercase hover:text-[#FFCD1A] text-white text-xl">{user.balance}</p>
             </div>
           </div>
         </div>
