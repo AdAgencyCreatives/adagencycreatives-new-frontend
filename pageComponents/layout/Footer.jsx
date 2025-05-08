@@ -16,25 +16,25 @@ const Footer = () => {
   return (
     <>
       {isHomePage ? (
-        <footer className="absolute left-1/2 transform -translate-x-1/2 w-[78%] z-11 bottom-10 text-center text-xs text-gray-400 space-y-1">
+        <footer className="max-sm:w-full absolute left-1/2 transform -translate-x-1/2 w-[78%] z-11 bottom-10 text-center text-xs text-gray-400 space-y-1">
           <div className="flex justify-between">
             <Link
               href="/jobs-directory"
-              className="text-[19px] xl:text-[21px] 2xl:text-[29px] 4xl:text-[32px] font-bold font-inter transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a]"
+              className="hidden md:block text-[19px] xl:text-[21px] 2xl:text-[29px] 4xl:text-[32px] font-bold font-inter transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a]"
             >
               search jobs
             </Link>
             <div>
-              <div className="space-x-4">
-                <a href="#" className="font-alta uppercase text-[14px] 2xl:text-[18px] 3xl:text-[26px] 4xl:text-[34.67px] transition delay-150 duration-300 ease-in-out text-[#424242] hover:text-[#FFFFFF]">privacy policy</a>
-                <a href="#" className="font-alta uppercase text-[14px] 2xl:text-[18px] 3xl:text-[26px] 4xl:text-[34.67px] transition delay-150 duration-300 ease-in-out text-[#424242] hover:text-[#FFFFFF]">user agreement</a>
-                <a href="#" className="font-alta uppercase text-[14px] 2xl:text-[18px] 3xl:text-[26px] 4xl:text-[34.67px] transition delay-150 duration-300 ease-in-out text-[#424242] hover:text-[#FFFFFF]">contact us</a>
+              <div className="space-x-4 2xl:space-x-8 3xl:space-x-12 4xl:space-x-16">
+                <a href="#" className="font-inter font-bold lowercase text-[14px] 2xl:text-[18px] 3xl:text-[24px] 4xl:text-[32px] transition delay-150 duration-300 ease-in-out text-[#C2C2C2] hover:text-[#FFFFFF] leading-[20px]">privacy policy</a>
+                <a href="#" className="font-inter font-bold lowercase text-[14px] 2xl:text-[18px] 3xl:text-[24px] 4xl:text-[32px] transition delay-150 duration-300 ease-in-out text-[#C2C2C2] hover:text-[#FFFFFF] leading-[20px]">user agreement</a>
+                <a href="#" className="font-inter font-bold lowercase text-[14px] 2xl:text-[18px] 3xl:text-[24px] 4xl:text-[32px] transition delay-150 duration-300 ease-in-out text-[#C2C2C2] hover:text-[#FFFFFF] leading-[20px]">contact us</a>
               </div>
-              <p className="font-alta uppercase text-[16px] xl:text-[26px] 2xl:text-[26px] transition delay-150 duration-300 ease-in-out text-[#6E6E6E] hover:text-[#FFFFFF]">© {(new Date()).getFullYear()} BY AD AGENCY CREATIVES.</p>
+              <p className="px-16 md:px-0 mt-2 3xl:mt-3 4xl:mt-4 font-inter font-normal capitalize text-[14px] 3xl:text-[18] 4xl:text-[24px] transition delay-150 duration-300 ease-in-out text-[#6E6E6E] hover:text-[#FFFFFF]">© {(new Date()).getFullYear()} BY AD AGENCY CREATIVES. All Rights Reserved.</p>
             </div>
             <Link
               href="/creatives-directory"
-              className="text-[19px] xl:text-[21px] 2xl:text-[29px] 4xl:text-[32px] font-bold font-inter transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a]"
+              className="hidden md:block text-[19px] xl:text-[21px] 2xl:text-[29px] 4xl:text-[32px] font-bold font-inter transition delay-150 duration-300 ease-in-out text-white hover:text-[#ffcd1a]"
             >
               hire talent
             </Link>
