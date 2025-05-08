@@ -9,6 +9,7 @@ import PrimaryMenu from './PrimaryMenu';
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import ChatIcon from 'icons/ChatIcon';
 import CloseIcon from 'icons/CloseIcon';
+import MenuIcon from 'icons/MenuIcon';
 import { Context as AuthContext } from "contexts/AuthContext";
 import SplineGraphic from 'components/SplineGraphic';
 
@@ -52,7 +53,8 @@ const MobileMenu = ({isHomePage}) => {
         : 
           <Bars3Icon className="w-8 ml-2" onClick={toggleSidebar} />
         } */}
-        <Bars3Icon className={`${isHomePage ? 'w-10 md:w-8 3xl:w-11 4xl:w-15' : 'w-9'} ml-2 `} onClick={toggleSidebar} />
+        {/* <Bars3Icon className={`${isHomePage ? 'w-10 md:w-8 3xl:w-11 4xl:w-15' : 'w-9'} ml-2 `} onClick={toggleSidebar} /> */}
+        <MenuIcon onClick={toggleSidebar} />
       </button>
 
       {/* Sidebar */}
