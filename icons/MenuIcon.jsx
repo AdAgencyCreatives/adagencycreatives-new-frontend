@@ -4,7 +4,7 @@ const MenuIcon = ({ onClick }) => {
       xmlns="http://www.w3.org/2000/svg" 
       viewBox="0 0 61 40" 
       fill="none"
-      className="w-[33.6px] h-[21.4px] 3xl:w-[44.8px] 3xl:h-[28.53px] 4xl:w-[59.73px] 4xl:h-[38.04px]"
+      className="w-[33.6px] h-[21.4px] 3xl:w-[44.8px] 3xl:h-[28.53px] 4xl:w-[59.73px] 4xl:h-[38.04px] cursor-pointer"
       onClick={onClick}
     >
       <path d="M60.6669 0.978027V4.17803H0.933594V0.978027H60.6669Z" fill="white"/>
