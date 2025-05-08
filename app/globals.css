@@ -11,7 +11,7 @@
   --foreground: #171717;
   --font-wix: 'Wix Madefor Text', sans-serif;
   --ad-gray: #6e6e6e;
-  --ad-box-shadow: 0 1px 7px 1px rgba(255,255,255,0.6);
+  --ad-box-shadow: 0 1px 7px 1px rgba(255, 255, 255, 0.6);
 }
 
 @font-face {
@@ -66,12 +66,12 @@ body {
 
 /* For most browsers */
 input:-webkit-autofill,
-input:-webkit-autofill:hover, 
+input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-    -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
-    -webkit-text-fill-color: white !important;
-    transition: background-color 5000s ease-in-out 0s;
+  -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+  -webkit-text-fill-color: white !important;
+  transition: background-color 5000s ease-in-out 0s;
 }
 
 /* For Firefox */
@@ -79,8 +79,8 @@ input:-moz-autofill,
 input:-moz-autofill:hover,
 input:-moz-autofill:focus,
 input:-moz-autofill:active {
-    box-shadow: 0 0 0 1000px transparent inset !important;
-    text-fill-color: white !important;
+  box-shadow: 0 0 0 1000px transparent inset !important;
+  text-fill-color: white !important;
 }
 
 input:autofill {
@@ -123,50 +123,59 @@ button {
   mask-size: 100% 120%;
   mask-repeat: no-repeat;
 }
-.shadow-light{
+
+.shadow-light {
   box-shadow: 0 2.29px 7.61px 1.29px #c2c2c2;
 }
-.shadow-down{
+
+.shadow-down {
   box-shadow: 0px 0.45px 6.32px 3.16px #00000099;
 }
+
 .agency-bg {
   color: --alpha(#000 / 30%);
 }
 
-.resource-bg{
+.resource-bg {
   background: url("/resources-bg.mp4") no-repeat center/center cover;
 }
 
 .zoom-35 {
   zoom: 0.35;
 }
-.zoom-home{
-  zoom: 0.5;
+
+.zoom-home {
+  zoom: 0.7;
 }
+
 @media (min-width: 768px) {
   .zoom-60 {
     zoom: 0.6;
   }
 }
+
 @media (min-width: 1440px) {
   .zoom-90 {
     zoom: 0.9;
   }
-  .zoom-home{
+
+  .zoom-home {
     zoom: 0.65;
   }
 }
+
 @media (min-width: 1920px) {
   .zoom-80 {
     zoom: 0.8;
   }
-  .zoom-home{
+
+  .zoom-home {
     zoom: 0.85;
   }
 }
 
-@media (min-width: 2560px){
-  .zoom-home{
+@media (min-width: 2560px) {
+  .zoom-home {
     zoom: 1.2;
   }
 }
