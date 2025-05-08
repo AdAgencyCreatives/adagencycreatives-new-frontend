@@ -22,9 +22,9 @@ export default function RootLayout({ children }) {
       <body className="antialiased">
         <ClientProviderWrapper>
         <ClientUseContextWrapper>
-            <main className="relative w-full min-h-screen bg-black text-white">
+            <main className="flex relative w-full min-h-screen bg-black text-white">
               <Header />
-              <div className="max-w-full overflow-hidden">{children}</div>
+              <div className="flex flex-1 max-w-full overflow-hidden">{children}</div>
               <Footer />
             </main>
           </ClientUseContextWrapper>

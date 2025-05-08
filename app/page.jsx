@@ -3,7 +3,7 @@ import { LiaSignInAltSolid } from "react-icons/lia";
 
 export default function Home() {
   return (
-    <div className="px-10 flex flex-col justify-start md:justify-center items-center relative min-h-[90vh] my-[150px] md:my-[220px]">
+    <div className="px-10 flex flex-1 flex-col justify-start md:justify-center items-center relative">
       {/* Background */}
       <div className="absolute inset-0 z-0 w-[88%] mx-auto">
         <video
