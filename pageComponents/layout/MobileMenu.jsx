@@ -85,7 +85,16 @@ const MobileMenu = ({ isHomePage }) => {
           </div>
           <PrimaryMenu setIsOpen={setIsOpen} user={user} />
         </div>
-        {!user && (
+        {user ? (
+          <div className="flex flex-col gap-[12px] 3xl:gap-[16px] 4xl:gap-[21.33px]">
+            <Link
+              href="/logout"
+              className="font-bold text-[14px] 3xl:text-[18px] 4xl:text-[24px] leading-[19.26px] 3xl:leading-[25.68px] 4xl:leading-[34.24px] p-[8px] 3xl:p-[10.63px] 4xl:p-[14px] border-[2.96px] 3xl:border-[3.95px] 4xl:border-[5.27px] block text-center border-white rounded-full bg-[#FFCD1A] hover:bg-transparent hover:text-[#FFCD1A] hover:border-[#FFCD1A] uppercase"
+            >
+              Sign Out
+            </Link>
+          </div>
+        ) : (
           <div className="flex flex-col gap-[12px] 3xl:gap-[16px] 4xl:gap-[21.33px]">
             <Link
               href="/"
