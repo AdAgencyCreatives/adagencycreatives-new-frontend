@@ -1,4 +1,3 @@
-"use client"
 import { Wix_Madefor_Text } from "next/font/google";
 import "./globals.css";
 import Header from "pageComponents/layout/Header";
@@ -6,6 +5,7 @@ import Footer from "pageComponents/layout/Footer";
 import ClientUseContextWrapper from "./ClientUseContextWrapper";
 import ClientProviderWrapper from "./ClientProviderWrapper";
 import { usePathname } from "next/navigation";
+import LayoutWrapper from "./LayoutWrapper";
 
 export const metadata = {
   title: "Ad Agency Creatives is a community for advertising creatives.",
@@ -14,8 +14,6 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
 
-  const pathname = usePathname();
-  const isHomePage = pathname === "/" || pathname === "/home" || pathname === "/home/";
 
   return (
     <html lang="en">
@@ -28,11 +26,7 @@ export default function RootLayout({ children }) {
       <body className="antialiased">
         <ClientProviderWrapper>
           <ClientUseContextWrapper>
-            <main className={`${isHomePage && "flex "}relative w-full min-h-screen bg-black text-white`}>
-              <Header />
-              <div className={`${isHomePage && "flex flex-1 "}max-w-full overflow-hidden`}>{children}</div>
-              <Footer />
-            </main>
+            <LayoutWrapper>{children}</LayoutWrapper>
           </ClientUseContextWrapper>
         </ClientProviderWrapper>
       </body>
