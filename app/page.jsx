@@ -3,7 +3,7 @@ import { LiaSignInAltSolid } from "react-icons/lia";
 
 export default function Home() {
   return (
-    <div className="px-10 flex flex-1 flex-col justify-start md:justify-center items-center relative">
+    <div className="px-10 pt-25 flex flex-1 flex-col justify-start md:justify-center items-center relative">
       {/* Background */}
       <div className="absolute inset-0 z-0 w-[88%] mx-auto">
         <video
@@ -60,15 +60,15 @@ export default function Home() {
         </div>
 
         {/* Center Logo */}
-        <div className="relative shrink-0 order-1 md:order-2 p-20 md:p-0">
+        <div className="relative shrink-0 order-1 md:order-2 aspect-square">
           <div
-            className="absolute inset-0 w-full h-[600px] mx-auto my-auto inline-block md:hidden rounded-full overflow-hidden z-0 aspect-square zoom-home"
+            className="absolute inset-0 w-full h-full md:h-[600px] mx-auto my-auto inline-block md:hidden rounded-full overflow-hidden z-0 aspect-square zoom-home"
             dangerouslySetInnerHTML={{
               __html:
                 '<spline-viewer url="https://prod.spline.design/8Kk8n4FoXe4tjJBu/scene.splinecode" classname="w-full h-full"></spline-viewer>',
             }}
           ></div>
-          <div className="w-[112px] md:w-[300px] 3xl:w-[400px] 4xl:w-[533px] mx-auto z-1 relative">
+          <div className="max-sm:absolute max-sm:inset-0 max-sm:flex max-sm:flex-row max-sm:justify-center max-sm:items-center w-[112px] md:w-[300px] 3xl:w-[400px] 4xl:w-[533px] mx-auto z-1 relative">
             <Link href={"/thelounge"}>
               <img
                 src="/aac-logo-round.png"

@@ -16,7 +16,7 @@ const Footer = () => {
   return (
     <>
       {isHomePage ? (
-        <footer className="max-sm:w-full absolute left-1/2 transform -translate-x-1/2 w-[78%] z-11 bottom-10 text-center text-xs text-gray-400 space-y-1">
+        <footer className="max-sm:pt-[68px] max-sm:pb-[24px] max-sm:w-full md:absolute md:left-1/2 md:transform md:-translate-x-1/2 w-[78%] md:z-11 bottom-10 text-center text-xs text-gray-400 space-y-1">
           <div className="flex justify-between">
             <Link
               href="/jobs-directory"
