@@ -7,6 +7,7 @@
 @tailwind utilities;
 
 :root {
+  --primary: #FFCD1A;
   --background: #ffffff;
   --foreground: #171717;
   --font-wix: 'Wix Madefor Text', sans-serif;
@@ -180,17 +181,16 @@ button {
   }
 }
 
-.text-brand-yellow,
-.text-brand-yellow:hover {
-  color: var(--primary);
-}
+@layer utilities {
+  .hover\:text-brand-yellow:hover {
+    color: var(--primary) !important;
+  }
 
-.bg-brand-yellow,
-.bg-brand-yellow:hover {
-  background-color: var(--primary);
-}
+  .hover\:bg-brand-yellow:hover {
+    background-color: var(--primary) !important;
+  }
 
-.border-brand-yellow,
-.border-brand-yellow:hover {
-  border-color: var(--primary)A;
+  .hover\:border-brand-yellow:hover {
+    border-color: var(--primary) !important;
+  }
 }

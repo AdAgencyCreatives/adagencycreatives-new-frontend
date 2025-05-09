@@ -19,7 +19,7 @@ export default function Home() {
       </div>
       {/* Center Split Section */}
       <div className="absolute inset-0 h-[101%] z-1 w-[88%] mx-auto" style={{ background: 'radial-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 1) 100%)' }}></div>
-      <section 
+      <section
         className="w-[78%] mx-auto z-9 grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] px-0 md:px-10 xl:px-15 2xl:px-40 3xl:px-50 4xl:px-64 items-center justify-between h-full w-full gap-10 md:gap-0"
       >
         {/* Left Column */}
@@ -33,10 +33,8 @@ export default function Home() {
               }}
             ></div>
             <div className="relative flex flex-1 flex-col justify-center md:aspect-square">
-              <Link href="/creatives" className="cursor-pointer">
-                <h1 className="text-4xl md:text-6xl 2xl:text-7xl 3xl:text-8xl 4xl:text-9xl font-alta tracking-wide text-center md:text-left">
-                  CREATIVES
-                </h1>
+              <Link href="/creatives" className="text-4xl md:text-6xl 2xl:text-7xl 3xl:text-8xl 4xl:text-9xl font-alta tracking-wide text-center md:text-left cursor-pointer transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow">
+                CREATIVES
               </Link>
               <div className="border-b border-white my-4 hidden md:block"></div>
               <div className="flex gap-4 justify-center md:justify-start items-center mt-6">
@@ -49,10 +47,10 @@ export default function Home() {
                 <div className="text-[#6E6E6E] block md:hidden">|</div>
                 <Link
                   href="/creatives-signin"
-                  className="inline-flex items-center justify-start text-white gap-4 cursor-pointer flex-row-reverse md:flex-row"
+                  className="inline-flex items-center justify-start text-white gap-4 cursor-pointer flex-row-reverse md:flex-row  transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow"
                 >
-                  <LiaSignInAltSolid className="text-[36px] transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow" />
-                  <span className="font-bold text-lg 3xl:text-2xl 4xl:text-[32px] font-bold transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow">
+                  <LiaSignInAltSolid className="text-[36px]" />
+                  <span className="font-bold text-lg 3xl:text-2xl 4xl:text-[32px] font-bold">
                     Sign in
                   </span>
                 </Link>
@@ -94,10 +92,8 @@ export default function Home() {
             }}
           ></div>
           <div className="relative flex flex-1 flex-col justify-center md:aspect-square">
-            <Link href="/agencies" className="cursor-pointer">
-              <h1 className="text-4xl md:text-6xl 2xl:text-7xl 3xl:text-8xl 4xl:text-9xl font-alta tracking-wide text-center md:text-right">
-                AGENCIES
-              </h1>
+            <Link href="/agencies" className="text-4xl md:text-6xl 2xl:text-7xl 3xl:text-8xl 4xl:text-9xl font-alta tracking-wide text-center md:text-right cursor-pointer transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow">
+              AGENCIES
             </Link>
             <div className="border-b border-white my-4 hidden md:block"></div>
             <div className="flex gap-4 justify-center md:justify-end items-center mt-6">
@@ -110,12 +106,12 @@ export default function Home() {
               <div className="text-[#6E6E6E] block md:hidden">|</div>
               <Link
                 href="/agencies-signin"
-                className="inline-flex items-center justify-end text-white gap-4 cursor-pointer"
+                className="inline-flex items-center justify-end text-white gap-4 cursor-pointer transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow"
               >
-                <span className="font-bold text-lg 3xl:text-2xl 4xl:text-[32px] font-bold transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow">
+                <span className="font-bold text-lg 3xl:text-2xl 4xl:text-[32px] font-bold">
                   Sign in
                 </span>
-                <LiaSignInAltSolid className="text-[36px] transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow" />
+                <LiaSignInAltSolid className="text-[36px]" />
               </Link>
             </div>
           </div>
