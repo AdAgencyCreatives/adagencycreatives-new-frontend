@@ -12,6 +12,8 @@ import { featuredAgencies } from 'constants/agencies';
 import AgenciesLoopItem from 'pageComponents/agencies/loop/item';
 import { useEffect, useState } from 'react';
 import CreativeLoopItem2 from './loop/item2';
+import "styles/components/pageheader.css";
+import "styles/creatives.css";
 
 const Creatives = () => {
   const [width, setWidth] = useState(0);
@@ -24,15 +26,15 @@ const Creatives = () => {
   }, []);
   
   return (
-    <div className="bg-black text-white pt-[100px]">
+    <div className="bg-black text-white">
       {/* Hero */}
-      <section className="relative md:h-screen flex flex-col justify-center py-20 2xl:py-40 text-center px-4 md:px-10">
+      <section className="relative flex flex-col justify-center text-center page-header">
         <PageHeader
           page=""
           heading="Creatives"
         />
-        <div className="space-x-6 2xl:space-x-[36px] 3xl:space-x-[48px] 4xl:space-x-[64px] mt-1 md:mt-10 3xl:mt-20 text-sm md:text-2xl 3xl:text-[32px] 4xl:text-[42.67px] text-brand-yellow relative z-1">
-          <a href="#create-profile" className=''>create ProFile<sup className='font-hass65 text-[8px] md:text-[10px] xl:text-[10px] 3xl:text-[16px] 4xl:text-[18px] relative md:-top-[12px] 3xl:-top-[16px]'>TM</sup></a>
+        <div className="font-bold space-x-6 2xl:space-x-[36px] 3xl:space-x-[48px] 4xl:space-x-[64px] mt-1 md:mt-10 3xl:mt-20 text-sm md:text-2xl 3xl:text-[32px] 4xl:text-[42.67px] text-brand-yellow relative z-1">
+          <a href="#create-profile" className="">create ProFile<sup className='font-hass65 text-[8px] md:text-[10px] xl:text-[10px] 3xl:text-[16px] 4xl:text-[18px] relative md:-top-[12px] 3xl:-top-[16px]'>TM</sup></a>
           <a href="#search-jobs">search jobs</a>
           <a href="#resources">resources</a>
         </div>

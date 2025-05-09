@@ -1,0 +1,43 @@
+/* On screens that are more than 1920px including 2560px */
+@media screen and (min-width: 1920px) {
+  .header {
+    padding: 2.667rem 3.833rem;
+  }
+  .logo {
+    width: 8.444rem;
+    height: 8.444rem;
+  }
+}
+
+/* On screens that are 1920px or less */
+@media screen and (max-width: 1920px) {
+  .header {
+    padding: 2rem 2.875rem;
+  }
+  .logo {
+    width: 6.25rem;
+    height: 6.25rem;
+  }
+}
+
+/* On screens that are 1440px or less */
+@media screen and (max-width: 1440px) {
+  .header {
+    padding: 1.5rem 2.156rem;
+  }
+  .logo {
+    width: 4.75rem;
+    height: 4.75rem;
+  }
+}
+
+/* On screens that are 768px or less */
+@media screen and (max-width: 768px) {
+  .header {
+    padding: 0.75rem 1.5rem;
+  }
+  .logo {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+}

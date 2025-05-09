@@ -8,8 +8,9 @@ const Footer = () => {
   const isHomePage = pathname === "/" || pathname === "/home" || pathname === "/home/";
   const isCreatives = pathname === "/creatives";
   const isAgencies = pathname === "/agencies";
+  const isFAQ = pathname === "/faq";
 
-  if (isCreatives || isAgencies) {
+  if (isCreatives || isAgencies || isFAQ) {
     return <></>;
   }
 

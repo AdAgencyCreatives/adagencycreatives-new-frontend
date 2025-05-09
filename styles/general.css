@@ -1,0 +1,19 @@
+/* On screens that are more than 1920px including 2560px */
+@media screen and (min-width: 1920px) {
+  
+}
+
+/* On screens that are 1920px or less */
+@media screen and (max-width: 1920px) {
+  
+}
+
+/* On screens that are 1440px or less */
+@media screen and (max-width: 1440px) {
+  
+}
+
+/* On screens that are 768px or less */
+@media screen and (max-width: 768px) {
+  
+}
