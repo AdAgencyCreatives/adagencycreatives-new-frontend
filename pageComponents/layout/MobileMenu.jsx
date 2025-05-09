@@ -41,7 +41,7 @@ const MobileMenu = ({ isHomePage }) => {
   return (
     <div className="relative flex items-center gap-[32px] 3xl:gap-[42.67px] 4xl:gap-[56.89px]">
       {/* Toggle Button */}
-      <button>
+      <button className="cursor-pointer transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow">
         <ChatIcon />
       </button>
       <button
