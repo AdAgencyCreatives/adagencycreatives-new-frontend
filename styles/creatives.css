@@ -1,8 +1,8 @@
 /* On screens that are more than 1920px including 2560px */
 @media screen and (min-width: 1920px) {
-  .page-header {
-    min-height: 100rem;
-  }
+  /* .headings {
+
+  } */
 }
 
 /* On screens that are 1920px or less */

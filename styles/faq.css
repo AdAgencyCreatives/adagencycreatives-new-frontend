@@ -2,10 +2,10 @@
 @media screen and (min-width: 1920px) {
   .faq-section {
     padding: 3.333rem 3.833rem;
+    min-height: calc( 100vh - 13.75rem );
   }
   .faqs {
     padding: 8.333rem 13rem;
-    min-height: 64.167rem;
   }
   .footer {
     font-size: 24px;
@@ -18,10 +18,10 @@
 @media screen and (max-width: 1920px) {
   .faq-section {
     padding: 2.5rem 2.875rem;
+    min-height: calc( 100vh - 10.25rem );
   }
   .faqs {
     padding: 6.25rem 9.75rem;
-    min-height: 48.125rem;
   }
   .footer {
     font-size: 18px;
@@ -34,10 +34,10 @@
 @media screen and (max-width: 1440px) {
   .faq-section {
     padding: 1.875rem 2.156rem;
+    min-height: calc( 100vh - 7.758rem );
   }
   .faqs {
     padding: 4.688rem 7.313rem;
-    min-height: 36.094rem;
   }
   .footer {
     font-size: 14px;
@@ -50,10 +50,10 @@
 @media screen and (max-width: 768px) {
   .faq-section {
     padding: 1.5rem;
+    min-height: calc( 100vh - 5.625rem );
   }
   .faqs {
     padding: 1.5rem;
-    min-height: 37.063rem;
   }
   .footer {
     padding-top: 1.5rem;
