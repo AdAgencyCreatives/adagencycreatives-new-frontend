@@ -9,6 +9,7 @@ module.exports = {
         './pageComponents/**/*.{js,ts,jsx,tsx}',
         './pageComponents/**/**/*.{js,ts,jsx,tsx}',
         './icons/**',
+        './styles/**',
         './contexts/**/**/*.{js,ts,jsx,tsx}',
       ],
       fontFamily: {
