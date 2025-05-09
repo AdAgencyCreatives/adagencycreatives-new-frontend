@@ -45,7 +45,7 @@ const MobileMenu = ({ isHomePage }) => {
         <ChatIcon />
       </button>
       <button
-        className={`focus:outline-none ${isHomePage ? 'block' : 'lg:hidden inline-block'}`}
+        className={`focus:outline-none ${isHomePage ? 'block' : 'lg:hidden inline-block'} cursor-pointer transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow`}
 
       >
         {/* {isOpen ? 
