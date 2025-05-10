@@ -2,6 +2,7 @@ import PageHeader from "components/PageHeader";
 import CreativeLoopItem from "./loop/item";
 import Link from "next/link";
 import { featuredCreatives } from "constants/creatives";
+import React from "react";
 
 const CreativesDirectory = () => {
   return (
@@ -31,7 +32,7 @@ const CreativesDirectory = () => {
       <section className="py-10">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {featuredCreatives.map((creative, idx) => (
-            <>
+            <React.Fragment key={`creative-${creative.id || idx}`}>
               {idx === 6 && (
                 <div key={`${idx}-1`} className="col-span-2 text-center flex flex-col justify-center gap-10">
                   <h2 className="text-[48px] leading-[62px]">Haven't<br />Found<br />The Perfect<br />Match?</h2>
@@ -51,7 +52,7 @@ const CreativesDirectory = () => {
               )}
             
               <CreativeLoopItem  key={`${idx}-3`} creative={creative} />
-            </>
+            </React.Fragment>
           ))}
         </div>
       </section>

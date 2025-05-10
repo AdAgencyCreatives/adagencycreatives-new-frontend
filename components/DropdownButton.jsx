@@ -43,9 +43,9 @@ const DropdownButton = ({ label, options, onSelect }) => {
       {open && (
         <div className="origin-top-right absolute mt-2 w-56 shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50">
           <div className="py-1">
-            {options.map((option) => (
+            {options.map((option, index) => (
               <button
-                key={option}
+                key={index}
                 onClick={() => {
                   onSelect?.(option)
                   setOpen(false)

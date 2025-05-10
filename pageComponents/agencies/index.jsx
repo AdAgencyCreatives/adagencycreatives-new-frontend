@@ -8,6 +8,7 @@ import { featuredCreatives } from 'constants/creatives';
 import CreativeLoopItem from 'pageComponents/creatives/loop/item';
 import CreativeLoopItem2 from 'pageComponents/creatives/loop/item2';
 import { useEffect, useState } from 'react';
+import React from 'react';
 
 const Agencies = () => {
   const [width, setWidth] = useState(0);
@@ -39,7 +40,7 @@ const Agencies = () => {
         <h2 className="text-[22px] md:text-[78px] 3xl:text-[104px] 4xl:text-[139px] font-bold mb-0 2xl:px-20 3xl:px-40 pt-0 pb-6.75 2xl:mb-20 3xl:mb-30 font-inter leading-[25.78px] 2xl:leading-[99px] 3xl:leading-[132px] 4xl:leading-[176px]">Featured Creatives</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {featuredCreatives.map((creative, idx) => (
-            <>
+            <React.Fragment key={`creative-${creative.id || idx}`}>
               {(width < 768 && idx === 4) || (width >= 768 && idx === 6) ? (
                 <div id={`perfect-${idx}`} className="relative col-span-2 text-center flex flex-col justify-center gap-5 md:gap-10 max-md:py-10">
                   <div className="block md:hidden inset-0 absolute h-full overflow-hidden w-[70%] mx-auto">
@@ -119,7 +120,7 @@ const Agencies = () => {
                   </div>
                 </div>
               )}
-            </>
+            </React.Fragment>
           ))}
         </div>
       </section>

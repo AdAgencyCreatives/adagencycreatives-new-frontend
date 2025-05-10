@@ -46,7 +46,7 @@ const Creatives = () => {
         <h2 className="text-[22px] md:text-[78px] 3xl:text-[104px] 4xl:text-[139px] font-bold mb-0 2xl:px-20 3xl:px-40 pt-0 pb-6.75 2xl:mb-20 3xl:mb-30 font-inter leading-[25.78px] 2xl:leading-[99px] 3xl:leading-[132px] 4xl:leading-[176px]">Featured Jobs</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {featuredJobs.map((job, idx) => (
-            <>
+            <React.Fragment key={`job-${job.id || idx}`}>
               {idx === 6 && (
                 <div key={`perfect-${idx}`} id={`perfect-${idx}`} className="relative col-span-2 text-center flex flex-col justify-around gap-5 md:gap-10 max-md:py-10">
                   <div className="block md:hidden inset-0 absolute h-full overflow-hidden w-[70%] mx-auto">
@@ -74,7 +74,7 @@ const Creatives = () => {
               )}
 
               <JobLoopItem key={idx} job={job} className={idx > 5 ? 'md:flex hidden' : ''} />
-            </>
+            </React.Fragment>
           ))}
         </div>
       </section>
@@ -165,7 +165,7 @@ const Creatives = () => {
         <h2 className="text-[22px] md:text-[78px] 3xl:text-[104px] 4xl:text-[139px] font-bold text-right mb-0 2xl:px-20 3xl:px-40 pt-0 pb-6.75 2xl:mb-20 3xl:mb-30 font-inter leading-[25.78px] 2xl:leading-[99px] 3xl:leading-[132px] 4xl:leading-[176px] px-9">Featured Creatives</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {featuredCreatives.map((creative, idx) => (
-            <React.Fragment key={idx}>
+           <React.Fragment key={`creative-${creative.id || idx}`}>
               {idx === 6 && (
                 <div key={`ad-agency-${idx}`} className="relative col-span-2 text-center flex flex-col justify-around gap-5 max-md:py-10">
                   <div className="block md:hidden inset-0 absolute h-full overflow-hidden w-[70%] mx-auto">

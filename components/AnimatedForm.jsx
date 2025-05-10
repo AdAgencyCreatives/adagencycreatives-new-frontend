@@ -66,7 +66,7 @@ const AnimatedForm = ({
               }`}
             >
               {stepConfig.fields.map((field, index) => (
-                <div key={field.name}>
+                <div key={field.name || index}>
                   {/* <label className="block mb-1 text-sm font-medium text-gray-700">
                     {field.label}
                   </label> */}

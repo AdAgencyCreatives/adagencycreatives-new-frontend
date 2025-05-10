@@ -10,6 +10,7 @@ import ListViewIcon from 'icons/ListViewIcon';
 import GridViewIcon from 'icons/GridViewIcon';
 import SearchIcon from 'icons/SearchIcon';
 import DropdownButton from 'components/DropdownButton';
+import React from 'react';
 
 const TheLounge = () => {
 
@@ -119,7 +120,7 @@ const TheLounge = () => {
         <h2 className="text-8xl font-bold mb-10 text-right">Featured</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {featuredCreatives.map((creative, idx) => (
-            <>
+            <React.Fragment key={`creative-${creative.id || idx}`}>
               {idx === 6 && (
                 <div key={`ad-agency-${idx}`} className="col-span-2 text-center flex flex-col justify-center gap-10">
                   <h2 className="text-[48px] leading-[62px]">
@@ -143,7 +144,7 @@ const TheLounge = () => {
               )}
             
               <CreativeLoopItem key={idx} creative={creative} />
-            </>
+            </React.Fragment>
           ))}
         </div>
       </section>

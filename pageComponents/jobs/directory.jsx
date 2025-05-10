@@ -2,6 +2,7 @@ import PageHeader from "components/PageHeader";
 import JobLoopItem from "./loop/item";
 import Link from "next/link";
 import { jobsDirectory } from "constants/jobs";
+import React from "react";
 
 const JobsDirectory = () => {
   return (
@@ -45,7 +46,7 @@ const JobsDirectory = () => {
       <section className="p-6 md:px-10 mx-auto relative z-1 pb-8 pb md:pb-18 2xl:pb-24 3xl:pb-35 4xl:pb-46">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 pt-10 2xl:pt-14 3xl:pt-20 4xl:pt-25">
           {jobsDirectory.map((job, idx) => (
-            <>
+            <React.Fragment key={`job-${job.id || idx}`}>
               {idx === 16 && (
                 <div key={`directory-${idx}`} className="col-span-2 text-center flex flex-col justify-around gap-10 max-md:py-10">
                   <h2 className="relative z-1 text-2xl md:text-[44px] md:leading-[58.5px] 3xl:text-[57.07px] 3xl:leading-[78px] 4xl:text-[76.09px] 4xl:leading-[104px]">Haven't<br />Found<br />The Perfect<br />Job?</h2>
@@ -56,7 +57,7 @@ const JobsDirectory = () => {
               )}
             
               <JobLoopItem key={idx} job={job} className={''}/>
-            </>
+            </React.Fragment>
           ))}
         </div>
       </section>
