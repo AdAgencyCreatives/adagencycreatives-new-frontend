@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import PrimaryMenu from "./PrimaryMenu";
 import MobileMenu from "./MobileMenu";
 import { usePathname } from 'next/navigation';
 import "styles/header.css";

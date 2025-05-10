@@ -54,15 +54,20 @@
   }
 }
 
+html * {
+  box-sizing: border-box;
+}
+
 html {
   scroll-behavior: smooth;
+  font-size: 16px !important;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-inter);
-  font-size: 24px;
+  font-size: 16px !important;
 }
 
 /* For most browsers */
@@ -101,14 +106,26 @@ button {
   box-sizing: border-box;
   overflow: hidden;
   border-radius: 100%;
+  display: flex;
+  flex-direction: row;
 }
 
 .spline-container-left {
-  left: -35%;
+  justify-content: flex-start;
+  left: -5%;
 }
 
 .spline-container-right {
-  right: -35%;
+  justify-content: flex-end;
+  right: -5%;
+}
+
+.home-box-left {
+  padding-left: 5%;
+}
+
+.home-box-right {
+  padding-right: 5%;
 }
 
 .image-mask {
@@ -145,10 +162,6 @@ button {
   zoom: 0.35;
 }
 
-.zoom-home {
-  zoom: 0.7;
-}
-
 @media (min-width: 768px) {
   .zoom-60 {
     zoom: 0.6;
@@ -160,9 +173,6 @@ button {
     zoom: 0.9;
   }
 
-  .zoom-home {
-    zoom: 0.65;
-  }
 }
 
 @media (min-width: 1920px) {
@@ -170,15 +180,9 @@ button {
     zoom: 0.8;
   }
 
-  .zoom-home {
-    zoom: 0.85;
-  }
 }
 
 @media (min-width: 2560px) {
-  .zoom-home {
-    zoom: 1.2;
-  }
 }
 
 @layer utilities {

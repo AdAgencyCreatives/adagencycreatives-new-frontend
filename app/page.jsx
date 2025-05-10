@@ -26,13 +26,13 @@ export default function Home() {
         <div className="flex flex-1 w-1.0 h-1.0 order-2 md:order-1">
           <div className="relative flex flex-1 flex-col justify-center md:aspect-square">
             <div
-              className="zoom-home spline-container spline-container-left w-[150%] h-[150%] hidden md:inline-block"
+              className="spline-container spline-container-left w-[100%] h-[100%] hidden md:inline-block"
               dangerouslySetInnerHTML={{
                 __html:
                   '<spline-viewer url="https://prod.spline.design/8Kk8n4FoXe4tjJBu/scene.splinecode"></spline-viewer>',
               }}
             ></div>
-            <div className="relative flex flex-1 flex-col justify-center md:aspect-square">
+            <div className="home-box-left relative flex flex-1 flex-col justify-center md:aspect-square">
               <Link href="/creatives" className="text-4xl md:text-6xl 2xl:text-7xl 3xl:text-8xl 4xl:text-9xl font-alta tracking-wide text-center md:text-left cursor-pointer transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow">
                 CREATIVES
               </Link>
@@ -85,13 +85,13 @@ export default function Home() {
         {/* Right Column */}
         <div className="relative flex flex-1 flex-col justify-center md:aspect-square text-right order-4">
           <div
-            className="zoom-home spline-container spline-container-right w-[150%] h-[150%] hidden md:inline-block"
+            className="spline-container spline-container-right w-[100%] h-[100%] hidden md:inline-block"
             dangerouslySetInnerHTML={{
               __html:
                 '<spline-viewer url="https://prod.spline.design/8Kk8n4FoXe4tjJBu/scene.splinecode"></spline-viewer>',
             }}
           ></div>
-          <div className="relative flex flex-1 flex-col justify-center md:aspect-square">
+          <div className="home-box-right relative flex flex-1 flex-col justify-center md:aspect-square">
             <Link href="/agencies" className="text-4xl md:text-6xl 2xl:text-7xl 3xl:text-8xl 4xl:text-9xl font-alta tracking-wide text-center md:text-right cursor-pointer transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow">
               AGENCIES
             </Link>
