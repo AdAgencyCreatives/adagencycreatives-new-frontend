@@ -3,7 +3,7 @@ import { LiaSignInAltSolid } from "react-icons/lia";
 
 export default function Home() {
   return (
-    <div className="px-10 pt-25 flex flex-1 flex-col justify-start md:justify-center items-center relative">
+    <div className="px-10 max-sm:pt-20 flex flex-1 flex-col justify-start md:justify-center items-center relative">
       {/* Background */}
       <div className="absolute inset-0 z-0 w-[88%] mx-auto">
         <video
@@ -49,7 +49,7 @@ export default function Home() {
                   href="/creatives-signin"
                   className="inline-flex items-center justify-start text-white gap-4 cursor-pointer flex-row-reverse md:flex-row  transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow"
                 >
-                  <LiaSignInAltSolid className="text-[36px]" />
+                  <LiaSignInAltSolid className="text-[36px] rotate-180" />
                   <span className="font-bold text-lg 3xl:text-2xl 4xl:text-[32px] font-bold">
                     Sign in
                   </span>

@@ -9,13 +9,6 @@ import { Context as AuthContext } from "contexts/AuthContext";
  */
 const PrimaryMenu = ({ setIsOpen, user }) => {
   const pathname = usePathname();
-  const isHomePage = pathname === "/";
-  const isCreativesPage = pathname === "/creatives";
-  const isCreativesDashboard = pathname === "/creatives-dashboard";
-  const isCreativesProfile = pathname === "/creatives-profile";
-  const isAgenciesPage = pathname === "/agencies";
-  const isAgenciesDashboard = pathname === "/agencies-dashboard";
-  const isAgenciesProfile = pathname === "/agencies-profile";
   const isJobDirectory = pathname === "/jobs-directory";
   const isCreativesDirectory = pathname === "/creatives-directory";
   const isTheLounge = pathname === "/thelounge";

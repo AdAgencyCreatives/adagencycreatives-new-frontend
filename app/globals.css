@@ -184,16 +184,16 @@ button {
 @layer utilities {
   .text-brand-yellow,
   .hover\:text-brand-yellow:hover {
-    color: var(--primary) !important;
+    color: var(--primary);
   }
 
   .bg-brand-yellow,
   .hover\:bg-brand-yellow:hover {
-    background-color: var(--primary) !important;
+    background-color: var(--primary);
   }
 
   .border-brand-yellow,
   .hover\:border-brand-yellow:hover {
-    border-color: var(--primary) !important;
+    border-color: var(--primary);
   }
 }
