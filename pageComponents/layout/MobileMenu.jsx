@@ -1,10 +1,11 @@
 'use client';
 
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import Link from 'next/link';
 import ChatIcon from 'icons/ChatIcon';
 import CloseIcon from 'icons/CloseIcon';
 import MenuIcon from 'icons/MenuIcon';
+import { Context as SiteContext } from "contexts/SiteContext";
 import { Context as AuthContext } from "contexts/AuthContext";
 import DetailedMobileMenu from './DetailedMobileMenu';
 
@@ -18,6 +19,12 @@ const MobileMenu = ({ isHomePage }) => {
   const {
     state: { user },
   } = useContext(AuthContext);
+
+  const { setBodyOverflowHidden } = useContext(SiteContext);
+
+  useEffect(() => {
+    setBodyOverflowHidden(isOpen);
+  }, [isOpen]);
 
   return (
     <div className="relative flex items-center gap-[32px] 3xl:gap-[42.67px] 4xl:gap-[56.89px]">
@@ -33,7 +40,7 @@ const MobileMenu = ({ isHomePage }) => {
 
       {/* Sidebar */}
       <div
-        className={`p-[27.5px] 3xl:p-[37px] 4xl:p-[49px] border-l-[0.89px] border-brand-yellow space-y-4 overflow-y-auto z-20 fixed top-0 right-0 w-full md:w-[375px] 3xl:w-[500px] 4xl:w-[667px] h-full bg-black transform transition-transform duration-500 ease-in-out ${isOpen ? '-translate-x-0' : 'translate-x-full'} flex flex-col justify-between`}
+        className={`p-[27.5px] 3xl:p-[37px] 4xl:p-[49px] border-l-[0.89px] border-brand-yellow space-y-4 overflow-y-auto z-20 fixed top-0 right-0 w-full md:w-[375px] 3xl:w-[500px] 4xl:w-[667px] h-full bg-black transform transition-transform duration-500 ease-in-out ${isOpen ? '-translate-x-0' : 'translate-x-full'} flex flex-col justify-between overflow-y-scroll mobile-menu-links-container`}
       >
         <div>
           <div className="flex items-center justify-end max-md:justify-between mb-[32px] 3xl:mb-[42.67px] 4xl:mb-[56.89px]">
@@ -53,7 +60,7 @@ const MobileMenu = ({ isHomePage }) => {
               </button>
             </div>
           </div>
-          <DetailedMobileMenu setIsOpen={setIsOpen} user={user} />
+          <DetailedMobileMenu isOpen={isOpen} setIsOpen={setIsOpen} user={user} />
         </div>
         {user ? (
           <div className="flex flex-col gap-[12px] 3xl:gap-[16px] 4xl:gap-[21.33px]">

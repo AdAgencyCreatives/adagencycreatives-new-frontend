@@ -182,10 +182,10 @@ button {
 
 }
 
-@media (min-width: 2560px) {
-}
+@media (min-width: 2560px) {}
 
 @layer utilities {
+
   .text-brand-yellow,
   .hover\:text-brand-yellow:hover {
     color: var(--primary);
@@ -200,4 +200,8 @@ button {
   .hover\:border-brand-yellow:hover {
     border-color: var(--primary);
   }
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
 }

@@ -18,13 +18,11 @@ export default function RootLayout({ children }) {
           src="https://unpkg.com/@splinetool/viewer@1.9.75/build/spline-viewer.js"
         ></script>
       </head>
-      <body className="antialiased">
         <ClientProviderWrapper>
           <ClientUseContextWrapper>
             <LayoutWrapper>{children}</LayoutWrapper>
           </ClientUseContextWrapper>
         </ClientProviderWrapper>
-      </body>
     </html>
   );
 }
