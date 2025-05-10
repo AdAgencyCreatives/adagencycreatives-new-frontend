@@ -16,9 +16,9 @@ const Dashboard = ({ user, sidebarMenu, topMenu }) => {
           </div>
           <div>
             <ul className="py-8">
-            {sidebarMenu.map((item) => {
+            {sidebarMenu.map((item, index) => {
               return (
-                <li className="lowercase text-brand-yellow hover:text-white py-3">
+                <li key={index} className="lowercase text-brand-yellow hover:text-white py-3">
                   <Link href={item.href}>{item.label}</Link>
                 </li>
               )
@@ -28,9 +28,9 @@ const Dashboard = ({ user, sidebarMenu, topMenu }) => {
         </div>
         <div className="rounded-4xl border-(--ad-gray) border shadow-(--ad-box-shadow) px-10 py-10 text-center col-span-2">
           <ul className="flex justify-between">
-            {topMenu.map((item) => {
+            {topMenu.map((item, index) => {
               return (
-                <li className="lowercase text-brand-yellow hover:text-white">
+                <li key={index} className="lowercase text-brand-yellow hover:text-white">
                   <Link href={item.href}>{item.label}</Link>
                 </li>
               )

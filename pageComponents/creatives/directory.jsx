@@ -33,7 +33,7 @@ const CreativesDirectory = () => {
           {featuredCreatives.map((creative, idx) => (
             <>
               {idx === 6 && (
-                <div className="col-span-2 text-center flex flex-col justify-center gap-10">
+                <div key={`${idx}-1`} className="col-span-2 text-center flex flex-col justify-center gap-10">
                   <h2 className="text-[48px] leading-[62px]">Haven't<br />Found<br />The Perfect<br />Match?</h2>
                   <div>
                     <Link href="/" className="border-brand-yellow border-4 uppercase text-brand-yellow rounded-full text-sm px-8 py-4 cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white">Advanced Search</Link>
@@ -42,7 +42,7 @@ const CreativesDirectory = () => {
               )}
 
               {idx === 15 && (
-                <div className="col-span-2 text-center flex flex-col justify-center gap-10">
+                <div  key={`${idx}-2`} className="col-span-2 text-center flex flex-col justify-center gap-10">
                   <h2 className="text-[48px] leading-[62px]">Why<br />Search?<br />Post & Attract!</h2>
                   <div>
                     <Link href="/" className="border-brand-yellow border-4 uppercase text-brand-yellow rounded-full text-sm px-8 py-4 cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white">Post A Job</Link>
@@ -50,7 +50,7 @@ const CreativesDirectory = () => {
                 </div>
               )}
             
-              <CreativeLoopItem key={idx} creative={creative} />
+              <CreativeLoopItem  key={`${idx}-3`} creative={creative} />
             </>
           ))}
         </div>

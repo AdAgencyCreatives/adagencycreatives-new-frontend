@@ -32,9 +32,9 @@ const AgenciesProfile = () => {
             </div>
             <div className="text-left">
               <ul className="flex justify-between mb-10">
-                {profileMenu.map((item) => {
+                {profileMenu.map((item, index) => {
                   return (
-                    <li className="lowercase text-brand-yellow hover:text-white">
+                    <li key={index} className="lowercase text-brand-yellow hover:text-white">
                       <Link href={item.href}>{item.label}</Link>
                     </li>
                   )
@@ -93,9 +93,9 @@ const AgenciesProfile = () => {
           </div>
           <div className="text-left flex-[55%]">
             <ul className="flex justify-between mb-20">
-              {infoMenu.map((item) => {
+              {infoMenu.map((item, index) => {
                 return (
-                  <li className="lowercase text-brand-yellow hover:text-white">
+                  <li key={index} className="lowercase text-brand-yellow hover:text-white">
                     <Link href={item.href}>{item.label}</Link>
                   </li>
                 )

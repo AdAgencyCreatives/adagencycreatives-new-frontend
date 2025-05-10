@@ -41,7 +41,7 @@ const Agencies = () => {
           {featuredCreatives.map((creative, idx) => (
             <>
               {(width < 768 && idx === 4) || (width >= 768 && idx === 6) ? (
-                <div key={`perfect-${idx}`} id={`perfect-${idx}`} className="relative col-span-2 text-center flex flex-col justify-center gap-5 md:gap-10 max-md:py-10">
+                <div id={`perfect-${idx}`} className="relative col-span-2 text-center flex flex-col justify-center gap-5 md:gap-10 max-md:py-10">
                   <div className="block md:hidden inset-0 absolute h-full overflow-hidden w-[70%] mx-auto">
                     <video
                       autoPlay

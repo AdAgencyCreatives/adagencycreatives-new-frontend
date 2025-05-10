@@ -1,5 +1,6 @@
 'use client';
 
+import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import JobLoopItem from 'pageComponents/jobs/loop/item';
@@ -17,14 +18,14 @@ import "styles/creatives.css";
 
 const Creatives = () => {
   const [width, setWidth] = useState(0);
-  
+
   useEffect(() => {
     const handleResize = () => setWidth(window.innerWidth);
     handleResize(); // Set initial width
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
-  
+
   return (
     <div className="bg-black text-white">
       {/* Hero */}
@@ -55,24 +56,24 @@ const Creatives = () => {
                       muted
                       playsInline
                       className="inset-0 absolute top-1/2 left-1/2 w-full h-full transform -translate-x-1/2 -translate-y-1/2 object-center z-[-1]"
-                      >
+                    >
                       <source src="/videos/resources-bg.mp4" type="video/mp4" />
                       Your browser does not support the video tag.
                     </video>
                   </div>
                   <h2 className="relative z-1 pb-0 pt-6 2xl:pb-14 2xl:pt-20 3xl:pb-20 3xl:pt-26 4xl:py-15 font-arial font-bold text-2xl md:text-4xl 2xl:text-[44px] 3xl:text-[57.07px] 4xl:text-[76.09px] md:leading-[58.5px] 3xl:leading-[78px] 4xl:leading-[104px]">Haven't<br />Found<br />The Perfect<br />Job?</h2>
                   <div className='relative z-1 '>
-                  <Link 
-                    href="/" 
-                    className="border-brand-yellow border-2 md:border-4 uppercase text-brand-yellow rounded-full font-inter sm:font-semibold md:font-hass75 md:font-bold text-xs md:text-sm 3xl:text-lg 4xl:text-2xl px-4 py-1.5 3xl:px-12 4xl:px-16 4xl:py-6 cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white"
-                  >
+                    <Link
+                      href="/"
+                      className="border-brand-yellow border-2 md:border-4 uppercase text-brand-yellow rounded-full font-inter sm:font-semibold md:font-hass75 md:font-bold text-xs md:text-sm 3xl:text-lg 4xl:text-2xl px-4 py-1.5 3xl:px-12 4xl:px-16 4xl:py-6 cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white"
+                    >
                       Advanced Search
-                  </Link>
+                    </Link>
                   </div>
                 </div>
               )}
-            
-              <JobLoopItem key={idx} job={job} className={idx > 5 ? 'md:flex hidden' : ''}/>
+
+              <JobLoopItem key={idx} job={job} className={idx > 5 ? 'md:flex hidden' : ''} />
             </>
           ))}
         </div>
@@ -98,30 +99,30 @@ const Creatives = () => {
 
           {/* <!-- Column 1: 1 item --> */}
           <div>
-            <ResourceLoopItem 
+            <ResourceLoopItem
               resource={{ title: 'internships', image: '/resource1.avif', href: '/resources-internship' }}
             />
           </div>
 
           {/* <!-- Column 2: 4 items stacked vertically --> */}
           <div className="col-span-2 space-y-4 grid grid-cols-2 items-start gap-x-[14px] md:gap-x-[54px] 3xl:gap-x-[72px] 4xl:gap-x-[92px]">
-            <ResourceLoopItem 
+            <ResourceLoopItem
               resource={{ title: 'inspiration', image: '/resource1.avif', href: '/resources-inspiration' }}
             />
-            <ResourceLoopItem 
+            <ResourceLoopItem
               resource={{ title: 'portfolio', image: '/resource1.avif', href: '/resources-portfolio' }}
             />
-            <ResourceLoopItem 
+            <ResourceLoopItem
               resource={{ title: 'WRITERS', image: '/resource1.avif', href: '/resources-writers' }}
             />
-            <ResourceLoopItem 
+            <ResourceLoopItem
               resource={{ title: 'DESIGNERS', image: '/resource1.avif', href: '/resources-designers' }}
             />
           </div>
 
           {/* <!-- Column 4: 1 item --> */}
           <div>
-            <ResourceLoopItem 
+            <ResourceLoopItem
               resource={{ title: 'business', image: '/resource1.avif', href: '/resources-business' }}
             />
           </div>
@@ -129,8 +130,8 @@ const Creatives = () => {
       </section>
 
       <section className="border-y-0 border-white py-8 sm:py-20 relative">
-      <div className="absolute top-0 left-[50%] transform -translate-x-[50%] translate-y-0 border-white border-1 w-[88%] h-px m-auto hidden sm:block"></div>
-      <div className="absolute bottom-0 left-[50%] transform -translate-x-[50%] translate-y-0 border-white border-1 w-[88%] h-px m-auto hidden sm:block"></div>
+        <div className="absolute top-0 left-[50%] transform -translate-x-[50%] translate-y-0 border-white border-1 w-[88%] h-px m-auto hidden sm:block"></div>
+        <div className="absolute bottom-0 left-[50%] transform -translate-x-[50%] translate-y-0 border-white border-1 w-[88%] h-px m-auto hidden sm:block"></div>
         {/* Background */}
         <div className="absolute inset-0 z-0">
           <video
@@ -164,7 +165,7 @@ const Creatives = () => {
         <h2 className="text-[22px] md:text-[78px] 3xl:text-[104px] 4xl:text-[139px] font-bold text-right mb-0 2xl:px-20 3xl:px-40 pt-0 pb-6.75 2xl:mb-20 3xl:mb-30 font-inter leading-[25.78px] 2xl:leading-[99px] 3xl:leading-[132px] 4xl:leading-[176px] px-9">Featured Creatives</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {featuredCreatives.map((creative, idx) => (
-            <>
+            <React.Fragment key={idx}>
               {idx === 6 && (
                 <div key={`ad-agency-${idx}`} className="relative col-span-2 text-center flex flex-col justify-around gap-5 max-md:py-10">
                   <div className="block md:hidden inset-0 absolute h-full overflow-hidden w-[70%] mx-auto">
@@ -174,19 +175,19 @@ const Creatives = () => {
                       muted
                       playsInline
                       className="inset-0 absolute top-1/2 left-1/2 w-full h-full transform -translate-x-1/2 -translate-y-1/2 object-center z-[-1]"
-                      >
+                    >
                       <source src="/videos/resources-bg.mp4" type="video/mp4" />
                       Your browser does not support the video tag.
                     </video>
                   </div>
                   <h2 className="text-2xl md:text-[44px] md:leading-[58.5px] 3xl:text-[57.07px] 3xl:leading-[78px] 4xl:text-[76.09px] 4xl:leading-[104px] ">
-                   <span className='font-arial font-bold'>We Are</span> <br />
+                    <span className='font-arial font-bold'>We Are</span> <br />
                     <span className="font-alta">AD AGENCY</span><br />
                     <span className="font-alta">CREATIVES</span>
                   </h2>
                   <div>
-                    <Link 
-                      href="/" 
+                    <Link
+                      href="/"
                       className="border-brand-yellow border-0 outline-[2.05px] md:border-4 uppercase text-brand-yellow rounded-full font-sans sm:font-semibold md:font-hass75 md:font-bold text-xs md:text-sm 3xl:text-lg 4xl:text-2xl px-12.5 py-2 md:px-14  md:py-2.5 2xl:px-24 3xl:px-25.5 4xl:px-33.5 4xl:py-5 cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white"
                     >JOIN US</Link>
                   </div>
@@ -202,7 +203,7 @@ const Creatives = () => {
                       muted
                       playsInline
                       className="inset-0 absolute top-1/2 left-1/2 w-full h-full transform -translate-x-1/2 -translate-y-1/2 object-center z-[-1]"
-                      >
+                    >
                       <source src="/videos/resources-bg.mp4" type="video/mp4" />
                       Your browser does not support the video tag.
                     </video>
@@ -215,13 +216,13 @@ const Creatives = () => {
               )}
 
               {idx === 8 && (
-                <div className="col-span-2 md:col-span-3 lg:col-span-5 mb-8 3xl:mb-12 4xl:mb-16"></div>
+                <div key={`skip-01--${idx}`} className="col-span-2 md:col-span-3 lg:col-span-5 mb-8 3xl:mb-12 4xl:mb-16"></div>
               )}
 
               <CreativeLoopItem key={idx} creative={creative} />
 
               {width < 767 && idx === 15 && (
-                <div key={`profile-${idx}`} className="relative col-span-2 text-center flex flex-col justify-center gap-6 md:gap-10">
+                <div key={`profile-02-${idx}`} className="relative col-span-2 text-center flex flex-col justify-center gap-6 md:gap-10">
                   <div className="block md:hidden inset-0 absolute h-full overflow-hidden w-[70%] mx-auto">
                     <video
                       autoPlay
@@ -229,7 +230,7 @@ const Creatives = () => {
                       muted
                       playsInline
                       className="inset-0 absolute top-1/2 left-1/2 w-full h-full transform -translate-x-1/2 -translate-y-1/2 object-center z-[-1]"
-                      >
+                    >
                       <source src="/videos/resources-bg.mp4" type="video/mp4" />
                       Your browser does not support the video tag.
                     </video>
@@ -240,7 +241,7 @@ const Creatives = () => {
                   </div>
                 </div>
               )}
-            </>
+            </React.Fragment>
           ))}
         </div>
       </section>
@@ -250,7 +251,7 @@ const Creatives = () => {
         <h2 id="create-profile" className="text-[22px] md:text-[78px] 3xl:text-[104px] 4xl:text-[143px] 2xl:pl-20 3xl:pl-40 font-bold relative inline-block font-inter">Create ProFile<sup className='text-[10px] md:text-[14px] xl:text-[18px] 3xl:text-[22px] 4xl:text-[26px] relative -top-[10px] md:-top-[30px] 3xl:-top-[50px] 4xl:-top-[60px]'>TM</sup></h2>
         <p className="text-xs md:text-3xl 3xl:text-[40px] 4xl:text-[52.5px] uppercase font-inter font-bold py-3 md:pb-9 md:pb-11.5 2xl:pt-13 2xl:pb-21.5 3xl:pt-27.5 3xl:pb-29 4xl:pt-24.5 4xl:pb-39.5">Our Method</p>
         <p className="text-sm md:text-[42px] 3xl:text-[56px] 4xl:text-[75px] text-white font-arial font-bold">Create. Inspire. <span className="text-brand-yellow">Get Hired!</span></p>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-12 text-left mt-8 md:mt-16 2xl:mt-30 3xl:mt-40 4xl:mt-53">
           <div className="font-wix flex flex-col gap-[5.62] md:gap-2 2xl:gap-5.5 3xl:gap-7 4xl:gap-9.5">
             <h3 className="text-[38px] md:text-[142px] 3xl:text-[190px] 4xl:text-[253.33px] font-bold leading-[1] md:leading-[150px] 3xl:leading-[180px] 4xl:leading-[215px]">1</h3>
@@ -268,10 +269,10 @@ const Creatives = () => {
             <p className="text-white text-[13.5px] md:text-base 3xl:text-2xl 4xl:text-[32px] font-inter font-normal">Let your work open doors.<br />Brands, agencies, and visionary clients are already here - searching, browsing, booking. With a ProFile™, you're instantly visible and ready to be contacted, commissioned, or called in. Whether it’s a dream gig or a long-term collab, this is where it begins. With our help, on your terms.</p>
           </div>
         </div>
-        
+
         <div className="md:px-10 2xl:px-20 3xl:px-40 md:pt-10 2xl:pt-30 3xl:pt-40 4xl:pt-63">
           <div className='outline outline-4 md:outline-8 2xl:outline-16 shadow-(--ad-box-shadow) outline-while rounded-lg mt-12 md:mt-30 px-2 md:px-10 py-2 pb-4 md:pb-4 mb-2 relative mx-[4px] md:mx-[16px]'>
-            
+
             <div className="grid grid-cols-2 md:grid-cols-3 gap-1 md:gap-10 justify-between ">
               <div className="max-md:hidden">
                 <Image src="/creatives/creative17.avif" width="720" height="720" alt="" className="image-mask" />
@@ -288,7 +289,7 @@ const Creatives = () => {
               </div>
               <div>
                 <div className="max-w-[130px] md:max-w-[220px] 3xl:max-w-[295px] 4xl:max-w-[393px] mx-auto -mt-12 3xl:-mt-16 bg-black relative z-1">
-                  <CreativeLoopItem2 
+                  <CreativeLoopItem2
                     creative={{ title: 'Senior UX User Experience Designer', image: '/creatives/creative1.avif', agency: 'Matthew Marcos', location: 'NEW YORK, NY' }}
                   />
                 </div>
