@@ -18,7 +18,7 @@ export default function LayoutWrapper({ children }) {
         <body className={`antialiased ${body_overflow_hidden ? 'overflow-hidden' : ''}`}>
             <main className={`${isHomePage && "md:flex"} relative w-full min-h-screen bg-black text-white`}>
                 <Header />
-                <div className={`${isHomePage && "md:flex md:flex-1"} max-w-full overflow-hidden ${!isHomePage && 'layout'}`}>{children}</div>
+                <div className={`${isHomePage && "md:flex md:flex-1"} max-w-full overflow-hidden ${!isHomePage ? 'layout' : ''}`}>{children}</div>
                 <Footer />
             </main>
         </body>

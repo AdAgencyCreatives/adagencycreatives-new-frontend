@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div className="px-10 max-sm:pt-20 flex flex-1 flex-col justify-start md:justify-center items-center relative">
       {/* Background */}
-      <div className="absolute inset-0 z-0 w-[88%] mx-auto">
+      <div className="absolute inset-0 z-0 w-[88%] mx-auto hidden md:inline-block">
         <video
           autoPlay
           loop
@@ -25,15 +25,8 @@ export default function Home() {
         {/* Left Column */}
         <div className="flex flex-1 w-1.0 h-1.0 order-2 md:order-1">
           <div className="relative flex flex-1 flex-col justify-center md:aspect-square">
-            <div
-              className="spline-container spline-container-left w-[100%] h-[100%] hidden md:inline-block"
-              dangerouslySetInnerHTML={{
-                __html:
-                  '<spline-viewer url="https://prod.spline.design/8Kk8n4FoXe4tjJBu/scene.splinecode"></spline-viewer>',
-              }}
-            ></div>
             <div className="home-box-left relative flex flex-1 flex-col justify-center md:aspect-square">
-              <Link href="/creatives" className="text-4xl md:text-6xl 2xl:text-7xl 3xl:text-8xl 4xl:text-9xl font-alta tracking-wide text-center md:text-left cursor-pointer transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow">
+              <Link href="/creatives" className="z-1 text-4xl md:text-6xl 2xl:text-7xl 3xl:text-8xl 4xl:text-9xl font-alta tracking-wide text-center md:text-left cursor-pointer transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow">
                 CREATIVES
               </Link>
               <div className="border-b border-white my-4 hidden md:block"></div>
@@ -47,7 +40,7 @@ export default function Home() {
                 <div className="text-[#6E6E6E] block md:hidden">|</div>
                 <Link
                   href="/creatives-signin"
-                  className="inline-flex items-center justify-start text-white gap-4 cursor-pointer flex-row-reverse md:flex-row  transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow"
+                  className="z-1 inline-flex items-center justify-start text-white gap-4 cursor-pointer flex-row-reverse md:flex-row  transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow"
                 >
                   <LiaSignInAltSolid className="text-[36px] rotate-180" />
                   <span className="font-bold text-lg 3xl:text-2xl 4xl:text-[32px] font-bold">
@@ -56,20 +49,20 @@ export default function Home() {
                 </Link>
               </div>
             </div>
+            <div
+              className="z-0 spline-container spline-container-left w-[100%] h-[100%] hidden md:flex"
+              dangerouslySetInnerHTML={{
+                __html:
+                  '<spline-viewer url="https://prod.spline.design/8Kk8n4FoXe4tjJBu/scene.splinecode"></spline-viewer>',
+              }}
+            ></div>
           </div>
         </div>
 
         {/* Center Logo */}
         <div className="relative shrink-0 order-1 md:order-2 aspect-square">
-          <div
-            className="absolute inset-0 w-full h-full md:h-[600px] mx-auto my-auto inline-block md:hidden rounded-full overflow-hidden z-0 aspect-square zoom-home"
-            dangerouslySetInnerHTML={{
-              __html:
-                '<spline-viewer url="https://prod.spline.design/8Kk8n4FoXe4tjJBu/scene.splinecode" classname="w-full h-full"></spline-viewer>',
-            }}
-          ></div>
-          <div className="max-sm:absolute max-sm:inset-0 max-sm:flex max-sm:flex-row max-sm:justify-center max-sm:items-center w-[112px] md:w-[300px] 3xl:w-[400px] 4xl:w-[533px] mx-auto z-1 relative">
-            <Link href={"/thelounge"}>
+          <div className="max-sm:absolute max-sm:inset-0 max-sm:flex max-sm:flex-row max-sm:justify-center max-sm:items-center w-[112px] md:w-[300px] 3xl:w-[400px] 4xl:w-[533px] mx-auto relative">
+            <Link href={"/thelounge"} className="z-1">
               <img
                 src="/aac-logo-round.png"
                 alt="Center Logo"
@@ -77,6 +70,13 @@ export default function Home() {
               />
             </Link>
           </div>
+          <div
+              className="z-0 spline-container w-[100%] h-[100%] hidden max-sm:flex"
+              dangerouslySetInnerHTML={{
+                __html:
+                  '<spline-viewer url="https://prod.spline.design/8Kk8n4FoXe4tjJBu/scene.splinecode"></spline-viewer>',
+              }}
+            ></div>
           {/* <div className="absolute w-full h-full left-0 top-0 box-border rounded-full bg-black">Todo: Animate</div> */}
         </div>
 
@@ -84,15 +84,8 @@ export default function Home() {
 
         {/* Right Column */}
         <div className="relative flex flex-1 flex-col justify-center md:aspect-square text-right order-4">
-          <div
-            className="spline-container spline-container-right w-[100%] h-[100%] hidden md:inline-block"
-            dangerouslySetInnerHTML={{
-              __html:
-                '<spline-viewer url="https://prod.spline.design/8Kk8n4FoXe4tjJBu/scene.splinecode"></spline-viewer>',
-            }}
-          ></div>
           <div className="home-box-right relative flex flex-1 flex-col justify-center md:aspect-square">
-            <Link href="/agencies" className="text-4xl md:text-6xl 2xl:text-7xl 3xl:text-8xl 4xl:text-9xl font-alta tracking-wide text-center md:text-right cursor-pointer transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow">
+            <Link href="/agencies" className="z-1 text-4xl md:text-6xl 2xl:text-7xl 3xl:text-8xl 4xl:text-9xl font-alta tracking-wide text-center md:text-right cursor-pointer transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow">
               AGENCIES
             </Link>
             <div className="border-b border-white my-4 hidden md:block"></div>
@@ -106,7 +99,7 @@ export default function Home() {
               <div className="text-[#6E6E6E] block md:hidden">|</div>
               <Link
                 href="/agencies-signin"
-                className="inline-flex items-center justify-end text-white gap-4 cursor-pointer transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow"
+                className="z-1 inline-flex items-center justify-end text-white gap-4 cursor-pointer transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow"
               >
                 <span className="font-bold text-lg 3xl:text-2xl 4xl:text-[32px] font-bold">
                   Sign in
@@ -115,6 +108,13 @@ export default function Home() {
               </Link>
             </div>
           </div>
+          <div
+            className="z-0 spline-container spline-container-right w-[100%] h-[100%] hidden md:flex"
+            dangerouslySetInnerHTML={{
+              __html:
+                '<spline-viewer url="https://prod.spline.design/8Kk8n4FoXe4tjJBu/scene.splinecode"></spline-viewer>',
+            }}
+          ></div>
         </div>
       </section>
 
