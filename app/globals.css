@@ -166,7 +166,7 @@ button {
 
 @media (min-width: 1440px) {
   .zoom-90 {
-    zoom: 0.9;
+    zoom: 1.1;
   }
 
 }
