@@ -1,27 +1,159 @@
 /* On screens that are more than 1920px including 2560px */
 @media screen and (min-width: 1920px) {
-  /* .headings {
-
-  } */
+  .page-header {
+    gap: 2rem;
+  }
+  .heading-wrap {
+    padding: 0 13.333rem;
+  }
+  .heading {
+    margin: 0 auto;
+    padding: 5.125rem 3.958rem;
+  }
+  .featured-jobs, .featured-creatives {
+    padding: 6.25rem 4.75rem;
+  }
+  .resources {
+    padding: 13.333rem 16.688rem;
+  }
+  .clients {
+    padding: 1rem 3.75rem 0 3.75rem;
+  }
+  .methods {
+    font-size: 72.8px;
+    line-height: 72.8px;
+    padding-bottom: 9.599rem;
+  }
+  .steps {
+    padding: 1.491rem 4.8rem 4.8rem 4.8rem;
+  }
+  .inspire {
+    font-size: 75px;
+    line-height: 104px;
+  }
+  .creative {
+    padding: 17.292rem;
+    background: #040404;
+  }
+  .creative .details h2 {
+    font-size: 3.75rem;
+  }
 }
 
 /* On screens that are 1920px or less */
 @media screen and (max-width: 1920px) {
   .page-header {
-    min-height: 75rem;
+    gap: 1.5rem;
+  }
+  .heading-wrap {
+    padding: 0 10rem;
+  }
+  .heading {
+    margin: 0 auto;
+    padding: 3.844rem 2.969rem;
+  }
+  .featured-jobs, .featured-creatives {
+    padding: 4.688rem 3.563rem;
+  }
+  .resources {
+    padding: 10rem 12.516rem;
+  }
+  .clients {
+    padding: 0.75rem 2.813rem 0 2.813rem;
+  }
+  .methods {
+    font-size: 40px;
+    line-height: 54.6px;
+    padding-bottom: 7.2rem;
+  }
+  .steps {
+    padding: 3.5rem;
+  }
+  .inspire {
+    font-size: 56px;
+    line-height: 78px;
+  }
+  .creative {
+    padding: 12.969rem;
+    background: #040404;
   }
 }
 
 /* On screens that are 1440px or less */
 @media screen and (max-width: 1440px) {
   .page-header {
-    min-height: 56.25rem;
+    gap: 1.125rem;
+  }
+  .heading-wrap {
+    padding: 0 7.5rem;
+  }
+  .heading {
+    margin: 0 auto;
+    padding: 2.883rem 2.227rem;
+  }
+  .featured-jobs, .featured-creatives {
+    padding: 3.516rem 2.672rem;
+  }
+  .resources {
+    padding: 7.5rem 9.387rem;
+  }
+  .clients {
+    padding: 0.563rem 2.109rem 0 2.109rem;
+  }
+  .methods {
+    font-size: 30px;
+    line-height: 40.95px;
+    padding-bottom: 5.4rem;
+  }
+  .steps {
+    padding: 0.839rem 2.7rem 2.7rem 2.7rem;
+  }
+  .inspire {
+    font-size: 42px;
+    line-height: 58.5px;
+  }
+  .creative {
+    padding: 9.727rem;
+    background: #040404;
   }
 }
 
 /* On screens that are 768px or less */
 @media screen and (max-width: 768px) {
   .page-header {
-    min-height: 14.648rem;
+    gap: 1.125rem;
+
+  }
+  .heading-wrap {
+    padding: 0 1.5rem;
+  }
+  .heading {
+    margin: 0 auto;
+    padding: 0.75rem 0;
+  }
+  .featured-jobs, .featured-creatives {
+    padding: 1rem 1.5rem;
+  }
+  .resources {
+    padding: 7.5rem 9.387rem;
+  }
+  .clients {
+    padding: 0.563rem 2.109rem 0 2.109rem;
+  }
+  .methods {
+    font-size: 30px;
+    line-height: 40.95px;
+    padding-bottom: 5.4rem;
+  }
+  .steps {
+    padding: 0.839rem 2.7rem 2.7rem 2.7rem;
+  }
+  .inspire {
+    font-size: 42px;
+    line-height: 58.5px;
+  }
+  .creative {
+    padding: 1.5rem;
+    background: #040404;
   }
 }
