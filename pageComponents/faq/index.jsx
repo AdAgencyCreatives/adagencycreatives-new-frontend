@@ -1,6 +1,5 @@
 'use client';
 import Accordion from 'components/Accordion';
-import "styles/faq.css";
 
 const faqItems = [
   { title: 'about', content: 'Change the text and add your own content, including any information that is relevant to share. Then customize the font, size and scale to make it your own.' },
