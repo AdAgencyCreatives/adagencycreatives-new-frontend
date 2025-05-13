@@ -111,7 +111,8 @@
     line-height: 6.5rem;
   }
   .details {
-    padding: 4.125rem 0 3.438rem;
+    padding-top: 4.125rem;
+    padding-bottom: 3.438rem;
   }
   .creative .image-wrap{
     padding-left: 4.646rem;
