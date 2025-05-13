@@ -8,7 +8,7 @@
       "pageComponents/*": ["pageComponents/*"],
       "components/*": ["components/*"],
       "icons/*": ["icons/*"],
-      "styles/*": ["styles/*"]
+      "styles/*": ["css/*"]
     },
   }
 }
