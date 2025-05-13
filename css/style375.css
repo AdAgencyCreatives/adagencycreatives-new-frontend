@@ -124,14 +124,22 @@
     padding: 1.5rem;
     background: #040404;
   }
+  .creative .image-wrap{
+    padding-left: 1.646rem;
+    padding-right: 1.646rem;
+    padding-top: 2.113rem;
+  }
   .creative .details h2 {
     font-size: 1rem;
+    line-height: 100%;
   }
   .creative .details .title {
     font-size: 0.875rem;
+    line-height: 1.125rem;
   }
   .creative .details .location {
      font-size: 0.625rem;
+     line-height: 1.066rem;
   }
   .creative .details .read-more {
     font-size: 0.625rem;
@@ -158,7 +166,7 @@
   .card-wrapper a {
     font-size: 0.75rem;
     padding: 0.396rem 0.927rem;
-    min-width: 11.771rem;
+    min-width: 9.012rem;
     display: inline-block;
   }
   .featured-creatives h2 {
@@ -167,6 +175,7 @@
   }
   .featured-creatives .card .name {
     font-size: 1.125rem;
+    line-height: 100%;
   }
   .featured-creatives .card .title {
     font-size: 0.625rem;
@@ -209,6 +218,9 @@
     font-size: 0.625rem;
     line-height: 0.875rem;
   }
+  .card.design-2{
+    gap: 0.5rem;
+  }
   .card.design-2 .name {
     font-size: 0.767rem;
     line-height: 100%;
@@ -216,6 +228,7 @@
   .card.design-2 .title {
     font-size: 0.426rem;
     line-height: 0.682rem;
+    padding-bottom: 0;
   }
   .card.design-2 .location {
     font-size: 0.426rem;
@@ -224,5 +237,23 @@
   .separator {
     border-top: 0.91px solid #FFFFFF;
     padding-bottom: 0.469rem;
+  }
+  .plans{
+    padding: 0.867rem 1.5rem 0.614rem;
+  }
+  .plans .heading-wrap, .plans .heading{
+    padding-right: 0;
+  }
+  .plans-button-wrap{
+    padding: 0.325rem 1.5rem 0.736rem;
+  }
+  .plans-button-wrap a{
+    font-size: 0.293rem;
+    line-height: 0.371rem;
+    min-width: 4.493rem;
+    padding: 0.25rem 0;
+  }
+  .plans-button-wrap .border-row{
+    width: 0.875rem;
   }
 }

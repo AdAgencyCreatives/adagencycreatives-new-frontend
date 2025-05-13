@@ -172,7 +172,7 @@ const Creatives = () => {
           {featuredCreatives.map((creative, idx) => (
            <React.Fragment key={`creative-${creative.id || idx}`}>
               {idx === 6 && (
-                <div key={`ad-agency-${idx}`} className="relative col-span-2 text-center flex flex-col justify-around gap-5 max-md:py-10">
+                <div key={`ad-agency-${idx}`} className="relative col-span-2 text-center flex flex-col justify-center gap-[5.625rem] max-md:py-10">
                   <div className="absolute inset-0 absolute h-full overflow-hidden">
                     <video
                       autoPlay
@@ -200,7 +200,7 @@ const Creatives = () => {
               )}
 
               {width > 767 && idx === 15 && (
-                <div key={`profile-${idx}`} className="relative col-span-2 text-center flex flex-col justify-around gap-10">
+                <div key={`profile-${idx}`} className="relative col-span-2 text-center flex flex-col justify-center gap-[5.625rem]">
                   <div className="absolute inset-0 overflow-hidden">
                     <video
                       autoPlay
@@ -224,24 +224,24 @@ const Creatives = () => {
                 <div key={`skip-01--${idx}`} className="col-span-2 md:col-span-3 lg:col-span-5 mb-8 3xl:mb-12 4xl:mb-16"></div>
               )}
 
-              <CreativeLoopItem key={idx} creative={creative} />
+              <CreativeLoopItem key={idx} creative={creative} className={width < 768 && idx > 7 ? 'md:flex hidden' : ''} />
 
               {width < 767 && idx === 15 && (
-                <div key={`profile-02-${idx}`} className="relative col-span-2 text-center flex flex-col justify-center gap-6 md:gap-10">
-                  <div className="block md:hidden inset-0 absolute h-full overflow-hidden w-[70%] mx-auto">
+                <div key={`profile-02-${idx}`} className="relative col-span-2 text-center flex flex-col justify-center gap-[1.5rem] py-[2rem] md:my-0">
+                  <div className="absolute inset-0 overflow-hidden">
                     <video
                       autoPlay
                       loop
                       muted
                       playsInline
-                      className="inset-0 absolute top-1/2 left-1/2 w-full h-full transform -translate-x-1/2 -translate-y-1/2 object-center z-[-1]"
+                      className="w-full h-full object-cover"
                     >
                       <source src="/videos/resources-bg.mp4" type="video/mp4" />
                       Your browser does not support the video tag.
                     </video>
                   </div>
-                  <h2 className="text-2xl md:text-[44px] md:leading-[58.5px] 3xl:text-[57.07px] 3xl:leading-[78px] 4xl:text-[76.09px] 4xl:leading-[104px] font-bold mt-[48px] md:mt-0 font-inter">Want<br />Your <br /> ProFile<sup className='font-hass65 text-[10px] md:text-[12px] xl:text-[14px] 3xl:text-[18px] 4xl:text-[20px] relative -top-[10px] md:-top-[20px] 3xl:-top-[30px] 4xl:-top-[40px]'>TM</sup><br />Featured?</h2>
-                  <div>
+                  <h2 className="relative z-1 text-3xl md:text-[44px] md:leading-[58.5px] 3xl:text-[57.07px] 3xl:leading-[78px] 4xl:text-[76.09px] 4xl:leading-[104px] font-bold my-[0rem] md:mt-0 font-inter">Want<br />Your <br /> ProFile<sup className='font-hass65 text-[10px] md:text-[12px] xl:text-[14px] 3xl:text-[18px] 4xl:text-[20px] relative -top-[10px] md:-top-[20px] 3xl:-top-[30px] 4xl:-top-[40px]'>TM</sup><br />Featured?</h2>
+                  <div className='relative z-1'>
                     <Link href="/" className="border-brand-yellow border-0 outline-[2.05px] md:border-4 uppercase text-brand-yellow rounded-full font-sans sm:font-semibold md:font-hass75 md:font-bold text-xs md:text-sm 3xl:text-lg 4xl:text-2xl px-11.25 py-1.5 md:px-14  md:py-2.5 2xl:px-24 3xl:px-25.5 4xl:px-33.5 4xl:py-5 cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white font-inter">See How</Link>
                   </div>
                 </div>
