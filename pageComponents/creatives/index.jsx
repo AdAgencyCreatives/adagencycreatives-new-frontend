@@ -282,7 +282,7 @@ const Creatives = () => {
           </div>
         </div>
         <div className="creative mt-4">
-          <div className="outline outline-4 md:outline-8 2xl:outline-16 shadow-(--ad-box-shadow) outline-while rounded-md md:rounded-4xl xl:rounded-[56px]  relative mx-[4px] md:mx-[16px]">
+          <div className="outline outline-4 md:outline-8 2xl:outline-16 shadow-(--ad-box-shadow) outline-while rounded-md md:rounded-xl xl:rounded-2xl 2xl:rounded-3xl 3xl:rounded-4xl 4xl:rounded-[56px]  relative mx-[4px] md:mx-[16px]">
             <div className="grid grid-cols-2 md:grid-cols-3 gap-1 md:gap-10 justify-between">
               <div className="max-md:hidden">
                 <Image src="/creatives/creative17.avif" width="720" height="720" alt="" className="image-mask" />
