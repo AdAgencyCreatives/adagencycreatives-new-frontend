@@ -15,4 +15,6 @@ export const featuredCreatives = [
   { title: 'Junior Motion Graphics Designer', image: '/creatives/creative14.avif', agency: 'Matthew Marcos', location: 'Chicago, IL' },
   { title: 'Junior Motion Graphics Designer', image: '/creatives/creative15.avif', agency: 'Matthew Marcos', location: 'Riverside, CA' },
   { title: 'Junior Motion Graphics Designer', image: '/creatives/creative16.avif', agency: 'Matthew Marcos', location: 'Nashville, TN' },
+  { title: 'Junior Motion Graphics Designer', image: '/creatives/creative16.avif', agency: 'Matthew Marcos', location: 'Boston, MA' },
+  { title: 'Junior Motion Graphics Designer', image: '/creatives/creative16.avif', agency: 'Matthew Marcos', location: 'Boston, MA' },
 ];
