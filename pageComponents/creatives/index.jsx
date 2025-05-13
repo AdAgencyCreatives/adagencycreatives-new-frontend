@@ -13,8 +13,6 @@ import { featuredAgencies } from 'constants/agencies';
 import AgenciesLoopItem from 'pageComponents/agencies/loop/item';
 import { useEffect, useState } from 'react';
 import CreativeLoopItem2 from './loop/item2';
-import "styles/components/pageheader.css";
-import "styles/creatives.css";
 
 const Creatives = () => {
   const [width, setWidth] = useState(0);
@@ -43,10 +41,10 @@ const Creatives = () => {
 
       {/* Featured Jobs */}
       <div className="bg-black heading-wrap relative z-1">
-        <h2 className="heading font-bold font-inter  leading-[25.78px] 2xl:leading-[99px] 3xl:leading-[132px] 4xl:leading-[176px]">Featured Jobs</h2>
+        <h2 className="heading font-bold font-inter leading-[25.78px] 2xl:leading-[99px] 3xl:leading-[132px] 4xl:leading-[176px]">Featured Jobs</h2>
       </div>
       <section className="relative z-1 featured-jobs card-wrapper" id="search-jobs">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 2xl:gap-5 3xl:gap-6 4xl:gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
           {featuredJobs.map((job, idx) => (
             <React.Fragment key={`job-${job.id || idx}`}>
               {idx === 6 && (
@@ -170,7 +168,7 @@ const Creatives = () => {
         <h2 className="heading font-bold font-inter text-right">Featured Creatives</h2>
       </div>
       <section className="featured-creatives card-wrapper">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 2xl:gap-5 3xl:gap-6 4xl:gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
           {featuredCreatives.map((creative, idx) => (
            <React.Fragment key={`creative-${creative.id || idx}`}>
               {idx === 6 && (

@@ -10,7 +10,7 @@ const Footer = () => {
   const isAgencies = pathname === "/agencies";
   const isFAQ = pathname === "/faq";
 
-  if (isCreatives || isAgencies || isFAQ) {
+  if (!isHomePage) {
     return <></>;
   }
 

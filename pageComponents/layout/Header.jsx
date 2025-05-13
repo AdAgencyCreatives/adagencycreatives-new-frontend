@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import MobileMenu from "./MobileMenu";
 import { usePathname } from 'next/navigation';
-import "styles/header.css";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
