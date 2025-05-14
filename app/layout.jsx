@@ -13,13 +13,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <Head>
+      <head>
         <script
           type="module"
           src="https://unpkg.com/@splinetool/viewer@1.9.75/build/spline-viewer.js"
         ></script>
         <link rel="icon" href="/favicon.ico" />
-      </Head>
+      </head>
         <ClientProviderWrapper>
           <ClientUseContextWrapper>
             <LayoutWrapper>{children}</LayoutWrapper>
