@@ -3,6 +3,7 @@ import "./globals.css";
 import ClientUseContextWrapper from "./ClientUseContextWrapper";
 import ClientProviderWrapper from "./ClientProviderWrapper";
 import LayoutWrapper from "./LayoutWrapper";
+import Head from "next/head";
 
 export const metadata = {
   title: "Ad Agency Creatives is a community for advertising creatives.",
@@ -12,12 +13,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head>
+      <Head>
         <script
           type="module"
           src="https://unpkg.com/@splinetool/viewer@1.9.75/build/spline-viewer.js"
         ></script>
-      </head>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
         <ClientProviderWrapper>
           <ClientUseContextWrapper>
             <LayoutWrapper>{children}</LayoutWrapper>
