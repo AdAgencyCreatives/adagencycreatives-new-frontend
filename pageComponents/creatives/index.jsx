@@ -49,13 +49,13 @@ const Creatives = () => {
             <React.Fragment key={`job-${job.id || idx}`}>
               {idx === 6 && (
                 <div key={`perfect-${idx}`} id={`perfect-${idx}`} className="relative col-span-2 text-center flex flex-col justify-around gap-5 md:gap-10 max-md:py-10">
-                  <div className="block inset-0 absolute h-full overflow-hidden mx-auto">
+                  <div className="block inset-0 absolute h-full max-sm:w-[60%] max-sm:py-12 overflow-hidden mx-auto">
                     <video
                       autoPlay
                       loop
                       muted
                       playsInline
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover max-sm:rounded-[50%]"
                     >
                       <source src="/videos/resources-bg.mp4" type="video/mp4" />
                       Your browser does not support the video tag.
@@ -130,7 +130,7 @@ const Creatives = () => {
         </div>
       </section>
 
-      <section className="border-y-0 border-white relative featured-agency">
+      <section className="border-y-0 border-white relative featured-agency max-sm:py-15">
         <div className="absolute top-0 left-[50%] transform -translate-x-[50%] translate-y-0 border-white border-1 w-[88%] h-px m-auto hidden sm:block"></div>
         <div className="absolute bottom-0 left-[50%] transform -translate-x-[50%] translate-y-0 border-white border-1 w-[88%] h-px m-auto hidden sm:block"></div>
         {/* Background */}
@@ -164,22 +164,22 @@ const Creatives = () => {
       </section>
 
       {/* Featured Creatives */}
-      <div className="bg-black heading-wrap">
-        <h2 className="heading font-bold font-inter text-right">Featured Creatives</h2>
+      <div className="bg-black heading-wrap max-sm:pt-[2.75rem]! max-sm:pb-[1rem]!">
+        <h2 className="heading font-bold font-inter text-right max-sm:p-[0]!">Featured Creatives</h2>
       </div>
       <section className="featured-creatives card-wrapper">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
           {featuredCreatives.map((creative, idx) => (
-           <React.Fragment key={`creative-${creative.id || idx}`}>
+            <React.Fragment key={`creative-${creative.id || idx}`}>
               {idx === 6 && (
                 <div key={`ad-agency-${idx}`} className="relative col-span-2 text-center flex flex-col justify-around gap-5 max-md:py-10">
-                  <div className="absolute inset-0 absolute h-full overflow-hidden">
+                  <div className="absolute inset-0 absolute h-full max-sm:w-[60%] max-sm:py-16 overflow-hidden mx-auto max-sm:pt-[1.5rem]">
                     <video
                       autoPlay
                       loop
                       muted
                       playsInline
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover max-sm:rounded-[50%]"
                     >
                       <source src="/videos/resources-bg.mp4" type="video/mp4" />
                       Your browser does not support the video tag.
@@ -228,20 +228,20 @@ const Creatives = () => {
 
               {width < 767 && idx === 15 && (
                 <div key={`profile-02-${idx}`} className="relative col-span-2 text-center flex flex-col justify-center gap-6 md:gap-10">
-                  <div className="block md:hidden inset-0 absolute h-full overflow-hidden w-[70%] mx-auto">
+                  <div className="z-0 absolute inset-0 h-full max-sm:w-[60%] max-sm:py-8 overflow-hidden mx-auto">
                     <video
                       autoPlay
                       loop
                       muted
                       playsInline
-                      className="inset-0 absolute top-1/2 left-1/2 w-full h-full transform -translate-x-1/2 -translate-y-1/2 object-center z-[-1]"
+                      className="w-full h-full object-cover max-sm:rounded-[50%]"
                     >
                       <source src="/videos/resources-bg.mp4" type="video/mp4" />
                       Your browser does not support the video tag.
                     </video>
                   </div>
-                  <h2 className="text-2xl md:text-[44px] md:leading-[58.5px] 3xl:text-[57.07px] 3xl:leading-[78px] 4xl:text-[76.09px] 4xl:leading-[104px] font-bold mt-[48px] md:mt-0 font-inter">Want<br />Your <br /> ProFile<sup className='font-hass65 text-[10px] md:text-[12px] xl:text-[14px] 3xl:text-[18px] 4xl:text-[20px] relative -top-[10px] md:-top-[20px] 3xl:-top-[30px] 4xl:-top-[40px]'>TM</sup><br />Featured?</h2>
-                  <div>
+                  <h2 className="z-1 text-2xl md:text-[44px] md:leading-[58.5px] 3xl:text-[57.07px] 3xl:leading-[78px] 4xl:text-[76.09px] 4xl:leading-[104px] font-bold mt-[48px] md:mt-0 font-inter">Want<br />Your <br /> ProFile<sup className='font-hass65 text-[10px] md:text-[12px] xl:text-[14px] 3xl:text-[18px] 4xl:text-[20px] relative -top-[10px] md:-top-[20px] 3xl:-top-[30px] 4xl:-top-[40px]'>TM</sup><br />Featured?</h2>
+                  <div className="z-1 mb-5">
                     <Link href="/" className="border-brand-yellow border-0 outline-[2.05px] md:border-4 uppercase text-brand-yellow rounded-full font-sans sm:font-semibold md:font-hass75 md:font-bold text-xs md:text-sm 3xl:text-lg 4xl:text-2xl px-11.25 py-1.5 md:px-14  md:py-2.5 2xl:px-24 3xl:px-25.5 4xl:px-33.5 4xl:py-5 cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white font-inter">See How</Link>
                   </div>
                 </div>
@@ -287,7 +287,7 @@ const Creatives = () => {
               <div className="max-md:hidden">
                 <Image src="/creatives/creative17.avif" width="720" height="720" alt="" className="image-mask" />
               </div>
-              <div className="font-inter details">
+              <div className="font-inter details max-sm:w-[120%]!">
                 <div>
                   <h2 className="font-inter font-bold uppercase">Matthew Marcos</h2>
                   <p className="lowercase font-bold text-brand-yellow my-2 md:my-4 title">Creative Director</p>
@@ -297,7 +297,7 @@ const Creatives = () => {
                 <p className="about-desc">I'm an Associate Creative Director based in New York City; with a focus on art direction, brand storytelling, and concepting big ideas.I’ve been fortunate to work with brands like Keds, Louis XIII, Marantz, Wrangler, J.Crew, and USTA, crafting campaigns </p>
                 <Link href="/" className="read-more text-brand-yellow underline mt-6">Read more...</Link>
               </div>
-              <div>
+              <div className="max-sm:w-[70%]! max-sm:ml-[20%]!">
                 <div className="max-w-[130px] md:max-w-[220px] 3xl:max-w-[295px] 4xl:max-w-[393px] mx-auto -mt-12 3xl:-mt-16 bg-black relative z-1">
                   <CreativeLoopItem2
                     creative={{ title: 'Senior UX User Experience Designer', image: '/creatives/creative1.avif', agency: 'Matthew Marcos', location: 'NEW YORK, NY' }}
