@@ -55,7 +55,7 @@ const Creatives = () => {
                       loop
                       muted
                       playsInline
-                      className="w-full h-full object-cover max-sm:rounded-[50%]"
+                      className="w-full h-full object-cover max-sm:rounded-[50%] opacity-50"
                     >
                       <source src="/videos/resources-bg.mp4" type="video/mp4" />
                       Your browser does not support the video tag.
@@ -91,7 +91,7 @@ const Creatives = () => {
             loop
             muted
             playsInline
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover opacity-50"
           >
             <source src="/videos/resources-bg.mp4" type="video/mp4" />
             Your browser does not support the video tag.
@@ -179,7 +179,7 @@ const Creatives = () => {
                       loop
                       muted
                       playsInline
-                      className="w-full h-full object-cover max-sm:rounded-[50%]"
+                      className="w-full h-full object-cover max-sm:rounded-[50%] opacity-50"
                     >
                       <source src="/videos/resources-bg.mp4" type="video/mp4" />
                       Your browser does not support the video tag.
@@ -207,7 +207,7 @@ const Creatives = () => {
                       loop
                       muted
                       playsInline
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover opacity-50"
                     >
                       <source src="/videos/resources-bg.mp4" type="video/mp4" />
                       Your browser does not support the video tag.
@@ -234,7 +234,7 @@ const Creatives = () => {
                       loop
                       muted
                       playsInline
-                      className="w-full h-full object-cover max-sm:rounded-[50%]"
+                      className="w-full h-full object-cover max-sm:rounded-[50%] opacity-50"
                     >
                       <source src="/videos/resources-bg.mp4" type="video/mp4" />
                       Your browser does not support the video tag.
