@@ -220,9 +220,9 @@ const Creatives = () => {
                 </div>
               )}
 
-              {idx === 8 && (
+              {/* {idx === 8 && (
                 <div key={`skip-01--${idx}`} className="col-span-2 md:col-span-3 lg:col-span-5 mb-8 3xl:mb-12 4xl:mb-16"></div>
-              )}
+              )} */}
 
               <CreativeLoopItem key={idx} creative={creative} />
 
@@ -252,7 +252,7 @@ const Creatives = () => {
       </section>
 
       {/* Create Profile */}
-      <div className="bg-[#040404] heading-wrap create-profile">
+      <div id="create-profile" className="bg-[#040404] heading-wrap create-profile">
         <h2 className="heading font-bold font-inter">Create ProFile<sup className='text-[10px] md:text-[14px] xl:text-[18px] 3xl:text-[22px] 4xl:text-[26px] relative -top-[10px] md:-top-[30px] 3xl:-top-[50px] 4xl:-top-[60px]'>TM</sup></h2>
       </div>
       <section className="bg-black">
@@ -294,19 +294,19 @@ const Creatives = () => {
                 </div>
                 <p className="location">NEW YORK, NY</p>
                 <p className="text-brand-yellow mt-4 mb-2 md:mt-4 md:mb-4 4xl:mt-14 about-title font-bold">ABOUT</p>
-                <p className="about-desc">I'm an Associate Creative Director based in New York City; with a focus on art direction, brand storytelling, and concepting big ideas.I’ve been fortunate to work with brands like Keds, Louis XIII, Marantz, Wrangler, J.Crew, and USTA, crafting campaigns </p>
+                <p className="about-desc">I'm a Creative Director based in New York City; with a focus on art direction, brand storytelling, and concepting big ideas.I’ve been fortunate to work with brands like Keds, Louis XIII, Marantz, Wrangler, J.Crew, and USTA, crafting campaigns </p>
                 <Link href="/" className="read-more text-brand-yellow underline mt-6">Read more...</Link>
               </div>
               <div className="max-sm:w-[70%]! max-sm:ml-[20%]!">
                 <div className="max-w-[130px] md:max-w-[220px] 3xl:max-w-[295px] 4xl:max-w-[393px] mx-auto -mt-12 3xl:-mt-16 bg-black relative z-1">
                   <CreativeLoopItem2
-                    creative={{ title: 'Senior UX User Experience Designer', image: '/creatives/creative1.avif', agency: 'Matthew Marcos', location: 'NEW YORK, NY' }}
+                    creative={{ title: 'Creative Director', image: '/creatives/creative1.avif', agency: 'Matthew Marcos', location: 'NEW YORK, NY' }}
                   />
                 </div>
               </div>
             </div>
             <div className="relative text-center w-full bottom-0 button">
-              <Link href="/" className="block m-auto border-brand-yellow border-2 md:border-4 uppercase text-brand-yellow rounded-full font-inter font-bold uppercase px-5 xl:px-30 3xl:px-40 md:py-4 py-2 cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white">create ProFile<sup className='font-hass65 text-[6px] md:text-[10px] xl:text-[8px] 3xl:text-[10px] 4xl:text-[14px] relative -top-[4px] md:-top-[8px] 3xl:-top-[6px] 4xl:-top-[9px]'>TM</sup></Link>
+              <Link href="/creatives-signup" className="block m-auto border-brand-yellow border-2 md:border-4 uppercase text-brand-yellow rounded-full font-inter font-bold uppercase px-5 xl:px-30 3xl:px-40 md:py-4 py-2 cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white">create ProFile<sup className='font-hass65 text-[6px] md:text-[10px] xl:text-[8px] 3xl:text-[10px] 4xl:text-[14px] relative -top-[4px] md:-top-[8px] 3xl:-top-[6px] 4xl:-top-[9px]'>TM</sup></Link>
               <footer className="flex flex-row justify-center w-full z-11 py-[10px] text-gray-400 space-y-1">
                 <p className="font-inter font-normal uppercase mt-2 px-12 md:px-2 transition delay-150 duration-300 ease-in-out text-[#6E6E6E] hover:text-[#FFFFFF]">© {(new Date()).getFullYear()} Ad Agency Creatives. All Rights Reserved.</p>
               </footer>

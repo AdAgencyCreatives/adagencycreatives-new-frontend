@@ -207,7 +207,7 @@
   }
   .card .name {
     font-size: 1rem;
-    padding-bottom: 0;
+    padding-bottom: 0.375rem;
   }
   .card .title {
     font-size: 0.625rem;
