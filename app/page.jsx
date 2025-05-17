@@ -42,7 +42,7 @@ export default function Home() {
                   href="/creatives-signin"
                   className="z-1 inline-flex items-center justify-start text-white gap-4 cursor-pointer flex-row-reverse md:flex-row  transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow"
                 >
-                  <LiaSignInAltSolid className="text-[36px] rotate-180" />
+                  <LiaSignInAltSolid className="text-[36px] md:rotate-180" />
                   <span className="font-bold text-lg 3xl:text-2xl 4xl:text-[32px] font-bold">
                     Sign in
                   </span>

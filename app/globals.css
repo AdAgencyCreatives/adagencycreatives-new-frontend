@@ -120,12 +120,14 @@ button {
   right: -5%;
 }
 
-.home-box-left {
-  padding-left: 5%;
-}
+@media(min-width: 768px) {
+  .home-box-left {
+    padding-left: 5%;
+  }
 
-.home-box-right {
-  padding-right: 5%;
+  .home-box-right {
+    padding-right: 5%;
+  }
 }
 
 .image-mask {
