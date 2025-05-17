@@ -1,193 +1,242 @@
 /* On screens that are more than 1920px including 2560px */
 @media screen and (min-width: 1920px) {
+
   /* Header */
   .header {
     padding: 2.667rem 3.833rem;
   }
+
   .logo {
     width: 8.444rem;
     height: 8.444rem;
   }
+
   /* Layout */
   .layout {
     padding-top: 13.75rem;
   }
+
   /* Page Header */
   .page-header {
     min-height: 100vh;
     gap: 2rem;
   }
+
   .main-heading {
     font-size: 20.213rem;
     line-height: 25rem;
   }
+
   /* FAQ */
   .faq-section {
     padding: 3.333rem 3.833rem;
-    min-height: calc( 100vh - 13.75rem );
+    min-height: calc(100vh - 13.75rem);
   }
+
   .faqs {
     padding: 8.333rem 13rem;
   }
+
   .footer {
     font-size: 24px;
     line-height: 34.67px;
     padding-top: 3.333rem;
   }
+
   /* Directory */
   .page-header.directory {
     max-width: 92.313rem;
   }
+
   .search {
     gap: 2.5rem;
     font-size: 2.5rem;
     line-height: 2.438rem;
   }
+
   .search input {
     padding: 0.625rem 0.625rem 2.5rem;
     border-bottom: 4px solid #fff;
   }
+
   .jobs-directory {
     padding: 6.25rem 4.75rem;
   }
+
   .card-wrapper .grid {
     gap: 2rem;
   }
+
   .directory-logo {
     width: 9.375rem;
     height: 9.375rem;
   }
+
   /* Creatives */
   .heading-wrap {
     padding: 0 13.333rem;
   }
+
   .heading {
     margin: 0 auto;
     padding: 5.125rem 3.958rem;
     font-size: 8.71rem;
     line-height: 11rem;
   }
-  .create-profile .heading{
+
+  .create-profile .heading {
     font-size: 8.934rem;
   }
+
   .featured-agency a {
     width: 30.67rem;
     font-size: 1.794rem;
     line-height: 2.531rem;
     padding: 1.689rem 0;
   }
-  .featured-jobs, .featured-creatives {
+
+  .featured-jobs,
+  .featured-creatives {
     padding: 6.25rem 4.75rem;
   }
+
   .resources {
     padding: 13.333rem 16.688rem;
   }
+
   .featured-agency {
     padding: 1.5rem 0 6.625rem;
   }
+
   .clients {
     padding: 1rem 3.75rem 0 3.75rem;
   }
+
   .methods {
     font-size: 72.8px;
     line-height: 72.8px;
     padding-bottom: 9.599rem;
   }
+
   .steps {
     padding: 1.491rem 4.8rem 4.8rem 4.8rem;
   }
+
   .steps .count {
     font-size: 15.833rem;
     line-height: 14.25rem;
   }
+
   .steps .step-heading {
     font-size: 2rem;
   }
+
   .step-desc {
     font-size: 2rem;
   }
+
   .inspire {
     font-size: 75px;
     line-height: 6.5rem;
   }
+
   .details {
     padding-top: 4.125rem;
     padding-bottom: 3.438rem;
   }
-  .creative .image-wrap{
+
+  .creative .image-wrap {
     padding-left: 4.646rem;
     padding-right: 2.646rem;
     padding-top: 3.313rem;
   }
+
   .creative {
     padding: 17.292rem;
     background: #040404;
   }
+
   .creative .details h2 {
     font-size: 3.75rem;
     line-height: 100%;
   }
+
   .creative .details .title {
     font-size: 2.5rem;
     line-height: 3.25rem;
   }
+
   .creative .details .location {
-     font-size: 1.5rem;
-     line-height: 1.896rem; 
+    font-size: 1.5rem;
+    line-height: 1.896rem;
   }
+
   .creative .details .read-more {
     font-size: 1.518rem;
   }
+
   .creative .button a {
     font-size: 1.5rem;
     line-height: 2.167rem;
-    padding:  0.823rem 0rem;
+    padding: 0.823rem 0rem;
     max-width: 39.582rem;
   }
+
   .creative footer {
     font-size: 1.5rem;
     line-height: 2.167rem;
     padding: 2rem 0;
   }
+
   .page-header .sub-heading {
     font-size: 2.667rem;
   }
+
   .card-wrapper h2 {
     font-size: 4.756rem;
   }
+
   .card-wrapper a {
     font-size: 1.5rem;
     padding: 0.917rem 4.004rem;
     min-width: 22.799rem;
     display: inline-block;
   }
+
   .featured-creatives h2 {
     font-size: 4.824rem;
     line-height: 6.5rem;
   }
+
   .featured-creatives .card .name {
     font-size: 3.125rem;
     line-height: 100%;
   }
+
   .featured-creatives .card .title {
     font-size: 1.625rem;
     line-height: 2.125rem;
   }
+
   .featured-creatives .card .location {
     font-size: 1.5rem;
     line-height: 2.223rem;
   }
+
   .resource-title {
     font-size: 2.432rem;
   }
+
   .about-title {
     font-size: 2rem;
     line-height: 1.896rem;
   }
+
   .about-desc {
     font-size: 2rem;
     line-height: 3.2rem;
   }
+
   /* Jobs And Creatives Card */
   .card {
     padding: 3.75rem 1.25rem;
@@ -197,60 +246,75 @@
     box-shadow: 0px 2px 14px 2px #FFFFFF;
     font-weight: 700;
   }
+
   .card .name {
     font-size: 3.125rem;
     line-height: 100%;
     padding-bottom: 0.667rem;
   }
+
   .card .title {
     font-size: 1.625rem;
     line-height: 2.125rem;
     padding-bottom: 1.396rem;
   }
+
   .card .location {
     font-size: 1.5rem;
     line-height: 2.223rem;
   }
-  .card.design-2{
+
+  .card.design-2 {
     gap: 2rem;
   }
+
   .card.design-2 .name {
     font-size: 2.876rem;
     line-height: 100%;
   }
+
   .card.design-2 .title {
     font-size: 1.581rem;
     line-height: 2.156rem;
     padding-bottom: 0;
   }
+
   .card.design-2 .location {
     font-size: 1.294rem;
     line-height: 1.917rem;
   }
+
   .separator {
     border-top: 2.67px solid #FFFFFF;
     padding-bottom: 1.375rem;
   }
+
   .creative.card {
     border: 1.33px solid var(--color-white-Solid, #FFFFFF);
     box-shadow: 0px 2px 14px 2px #FFFFFF;
   }
-  .plans{
+
+  .plans {
     padding: 1.5rem 16.688rem 4.98rem;
   }
-  .plans .heading-wrap, .plans .heading{
+
+  .plans .heading-wrap,
+  .plans .heading {
     padding-right: 0;
   }
-  .plans-button-wrap{
+
+  .plans-button-wrap {
     padding: 2.5rem 16.688rem 5.091rem;
   }
-  .plans-button-wrap a{
+
+  .plans-button-wrap a {
     font-size: 2rem;
     line-height: 2.531rem;
     min-width: 30.67rem;
     padding: 2.206rem 0;
   }
-  .plans-button-wrap .border-row{
+
+  .plans-button-wrap .border-row {
     width: 4.201rem;
   }
 }
