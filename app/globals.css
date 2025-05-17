@@ -202,3 +202,15 @@ button {
     border-color: var(--primary);
   }
 }
+
+.tm-text-container {
+  display: inline-flex !important;
+  flex-direction: row !important;
+  justify-content: flex-start !important;
+  align-items: flex-start !important;
+}
+
+.tm-text {
+  font-size: 0.36em !important;
+  padding-top: 0.2em !important;
+}
