@@ -196,7 +196,7 @@
     font-size: 4.756rem;
   }
 
-  .card-wrapper a {
+  .card-wrapper a.link-button {
     font-size: 1.5rem;
     padding: 0.917rem 4.004rem;
     min-width: 22.799rem;
@@ -253,15 +253,36 @@
     padding-bottom: 0.667rem;
   }
 
+  .featured-jobs .card .name {
+    font-size: 3.125rem !important;
+    line-height: 100% !important;
+    padding: 0 0 0.667rem 0 !important;
+    min-width: unset !important;
+  }
+
   .card .title {
     font-size: 1.625rem;
     line-height: 2.125rem;
     padding-bottom: 1.396rem;
   }
 
+  .featured-jobs .card .title {
+    font-size: 1.625rem !important;
+    line-height: 2.125rem !important;
+    padding: 0 0 1.396rem 0 !important;
+    min-width: unset !important;
+  }
+
   .card .location {
     font-size: 1.5rem;
     line-height: 2.223rem;
+  }
+
+  .featured-jobs .card .location {
+    font-size: 1.5rem !important;
+    line-height: 2.223rem !important;
+    padding: 0 !important;
+    min-width: unset !important;
   }
 
   .card.design-2 {

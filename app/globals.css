@@ -215,3 +215,7 @@ button {
   font-size: 0.36em !important;
   padding-top: 0.2em !important;
 }
+
+.card-wrapper a {
+  display: inline-block;
+}

@@ -43,7 +43,8 @@ const Creatives = () => {
       title: item?.title || 'coming soon',
       image: (item?.agency?.user_thumbnail || item?.agency?.logo) || '/jobs/job1.avif',
       agency: item?.agency?.name || 'AGENCY',
-      location: `${item?.location?.city || 'city'}, ${item?.location?.state || 'state'}`
+      location: `${item?.location?.city || 'city'}, ${item?.location?.state || 'state'}`,
+      item: item,
     };
   });
 
@@ -101,7 +102,7 @@ const Creatives = () => {
                   <div className="relative z-1">
                     <Link
                       href="/"
-                      className="border-brand-yellow border-2 md:border-4 uppercase text-brand-yellow rounded-full font-inter sm:font-semibold md:font-hass75 md:font-bold cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white"
+                      className="link-button border-brand-yellow border-2 md:border-4 uppercase text-brand-yellow rounded-full font-inter sm:font-semibold md:font-hass75 md:font-bold cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white"
                     >
                       Advanced Search
                     </Link>
@@ -229,7 +230,7 @@ const Creatives = () => {
                   <div className="relative z-1">
                     <Link
                       href="/"
-                      className="border-brand-yellow border-0 outline-[2.05px] md:border-4 uppercase text-brand-yellow rounded-full font-inter sm:font-semibold md:font-bold px-12.5 py-2 md:px-14  md:py-2.5 2xl:px-24 3xl:px-25.5 4xl:px-33.5 4xl:py-5 cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white"
+                      className="link-button border-brand-yellow border-0 outline-[2.05px] md:border-4 uppercase text-brand-yellow rounded-full font-inter sm:font-semibold md:font-bold px-12.5 py-2 md:px-14  md:py-2.5 2xl:px-24 3xl:px-25.5 4xl:px-33.5 4xl:py-5 cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white"
                     >JOIN US</Link>
                   </div>
                 </div>
