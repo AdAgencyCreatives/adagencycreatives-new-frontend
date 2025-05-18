@@ -1,4 +1,8 @@
 /** @type {import('next').NextConfig} */
+import pkg from '@next/env';
+const { loadEnvConfig } = pkg;
+loadEnvConfig(process.cwd());
+
 const nextConfig = {
     // For proper static file handling
     images: {

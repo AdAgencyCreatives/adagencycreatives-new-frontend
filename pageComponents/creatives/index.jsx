@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useContext } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import JobLoopItem from 'pageComponents/jobs/loop/item';
@@ -15,9 +15,15 @@ import { useEffect, useState } from 'react';
 import CreativeLoopItem2 from './loop/item2';
 import TmTextLink from 'components/TmTextLink';
 import TmText from 'components/TmText';
+import { Context as JobsContext } from "../../contexts/JobsContext";
 
 const Creatives = () => {
   const [width, setWidth] = useState(0);
+
+  const {
+    state: { jobs },
+    getFeaturedJobs,
+  } = useContext(JobsContext);
 
   useEffect(() => {
     const handleResize = () => setWidth(window.innerWidth);
@@ -25,6 +31,14 @@ const Creatives = () => {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+
+  useEffect(() => {
+    getFeaturedJobs();
+  }, []);
+
+  useEffect(() => {
+    console.log('jobs', jobs);
+  }, [jobs]);
 
   return (
     <div className="text-white">
@@ -275,8 +289,8 @@ const Creatives = () => {
               <div className="font-wix flex flex-col gap-[5.62] md:gap-2 2xl:gap-5.5 3xl:gap-7 4xl:gap-9.5">
                 <h3 className="count font-bold">1</h3>
                 <p className="text-brand-yellow font-bold step-heading font-inter ">
-                   CREATE <TmText text='ProFile' />
-                  </p>
+                  CREATE <TmText text='ProFile' />
+                </p>
                 <p className="text-white step-desc font-inter font-normal">Claim your space on the web.<br />Design your own stunning <TmText text='ProFile' /> page - crafted to impress, built to connect. Add your work, your voice, your values. You’ll instantly get a sleek webpage with your personal link and a downloadable version ready to share anywhere - from DMs to boardrooms. It's free. It’s yours. It’s the start of everything.</p>
               </div>
               <div className="font-wix flex flex-col gap-[5.62] md:gap-2 2xl:gap-5.5 3xl:gap-7 4xl:gap-9.5">

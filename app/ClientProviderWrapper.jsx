@@ -1,18 +1,21 @@
 // app/ClientComponentWrapper.js
 "use client";
 
-import { Provider as SiteContext } from "contexts/SiteContext";
-import { Provider as AnimatedAlertContext } from "contexts/AnimatedAlertContext";
+import { Provider as SiteProvider } from "contexts/SiteContext";
+import { Provider as AnimatedAlertProvider } from "contexts/AnimatedAlertContext";
 import { Provider as AuthProvider } from "contexts/AuthContext";
+import { Provider as JobsProvider } from "contexts/JobsContext";
 
 export default function ClientProviderWrapper({ children }) {
   return (
     <>
-      <SiteContext>
-        <AnimatedAlertContext>
-          <AuthProvider>{children}</AuthProvider>
-        </AnimatedAlertContext>
-      </SiteContext>
+      <SiteProvider>
+        <AnimatedAlertProvider>
+          <JobsProvider>
+            <AuthProvider>{children}</AuthProvider>
+          </JobsProvider>
+        </AnimatedAlertProvider>
+      </SiteProvider>
     </>
   );
 }
