@@ -44,7 +44,7 @@ export default function Home() {
                 >
                   <LiaSignInAltSolid className="text-[36px] md:rotate-180" />
                   <span className="font-bold text-lg 3xl:text-2xl 4xl:text-[32px] font-bold">
-                    Sign in
+                    sign in
                   </span>
                 </Link>
               </div>
@@ -102,7 +102,7 @@ export default function Home() {
                 className="z-1 inline-flex items-center justify-end text-white gap-4 cursor-pointer transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow"
               >
                 <span className="font-bold text-lg 3xl:text-2xl 4xl:text-[32px] font-bold">
-                  Sign in
+                  sign in
                 </span>
                 <LiaSignInAltSolid className="text-[36px]" />
               </Link>

@@ -6,6 +6,9 @@ import LayoutWrapper from "./LayoutWrapper";
 import Head from "next/head";
 
 export const metadata = {
+  icons: {
+    icon: '/favicon.ico',
+  },
   title: "Ad Agency Creatives is a community for advertising creatives.",
   description: "Ad Agency Creatives is a community for advertising creatives.",
 };
@@ -20,11 +23,11 @@ export default function RootLayout({ children }) {
         ></script>
         <link rel="icon" href="/favicon.ico" />
       </head>
-        <ClientProviderWrapper>
-          <ClientUseContextWrapper>
-            <LayoutWrapper>{children}</LayoutWrapper>
-          </ClientUseContextWrapper>
-        </ClientProviderWrapper>
+      <ClientProviderWrapper>
+        <ClientUseContextWrapper>
+          <LayoutWrapper>{children}</LayoutWrapper>
+        </ClientUseContextWrapper>
+      </ClientProviderWrapper>
     </html>
   );
 }
