@@ -1,10 +1,8 @@
+'use client';
+
 import LinkOrDiv from "components/LinkOrDiv";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
 
 const JobLoopItem = ({ job, className }) => {
-
-  const router = useRouter();
 
   const agency_url = job?.item?.agency?.slug ? `/agency/${job.item.agency.slug}` : '';
   const job_url = job?.item?.slug ? `/job/${job.item.slug}` : '';

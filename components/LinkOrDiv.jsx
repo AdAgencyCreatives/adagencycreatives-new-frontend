@@ -1,3 +1,5 @@
+'use client';
+
 import Link from "next/link";
 
 const LinkOrDiv = ({ href = '', children, ...props }) => {
