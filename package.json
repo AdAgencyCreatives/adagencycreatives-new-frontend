@@ -1,6 +1,6 @@
 {
-  "name": "hodo-hodo",
-  "version": "0.1.0",
+  "name": "ad-agency-creatives-2025",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
