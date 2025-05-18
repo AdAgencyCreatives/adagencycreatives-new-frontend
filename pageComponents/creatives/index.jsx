@@ -220,7 +220,7 @@ const Creatives = () => {
                       Your browser does not support the video tag.
                     </video>
                   </div>
-                  <h2 className="relative z-1 font-inter font-bold">Want<br /><TmText text='Your ProFile' /><br />Featured?</h2>
+                  <h2 className="relative z-1 font-inter font-bold">Want<br />Your <TmText text='ProFile' /><br />Featured?</h2>
                   <div className="relative z-1">
                     <Link href="/" className="border-brand-yellow border-2 md:border-4 uppercase text-brand-yellow rounded-full font-sans sm:font-semibold md:font-hass75 md:font-bold text-xs md:text-sm 3xl:text-lg 4xl:text-2xl px-12 py-2 md:px-14  md:py-2.5 2xl:px-24 3xl:px-25.5 4xl:px-33.5 4xl:py-5 cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white">See How</Link>
                   </div>
@@ -247,7 +247,7 @@ const Creatives = () => {
                       Your browser does not support the video tag.
                     </video>
                   </div>
-                  <h2 className="z-1 text-2xl md:text-[44px] md:leading-[58.5px] 3xl:text-[57.07px] 3xl:leading-[78px] 4xl:text-[76.09px] 4xl:leading-[104px] font-bold mt-[48px] md:mt-0 font-inter">Want<br />Your <br /> <TmText text='ProFile' /><br />Featured?</h2>
+                  <h2 className="z-1 text-2xl md:text-[44px] md:leading-[58.5px] 3xl:text-[57.07px] 3xl:leading-[78px] 4xl:text-[76.09px] 4xl:leading-[104px] font-bold mt-[48px] md:mt-0 font-inter">Want<br />Your<br /><TmText text='ProFile' /><br />Featured?</h2>
                   <div className="z-1 mb-5">
                     <Link href="/" className="border-brand-yellow border-0 outline-[2.05px] md:border-4 uppercase text-brand-yellow rounded-full font-sans sm:font-semibold md:font-hass75 md:font-bold text-xs md:text-sm 3xl:text-lg 4xl:text-2xl px-11.25 py-1.5 md:px-14  md:py-2.5 2xl:px-24 3xl:px-25.5 4xl:px-33.5 4xl:py-5 cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white font-inter">See How</Link>
                   </div>
@@ -258,10 +258,10 @@ const Creatives = () => {
         </div>
       </section>
 
-      {/* Create Profile */}
+      {/* create ProFile */}
       <div id="create-profile" className="bg-[#040404] heading-wrap create-profile">
         <h2 className="heading font-bold font-inter">
-          <TmText text='Create ProFile' />
+          Create <TmText text='ProFile' />
         </h2>
       </div>
       <section className="bg-black">
@@ -275,14 +275,14 @@ const Creatives = () => {
               <div className="font-wix flex flex-col gap-[5.62] md:gap-2 2xl:gap-5.5 3xl:gap-7 4xl:gap-9.5">
                 <h3 className="count font-bold">1</h3>
                 <p className="text-brand-yellow font-bold step-heading font-inter ">
-                   <TmText text='CREATE ProFile' />
+                   CREATE <TmText text='ProFile' />
                   </p>
-                <p className="text-white step-desc font-inter font-normal">Claim your space on the web.<br />Design your own stunning profile page - crafted to impress, built to connect. Add your work, your voice, your values. You’ll instantly get a sleek webpage with your personal link and a downloadable version ready to share anywhere - from DMs to boardrooms. It's free. It’s yours. It’s the start of everything.</p>
+                <p className="text-white step-desc font-inter font-normal">Claim your space on the web.<br />Design your own stunning <TmText text='ProFile' /> page - crafted to impress, built to connect. Add your work, your voice, your values. You’ll instantly get a sleek webpage with your personal link and a downloadable version ready to share anywhere - from DMs to boardrooms. It's free. It’s yours. It’s the start of everything.</p>
               </div>
               <div className="font-wix flex flex-col gap-[5.62] md:gap-2 2xl:gap-5.5 3xl:gap-7 4xl:gap-9.5">
                 <h3 className="count font-bold">2</h3>
                 <p className="text-brand-yellow font-bold step-heading uppercase font-inter ">GET FEATURED & SHOWCASE</p>
-                <p className="text-white step-desc font-inter font-normal">Be seen where it matters.<br /><TmText text='Your ProFile' /> becomes part of a curated network - handpicked creatives, thinkers, and builders. Stand out in The Lounge, and The Agencies Homepage where talent is more than a portfolio - it’s a presence. No chasing. No noise. Just the right eyes on your work.</p>
+                <p className="text-white step-desc font-inter font-normal">Be seen where it matters.<br />Your <TmText text='ProFile' /> becomes part of a curated network - handpicked creatives, thinkers, and builders. Stand out in The Lounge, and The Agencies Homepage where talent is more than a portfolio - it’s a presence. No chasing. No noise. Just the right eyes on your work.</p>
               </div>
               <div className="font-wix flex flex-col gap-[5.62] md:gap-2 2xl:gap-5.5 3xl:gap-7 4xl:gap-9.5">
                 <h3 className="count font-bold">3</h3>
@@ -318,9 +318,9 @@ const Creatives = () => {
             </div>
             <div className="relative text-center w-full bottom-0 button">
               <TmTextLink
-                text='create ProFile'
+                text='CREATE ProFile'
                 href='/creatives-signup'
-                className='font-inter block m-auto border-brand-yellow border-2 md:border-4 uppercase text-brand-yellow rounded-full font-inter font-bold uppercase px-5 xl:px-30 3xl:px-40 md:py-4 py-2 cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white'
+                className='font-inter block m-auto border-brand-yellow border-2 md:border-4 text-brand-yellow rounded-full font-inter font-bold px-5 xl:px-30 3xl:px-40 md:py-4 py-2 cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white'
               />
               <footer className="flex flex-row justify-center w-full z-11 py-[10px] text-gray-400 space-y-1">
                 <p className="font-inter font-normal uppercase mt-2 px-12 md:px-2 transition delay-150 duration-300 ease-in-out text-[#6E6E6E] hover:text-[#FFFFFF]">© {(new Date()).getFullYear()} Ad Agency Creatives. All Rights Reserved.</p>

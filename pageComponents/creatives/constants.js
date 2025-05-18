@@ -1,6 +1,8 @@
+import TmText from "components/TmText";
+
 export const sidebarMenu = [
   { label: "pro DASHBOARD", href: "/creatives-dashboard" },
-  { label: "ProFile™", href: "/creatives-profile" },
+  { label: <><TmText text='ProFile' /></>, href: "/creatives-profile" },
   { label: "my resume", href: "#" },
   { label: "JOB messages", href: "#" },
   { label: "my opportunities", href: "#" },
@@ -8,21 +10,21 @@ export const sidebarMenu = [
   { label: "creative JOBS", href: "#" },
   { label: "AGENCIES SHORTLIST", href: "#" },
   { label: "CHANGE PASSWORD", href: "#" },
-  { label: "DELETE PROFILE", href: "#" },
+  { label: <>DELETE <TmText text='ProFile' /></>, href: "#" },
   { label: "LOGOUT", href: "#" }
 ];
 
 export const topMenu = [
   { label: "applied jobs", href: "#" },
   { label: "new messages", href: "#" },
-  { label: "ProFile™ viewed", href: "#" },
+  { label: <><TmText text='ProFile' /> viewed</>, href: "#" },
   { label: "friends", href: "#" }
 ];
 
 export const profileMenu = [
   { label: "message ME", href: "#" },
   { label: "add me", href: "#" },
-  { label: "CREATE YOUR ProFile™", href: "#" }
+  { label: <>CREATE YOUR <TmText text='ProFile' /></>, href: "#" }
 ];
 
 export const infoMenu = [

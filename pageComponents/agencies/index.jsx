@@ -9,6 +9,7 @@ import CreativeLoopItem from 'pageComponents/creatives/loop/item';
 import CreativeLoopItem2 from 'pageComponents/creatives/loop/item2';
 import { useEffect, useState } from 'react';
 import React from 'react';
+import TmText from 'components/TmText';
 
 const Agencies = () => {
   const [width, setWidth] = useState(0);
@@ -190,7 +191,7 @@ const Agencies = () => {
         <div className="absolute bottom-0 left-[50%] transform -translate-x-[50%] translate-y-0 border-white border-1 w-full md:w-[90%] h-px m-auto block"></div>
       </div>
 
-      {/* Create Profile */}
+      {/* create ProFile */}
       <div className="bg-[#040404] heading-wrap create-profile">
         <h2 className="heading font-bold font-inter">Post a Job</h2>
       </div>
@@ -210,12 +211,12 @@ const Agencies = () => {
               <div className="font-wix flex flex-col gap-[5.62] md:gap-2 2xl:gap-5.5 3xl:gap-7 4xl:gap-9.5">
                 <h3 className="count font-bold">2</h3>
                 <p className="text-brand-yellow font-bold step-heading uppercase font-inter ">GET FEATURED & SHOWCASE</p>
-                <p className="text-white step-desc font-inter font-normal">Showcase your agency.<br />This isn’t just a listing - it’s your presence in a curated space built for visibility and recognition. Your ProFile™ connects your brand, culture, and creative energy in one place that speaks volumes. Get featured. Be remembered. This is where standout agencies meet standout talent.</p>
+                <p className="text-white step-desc font-inter font-normal">Showcase your agency.<br />This isn’t just a listing - it’s your presence in a curated space built for visibility and recognition. Your <TmText text='ProFile' /> connects your brand, culture, and creative energy in one place that speaks volumes. Get featured. Be remembered. This is where standout agencies meet standout talent.</p>
               </div>
               <div className="font-wix flex flex-col gap-[5.62] md:gap-2 2xl:gap-5.5 3xl:gap-7 4xl:gap-9.5">
                 <h3 className="count font-bold">3</h3>
                 <p className="text-brand-yellow font-bold step-heading uppercase font-inter ">HIRE</p>
-                <p className="text-white step-desc font-inter font-normal">Find who you're really looking for.<br />No endless scrolling. No guessing games. Just a curated network of standout creatives - ready to jump in, lead, or elevate your next project. Message directly. Review ProFile™s. Build your dream team. This is hiring, reimagined. On your terms, at your pace, with talent that gets it.</p>
+                <p className="text-white step-desc font-inter font-normal">Find who you're really looking for.<br />No endless scrolling. No guessing games. Just a curated network of standout creatives - ready to jump in, lead, or elevate your next project. Message directly. Review <TmText text='ProFile' />s. Build your dream team. This is hiring, reimagined. On your terms, at your pace, with talent that gets it.</p>
               </div>
             </div>
           </div>

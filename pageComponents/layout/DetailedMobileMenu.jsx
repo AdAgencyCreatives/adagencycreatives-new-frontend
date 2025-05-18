@@ -1,5 +1,6 @@
 'use client';
 
+import TmText from "components/TmText";
 import ChevronDownIcon from "icons/ChevronDownIcon";
 import ChevronUpIcon from "icons/ChevronUpIcon";
 import Link from "next/link";
@@ -26,7 +27,7 @@ const DetailedMobileMenu = ({ isOpen = false, setIsOpen = (flag) => { }, user })
     { text: 'About', href: '/about', visibility: VISIBILITY.ALL, links: [] },
     {
       text: 'Creatives', href: '/creatives', visibility: VISIBILITY.ALL, link_state: EXPAND_COLLAPSE_STATE.COLLAPSED, links: [
-        { text: 'Create ProFile™', href: '', visibility: VISIBILITY.ALL, links: [] },
+        { text: <>create <TmText text='ProFile' /></>, href: '', visibility: VISIBILITY.ALL, links: [] },
         { text: 'Search Jobs', href: '', visibility: VISIBILITY.ALL, links: [] },
         { text: 'Featured Jobs ', href: '', visibility: VISIBILITY.ALL, links: [] },
       ]

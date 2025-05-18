@@ -11,6 +11,7 @@ import GridViewIcon from 'icons/GridViewIcon';
 import SearchIcon from 'icons/SearchIcon';
 import DropdownButton from 'components/DropdownButton';
 import React from 'react';
+import TmText from 'components/TmText';
 
 const TheLounge = () => {
 
@@ -136,7 +137,7 @@ const TheLounge = () => {
 
               {idx === 15 && (
                 <div key={`profile-${idx}`} className="col-span-2 text-center flex flex-col justify-center gap-10">
-                  <h2 className="text-[48px] leading-[62px]">Want<br />Your ProFile™<br />Featured?</h2>
+                  <h2 className="text-[48px] leading-[62px]">Want<br />Your <TmText text='ProFile' /><br />Featured?</h2>
                   <div>
                     <Link href="/" className="border-brand-yellow border-4 uppercase text-brand-yellow rounded-full text-sm px-8 py-4 cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white">See How</Link>
                   </div>
