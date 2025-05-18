@@ -6,6 +6,8 @@ const JobLoopItem = ({ job, className }) => {
 
   const agency_url = job?.item?.agency?.slug ? `/agency/${job.item.agency.slug}` : '';
   const job_url = job?.item?.slug ? `/job/${job.item.slug}` : '';
+  const city_url = job?.item?.location?.city ? `/job-location-city/${job.item.location.city}` : '';
+  const state_url = job?.item?.location?.state ? `/job-location-state/${job.item.location.state}` : '';
 
   return (
     <div className={`card relative text-center flex flex-col justify-between items-center ${className}`}>
@@ -16,10 +18,16 @@ const JobLoopItem = ({ job, className }) => {
         </div>
       </div>
       <div className="w-full">
-        <LinkOrDiv href={agency_url} className="hover:text-brand-yellow leading-[100%] name cursor-pointer">{job.agency}</LinkOrDiv>
-        <LinkOrDiv href={job_url} className="text-white hover:text-brand-yellow lowercase title cursor-pointer">{job.title}</LinkOrDiv>
+        <LinkOrDiv href={agency_url} className={`text-white ${agency_url?.length > 0 ? 'hover:text-brand-yellow cursor-pointer' : ''} leading-[100%] name`}>{job.agency}</LinkOrDiv>
+        <LinkOrDiv href={job_url} className={`text-white ${job_url?.length > 0 ? 'hover:text-brand-yellow cursor-pointer' : ''} lowercase title`}>{job.title}</LinkOrDiv>
         <div className="separator w-full mx-auto"></div>
-        <LinkOrDiv href="/" className="hover:text-brand-yellow uppercase location">{job.location}</LinkOrDiv>
+        {city_url?.length > 0 && state_url?.length > 0 ? (<>
+          <LinkOrDiv href={city_url} className={`text-white ${city_url?.length > 0 ? 'hover:text-brand-yellow cursor-pointer' : ''} uppercase location`}>{job.item.location.city}</LinkOrDiv>{', '}
+          <LinkOrDiv href={state_url} className={`text-white ${state_url?.length > 0 ? 'hover:text-brand-yellow cursor-pointer' : ''} uppercase location`}>{job.item.location.state}</LinkOrDiv>
+        </>) : (<>
+          <LinkOrDiv href="" className="text-white uppercase location">{job.location}</LinkOrDiv>
+        </>)}
+
       </div>
     </div>
   );
