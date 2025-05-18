@@ -7,7 +7,7 @@ import JobLoopItem from 'pageComponents/jobs/loop/item';
 import CreativeLoopItem from './loop/item';
 import PageHeader from 'components/PageHeader';
 import ResourceLoopItem from 'pageComponents/resources/loop/item';
-import { featuredJobs } from 'constants/jobs';
+import { featuredJobs as placeholderFeaturedJobs } from 'constants/jobs';
 import { featuredCreatives } from 'constants/creatives';
 import { featuredAgencies } from 'constants/agencies';
 import AgenciesLoopItem from 'pageComponents/agencies/loop/item';
@@ -18,10 +18,11 @@ import TmText from 'components/TmText';
 import { Context as JobsContext } from "../../contexts/JobsContext";
 
 const Creatives = () => {
+  const FEATURED_JOBS_PER_PAGE = 8;
   const [width, setWidth] = useState(0);
 
   const {
-    state: { jobs },
+    state: { featuredJobs },
     getFeaturedJobs,
   } = useContext(JobsContext);
 
@@ -33,12 +34,26 @@ const Creatives = () => {
   }, []);
 
   useEffect(() => {
-    getFeaturedJobs();
+    getFeaturedJobs(FEATURED_JOBS_PER_PAGE);
   }, []);
 
-  useEffect(() => {
-    console.log('jobs', jobs);
-  }, [jobs]);
+
+  let featuredJobsRendered = featuredJobs?.map(item => {
+    return {
+      title: item?.title || 'coming soon',
+      image: (item?.agency?.user_thumbnail || item?.agency?.logo) || '/jobs/job1.avif',
+      agency: item?.agency?.name || 'AGENCY',
+      location: `${item?.location?.city || 'city'}, ${item?.location?.state || 'state'}`
+    };
+  });
+
+  if (featuredJobsRendered?.length > 0) {
+    featuredJobsRendered = [...featuredJobsRendered, ...placeholderFeaturedJobs.slice(0, 8 - featuredJobsRendered.length)]
+  } else {
+    featuredJobsRendered = placeholderFeaturedJobs;
+  }
+
+
 
   return (
     <div className="text-white">
@@ -66,7 +81,7 @@ const Creatives = () => {
       </div>
       <section className="relative z-1 featured-jobs card-wrapper" id="search-jobs">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
-          {featuredJobs.map((job, idx) => (
+          {featuredJobsRendered.map((job, idx) => (
             <React.Fragment key={`job-${job.id || idx}`}>
               {idx === 6 && (
                 <div key={`perfect-${idx}`} id={`perfect-${idx}`} className="relative col-span-2 text-center flex flex-col justify-around gap-5 md:gap-10 max-md:py-10">

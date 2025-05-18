@@ -1,6 +1,4 @@
 
-import Image from 'next/image';
-
 const JobLoopItem = ({ job, className }) => {
   return (
     <div className={`card relative text-center flex flex-col justify-between items-center ${className}`}>

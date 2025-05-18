@@ -2,11 +2,14 @@
 
 import { api } from "contexts/api";
 import createDataContext from "./createDataContext";
+import { featuredJobs } from "constants/jobs";
 
 const state = {
   jobs: [],
+  featuredJobs: [],
   jobs_loading: false,
   meta: {},
+  featuredJobs_meta: {},
   applicationMeta: {},
   links: {},
   categories: [],
@@ -38,6 +41,8 @@ const reducer = (state, action) => {
       return { ...state, cache: { ...state.cache, [action.payload.url]: action.payload.data }, };
     case "set_jobs":
       return { ...state, jobs: action.payload.data, meta: action.payload.meta };
+    case "set_featured_jobs":
+      return { ...state, featuredJobs: action.payload.data, featuredJobs_meta: action.payload.meta };
     case "set_applications":
       return {
         ...state,
@@ -146,15 +151,14 @@ const reducer = (state, action) => {
 const status = 1;
 
 const getFeaturedJobs = (dispatch) => {
-  return async () => {
+  return async (per_page = 30) => {
     try {
       const response = await api.get(
         // "/jobs?filter[is_featured]=1&filter[is_urgent]=1&filter[status]="+status
-        "/jobs?filter[is_featured]=1&filter[status]=1&per_page=30&sort=-featured_at"
+        `/jobs?filter[is_featured]=1&filter[status]=1&per_page=${per_page}&sort=-featured_at`
       );
-      console.log({ response });
       dispatch({
-        type: "set_jobs",
+        type: "set_featured_jobs",
         payload: response.data,
       });
     } catch (error) { }
