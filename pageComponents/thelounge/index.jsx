@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { featuredCreatives } from 'constants/creatives';
+import { placeholderFeaturedCreatives as featuredCreatives } from 'constants/creatives';
 import SpotlightLoopItem from 'pageComponents/spotlights/loop/item';
 import CreativeLoopItem from 'pageComponents/creatives/loop/item';
 import PublicationLoopItem from 'pageComponents/publications/loop/item';

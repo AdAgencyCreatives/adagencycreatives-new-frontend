@@ -1,7 +1,7 @@
 import PageHeader from "components/PageHeader";
 import CreativeLoopItem from "./loop/item";
 import Link from "next/link";
-import { featuredCreatives } from "constants/creatives";
+import { placeholderFeaturedCreatives as featuredCreatives } from "constants/creatives";
 import React from "react";
 
 const CreativesDirectory = () => {

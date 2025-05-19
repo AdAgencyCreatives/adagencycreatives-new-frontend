@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import PageHeader from 'components/PageHeader';
 import ResourceLoopItem from 'pageComponents/resources/loop/item';
-import { featuredCreatives } from 'constants/creatives';
+import { placeholderFeaturedCreatives as featuredCreatives } from 'constants/creatives';
 import CreativeLoopItem from 'pageComponents/creatives/loop/item';
 import CreativeLoopItem2 from 'pageComponents/creatives/loop/item2';
 import { useEffect, useState } from 'react';
@@ -13,14 +13,14 @@ import TmText from 'components/TmText';
 
 const Agencies = () => {
   const [width, setWidth] = useState(0);
-  
+
   useEffect(() => {
     const handleResize = () => setWidth(window.innerWidth);
     handleResize(); // Set initial width
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
-  
+
   return (
     <div className="text-white">
       {/* Hero */}
@@ -53,19 +53,19 @@ const Agencies = () => {
                       muted
                       playsInline
                       className="w-full h-full object-cover"
-                      >
+                    >
                       <source src="/videos/resources-bg.mp4" type="video/mp4" />
                       Your browser does not support the video tag.
                     </video>
                   </div>
                   <h2 className="relative z-1 pb-0 pt-6 2xl:pb-14 2xl:pt-20 3xl:pb-20 3xl:pt-26 4xl:py-15 font-arial font-bold  md:leading-[58.5px] 3xl:leading-[78px] 4xl:leading-[104px]">Haven't<br />Found<br />The Perfect<br />Match?</h2>
                   <div className='relative z-1 '>
-                  <Link 
-                    href="/" 
-                    className="link-button border-brand-yellow border-2 md:border-4 uppercase text-brand-yellow rounded-full font-inter sm:font-semibold md:font-hass75 md:font-bold cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white"
-                  >
+                    <Link
+                      href="/"
+                      className="link-button border-brand-yellow border-2 md:border-4 uppercase text-brand-yellow rounded-full font-inter sm:font-semibold md:font-hass75 md:font-bold cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white"
+                    >
                       Advanced Search
-                  </Link>
+                    </Link>
                   </div>
                 </div>
               ) : (
@@ -81,7 +81,7 @@ const Agencies = () => {
                       muted
                       playsInline
                       className="w-full h-full object-cover"
-                      >
+                    >
                       <source src="/videos/resources-bg.mp4" type="video/mp4" />
                       Your browser does not support the video tag.
                     </video>
@@ -110,7 +110,7 @@ const Agencies = () => {
                       muted
                       playsInline
                       className="inset-0 absolute top-1/2 left-1/2 w-full h-full transform -translate-x-1/2 -translate-y-1/2 object-center z-[-1]"
-                      >
+                    >
                       <source src="/videos/resources-bg.mp4" type="video/mp4" />
                       Your browser does not support the video tag.
                     </video>
@@ -149,30 +149,30 @@ const Agencies = () => {
           <div className="grid grid-cols-4 gap-x-[12px] md:gap-x-[54px] 3xl:gap-x-[72px] 4xl:gap-x-[92px] w-full items-center">
             {/* <!-- Column 1: 1 item --> */}
             <div>
-              <ResourceLoopItem 
+              <ResourceLoopItem
                 resource={{ title: 'single', image: '/resource1.avif', href: '/resources-internship' }}
               />
             </div>
 
             {/* <!-- Column 2: 4 items stacked vertically --> */}
             <div className="col-span-2 space-y-4 grid grid-cols-2 items-start gap-x-[14px] md:gap-x-[54px] 3xl:gap-x-[72px] 4xl:gap-x-[92px]">
-              <ResourceLoopItem 
+              <ResourceLoopItem
                 resource={{ title: 'multiple', image: '/resource1.avif', href: '/resources-inspiration' }}
               />
-              <ResourceLoopItem 
+              <ResourceLoopItem
                 resource={{ title: 'pro', image: '/resource1.avif', href: '/resources-portfolio' }}
               />
-              <ResourceLoopItem 
+              <ResourceLoopItem
                 resource={{ title: 'premium', image: '/resource1.avif', href: '/resources-writers' }}
               />
-              <ResourceLoopItem 
+              <ResourceLoopItem
                 resource={{ title: 'monthly', image: '/resource1.avif', href: '/resources-designers' }}
               />
             </div>
 
             {/* <!-- Column 4: 1 item --> */}
             <div>
-              <ResourceLoopItem 
+              <ResourceLoopItem
                 resource={{ title: 'FAQs', image: '/resource1.avif', href: '/resources-business' }}
               />
             </div>
@@ -180,10 +180,10 @@ const Agencies = () => {
         </div>
       </section>
       <div className="bg-black flex items-center justify-end 2xl:px-20 3xl:px-40 relative plans-button-wrap">
-        <Image src="/aac-logo-yellow.png" alt="" width="500" height="500" className="hover:rotate-45 transition-transform duration-3000 w-[20.81px] h-[20.81px] md:w-[80px] md:h-[80px] 3xl:w-[106px] 3xl:h-[106px] 4xl:w-[142px] 4xl:h-[142px]"/>
+        <Image src="/aac-logo-yellow.png" alt="" width="500" height="500" className="hover:rotate-45 transition-transform duration-3000 w-[20.81px] h-[20.81px] md:w-[80px] md:h-[80px] 3xl:w-[106px] 3xl:h-[106px] 4xl:w-[142px] 4xl:h-[142px]" />
         <div className="border-row border-brand-yellow border-b-[1.21px] md:border-b-[4.65px] 3xl:border-b-[6.2px] 4xl:border-b-[8.27px]"></div>
-        <Link 
-          href="/" 
+        <Link
+          href="/"
           className="border-brand-yellow border-0 outline-[2.05px] md:border-4 uppercase text-brand-yellow rounded-full text-center font-inter sm:font-semibold md:font-bold cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white"
         >
           Get Featured
@@ -221,7 +221,7 @@ const Agencies = () => {
             </div>
           </div>
         </div>
-        
+
         <div className="creative">
           <div className="outline outline-4 md:outline-8 2xl:outline-16 shadow-(--ad-box-shadow) outline-while rounded-lg relative mx-[4px] md:mx-[16px]">
             <div className="grid grid-cols-2 md:grid-cols-3 gap-1 md:gap-10 justify-between">

@@ -7,7 +7,6 @@ import JobLoopItem from 'pageComponents/jobs/loop/item';
 import CreativeLoopItem from './loop/item';
 import PageHeader from 'components/PageHeader';
 import ResourceLoopItem from 'pageComponents/resources/loop/item';
-import { featuredCreatives } from 'constants/creatives';
 import AgenciesLoopItem from 'pageComponents/agencies/loop/item';
 import { useEffect, useState } from 'react';
 import CreativeLoopItem2 from './loop/item2';
