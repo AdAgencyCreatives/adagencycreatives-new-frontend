@@ -6,7 +6,7 @@ import { featuredJobs } from "constants/jobs";
 
 const state = {
   jobs: [],
-  featuredJobs: [],
+  featured_jobs: [],
   jobs_loading: false,
   meta: {},
   featuredJobs_meta: {},
@@ -42,7 +42,7 @@ const reducer = (state, action) => {
     case "set_jobs":
       return { ...state, jobs: action.payload.data, meta: action.payload.meta };
     case "set_featured_jobs":
-      return { ...state, featuredJobs: action.payload.data, featuredJobs_meta: action.payload.meta };
+      return { ...state, featured_jobs: action.payload.data};
     case "set_applications":
       return {
         ...state,

@@ -1,4 +1,4 @@
-export const featuredAgencies = [
+export const placeholderFeaturedAgencies = [
   { image: '/agencies/agency1.svg' },
   { image: '/agencies/agency2.svg' },
   { image: '/agencies/agency3.svg' },

@@ -7,24 +7,21 @@ import JobLoopItem from 'pageComponents/jobs/loop/item';
 import CreativeLoopItem from './loop/item';
 import PageHeader from 'components/PageHeader';
 import ResourceLoopItem from 'pageComponents/resources/loop/item';
-import { featuredJobs as placeholderFeaturedJobs } from 'constants/jobs';
 import { featuredCreatives } from 'constants/creatives';
-import { featuredAgencies } from 'constants/agencies';
 import AgenciesLoopItem from 'pageComponents/agencies/loop/item';
 import { useEffect, useState } from 'react';
 import CreativeLoopItem2 from './loop/item2';
 import TmTextLink from 'components/TmTextLink';
 import TmText from 'components/TmText';
-import { Context as JobsContext } from "../../contexts/JobsContext";
+import useFeaturedJobs from 'hooks/useFeaturedJobs';
+import useFeaturedAgencies from 'hooks/useFeaturedAgencies';
+import useFeaturedCreatives from 'hooks/useFeaturedCreatives';
 
 const Creatives = () => {
   const FEATURED_JOBS_PER_PAGE = 8;
+  const FEATURED_AGENCIES_PER_PAGE = 20;
+  const FEATURED_CREATIVES_PER_PAGE = 16;
   const [width, setWidth] = useState(0);
-
-  const {
-    state: { featuredJobs },
-    getFeaturedJobs,
-  } = useContext(JobsContext);
 
   useEffect(() => {
     const handleResize = () => setWidth(window.innerWidth);
@@ -33,28 +30,9 @@ const Creatives = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  useEffect(() => {
-    getFeaturedJobs(FEATURED_JOBS_PER_PAGE);
-  }, []);
-
-
-  let featuredJobsRendered = featuredJobs?.map(item => {
-    return {
-      title: item?.title || 'coming soon',
-      image: (item?.agency?.user_thumbnail || item?.agency?.logo) || '/jobs/job1.avif',
-      agency: item?.agency?.name || 'AGENCY',
-      location: `${item?.location?.city || 'city'}, ${item?.location?.state || 'state'}`,
-      item: item,
-    };
-  });
-
-  if (featuredJobsRendered?.length > 0) {
-    featuredJobsRendered = [...featuredJobsRendered, ...placeholderFeaturedJobs.slice(0, 8 - featuredJobsRendered.length)]
-  } else {
-    featuredJobsRendered = placeholderFeaturedJobs;
-  }
-
-
+  const { featuredJobs } = useFeaturedJobs(FEATURED_JOBS_PER_PAGE);
+  const { featuredAgencies } = useFeaturedAgencies(FEATURED_AGENCIES_PER_PAGE);
+  const { featuredCreatives } = useFeaturedCreatives(FEATURED_CREATIVES_PER_PAGE);
 
   return (
     <div className="text-white">
@@ -82,7 +60,7 @@ const Creatives = () => {
       </div>
       <section className="relative z-1 featured-jobs card-wrapper" id="search-jobs">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
-          {featuredJobsRendered.map((job, idx) => (
+          {featuredJobs.map((job, idx) => (
             <React.Fragment key={`job-${job.id || idx}`}>
               {idx === 6 && (
                 <div key={`perfect-${idx}`} id={`perfect-${idx}`} className="relative col-span-2 text-center flex flex-col justify-around gap-5 md:gap-10 max-md:py-10">

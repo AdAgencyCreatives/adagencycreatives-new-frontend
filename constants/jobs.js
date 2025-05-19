@@ -1,4 +1,4 @@
-export const featuredJobs = [
+export const placeholderFeaturedJobs = [
   { title: 'coming soon', image: '/jobs/job1.avif', agency: 'AGENCY', location: 'Detroit, MI', item:{} },
   { title: 'coming soon', image: '/jobs/job1.avif', agency: 'AGENCY', location: 'New Orleans, LA', item:{} },
   { title: 'coming soon', image: '/jobs/job1.avif', agency: 'AGENCY', location: 'Denver, CO', item:{} },

@@ -8,7 +8,7 @@ const state = {
   related_creatives: null,
   related_creatives_nextPage: null,
   search_creatives: null,
-  home_creatives: null,
+  featured_creatives: null,
   nextPage: null,
   loading: false,
   single_creative: {},
@@ -52,10 +52,10 @@ const reducer = (state, action) => {
         search_creatives: action.payload.data,
         nextPage: action.payload.links.next,
       };
-    case "set_home_creatives":
+    case "set_featured_creatives":
       return {
         ...state,
-        home_creatives: action.payload.data,
+        featured_creatives: action.payload.data,
         // nextPage: action.payload.links.next,
       };
     case "set_group_invite_members":
@@ -146,12 +146,12 @@ const getGroupInviteMembers = (dispatch) => {
   };
 };
 
-const getHomeCreatives = (dispatch) => {
-  return async () => {
+const getFeaturedCreatives = (dispatch) => {
+  return async (per_page=false) => {
     try {
-      const response = await api.get("/home/creatives?sort=sort_order&filter[is_featured]=1&filter[status]=1&filter[is_visible]=1");
+      const response = await api.get(`/home/creatives?sort=sort_order&filter[is_featured]=1&filter[status]=1&filter[is_visible]=1${per_page ? '&per_page=' + per_page : ''}`);
       dispatch({
-        type: "set_home_creatives",
+        type: "set_featured_creatives",
         payload: response.data,
       });
     } catch (error) { }
@@ -707,7 +707,7 @@ export const { Context, Provider } = createDataContext(
   {
     getCreatives,
     getRelatedCreatives,
-    getHomeCreatives,
+    getFeaturedCreatives,
     getStats,
     getCreativeDashboardStatsCacheOnly,
     getApplications,

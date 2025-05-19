@@ -5,6 +5,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@tailwind variants;
 
 :root {
   --primary: #FFCD1A;
@@ -188,18 +189,27 @@ button {
 @layer utilities {
 
   .text-brand-yellow,
-  .hover\:text-brand-yellow:hover {
+  .hover\:text-brand-yellow:hover,
+  .group:hover .group-hover\:text-brand-yellow {
     color: var(--primary);
   }
 
   .bg-brand-yellow,
-  .hover\:bg-brand-yellow:hover {
+  .hover\:bg-brand-yellow:hover,
+  .group:hover .group-hover\:bg-brand-yellow {
     background-color: var(--primary);
   }
 
   .border-brand-yellow,
-  .hover\:border-brand-yellow:hover {
+  .hover\:border-brand-yellow:hover,
+  .group:hover .group-hover\:border-brand-yellow {
     border-color: var(--primary);
+  }
+
+  .outline-brand-yellow,
+  .hover\:outline-brand-yellow:hover,
+  .group:hover .group-hover\:outline-brand-yellow {
+    outline-color: var(--primary);
   }
 }
 

@@ -27,7 +27,6 @@ const JobLoopItem = ({ job, className }) => {
         </>) : (<>
           <LinkOrDiv href="" className="text-white uppercase location">{job.location}</LinkOrDiv>
         </>)}
-
       </div>
     </div>
   );

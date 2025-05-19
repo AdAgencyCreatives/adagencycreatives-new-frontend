@@ -4,6 +4,8 @@
 import { Provider as SiteProvider } from "contexts/SiteContext";
 import { Provider as AnimatedAlertProvider } from "contexts/AnimatedAlertContext";
 import { Provider as AuthProvider } from "contexts/AuthContext";
+import { Provider as AgenciesProvider } from "contexts/AgenciesContext";
+import { Provider as CreativesProvider } from "contexts/CreativesContext";
 import { Provider as JobsProvider } from "contexts/JobsContext";
 
 export default function ClientProviderWrapper({ children }) {
@@ -11,9 +13,15 @@ export default function ClientProviderWrapper({ children }) {
     <>
       <SiteProvider>
         <AnimatedAlertProvider>
-          <JobsProvider>
-            <AuthProvider>{children}</AuthProvider>
-          </JobsProvider>
+          <AuthProvider>
+            <AgenciesProvider>
+              <CreativesProvider>
+                <JobsProvider>
+                  {children}
+                </JobsProvider>
+              </CreativesProvider>
+            </AgenciesProvider>
+          </AuthProvider>
         </AnimatedAlertProvider>
       </SiteProvider>
     </>

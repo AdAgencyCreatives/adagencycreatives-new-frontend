@@ -5,7 +5,7 @@ import createDataContext from "./createDataContext";
 
 const state = {
   agencies: null,
-  home_agencies: null,
+  featured_agencies: null,
   meta: {},
   nextPage: null,
   loading: false,
@@ -30,10 +30,10 @@ const reducer = (state, action) => {
         agencies: action.payload.data,
         nextPage: action.payload.links.next,
       };
-    case "set_home_agencies":
+    case "set_featured_agencies":
       return {
         ...state,
-        home_agencies: action.payload.data,
+        featured_agencies: action.payload.data,
       };
     case "set_agencie_roles":
       console.log(action.payload.data);
@@ -88,12 +88,12 @@ const getAgencies = (dispatch) => {
   };
 };
 
-const getHomeAgencies = (dispatch) => {
-  return async (page) => {
+const getFeaturedAgencies = (dispatch) => {
+  return async (per_page = false) => {
     try {
-      const response = await api.get("/agencies?&filter[status]=1&filter[is_featured]=1&filter[is_visible]=1&sort=sort_order");
+      const response = await api.get(`/agencies?&filter[status]=1&filter[is_featured]=1&filter[is_visible]=1&sort=sort_order${per_page ? '&per_page=' + per_page : ''}`);
       dispatch({
-        type: "set_home_agencies",
+        type: "set_featured_agencies",
         payload: response.data,
       });
     } catch (error) { }
@@ -596,7 +596,7 @@ export const { Context, Provider } = createDataContext(
   reducer,
   {
     getAgencies,
-    getHomeAgencies,
+    getFeaturedAgencies,
     loadAgencies,
     getAgency,
     getStats,
