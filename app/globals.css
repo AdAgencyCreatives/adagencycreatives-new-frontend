@@ -229,3 +229,41 @@ button {
 .card-wrapper a {
   display: inline-block;
 }
+
+.card .name {
+  line-height: 1em;
+  height: 3em;
+  display: inline-block;
+  align-items: start;
+}
+
+.card .title {
+  line-height: 1em;
+  height: 2em;
+  display: inline-block;
+  align-items: start;
+}
+
+.card .location {
+  line-height: 1em;
+  height: 1em;
+  display: block;
+}
+
+.card.design-2 .name {
+  line-height: 1em;
+  height: 1em;
+  display: block;
+}
+
+.card.design-2 .title {
+  line-height: 1em;
+  height: 1em;
+  display: block;
+}
+
+.card.design-2 .location {
+  line-height: 1em;
+  height: 1em;
+  display: block;
+}

@@ -3,7 +3,6 @@ import "./globals.css";
 import ClientUseContextWrapper from "./ClientUseContextWrapper";
 import ClientProviderWrapper from "./ClientProviderWrapper";
 import LayoutWrapper from "./LayoutWrapper";
-import Head from "next/head";
 
 export const metadata = {
   icons: {

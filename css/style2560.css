@@ -1,5 +1,5 @@
-/* On screens that are more than 1920px including 2560px */
-@media screen and (min-width: 1920px) {
+/* On screens that are larger than 1920px including 2560px */
+@media screen and (min-width: 1921px) {
 
   /* Header */
   .header {
@@ -84,7 +84,8 @@
     line-height: 11rem;
   }
 
-  .create-profile .heading {
+  .create-profile .heading,
+  .post-a-job .heading {
     font-size: 8.934rem;
   }
 
@@ -216,6 +217,7 @@
   .featured-creatives .card .title {
     font-size: 1.625rem;
     line-height: 2.125rem;
+    height: calc(2 * 1.625rem + 2.125rem);
   }
 
   .featured-creatives .card .location {
@@ -256,6 +258,7 @@
   .card .title {
     font-size: 1.625rem;
     line-height: 2.125rem;
+    height: calc(2 * 1.625rem + 2.125rem);
     padding-bottom: 1.396rem;
   }
 

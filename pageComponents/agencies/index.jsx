@@ -4,14 +4,16 @@ import Image from 'next/image';
 import Link from 'next/link';
 import PageHeader from 'components/PageHeader';
 import ResourceLoopItem from 'pageComponents/resources/loop/item';
-import { placeholderFeaturedCreatives as featuredCreatives } from 'constants/creatives';
 import CreativeLoopItem from 'pageComponents/creatives/loop/item';
 import CreativeLoopItem2 from 'pageComponents/creatives/loop/item2';
 import { useEffect, useState } from 'react';
 import React from 'react';
 import TmText from 'components/TmText';
+import useFeaturedCreatives from 'hooks/useFeaturedCreatives';
 
 const Agencies = () => {
+
+   const FEATURED_CREATIVES_PER_PAGE = 16;
   const [width, setWidth] = useState(0);
 
   useEffect(() => {
@@ -20,6 +22,8 @@ const Agencies = () => {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+
+   const { featuredCreatives } = useFeaturedCreatives(FEATURED_CREATIVES_PER_PAGE);
 
   return (
     <div className="text-white">
@@ -191,8 +195,8 @@ const Agencies = () => {
         <div className="absolute bottom-0 left-[50%] transform -translate-x-[50%] translate-y-0 border-white border-1 w-full md:w-[90%] h-px m-auto block"></div>
       </div>
 
-      {/* create ProFile */}
-      <div className="bg-[#040404] heading-wrap create-profile">
+      {/* Post a Job */}
+      <div className="bg-[#040404] heading-wrap post-a-job">
         <h2 className="heading font-bold font-inter">Post a Job</h2>
       </div>
       <section className="bg-black" id="post-job">
@@ -222,13 +226,13 @@ const Agencies = () => {
           </div>
         </div>
 
-        <div className="creative">
+        <div className="creative max-sm:mt-12">
           <div className="outline outline-4 md:outline-8 2xl:outline-16 shadow-(--ad-box-shadow) outline-while rounded-lg relative mx-[4px] md:mx-[16px]">
             <div className="grid grid-cols-2 md:grid-cols-3 gap-1 md:gap-10 justify-between">
               <div className="max-md:hidden image-wrap">
                 <Image src="/jobs/job3.avif" width="720" height="720" alt="" className="image-mask" />
               </div>
-              <div className="font-inter details">
+              <div className="font-inter details max-sm:w-[120%]!">
                 <div>
                   <h2 className="font-inter font-bold uppercase">AD CORP.</h2>
                   <p className="lowercase font-bold text-brand-yellow my-2 md:my-4 title">Creative Director</p>
@@ -238,8 +242,8 @@ const Agencies = () => {
                 <p className="about-desc">I'm an Associate Creative Director based in New York City; with a focus on art direction, brand storytelling, and concepting big ideas. I’ve been fortunate to work with brands like Keds, Louis XIII, Marantz, Wrangler, J.Crew, and USTA, crafting campaigns </p>
                 <Link href="/" className="read-more text-brand-yellow underline mt-6">Read more...</Link>
               </div>
-              <div>
-                <div className="max-w-[130px] md:max-w-[220px] 3xl:max-w-[295px] 4xl:max-w-[393px] mx-auto -mt-12 3xl:-mt-16 bg-black relative z-1">
+              <div className="max-sm:w-[110%]">
+                <div className="max-sm:w-[106px] max-w-[130px] md:max-w-[220px] 3xl:max-w-[295px] 4xl:max-w-[393px] mx-auto -mt-12 3xl:-mt-16 bg-black relative z-1">
                   <CreativeLoopItem2
                     creative={{ title: 'Creative Director', image: '/jobs/job3.avif', agency: 'AD Corp.', location: 'Orlando, FL' }}
                   />

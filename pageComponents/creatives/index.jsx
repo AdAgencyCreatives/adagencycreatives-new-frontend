@@ -17,6 +17,7 @@ import useFeaturedAgencies from 'hooks/useFeaturedAgencies';
 import useFeaturedCreatives from 'hooks/useFeaturedCreatives';
 
 const Creatives = () => {
+  
   const FEATURED_JOBS_PER_PAGE = 8;
   const FEATURED_AGENCIES_PER_PAGE = 20;
   const FEATURED_CREATIVES_PER_PAGE = 16;

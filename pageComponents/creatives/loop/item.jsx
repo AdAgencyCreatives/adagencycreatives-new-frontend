@@ -22,10 +22,12 @@ const CreativeLoopItem = ({ creative, className }) => {
         <LinkOrDiv href={creative_url} className={`font-inter font-bold text-base ${creative_url?.length > 0 ? 'hover:text-brand-yellow cursor-pointer' : ''} name uppercase`}>{creative.name}</LinkOrDiv>
         <LinkOrDiv href={category_url} className={`text-white font-inter font-bold ${category_url?.length > 0 ? 'hover:text-brand-yellow cursor-pointer' : ''} lowercase title`}>{creative.title}</LinkOrDiv>
         <div className="separator w-full mx-auto"></div>
-        {city_url?.length > 0 && state_url?.length > 0 ? (<>
-          <LinkOrDiv href={city_url} className={`text-white ${city_url?.length > 0 ? 'hover:text-brand-yellow cursor-pointer' : ''} uppercase location`}>{creative.item.location.city}</LinkOrDiv>{', '}
-          <LinkOrDiv href={state_url} className={`text-white ${state_url?.length > 0 ? 'hover:text-brand-yellow cursor-pointer' : ''} uppercase location`}>{creative.item.location.state}</LinkOrDiv>
-        </>) : (<>
+        {city_url?.length > 0 && state_url?.length > 0 ? (
+          <div className="location">
+            <LinkOrDiv href={city_url} className={`text-white ${city_url?.length > 0 ? 'hover:text-brand-yellow cursor-pointer' : ''} uppercase`}>{creative.item.location.city}</LinkOrDiv>{', '}
+            <LinkOrDiv href={state_url} className={`text-white ${state_url?.length > 0 ? 'hover:text-brand-yellow cursor-pointer' : ''} uppercase`}>{creative.item.location.state}</LinkOrDiv>
+          </div>
+        ) : (<>
           <LinkOrDiv href="" className="text-white uppercase location">{creative.location}</LinkOrDiv>
         </>)}
       </div>

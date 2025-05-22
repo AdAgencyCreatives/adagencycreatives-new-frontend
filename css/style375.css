@@ -88,7 +88,8 @@
     line-height: 1.611rem;
   }
 
-  .create-profile .heading {
+  .create-profile .heading,
+  .post-a-job .heading {
     font-size: 1.375rem;
   }
 
@@ -101,6 +102,10 @@
 
   .create-profile {
     margin-top: 2rem;
+  }
+
+  .post-a-job {
+    margin-top: 0px;
   }
 
   .featured-jobs,
@@ -226,6 +231,7 @@
   .featured-creatives .card .title {
     font-size: 0.625rem;
     line-height: 1rem;
+    height: calc(2 * 0.625rem + 1rem);
   }
 
   .featured-creatives .card .location {
@@ -265,6 +271,7 @@
   .card .title {
     font-size: 0.625rem;
     line-height: 1rem;
+    height: calc(2 * 0.625rem + 1rem);
     padding-bottom: 0.477rem;
   }
 

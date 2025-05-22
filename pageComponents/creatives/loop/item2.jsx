@@ -7,9 +7,6 @@ const CreativeLoopItem2 = ({ creative }) => {
       <div className="relative flex items-center justify-center">
         <Image src={creative.image} width="360" height="311" alt={creative.title} className="image-mask2 max-w-full 2xl:max-w-[98%] 3xl:max-w-[94%] 4xl:max-w-[90%]" />
       </div>
-      {/* <div className="w-[37px] h-[37px] md:w-[68px] md:h-[68px] 4xl:w-[91px] 4xl:h-[91px]  top-0 right-0 left-0 bottom-0 flex justify-center mx-auto my-auto">
-          <Image src="/aac-logo-white.avif" width="67" height="67" alt={creative.title} className="hover:rotate-45 transition-transform duration-3000 lg:w-[45px] lg:h-[45px] 3xl:w-[67px] 3xl:h-[67px] 4xl:w-[91px] 4xl:h-[91px]" />
-      </div> */}
       <img src="/aac-logo-white.avif" width="25" height="25" alt={creative.title} className="hover:rotate-45 transition-transform duration-3000 'w-[25px] h-[25px] lg:w-[45px] lg:h-[45px] xl:w-[48px] xl:h-[48px] md:w-[50px] md:h-[50px] 2xl:w-[52px] 2xl:h-[52px] 3xl:w-[67px] 3xl:h-[67px] 4xl:w-[91px] 4xl:h-[91px]" />
       <div className="w-full mt-1.5 2xl:mt-1 3xl:mt-2.5 4xl:mt-3">
         <div className="font-inter font-bold hover:text-brand-yellow uppercase name">{creative.agency}</div>

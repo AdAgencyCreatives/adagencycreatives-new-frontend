@@ -8,6 +8,7 @@ import { Context as SiteContext } from "../contexts/SiteContext";
 import "css/style2560.css";
 import "css/style1920.css";
 import "css/style1440.css";
+import "css/style1280.css";
 import "css/style375.css";
 
 export default function LayoutWrapper({ children }) {
