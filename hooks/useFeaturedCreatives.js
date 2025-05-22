@@ -1,3 +1,5 @@
+'use client';
+
 import { useContext, useEffect } from "react";
 import { Context as CreativesContext } from "contexts/CreativesContext";
 import { placeholderFeaturedCreatives } from 'constants/creatives';

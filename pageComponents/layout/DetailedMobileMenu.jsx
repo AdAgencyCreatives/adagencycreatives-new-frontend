@@ -47,8 +47,13 @@ const DetailedMobileMenu = ({ isOpen = false, setIsOpen = (flag) => { }, user })
         { text: 'Publications', href: '', visibility: VISIBILITY.ALL, links: [] },
       ]
     },
-    { text: 'Search Jobs', href: '/jobs-directory', visibility: VISIBILITY.ALL, links: [] },
-    { text: 'Hire Talent', href: '/creatives-directory', visibility: VISIBILITY.ALL, links: [] },
+    {
+      text: 'directories', href: '#', visibility: VISIBILITY.ALL, link_state: EXPAND_COLLAPSE_STATE.COLLAPSED, links: [
+        { text: 'Agencies Directory', href: '/agencies-directory', visibility: VISIBILITY.ALL, links: [] },
+        { text: 'Creatives Directory', href: '/creatives-directory', visibility: VISIBILITY.ALL, links: [] },
+        { text: 'Jobs Directory', href: '/jobs-directory', visibility: VISIBILITY.ALL, links: [] },
+      ]
+    },
     { text: 'Faq', href: '/faq', visibility: VISIBILITY.ALL, links: [] },
     // { text: '', href: '', visibility: VISIBILITY.ALL, links: [] },
   ];

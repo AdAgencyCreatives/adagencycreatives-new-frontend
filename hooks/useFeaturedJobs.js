@@ -1,3 +1,5 @@
+'use client';
+
 import { useContext, useEffect } from "react";
 import { Context as JobsContext } from "contexts/JobsContext";
 import { placeholderFeaturedJobs } from 'constants/jobs';

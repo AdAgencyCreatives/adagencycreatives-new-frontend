@@ -1,3 +1,5 @@
+'use client';
+
 import { useContext } from "react";
 import { Context as AuthContext } from "../contexts/AuthContext";
 import { Context as AlertContext } from "../contexts/AlertContext";

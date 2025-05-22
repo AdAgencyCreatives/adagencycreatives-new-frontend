@@ -5,12 +5,15 @@ import createDataContext from "./createDataContext";
 
 const state = {
   creatives: null,
+  directory_creatives: null,
   related_creatives: null,
   related_creatives_nextPage: null,
   search_creatives: null,
   featured_creatives: null,
   nextPage: null,
+  directory_nextPage: null,
   loading: false,
+  directory_loading: false,
   single_creative: {},
   single_creative_for_pdf: {},
   creative_experience: [],
@@ -39,6 +42,12 @@ const reducer = (state, action) => {
         ...state,
         creatives: action.payload.data,
         nextPage: action.payload.links.next,
+      };
+    case "set_directory_creatives":
+      return {
+        ...state,
+        directory_creatives: action.payload.data,
+        directory_nextPage: action.payload.links.next,
       };
     case "set_related_creatives":
       return {
@@ -82,6 +91,12 @@ const reducer = (state, action) => {
         creatives: [...state.creatives, ...action.payload.data],
         nextPage: action.payload.links.next,
       };
+    case "load_directory_creatives":
+      return {
+        ...state,
+        directory_creatives: [...state.directory_creatives, ...action.payload.data],
+        directory_nextPage: action.payload.links.next,
+      };
     case "load_group_invite_member":
       return {
         ...state,
@@ -96,6 +111,8 @@ const reducer = (state, action) => {
       };
     case "set_loading":
       return { ...state, loading: action.payload };
+    case "set_directory_loading":
+      return { ...state, directory_loading: action.payload };
     case "set_form_submit":
       return { ...state, formSubmit: action.payload };
     case "set_stats":
@@ -134,6 +151,23 @@ const getCreatives = (dispatch) => {
   };
 };
 
+const getDirectoryCreatives = (dispatch) => {
+  return async (per_page = false) => {
+    setDirectoryLoading(dispatch, true);
+    try {
+      const response = await api.get(`/creatives?filter[status]=1&filter[is_visible]=1${per_page ? '&per_page=' + per_page : ''}`);
+      dispatch({
+        type: "set_directory_creatives",
+        payload: response.data,
+      });
+    } catch (error) { 
+
+    } finally {
+      setDirectoryLoading(dispatch, false);
+    }
+  };
+};
+
 const getGroupInviteMembers = (dispatch) => {
   return async (group) => {
     try {
@@ -147,7 +181,7 @@ const getGroupInviteMembers = (dispatch) => {
 };
 
 const getFeaturedCreatives = (dispatch) => {
-  return async (per_page=false) => {
+  return async (per_page = false) => {
     try {
       const response = await api.get(`/home/creatives?sort=sort_order&filter[is_featured]=1&filter[status]=1&filter[is_visible]=1${per_page ? '&per_page=' + per_page : ''}`);
       dispatch({
@@ -181,7 +215,7 @@ const getRelatedCreatives = (dispatch) => {
 };
 
 const getCreative = (dispatch) => {
-  return async (slug, cb = false) => {
+  return async (slug, cb = (error = null) => { }) => {
     try {
       dispatch({
         type: "set_single_creative",
@@ -200,15 +234,15 @@ const getCreative = (dispatch) => {
         type: "set_single_creative",
         payload: data,
       });
-      cb && cb();
+      cb();
     } catch (error) {
-      cb && cb(error);
+      cb(error);
     }
   };
 };
 
 const getCreativeForPdf = (dispatch) => {
-  return async (slug, cb = false) => {
+  return async (slug, cb = (data = null, error = null) => { }) => {
     try {
       const response = await api.get("/creatives?base64=yes&educations=yes&experiences=yes&reviews=yes&filter[status]=1&filter[slug]=" + slug);
       const data = response.data.data[0];
@@ -218,15 +252,15 @@ const getCreativeForPdf = (dispatch) => {
         type: "set_single_creative_for_pdf",
         payload: data,
       });
-      cb && cb(data, null);
+      cb(data, null);
     } catch (error) {
-      cb && cb(null, error);
+      cb(null, error);
     }
   };
 };
 
 const getCreativeById = (dispatch) => {
-  return async (id, cb = () => { }) => {
+  return async (id, cb = (data = null) => { }) => {
     try {
       const response = await api.get("/creatives?filter[status]=1&filter[user_id]=" + id);
       const data = response.data.data[0];
@@ -262,7 +296,7 @@ const searchCreatives = (dispatch) => {
 };
 
 const searchCreativesAdvanced = (dispatch) => {
-  return async (type, query, role, queryLevel2 = "", cb = () => { }) => {
+  return async (type, query, role, queryLevel2 = "", cb = (data = null) => { }) => {
     setLoading(dispatch, true);
     try {
       const response = await api.get("/creatives/" + type + "?search=" + query + "&role=" + role + (queryLevel2?.length > 0 ? ("&search_level2=" + queryLevel2) : ""));
@@ -278,7 +312,7 @@ const searchCreativesAdvanced = (dispatch) => {
 };
 
 const searchGroupInviteMember = (dispatch) => {
-  return async (type, query, role, queryLevel2 = "", cb = () => { }) => {
+  return async (type, query, role, queryLevel2 = "", cb = (data = null) => { }) => {
     setLoading(dispatch, true);
     try {
       const response = await api.get("/creatives/" + type + "?search=" + query + "&role=" + role + (queryLevel2?.length > 0 ? ("&search_level2=" + queryLevel2) : ""));
@@ -367,6 +401,23 @@ const loadCreatives = (dispatch) => {
   };
 };
 
+const loadDirectoryCreatives = (dispatch) => {
+  return async (page) => {
+    setDirectoryLoading(dispatch, true);
+    try {
+      const response = await api.get(page);
+      dispatch({
+        type: "load_directory_creatives",
+        payload: response.data,
+      });
+    } catch (error) {
+
+     } finally {
+    setDirectoryLoading(dispatch, false);
+     }
+  };
+};
+
 const loadSearchCreatives = (dispatch) => {
   return async (page) => {
     setLoading(dispatch, true);
@@ -384,6 +435,13 @@ const loadSearchCreatives = (dispatch) => {
 const setLoading = (dispatch, status) => {
   dispatch({
     type: "set_loading",
+    payload: status,
+  });
+};
+
+const setDirectoryLoading = (dispatch, status) => {
+  dispatch({
+    type: "set_directory_loading",
     payload: status,
   });
 };
@@ -441,24 +499,24 @@ const saveAttachment = (dispatch) => {
 };
 
 const removeAttachment = (dispatch) => {
-  return async (id, cb = false) => {
+  return async (id, cb = (error = null) => { }) => {
     try {
       const response = await api.delete("/attachments/" + id);
-      cb && cb();
+      cb();
     } catch (error) {
-      cb && cb(error);
+      cb(error);
     }
   };
 };
 
 const capturePortfolioSnapshot = (dispatch) => {
-  return async (uuid, wait_secs, cb = false) => {
+  return async (uuid, wait_secs, cb = (error = null) => { }) => {
     try {
       const response = await api.get("/creatives/capture-portfolio-snapshot/" + uuid + "?wait_seconds=" + wait_secs);
-      cb && cb();
+      cb();
       return response.data;
     } catch (error) {
-      cb && cb(error);
+      cb(error);
     }
     return null;
   };
@@ -654,7 +712,7 @@ const getAppliedJobs = (dispatch) => {
 };
 
 const searchAppliedJobs = (dispatch, state) => {
-  return async (searchText = "", page = false, cb = () => { }) => {
+  return async (searchText = "", page = false, cb = (data = null) => { }) => {
     let meta = null;
     try {
       let endpoint = "/applied_jobs" + (searchText?.length > 0 || page ? "?" : "") + (searchText?.length > 0 ? ("&searchText=") + searchText : "") + (page ? "&page=" + page : "");
@@ -706,12 +764,14 @@ export const { Context, Provider } = createDataContext(
   reducer,
   {
     getCreatives,
+    getDirectoryCreatives,
     getRelatedCreatives,
     getFeaturedCreatives,
     getStats,
     getCreativeDashboardStatsCacheOnly,
     getApplications,
     loadCreatives,
+    loadDirectoryCreatives,
     loadSearchCreatives,
     getCreative,
     getCreativeForPdf,

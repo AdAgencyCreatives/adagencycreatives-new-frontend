@@ -1,10 +1,20 @@
+'use client';
+
 import PageHeader from "components/PageHeader";
 import CreativeLoopItem from "./loop/item";
 import Link from "next/link";
-import { placeholderFeaturedCreatives as featuredCreatives } from "constants/creatives";
 import React from "react";
+import useDirectoryCreatives from "hooks/useDirectoryCreatives";
+import { useScrollLoader } from "hooks/useScrollLoader";
+import TailwindCircularLoader from "components/TailwindCircularLoader";
 
 const CreativesDirectory = () => {
+
+  const DIRECTORY_CREATIVES_PER_PAGE = 20;
+  const { directoryCreatives, directory_loading, loadMoreDirectoryCreatives } = useDirectoryCreatives(DIRECTORY_CREATIVES_PER_PAGE);
+
+  useScrollLoader(directory_loading, loadMoreDirectoryCreatives);
+
   return (
     <div>
       {/* Hero */}
@@ -28,7 +38,7 @@ const CreativesDirectory = () => {
       {/* Featured Creatives */}
       <section className="relative z-1 jobs-directory card-wrapper">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
-          {featuredCreatives.map((creative, idx) => (
+          {directoryCreatives?.length > 0 && directoryCreatives.slice(0, directoryCreatives.length - 2)?.map((creative, idx) => (
             <React.Fragment key={`creative-${creative.id || idx}`}>
               {idx === 16 && (
                 <div key={`perfect-${idx}`} id={`perfect-${idx}`} className="relative col-span-2 text-center flex flex-col justify-around gap-5 md:gap-10 max-md:py-10">
@@ -55,12 +65,17 @@ const CreativesDirectory = () => {
                   </div>
                 </div>
               )}
-            
-              <CreativeLoopItem  key={`${idx}-3`} creative={creative} />
+
+              <CreativeLoopItem key={`${idx}-3`} creative={creative} />
             </React.Fragment>
           ))}
         </div>
       </section>
+      {directory_loading && (
+        <div className="pb-[50px]">
+          <TailwindCircularLoader size={10} />
+        </div>
+      )}
     </div>
   );
 };
