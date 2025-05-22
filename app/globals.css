@@ -235,6 +235,7 @@ button {
   height: 3em;
   display: inline-block;
   align-items: start;
+  min-width: 100%;
 }
 
 .card .title {
@@ -242,12 +243,14 @@ button {
   height: 2em;
   display: inline-block;
   align-items: start;
+  min-width: 100%;
 }
 
 .card .location {
   line-height: 1em;
   height: 1em;
   display: block;
+  min-width: 100%;
 }
 
 .card.design-2 .name {
