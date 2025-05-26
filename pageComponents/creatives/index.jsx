@@ -15,9 +15,10 @@ import TmText from 'components/TmText';
 import useFeaturedJobs from 'hooks/useFeaturedJobs';
 import useFeaturedAgencies from 'hooks/useFeaturedAgencies';
 import useFeaturedCreatives from 'hooks/useFeaturedCreatives';
+import AnimatedBackdrop from 'components/AnimatedBackdrop';
 
 const Creatives = () => {
-  
+
   const FEATURED_JOBS_PER_PAGE = 8;
   const FEATURED_AGENCIES_PER_PAGE = 20;
   const FEATURED_CREATIVES_PER_PAGE = 16;
@@ -55,27 +56,16 @@ const Creatives = () => {
       </section>
 
       {/* Featured Jobs */}
-      <div className="bg-black heading-wrap relative z-1">
+      <div className="bg-black heading-wrap relative z-1" id="search-jobs">
         <h2 className="heading font-bold font-inter leading-[25.78px] 2xl:leading-[99px] 3xl:leading-[132px] 4xl:leading-[176px]">Featured Jobs</h2>
       </div>
-      <section className="relative z-1 featured-jobs card-wrapper" id="search-jobs">
+      <section className="relative z-1 featured-jobs card-wrapper">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
           {featuredJobs.map((job, idx) => (
             <React.Fragment key={`job-${job.id || idx}`}>
               {idx === 6 && (
                 <div key={`perfect-${idx}`} id={`perfect-${idx}`} className="relative col-span-2 text-center flex flex-col justify-around gap-5 md:gap-10 max-md:py-10">
-                  <div className="block inset-0 absolute h-full max-sm:w-[60%] max-sm:py-12 overflow-hidden mx-auto">
-                    <video
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      className="w-full h-full object-cover max-sm:rounded-[50%] opacity-50"
-                    >
-                      <source src="/videos/resources-bg.mp4" type="video/mp4" />
-                      Your browser does not support the video tag.
-                    </video>
-                  </div>
+                  <AnimatedBackdrop className={'block'} />
                   <h2 className="relative z-1 pb-0 pt-6 2xl:pb-14 2xl:pt-20 3xl:pb-20 3xl:pt-26 4xl:py-15 font-arial font-bold  md:leading-[58.5px] 3xl:leading-[78px] 4xl:leading-[104px]">Haven't<br />Found<br />The Perfect<br />Job?</h2>
                   <div className="relative z-1">
                     <Link
@@ -95,23 +85,12 @@ const Creatives = () => {
       </section>
 
       {/* Resources */}
-      <div className="bg-black heading-wrap">
+      <div className="bg-black heading-wrap" id="resources">
         <h2 className="heading font-bold font-inter text-right  leading-[25.78px] 2xl:leading-[99px] 3xl:leading-[132px] 4xl:leading-[176px]">Resources</h2>
       </div>
-      <section className="resources relative" id="resources">
+      <section className="resources relative">
         {/* Background */}
-        <div className="absolute inset-0 z-0">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-full object-cover opacity-50"
-          >
-            <source src="/videos/resources-bg.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
+        <AnimatedBackdrop className={''} />
         <div className="grid grid-cols-4 gap-x-[12px] md:gap-x-[54px] 3xl:gap-x-[72px] 4xl:gap-x-[92px] w-full items-center">
           {/* <!-- Column 1: 1 item --> */}
           <div>
@@ -188,18 +167,7 @@ const Creatives = () => {
             <React.Fragment key={`creative-${creative.id || idx}`}>
               {idx === 6 && (
                 <div key={`ad-agency-${idx}`} className="relative col-span-2 text-center flex flex-col justify-around gap-5 max-md:py-10">
-                  <div className="absolute inset-0 absolute h-full max-sm:w-[60%] max-sm:py-16 overflow-hidden mx-auto max-sm:pt-[1.5rem]">
-                    <video
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      className="w-full h-full object-cover max-sm:rounded-[50%] opacity-50"
-                    >
-                      <source src="/videos/resources-bg.mp4" type="video/mp4" />
-                      Your browser does not support the video tag.
-                    </video>
-                  </div>
+                  <AnimatedBackdrop className={'max-sm:py-16 max-sm:pt-[1.5rem]'} />
                   <h2 className="relative z-1 text-2xl md:text-[44px] md:leading-[58.5px] 3xl:text-[57.07px] 3xl:leading-[78px] 4xl:text-[76.09px] 4xl:leading-[104px] ">
                     <span className='font-arial font-bold'>We Are</span> <br />
                     <span className="font-alta">AD AGENCY</span><br />
@@ -216,18 +184,7 @@ const Creatives = () => {
 
               {width > 767 && idx === 15 && (
                 <div key={`profile-${idx}`} className="relative col-span-2 text-center flex flex-col justify-around gap-10">
-                  <div className="absolute inset-0 overflow-hidden">
-                    <video
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      className="w-full h-full object-cover opacity-50"
-                    >
-                      <source src="/videos/resources-bg.mp4" type="video/mp4" />
-                      Your browser does not support the video tag.
-                    </video>
-                  </div>
+                  <AnimatedBackdrop className={''} />
                   <h2 className="relative z-1 font-inter font-bold">Want<br />Your <TmText text='ProFile' /><br />Featured?</h2>
                   <div className="relative z-1">
                     <Link href="/" className="border-brand-yellow border-2 md:border-4 uppercase text-brand-yellow rounded-full font-sans sm:font-semibold md:font-hass75 md:font-bold text-xs md:text-sm 3xl:text-lg 4xl:text-2xl px-12 py-2 md:px-14  md:py-2.5 2xl:px-24 3xl:px-25.5 4xl:px-33.5 4xl:py-5 cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white">See How</Link>
@@ -243,18 +200,7 @@ const Creatives = () => {
 
               {width < 767 && idx === 15 && (
                 <div key={`profile-02-${idx}`} className="relative col-span-2 text-center flex flex-col justify-center gap-6 md:gap-10">
-                  <div className="z-0 absolute inset-0 h-full max-sm:w-[60%] max-sm:py-8 overflow-hidden mx-auto">
-                    <video
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      className="w-full h-full object-cover max-sm:rounded-[50%] opacity-50"
-                    >
-                      <source src="/videos/resources-bg.mp4" type="video/mp4" />
-                      Your browser does not support the video tag.
-                    </video>
-                  </div>
+                  <AnimatedBackdrop className={'max-sm:py-8'} />
                   <h2 className="z-1 text-2xl md:text-[44px] md:leading-[58.5px] 3xl:text-[57.07px] 3xl:leading-[78px] 4xl:text-[76.09px] 4xl:leading-[104px] font-bold mt-[48px] md:mt-0 font-inter">Want<br />Your<br /><TmText text='ProFile' /><br />Featured?</h2>
                   <div className="z-1 mb-5">
                     <Link href="/" className="border-brand-yellow border-0 outline-[2.05px] md:border-4 uppercase text-brand-yellow rounded-full font-sans sm:font-semibold md:font-hass75 md:font-bold text-xs md:text-sm 3xl:text-lg 4xl:text-2xl px-11.25 py-1.5 md:px-14  md:py-2.5 2xl:px-24 3xl:px-25.5 4xl:px-33.5 4xl:py-5 cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white font-inter">See How</Link>

@@ -1,5 +1,6 @@
 'use client';
 
+import LinkOrDiv from "components/LinkOrDiv";
 import TmText from "components/TmText";
 import ChevronDownIcon from "icons/ChevronDownIcon";
 import ChevronUpIcon from "icons/ChevronUpIcon";
@@ -27,24 +28,24 @@ const DetailedMobileMenu = ({ isOpen = false, setIsOpen = (flag) => { }, user })
     { text: 'About', href: '/about', visibility: VISIBILITY.ALL, links: [] },
     {
       text: 'Creatives', href: '/creatives', visibility: VISIBILITY.ALL, link_state: EXPAND_COLLAPSE_STATE.COLLAPSED, links: [
-        { text: <>create <TmText text='ProFile' /></>, href: '', visibility: VISIBILITY.ALL, links: [] },
-        { text: 'Search Jobs', href: '', visibility: VISIBILITY.ALL, links: [] },
-        { text: 'Featured Jobs ', href: '', visibility: VISIBILITY.ALL, links: [] },
+        { text: <>Create <TmText text='ProFile' /></>, href: '{{parent.href}}#create-profile', visibility: VISIBILITY.ALL, links: [] },
+        { text: 'Search Jobs', href: '{{parent.href}}#search-jobs', visibility: VISIBILITY.ALL, links: [] },
+        { text: 'Resources ', href: '{{parent.href}}#resources', visibility: VISIBILITY.ALL, links: [] },
       ]
     },
     {
       text: 'agencies', href: '/agencies', visibility: VISIBILITY.ALL, link_state: EXPAND_COLLAPSE_STATE.COLLAPSED, links: [
-        { text: 'Hire Creatives', href: '', visibility: VISIBILITY.ALL, links: [] },
-        { text: 'Post a Job', href: '', visibility: VISIBILITY.ALL, links: [] },
-        { text: 'Choose a Plan ', href: '', visibility: VISIBILITY.ALL, links: [] },
+        { text: 'Hire Creatives', href: '{{parent.href}}#creatives', visibility: VISIBILITY.ALL, links: [] },
+        { text: 'Post a Job', href: '{{parent.href}}#post-a-job', visibility: VISIBILITY.ALL, links: [] },
+        { text: 'Choose a Plan ', href: '{{parent.href}}#plans', visibility: VISIBILITY.ALL, links: [] },
       ]
     },
     {
       text: 'the lounge', href: '/thelounge', visibility: VISIBILITY.ALL, link_state: EXPAND_COLLAPSE_STATE.COLLAPSED, links: [
-        { text: 'Spotlight', href: '', visibility: VISIBILITY.ALL, links: [] },
-        { text: 'Featured Creatives', href: '', visibility: VISIBILITY.ALL, links: [] },
-        { text: 'News', href: '', visibility: VISIBILITY.ALL, links: [] },
-        { text: 'Publications', href: '', visibility: VISIBILITY.ALL, links: [] },
+        { text: 'Spotlight', href: '{{parent.href}}#spotlight', visibility: VISIBILITY.ALL, links: [] },
+        { text: 'Featured Creatives', href: '{{parent.href}}#featured-creatives', visibility: VISIBILITY.ALL, links: [] },
+        { text: 'News', href: '{{parent.href}}#news', visibility: VISIBILITY.ALL, links: [] },
+        { text: 'Publications', href: '{{parent.href}}#publications', visibility: VISIBILITY.ALL, links: [] },
       ]
     },
     {
@@ -64,7 +65,7 @@ const DetailedMobileMenu = ({ isOpen = false, setIsOpen = (flag) => { }, user })
     setLinks(INITIAL_LINKS);
   }, [isOpen]);
 
-  const link_class_name = "text-[24px] 3xl:text-[32px] 4xl:text-[42px] transition delay-150 duration-300 ease-in-out cursor-pointer lowercase";
+  const link_class_name = "text-[24px] 3xl:text-[32px] 4xl:text-[42px] transition delay-150 duration-300 ease-in-out lowercase";
 
   const toggleExpandCollapse = (index) => {
     let updated_links = [...links];
@@ -72,8 +73,22 @@ const DetailedMobileMenu = ({ isOpen = false, setIsOpen = (flag) => { }, user })
     setLinks(updated_links);
   };
 
-  const handleClick = () => {
-    setIsOpen(false);
+  const handleClick = (e, href) => {
+    if (href?.length > 0) {
+      setIsOpen(false);
+    } else {
+      e.preventDefault();
+      e.stopPropagation();
+      return false;
+    }
+    return true;
+  };
+
+  const parseHref = (href, parent_href) => {
+    if (href?.length > 0 && parent_href?.length > 0) {
+      return href.replaceAll('{{parent.href}}', parent_href);
+    }
+    return href;
   };
 
   return (
@@ -82,7 +97,7 @@ const DetailedMobileMenu = ({ isOpen = false, setIsOpen = (flag) => { }, user })
         {links.map((link, index) => (
           <div key={index} className="flex flex-col">
             <div className="flex flex-row justify-between items-center">
-              <Link onClick={handleClick} href={link.href} className={`${link_class_name} ${link.href == pathname ? 'text-brand-yellow hover:text-brand-yellow' : 'text-white hover:text-brand-yellow'}`}>{link.text}</Link>
+              <LinkOrDiv onClick={(e) => handleClick(e, link.href)} href={link.href} className={`${link_class_name} ${link.href == pathname ? `text-brand-yellow ${link.href?.length > 0 ? 'hover:text-brand-yellow cursor-pointer' : 'select-none'}` : `text-white  ${link.href?.length > 0 ? 'hover:text-brand-yellow cursor-pointer' : 'select-none'}`}`}>{link.text}</LinkOrDiv>
               {link.links?.length > 0 && (
                 <button onClick={() => toggleExpandCollapse(index)} className={`${link.href == pathname ? 'text-brand-yellow hover:text-brand-yellow' : 'text-white hover:text-brand-yellow'}`}>
                   {link.link_state == EXPAND_COLLAPSE_STATE.EXPANDED ? (<ChevronUpIcon />) : (<ChevronDownIcon />)}
@@ -91,11 +106,14 @@ const DetailedMobileMenu = ({ isOpen = false, setIsOpen = (flag) => { }, user })
             </div>
             {link.link_state == EXPAND_COLLAPSE_STATE.EXPANDED && link.links?.length > 0 && (<>
               <div className="flex flex-col gap-[21px] font-bold relative px-[24px] pt-[21px]">
-                {link.links.map((link_link, link_index) => (
-                  <div key={`${index}-${link_index}`}>
-                    <Link onClick={handleClick} href={link_link.href} className={`${link_class_name} ${link_link.href == pathname ? 'text-brand-yellow hover:text-brand-yellow' : 'text-white hover:text-brand-yellow'}`}>{link_link.text}</Link>
-                  </div>
-                ))}
+                {link.links.map((link_link, link_index) => {
+                  const parsed_link_link_href = parseHref(link_link.href, link.href);
+                  return (
+                    <div key={`${index}-${link_index}`}>
+                      <LinkOrDiv onClick={(e) => handleClick(e, parsed_link_link_href)} href={parsed_link_link_href} className={`${link_class_name} ${parsed_link_link_href == pathname ? `text-brand-yellow ${parsed_link_link_href?.length > 0 ? 'hover:text-brand-yellow cursor-pointer' : 'select-none'}` : `text-white  ${parsed_link_link_href?.length > 0 ? 'hover:text-brand-yellow cursor-pointer' : 'select-none'}`}`}>{link_link.text}</LinkOrDiv>
+                    </div>
+                  );
+                })}
               </div>
             </>)}
           </div>

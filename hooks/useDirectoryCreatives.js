@@ -7,7 +7,7 @@ const useDirectoryCreatives = (per_page = 20) => {
 
     const {
         state: { directory_creatives, directory_nextPage, directory_loading },
-        getDirectoryCreatives, loadDirectoryCreatives,
+        getDirectoryCreatives, loadDirectoryCreatives, searchCreativesAdvanced
     } = useContext(CreativesContext);
 
     useEffect(() => {
@@ -30,7 +30,7 @@ const useDirectoryCreatives = (per_page = 20) => {
     };
 
     return {
-        directoryCreatives, directory_loading, loadMoreDirectoryCreatives
+        directoryCreatives, directory_loading, getDirectoryCreatives, loadMoreDirectoryCreatives, searchCreativesAdvanced
     };
 }
 

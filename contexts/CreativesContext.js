@@ -2,6 +2,7 @@
 
 import { api } from "contexts/api";
 import createDataContext from "./createDataContext";
+import { usePathname } from "next/navigation";
 
 const state = {
   creatives: null,
@@ -224,7 +225,8 @@ const getCreative = (dispatch) => {
       const response = await api.get("/creatives?filter[status]=1&filter[slug]=" + slug);
       const data = response.data.data[0];
       const uid = data.user_id;
-      const currentPage = window.location.pathname;
+      const pathname = usePathname();
+      const currentPage = pathname;
       if (currentPage != '/change-password' && currentPage != '/change-password/' && currentPage != 'change-password/') {
         getCreativeEducation(dispatch, uid);
         getCreativeExperience(dispatch, uid);

@@ -14,7 +14,7 @@ const CreativeLoopItem = ({ creative, className }) => {
   const state_url = creative?.item?.location?.state ? `/job-location-state/${creative.item.location.state}` : '';
 
   return (
-    <div className={`creative card relative text-center flex flex-col justify-between items-center ${className}`}>
+    <div className={`z-1 creative card relative text-center flex flex-col justify-between items-center ${className}`}>
       <div className='relative flex items-center justify-center h-[142px] md:h-[200px] 2xl:h-[224px] 3xl:h-[310px] 4xl:h-[416px]'>
         <div className="image-mask">
           <img src={creative.image} alt="" className='grayscale w-[143px] md:w-[190px] lg:w-[200px] 2xl:w-[204px] 3xl:w-[270px] 4xl:w-[362px] h-auto object-cover aspect-square' />

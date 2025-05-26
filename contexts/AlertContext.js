@@ -1,3 +1,5 @@
+'use client';
+
 import createDataContext from "./createDataContext";
 
 const state = { message: "" };

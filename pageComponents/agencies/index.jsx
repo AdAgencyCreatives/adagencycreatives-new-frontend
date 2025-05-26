@@ -10,6 +10,7 @@ import { useEffect, useState } from 'react';
 import React from 'react';
 import TmText from 'components/TmText';
 import useFeaturedCreatives from 'hooks/useFeaturedCreatives';
+import AnimatedBackdrop from 'components/AnimatedBackdrop';
 
 const Agencies = () => {
 
@@ -41,27 +42,16 @@ const Agencies = () => {
       </section>
 
       {/* Featured Creatives */}
-      <div className="bg-black heading-wrap relative z-1">
+      <div className="bg-black heading-wrap relative z-1" id="creatives">
         <h2 className="heading font-bold font-inter leading-[25.78px] 2xl:leading-[99px] 3xl:leading-[132px] 4xl:leading-[176px]">Featured Creatives</h2>
       </div>
-      <section className="featured-jobs card-wrapper" id="creatives">
+      <section className="featured-jobs card-wrapper">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
           {featuredCreatives.map((creative, idx) => (
             <React.Fragment key={`creative-${creative.id || idx}`}>
               {(width < 768 && idx === 4) || (width >= 768 && idx === 6) ? (
                 <div id={`perfect-${idx}`} className="relative col-span-2 text-center flex flex-col justify-center gap-5 max-md:py-10">
-                  <div className="absolute inset-0 absolute h-full overflow-hidden">
-                    <video
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      className="w-full h-full object-cover"
-                    >
-                      <source src="/videos/resources-bg.mp4" type="video/mp4" />
-                      Your browser does not support the video tag.
-                    </video>
-                  </div>
+                  <AnimatedBackdrop className={''} />
                   <h2 className="relative z-1 pb-0 pt-6 2xl:pb-14 2xl:pt-20 3xl:pb-20 3xl:pt-26 4xl:py-15 font-arial font-bold  md:leading-[58.5px] 3xl:leading-[78px] 4xl:leading-[104px]">Haven't<br />Found<br />The Perfect<br />Match?</h2>
                   <div className='relative z-1 '>
                     <Link
@@ -78,18 +68,7 @@ const Agencies = () => {
 
               {width >= 768 && idx === 15 && (
                 <div key={`profile-${idx}`} className="relative col-span-2 text-center flex flex-col justify-around gap-10">
-                  <div className="absolute inset-0 overflow-hidden">
-                    <video
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      className="w-full h-full object-cover"
-                    >
-                      <source src="/videos/resources-bg.mp4" type="video/mp4" />
-                      Your browser does not support the video tag.
-                    </video>
-                  </div>
+                  <AnimatedBackdrop className={''} />
                   <h2 className="relative z-1 font-inter font-bold">
                     Why<br />Search?<br />Post & Attract!
                   </h2>
@@ -99,26 +78,11 @@ const Agencies = () => {
                 </div>
               )}
 
-              {idx === 8 && (
-                <div key={`skip-01--${idx}`} className="col-span-2 md:col-span-3 lg:col-span-5 mb-8 3xl:mb-12 4xl:mb-16"></div>
-              )}
-
               <CreativeLoopItem key={idx} creative={creative} className={width < 768 && idx > 7 ? 'md:flex hidden' : ''} />
 
               {width < 768 && idx === 15 && (
                 <div key={`profile-${idx}`} className="relative col-span-2 text-center flex flex-col justify-center gap-6 md:gap-10">
-                  <div className="block md:hidden inset-0 absolute h-full overflow-hidden w-[70%] mx-auto">
-                    <video
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      className="inset-0 absolute top-1/2 left-1/2 w-full h-full transform -translate-x-1/2 -translate-y-1/2 object-center z-[-1]"
-                    >
-                      <source src="/videos/resources-bg.mp4" type="video/mp4" />
-                      Your browser does not support the video tag.
-                    </video>
-                  </div>
+                  <AnimatedBackdrop className={'block md:hidden w-[70%]'} />
                   <h2 className="text-2xl md:text-[44px] md:leading-[58.5px] 3xl:text-[57.07px] 3xl:leading-[78px] 4xl:text-[76.09px] 4xl:leading-[104px] font-bold mt-[48px] md:mt-0 font-inter"
                   >Why<br />Search?<br />Post & Attract!</h2>
                   <div>
@@ -196,10 +160,10 @@ const Agencies = () => {
       </div>
 
       {/* Post a Job */}
-      <div className="bg-[#040404] heading-wrap post-a-job">
+      <div className="bg-[#040404] heading-wrap post-a-job" id="post-a-job">
         <h2 className="heading font-bold font-inter">Post a Job</h2>
       </div>
-      <section className="bg-black" id="post-job">
+      <section className="bg-black">
         <div className="flex flex-col md:gap-[7.5rem] 3xl:gap-[10rem] 4xl:gap-[13.333rem]">
           <div className="clients">
             <p className="text-xs md:text-3xl 3xl:text-[40px] uppercase font-inter font-bold methods">Our Method</p>

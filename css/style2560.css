@@ -239,6 +239,10 @@
     line-height: 3.2rem;
   }
 
+  .animated-backdrop {
+    border-radius: 4.25rem;
+  }
+
   /* Jobs And Creatives Card */
   .card {
     padding: 3.75rem 1.25rem;

@@ -4,7 +4,7 @@ import { useContext, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Footer from "pageComponents/layout/Footer";
 import Header from "pageComponents/layout/Header";
-import { Context as SiteContext } from "../contexts/SiteContext";
+import { Context as SiteContext } from "contexts/SiteContext";
 import "css/style2560.css";
 import "css/style1920.css";
 import "css/style1440.css";

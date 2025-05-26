@@ -1,0 +1,88 @@
+.search-box {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.search-bar {
+    flex: 1;
+}
+
+input.search-input {
+    padding: 8px 40px;
+    font-size: 20px;
+    border-radius: 8px;
+    border: 1px solid #000000;
+}
+
+input.search-input:focus {
+    border: 1px solid #000000;
+}
+
+.search-bar .search-icon {
+    position: absolute;
+    width: 23px;
+    height: 23px;
+    right: 12px;
+    top: 12px;
+    cursor: pointer;
+}
+
+.search-bar .reset-search-icon {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 50px;
+    top: 12px;
+    cursor: pointer;
+}
+
+.search-bar .reset-search-icon:hover {
+    fill: var(--color-primary);
+}
+
+.search-btn button {
+    background: var(--color-primary);
+    color: white;
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.search-btn button:hover {
+    color: black;
+    background: var(--color-primary);
+    border: 1px solid black;
+}
+
+/* @media (max-width: 767px) {
+    .search-bar input.search-input {
+        padding-left: 15px;
+    }
+} */
+
+.search-bar {
+    position: relative;
+}
+
+img.title-recommendations {
+    position: absolute;
+    right: 0px;
+    top: -38px;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+}
+
+.title-recommendation-item {
+    cursor: pointer;
+}
+
+.title-recommendation-item:hover p {
+    color: #d3a11f !important;
+}
+
+.title-recommendation-item:hover {
+    border-bottom: 3px solid #000 !important;
+}

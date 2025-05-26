@@ -3,6 +3,7 @@ import JobLoopItem from "./loop/item";
 import Link from "next/link";
 import { jobsDirectory } from "constants/jobs";
 import React from "react";
+import AnimatedBackdrop from "components/AnimatedBackdrop";
 
 const JobsDirectory = () => {
   return (
@@ -31,18 +32,7 @@ const JobsDirectory = () => {
             <React.Fragment key={`job-${job.id || idx}`}>
               {idx === 16 && (
                 <div key={`perfect-${idx}`} id={`perfect-${idx}`} className="relative col-span-2 text-center flex flex-col justify-around gap-5 md:gap-10 max-md:py-10">
-                  <div className="block inset-0 absolute h-full overflow-hidden mx-auto">
-                    <video
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      className="w-full h-full object-cover"
-                    >
-                      <source src="/videos/resources-bg.mp4" type="video/mp4" />
-                      Your browser does not support the video tag.
-                    </video>
-                  </div>
+                  <AnimatedBackdrop className={'block'} />
                   <h2 className="relative z-1 pb-0 pt-6 2xl:pb-14 2xl:pt-20 3xl:pb-20 3xl:pt-26 4xl:py-15 font-arial font-bold  md:leading-[58.5px] 3xl:leading-[78px] 4xl:leading-[104px]">Haven't<br />Found<br />The Perfect<br />Job?</h2>
                   <div className="relative z-1">
                     <Link

@@ -9,7 +9,7 @@ const { LiaSignInAltSolid } = require("react-icons/lia");
 import { useContext, useEffect, useState } from "react";
 import { Context as AnimatedAlertContext } from "contexts/AnimatedAlertContext";
 import { Context as AuthContext } from "contexts/AuthContext";
-import SignOutLink from "../../components/SignOutLink";
+import SignOutLink from "components/SignOutLink";
 
 const SignIn = ({ role }) => {
   const [isLoading, setLoading] = useState(false);

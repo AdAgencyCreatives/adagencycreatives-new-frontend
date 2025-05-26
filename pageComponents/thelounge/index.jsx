@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import { placeholderFeaturedCreatives as featuredCreatives } from 'constants/creatives';
 import SpotlightLoopItem from 'pageComponents/spotlights/loop/item';
 import CreativeLoopItem from 'pageComponents/creatives/loop/item';
 import PublicationLoopItem from 'pageComponents/publications/loop/item';
@@ -12,12 +11,19 @@ import SearchIcon from 'icons/SearchIcon';
 import DropdownButton from 'components/DropdownButton';
 import React from 'react';
 import TmText from 'components/TmText';
+import AnimatedBackdrop from 'components/AnimatedBackdrop';
+import useFeaturedCreatives from 'hooks/useFeaturedCreatives';
+import LinkOrDiv from 'components/LinkOrDiv';
 
 const TheLounge = () => {
+
+  const FEATURED_CREATIVES_PER_PAGE = 16;
 
   const handleSelect = (option) => {
     console.log('You selected:', option)
   }
+
+  const { featuredCreatives } = useFeaturedCreatives(FEATURED_CREATIVES_PER_PAGE);
 
   return (
     <div className="bg-black text-white">
@@ -41,71 +47,60 @@ const TheLounge = () => {
         <div className="relative z-3">
           <h1 className="text-5xl md:text-9xl 2xl:text-[182px] 3xl:text-[242px] 4xl:text-[323.4px] font-bold text-brand-yellow">The Lounge</h1>
           <div className="hidden md:block space-x-6 2xl:space-x-[36px] 3xl:space-x-[48px] 4xl:space-x-[64px] mt-4 md:mt-10 3xl:mt-20 text-sm md:text-2xl 3xl:text-[32px] 4xl:text-[42.67px] text-white relative z-1">
-            <a href="">spotlight</a>
-            <a href="">chat</a>
-            <a href="">featured</a>
-            <a href="">news</a>
-            <a href="">publications</a>
+            <Link href="#spotlight">spotlight</Link>
+            <Link href="#chat">chat</Link>
+            <Link href="#featured-creatives">featured</Link>
+            <Link href="#news">news</Link>
+            <Link href="#publications">publications</Link>
           </div>
           <div className="block md:hidden space-x-6 2xl:space-x-[36px] 3xl:space-x-[48px] 4xl:space-x-[64px] mt-4 md:mt-10 3xl:mt-20 text-sm md:text-2xl 3xl:text-[32px] 4xl:text-[42.67px] text-white relative z-1">
-            <a href="">hire creatives</a>
-            <a href="">choose a plan</a>
-            <a href="">post a job</a>
+            <Link href="">hire creatives</Link>
+            <Link href="">choose a plan</Link>
+            <Link href="">post a job</Link>
           </div>
         </div>
       </section>
 
-      {/* Resources */}
-      <section className="py-20 max-w-[1600px] mx-auto px-10">
+      {/* Spotlight */}
+      <section id="spotlight" className="py-20 max-w-[1600px] mx-auto px-10">
         <h2 className="text-8xl font-bold mb-10 text-right ">Spotlight</h2>
         <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-20 w-full items-center relative py-20">
           {/* Background */}
-          <div className="absolute inset-0 z-0">
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="absolute inset-0 w-full h-full object-cover opacity-30 z-0"
-            >
-              <source src="/videos/resources-bg.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-          <SpotlightLoopItem 
+          <AnimatedBackdrop className={''} />
+          <SpotlightLoopItem
             spotlight={{ title: 'art director', name: 'Matthew Marcos', image: '/resource1.avif', href: '/resources-internship' }}
           />
-          <SpotlightLoopItem 
+          <SpotlightLoopItem
             spotlight={{ title: 'art director', name: 'Matthew Marcos', image: '/resource1.avif', href: '/resources-inspiration' }}
           />
-          <SpotlightLoopItem 
+          <SpotlightLoopItem
             spotlight={{ title: 'art director', name: 'Matthew Marcos', image: '/resource1.avif', href: '/resources-inspiration' }}
           />
-          <SpotlightLoopItem 
+          <SpotlightLoopItem
             spotlight={{ title: 'art director', name: 'Matthew Marcos', image: '/resource1.avif', href: '/resources-inspiration' }}
           />
           <div></div>
-          <SpotlightLoopItem 
+          <SpotlightLoopItem
             spotlight={{ title: 'art director', name: 'Matthew Marcos', image: '/resource1.avif', href: '/resources-portfolio' }}
           />
-          <SpotlightLoopItem 
+          <SpotlightLoopItem
             spotlight={{ title: 'art director', name: 'Matthew Marcos', image: '/resource1.avif', href: '/resources-writers' }}
           />
-          <SpotlightLoopItem 
+          <SpotlightLoopItem
             spotlight={{ title: 'art director', name: 'Matthew Marcos', image: '/resource1.avif', href: '/resources-designers' }}
           />
           <div></div>
           <div></div>
-          <SpotlightLoopItem 
+          <SpotlightLoopItem
             spotlight={{ title: 'art director', name: 'Matthew Marcos', image: '/resource1.avif', href: '/resources-business' }}
           />
-          <SpotlightLoopItem 
+          <SpotlightLoopItem
             spotlight={{ title: 'art director', name: 'Matthew Marcos', image: '/resource1.avif', href: '/resources-inspiration' }}
           />
           <div></div>
           <div></div>
           <div></div>
-          <SpotlightLoopItem 
+          <SpotlightLoopItem
             spotlight={{ title: 'art director', name: 'Matthew Marcos', image: '/resource1.avif', href: '/resources-inspiration' }}
           />
           <div className="absolute bottom-16 left-0 text-8xl space-y-8">
@@ -117,7 +112,7 @@ const TheLounge = () => {
       </section>
 
       {/* Featured Creatives */}
-      <section className="py-20 max-w-[1600px] mx-auto px-10">
+      <section id="featured-creatives" className="py-20 max-w-[1600px] mx-auto px-10">
         <h2 className="text-8xl font-bold mb-10 text-right">Featured</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {featuredCreatives.map((creative, idx) => (
@@ -143,15 +138,15 @@ const TheLounge = () => {
                   </div>
                 </div>
               )}
-            
+
               <CreativeLoopItem key={idx} creative={creative} />
             </React.Fragment>
           ))}
         </div>
       </section>
 
-      {/* News */}
-      <section className="py-20 border-white border-y-2 relative">
+      {/* Chat */}
+      <section id="chat" className="py-20 border-white border-y-2 relative">
         {/* Background */}
         <div className="absolute inset-0 z-0">
           <video
@@ -194,9 +189,8 @@ const TheLounge = () => {
         </div>
       </section>
 
-
-      {/* Resources */}
-      <section className="py-20 border-white border-y-2 relative">
+      {/* News */}
+      <section id="news" className="py-20 border-white border-y-2 relative">
         {/* Background */}
         <div className="absolute inset-0 z-0">
           <video
@@ -215,30 +209,30 @@ const TheLounge = () => {
           <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-15 w-full items-center relative">
             {/* <!-- Column 1: 1 item --> */}
             <div>
-              <ResourceLoopItem 
+              <ResourceLoopItem
                 resource={{ title: '10 tips to get hired', image: '/resource1.avif', href: '/resources-internship' }}
               />
             </div>
 
             {/* <!-- Column 2: 4 items stacked vertically --> */}
             <div className="col-span-2 space-y-4 grid grid-cols-2 gap-15 items-start">
-              <ResourceLoopItem 
+              <ResourceLoopItem
                 resource={{ title: 'where is market', image: '/resource1.avif', href: '/resources-inspiration' }}
               />
-              <ResourceLoopItem 
+              <ResourceLoopItem
                 resource={{ title: 'best portfolio', image: '/resource1.avif', href: '/resources-portfolio' }}
               />
-              <ResourceLoopItem 
+              <ResourceLoopItem
                 resource={{ title: 'what to say in bio', image: '/resource1.avif', href: '/resources-writers' }}
               />
-              <ResourceLoopItem 
+              <ResourceLoopItem
                 resource={{ title: 'how to run interview', image: '/resource1.avif', href: '/resources-designers' }}
               />
             </div>
 
             {/* <!-- Column 4: 1 item --> */}
             <div>
-              <ResourceLoopItem 
+              <ResourceLoopItem
                 resource={{ title: '10 tips to get hired', image: '/resource1.avif', href: '/resources-business' }}
               />
             </div>
@@ -247,65 +241,54 @@ const TheLounge = () => {
       </section>
 
       {/* Publications */}
-      <section className="py-20 max-w-[1600px] mx-auto px-10">
+      <section id="publications" className="py-20 max-w-[1600px] mx-auto px-10">
         <h2 className="text-8xl font-bold text-right">Publications</h2>
         <div className="flex gap-15 w-full items-center relative pb-20 mb-10 border-white border-b-2">
           {/* Background */}
-          <div className="absolute inset-0 z-0">
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="absolute inset-0 w-full h-full object-cover opacity-30 z-0"
-            >
-              <source src="/videos/resources-bg.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
+          <AnimatedBackdrop className={''} />
           <div className="space-y-16 mt-80">
-          <PublicationLoopItem 
-            publication={{ image: '/publications/publication1.avif', href: '/resources-internship' }}
-          />
-          <PublicationLoopItem 
-            publication={{ image: '/publications/publication2.avif', href: '/resources-inspiration' }}
-          />
-          <PublicationLoopItem 
-            publication={{ image: '/publications/publication3.avif', href: '/resources-inspiration' }}
-          />
+            <PublicationLoopItem
+              publication={{ image: '/publications/publication1.avif', href: '/resources-internship' }}
+            />
+            <PublicationLoopItem
+              publication={{ image: '/publications/publication2.avif', href: '/resources-inspiration' }}
+            />
+            <PublicationLoopItem
+              publication={{ image: '/publications/publication3.avif', href: '/resources-inspiration' }}
+            />
           </div>
           <div className="space-y-16">
-          <PublicationLoopItem 
-            publication={{ image: '/publications/publication4.avif', href: '/resources-inspiration' }}
-          />
-          <PublicationLoopItem 
-            publication={{ image: '/publications/publication5.avif', href: '/resources-portfolio' }}
-          />
-          <PublicationLoopItem 
-            publication={{ image: '/publications/publication6.avif', href: '/resources-writers' }}
-          />
+            <PublicationLoopItem
+              publication={{ image: '/publications/publication4.avif', href: '/resources-inspiration' }}
+            />
+            <PublicationLoopItem
+              publication={{ image: '/publications/publication5.avif', href: '/resources-portfolio' }}
+            />
+            <PublicationLoopItem
+              publication={{ image: '/publications/publication6.avif', href: '/resources-writers' }}
+            />
           </div>
           <div className="space-y-16 mt-80">
-          <PublicationLoopItem 
-            publication={{ image: '/publications/publication7.avif', href: '/resources-designers' }}
-          />
-          <PublicationLoopItem 
-            publication={{ image: '/publications/publication8.avif', href: '/resources-business' }}
-          />
-          <PublicationLoopItem 
-            publication={{ image: '/publications/publication9.avif', href: '/resources-inspiration' }}
-          />
+            <PublicationLoopItem
+              publication={{ image: '/publications/publication7.avif', href: '/resources-designers' }}
+            />
+            <PublicationLoopItem
+              publication={{ image: '/publications/publication8.avif', href: '/resources-business' }}
+            />
+            <PublicationLoopItem
+              publication={{ image: '/publications/publication9.avif', href: '/resources-inspiration' }}
+            />
           </div>
           <div className="space-y-16">
-          <PublicationLoopItem 
-            publication={{ image: '/publications/publication10.avif', href: '/resources-inspiration' }}
-          />
-          <PublicationLoopItem 
-            publication={{ image: '/publications/publication11.avif', href: '/resources-inspiration' }}
-          />
-          <PublicationLoopItem
-            publication={{ image: '/publications/publication12.avif', href: '/resources-inspiration' }}
-          />
+            <PublicationLoopItem
+              publication={{ image: '/publications/publication10.avif', href: '/resources-inspiration' }}
+            />
+            <PublicationLoopItem
+              publication={{ image: '/publications/publication11.avif', href: '/resources-inspiration' }}
+            />
+            <PublicationLoopItem
+              publication={{ image: '/publications/publication12.avif', href: '/resources-inspiration' }}
+            />
           </div>
         </div>
       </section>

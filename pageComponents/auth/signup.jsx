@@ -13,7 +13,7 @@ import {
 import { useState, useContext, useEffect } from "react";
 import { Context as AnimatedAlertContext } from "contexts/AnimatedAlertContext";
 import { Context as AuthContext } from "contexts/AuthContext";
-import SignOutLink from "../../components/SignOutLink";
+import SignOutLink from "components/SignOutLink";
 import { useRouter } from "next/navigation";
 
 const SignUp = ({ role }) => {

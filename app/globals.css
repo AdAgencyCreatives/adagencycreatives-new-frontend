@@ -270,3 +270,7 @@ button {
   height: 1em;
   display: block;
 }
+
+.search form {
+  width: 100%;
+}

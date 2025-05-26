@@ -1,7 +1,7 @@
 "use client"
 
 import { useContext, useEffect } from "react";
-import { Context as AuthContext } from "../../contexts/AuthContext";
+import { Context as AuthContext } from "contexts/AuthContext";
 import { redirect } from "next/navigation";
 
 export default function SignOutPage() {

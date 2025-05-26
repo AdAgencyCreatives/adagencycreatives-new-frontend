@@ -2,7 +2,7 @@
 
 import { api, setAuthToken, baseUrl } from "contexts/api";
 import createDataContext from "./createDataContext";
-import { storeToken, readToken, clearToken } from "../utils/TokenUtility";
+import { storeToken, readToken, clearToken } from "utils/TokenUtility";
 
 const state = {
   isSignedIn: false,
