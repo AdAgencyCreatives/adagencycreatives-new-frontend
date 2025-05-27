@@ -332,4 +332,21 @@
   .plans-button-wrap .border-row {
     width: 0.875rem;
   }
+
+  .search-box {
+    margin-bottom: 0px;
+  }
+
+  .search-bar .search-icon {
+    width: 18px;
+    height: 18px;
+    top: 0px;
+  }
+
+  .search-bar .reset-search-icon {
+    width: 22px;
+    height: 22px;
+    top: -2px;
+    right: 20px;
+  }
 }

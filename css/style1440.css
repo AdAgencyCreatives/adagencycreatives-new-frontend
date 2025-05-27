@@ -316,4 +316,22 @@
   .plans-button-wrap .border-row {
     width: 2.363rem;
   }
+
+  .search-bar .search-icon {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 2px;
+    top: 3px;
+    cursor: pointer;
+  }
+
+  .search-bar .reset-search-icon {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    right: 35px;
+    top: 0px;
+    cursor: pointer;
+  }
 }

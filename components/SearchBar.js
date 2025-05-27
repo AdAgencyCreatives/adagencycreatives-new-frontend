@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useRef, useState } from "react";
-import "css/SearchBar.css";
 import { IoCloseOutline, IoSearchOutline } from "react-icons/io5";
 import { getSearchItems } from "contexts/SearchDataContext";
 import usePermissions from "hooks/usePermissions";

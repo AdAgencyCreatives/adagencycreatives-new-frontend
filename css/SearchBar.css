@@ -3,6 +3,12 @@
     margin-bottom: 20px;
 }
 
+@media (max-width: 767px) {
+    .search-box {
+        margin-bottom: 0px;
+    }
+}
+
 .search-bar {
     flex: 1;
 }
@@ -23,18 +29,19 @@ input.search-input:focus {
     width: 30px;
     height: 30px;
     right: 2px;
-    top: 12px;
+    top: 3px;
     cursor: pointer;
 }
 
 .search-bar .reset-search-icon {
     position: absolute;
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     right: 35px;
-    top: 12px;
+    top: 0px;
     cursor: pointer;
 }
+
 
 .search-bar .reset-search-icon:hover {
     fill: var(--color-primary);

@@ -7,6 +7,7 @@ import Header from "pageComponents/layout/Header";
 import { Context as SiteContext } from "contexts/SiteContext";
 import { Context as AnimatedAlertContext } from "contexts/AnimatedAlertContext";
 
+import "css/SearchBar.css";
 import "css/style2560.css";
 import "css/style1920.css";
 import "css/style1440.css";
