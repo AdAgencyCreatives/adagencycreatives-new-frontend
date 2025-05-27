@@ -1,0 +1,23 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Next.js Turbo Debug",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}",
+      "skipFiles": [
+        "node_modules/**",
+        "<node_internals>/**"
+      ],
+      "sourceMapPathOverrides": {
+        "turbopack://*": "${webRoot}/*",
+        "turbopack:///_N_E/*": "${webRoot}/*",
+        "turbopack:///./*": "${webRoot}/*",
+        "turbopack:///D:/Projects/*": "${webRoot}/*"
+      },
+      "trace": true
+    }
+  ]
+}

@@ -20,9 +20,7 @@ const SignUp = ({ role }) => {
   const [isLoading, setLoading] = useState(false);
   const [apiResponse, setApiResponse] = useState(null);
 
-  const router = useRouter();
-
-  const { showAnimatedAlert } = useContext(AnimatedAlertContext);
+  const { showAnimatedAlert, hideAnimatedAlert } = useContext(AnimatedAlertContext);
 
   const {
     state: { user },
@@ -33,6 +31,7 @@ const SignUp = ({ role }) => {
     setApiResponse(null);
     setLoading(true);
     try {
+      hideAnimatedAlert();
       await signup(
         values,
         role == "creatives" ? "creative" : "agency",

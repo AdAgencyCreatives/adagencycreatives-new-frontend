@@ -3,17 +3,12 @@
 import { useContext, useEffect } from "react";
 import { Context as CreativesContext } from "contexts/CreativesContext";
 
-const useDirectoryCreatives = (per_page = 20) => {
+const useDirectoryCreatives = () => {
 
     const {
         state: { directory_creatives, directory_nextPage, directory_loading },
-        getDirectoryCreatives, loadDirectoryCreatives, searchCreativesAdvanced
+        getDirectoryCreatives, loadDirectoryCreatives, searchDirectoryCreativesAdvanced
     } = useContext(CreativesContext);
-
-    useEffect(() => {
-        getDirectoryCreatives(per_page);
-    }, []);
-
 
     let directoryCreatives = directory_creatives?.map(item => {
         return {
@@ -25,12 +20,13 @@ const useDirectoryCreatives = (per_page = 20) => {
         };
     });
 
-    const loadMoreDirectoryCreatives = ()=>{
+    const loadMoreDirectoryCreatives = () => {
+        if (directory_nextPage === null || directory_loading) return;
         loadDirectoryCreatives(directory_nextPage);
     };
 
     return {
-        directoryCreatives, directory_loading, getDirectoryCreatives, loadMoreDirectoryCreatives, searchCreativesAdvanced
+        directoryCreatives, directory_loading, getDirectoryCreatives, loadMoreDirectoryCreatives, searchDirectoryCreativesAdvanced
     };
 }
 

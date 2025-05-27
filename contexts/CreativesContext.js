@@ -313,6 +313,21 @@ const searchCreativesAdvanced = (dispatch) => {
   };
 };
 
+const searchDirectoryCreativesAdvanced = (dispatch) => {
+  return async (type, query, role, queryLevel2 = "", cb = (data = null) => { }) => {
+    setLoading(dispatch, true);
+    try {
+      const response = await api.get("/creatives/" + type + "?search=" + query + "&role=" + role + (queryLevel2?.length > 0 ? ("&search_level2=" + queryLevel2) : ""));
+      dispatch({
+        type: "set_directory_creatives",
+        payload: response.data,
+      });
+      cb(response.data?.data);
+    } catch (error) { }
+    setLoading(dispatch, false);
+  };
+};
+
 const searchGroupInviteMember = (dispatch) => {
   return async (type, query, role, queryLevel2 = "", cb = (data = null) => { }) => {
     setLoading(dispatch, true);
@@ -780,6 +795,7 @@ export const { Context, Provider } = createDataContext(
     getCreativeById,
     searchCreatives,
     searchCreativesAdvanced,
+    searchDirectoryCreativesAdvanced,
     searchCreativesFull,
     saveCreative,
     saveResume,

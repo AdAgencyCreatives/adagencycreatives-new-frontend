@@ -57,13 +57,12 @@ const AnimatedForm = ({
           {steps.map((stepConfig, index) => (
             <div
               key={index}
-              className={`absolute w-full transition-all duration-500 ease-in-out transform px-20  ${
-                step === index
+              className={`absolute w-full transition-all duration-500 ease-in-out transform px-20  ${step === index
                   ? "translate-x-0 opacity-100"
                   : step > index
-                  ? "-translate-x-full opacity-0 pointer-events-none"
-                  : "translate-x-full opacity-0 pointer-events-none"
-              }`}
+                    ? "-translate-x-full opacity-0 pointer-events-none"
+                    : "translate-x-full opacity-0 pointer-events-none"
+                }`}
             >
               {stepConfig.fields.map((field, index) => (
                 <div key={field.name || index}>
@@ -74,7 +73,7 @@ const AnimatedForm = ({
                     ref={(el) => (inputRefs.current[index] = el)}
                     name={field.name}
                     type={field.type}
-                    placeholder={field.placeholder}
+                    placeholder={field.type != "password" ? field.placeholder : ''}
                     className="bg-transparent border-b-2 border-white outline-none w-full text-[19px] text-white placeholder-white font-wix py-6 focus:bg-black/50"
                   />
                   <ErrorMessage

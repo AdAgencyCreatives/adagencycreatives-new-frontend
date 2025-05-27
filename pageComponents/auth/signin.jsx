@@ -17,7 +17,7 @@ const SignIn = ({ role }) => {
 
   const router = useRouter();
 
-  const { showAnimatedAlert } = useContext(AnimatedAlertContext);
+  const { showAnimatedAlert, hideAnimatedAlert } = useContext(AnimatedAlertContext);
 
   const {
     state: { user },
@@ -28,6 +28,7 @@ const SignIn = ({ role }) => {
     setApiResponse(null);
     setLoading(true);
     try {
+      hideAnimatedAlert();
       await signin(values, (data) => {
         setApiResponse(data);
         setLoading(false);

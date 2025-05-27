@@ -4,13 +4,20 @@ import LinkOrDiv from "components/LinkOrDiv";
 import TmText from "components/TmText";
 import ChevronDownIcon from "icons/ChevronDownIcon";
 import ChevronUpIcon from "icons/ChevronUpIcon";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const DetailedMobileMenu = ({ isOpen = false, setIsOpen = (flag) => { }, user }) => {
 
   const pathname = usePathname();
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    // Cleanup function
+    return () => {
+      setIsOpen(false);
+    };
+  }, [pathname, searchParams]);
 
   const VISIBILITY = {
     ALL: 'ALL',
@@ -49,7 +56,7 @@ const DetailedMobileMenu = ({ isOpen = false, setIsOpen = (flag) => { }, user })
       ]
     },
     {
-      text: 'directories', href: '#', visibility: VISIBILITY.ALL, link_state: EXPAND_COLLAPSE_STATE.COLLAPSED, links: [
+      text: 'directories', href: '#toggle', visibility: VISIBILITY.ALL, link_state: EXPAND_COLLAPSE_STATE.COLLAPSED, links: [
         { text: 'Agencies Directory', href: '/agencies-directory', visibility: VISIBILITY.ALL, links: [] },
         { text: 'Creatives Directory', href: '/creatives-directory', visibility: VISIBILITY.ALL, links: [] },
         { text: 'Jobs Directory', href: '/jobs-directory', visibility: VISIBILITY.ALL, links: [] },
@@ -73,9 +80,14 @@ const DetailedMobileMenu = ({ isOpen = false, setIsOpen = (flag) => { }, user })
     setLinks(updated_links);
   };
 
-  const handleClick = (e, href) => {
-    if (href?.length > 0) {
-      setIsOpen(false);
+  const handleLinkClick = (e, item) => {
+    if (item?.href?.length > 0) {
+      if (item.href == '#toggle' && item?.links?.length > 0) {
+        e.preventDefault();
+        e.stopPropagation();
+        toggleExpandCollapse(item.index);
+        return true;
+      }
     } else {
       e.preventDefault();
       e.stopPropagation();
@@ -97,7 +109,7 @@ const DetailedMobileMenu = ({ isOpen = false, setIsOpen = (flag) => { }, user })
         {links.map((link, index) => (
           <div key={index} className="flex flex-col">
             <div className="flex flex-row justify-between items-center">
-              <LinkOrDiv onClick={(e) => handleClick(e, link.href)} href={link.href} className={`${link_class_name} ${link.href == pathname ? `text-brand-yellow ${link.href?.length > 0 ? 'hover:text-brand-yellow cursor-pointer' : 'select-none'}` : `text-white  ${link.href?.length > 0 ? 'hover:text-brand-yellow cursor-pointer' : 'select-none'}`}`}>{link.text}</LinkOrDiv>
+              <LinkOrDiv onClick={(e) => handleLinkClick(e, { ...link, index: index })} href={link.href} className={`${link_class_name} ${link.href == pathname ? `text-brand-yellow ${link.href?.length > 0 ? 'hover:text-brand-yellow cursor-pointer' : 'select-none'}` : `text-white  ${link.href?.length > 0 ? 'hover:text-brand-yellow cursor-pointer' : 'select-none'}`}`}>{link.text}</LinkOrDiv>
               {link.links?.length > 0 && (
                 <button onClick={() => toggleExpandCollapse(index)} className={`${link.href == pathname ? 'text-brand-yellow hover:text-brand-yellow' : 'text-white hover:text-brand-yellow'}`}>
                   {link.link_state == EXPAND_COLLAPSE_STATE.EXPANDED ? (<ChevronUpIcon />) : (<ChevronDownIcon />)}
@@ -110,7 +122,7 @@ const DetailedMobileMenu = ({ isOpen = false, setIsOpen = (flag) => { }, user })
                   const parsed_link_link_href = parseHref(link_link.href, link.href);
                   return (
                     <div key={`${index}-${link_index}`}>
-                      <LinkOrDiv onClick={(e) => handleClick(e, parsed_link_link_href)} href={parsed_link_link_href} className={`${link_class_name} ${parsed_link_link_href == pathname ? `text-brand-yellow ${parsed_link_link_href?.length > 0 ? 'hover:text-brand-yellow cursor-pointer' : 'select-none'}` : `text-white  ${parsed_link_link_href?.length > 0 ? 'hover:text-brand-yellow cursor-pointer' : 'select-none'}`}`}>{link_link.text}</LinkOrDiv>
+                      <LinkOrDiv onClick={(e) => handleLinkClick(e, { ...link_link, href: parsed_link_link_href, index: link_index })} href={parsed_link_link_href} className={`${link_class_name} ${parsed_link_link_href == pathname ? `text-brand-yellow ${parsed_link_link_href?.length > 0 ? 'hover:text-brand-yellow cursor-pointer' : 'select-none'}` : `text-white  ${parsed_link_link_href?.length > 0 ? 'hover:text-brand-yellow cursor-pointer' : 'select-none'}`}`}>{link_link.text}</LinkOrDiv>
                     </div>
                   );
                 })}

@@ -88,7 +88,7 @@ const CreativesDirectory = () => {
   };
 
   const DIRECTORY_CREATIVES_PER_PAGE = 20;
-  const { directoryCreatives, directory_loading, getDirectoryCreatives, loadMoreDirectoryCreatives, searchCreativesAdvanced } = useDirectoryCreatives(DIRECTORY_CREATIVES_PER_PAGE);
+  const { directoryCreatives, directory_loading, getDirectoryCreatives, loadMoreDirectoryCreatives, searchDirectoryCreativesAdvanced } = useDirectoryCreatives();
 
   useScrollLoader(directory_loading, loadMoreDirectoryCreatives);
 
@@ -101,7 +101,7 @@ const CreativesDirectory = () => {
 
     if (!value || value.length == 0) {
       router.push(updateSingleHashParam('search', ''));
-      getDirectoryCreatives();
+      getDirectoryCreatives(DIRECTORY_CREATIVES_PER_PAGE);
       return;
     }
 
@@ -117,7 +117,7 @@ const CreativesDirectory = () => {
     showAlert(permission.message);
 
     if (!permission.proceed) {
-      getDirectoryCreatives();
+      getDirectoryCreatives(DIRECTORY_CREATIVES_PER_PAGE);
       return;
     }
 
@@ -128,14 +128,14 @@ const CreativesDirectory = () => {
 
     if (query_search_string?.length > 0) {
       setSearchDone(value);
-      await searchCreativesAdvanced(which_search(), query_search_string, role, "", (data) => {
+      await searchDirectoryCreativesAdvanced(which_search(), query_search_string, role, "", (data) => {
         setAdvanceSearchHasData(data?.length > 0);
       });
       if (user) await getAllBookmarks(user.uuid, "creatives");
 
       if (params?.search !== query_search_string) router.push(updateSingleHashParam('search', query_search_string));
     } else {
-      //await getDirectoryCreatives();
+      //await getDirectoryCreatives(DIRECTORY_CREATIVES_PER_PAGE);
     }
 
     setIsCreativeLoading(false);
@@ -188,7 +188,7 @@ const CreativesDirectory = () => {
 
     if (params?.advance !== query_search_string_level2) router.push(updateSingleHashParam('advance', query_search_string_level2));
 
-    await searchCreativesAdvanced(which_search(), query_search_string_level1, role, query_search_string_level2);
+    await searchDirectoryCreativesAdvanced(which_search(), query_search_string_level1, role, query_search_string_level2);
     if (user) await getAllBookmarks(user.uuid, "creatives");
     setIsCreativeLoading(false);
   };
@@ -257,19 +257,19 @@ const CreativesDirectory = () => {
 
   useEffect(() => {
     process_creatives();
-  }, [role, subscription_status]);
+  }, [subscription_status]);
 
   const process_creatives = async () => {
-    if (role && subscription_status && params?.search && !params?.advance) {
+    if (subscription_status && params?.search && !params?.advance) {
       setInput(params.search);
       searchUser(params.search);
-    } else if (role && subscription_status && params?.advance) {
+    } else if (subscription_status && params?.advance) {
       setInput(params.search);
       setAdvanceSearchHasData(true);
       setInputLevel2(params.advance);
       searchUserLevel2(params.advance, false, params.search ?? '');
     } else {
-      getDirectoryCreatives();
+      getDirectoryCreatives(DIRECTORY_CREATIVES_PER_PAGE);
     }
   }
 
@@ -367,7 +367,7 @@ const CreativesDirectory = () => {
       {/* Featured Creatives */}
       <section className="relative z-1 jobs-directory card-wrapper">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
-          {directoryCreatives?.length > 0 && directoryCreatives.slice(0, directoryCreatives.length - 2)?.map((creative, idx) => (
+          {directoryCreatives?.length > 0 && directoryCreatives.slice(0, input.length>0 ? directoryCreatives.length : directoryCreatives.length - 2)?.map((creative, idx) => (
             <React.Fragment key={`creative-${creative.id || idx}`}>
               {idx === 16 && (
                 <div key={`perfect-${idx}`} id={`perfect-${idx}`} className="relative col-span-2 text-center flex flex-col justify-around gap-5 md:gap-10 max-md:py-10">

@@ -51,7 +51,7 @@ const AnimatedAlert = ({
   if (!isVisible) return <></>;
 
   return (
-    <div className="absolute flex flex-row justify-center items-center w-screen h-screen z-999999">
+    <div className="fixed flex flex-row justify-center items-center w-screen h-screen z-999999">
       <div
         className={`min-w-lg ${baseClasses} ${typeClasses[type]} ${
           isAnimatingOut ? "opacity-0" : "opacity-100"

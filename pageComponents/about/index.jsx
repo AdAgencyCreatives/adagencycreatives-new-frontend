@@ -1,3 +1,5 @@
+'use client';
+
 const About = () => {
   return (
     <>
@@ -6,7 +8,7 @@ const About = () => {
 
         <p className="text-2xl 3xl:text-[40px] 4xl:text-[53px] font-bold text-right">
           AD AGENCY CREATIVES IS AN <span className="text-brand-yellow">EMPOWERMENT</span> PLATFORM DESIGNED TO GET CREATIVES <br />
-          HIRED BY AGENCIES IN THE U.S. <br className="block md:hidden"/> <br className="block md:hidden"/> WE <span className="text-brand-yellow">LEVERAGE</span> THE EXPERTISE OF CREATIVE RECRUITERS<br />
+          HIRED BY AGENCIES IN THE U.S. <br className="block md:hidden" /> <br className="block md:hidden" /> WE <span className="text-brand-yellow">LEVERAGE</span> THE EXPERTISE OF CREATIVE RECRUITERS<br />
           TO HELP AGENCIES AND BRANDS WITH <span className="text-brand-yellow">CREATIVE</span> TALENT.
         </p>
       </section>
@@ -29,4 +31,3 @@ const About = () => {
 export default About;
 
 
-  
