@@ -101,4 +101,15 @@ export const updateSingleHashParam = (key, value) => {
 
     return `#${params.toString()}`;
 }
+
+export const getUpdatedSearchParamString= (searchParams, key, value) => {
+    const params = new URLSearchParams(searchParams.toString());
+    
+    if (!value)
+        params.delete(key);
+    else 
+        params.set(key, value);
+
+    return `?${params.toString()}`;
+}
   

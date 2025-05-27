@@ -271,6 +271,7 @@ const SearchBar = ({ input, setInput, placeholder, onSearch, role, advance_searc
   };
   return (
     <form
+      className="search-form"
       onSubmit={(e) => handleFormSubmit(e)}
     >
       <div className="search-box row gy-3">

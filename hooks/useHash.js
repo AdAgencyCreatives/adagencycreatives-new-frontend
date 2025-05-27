@@ -1,24 +1,22 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react'
 
-const useHash = () => {
-    const [hash, setHash] = useState('');
+export default function useHash() {
+  const [hash, setHash] = useState('')
 
-    useEffect(() => {
-        if (typeof window !== 'undefined') {
-            const updateHash = () => {
-                setHash(window.location.hash);
-            };
+  useEffect(() => {
+    const handleHashChange = () => {
+      setHash(window.location.hash)
+    }
 
-            window.addEventListener('hashchange', updateHash);
-            updateHash(); // Initial call
+    // Set initial hash
+    setHash(window.location.hash)
 
-            return () => window.removeEventListener('hashchange', updateHash);
-        }
-    }, []);
+    // Add event listener
+    window.addEventListener('hashchange', handleHashChange)
+    return () => window.removeEventListener('hashchange', handleHashChange)
+  }, [])
 
-    return hash;
-};
-
-export default useHash;
+  return hash
+}

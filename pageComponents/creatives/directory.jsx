@@ -9,7 +9,7 @@ import { useScrollLoader } from "hooks/useScrollLoader";
 import TailwindCircularLoader from "components/TailwindCircularLoader";
 import AnimatedBackdrop from "components/AnimatedBackdrop";
 import usePermissions from "hooks/usePermissions";
-import { parseHashToObject, updateSingleHashParam } from "utils/functions";
+import { getUpdatedSearchParamString } from "utils/functions";
 
 import { Context as AuthContext } from "contexts/AuthContext";
 import { Context as DataContext } from "contexts/DataContext";
@@ -17,14 +17,15 @@ import { Context as AlertContext } from "contexts/AlertContext";
 
 import eventEmitter from "components/EventEmitter";
 
-import { useRouter } from "next/navigation";
-import useHash from "hooks/useHash";
+import { useRouter, useSearchParams } from "next/navigation";
 import SearchBar from "components/SearchBar";
 
 const CreativesDirectory = () => {
 
   const router = useRouter();
-  const hash = useHash();
+
+  const searchParams = useSearchParams();
+  const params = Object.fromEntries(searchParams.entries());
 
   const {
     isAdmin,
@@ -48,8 +49,6 @@ const CreativesDirectory = () => {
   const [foundPermissionLevel2, setFoundPermissionLevel2] = useState(null);
   const [openCreativeProfileDialog, setOpenCreativeProfileDialog] = useState(false);
   const [previewCreative, setPreviewCreative] = useState(null);
-
-  const params = parseHashToObject(hash);
 
   const {
     state: { bookmarks },
@@ -96,11 +95,11 @@ const CreativesDirectory = () => {
     setInputClicked(clicked);
     setAdvanceSearchHasData(false);
     setInputLevel2("");
-    router.push(updateSingleHashParam('advance', ''));
+    router.push(getUpdatedSearchParamString(searchParams, 'advance', ''));
     setSearchDone("");
 
     if (!value || value.length == 0) {
-      router.push(updateSingleHashParam('search', ''));
+      router.push(getUpdatedSearchParamString(searchParams, 'search', ''));
       getDirectoryCreatives(DIRECTORY_CREATIVES_PER_PAGE);
       return;
     }
@@ -133,7 +132,7 @@ const CreativesDirectory = () => {
       });
       if (user) await getAllBookmarks(user.uuid, "creatives");
 
-      if (params?.search !== query_search_string) router.push(updateSingleHashParam('search', query_search_string));
+      if (params?.search !== query_search_string) router.push(getUpdatedSearchParamString(searchParams, 'search', query_search_string));
     } else {
       //await getDirectoryCreatives(DIRECTORY_CREATIVES_PER_PAGE);
     }
@@ -144,7 +143,7 @@ const CreativesDirectory = () => {
   const searchUserLevel2 = async (value, clicked = false, level1Input = null) => {
 
     if (!value || value.length == 0) {
-      router.push(updateSingleHashParam('advance', ''));
+      router.push(getUpdatedSearchParamString(searchParams, 'advance', ''));
       searchUser(input);
       return;
     }
@@ -186,7 +185,7 @@ const CreativesDirectory = () => {
       permissionLevel2.terms_allowed
     );
 
-    if (params?.advance !== query_search_string_level2) router.push(updateSingleHashParam('advance', query_search_string_level2));
+    if (params?.advance !== query_search_string_level2) router.push(getUpdatedSearchParamString(searchParams, 'advance', query_search_string_level2));
 
     await searchDirectoryCreativesAdvanced(which_search(), query_search_string_level1, role, query_search_string_level2);
     if (user) await getAllBookmarks(user.uuid, "creatives");
@@ -295,14 +294,14 @@ const CreativesDirectory = () => {
   const handleViewPrev = () => {
     let index = getPreviewIndex();
     if (index > 0) {
-      router.push(updateSingleHashParam('preview', directoryCreatives[index - 1].slug))
+      router.push(getUpdatedSearchParamString(searchParams, 'preview', directoryCreatives[index - 1].slug))
     }
   };
 
   const handleViewNext = () => {
     let index = getPreviewIndex();
     if (index >= 0 && index < directoryCreatives.length - 1) {
-      router.push(updateSingleHashParam('preview', directoryCreatives[index + 1].slug))
+      router.push(getUpdatedSearchParamString(searchParams, 'preview', directoryCreatives[index + 1].slug))
     }
   };
 
@@ -329,11 +328,11 @@ const CreativesDirectory = () => {
           page="creatives"
           heading="Directory"
         />
-        <div className="relative z-1 text-left search flex flex-col">
+        <div className="relative z-1 text-left search flex flex-col z-[999999]">
           {token && (
             <>
               <label className="text-[#c2c2c2]">search</label>
-              <div className="flex items-center justify-center">
+              <div className="flex flex-col items-center justify-center">
                 <SearchBar
                   input={input}
                   setInput={setInput}
@@ -365,9 +364,9 @@ const CreativesDirectory = () => {
       </section>
 
       {/* Featured Creatives */}
-      <section className="relative z-1 jobs-directory card-wrapper">
+      <section id="directory-creatives" className="relative z-1 jobs-directory card-wrapper">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
-          {directoryCreatives?.length > 0 && directoryCreatives.slice(0, input.length>0 ? directoryCreatives.length : directoryCreatives.length - 2)?.map((creative, idx) => (
+          {directoryCreatives?.length > 0 && directoryCreatives.slice(0, input.length > 0 ? directoryCreatives.length : directoryCreatives.length - 2)?.map((creative, idx) => (
             <React.Fragment key={`creative-${creative.id || idx}`}>
               {idx === 16 && (
                 <div key={`perfect-${idx}`} id={`perfect-${idx}`} className="relative col-span-2 text-center flex flex-col justify-around gap-5 md:gap-10 max-md:py-10">

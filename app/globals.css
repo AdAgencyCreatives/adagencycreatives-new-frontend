@@ -271,6 +271,57 @@ button {
   display: block;
 }
 
-.search form {
+.search-level2 {
   width: 100%;
+}
+
+.search-form {
+  width: 100%;
+}
+
+.search-suggestions {
+    display: flex;
+    padding: 10px;
+    gap: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    position: absolute;
+    z-index: 1;
+    border: 2px solid #000;
+    top: 85px;
+    left: 0px;
+    min-width: 200px;
+    width: max-content;
+}
+
+@media(max-width: 767px) {
+    .search-suggestions {
+        max-width: calc(100vw - 150px);
+    }
+}
+
+.search-suggestions ul,
+.search-suggestions ul li {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    border: 0;
+    outline: 0;
+    overflow: hidden;
+    display: block;
+    width: 100%;
+}
+
+.search-suggestions ul li {
+    color: #000;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.search-suggestions ul li:hover,
+.search-suggestions ul li.active {
+    background-color: #000 !important;
+    color: #fff !important;
 }

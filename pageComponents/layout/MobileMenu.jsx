@@ -1,6 +1,6 @@
 'use client';
 
-import { Suspense, useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import Link from 'next/link';
 import ChatIcon from 'icons/ChatIcon';
 import CloseIcon from 'icons/CloseIcon';
@@ -60,9 +60,7 @@ const MobileMenu = ({ isHomePage }) => {
               </button>
             </div>
           </div>
-          <Suspense fallback={<div className="text-white">Loading...</div>}>
             <DetailedMobileMenu isOpen={isOpen} setIsOpen={setIsOpen} user={user} />
-          </Suspense>
         </div>
         {user ? (
           <div className="flex flex-col gap-[12px] 3xl:gap-[16px] 4xl:gap-[21.33px]">

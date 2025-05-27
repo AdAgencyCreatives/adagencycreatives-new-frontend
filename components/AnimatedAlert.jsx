@@ -1,10 +1,11 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext, use } from "react";
 import {
   ExclamationCircleIcon,
   CheckCircleIcon,
   XMarkIcon,
 } from "@heroicons/react/24/solid";
 import { Context as AnimatedAlertContext } from "contexts/AnimatedAlertContext";
+import { Context as SiteContext } from "contexts/SiteContext";
 
 const AnimatedAlert = ({
   type,
@@ -29,11 +30,14 @@ const AnimatedAlert = ({
     success: <CheckCircleIcon className="w-5 h-5 mr-2 mt-0.5 flex-shrink-0" />,
   };
 
+  const { setBodyOverflowHidden } = useContext(SiteContext);
+
   const { hideAnimatedAlert } = useContext(AnimatedAlertContext);
 
   const handleDismiss = () => {
     setIsAnimatingOut(true);
     setTimeout(() => {
+      setBodyOverflowHidden(false);
       setIsVisible(false);
       hideAnimatedAlert();
     }, 300);
@@ -48,28 +52,34 @@ const AnimatedAlert = ({
     }
   }, [autoDismiss, dismissTime]);
 
+  useEffect(() => {
+    setBodyOverflowHidden(true);
+  }, []);
+
   if (!isVisible) return <></>;
 
   return (
     <div className="fixed flex flex-row justify-center items-center w-screen h-screen z-999999">
-      <div
-        className={`min-w-lg ${baseClasses} ${typeClasses[type]} ${
-          isAnimatingOut ? "opacity-0" : "opacity-100"
-        }`}
-        role="alert"
-      >
-        {icons[type]}
-        <div className="flex-grow">
-          {title && <p className="text-[24px] font-bold mb-4">{title}</p>}
-          {message && <p className="text-[18px]">{message}</p>}
-        </div>
-        <button
-          onClick={handleDismiss}
-          className="ml-2 text-current hover:text-opacity-75"
-          aria-label="Close"
+      <div className="absolute flex flex-row justify-center items-center w-screen h-screen z-0 bg-black opacity-80"></div>
+      <div className="flex flex-row justify-center items-center w-screen h-screen z-1">
+        <div
+          className={`max-sm:w-[90%] w-[40%] ${baseClasses} ${typeClasses[type]} ${isAnimatingOut ? "opacity-0" : "opacity-100"
+            }`}
+          role="alert"
         >
-          <XMarkIcon className="w-5 h-5" />
-        </button>
+          {icons[type]}
+          <div className="flex-grow">
+            {title && <p className="text-[24px] font-bold mb-4">{title}</p>}
+            {message && <p className="text-[18px]">{message}</p>}
+          </div>
+          <button
+            onClick={handleDismiss}
+            className="ml-2 text-current hover:text-opacity-75"
+            aria-label="Close"
+          >
+            <XMarkIcon className="w-5 h-5" />
+          </button>
+        </div>
       </div>
     </div>
   );
