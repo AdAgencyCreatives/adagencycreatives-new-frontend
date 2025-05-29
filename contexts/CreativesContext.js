@@ -6,15 +6,12 @@ import { usePathname } from "next/navigation";
 
 const state = {
   creatives: null,
-  directory_creatives: null,
   related_creatives: null,
   related_creatives_nextPage: null,
   search_creatives: null,
   featured_creatives: null,
   nextPage: null,
-  directory_nextPage: null,
   loading: false,
-  directory_loading: false,
   single_creative: {},
   single_creative_for_pdf: {},
   creative_experience: [],
@@ -31,7 +28,11 @@ const state = {
   notifications: [],
   cache: {},
   group_invite_members: null,
-  group_invite_members_nextPage: null
+  group_invite_members_nextPage: null,
+  directory_creatives: null,
+  directory_nextPage: null,
+  directory_loading: false,
+
 };
 
 const reducer = (state, action) => {
@@ -43,12 +44,6 @@ const reducer = (state, action) => {
         ...state,
         creatives: action.payload.data,
         nextPage: action.payload.links.next,
-      };
-    case "set_directory_creatives":
-      return {
-        ...state,
-        directory_creatives: action.payload.data,
-        directory_nextPage: action.payload.links.next,
       };
     case "set_related_creatives":
       return {
@@ -92,12 +87,6 @@ const reducer = (state, action) => {
         creatives: [...state.creatives, ...action.payload.data],
         nextPage: action.payload.links.next,
       };
-    case "load_directory_creatives":
-      return {
-        ...state,
-        directory_creatives: [...state.directory_creatives, ...action.payload.data],
-        directory_nextPage: action.payload.links.next,
-      };
     case "load_group_invite_member":
       return {
         ...state,
@@ -112,8 +101,6 @@ const reducer = (state, action) => {
       };
     case "set_loading":
       return { ...state, loading: action.payload };
-    case "set_directory_loading":
-      return { ...state, directory_loading: action.payload };
     case "set_form_submit":
       return { ...state, formSubmit: action.payload };
     case "set_stats":
@@ -135,6 +122,20 @@ const reducer = (state, action) => {
       return { ...state, applications: action.payload.data };
     case "set_notifications":
       return { ...state, notifications: action.payload.data };
+    case "set_directory_creatives":
+      return {
+        ...state,
+        directory_creatives: action.payload.data,
+        directory_nextPage: action.payload.links.next,
+      };
+    case "load_directory_creatives":
+      return {
+        ...state,
+        directory_creatives: [...state.directory_creatives, ...action.payload.data],
+        directory_nextPage: action.payload.links.next,
+      };
+    case "set_directory_loading":
+      return { ...state, directory_loading: action.payload };
     default:
       return state;
   }
@@ -149,23 +150,6 @@ const getCreatives = (dispatch) => {
         payload: response.data,
       });
     } catch (error) { }
-  };
-};
-
-const getDirectoryCreatives = (dispatch) => {
-  return async (per_page = false) => {
-    setDirectoryLoading(dispatch, true);
-    try {
-      const response = await api.get(`/creatives?filter[status]=1&filter[is_visible]=1${per_page ? '&per_page=' + per_page : ''}`);
-      dispatch({
-        type: "set_directory_creatives",
-        payload: response.data,
-      });
-    } catch (error) { 
-
-    } finally {
-      setDirectoryLoading(dispatch, false);
-    }
   };
 };
 
@@ -313,21 +297,6 @@ const searchCreativesAdvanced = (dispatch) => {
   };
 };
 
-const searchDirectoryCreativesAdvanced = (dispatch) => {
-  return async (type, query, role, queryLevel2 = "", cb = (data = null) => { }) => {
-    setLoading(dispatch, true);
-    try {
-      const response = await api.get("/creatives/" + type + "?search=" + query + "&role=" + role + (queryLevel2?.length > 0 ? ("&search_level2=" + queryLevel2) : ""));
-      dispatch({
-        type: "set_directory_creatives",
-        payload: response.data,
-      });
-      cb(response.data?.data);
-    } catch (error) { }
-    setLoading(dispatch, false);
-  };
-};
-
 const searchGroupInviteMember = (dispatch) => {
   return async (type, query, role, queryLevel2 = "", cb = (data = null) => { }) => {
     setLoading(dispatch, true);
@@ -418,23 +387,6 @@ const loadCreatives = (dispatch) => {
   };
 };
 
-const loadDirectoryCreatives = (dispatch) => {
-  return async (page) => {
-    setDirectoryLoading(dispatch, true);
-    try {
-      const response = await api.get(page);
-      dispatch({
-        type: "load_directory_creatives",
-        payload: response.data,
-      });
-    } catch (error) {
-
-     } finally {
-    setDirectoryLoading(dispatch, false);
-     }
-  };
-};
-
 const loadSearchCreatives = (dispatch) => {
   return async (page) => {
     setLoading(dispatch, true);
@@ -452,13 +404,6 @@ const loadSearchCreatives = (dispatch) => {
 const setLoading = (dispatch, status) => {
   dispatch({
     type: "set_loading",
-    payload: status,
-  });
-};
-
-const setDirectoryLoading = (dispatch, status) => {
-  dispatch({
-    type: "set_directory_loading",
     payload: status,
   });
 };
@@ -777,25 +722,79 @@ const deleteApplication = (dispatch) => {
   };
 };
 
+const getDirectoryCreatives = (dispatch) => {
+  return async (per_page = false) => {
+    setDirectoryLoading(dispatch, true);
+    try {
+      const response = await api.get(`/creatives?filter[status]=1&filter[is_visible]=1${per_page ? '&per_page=' + per_page : ''}`);
+      dispatch({
+        type: "set_directory_creatives",
+        payload: response.data,
+      });
+    } catch (error) {
+
+    } finally {
+      setDirectoryLoading(dispatch, false);
+    }
+  };
+};
+
+const searchDirectoryCreativesAdvanced = (dispatch) => {
+  return async (type, query, role, queryLevel2 = "", cb = (data = null) => { }) => {
+    setLoading(dispatch, true);
+    try {
+      const response = await api.get("/creatives/" + type + "?search=" + query + "&role=" + role + (queryLevel2?.length > 0 ? ("&search_level2=" + queryLevel2) : ""));
+      dispatch({
+        type: "set_directory_creatives",
+        payload: response.data,
+      });
+      cb(response.data?.data);
+    } catch (error) { }
+    setLoading(dispatch, false);
+  };
+};
+
+const loadDirectoryCreatives = (dispatch) => {
+  return async (page) => {
+    setDirectoryLoading(dispatch, true);
+    try {
+      const response = await api.get(page);
+      dispatch({
+        type: "load_directory_creatives",
+        payload: response.data,
+      });
+    } catch (error) {
+
+    } finally {
+      setDirectoryLoading(dispatch, false);
+    }
+  };
+};
+
+const setDirectoryLoading = (dispatch, status) => {
+  dispatch({
+    type: "set_directory_loading",
+    payload: status,
+  });
+};
+
+
 export const { Context, Provider } = createDataContext(
   reducer,
   {
     getCreatives,
-    getDirectoryCreatives,
     getRelatedCreatives,
     getFeaturedCreatives,
     getStats,
     getCreativeDashboardStatsCacheOnly,
     getApplications,
     loadCreatives,
-    loadDirectoryCreatives,
     loadSearchCreatives,
     getCreative,
     getCreativeForPdf,
     getCreativeById,
     searchCreatives,
     searchCreativesAdvanced,
-    searchDirectoryCreativesAdvanced,
     searchCreativesFull,
     saveCreative,
     saveResume,
@@ -818,7 +817,10 @@ export const { Context, Provider } = createDataContext(
     generateCroppedAttachment,
     getGroupInviteMembers,
     searchGroupInviteMember,
-    loadGroupInviteMember
+    loadGroupInviteMember,
+    getDirectoryCreatives,
+    loadDirectoryCreatives,
+    searchDirectoryCreativesAdvanced,
   },
   state
 );

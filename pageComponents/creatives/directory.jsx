@@ -87,7 +87,7 @@ const CreativesDirectory = () => {
   };
 
   const DIRECTORY_CREATIVES_PER_PAGE = 20;
-  const { directoryCreatives, directory_loading, getDirectoryCreatives, loadMoreDirectoryCreatives, searchDirectoryCreativesAdvanced } = useDirectoryCreatives();
+  const { directoryCreatives, directory_nextPage, directory_loading, getDirectoryCreatives, loadMoreDirectoryCreatives, searchDirectoryCreativesAdvanced } = useDirectoryCreatives();
 
   useScrollLoader(directory_loading, loadMoreDirectoryCreatives);
 
@@ -366,7 +366,7 @@ const CreativesDirectory = () => {
       {/* Featured Creatives */}
       <section id="directory-creatives" className="relative z-1 jobs-directory card-wrapper">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
-          {directoryCreatives?.length > 0 && directoryCreatives.slice(0, input.length > 0 ? directoryCreatives.length : directoryCreatives.length - 2)?.map((creative, idx) => (
+          {directoryCreatives?.length > 0 && directoryCreatives.slice(0, directory_nextPage ? directoryCreatives.length - 2 : directoryCreatives.length)?.map((creative, idx) => (
             <React.Fragment key={`creative-${creative.id || idx}`}>
               {idx === 16 && (
                 <div key={`perfect-${idx}`} id={`perfect-${idx}`} className="relative col-span-2 text-center flex flex-col justify-around gap-5 md:gap-10 max-md:py-10">

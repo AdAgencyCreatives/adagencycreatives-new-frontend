@@ -66,7 +66,7 @@ const SignIn = ({ role }) => {
       />
       {user ? (
         <div className="relative z-999999 flex flex-col justify-center items-center h-[300px] pb-[200px]">
-          <span>Welcome, {user?.name || ""}&nbsp;</span>
+          <div className={"text-[19px] xl:text-[21px] 2xl:text-[29px] text-white"}>Welcome, {user?.name || ""}&nbsp;</div>
           <SignOutLink placement="" />
         </div>
       ) : (

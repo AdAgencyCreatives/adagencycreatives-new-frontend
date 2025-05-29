@@ -209,8 +209,8 @@
   }
 
   .featured-creatives .card .name {
-    font-size: 1.875rem;
-    line-height: 100%;
+    font-size: 1.25rem;
+    padding-bottom: 0.375rem;
   }
 
   .featured-creatives .card .title {
@@ -254,7 +254,7 @@
   }
 
   .card .name {
-    font-size: 1.875rem;
+    font-size: 1.25rem;
     padding-bottom: 0.375rem;
   }
 

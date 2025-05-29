@@ -79,37 +79,41 @@ export function checkCookie(cookiename) {
 export const parseHashToObject = (hash) => {
     // Remove the leading '#' if it exists
     const cleanedHash = hash.startsWith('#') ? hash.substring(1) : hash;
-  
+
     // Parse the hash params
     const params = new URLSearchParams(cleanedHash);
     const obj = {};
-  
+
     for (const [key, value] of params.entries()) {
-      obj[key] = value;
+        obj[key] = value;
     }
-  
+
     return obj;
 };
-  
+
 export const updateSingleHashParam = (key, value) => {
     const params = new URLSearchParams(window.location.hash.replace('#', ''));
-    
+
     if (!value)
         params.delete(key);
-    else 
+    else
         params.set(key, value);
 
     return `#${params.toString()}`;
 }
 
-export const getUpdatedSearchParamString= (searchParams, key, value) => {
+export const getUpdatedSearchParamString = (searchParams, key, value) => {
     const params = new URLSearchParams(searchParams.toString());
-    
+
     if (!value)
         params.delete(key);
-    else 
+    else
         params.set(key, value);
 
     return `?${params.toString()}`;
 }
-  
+
+export const isStringArray = (value) => {
+    return Array.isArray(value) &&
+        value.every(item => typeof item === 'string');
+};

@@ -26,7 +26,7 @@ const useDirectoryCreatives = () => {
     };
 
     return {
-        directoryCreatives, directory_loading, getDirectoryCreatives, loadMoreDirectoryCreatives, searchDirectoryCreativesAdvanced
+        directoryCreatives, directory_nextPage, directory_loading, getDirectoryCreatives, loadMoreDirectoryCreatives, searchDirectoryCreativesAdvanced
     };
 }
 

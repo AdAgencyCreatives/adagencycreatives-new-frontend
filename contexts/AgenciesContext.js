@@ -17,7 +17,11 @@ const state = {
   request_package: null,
   video: null,
   creative_applications: [],
-  cache: {}
+  cache: {},
+  directory_agencies: null,
+  directory_nextPage: null,
+  directory_loading: false,
+
 };
 
 const reducer = (state, action) => {
@@ -71,6 +75,20 @@ const reducer = (state, action) => {
       return { ...state, subscription: action.payload };
     case "set_request_package":
       return { ...state, request_package: action.payload };
+    case "set_directory_agencies":
+      return {
+        ...state,
+        directory_agencies: action.payload.data,
+        directory_nextPage: action.payload.links.next,
+      };
+    case "load_directory_agencies":
+      return {
+        ...state,
+        directory_agencies: [...state.directory_agencies, ...action.payload.data],
+        directory_nextPage: action.payload.links.next,
+      };
+    case "set_directory_loading":
+      return { ...state, directory_loading: action.payload };
     default:
       return state;
   }
@@ -583,7 +601,7 @@ const getCreativeApplications = (dispatch) => {
 };
 
 const isCreativeApplicant = (dispatch) => {
-  return async (job_user_id, creative_user_id, cb = () => { }) => {
+  return async (job_user_id, creative_user_id, cb = (data = null) => { }) => {
     try {
       const response = await api.get("/is_creative_applicant?job_user_id=" + job_user_id + "&creative_user_id=" + creative_user_id);
       const data = response.data;
@@ -591,6 +609,63 @@ const isCreativeApplicant = (dispatch) => {
     } catch (error) { }
   };
 };
+
+const getDirectoryAgencies = (dispatch) => {
+  return async (per_page = false) => {
+    setDirectoryLoading(dispatch, true);
+    try {
+      const response = await api.get(`/agencies?filter[status]=1&filter[is_visible]=1&sort=-featured_at${per_page ? '&per_page=' + per_page : ''}`);
+      dispatch({
+        type: "set_directory_agencies",
+        payload: response.data,
+      });
+    } catch (error) {
+
+    } finally {
+      setDirectoryLoading(dispatch, false);
+    }
+  };
+};
+
+const searchDirectoryAgenciesAdvanced = (dispatch) => {
+  return async (query, cb = (data = null) => { }) => {
+    setLoading(dispatch, true);
+    try {
+      const response = await api.get("/agencies/search1" + "?search=" + query);
+      dispatch({
+        type: "set_directory_agencies",
+        payload: response.data,
+      });
+      cb(response.data?.data);
+    } catch (error) { }
+    setLoading(dispatch, false);
+  };
+};
+
+const loadDirectoryAgencies = (dispatch) => {
+  return async (page) => {
+    setDirectoryLoading(dispatch, true);
+    try {
+      const response = await api.get(page);
+      dispatch({
+        type: "load_directory_agencies",
+        payload: response.data,
+      });
+    } catch (error) {
+
+    } finally {
+      setDirectoryLoading(dispatch, false);
+    }
+  };
+};
+
+const setDirectoryLoading = (dispatch, status) => {
+  dispatch({
+    type: "set_directory_loading",
+    payload: status,
+  });
+};
+
 
 export const { Context, Provider } = createDataContext(
   reducer,
@@ -625,6 +700,9 @@ export const { Context, Provider } = createDataContext(
     generateCroppedAttachment,
     getCreativeApplications,
     isCreativeApplicant,
+    getDirectoryAgencies,
+    loadDirectoryAgencies,
+    searchDirectoryAgenciesAdvanced,
   },
   state
 );
