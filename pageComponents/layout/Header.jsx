@@ -20,7 +20,7 @@ const Header = () => {
   
   return (
     <header
-      className={`header flex items-center justify-between z-30 ${scrolled ? "bg-black/75" : "bg-transparent" } fixed w-full top-0`}
+      className={`header flex items-center justify-between ${scrolled ? "bg-black/75" : "bg-transparent" } fixed w-full top-0 z-999999`}
     >
       <Link href="/" className="cursor-pointer">
         <img

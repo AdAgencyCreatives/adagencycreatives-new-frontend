@@ -2,7 +2,6 @@
 
 import { api } from "contexts/api";
 import createDataContext from "./createDataContext";
-import { featuredJobs } from "constants/jobs";
 
 const state = {
   jobs: [],
@@ -33,6 +32,9 @@ const state = {
   applicationsNextPage: null,
   notesNextPage: null,
   cache: {},
+  directory_jobs: null,
+  directory_nextPage: null,
+  directory_loading: false,
 };
 
 const reducer = (state, action) => {
@@ -42,7 +44,7 @@ const reducer = (state, action) => {
     case "set_jobs":
       return { ...state, jobs: action.payload.data, meta: action.payload.meta };
     case "set_featured_jobs":
-      return { ...state, featured_jobs: action.payload.data};
+      return { ...state, featured_jobs: action.payload.data };
     case "set_applications":
       return {
         ...state,
@@ -143,6 +145,20 @@ const reducer = (state, action) => {
       return { ...state, jobs_loading: action.payload };
     case "set_loading_app":
       return { ...state, isLoadingApp: action.payload };
+    case "set_directory_jobs":
+      return {
+        ...state,
+        directory_jobs: action.payload.data,
+        directory_nextPage: action.payload.links.next,
+      };
+    case "load_directory_jobs":
+      return {
+        ...state,
+        directory_jobs: [...state.directory_jobs, ...action.payload.data],
+        directory_nextPage: action.payload.links.next,
+      };
+    case "set_directory_loading":
+      return { ...state, directory_loading: action.payload };
     default:
       return state;
   }
@@ -861,6 +877,62 @@ const setLoadingApp = (dispatch, state) => {
   });
 };
 
+const getDirectoryJobs = (dispatch) => {
+  return async (user = null, per_page = false) => {
+    setDirectoryLoading(dispatch, true);
+    try {
+      const response = await api.get(getJobEndpoint(user) + "?filter[status]=" + status + "&sort=-featured_at" + (per_page ? '&per_page=' + per_page : ''));
+      dispatch({
+        type: "set_directory_jobs",
+        payload: response.data,
+      });
+    } catch (error) {
+
+    } finally {
+      setDirectoryLoading(dispatch, false);
+    }
+  };
+};
+
+const searchDirectoryJobsAdvanced = (dispatch) => {
+  return async (query, user = null, cb = (data = null) => { }) => {
+    setLoading(dispatch, true);
+    try {
+      const response = await api.get(getJobEndpoint(user) + "?filter[status]=" + status + "&sort=-featured_at");
+      dispatch({
+        type: "set_directory_jobs",
+        payload: response.data,
+      });
+      cb(response.data?.data);
+    } catch (error) { }
+    setLoading(dispatch, false);
+  };
+};
+
+const loadDirectoryJobs = (dispatch) => {
+  return async (page) => {
+    setDirectoryLoading(dispatch, true);
+    try {
+      const response = await api.get(page);
+      dispatch({
+        type: "load_directory_jobs",
+        payload: response.data,
+      });
+    } catch (error) {
+
+    } finally {
+      setDirectoryLoading(dispatch, false);
+    }
+  };
+};
+
+const setDirectoryLoading = (dispatch, status) => {
+  dispatch({
+    type: "set_directory_loading",
+    payload: status,
+  });
+};
+
 export const { Context, Provider } = createDataContext(
   reducer,
   {
@@ -899,6 +971,9 @@ export const { Context, Provider } = createDataContext(
     applyJob,
     markFilled,
     application_remove_from_recent,
+    getDirectoryJobs,
+    loadDirectoryJobs,
+    searchDirectoryJobsAdvanced,
   },
   state
 );

@@ -21,7 +21,6 @@ const state = {
   directory_agencies: null,
   directory_nextPage: null,
   directory_loading: false,
-
 };
 
 const reducer = (state, action) => {

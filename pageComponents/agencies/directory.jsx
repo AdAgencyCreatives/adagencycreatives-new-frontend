@@ -82,7 +82,7 @@ const AgenciesDirectory = () => {
 
   useScrollLoader(directory_loading, loadMoreDirectoryAgencies);
 
-  const searchUser = async (value, clicked = false) => {
+  const handleSearch = async (value, clicked = false) => {
     setInputClicked(clicked);
     setSearchDone("");
 
@@ -120,7 +120,7 @@ const AgenciesDirectory = () => {
   const process_agencies = async () => {
     if (subscription_status && params?.search && !params?.advance) {
       setInput(params.search);
-      searchUser(params.search);
+      handleSearch(params.search);
     } else if (subscription_status && params?.advance) {
       setInput(params.search);
     } else {
@@ -136,7 +136,7 @@ const AgenciesDirectory = () => {
           page="agencies"
           heading="Directory"
         />
-        <div className="relative z-1 text-left search flex flex-col z-[999999]">
+        <div className="relative text-left search flex flex-col z-999998">
           {token && (
             <>
               <label className="text-[#c2c2c2]">search</label>
@@ -145,7 +145,7 @@ const AgenciesDirectory = () => {
                   input={input}
                   setInput={setInput}
                   placeholder={agencySearchPlaceholder}
-                  onSearch={searchUser}
+                  onSearch={handleSearch}
                   role={role}
                   advance_search_capabilities={advance_search_capabilities}
                   subscription_status={subscription_status}
@@ -159,9 +159,9 @@ const AgenciesDirectory = () => {
       {/* Featured Agencies */}
       <section id="directory-agencies" className="relative z-1 jobs-directory card-wrapper">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
-          {directoryAgencies?.length > 0 && directoryAgencies.slice(0, directory_nextPage ? directoryAgencies.length - 2 : directoryAgencies.length)?.map((agency, idx) => (
+          {directoryAgencies?.length > 0 && directoryAgencies.map((agency, idx) => (
             <React.Fragment key={`agency-${agency.id || idx}`}>
-              {idx === 16 && (
+              {/* {idx === 16 && (
                 <div key={`perfect-${idx}`} id={`perfect-${idx}`} className="relative col-span-2 text-center flex flex-col justify-around gap-5 md:gap-10 max-md:py-10">
                   <AnimatedBackdrop className={'block'} />
                   <h2 className="relative z-1 pb-0 pt-6 2xl:pb-14 2xl:pt-20 3xl:pb-20 3xl:pt-26 4xl:py-15 font-arial font-bold  md:leading-[58.5px] 3xl:leading-[78px] 4xl:leading-[104px]">Why<br />Search?<br />Post & Attract!</h2>
@@ -174,17 +174,20 @@ const AgenciesDirectory = () => {
                     </Link>
                   </div>
                 </div>
-              )}
+              )} */}
 
               <AgencyLoopItem key={`${idx}-3`} agency={agency} />
             </React.Fragment>
           ))}
         </div>
       </section>
+      {/* Directory Loader */}
       {directory_loading && (
-        <div className="pb-[50px]">
-          <TailwindCircularLoader size={10} />
-        </div>
+        <section className="pt-31 pb-21 2xl:pb-36 2xl:pt-40 3xl:pb-44 3xl:pt-33 4xl:pb-40 4xl:pt-50">
+          <div className="flex justify-center align-center">
+            <TailwindCircularLoader size={10} />
+          </div>
+        </section>
       )}
     </div>
   );

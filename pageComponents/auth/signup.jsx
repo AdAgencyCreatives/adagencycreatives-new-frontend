@@ -40,7 +40,7 @@ const SignUp = ({ role }) => {
           setLoading(false);
         }
       );
-    } catch (error) {}
+    } catch (error) { }
   };
 
   const SuccessMessage = () => {
@@ -85,7 +85,7 @@ const SignUp = ({ role }) => {
   }, [apiResponse]);
 
   return (
-    <div className="text-center space-y-6 max-w-[721px] mx-auto pt-[300px] pb-[150px] relative">
+    <div className="text-center space-y-6 max-w-[931px] mx-auto pt-[150px] pb-[150px] relative page-sign-up">
       <PageHeader
         page={role}
         subPage={{ text: "signin", url: `/${role}-signin` }}
@@ -94,7 +94,7 @@ const SignUp = ({ role }) => {
 
       {user ? (
         <div className="relative z-999999 flex flex-col justify-center items-center h-[300px] pb-[200px]">
-          <span>Welcome! {user?.name || ""}&nbsp;</span>
+          <div className={"text-[19px] xl:text-[21px] 2xl:text-[29px] text-white"}>Welcome, {user?.name || ""}&nbsp;</div>
           <SignOutLink placement="" />
         </div>
       ) : (

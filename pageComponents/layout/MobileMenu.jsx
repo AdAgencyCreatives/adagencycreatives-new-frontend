@@ -8,6 +8,7 @@ import MenuIcon from 'icons/MenuIcon';
 import { Context as SiteContext } from "contexts/SiteContext";
 import { Context as AuthContext } from "contexts/AuthContext";
 import DetailedMobileMenu from './DetailedMobileMenu';
+import LinkOrDiv from 'components/LinkOrDiv';
 
 const MobileMenu = ({ isHomePage }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,9 +30,9 @@ const MobileMenu = ({ isHomePage }) => {
   return (
     <div className="relative flex items-center gap-[32px] 3xl:gap-[42.67px] 4xl:gap-[56.89px]">
       {/* Toggle Button */}
-      <button className="cursor-pointer transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow">
+      <LinkOrDiv href='/chat' className="cursor-pointer transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow">
         <ChatIcon />
-      </button>
+      </LinkOrDiv>
       <button
         className={`focus:outline-none ${isHomePage ? 'block' : 'lg:hidden inline-block'} cursor-pointer transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow`}
       >
@@ -52,15 +53,15 @@ const MobileMenu = ({ isHomePage }) => {
               />
             </Link>
             <div className="flex flex-row gap-[32px] 3xl:gap-[42.67px] 4xl:gap-[56.89px]">
-              <button className="cursor-pointer transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow">
+              <LinkOrDiv href='/chat' className="cursor-pointer transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow">
                 <ChatIcon />
-              </button>
+              </LinkOrDiv>
               <button className="cursor-pointer transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow">
                 <CloseIcon onClick={toggleSidebar} />
               </button>
             </div>
           </div>
-            <DetailedMobileMenu isOpen={isOpen} setIsOpen={setIsOpen} user={user} />
+          <DetailedMobileMenu isOpen={isOpen} setIsOpen={setIsOpen} user={user} />
         </div>
         {user ? (
           <div className="flex flex-col gap-[12px] 3xl:gap-[16px] 4xl:gap-[21.33px]">

@@ -21,10 +21,12 @@ const JobLoopItem = ({ job, className }) => {
         <LinkOrDiv href={agency_url} className={`text-white ${agency_url?.length > 0 ? 'hover:text-brand-yellow cursor-pointer' : ''} leading-[100%] name`}>{job.agency}</LinkOrDiv>
         <LinkOrDiv href={job_url} className={`text-white ${job_url?.length > 0 ? 'hover:text-brand-yellow cursor-pointer' : ''} lowercase title`}>{job.title}</LinkOrDiv>
         <div className="separator w-full mx-auto"></div>
-        {city_url?.length > 0 && state_url?.length > 0 ? (<>
-          <LinkOrDiv href={city_url} className={`text-white ${city_url?.length > 0 ? 'hover:text-brand-yellow cursor-pointer' : ''} uppercase location`}>{job.item.location.city}</LinkOrDiv>{', '}
-          <LinkOrDiv href={state_url} className={`text-white ${state_url?.length > 0 ? 'hover:text-brand-yellow cursor-pointer' : ''} uppercase location`}>{job.item.location.state}</LinkOrDiv>
-        </>) : (<>
+        {city_url?.length > 0 && state_url?.length > 0 ? (
+          <div className="location">
+            <LinkOrDiv href={city_url} className={`text-white ${city_url?.length > 0 ? 'hover:text-brand-yellow cursor-pointer' : ''} uppercase`}>{job.item.location.city}</LinkOrDiv>{', '}
+            <LinkOrDiv href={state_url} className={`text-white ${state_url?.length > 0 ? 'hover:text-brand-yellow cursor-pointer' : ''} uppercase`}>{job.item.location.state}</LinkOrDiv>
+          </div>
+        ) : (<>
           <LinkOrDiv href="" className="text-white uppercase location">{job.location}</LinkOrDiv>
         </>)}
       </div>

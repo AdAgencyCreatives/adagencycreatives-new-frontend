@@ -1,11 +1,105 @@
+'use client';
+
 import PageHeader from "components/PageHeader";
 import JobLoopItem from "./loop/item";
 import Link from "next/link";
-import { jobsDirectory } from "constants/jobs";
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import AnimatedBackdrop from "components/AnimatedBackdrop";
+import useDirectoryJobs from "hooks/useDirectoryJobs";
+import { useRouter, useSearchParams } from "next/navigation";
+import usePermissions from "hooks/usePermissions";
+import { Context as AuthContext } from "contexts/AuthContext";
+import { Context as AlertContext } from "contexts/AlertContext";
+import { useScrollLoader } from "hooks/useScrollLoader";
+import { getUpdatedSearchParamString } from "utils/functions";
+import SearchBar from "components/SearchBar";
+import TailwindCircularLoader from "components/TailwindCircularLoader";
 
 const JobsDirectory = () => {
+
+  const router = useRouter();
+
+  const searchParams = useSearchParams();
+  const params = Object.fromEntries(searchParams.entries());
+
+  const {
+    isAdmin,
+    isAdvisor,
+    isAgency,
+    isCreative,
+    isRecruiter,
+    hasSubscription,
+    build_search_string,
+    which_search,
+    proceed_search,
+  } = usePermissions();
+
+  const [input, setInput] = useState("");
+  const [inputClicked, setInputClicked] = useState(false);
+  const [isJobLoading, setIsJobLoading] = useState(true);
+  const [searchDone, setSearchDone] = useState("");
+
+  const {
+    state: {
+      role,
+      user,
+      token,
+      subscription_status,
+      advance_search_capabilities,
+    },
+  } = useContext(AuthContext);
+
+  const { showAlert } = useContext(AlertContext);
+
+  const [agencySearchPlaceholder, setAgencySearchPlaceholder] = useState(
+    "title, name, location, etc"
+  );
+
+  const DIRECTORY_AGENCIES_PER_PAGE = 20;
+  const { directoryJobs, directory_nextPage, directory_loading, getDirectoryJobs, loadMoreDirectoryJobs, searchDirectoryJobsAdvanced } = useDirectoryJobs();
+
+  useScrollLoader(directory_loading, loadMoreDirectoryJobs);
+
+  const handleSearch = async (value, clicked = false) => {
+    setInputClicked(clicked);
+    setSearchDone("");
+
+    if (!value || value.length == 0) {
+      router.push(getUpdatedSearchParamString(searchParams, 'search', ''));
+      getDirectoryJobs(DIRECTORY_AGENCIES_PER_PAGE);
+      return;
+    }
+
+    setIsJobLoading(true);
+    let searchString = "" + (value ? value : "");
+    await searchDirectoryJobsAdvanced(searchString, (data) => { });
+
+    if (params?.search !== searchString) {
+      router.push(getUpdatedSearchParamString(searchParams, 'search', searchString));
+    }
+
+    setIsJobLoading(false);
+  };
+
+  useEffect(() => {
+    if (directoryJobs?.length >= 0) setIsJobLoading(false);
+  }, [directoryJobs]);
+
+  useEffect(() => {
+    process_jobs();
+  }, [subscription_status]);
+
+  const process_jobs = async () => {
+    if (subscription_status && params?.search && !params?.advance) {
+      setInput(params.search);
+      handleSearch(params.search);
+    } else if (subscription_status && params?.advance) {
+      setInput(params.search);
+    } else {
+      getDirectoryJobs(DIRECTORY_AGENCIES_PER_PAGE);
+    }
+  };
+
   return (
     <div>
       {/* Hero */}
@@ -14,21 +108,29 @@ const JobsDirectory = () => {
           page="jobs"
           heading="Directory"
         />
-        <div className="relative z-1 text-left search flex flex-col">
-          <label className="text-[#c2c2c2]">search</label>
-          <div className="flex items-center justify-center">
-            <input
-              type="email"
-              placeholder="title, name, location, etc."
-              className="bg-transparent outline-none w-full text-white placeholder-white focus:bg-black/50"
-            />
-          </div>
+        <div className="relative text-left search flex flex-col z-999998">
+          {token && (
+            <>
+              <label className="text-[#c2c2c2]">search</label>
+              <div className="flex flex-col items-center justify-center">
+                <SearchBar
+                  input={input}
+                  setInput={setInput}
+                  placeholder={agencySearchPlaceholder}
+                  onSearch={handleSearch}
+                  role={role}
+                  advance_search_capabilities={advance_search_capabilities}
+                  subscription_status={subscription_status}
+                />
+              </div>
+            </>
+          )}
         </div>
       </section>
       {/* Featured Jobs */}
       <section className="relative z-1 jobs-directory card-wrapper">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
-          {jobsDirectory.map((job, idx) => (
+          {directoryJobs?.length > 0 && directoryJobs.slice(0, directory_nextPage ? directoryJobs.length - 2 : directoryJobs.length)?.map((job, idx) => (
             <React.Fragment key={`job-${job.id || idx}`}>
               {idx === 16 && (
                 <div key={`perfect-${idx}`} id={`perfect-${idx}`} className="relative col-span-2 text-center flex flex-col justify-around gap-5 md:gap-10 max-md:py-10">
@@ -44,19 +146,21 @@ const JobsDirectory = () => {
                   </div>
                 </div>
               )}
-            
-              <JobLoopItem key={idx} job={job} className={''}/>
+
+              <JobLoopItem key={idx} job={job} className={''} />
             </React.Fragment>
           ))}
         </div>
       </section>
-      {/* logo */}
-      <section className="pt-31 pb-21 2xl:pb-36 2xl:pt-40 3xl:pb-44 3xl:pt-33 4xl:pb-40 4xl:pt-50">
-        <div className="flex justify-center align-center">
-          <img src="/aac-logo-white.avif"  alt={''} className="directory-logo" />
-        </div>
-      </section>
-      </div>
+      {/* Directory Loader */}
+      {directory_loading && (
+        <section className="pt-31 pb-21 2xl:pb-36 2xl:pt-40 3xl:pb-44 3xl:pt-33 4xl:pb-40 4xl:pt-50">
+          <div className="flex justify-center align-center">
+            <TailwindCircularLoader size={10} />
+          </div>
+        </section>
+      )}
+    </div>
   );
 };
 

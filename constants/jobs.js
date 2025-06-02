@@ -9,7 +9,7 @@ export const placeholderFeaturedJobs = [
   { title: 'coming soon', image: '/jobs/job1.avif', agency: 'AGENCY', location: 'Denver, CO', item:{} },
 ];
 
-export const jobsDirectory = [
+export const placeholderDirectoryJobs = [
   { title: 'coming soon', image: '/jobs/job1.avif', agency: 'AGENCY', location: 'Las Vegas, NV', item:{} },
   { title: 'coming soon', image: '/jobs/job2.avif', agency: 'AGENCY', location: 'Brooklyn, NY', item:{} },
   { title: 'coming soon', image: '/jobs/job3.avif', agency: 'AGENCY', location: 'Houston, TX', item:{} },

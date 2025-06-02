@@ -91,7 +91,7 @@ const CreativesDirectory = () => {
 
   useScrollLoader(directory_loading, loadMoreDirectoryCreatives);
 
-  const searchUser = async (value, clicked = false) => {
+  const handleSearch = async (value, clicked = false) => {
     setInputClicked(clicked);
     setAdvanceSearchHasData(false);
     setInputLevel2("");
@@ -140,11 +140,11 @@ const CreativesDirectory = () => {
     setIsCreativeLoading(false);
   };
 
-  const searchUserLevel2 = async (value, clicked = false, level1Input = null) => {
+  const handleSearchLevel2 = async (value, clicked = false, level1Input = null) => {
 
     if (!value || value.length == 0) {
       router.push(getUpdatedSearchParamString(searchParams, 'advance', ''));
-      searchUser(input);
+      handleSearch(input);
       return;
     }
 
@@ -261,12 +261,12 @@ const CreativesDirectory = () => {
   const process_creatives = async () => {
     if (subscription_status && params?.search && !params?.advance) {
       setInput(params.search);
-      searchUser(params.search);
+      handleSearch(params.search);
     } else if (subscription_status && params?.advance) {
       setInput(params.search);
       setAdvanceSearchHasData(true);
       setInputLevel2(params.advance);
-      searchUserLevel2(params.advance, false, params.search ?? '');
+      handleSearchLevel2(params.advance, false, params.search ?? '');
     } else {
       getDirectoryCreatives(DIRECTORY_CREATIVES_PER_PAGE);
     }
@@ -328,7 +328,7 @@ const CreativesDirectory = () => {
           page="creatives"
           heading="Directory"
         />
-        <div className="relative z-1 text-left search flex flex-col z-[999999]">
+        <div className="relative text-left search flex flex-col z-999998">
           {token && (
             <>
               <label className="text-[#c2c2c2]">search</label>
@@ -337,7 +337,7 @@ const CreativesDirectory = () => {
                   input={input}
                   setInput={setInput}
                   placeholder={creativeSearchPlaceholder}
-                  onSearch={searchUser}
+                  onSearch={handleSearch}
                   role={role}
                   advance_search_capabilities={advance_search_capabilities}
                   subscription_status={subscription_status}
@@ -350,7 +350,7 @@ const CreativesDirectory = () => {
                       setInput={setInputLevel2}
                       // placeholder={creativeSearchPlaceholder}
                       placeholder={"Search within results"}
-                      onSearch={searchUserLevel2}
+                      onSearch={handleSearchLevel2}
                       role={role}
                       advance_search_capabilities={advance_search_capabilities}
                       subscription_status={subscription_status}
@@ -388,10 +388,13 @@ const CreativesDirectory = () => {
           ))}
         </div>
       </section>
+      {/* Directory Loader */}
       {directory_loading && (
-        <div className="pb-[50px]">
-          <TailwindCircularLoader size={10} />
-        </div>
+        <section className="pt-31 pb-21 2xl:pb-36 2xl:pt-40 3xl:pb-44 3xl:pt-33 4xl:pb-40 4xl:pt-50">
+          <div className="flex justify-center align-center">
+            <TailwindCircularLoader size={10} />
+          </div>
+        </section>
       )}
     </div>
   );
