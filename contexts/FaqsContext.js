@@ -31,7 +31,7 @@ const reducer = (state, action) => {
 };
 
 const getDirectoryFaqs = (dispatch) => {
-  return async (per_page = false) => {
+  return async (per_page = false, cb = (data, error) => { }) => {
     setDirectoryLoading(dispatch, true);
     try {
       const response = await api.get(`/faqs?per_page=${per_page ? per_page : 999999}`);
@@ -39,8 +39,9 @@ const getDirectoryFaqs = (dispatch) => {
         type: "set_directory_faqs",
         payload: response.data,
       });
+      cb(response.data, null);
     } catch (error) {
-
+      cb(null, error);
     } finally {
       setDirectoryLoading(dispatch, false);
     }

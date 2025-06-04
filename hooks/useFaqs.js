@@ -9,14 +9,7 @@ const useDirectoryFaqs = () => {
         state: { directory_faqs, directory_nextPage, directory_loading },
         getDirectoryFaqs, loadDirectoryFaqs, searchDirectoryFaqsAdvanced
     } = useContext(FaqsContext);
-
-
-    useEffect(() => {
-        if (!directory_faqs) {
-            getDirectoryFaqs();
-        }
-    }, [directory_faqs, getDirectoryFaqs]);
-
+    
     let directoryFaqs = directory_faqs?.map(item => {
         return {
             title: item?.title || 'TITLE',
