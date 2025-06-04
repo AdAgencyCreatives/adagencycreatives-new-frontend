@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { HiChevronDown } from 'react-icons/hi';
 
 export default function Accordion({ items }) {
   const [openIndex, setOpenIndex] = useState(null);
@@ -13,7 +12,7 @@ export default function Accordion({ items }) {
 
   return (
     <div className="w-full divide-y divide-gray-700">
-      {items.map((item, index) => (
+      {items?.map((item, index) => (
         <div key={index} className="py-2 border-b border-[#6E6E6E]">
           <button
             onClick={() => toggle(index)}

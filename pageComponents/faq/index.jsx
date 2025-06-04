@@ -1,13 +1,11 @@
 'use client';
 import Accordion from 'components/Accordion';
-
-const faqItems = [
-  { title: 'about', content: 'Change the text and add your own content, including any information that is relevant to share. Then customize the font, size and scale to make it your own.' },
-  { title: 'services', content: 'Change the text and add your own content, including any information that is relevant to share. Then customize the font, size and scale to make it your own.' },
-  { title: 'contact', content: 'Change the text and add your own content, including any information that is relevant to share. Then customize the font, size and scale to make it your own.' },
-];
+import useDirectoryFaqs from 'hooks/useFaqs';
 
 const FAQ = () => {
+
+  const { directoryFaqs } = useDirectoryFaqs();
+
   return (
     <section className="faq-section flex flex-col">
       <div className="rounded-4xl border-(--ad-gray) border-1 shadow-(--ad-box-shadow) bg-black/50 backdrop-blur faqs flex-1">
@@ -15,7 +13,7 @@ const FAQ = () => {
           faq
         </div>
 
-        <Accordion items={faqItems} />
+        <Accordion items={directoryFaqs} />
       </div>
       <p className="footer font-inter uppercase transition delay-150 duration-300 ease-in-out text-[#6E6E6E] hover:text-[#FFFFFF] text-center">© {(new Date()).getFullYear()} Ad Agency Creatives. <br className="md:hidden" />All Rights Reserved.</p>
     </section>

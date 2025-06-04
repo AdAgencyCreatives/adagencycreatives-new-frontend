@@ -9,6 +9,7 @@ import { Provider as AgenciesProvider } from "contexts/AgenciesContext";
 import { Provider as CreativesProvider } from "contexts/CreativesContext";
 import { Provider as JobsProvider } from "contexts/JobsContext";
 import { Provider as DataProvider } from "contexts/DataContext";
+import { Provider as FaqsProvider } from "contexts/FaqsContext";
 
 export default function ClientProviderWrapper({ children }) {
   return (
@@ -21,7 +22,9 @@ export default function ClientProviderWrapper({ children }) {
                 <CreativesProvider>
                   <JobsProvider>
                     <DataProvider>
-                      {children}
+                      <FaqsProvider>
+                        {children}
+                      </FaqsProvider>
                     </DataProvider>
                   </JobsProvider>
                 </CreativesProvider>
