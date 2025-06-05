@@ -46,10 +46,13 @@ const useHelper = () => {
     var decodeEntities = (function () {
         var cache = {},
             character,
-            e = document.createElement('div');
+            e = (typeof document !== 'undefined') ? document.createElement('div') : null;
 
         return function (html) {
             return html.replace(/([&][^&; ]+[;])/g, function (entity) {
+                if(!e) {
+                    return entity; // If document is not available, return the entity as is
+                }
                 character = cache[entity];
                 if (!character) {
                     e.innerHTML = entity;
