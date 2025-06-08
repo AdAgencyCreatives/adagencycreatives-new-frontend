@@ -66,60 +66,26 @@ const TheLounge = () => {
       </section>
 
       {/* Spotlight */}
-      <section id="spotlight" className="py-20 max-w-[1600px] mx-auto px-10">
-        <h2 className="max-sm:text-[1.375rem] text-8xl font-bold max-sm:mb-0 mb-10 text-right">Spotlight</h2>
-        <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 max-sm:gap-[13px] gap-20 w-full items-center relative max-sm:py-5 py-20">
+      <section id="spotlight" className="pt-[2rem] max-sm:px-[1.5rem] md:px-[3rem] mx-auto">
+        <h2 className="max-sm:text-[1.375rem] md:text-[4.875]/[1.25em] max-sm:mb-0 font-bold text-right py:[1rem]">Spotlight</h2>
+        <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 max-sm:gap-[1.5rem] gap-[3rem] items-center relative max-sm:py-5 py-20">
           {/* Background */}
-          <AnimatedBackdrop className={''} />
+          <AnimatedBackdrop className={'max-sm:w-[100%]'} />
           {spotlightCreatives?.length > 0 && spotlightCreatives.slice(0, Math.min(10, spotlightCreatives.length)).map((spotlight, idx) => {
             return (
               <React.Fragment key={`spotlight-${spotlight.id || idx}`}>
-                <SpotlightLoopItem key={idx} spotlight={spotlight} />
+                <SpotlightLoopItem key={idx} spotlight={spotlight}/>
                 {idx == 3 && (<><div></div></>)}
                 {idx == 6 && (<><div></div><div></div></>)}
                 {idx == 8 && (<><div></div><div></div><div></div></>)}
               </React.Fragment>
             );
           })}
-          <div className="absolute max-sm:bottom-4 bottom-16 left-0 max-sm:text-[1.375rem] text-8xl max-sm:space-y-0 space-y-8">
-            <p>Gather.</p>
-            <p>Inspire.</p>
-            <p className="text-brand-yellow">Do Cool $#*t!</p>
+          <div className="absolute max-sm:bottom-4 bottom-16 left-0 max-sm:text-[1.375rem] text-[5.5rem] leading-none">
+            <div>Gather.</div>
+            <div>Inspire.</div>
+            <div className="text-brand-yellow">Do Cool $#*t!</div>
           </div>
-        </div>
-      </section>
-
-      {/* Featured Creatives */}
-      <section id="featured-creatives" className="py-20 max-w-[1600px] mx-auto px-10">
-        <h2 className="text-8xl font-bold mb-10 text-right">Featured</h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-          {featuredCreatives.map((creative, idx) => (
-            <React.Fragment key={`creative-${creative.id || idx}`}>
-              {idx === 6 && (
-                <div key={`ad-agency-${idx}`} className="col-span-2 text-center flex flex-col justify-center gap-10">
-                  <h2 className="text-[48px] leading-[62px]">
-                    We are<br />
-                    <span className="font-alta">AD AGENCY</span><br />
-                    <span className="font-alta">CREATIVES</span>
-                  </h2>
-                  <div>
-                    <Link href="/" className="border-brand-yellow border-4 uppercase text-brand-yellow rounded-full text-sm px-8 py-4 cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white">Advanced Search</Link>
-                  </div>
-                </div>
-              )}
-
-              {idx === 15 && (
-                <div key={`profile-${idx}`} className="col-span-2 text-center flex flex-col justify-center gap-10">
-                  <h2 className="text-[48px] leading-[62px]">Want<br />Your <TmText text='ProFile' /><br />Featured?</h2>
-                  <div>
-                    <Link href="/" className="border-brand-yellow border-4 uppercase text-brand-yellow rounded-full text-sm px-8 py-4 cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white">See How</Link>
-                  </div>
-                </div>
-              )}
-
-              <CreativeLoopItem key={idx} creative={creative} />
-            </React.Fragment>
-          ))}
         </div>
       </section>
 
@@ -164,6 +130,40 @@ const TheLounge = () => {
             <p className="font-wix mb-4 text-[26px]">No members found.</p>
             <p className="font-wix mb-4 text-[16px]">Try another search.</p>
           </div>
+        </div>
+      </section>
+
+      {/* Featured Creatives */}
+      <section id="featured-creatives" className="max-sm:py-5 py-20 max-w-[1600px] mx-auto px-10">
+        <h2 className="max-sm:text-[1.375rem] max-sm:mb-0 text-8xl font-bold mb-10 text-right">Featured</h2>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 max-sm:py-5">
+          {featuredCreatives.map((creative, idx) => (
+            <React.Fragment key={`creative-${creative.id || idx}`}>
+              {idx === 6 && (
+                <div key={`ad-agency-${idx}`} className="col-span-2 text-center flex flex-col justify-center gap-10">
+                  <h2 className="text-[48px] leading-[62px]">
+                    We are<br />
+                    <span className="font-alta">AD AGENCY</span><br />
+                    <span className="font-alta">CREATIVES</span>
+                  </h2>
+                  <div>
+                    <Link href="/" className="border-brand-yellow border-4 uppercase text-brand-yellow rounded-full text-sm px-8 py-4 cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white">Advanced Search</Link>
+                  </div>
+                </div>
+              )}
+
+              {idx === 15 && (
+                <div key={`profile-${idx}`} className="col-span-2 text-center flex flex-col justify-center gap-10">
+                  <h2 className="text-[48px] leading-[62px]">Want<br />Your <TmText text='ProFile' /><br />Featured?</h2>
+                  <div>
+                    <Link href="/" className="border-brand-yellow border-4 uppercase text-brand-yellow rounded-full text-sm px-8 py-4 cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white">See How</Link>
+                  </div>
+                </div>
+              )}
+
+              <CreativeLoopItem key={idx} creative={creative} />
+            </React.Fragment>
+          ))}
         </div>
       </section>
 

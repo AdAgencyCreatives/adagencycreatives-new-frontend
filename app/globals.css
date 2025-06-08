@@ -253,7 +253,6 @@ button {
 }
 
 .card .location {
-  line-height: 1.15em;
   height: 1.15em;
   display: block;
   min-width: 100%;
@@ -332,4 +331,11 @@ button {
 .search-suggestions ul li.active {
   background-color: #000 !important;
   color: #fff !important;
+}
+
+.force-break-word {
+  word-break: break-word;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  white-space: normal;
 }
