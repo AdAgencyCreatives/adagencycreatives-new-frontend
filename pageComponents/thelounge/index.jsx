@@ -67,14 +67,14 @@ const TheLounge = () => {
 
       {/* Spotlight */}
       <section id="spotlight" className="pt-[2rem] max-sm:px-[1.5rem] md:px-[3rem] mx-auto">
-        <h2 className="max-sm:text-[1.375rem] md:text-[4.875]/[1.25em] max-sm:mb-0 font-bold text-right py:[1rem]">Spotlight</h2>
+        <h2 className="leading-[1.25em] max-sm:text-[1.264rem] md:text-[4.313rem] xl:text-[4.603rem] 2xl:text-[4.852rem] 3xl:text-[6.469rem] 4xl:text-[8.625rem] max-sm:mb-0 font-bold text-right py:[1rem] md:py-[3.5rem] xl:py-[4rem] 2xl:py-[4.5rem] 3xl:py-[5.25rem] 4xl:py-[6rem]">Spotlight</h2>
         <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 max-sm:gap-[1.5rem] gap-[3rem] items-center relative max-sm:py-5 py-20">
           {/* Background */}
           <AnimatedBackdrop className={'max-sm:w-[100%]'} />
           {spotlightCreatives?.length > 0 && spotlightCreatives.slice(0, Math.min(10, spotlightCreatives.length)).map((spotlight, idx) => {
             return (
               <React.Fragment key={`spotlight-${spotlight.id || idx}`}>
-                <SpotlightLoopItem key={idx} spotlight={spotlight}/>
+                <SpotlightLoopItem key={idx} spotlight={spotlight} />
                 {idx == 3 && (<><div></div></>)}
                 {idx == 6 && (<><div></div><div></div></>)}
                 {idx == 8 && (<><div></div><div></div><div></div></>)}
