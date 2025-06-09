@@ -13,7 +13,7 @@
   --foreground: #171717;
   --font-wix: 'Wix Madefor Text', sans-serif;
   --ad-gray: #6e6e6e;
-  --ad-box-shadow: 0 1px 7px 1px rgba(255, 255, 255, 0.6);
+  --ad-box-shadow: 0 2px 7px 2px rgba(255, 255, 255, 0.6);
 }
 
 @font-face {

@@ -2,7 +2,6 @@
 
 import { useContext, useEffect } from "react";
 import { Context as DataContext } from "contexts/DataContext";
-import useHelper from "./useHelper";
 
 const usePublicationResources = () => {
 

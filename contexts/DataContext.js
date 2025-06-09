@@ -447,7 +447,7 @@ const deleteReview = (dispatch) => {
 };
 
 const getMentorTopics = (dispatch) => {
-  return async (slug, perPage = 100) => {
+  return async (slug='', perPage = 100) => {
     try {
       const response = await api.get(`/topics?filter[slug]=${slug}&per_page=${perPage}`);
       dispatch({

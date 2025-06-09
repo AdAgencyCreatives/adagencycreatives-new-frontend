@@ -225,10 +225,6 @@
     height: calc(2 * 0.875rem + 1.25rem);
   }
 
-  .resource-title {
-    font-size: 1.406rem;
-  }
-
   .about-title {
     font-size: 1.125rem;
     line-height: 1.066rem;

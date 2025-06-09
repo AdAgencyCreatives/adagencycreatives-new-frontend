@@ -3,31 +3,31 @@
 import { useContext, useEffect } from "react";
 import { Context as DataContext } from "contexts/DataContext";
 
-const useMentorResources = () => {
+const useMentorTopics = () => {
 
     const {
         state: { mentors },
-        getMentors,
+        getMentorTopics,
     } = useContext(DataContext);
 
     useEffect(() => {
-        getMentors();
+        getMentorTopics();
     }, []);
 
-    let mentorResources = mentors?.map(item => {
+    let mentorTopics = mentors?.map(item => {
 
         return {
-            image: item?.preview_link || '/aac-logo-white.avif',
+            image: '/resource1.avif',
             title: item?.title || 'Mentor',
-            href: item?.link || '',
+            href: item?.slug || '',
             item: item,
         };
     });
 
 
     return {
-        mentorResources, getMentors,
+        mentorTopics, getMentorTopics,
     };
 }
 
-export default useMentorResources;
+export default useMentorTopics;

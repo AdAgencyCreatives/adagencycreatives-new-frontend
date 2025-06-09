@@ -16,10 +16,16 @@ import useFeaturedCreatives from 'hooks/useFeaturedCreatives';
 import useSpotlightCreatives from 'hooks/useSpotlightCreatives';
 import usePublicationResources from 'hooks/usePublicationResources';
 import PublicationList from 'pageComponents/publications/list';
+import useScreen from 'hooks/useScreen';
+import useMentorTopics from 'hooks/useMentorTopics';
+import useFeaturedCities from 'hooks/useFeaturedCities';
+import FeaturedCityLoopItem from 'pageComponents/featured_cities/loop/item';
 
 const TheLounge = () => {
 
   const FEATURED_CREATIVES_PER_PAGE = 16;
+
+  const { isMobile, isPortrait } = useScreen();
 
   const handleSelect = (option) => {
     console.log('You selected:', option)
@@ -28,6 +34,10 @@ const TheLounge = () => {
   const { featuredCreatives } = useFeaturedCreatives(FEATURED_CREATIVES_PER_PAGE);
   const { spotlightCreatives } = useSpotlightCreatives();
   const { publicationResources } = usePublicationResources();
+  const { mentorTopics } = useMentorTopics();
+  const { featuredCities } = useFeaturedCities();
+
+  console.log('mentorTopics', mentorTopics);
 
   return (
     <div className="bg-black text-white">
@@ -66,31 +76,36 @@ const TheLounge = () => {
       </section>
 
       {/* Spotlight */}
-      <section id="spotlight" className="pt-[2rem] max-sm:px-[1.5rem] md:px-[3rem] mx-auto">
-        <h2 className="leading-[1.25em] max-sm:text-[1.264rem] md:text-[4.313rem] xl:text-[4.603rem] 2xl:text-[4.852rem] 3xl:text-[6.469rem] 4xl:text-[8.625rem] max-sm:mb-0 font-bold text-right py:[1rem] md:py-[3.5rem] xl:py-[4rem] 2xl:py-[4.5rem] 3xl:py-[5.25rem] 4xl:py-[6rem]">Spotlight</h2>
-        <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 max-sm:gap-[1.5rem] gap-[3rem] items-center relative max-sm:py-5 py-20">
+      <section id="spotlight" className="mx-auto max-sm:px-[0.934rem] px-[2.55rem] md:px-[3.11rem] xl:px-[3.402rem] 2xl:px-[3.586rem] 3xl:px-[4.781rem] 4xl:px-[6.375rem] max-sm:pt-[0.293rem] pt-[0.8rem] md:pt-[0.976rem] xl:pt-[1.067rem] 2xl:pt-[1.125rem] 3xl:pt-[1.5rem] 4xl:pt-[2rem] max-sm:pb-[2rem] pb-[1.4rem] md:pb-[1.708rem] xl:pb-[1.868rem] 2xl:pb-[1.969rem] 3xl:pb-[2.625rem] 4xl:pb-[3.5rem]">
+        <h2 className="text-right font-bold leading-[1.33em] max-sm:text-[1.263rem] text-[3.45rem] md:text-[4.208rem] xl:text-[4.602rem] 2xl:text-[4.852rem] 3xl:text-[6.469rem] 4xl:text-[8.625rem] max-sm:pt-[0.879rem] pt-[2.4rem] md:pt-[2.927rem] xl:pt-[3.202rem] 2xl:pt-[3.375rem] 3xl:pt-[4.5rem] 4xl:pt-[6rem] max-sm:pb-[1.282rem] pb-[3.5rem] md:pb-[4.269rem] xl:pb-[4.669rem] 2xl:pb-[4.922rem] 3xl:pb-[6.563rem] 4xl:pb-[8.75rem]">
+          Spotlight
+        </h2>
+        <div className='relative'>
           {/* Background */}
           <AnimatedBackdrop className={'max-sm:w-[100%]'} />
-          {spotlightCreatives?.length > 0 && spotlightCreatives.slice(0, Math.min(10, spotlightCreatives.length)).map((spotlight, idx) => {
-            return (
-              <React.Fragment key={`spotlight-${spotlight.id || idx}`}>
-                <SpotlightLoopItem key={idx} spotlight={spotlight} />
-                {idx == 3 && (<><div></div></>)}
-                {idx == 6 && (<><div></div><div></div></>)}
-                {idx == 8 && (<><div></div><div></div><div></div></>)}
-              </React.Fragment>
-            );
-          })}
-          <div className="absolute max-sm:bottom-4 bottom-16 left-0 max-sm:text-[1.375rem] text-[5.5rem] leading-none">
-            <div>Gather.</div>
-            <div>Inspire.</div>
-            <div className="text-brand-yellow">Do Cool $#*t!</div>
+          <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 items-center relative max-sm:gap-[0.806rem] gap-[2.2rem] md:gap-[2.683rem] xl:gap-[2.935rem] 2xl:gap-[3.094rem] 3xl:gap-[4.125rem] 4xl:gap-[5.5rem] max-sm:px-[0.696rem] px-[1.9rem] md:px-[2.317rem] xl:px-[2.535rem] 2xl:px-[2.672rem] 3xl:px-[3.563rem] 4xl:px-[4.75rem]">
+            {spotlightCreatives?.length > 0 && spotlightCreatives.slice(0, Math.min(10, spotlightCreatives.length)).map((spotlight, idx) => {
+              return (
+                <React.Fragment key={`spotlight-${spotlight.id || idx}`}>
+                  <SpotlightLoopItem key={idx} spotlight={spotlight} />
+                  {idx == 3 && (<><div></div></>)}
+                  {idx == 6 && (<><div></div><div></div></>)}
+                  {idx == 8 && (<><div></div><div></div><div></div></>)}
+                </React.Fragment>
+              );
+            })}
+            <div className="absolute left-0 leading-none max-sm:text-[1.375rem] text-[3.95rem] md:text-[4.818rem] xl:text-[5.269rem] 2xl:text-[5.555rem] 3xl:text-[7.406rem] 4xl:text-[9.875rem] max-sm:bottom-[1.044rem] bottom-[2.85rem] md:bottom-[3.476rem] xl:bottom-[3.802rem] 2xl:bottom-[4.008rem] 3xl:bottom-[5.344rem] 4xl:bottom-[7.125rem]">
+              <div>Gather.</div>
+              <div>Inspire.</div>
+              <div className="text-brand-yellow">Do Cool $#*t!</div>
+            </div>
           </div>
         </div>
+
       </section>
 
       {/* Chat */}
-      <section id="chat" className="py-20 border-white border-y-2 relative">
+      <section id="chat" className="border-white border-y-2 relative max-sm:py-[0.801rem] py-[1.068rem] md:py-[1.424rem] xl:py-[1.898rem] 2xl:py-[2.531rem] 3xl:py-[3.375rem] 4xl:py-[4.5rem]">
         {/* Background */}
         <div className="absolute inset-0 z-0">
           <video
@@ -104,9 +119,12 @@ const TheLounge = () => {
             Your browser does not support the video tag.
           </video>
         </div>
-        <div className="max-w-[1600px] mx-auto px-10 relative z-1">
-          <h2 className="text-8xl font-bold mb-20">Chat</h2>
-          <div className="flex justify-between">
+        <div className="mx-auto relative z-1 max-sm:px-[1.5rem] px-[3rem]">
+          <h2 className="font-bold leading-[1.33em] max-sm:text-[1.535rem] text-[2.047rem] md:text-[2.729rem] xl:text-[3.639rem] 2xl:text-[4.852rem] 3xl:text-[6.469rem] 4xl:text-[8.625rem]">
+            Chat
+          </h2>
+          <div className='max-sm:h-[15.985rem] h-[43.65rem] md:h-[53.241rem] xl:h-[58.228rem] 2xl:h-[61.383rem] 3xl:h-[81.844rem] 4xl:h-[109.125rem]'></div>
+          {/* <div className="flex justify-between">
             <div>
               <DropdownButton
                 label="All members"
@@ -129,46 +147,70 @@ const TheLounge = () => {
           <div className="text-center min-h-[50vh] justify-center flex flex-col">
             <p className="font-wix mb-4 text-[26px]">No members found.</p>
             <p className="font-wix mb-4 text-[16px]">Try another search.</p>
-          </div>
+          </div> */}
         </div>
       </section>
 
       {/* Featured Creatives */}
-      <section id="featured-creatives" className="max-sm:py-5 py-20 max-w-[1600px] mx-auto px-10">
-        <h2 className="max-sm:text-[1.375rem] max-sm:mb-0 text-8xl font-bold mb-10 text-right">Featured</h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 max-sm:py-5">
+      <section id="featured-creatives" className="mx-auto max-sm:pt-[1.125rem] max-sm:px-[0.458rem] px-[1.25rem] md:px-[1.525rem] xl:px-[1.667rem] 2xl:px-[1.758rem] 3xl:px-[2.344rem] 4xl:px-[3.125rem]">
+        <h2 className="text-right font-bold leading-[1.33em] max-sm:text-[1.263rem] text-[3.45rem] md:text-[4.208rem] xl:text-[4.602rem] 2xl:text-[4.852rem] 3xl:text-[6.469rem] 4xl:text-[8.625rem] max-sm:py-[0.751rem] py-[2.05rem] md:py-[2.5rem] xl:py-[2.735rem] 2xl:py-[2.883rem] 3xl:py-[3.844rem] 4xl:py-[5.125rem]">
+          Featured
+        </h2>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 max-sm:gap-[1rem] gap-[0.8rem] md:gap-[0.976rem] xl:gap-[1.067rem] 2xl:gap-[1.125rem] 3xl:gap-[1.5rem] 4xl:gap-[2rem] max-sm:py-[0.916rem] py-[2.5rem] md:py-[3.049rem] xl:py-[3.335rem] 2xl:py-[3.516rem] 3xl:py-[4.688rem] 4xl:py-[6.25rem] max-sm:px-[0.229rem] px-[0.625rem] md:px-[0.763rem] xl:px-[0.834rem] 2xl:px-[0.879rem] 3xl:px-[1.172rem] 4xl:px-[1.563rem]">
           {featuredCreatives.map((creative, idx) => (
             <React.Fragment key={`creative-${creative.id || idx}`}>
               {idx === 6 && (
-                <div key={`ad-agency-${idx}`} className="col-span-2 text-center flex flex-col justify-center gap-10">
-                  <h2 className="text-[48px] leading-[62px]">
-                    We are<br />
-                    <span className="font-alta">AD AGENCY</span><br />
-                    <span className="font-alta">CREATIVES</span>
+                <div key={`ad-agency-${idx}`} className="w-max mx-auto col-span-2 text-center flex flex-col justify-center max-sm:py-[2rem] max-sm:gap-[1.099rem] gap-[3rem] md:gap-[3.659rem] xl:gap-[4.002rem] 2xl:gap-[4.219rem] 3xl:gap-[5.625rem] 4xl:gap-[7.5rem]">
+                  <h2 className="leading-[1.33em] font-bold max-sm:text-[1.5rem] text-[1.9rem] md:text-[2.317rem] xl:text-[2.535rem] 2xl:text-[2.672rem] 3xl:text-[3.563rem] 4xl:text-[4.75rem]">
+                    Haven't<br />
+                    Found<br />
+                    The Perfect<br />
+                    Job?
                   </h2>
                   <div>
-                    <Link href="/" className="border-brand-yellow border-4 uppercase text-brand-yellow rounded-full text-sm px-8 py-4 cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white">Advanced Search</Link>
+                    <Link href="/" className="inline-block leading-none font-bold border-brand-yellow max-sm:border-[0.125rem] border-[0.138rem] md:border-[0.168rem] xl:border-[0.184rem] 2xl:border-[0.194rem] 3xl:border-[0.258rem] 4xl:border-[0.344rem] uppercase text-brand-yellow rounded-full cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white max-sm:text-[0.75rem] text-[0.6rem] md:text-[0.732rem] xl:text-[0.8rem] 2xl:text-[0.844rem] 3xl:text-[1.125rem] 4xl:text-[1.5rem] max-sm:py-[0.137rem] py-[0.375rem] md:py-[0.458rem] xl:py-[0.501rem] 2xl:py-[0.528rem] 3xl:py-[0.704rem] 4xl:py-[0.938rem] max-sm:px-[0.879rem] px-[2.4rem] md:px-[2.927rem] xl:px-[3.202rem] 2xl:px-[3.375rem] 3xl:px-[4.5rem] 4xl:px-[6rem]">Advanced Search</Link>
                   </div>
                 </div>
               )}
 
-              {idx === 15 && (
-                <div key={`profile-${idx}`} className="col-span-2 text-center flex flex-col justify-center gap-10">
-                  <h2 className="text-[48px] leading-[62px]">Want<br />Your <TmText text='ProFile' /><br />Featured?</h2>
+              {(!(isMobile && isPortrait) && idx === 15) && (
+                <div key={`ad-agency-${idx}`} className="w-max mx-auto col-span-2 text-center flex flex-col justify-center max-sm:py-[2rem] max-sm:gap-[1.099rem] gap-[3rem] md:gap-[3.659rem] xl:gap-[4.002rem] 2xl:gap-[4.219rem] 3xl:gap-[5.625rem] 4xl:gap-[7.5rem]">
+                  <h2 className="leading-[1.33em] font-bold max-sm:text-[1.5rem] text-[1.9rem] md:text-[2.317rem] xl:text-[2.535rem] 2xl:text-[2.672rem] 3xl:text-[3.563rem] 4xl:text-[4.75rem]">
+                    Want Your<br />
+                    <TmText text='ProFile' /><br />
+                    Featured?
+                  </h2>
                   <div>
-                    <Link href="/" className="border-brand-yellow border-4 uppercase text-brand-yellow rounded-full text-sm px-8 py-4 cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white">See How</Link>
+                    <Link href="/" className="inline-block leading-none w-full font-bold border-brand-yellow max-sm:border-[0.125rem] border-[0.138rem] md:border-[0.168rem] xl:border-[0.184rem] 2xl:border-[0.194rem] 3xl:border-[0.258rem] 4xl:border-[0.344rem] uppercase text-brand-yellow rounded-full cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white max-sm:text-[0.75rem] text-[0.6rem] md:text-[0.732rem] xl:text-[0.8rem] 2xl:text-[0.844rem] 3xl:text-[1.125rem] 4xl:text-[1.5rem] max-sm:py-[0.137rem] py-[0.375rem] md:py-[0.458rem] xl:py-[0.501rem] 2xl:py-[0.528rem] 3xl:py-[0.704rem] 4xl:py-[0.938rem] max-sm:px-[0.879rem] px-[2.4rem] md:px-[2.927rem] xl:px-[3.202rem] 2xl:px-[3.375rem] 3xl:px-[4.5rem] 4xl:px-[6rem]">
+                      See How
+                    </Link>
                   </div>
                 </div>
               )}
 
               <CreativeLoopItem key={idx} creative={creative} />
+
+              {((isMobile && isPortrait && idx === 15)) && (
+                <div key={`ad-agency-${idx}`} className="w-max mx-auto col-span-2 text-center flex flex-col justify-center max-sm:py-[2rem] max-sm:gap-[1.099rem] gap-[3rem] md:gap-[3.659rem] xl:gap-[4.002rem] 2xl:gap-[4.219rem] 3xl:gap-[5.625rem] 4xl:gap-[7.5rem]">
+                  <h2 className="leading-[1.33em] font-bold max-sm:text-[1.5rem] text-[1.9rem] md:text-[2.317rem] xl:text-[2.535rem] 2xl:text-[2.672rem] 3xl:text-[3.563rem] 4xl:text-[4.75rem]">
+                    Want Your<br />
+                    <TmText text='ProFile' /><br />
+                    Featured?
+                  </h2>
+                  <div>
+                    <Link href="/" className="inline-block leading-none w-full font-bold border-brand-yellow max-sm:border-[0.125rem] border-[0.138rem] md:border-[0.168rem] xl:border-[0.184rem] 2xl:border-[0.194rem] 3xl:border-[0.258rem] 4xl:border-[0.344rem] uppercase text-brand-yellow rounded-full cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white max-sm:text-[0.75rem] text-[0.6rem] md:text-[0.732rem] xl:text-[0.8rem] 2xl:text-[0.844rem] 3xl:text-[1.125rem] 4xl:text-[1.5rem] max-sm:py-[0.137rem] py-[0.375rem] md:py-[0.458rem] xl:py-[0.501rem] 2xl:py-[0.528rem] 3xl:py-[0.704rem] 4xl:py-[0.938rem] max-sm:px-[0.879rem] px-[2.4rem] md:px-[2.927rem] xl:px-[3.202rem] 2xl:px-[3.375rem] 3xl:px-[4.5rem] 4xl:px-[6rem]">
+                      See How
+                    </Link>
+                  </div>
+                </div>
+              )}
             </React.Fragment>
           ))}
         </div>
       </section>
 
       {/* News */}
-      <section id="news" className="py-20 border-white border-y-2 relative">
+      <section id="news" className="max-sm:py-5 py-20 border-white border-y-2 relative">
         {/* Background */}
         <div className="absolute inset-0 z-0">
           <video
@@ -182,50 +224,61 @@ const TheLounge = () => {
             Your browser does not support the video tag.
           </video>
         </div>
-        <div className="max-w-[1600px] mx-auto px-10 relative z-1">
-          <h2 className="text-8xl font-bold">News</h2>
-          <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-15 w-full items-center relative">
-            {/* <!-- Column 1: 1 item --> */}
-            <div>
-              <ResourceLoopItem
-                resource={{ title: '10 tips to get hired', image: '/resource1.avif', href: '/resources-internship' }}
-              />
-            </div>
-
-            {/* <!-- Column 2: 4 items stacked vertically --> */}
-            <div className="col-span-2 space-y-4 grid grid-cols-2 gap-15 items-start">
-              <ResourceLoopItem
-                resource={{ title: 'where is market', image: '/resource1.avif', href: '/resources-inspiration' }}
-              />
-              <ResourceLoopItem
-                resource={{ title: 'best portfolio', image: '/resource1.avif', href: '/resources-portfolio' }}
-              />
-              <ResourceLoopItem
-                resource={{ title: 'what to say in bio', image: '/resource1.avif', href: '/resources-writers' }}
-              />
-              <ResourceLoopItem
-                resource={{ title: 'how to run interview', image: '/resource1.avif', href: '/resources-designers' }}
-              />
-            </div>
-
-            {/* <!-- Column 4: 1 item --> */}
-            <div>
-              <ResourceLoopItem
-                resource={{ title: '10 tips to get hired', image: '/resource1.avif', href: '/resources-business' }}
-              />
-            </div>
+        <div className="mx-auto max-sm:px-5 px-10 relative z-1">
+          <h2 className="font-bold leading-[1.33em] max-sm:text-[1.535rem] text-[2.047rem] md:text-[2.729rem] xl:text-[3.639rem] 2xl:text-[4.852rem] 3xl:text-[6.469rem] 4xl:text-[8.625rem]">
+            News
+          </h2>
+          <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 max-sm:gap-3 gap-15 w-full items-center relative">
+            {mentorTopics?.length > 0 && (
+              <div><ResourceLoopItem resource={mentorTopics[0]} /></div>
+            )}
+            {(mentorTopics?.length > 4) && (
+              <div className='col-span-2 max-sm:space-y-1 space-y-4 grid grid-cols-2 max-sm:gap-3 gap-15 items-start'>
+                {mentorTopics.slice(1, 5).map((topic, idx) => (
+                  <ResourceLoopItem key={idx} resource={topic} />
+                ))}
+              </div>
+            )}
+            {mentorTopics?.length > 5 && (
+              <div><ResourceLoopItem resource={mentorTopics[5]} /></div>
+            )}
           </div>
         </div>
       </section>
 
       {/* Publications */}
-      <section id="publications" className="py-20 max-w-[1600px] mx-auto px-10">
-        <h2 className="text-8xl font-bold text-right">Publications</h2>
-        <div className="flex gap-15 w-full items-center relative pb-20 mb-10 border-white border-b-2">
+      <section id="publications" className="mx-auto max-sm:px-[1.5rem] px-[1.25rem] md:px-[1.525rem] xl:px-[1.667rem] 2xl:px-[1.758rem] 3xl:px-[2.344rem] 4xl:px-[3.125rem]">
+        <h2 className="text-right font-bold leading-[1.33em] max-sm:text-[1.535rem] text-[2.047rem] md:text-[2.729rem] xl:text-[3.639rem] 2xl:text-[4.852rem] 3xl:text-[6.469rem] 4xl:text-[8.625rem] max-sm:py-[0.75rem] py-[1.8rem] md:py-[2.196rem] xl:py-[2.401rem] 2xl:py-[2.531rem] 3xl:py-[3.375rem] 4xl:py-[4.5rem]">
+          Publications
+        </h2>
+        <div className="flex w-full justify-center items-center relative pb-20 mb-10 max-sm:gap-[0.732rem] gap-[2rem] md:gap-[2.439rem] xl:gap-[2.668rem] 2xl:gap-[2.813rem] 3xl:gap-[3.75rem] 4xl:gap-[5rem]">
           {/* Background */}
           <AnimatedBackdrop className={''} />
           <PublicationList publications={publicationResources} />
         </div>
+      </section>
+
+      {/* Featured Cities */}
+      <section id="news" className="max-sm:py-5 py-20 border-white border-y-2 relative">
+        <div className="mx-auto relative z-1">
+          <h2 className="font-bold leading-[1.33em] max-sm:text-[1.535rem] text-[2.047rem] md:text-[2.729rem] xl:text-[3.639rem] 2xl:text-[4.852rem] 3xl:text-[6.469rem] 4xl:text-[8.625rem] max-sm:px-[0.641rem] px-[1.75rem] md:px-[2.135rem] xl:px-[2.334rem] 2xl:px-[2.461rem] 3xl:px-[3.281rem] 4xl:px-[4.375rem]">
+            Featured Cities
+          </h2>
+          <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 max-sm:gap-[0.732rem] gap-[2rem] md:gap-[2.439rem] xl:gap-[2.668rem] 2xl:gap-[2.813rem] 3xl:gap-[3.75rem] 4xl:gap-[5rem] p-[1.75rem] md:p-[2.135rem] xl:p-[2.334rem] 2xl:p-[2.461rem] 3xl:p-[3.281rem] 4xl:p-[4.375rem] max-sm:mt-[0.659rem] mt-[1.8rem] md:mt-[2.196rem] xl:mt-[2.401rem] 2xl:mt-[2.531rem] 3xl:mt-[3.375rem] 4xl:mt-[4.5rem] w-full items-center relative">
+            {featuredCities?.length > 0 && (
+              <div className='col-span-2'><FeaturedCityLoopItem featuredCity={featuredCities[0]} /></div>
+            )}
+            {(featuredCities?.length > 4) && (
+              <div className='col-span-2 max-sm:space-y-1 space-y-4 grid grid-cols-2 items-start max-sm:gap-[0.732rem] gap-[2rem] md:gap-[2.439rem] xl:gap-[2.668rem] 2xl:gap-[2.813rem] 3xl:gap-[3.75rem] 4xl:gap-[5rem]'>
+                {featuredCities.slice(1, 5).map((topic, idx) => (
+                  <FeaturedCityLoopItem key={idx} featuredCity={topic} />
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+      <section className='mt-36'>
       </section>
     </div>
   );
