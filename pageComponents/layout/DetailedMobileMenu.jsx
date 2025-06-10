@@ -50,6 +50,7 @@ const DetailedMobileMenu = ({ isOpen = false, setIsOpen = (flag) => { }, user })
     {
       text: 'the lounge', href: '/thelounge', visibility: VISIBILITY.ALL, link_state: EXPAND_COLLAPSE_STATE.COLLAPSED, links: [
         { text: 'Spotlight', href: '{{parent.href}}#spotlight', visibility: VISIBILITY.ALL, links: [] },
+        { text: 'Chat', href: '{{parent.href}}#chat', visibility: VISIBILITY.ALL, links: [] },
         { text: 'Featured Creatives', href: '{{parent.href}}#featured-creatives', visibility: VISIBILITY.ALL, links: [] },
         { text: 'News', href: '{{parent.href}}#news', visibility: VISIBILITY.ALL, links: [] },
         { text: 'Publications', href: '{{parent.href}}#publications', visibility: VISIBILITY.ALL, links: [] },

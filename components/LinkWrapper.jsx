@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-const LinkWrapper = ({ href, className = '', children, ...props }) => {
+const LinkWrapper = ({ href, target='', className = '', children, ...props }) => {
   return (
-    <Link href={href} className={`p-0 m-0 leading-none${className?.length > 0 ? (' ' + className) : ''}`}{...props}>{children}</Link>
+    <Link target={target} href={href} className={`p-0 m-0 leading-none${className?.length > 0 ? (' ' + className) : ''}`}{...props}>{children}</Link>
   );
 };
 

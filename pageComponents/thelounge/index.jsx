@@ -3,12 +3,7 @@
 import Link from 'next/link';
 import SpotlightLoopItem from 'pageComponents/spotlights/loop/item';
 import CreativeLoopItem from 'pageComponents/creatives/loop/item';
-import PublicationLoopItem from 'pageComponents/publications/loop/item';
 import ResourceLoopItem from 'pageComponents/resources/loop/item';
-import ListViewIcon from 'icons/ListViewIcon';
-import GridViewIcon from 'icons/GridViewIcon';
-import SearchIcon from 'icons/SearchIcon';
-import DropdownButton from 'components/DropdownButton';
 import React from 'react';
 import TmText from 'components/TmText';
 import AnimatedBackdrop from 'components/AnimatedBackdrop';
@@ -20,6 +15,8 @@ import useScreen from 'hooks/useScreen';
 import useMentorTopics from 'hooks/useMentorTopics';
 import useFeaturedCities from 'hooks/useFeaturedCities';
 import FeaturedCityLoopItem from 'pageComponents/featured_cities/loop/item';
+import LinkOrDiv from 'components/LinkOrDiv';
+import SectionHeading from 'components/SectionHeading';
 
 const TheLounge = () => {
 
@@ -60,30 +57,23 @@ const TheLounge = () => {
         <div className="absolute inset-0 z-2" style={{ background: 'radial-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 1) 100%)' }}></div>
         <div className="relative z-3">
           <h1 className="text-5xl md:text-9xl 2xl:text-[182px] 3xl:text-[242px] 4xl:text-[323.4px] font-bold text-brand-yellow">The Lounge</h1>
-          <div className="hidden md:block space-x-6 2xl:space-x-[36px] 3xl:space-x-[48px] 4xl:space-x-[64px] mt-4 md:mt-10 3xl:mt-20 text-sm md:text-2xl 3xl:text-[32px] 4xl:text-[42.67px] text-white relative z-1">
-            <Link href="#spotlight">spotlight</Link>
-            <Link href="#chat">chat</Link>
-            <Link href="#featured-creatives">featured</Link>
-            <Link href="#news">news</Link>
-            <Link href="#publications">publications</Link>
-          </div>
-          <div className="block md:hidden space-x-6 2xl:space-x-[36px] 3xl:space-x-[48px] 4xl:space-x-[64px] mt-4 md:mt-10 3xl:mt-20 text-sm md:text-2xl 3xl:text-[32px] 4xl:text-[42.67px] text-white relative z-1">
-            <Link href="">hire creatives</Link>
-            <Link href="">choose a plan</Link>
-            <Link href="">post a job</Link>
+          <div className="font-bold max-sm:space-x-[0.586rem] space-x-[1.6rem] md:space-x-[1.952rem] xl:space-x-[2.134rem] 2xl:space-x-[2.25rem] 3xl:space-x-[3rem] 4xl:space-x-[4rem] mt-4 md:mt-10 3xl:mt-20 max-sm:text-[0.75rem] text-[1.05rem] md:text-[1.281rem] xl:text-[1.401rem] 2xl:text-[1.477rem] 3xl:text-[1.969rem] 4xl:text-[2.625rem] text-white relative z-1">
+            <LinkOrDiv href="#spotlight">spotlight</LinkOrDiv>
+            <LinkOrDiv href="#chat">chat</LinkOrDiv>
+            <LinkOrDiv href="#featured-creatives">featured</LinkOrDiv>
+            <LinkOrDiv href="#news">news</LinkOrDiv>
+            <LinkOrDiv href="#publications">publications</LinkOrDiv>
           </div>
         </div>
       </section>
 
       {/* Spotlight */}
-      <section id="spotlight" className="mx-auto max-sm:px-[0.934rem] px-[2.55rem] md:px-[3.11rem] xl:px-[3.402rem] 2xl:px-[3.586rem] 3xl:px-[4.781rem] 4xl:px-[6.375rem] max-sm:pt-[0.293rem] pt-[0.8rem] md:pt-[0.976rem] xl:pt-[1.067rem] 2xl:pt-[1.125rem] 3xl:pt-[1.5rem] 4xl:pt-[2rem] max-sm:pb-[2rem] pb-[1.4rem] md:pb-[1.708rem] xl:pb-[1.868rem] 2xl:pb-[1.969rem] 3xl:pb-[2.625rem] 4xl:pb-[3.5rem]">
-        <h2 className="text-right font-bold leading-[1.33em] max-sm:text-[1.263rem] text-[3.45rem] md:text-[4.208rem] xl:text-[4.602rem] 2xl:text-[4.852rem] 3xl:text-[6.469rem] 4xl:text-[8.625rem] max-sm:pt-[0.879rem] pt-[2.4rem] md:pt-[2.927rem] xl:pt-[3.202rem] 2xl:pt-[3.375rem] 3xl:pt-[4.5rem] 4xl:pt-[6rem] max-sm:pb-[1.282rem] pb-[3.5rem] md:pb-[4.269rem] xl:pb-[4.669rem] 2xl:pb-[4.922rem] 3xl:pb-[6.563rem] 4xl:pb-[8.75rem]">
-          Spotlight
-        </h2>
+      <section id="spotlight" className=" mx-auto max-sm:px-[0.934rem] px-[2.55rem] md:px-[3.11rem] xl:px-[3.402rem] 2xl:px-[3.586rem] 3xl:px-[4.781rem] 4xl:px-[6.375rem] max-sm:pt-[0.293rem] pt-[0.8rem] md:pt-[0.976rem] xl:pt-[1.067rem] 2xl:pt-[1.125rem] 3xl:pt-[1.5rem] 4xl:pt-[2rem] max-sm:pb-[2rem] pb-[1.4rem] md:pb-[1.708rem] xl:pb-[1.868rem] 2xl:pb-[1.969rem] 3xl:pb-[2.625rem] 4xl:pb-[3.5rem]">
+        <SectionHeading headingContent={'Spotlight'} className='text-right max-sm:pb-[1.282rem] pb-[3.5rem] md:pb-[4.269rem] xl:pb-[4.669rem] 2xl:pb-[4.922rem] 3xl:pb-[6.563rem] 4xl:pb-[8.75rem]' />
         <div className='relative'>
           {/* Background */}
           <AnimatedBackdrop className={'max-sm:w-[100%]'} />
-          <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 items-center relative max-sm:gap-[0.806rem] gap-[2.2rem] md:gap-[2.683rem] xl:gap-[2.935rem] 2xl:gap-[3.094rem] 3xl:gap-[4.125rem] 4xl:gap-[5.5rem] max-sm:px-[0.696rem] px-[1.9rem] md:px-[2.317rem] xl:px-[2.535rem] 2xl:px-[2.672rem] 3xl:px-[3.563rem] 4xl:px-[4.75rem]">
+          <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 items-center relative max-sm:gap-[0.806rem] gap-[2.2rem] md:gap-[2.683rem] xl:gap-[2.935rem] 2xl:gap-[3.094rem] 3xl:gap-[4.125rem] 4xl:gap-[5.5rem]">
             {spotlightCreatives?.length > 0 && spotlightCreatives.slice(0, Math.min(10, spotlightCreatives.length)).map((spotlight, idx) => {
               return (
                 <React.Fragment key={`spotlight-${spotlight.id || idx}`}>
@@ -120,9 +110,7 @@ const TheLounge = () => {
           </video>
         </div>
         <div className="mx-auto relative z-1 max-sm:px-[1.5rem] px-[3rem]">
-          <h2 className="font-bold leading-[1.33em] max-sm:text-[1.535rem] text-[2.047rem] md:text-[2.729rem] xl:text-[3.639rem] 2xl:text-[4.852rem] 3xl:text-[6.469rem] 4xl:text-[8.625rem]">
-            Chat
-          </h2>
+          <SectionHeading headingContent={'Chat'} className='max-sm:py-[0.659rem] py-[1.8rem] md:py-[2.196rem] xl:py-[2.401rem] 2xl:py-[2.531rem] 3xl:py-[3.375rem] 4xl:py-[4.5rem]' />
           <div className='max-sm:h-[15.985rem] h-[43.65rem] md:h-[53.241rem] xl:h-[58.228rem] 2xl:h-[61.383rem] 3xl:h-[81.844rem] 4xl:h-[109.125rem]'></div>
           {/* <div className="flex justify-between">
             <div>
@@ -153,9 +141,7 @@ const TheLounge = () => {
 
       {/* Featured Creatives */}
       <section id="featured-creatives" className="mx-auto max-sm:pt-[1.125rem] max-sm:px-[0.458rem] px-[1.25rem] md:px-[1.525rem] xl:px-[1.667rem] 2xl:px-[1.758rem] 3xl:px-[2.344rem] 4xl:px-[3.125rem]">
-        <h2 className="text-right font-bold leading-[1.33em] max-sm:text-[1.263rem] text-[3.45rem] md:text-[4.208rem] xl:text-[4.602rem] 2xl:text-[4.852rem] 3xl:text-[6.469rem] 4xl:text-[8.625rem] max-sm:py-[0.751rem] py-[2.05rem] md:py-[2.5rem] xl:py-[2.735rem] 2xl:py-[2.883rem] 3xl:py-[3.844rem] 4xl:py-[5.125rem]">
-          Featured
-        </h2>
+        <SectionHeading headingContent={'Featured'} className='text-right max-sm:pb-[1.282rem] pb-[3.5rem] md:pb-[4.269rem] xl:pb-[4.669rem] 2xl:pb-[4.922rem] 3xl:pb-[6.563rem] 4xl:pb-[8.75rem]' />
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 max-sm:gap-[1rem] gap-[0.8rem] md:gap-[0.976rem] xl:gap-[1.067rem] 2xl:gap-[1.125rem] 3xl:gap-[1.5rem] 4xl:gap-[2rem] max-sm:py-[0.916rem] py-[2.5rem] md:py-[3.049rem] xl:py-[3.335rem] 2xl:py-[3.516rem] 3xl:py-[4.688rem] 4xl:py-[6.25rem] max-sm:px-[0.229rem] px-[0.625rem] md:px-[0.763rem] xl:px-[0.834rem] 2xl:px-[0.879rem] 3xl:px-[1.172rem] 4xl:px-[1.563rem]">
           {featuredCreatives.map((creative, idx) => (
             <React.Fragment key={`creative-${creative.id || idx}`}>
@@ -210,7 +196,7 @@ const TheLounge = () => {
       </section>
 
       {/* News */}
-      <section id="news" className="max-sm:py-5 py-20 border-white border-y-2 relative">
+      <section id="news" className="max-sm:pb-[0.879rem] pb-[2.4rem] md:pb-[2.927rem] xl:pb-[3.202rem] 2xl:pb-[3.375rem] 3xl:pb-[4.5rem] 4xl:pb-[6rem] border-white border-y-2 relative">
         {/* Background */}
         <div className="absolute inset-0 z-0">
           <video
@@ -225,9 +211,7 @@ const TheLounge = () => {
           </video>
         </div>
         <div className="mx-auto max-sm:px-5 px-10 relative z-1">
-          <h2 className="font-bold leading-[1.33em] max-sm:text-[1.535rem] text-[2.047rem] md:text-[2.729rem] xl:text-[3.639rem] 2xl:text-[4.852rem] 3xl:text-[6.469rem] 4xl:text-[8.625rem]">
-            News
-          </h2>
+          <SectionHeading headingContent={'News'} className='max-sm:py-[0.659rem] py-[1.8rem] md:py-[2.196rem] xl:py-[2.401rem] 2xl:py-[2.531rem] 3xl:py-[3.375rem] 4xl:py-[4.5rem]' />
           <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 max-sm:gap-3 gap-15 w-full items-center relative">
             {mentorTopics?.length > 0 && (
               <div><ResourceLoopItem resource={mentorTopics[0]} /></div>
@@ -247,24 +231,20 @@ const TheLounge = () => {
       </section>
 
       {/* Publications */}
-      <section id="publications" className="mx-auto max-sm:px-[1.5rem] px-[1.25rem] md:px-[1.525rem] xl:px-[1.667rem] 2xl:px-[1.758rem] 3xl:px-[2.344rem] 4xl:px-[3.125rem]">
-        <h2 className="text-right font-bold leading-[1.33em] max-sm:text-[1.535rem] text-[2.047rem] md:text-[2.729rem] xl:text-[3.639rem] 2xl:text-[4.852rem] 3xl:text-[6.469rem] 4xl:text-[8.625rem] max-sm:py-[0.75rem] py-[1.8rem] md:py-[2.196rem] xl:py-[2.401rem] 2xl:py-[2.531rem] 3xl:py-[3.375rem] 4xl:py-[4.5rem]">
-          Publications
-        </h2>
-        <div className="flex w-full justify-center items-center relative pb-20 mb-10 max-sm:gap-[0.732rem] gap-[2rem] md:gap-[2.439rem] xl:gap-[2.668rem] 2xl:gap-[2.813rem] 3xl:gap-[3.75rem] 4xl:gap-[5rem]">
+      <section id="publications" className="mx-auto max-sm:px-[1.5rem] px-[1.25rem] md:px-[1.525rem] xl:px-[1.667rem] 2xl:px-[1.758rem] 3xl:px-[2.344rem] 4xl:px-[3.125rem] max-sm:pb-[1.758rem] pb-[4.8rem] md:pb-[5.855rem] xl:pb-[6.403rem] 2xl:pb-[6.75rem] 3xl:pb-[9rem] 4xl:pb-[12rem]">
+        <SectionHeading headingContent={'Publications'} className='text-right' />
+        <div className="flex w-full justify-center relative max-sm:gap-[0.732rem] gap-[2rem] md:gap-[2.439rem] xl:gap-[2.668rem] 2xl:gap-[2.813rem] 3xl:gap-[3.75rem] 4xl:gap-[5rem]">
           {/* Background */}
-          <AnimatedBackdrop className={''} />
+          <AnimatedBackdrop className={'max-sm:py-0 py-0'} />
           <PublicationList publications={publicationResources} />
         </div>
       </section>
 
       {/* Featured Cities */}
-      <section id="news" className="max-sm:py-5 py-20 border-white border-y-2 relative">
+      <section id="featured-cities" className="max-sm:py-5 py-20 border-white border-y-2 relative max-sm:px-[0.549rem] px-[1.5rem] md:px-[1.83rem] xl:px-[2.001rem] 2xl:px-[2.109rem] 3xl:px-[2.813rem] 4xl:px-[3.75rem]">
         <div className="mx-auto relative z-1">
-          <h2 className="font-bold leading-[1.33em] max-sm:text-[1.535rem] text-[2.047rem] md:text-[2.729rem] xl:text-[3.639rem] 2xl:text-[4.852rem] 3xl:text-[6.469rem] 4xl:text-[8.625rem] max-sm:px-[0.641rem] px-[1.75rem] md:px-[2.135rem] xl:px-[2.334rem] 2xl:px-[2.461rem] 3xl:px-[3.281rem] 4xl:px-[4.375rem]">
-            Featured Cities
-          </h2>
-          <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 max-sm:gap-[0.732rem] gap-[2rem] md:gap-[2.439rem] xl:gap-[2.668rem] 2xl:gap-[2.813rem] 3xl:gap-[3.75rem] 4xl:gap-[5rem] p-[1.75rem] md:p-[2.135rem] xl:p-[2.334rem] 2xl:p-[2.461rem] 3xl:p-[3.281rem] 4xl:p-[4.375rem] max-sm:mt-[0.659rem] mt-[1.8rem] md:mt-[2.196rem] xl:mt-[2.401rem] 2xl:mt-[2.531rem] 3xl:mt-[3.375rem] 4xl:mt-[4.5rem] w-full items-center relative">
+          <SectionHeading headingContent={'Featured Cities'} className='max-sm:pb-[1.282rem] pb-[3.5rem] md:pb-[4.269rem] xl:pb-[4.669rem] 2xl:pb-[4.922rem] 3xl:pb-[6.563rem] 4xl:pb-[8.75rem]' />
+          <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 max-sm:gap-[0.732rem] gap-[2rem] md:gap-[2.439rem] xl:gap-[2.668rem] 2xl:gap-[2.813rem] 3xl:gap-[3.75rem] 4xl:gap-[5rem] max-sm:mt-[0.659rem] mt-[1.8rem] md:mt-[2.196rem] xl:mt-[2.401rem] 2xl:mt-[2.531rem] 3xl:mt-[3.375rem] 4xl:mt-[4.5rem] w-full items-center relative">
             {featuredCities?.length > 0 && (
               <div className='col-span-2'><FeaturedCityLoopItem featuredCity={featuredCities[0]} /></div>
             )}

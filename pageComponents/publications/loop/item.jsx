@@ -6,7 +6,7 @@ const PublicationLoopItem = ({ publication }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <LinkWrapper href={`${publication?.href}`} className='group transition-all'
+    <LinkWrapper target='_blank' href={`${publication?.href}`} className='group transition-all'
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

@@ -7,7 +7,6 @@ import JobLoopItem from 'pageComponents/jobs/loop/item';
 import CreativeLoopItem from './loop/item';
 import PageHeader from 'components/PageHeader';
 import ResourceLoopItem from 'pageComponents/resources/loop/item';
-import AgenciesLoopItem from 'pageComponents/agencies/loop/item';
 import { useEffect, useState } from 'react';
 import CreativeLoopItem2 from './loop/item2';
 import TmTextLink from 'components/TmTextLink';
@@ -16,6 +15,7 @@ import useFeaturedJobs from 'hooks/useFeaturedJobs';
 import useFeaturedAgencies from 'hooks/useFeaturedAgencies';
 import useFeaturedCreatives from 'hooks/useFeaturedCreatives';
 import AnimatedBackdrop from 'components/AnimatedBackdrop';
+import FeaturedAgenciesLoopItem from 'pageComponents/featured_agencies/loop/item';
 
 const Creatives = () => {
 
@@ -146,7 +146,7 @@ const Creatives = () => {
           </div>
           <div className="flex gap-6 md:gap-51 3xl:gap-60 4xl:gap-90 overflow-x-scroll py-10 -mt-3 2xl:mx-20 3xl:mx-40 overflow-hidden">
             {featuredAgencies.map((agency, idx) => (
-              <AgenciesLoopItem key={idx} agency={agency} />
+              <FeaturedAgenciesLoopItem key={idx} agency={agency} />
             ))}
           </div>
           <div className="flex items-center justify-end mt-5 md:mt-20 2xl:mt-45 3xl:mt-60 4xl:mt-80 2xl:px-10 3xl:px-18 4xl:px-30">
