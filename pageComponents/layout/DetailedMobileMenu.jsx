@@ -54,6 +54,7 @@ const DetailedMobileMenu = ({ isOpen = false, setIsOpen = (flag) => { }, user })
         { text: 'Featured', href: '{{parent.href}}#featured', visibility: VISIBILITY.ALL, links: [] },
         { text: 'News', href: '{{parent.href}}#news', visibility: VISIBILITY.ALL, links: [] },
         { text: 'Publications', href: '{{parent.href}}#publications', visibility: VISIBILITY.ALL, links: [] },
+        { text: 'Cities', href: '{{parent.href}}#cities', visibility: VISIBILITY.ALL, links: [] },
       ]
     },
     {

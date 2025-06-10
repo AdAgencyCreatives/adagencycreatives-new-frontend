@@ -67,6 +67,7 @@ const TheLounge = () => {
             <LinkOrDiv href="#featured">featured</LinkOrDiv>
             <LinkOrDiv href="#news">news</LinkOrDiv>
             <LinkOrDiv href="#publications">publications</LinkOrDiv>
+            <LinkOrDiv href="#cities">cities</LinkOrDiv>
           </div>
         </div>
       </section>
@@ -77,7 +78,7 @@ const TheLounge = () => {
         <div className='relative'>
           {/* Background */}
           <AnimatedBackdrop className={'max-sm:w-[100%]'} />
-          <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 items-center relative max-sm:gap-[0.806rem] gap-[2.2rem] md:gap-[2.683rem] xl:gap-[2.935rem] 2xl:gap-[3.094rem] 3xl:gap-[4.125rem] 4xl:gap-[5.5rem]">
+          <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 items-center relative max-sm:gap-[0.806rem] gap-[2.2rem] md:gap-[2.683rem] xl:gap-[2.935rem] 2xl:gap-[3.094rem] 3xl:gap-[4.125rem] 4xl:gap-[5.5rem] max-sm:h-[22.357rem] h-[61.05rem] md:h-[74.464rem] xl:h-[81.44rem] 2xl:h-[85.852rem] 3xl:h-[114.469rem] 4xl:h-[152.625rem]">
             {spotlightCreatives?.length > 0 && spotlightCreatives.slice(0, Math.min(10, spotlightCreatives.length)).map((spotlight, idx) => {
               return (
                 <React.Fragment key={`spotlight-${spotlight.id || idx}`}>
@@ -88,7 +89,7 @@ const TheLounge = () => {
                 </React.Fragment>
               );
             })}
-            <div className="absolute left-0 leading-none max-sm:text-[1.375rem] text-[3.95rem] md:text-[4.818rem] xl:text-[5.269rem] 2xl:text-[5.555rem] 3xl:text-[7.406rem] 4xl:text-[9.875rem] max-sm:bottom-[1.044rem] bottom-[2.85rem] md:bottom-[3.476rem] xl:bottom-[3.802rem] 2xl:bottom-[4.008rem] 3xl:bottom-[5.344rem] 4xl:bottom-[7.125rem]">
+            <div className="absolute left-0 font-bold leading-none max-sm:text-[1.375rem] text-[3.95rem] md:text-[4.818rem] xl:text-[5.269rem] 2xl:text-[5.555rem] 3xl:text-[7.406rem] 4xl:text-[9.875rem] max-sm:bottom-[1.044rem] bottom-[2.85rem] md:bottom-[3.476rem] xl:bottom-[3.802rem] 2xl:bottom-[4.008rem] 3xl:bottom-[5.344rem] 4xl:bottom-[7.125rem]">
               <div>Gather.</div>
               <div>Inspire.</div>
               <div className="text-brand-yellow">Do Cool $#*t!</div>
@@ -233,7 +234,7 @@ const TheLounge = () => {
       </section>
 
       {/* Featured Cities */}
-      <section id="featured-cities" className="max-sm:py-5 py-20 border-white border-y-2 relative max-sm:px-[0.549rem] px-[1.5rem] md:px-[1.83rem] xl:px-[2.001rem] 2xl:px-[2.109rem] 3xl:px-[2.813rem] 4xl:px-[3.75rem]">
+      <section id="cities" className="max-sm:py-5 py-20 border-white border-y-2 relative max-sm:px-[0.549rem] px-[1.5rem] md:px-[1.83rem] xl:px-[2.001rem] 2xl:px-[2.109rem] 3xl:px-[2.813rem] 4xl:px-[3.75rem]">
         <div className="mx-auto relative z-1">
           <SectionHeading headingContent={'Featured Cities'} className='max-sm:pb-[1.282rem] pb-[3.5rem] md:pb-[4.269rem] xl:pb-[4.669rem] 2xl:pb-[4.922rem] 3xl:pb-[6.563rem] 4xl:pb-[8.75rem]' />
           <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 max-sm:gap-[0.732rem] gap-[2rem] md:gap-[2.439rem] xl:gap-[2.668rem] 2xl:gap-[2.813rem] 3xl:gap-[3.75rem] 4xl:gap-[5rem] max-sm:mt-[0.659rem] mt-[1.8rem] md:mt-[2.196rem] xl:mt-[2.401rem] 2xl:mt-[2.531rem] 3xl:mt-[3.375rem] 4xl:mt-[4.5rem] w-full items-center relative">
