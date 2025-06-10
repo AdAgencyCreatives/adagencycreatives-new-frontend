@@ -17,10 +17,13 @@ import useFeaturedCities from 'hooks/useFeaturedCities';
 import FeaturedCityLoopItem from 'pageComponents/featured_cities/loop/item';
 import LinkOrDiv from 'components/LinkOrDiv';
 import SectionHeading from 'components/SectionHeading';
+import useFeaturedJobs from 'hooks/useFeaturedJobs';
+import JobLoopItem from 'pageComponents/jobs/loop/item';
 
 const TheLounge = () => {
 
-  const FEATURED_CREATIVES_PER_PAGE = 16;
+  const FEATURED_JOBS_PER_PAGE = 8;
+  const FEATURED_CREATIVES_PER_PAGE = 8;
 
   const { isMobile, isPortrait } = useScreen();
 
@@ -28,6 +31,7 @@ const TheLounge = () => {
     console.log('You selected:', option)
   }
 
+  const { featuredJobs } = useFeaturedJobs(FEATURED_JOBS_PER_PAGE);
   const { featuredCreatives } = useFeaturedCreatives(FEATURED_CREATIVES_PER_PAGE);
   const { spotlightCreatives } = useSpotlightCreatives();
   const { publicationResources } = usePublicationResources();
@@ -60,7 +64,7 @@ const TheLounge = () => {
           <div className="font-bold max-sm:space-x-[0.586rem] space-x-[1.6rem] md:space-x-[1.952rem] xl:space-x-[2.134rem] 2xl:space-x-[2.25rem] 3xl:space-x-[3rem] 4xl:space-x-[4rem] mt-4 md:mt-10 3xl:mt-20 max-sm:text-[0.75rem] text-[1.05rem] md:text-[1.281rem] xl:text-[1.401rem] 2xl:text-[1.477rem] 3xl:text-[1.969rem] 4xl:text-[2.625rem] text-white relative z-1">
             <LinkOrDiv href="#spotlight">spotlight</LinkOrDiv>
             <LinkOrDiv href="#chat">chat</LinkOrDiv>
-            <LinkOrDiv href="#featured-creatives">featured</LinkOrDiv>
+            <LinkOrDiv href="#featured">featured</LinkOrDiv>
             <LinkOrDiv href="#news">news</LinkOrDiv>
             <LinkOrDiv href="#publications">publications</LinkOrDiv>
           </div>
@@ -139,12 +143,12 @@ const TheLounge = () => {
         </div>
       </section>
 
-      {/* Featured Creatives */}
-      <section id="featured-creatives" className="mx-auto max-sm:pt-[1.125rem] max-sm:px-[0.458rem] px-[1.25rem] md:px-[1.525rem] xl:px-[1.667rem] 2xl:px-[1.758rem] 3xl:px-[2.344rem] 4xl:px-[3.125rem]">
+      {/* Featured Jobs+Creatives */}
+      <section id="featured" className="mx-auto max-sm:pt-[1.125rem] max-sm:px-[0.458rem] px-[1.25rem] md:px-[1.525rem] xl:px-[1.667rem] 2xl:px-[1.758rem] 3xl:px-[2.344rem] 4xl:px-[3.125rem]">
         <SectionHeading headingContent={'Featured'} className='text-right max-sm:pb-[1.282rem] pb-[3.5rem] md:pb-[4.269rem] xl:pb-[4.669rem] 2xl:pb-[4.922rem] 3xl:pb-[6.563rem] 4xl:pb-[8.75rem]' />
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 max-sm:gap-[1rem] gap-[0.8rem] md:gap-[0.976rem] xl:gap-[1.067rem] 2xl:gap-[1.125rem] 3xl:gap-[1.5rem] 4xl:gap-[2rem] max-sm:py-[0.916rem] py-[2.5rem] md:py-[3.049rem] xl:py-[3.335rem] 2xl:py-[3.516rem] 3xl:py-[4.688rem] 4xl:py-[6.25rem] max-sm:px-[0.229rem] px-[0.625rem] md:px-[0.763rem] xl:px-[0.834rem] 2xl:px-[0.879rem] 3xl:px-[1.172rem] 4xl:px-[1.563rem]">
-          {featuredCreatives.map((creative, idx) => (
-            <React.Fragment key={`creative-${creative.id || idx}`}>
+          {featuredJobs.map((job, idx) => (
+            <React.Fragment key={`job-${job.id || idx}`}>
               {idx === 6 && (
                 <div key={`ad-agency-${idx}`} className="w-max mx-auto col-span-2 text-center flex flex-col justify-center max-sm:py-[2rem] max-sm:gap-[1.099rem] gap-[3rem] md:gap-[3.659rem] xl:gap-[4.002rem] 2xl:gap-[4.219rem] 3xl:gap-[5.625rem] 4xl:gap-[7.5rem]">
                   <h2 className="leading-[1.33em] font-bold max-sm:text-[1.5rem] text-[1.9rem] md:text-[2.317rem] xl:text-[2.535rem] 2xl:text-[2.672rem] 3xl:text-[3.563rem] 4xl:text-[4.75rem]">
@@ -158,38 +162,26 @@ const TheLounge = () => {
                   </div>
                 </div>
               )}
-
-              {(!(isMobile && isPortrait) && idx === 15) && (
+              <JobLoopItem key={idx} job={job} className={idx > 5 ? 'md:flex hidden' : ''} />
+            </React.Fragment>
+          ))}
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 max-sm:gap-[1rem] gap-[0.8rem] md:gap-[0.976rem] xl:gap-[1.067rem] 2xl:gap-[1.125rem] 3xl:gap-[1.5rem] 4xl:gap-[2rem] max-sm:py-[0.916rem] py-[2.5rem] md:py-[3.049rem] xl:py-[3.335rem] 2xl:py-[3.516rem] 3xl:py-[4.688rem] 4xl:py-[6.25rem] max-sm:px-[0.229rem] px-[0.625rem] md:px-[0.763rem] xl:px-[0.834rem] 2xl:px-[0.879rem] 3xl:px-[1.172rem] 4xl:px-[1.563rem]">
+          {featuredCreatives.map((creative, idx) => (
+            <React.Fragment key={`creative-${creative.id || idx}`}>
+              {idx === 6 && (
                 <div key={`ad-agency-${idx}`} className="w-max mx-auto col-span-2 text-center flex flex-col justify-center max-sm:py-[2rem] max-sm:gap-[1.099rem] gap-[3rem] md:gap-[3.659rem] xl:gap-[4.002rem] 2xl:gap-[4.219rem] 3xl:gap-[5.625rem] 4xl:gap-[7.5rem]">
                   <h2 className="leading-[1.33em] font-bold max-sm:text-[1.5rem] text-[1.9rem] md:text-[2.317rem] xl:text-[2.535rem] 2xl:text-[2.672rem] 3xl:text-[3.563rem] 4xl:text-[4.75rem]">
-                    Want Your<br />
-                    <TmText text='ProFile' /><br />
+                    Want<br />
+                    Your <TmText text='ProFile' /><br />
                     Featured?
                   </h2>
                   <div>
-                    <Link href="/" className="inline-block leading-none w-full font-bold border-brand-yellow max-sm:border-[0.125rem] border-[0.138rem] md:border-[0.168rem] xl:border-[0.184rem] 2xl:border-[0.194rem] 3xl:border-[0.258rem] 4xl:border-[0.344rem] uppercase text-brand-yellow rounded-full cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white max-sm:text-[0.75rem] text-[0.6rem] md:text-[0.732rem] xl:text-[0.8rem] 2xl:text-[0.844rem] 3xl:text-[1.125rem] 4xl:text-[1.5rem] max-sm:py-[0.137rem] py-[0.375rem] md:py-[0.458rem] xl:py-[0.501rem] 2xl:py-[0.528rem] 3xl:py-[0.704rem] 4xl:py-[0.938rem] max-sm:px-[0.879rem] px-[2.4rem] md:px-[2.927rem] xl:px-[3.202rem] 2xl:px-[3.375rem] 3xl:px-[4.5rem] 4xl:px-[6rem]">
-                      See How
-                    </Link>
+                    <Link href="/" className="block leading-none font-bold border-brand-yellow max-sm:border-[0.125rem] border-[0.138rem] md:border-[0.168rem] xl:border-[0.184rem] 2xl:border-[0.194rem] 3xl:border-[0.258rem] 4xl:border-[0.344rem] uppercase text-brand-yellow rounded-full cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white max-sm:text-[0.75rem] text-[0.6rem] md:text-[0.732rem] xl:text-[0.8rem] 2xl:text-[0.844rem] 3xl:text-[1.125rem] 4xl:text-[1.5rem] max-sm:py-[0.137rem] py-[0.375rem] md:py-[0.458rem] xl:py-[0.501rem] 2xl:py-[0.528rem] 3xl:py-[0.704rem] 4xl:py-[0.938rem] max-sm:px-[0.879rem] px-[2.4rem] md:px-[2.927rem] xl:px-[3.202rem] 2xl:px-[3.375rem] 3xl:px-[4.5rem] 4xl:px-[6rem]">See How</Link>
                   </div>
                 </div>
               )}
-
-              <CreativeLoopItem key={idx} creative={creative} />
-
-              {((isMobile && isPortrait && idx === 15)) && (
-                <div key={`ad-agency-${idx}`} className="w-max mx-auto col-span-2 text-center flex flex-col justify-center max-sm:py-[2rem] max-sm:gap-[1.099rem] gap-[3rem] md:gap-[3.659rem] xl:gap-[4.002rem] 2xl:gap-[4.219rem] 3xl:gap-[5.625rem] 4xl:gap-[7.5rem]">
-                  <h2 className="leading-[1.33em] font-bold max-sm:text-[1.5rem] text-[1.9rem] md:text-[2.317rem] xl:text-[2.535rem] 2xl:text-[2.672rem] 3xl:text-[3.563rem] 4xl:text-[4.75rem]">
-                    Want Your<br />
-                    <TmText text='ProFile' /><br />
-                    Featured?
-                  </h2>
-                  <div>
-                    <Link href="/" className="inline-block leading-none w-full font-bold border-brand-yellow max-sm:border-[0.125rem] border-[0.138rem] md:border-[0.168rem] xl:border-[0.184rem] 2xl:border-[0.194rem] 3xl:border-[0.258rem] 4xl:border-[0.344rem] uppercase text-brand-yellow rounded-full cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white max-sm:text-[0.75rem] text-[0.6rem] md:text-[0.732rem] xl:text-[0.8rem] 2xl:text-[0.844rem] 3xl:text-[1.125rem] 4xl:text-[1.5rem] max-sm:py-[0.137rem] py-[0.375rem] md:py-[0.458rem] xl:py-[0.501rem] 2xl:py-[0.528rem] 3xl:py-[0.704rem] 4xl:py-[0.938rem] max-sm:px-[0.879rem] px-[2.4rem] md:px-[2.927rem] xl:px-[3.202rem] 2xl:px-[3.375rem] 3xl:px-[4.5rem] 4xl:px-[6rem]">
-                      See How
-                    </Link>
-                  </div>
-                </div>
-              )}
+              <CreativeLoopItem key={idx} creative={creative} className={idx > 5 ? 'md:flex hidden' : ''} />
             </React.Fragment>
           ))}
         </div>
