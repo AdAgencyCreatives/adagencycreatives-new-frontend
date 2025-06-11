@@ -269,9 +269,9 @@
   }
 
   .card .title {
-    font-size: 0.625rem;
-    line-height: 1rem;
-    height: calc(2 * 0.625rem + 1rem);
+    font-size: 0.875rem;
+    line-height: 1.33rem;
+    height: calc(2 * 0.875rem + 1.33rem);
     padding-bottom: 0.477rem;
   }
 
