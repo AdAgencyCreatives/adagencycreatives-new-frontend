@@ -5,20 +5,20 @@ import LinkOrDiv from "components/LinkOrDiv";
 /**
  * @param {{ agency: { image: string, name: string, location: string, item?:any }, className?: string }} props
  */
-const FeaturedAgenciesLoopItem = ({ agency, className }) => {
+const FeaturedAgenciesLoopItem = ({ agency, className='' }) => {
 
   const agency_url = agency?.item?.slug ? `/agency/${agency.item.slug}` : '';
   const city_url = agency?.item?.location?.city ? `/job-location-city/${agency.item.location.city}` : '';
   const state_url = agency?.item?.location?.state ? `/job-location-state/${agency.item.location.state}` : '';
 
   return (
-    <div className={`z-1 agency card relative text-center flex flex-col justify-between items-center ${className}`}>
-      <div className='relative flex items-center justify-center h-[142px] md:h-[200px] 2xl:h-[224px] 3xl:h-[310px] 4xl:h-[416px]'>
+    <div className={`z-1 relative text-center flex flex-col justify-between items-center bg-black outline max-sm:outline-[0.028rem] outline-[0.075rem] md:outline-[0.092rem] xl:outline-[0.1rem] 2xl:outline-[0.106rem] 3xl:outline-[0.141rem] 4xl:outline-[0.188rem] max-sm:mx-[1.373rem] mx-[3.75rem] md:mx-[4.574rem] xl:mx-[5.002rem] 2xl:mx-[5.273rem] 3xl:mx-[7.031rem] 4xl:mx-[9.375rem] max-sm:rounded-[0.513rem] rounded-[1.4rem] md:rounded-[1.708rem] xl:rounded-[1.868rem] 2xl:rounded-[1.969rem] 3xl:rounded-[2.625rem] 4xl:rounded-[3.5rem] featured-agency-box-shadow ${className}`}>
+      <div className='relative flex items-center justify-center w-[142px] md:w-[200px] 2xl:w-[224px] 3xl:w-[310px] 4xl:w-[416px] aspect-square'>
         <div className="image-mask">
           <img src={agency.image} alt="" className='w-[143px] md:w-[190px] lg:w-[200px] 2xl:w-[204px] 3xl:w-[270px] 4xl:w-[362px] h-auto object-cover aspect-square' />
         </div>
       </div>
-      <div className="w-full">
+      {/* <div className="w-full">
         <LinkOrDiv href={agency_url} className={`font-inter font-bold text-base ${agency_url?.length > 0 ? 'hover:text-brand-yellow cursor-pointer' : ''} name uppercase`}>{agency?.item?.name}</LinkOrDiv>
         <div className="separator w-full mx-auto"></div>
         {city_url?.length > 0 && state_url?.length > 0 ? (
@@ -29,7 +29,7 @@ const FeaturedAgenciesLoopItem = ({ agency, className }) => {
         ) : (<>
           <LinkOrDiv href="" className="text-white uppercase location">{agency.location}</LinkOrDiv>
         </>)}
-      </div>
+      </div> */}
     </div>
   );
 };

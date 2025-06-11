@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import JobLoopItem from 'pageComponents/jobs/loop/item';
 import CreativeLoopItem from './loop/item';
-import PageHeader from 'components/PageHeader';
+import DirectoryPageHeader from 'components/DirectoryPageHeader';
 import ResourceLoopItem from 'pageComponents/resources/loop/item';
 import { useEffect, useState } from 'react';
 import CreativeLoopItem2 from './loop/item2';
@@ -38,11 +38,10 @@ const Creatives = () => {
   return (
     <div className="text-white">
       {/* Hero */}
-      <section className="relative flex flex-col justify-center text-center page-header">
-        <PageHeader
-          page=""
-          heading="Creatives"
-        />
+      <DirectoryPageHeader
+        page=""
+        heading="Creatives"
+      >
         <div className="font-bold space-x-6 2xl:space-x-[36px] 3xl:space-x-[48px] 4xl:space-x-[64px] text-sm md:text-2xl 3xl:text-[32px] 4xl:text-[42.67px] text-brand-yellow relative z-1">
           <TmTextLink
             text='create ProFile'
@@ -53,7 +52,7 @@ const Creatives = () => {
           <a href="#search-jobs" className="sub-heading">search jobs</a>
           <a href="#resources" className="sub-heading">resources</a>
         </div>
-      </section>
+      </DirectoryPageHeader>
 
       {/* Featured Jobs */}
       <div className="bg-black heading-wrap relative z-1" id="search-jobs">
@@ -91,7 +90,7 @@ const Creatives = () => {
       <section className="resources relative">
         {/* Background */}
         <AnimatedBackdrop className={''} />
-        <div className="grid grid-cols-4 gap-x-[12px] md:gap-x-[54px] 3xl:gap-x-[72px] 4xl:gap-x-[92px] w-full items-center">
+        <div className="grid grid-cols-4 gap-[12px] md:gap-[54px] 3xl:gap-[72px] 4xl:gap-[92px] w-full items-center">
           {/* <!-- Column 1: 1 item --> */}
           <div>
             <ResourceLoopItem
@@ -100,7 +99,7 @@ const Creatives = () => {
           </div>
 
           {/* <!-- Column 2: 4 items stacked vertically --> */}
-          <div className="col-span-2 space-y-4 grid grid-cols-2 items-start gap-x-[14px] md:gap-x-[54px] 3xl:gap-x-[72px] 4xl:gap-x-[92px]">
+          <div className="col-span-2 grid grid-cols-2 items-start gap-[14px] md:gap-[54px] 3xl:gap-[72px] 4xl:gap-[92px]">
             <ResourceLoopItem
               resource={{ title: 'inspiration', image: '/resource1.avif', href: '/resources-inspiration' }}
             />
@@ -124,6 +123,7 @@ const Creatives = () => {
         </div>
       </section>
 
+      {/* Agencies*/}
       <section className="border-y-0 border-white relative featured-agency max-sm:py-15">
         <div className="absolute top-0 left-[50%] transform -translate-x-[50%] translate-y-0 border-white border-1 w-[88%] h-px m-auto hidden sm:block"></div>
         <div className="absolute bottom-0 left-[50%] transform -translate-x-[50%] translate-y-0 border-white border-1 w-[88%] h-px m-auto hidden sm:block"></div>
@@ -144,7 +144,7 @@ const Creatives = () => {
           <div className='heading-wrap'>
             <h2 className="heading 2xl:px-20 3xl:px-40 font-bold mb-0 2xl:mb-20 3xl:mb-30 4xl:mb-40 absolute sm:relative sm:top-auto -top-9">Featured Agencies</h2>
           </div>
-          <div className="flex gap-6 md:gap-51 3xl:gap-60 4xl:gap-90 overflow-x-scroll py-10 -mt-3 2xl:mx-20 3xl:mx-40 overflow-hidden">
+          <div className="flex overflow-x-scroll py-10 -mt-3 2xl:mx-20 3xl:mx-40 overflow-hidden">
             {featuredAgencies.map((agency, idx) => (
               <FeaturedAgenciesLoopItem key={idx} agency={agency} />
             ))}

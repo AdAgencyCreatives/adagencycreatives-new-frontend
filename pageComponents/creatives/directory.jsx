@@ -1,6 +1,6 @@
 'use client';
 
-import PageHeader from "components/PageHeader";
+import DirectoryPageHeader from "components/DirectoryPageHeader";
 import CreativeLoopItem from "./loop/item";
 import Link from "next/link";
 import React, { useContext, useEffect, useState } from "react";
@@ -323,11 +323,11 @@ const CreativesDirectory = () => {
   return (
     <div>
       {/* Hero */}
-      <section className="relative flex flex-col justify-center text-center page-header directory mx-auto w-full">
-        <PageHeader
-          page="creatives"
-          heading="Directory"
-        />
+      <DirectoryPageHeader
+        page="creatives"
+        heading="Directory"
+        className="directory"
+      >
         <div className="relative text-left search flex flex-col z-999998">
           {token && (
             <>
@@ -361,7 +361,7 @@ const CreativesDirectory = () => {
             </>
           )}
         </div>
-      </section>
+      </DirectoryPageHeader>
 
       {/* Featured Creatives */}
       <section id="directory-creatives" className="relative z-1 jobs-directory card-wrapper">

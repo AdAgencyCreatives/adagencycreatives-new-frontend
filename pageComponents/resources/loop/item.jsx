@@ -1,13 +1,11 @@
 import LinkWrapper from 'components/LinkWrapper';
 import Image from 'next/image';
-import Link from 'next/link';
-import { useState } from 'react';
 
 const ResourceLoopItem = ({ resource }) => {
   return (
     <LinkWrapper href={resource.href} className='group transition-all'>
-      <div className="rounded-md md:rounded-2xl outline outline-3 md:outline-8 lg:outline-12 3xl:outline-16 4xl:outline-21 outline-white group-hover:outline-brand-yellow shadow-light md:shadow-(--ad-box-shadow) transition relative bg-black pt-3 md:pt-0 ">
-        <Image src={resource.image} width="257" height="257" alt="" className="rounded-2xl bg-black w-full invisible" />
+      <div className="max-sm:rounded-[0.146rem] rounded-[0.4rem] md:rounded-[0.488rem] xl:rounded-[0.534rem] 2xl:rounded-[0.563rem] 3xl:rounded-[0.75rem] 4xl:rounded-[1rem] outline max-sm:outline-[0.192rem] outline-[0.525rem] md:outline-[0.641rem] xl:outline-[0.701rem] 2xl:outline-[0.739rem] 3xl:outline-[0.985rem] 4xl:outline-[1.313rem] outline-white group-hover:outline-brand-yellow shadow-light md:shadow-(--ad-box-shadow) transition relative bg-black pt-3 md:pt-0 ">
+        <Image src={resource.image} width="257" height="257" alt="" className="bg-black w-full invisible" />
         <div className="absolute bottom-2 left-2 md:bottom-5 md:left-5">
           <Image
             src={'/aac-logo-white.avif'}

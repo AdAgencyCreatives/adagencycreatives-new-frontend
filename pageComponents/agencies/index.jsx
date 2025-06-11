@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import PageHeader from 'components/PageHeader';
+import DirectoryPageHeader from 'components/DirectoryPageHeader';
 import ResourceLoopItem from 'pageComponents/resources/loop/item';
 import CreativeLoopItem from 'pageComponents/creatives/loop/item';
 import CreativeLoopItem2 from 'pageComponents/creatives/loop/item2';
@@ -14,7 +14,7 @@ import AnimatedBackdrop from 'components/AnimatedBackdrop';
 
 const Agencies = () => {
 
-   const FEATURED_CREATIVES_PER_PAGE = 16;
+  const FEATURED_CREATIVES_PER_PAGE = 16;
   const [width, setWidth] = useState(0);
 
   useEffect(() => {
@@ -24,22 +24,21 @@ const Agencies = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-   const { featuredCreatives } = useFeaturedCreatives(FEATURED_CREATIVES_PER_PAGE);
+  const { featuredCreatives } = useFeaturedCreatives(FEATURED_CREATIVES_PER_PAGE);
 
   return (
     <div className="text-white">
       {/* Hero */}
-      <section className="relative flex flex-col justify-center text-center page-header">
-        <PageHeader
-          page=""
-          heading="Agencies"
-        />
+      <DirectoryPageHeader
+        page=""
+        heading="Agencies"
+      >
         <div className="font-bold space-x-6 2xl:space-x-[36px] 3xl:space-x-[48px] 4xl:space-x-[64px] text-sm md:text-2xl 3xl:text-[32px] 4xl:text-[42.67px] text-brand-yellow relative z-1">
           <a href="#creatives" className="sub-heading">hire creatives</a>
           <a href="#plans" className="sub-heading">choose a plan</a>
           <a href="#post-job" className="sub-heading">post a job</a>
         </div>
-      </section>
+      </DirectoryPageHeader>
 
       {/* Featured Creatives */}
       <div className="bg-black heading-wrap relative z-1" id="creatives">
