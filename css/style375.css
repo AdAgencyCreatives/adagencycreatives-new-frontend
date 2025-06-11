@@ -292,17 +292,18 @@
   .card.design-2 .name {
     font-size: 0.767rem;
     line-height: 100%;
+    height: unset !important;
   }
 
   .card.design-2 .title {
-    font-size: 0.426rem;
-    line-height: 0.682rem;
+    font-size: 0.682rem;
+    line-height: 1.33em;
     padding-bottom: 0;
   }
 
   .card.design-2 .location {
-    font-size: 0.426rem;
-    line-height: 0.596rem;
+    font-size: 0.682rem;
+    line-height: 1.33em;
   }
 
   .separator {

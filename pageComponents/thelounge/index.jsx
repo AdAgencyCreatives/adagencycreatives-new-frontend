@@ -189,7 +189,7 @@ const TheLounge = () => {
       </section>
 
       {/* News */}
-      <section id="news" className="max-sm:pb-[0.879rem] pb-[2.4rem] md:pb-[2.927rem] xl:pb-[3.202rem] 2xl:pb-[3.375rem] 3xl:pb-[4.5rem] 4xl:pb-[6rem] border-white border-y-2 relative">
+      <section id="news" className="max-sm:pb-[2.5rem] pb-[4.8rem] md:pb-[5.855rem] xl:pb-[6.403rem] 2xl:pb-[6.75rem] 3xl:pb-[9rem] 4xl:pb-[12rem] border-white border-y-2 relative">
         {/* Background */}
         <div className="absolute inset-0 z-0">
           <video
@@ -251,7 +251,10 @@ const TheLounge = () => {
           </div>
         </div>
       </section>
-      <section className='mt-36'>
+      <section className='creative p-[24px]!'>
+        <footer className="flex flex-row justify-center w-full z-11 py-[10px] text-gray-400 space-y-1">
+          <p className="font-inter text-center font-normal uppercase mt-2 px-12 md:px-2 transition delay-150 duration-300 ease-in-out text-[#6E6E6E] hover:text-[#FFFFFF]">© {(new Date()).getFullYear()} Ad Agency Creatives. All Rights Reserved.</p>
+        </footer>
       </section>
     </div>
   );
