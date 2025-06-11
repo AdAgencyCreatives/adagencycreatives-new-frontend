@@ -16,6 +16,7 @@ import useFeaturedAgencies from 'hooks/useFeaturedAgencies';
 import useFeaturedCreatives from 'hooks/useFeaturedCreatives';
 import AnimatedBackdrop from 'components/AnimatedBackdrop';
 import FeaturedAgenciesLoopItem from 'pageComponents/featured_agencies/loop/item';
+import CallToActionButton from 'components/CallToActionButton';
 
 const Creatives = () => {
 
@@ -67,12 +68,9 @@ const Creatives = () => {
                   <AnimatedBackdrop className={'block'} />
                   <h2 className="relative z-1 pb-0 pt-6 2xl:pb-14 2xl:pt-20 3xl:pb-20 3xl:pt-26 4xl:py-15 font-arial font-bold  md:leading-[58.5px] 3xl:leading-[78px] 4xl:leading-[104px]">Haven't<br />Found<br />The Perfect<br />Job?</h2>
                   <div className="relative z-1">
-                    <Link
-                      href="/"
-                      className="link-button border-brand-yellow border-2 md:border-4 uppercase text-brand-yellow rounded-full font-inter sm:font-semibold md:font-hass75 md:font-bold cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white"
-                    >
-                      Advanced Search
-                    </Link>
+                    <CallToActionButton href="" className="uppercase">
+                      Advance Search
+                    </CallToActionButton>
                   </div>
                 </div>
               )}
