@@ -68,7 +68,7 @@ const Creatives = () => {
                   <AnimatedBackdrop className={'block'} />
                   <h2 className="relative z-1 pb-0 pt-6 2xl:pb-14 2xl:pt-20 3xl:pb-20 3xl:pt-26 4xl:py-15 font-arial font-bold  md:leading-[58.5px] 3xl:leading-[78px] 4xl:leading-[104px]">Haven't<br />Found<br />The Perfect<br />Job?</h2>
                   <div className="relative z-1">
-                    <CallToActionButton href="" className="uppercase">
+                    <CallToActionButton href="/" className="uppercase">
                       Advance Search
                     </CallToActionButton>
                   </div>
@@ -150,7 +150,10 @@ const Creatives = () => {
           <div className="flex items-center justify-end mt-5 md:mt-20 2xl:mt-45 3xl:mt-60 4xl:mt-80 2xl:px-10 3xl:px-18 4xl:px-30">
             {/* <Image src="/aac-logo-yellow.png" alt="" width="67" height="67" className="hover:rotate-45 transition-transform duration-3000" />
             <div className="border-brand-yellow border-2 w-10"></div> */}
-            <Link href="/" className="border-brand-yellow bg-black border-2 md:border-4 uppercase text-brand-yellow rounded-full font-inter cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white text-center">Get Featured</Link>
+            {/* <Link href="/" className="border-brand-yellow bg-black border-2 md:border-4 uppercase text-brand-yellow rounded-full font-inter cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white text-center">Get Featured</Link> */}
+            <CallToActionButton href="/" className="uppercase">
+              Get Featured
+            </CallToActionButton>
           </div>
         </div>
       </section>
