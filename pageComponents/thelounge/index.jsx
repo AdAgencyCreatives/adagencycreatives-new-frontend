@@ -151,7 +151,7 @@ const TheLounge = () => {
           {featuredJobs.map((job, idx) => (
             <React.Fragment key={`job-${job.id || idx}`}>
               {idx === 6 && (
-                <div key={`ad-agency-${idx}`} className="w-max mx-auto col-span-2 text-center flex flex-col justify-center max-sm:py-[2rem] max-sm:gap-[1.099rem] gap-[3rem] md:gap-[3.659rem] xl:gap-[4.002rem] 2xl:gap-[4.219rem] 3xl:gap-[5.625rem] 4xl:gap-[7.5rem]">
+                <div key={`ad-agency-${idx}`} className="z-1 relative w-max mx-auto col-span-2 text-center flex flex-col justify-center max-sm:py-[2rem] max-sm:gap-[1.099rem] gap-[3rem] md:gap-[3.659rem] xl:gap-[4.002rem] 2xl:gap-[4.219rem] 3xl:gap-[5.625rem] 4xl:gap-[7.5rem]">
                   <h2 className="leading-[1.33em] font-bold max-sm:text-[1.5rem] text-[1.9rem] md:text-[2.317rem] xl:text-[2.535rem] 2xl:text-[2.672rem] 3xl:text-[3.563rem] 4xl:text-[4.75rem]">
                     Haven't<br />
                     Found<br />

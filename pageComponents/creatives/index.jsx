@@ -148,9 +148,6 @@ const Creatives = () => {
             ))}
           </div>
           <div className="flex items-center justify-end mt-5 md:mt-20 2xl:mt-45 3xl:mt-60 4xl:mt-80 2xl:px-10 3xl:px-18 4xl:px-30">
-            {/* <Image src="/aac-logo-yellow.png" alt="" width="67" height="67" className="hover:rotate-45 transition-transform duration-3000" />
-            <div className="border-brand-yellow border-2 w-10"></div> */}
-            {/* <Link href="/" className="border-brand-yellow bg-black border-2 md:border-4 uppercase text-brand-yellow rounded-full font-inter cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white text-center">Get Featured</Link> */}
             <CallToActionButton href="/" className="uppercase">
               Get Featured
             </CallToActionButton>
@@ -175,10 +172,9 @@ const Creatives = () => {
                     <span className="font-alta">CREATIVES</span>
                   </h2>
                   <div className="relative z-1">
-                    <Link
-                      href="/"
-                      className="link-button border-brand-yellow border-0 outline-[2.05px] md:border-4 uppercase text-brand-yellow rounded-full font-inter sm:font-semibold md:font-bold px-12.5 py-2 md:px-14  md:py-2.5 2xl:px-24 3xl:px-25.5 4xl:px-33.5 4xl:py-5 cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white"
-                    >JOIN US</Link>
+                    <CallToActionButton href="/" className="uppercase">
+                      Join Us
+                    </CallToActionButton>
                   </div>
                 </div>
               )}

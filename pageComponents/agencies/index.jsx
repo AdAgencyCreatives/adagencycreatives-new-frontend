@@ -11,6 +11,7 @@ import React from 'react';
 import TmText from 'components/TmText';
 import useFeaturedCreatives from 'hooks/useFeaturedCreatives';
 import AnimatedBackdrop from 'components/AnimatedBackdrop';
+import CallToActionButton from 'components/CallToActionButton';
 
 const Agencies = () => {
 
@@ -122,7 +123,7 @@ const Agencies = () => {
             </div>
 
             {/* <!-- Column 2: 4 items stacked vertically --> */}
-            <div className="col-span-2 space-y-4 grid grid-cols-2 items-start gap-x-[14px] md:gap-x-[54px] 3xl:gap-x-[72px] 4xl:gap-x-[92px]">
+            <div className="col-span-2 grid grid-cols-2 items-center gap-[14px] md:gap-[54px] 3xl:gap-[72px] 4xl:gap-[92px]">
               <ResourceLoopItem
                 resource={{ title: 'multiple', image: '/resource1.avif', href: '/resources-inspiration' }}
               />
@@ -147,14 +148,9 @@ const Agencies = () => {
         </div>
       </section>
       <div className="bg-black flex items-center justify-end 2xl:px-20 3xl:px-40 relative plans-button-wrap">
-        <Image src="/aac-logo-yellow.png" alt="" width="500" height="500" className="hover:rotate-45 transition-transform duration-3000 w-[20.81px] h-[20.81px] md:w-[80px] md:h-[80px] 3xl:w-[106px] 3xl:h-[106px] 4xl:w-[142px] 4xl:h-[142px]" />
-        <div className="border-row border-brand-yellow border-b-[1.21px] md:border-b-[4.65px] 3xl:border-b-[6.2px] 4xl:border-b-[8.27px]"></div>
-        <Link
-          href="/"
-          className="border-brand-yellow border-0 outline-[2.05px] md:border-4 uppercase text-brand-yellow rounded-full text-center font-inter sm:font-semibold md:font-bold cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white"
-        >
+        <CallToActionButton href="/" className="uppercase">
           Get Featured
-        </Link>
+        </CallToActionButton>
         <div className="absolute bottom-0 left-[50%] transform -translate-x-[50%] translate-y-0 border-white border-1 w-full md:w-[90%] h-px m-auto block"></div>
       </div>
 
