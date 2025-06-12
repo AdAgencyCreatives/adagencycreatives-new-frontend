@@ -29,8 +29,6 @@ export default function LayoutWrapper({ children }) {
 
     const updateFooterHeight = () => {
       setFooterHeight(footerRef.current.offsetHeight);
-      console.log("Updated Footer height:", footerRef.current.offsetHeight);
-      console.log("Screen Height:", screenHeight);
     }
 
     // Initial measurement
@@ -55,8 +53,6 @@ export default function LayoutWrapper({ children }) {
 
     const updateContentHeight = () => {
       setContentHeight(contentRef.current.offsetHeight);
-      console.log("Updated Content height:", contentRef.current.offsetHeight);
-      console.log("Screen Height:", screenHeight);
     }
 
     // Initial measurement

@@ -25,13 +25,13 @@ const Footer = ({ref, style={}}) => {
             >
               search jobs
             </Link>
-            <div>
+            <div className="grid place-items-center w-full">
               <div className="space-x-4 2xl:space-x-8 3xl:space-x-12 4xl:space-x-16">
-                <a href="#" className="font-inter font-bold lowercase max-sm:text-[0.6rem] text-[0.6rem] md:text-[0.732rem] xl:text-[0.8rem] 2xl:text-[0.844rem] 3xl:text-[1.125rem] 4xl:text-[1.5rem] transition delay-150 duration-300 ease-in-out text-[#6E6E6E] hover:text-[#FFFFFF] leading-[20px]">privacy policy</a>
-                <a href="#" className="font-inter font-bold lowercase max-sm:text-[0.6rem] text-[0.6rem] md:text-[0.732rem] xl:text-[0.8rem] 2xl:text-[0.844rem] 3xl:text-[1.125rem] 4xl:text-[1.5rem] transition delay-150 duration-300 ease-in-out text-[#6E6E6E] hover:text-[#FFFFFF] leading-[20px]">user agreement</a>
-                <a href="#" className="font-inter font-bold lowercase max-sm:text-[0.6rem] text-[0.6rem] md:text-[0.732rem] xl:text-[0.8rem] 2xl:text-[0.844rem] 3xl:text-[1.125rem] 4xl:text-[1.5rem] transition delay-150 duration-300 ease-in-out text-[#6E6E6E] hover:text-[#FFFFFF] leading-[20px]">contact us</a>
+                <a href="#" className="font-inter font-bold lowercase max-sm:text-[0.6rem] text-[0.6rem] md:text-[0.732rem] xl:text-[0.8rem] 2xl:text-[0.844rem] 3xl:text-[1.125rem] 4xl:text-[1.5rem] transition delay-150 duration-300 ease-in-out text-[#6E6E6E] hover:text-[#FFFFFF] leading-[1.33em]">privacy policy</a>
+                <a href="#" className="font-inter font-bold lowercase max-sm:text-[0.6rem] text-[0.6rem] md:text-[0.732rem] xl:text-[0.8rem] 2xl:text-[0.844rem] 3xl:text-[1.125rem] 4xl:text-[1.5rem] transition delay-150 duration-300 ease-in-out text-[#6E6E6E] hover:text-[#FFFFFF] leading-[1.33em]">user agreement</a>
+                <a href="#" className="font-inter font-bold lowercase max-sm:text-[0.6rem] text-[0.6rem] md:text-[0.732rem] xl:text-[0.8rem] 2xl:text-[0.844rem] 3xl:text-[1.125rem] 4xl:text-[1.5rem] transition delay-150 duration-300 ease-in-out text-[#6E6E6E] hover:text-[#FFFFFF] leading-[1.33em]">contact us</a>
               </div>
-              <p className="px-16 md:px-0 mt-2 3xl:mt-3 4xl:mt-4 font-inter font-normal capitalize text-[14px] 3xl:text-[18] 4xl:text-[24px] transition delay-150 duration-300 ease-in-out text-[#6E6E6E] hover:text-[#FFFFFF]">© {(new Date()).getFullYear()} Ad Agency Creatives. All Rights Reserved.</p>
+              <p className="px-4 md:px-0 mt-2 3xl:mt-3 4xl:mt-4 font-inter font-normal capitalize text-[14px] 3xl:text-[18] 4xl:text-[24px] transition delay-150 duration-300 ease-in-out text-[#6E6E6E] hover:text-[#FFFFFF]">© {(new Date()).getFullYear()} Ad Agency Creatives. All Rights Reserved.</p>
             </div>
             <Link
               href="/creatives-directory"
