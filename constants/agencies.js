@@ -1,7 +1,7 @@
 export const placeholderFeaturedAgencies = [
-  { image: '/agencies/agency1.svg' },
-  { image: '/agencies/agency2.svg' },
-  { image: '/agencies/agency3.svg' },
-  { image: '/agencies/agency4.svg' },
-  { image: '/agencies/agency5.svg' }
+  { image: '/dot.png' },
+  { image: '/dot.png' },
+  { image: '/dot.png' },
+  { image: '/dot.png' },
+  { image: '/dot.png' }
 ];

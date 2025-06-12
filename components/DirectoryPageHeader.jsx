@@ -22,7 +22,7 @@ const DirectoryPageHeader = ({ page, subPage, heading, className='', children })
         <h1 className="font-bold leading-[1.33em] max-sm:text-[2.957rem] text-[8.075rem] md:text-[9.85rem] xl:text-[10.772rem] 2xl:text-[11.356rem] 3xl:text-[15.141rem] 4xl:text-[20.188rem]">{heading}</h1>
       </div>
       <div 
-        className="z-0 absolute w-full m-auto w-full max-md:aspect-square max-md:rounded-full max-md:overflow-hidden"
+        className="z-0 absolute w-full m-auto w-full aspect-square rounded-full overflow-hidden"
         dangerouslySetInnerHTML={{ __html: '<spline-viewer url="https://prod.spline.design/8Kk8n4FoXe4tjJBu/scene.splinecode" class="w-full h-full 3xl:scale-[1.4] 4xl:scale-[2]"></spline-viewer>' }}
       ></div>
       {children}

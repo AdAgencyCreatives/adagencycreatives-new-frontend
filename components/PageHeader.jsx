@@ -22,7 +22,7 @@ const PageHeader = ({ page, subPage, heading }) => {
         <h1 className="main-heading font-bold">{heading}</h1>
       </div>
       <div 
-        className="z-0 absolute w-full zoom-35 zoom-60 zoom-70 zoom-80 zoom-90 inset-0 m-auto z-0 max-sm:w-[85%] max-md:w-[50%] max-md:aspect-square max-md:rounded-full max-md:overflow-hidden"
+        className="z-0 absolute w-full zoom-35 zoom-60 zoom-70 zoom-80 zoom-90 inset-0 m-auto z-0 max-sm:w-[85%] max-md:w-[50%] aspect-square rounded-full overflow-hidden"
         dangerouslySetInnerHTML={{ __html: '<spline-viewer url="https://prod.spline.design/8Kk8n4FoXe4tjJBu/scene.splinecode" class="w-full h-full 3xl:scale-[1.4] 4xl:scale-[2]"></spline-viewer>' }}
       ></div>
     </>
