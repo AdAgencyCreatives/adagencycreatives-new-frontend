@@ -113,12 +113,12 @@ button {
 
 .spline-container-left {
   justify-content: flex-start;
-  left: -5%;
+  /* left: -5%; */
 }
 
 .spline-container-right {
   justify-content: flex-end;
-  right: -5%;
+  /* right: -5%; */
 }
 
 @media(min-width: 768px) {

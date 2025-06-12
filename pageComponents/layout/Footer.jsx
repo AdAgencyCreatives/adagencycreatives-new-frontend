@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-const Footer = () => {
+const Footer = ({ref, style={}}) => {
 
   const pathname = usePathname();
   const isHomePage = pathname === "/" || pathname === "/home" || pathname === "/home/";
@@ -17,7 +17,7 @@ const Footer = () => {
   return (
     <>
       {isHomePage ? (
-        <footer className="max-sm:pt-[68px] max-sm:pb-[24px] max-sm:w-full md:absolute md:left-1/2 md:transform md:-translate-x-1/2 w-[78%] md:z-11 bottom-10 text-center text-xs text-gray-400 space-y-1">
+        <footer ref={ref} style={style} className={`max-sm:pt-[24px] max-sm:pb-[24px] max-sm:w-full md:absolute md:left-1/2 md:transform md:-translate-x-1/2 w-[78%] md:z-11 bottom-10 text-center text-xs text-gray-400 space-y-1`}>
           <div className="flex justify-between">
             <Link
               href="/jobs-directory"
