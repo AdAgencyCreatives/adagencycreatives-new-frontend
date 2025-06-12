@@ -28,17 +28,17 @@ export default function Home() {
                 CREATIVES
               </Link>
               <div className="max-sm:ml-[2.5rem] ml-[2.5rem] md:ml-[3.049rem] xl:ml-[3.335rem] 2xl:ml-[3.516rem] 3xl:ml-[4.688rem] 4xl:ml-[6.25rem] border-b border-white my-4 hidden md:block"></div>
-              <div className="flex gap-4 justify-center md:justify-start items-center mt-2">
+              <div className="flex max-sm:gap-0 gap-4 justify-center md:justify-start items-center mt-2">
                 <Link
                   href="/jobs-directory"
-                  className="font-bold max-sm:text-[0.8rem] text-[0.8rem] md:text-[0.976rem] xl:text-[1.067rem] 2xl:text-[1.125rem] 3xl:text-[1.5rem] 4xl:text-[2rem] transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow block md:hidden"
+                  className="max-sm:w-[45%] max-sm:text-right font-bold max-sm:text-[0.8rem] text-[0.8rem] md:text-[0.976rem] xl:text-[1.067rem] 2xl:text-[1.125rem] 3xl:text-[1.5rem] 4xl:text-[2rem] transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow block md:hidden"
                 >
                   search jobs
                 </Link>
-                <div className="text-[#6E6E6E] block md:hidden">|</div>
+                <div className="max-sm:w-[10%] max-sm:text-center text-[#6E6E6E] block md:hidden">|</div>
                 <Link
                   href="/creatives-signin"
-                  className="max-sm:ml-[0rem] ml-[2.5rem] md:ml-[3.049rem] xl:ml-[3.335rem] 2xl:ml-[3.516rem] 3xl:ml-[4.688rem] 4xl:ml-[6.25rem] z-1 inline-flex items-center justify-start text-white gap-4 cursor-pointer flex-row-reverse md:flex-row  transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow"
+                  className="max-sm:w-[45%] max-sm:text-left max-sm:justify-end max-sm:ml-[0rem] ml-[2.5rem] md:ml-[3.049rem] xl:ml-[3.335rem] 2xl:ml-[3.516rem] 3xl:ml-[4.688rem] 4xl:ml-[6.25rem] z-1 inline-flex items-center justify-start text-white gap-4 cursor-pointer flex-row-reverse md:flex-row  transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow"
                 >
                   <LiaSignInAltSolid className="max-sm:text-[1.6rem] text-[1.6rem] md:text-[1.952rem] xl:text-[2.134rem] 2xl:text-[2.25rem] 3xl:text-[3rem] 4xl:text-[4rem] md:rotate-180" />
                   <span className="font-bold max-sm:text-[0.8rem] text-[0.8rem] md:text-[0.976rem] xl:text-[1.067rem] 2xl:text-[1.125rem] 3xl:text-[1.5rem] 4xl:text-[2rem] font-bold">
@@ -86,17 +86,17 @@ export default function Home() {
               AGENCIES
             </Link>
             <div className="max-sm:mr-[2.5rem] mr-[2.5rem] md:mr-[3.049rem] xl:mr-[3.335rem] 2xl:mr-[3.516rem] 3xl:mr-[4.688rem] 4xl:mr-[6.25rem] border-b border-white my-4 hidden md:block"></div>
-            <div className="flex gap-4 justify-center md:justify-end items-center mt-2">
+            <div className="flex max-sm:gap-0 gap-4 justify-center md:justify-end items-center mt-2">
               <Link
                 href="/creatives-directory"
-                className="font-bold max-sm:text-[0.8rem] text-[0.8rem] md:text-[0.976rem] xl:text-[1.067rem] 2xl:text-[1.125rem] 3xl:text-[1.5rem] 4xl:text-[2rem] transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow block md:hidden"
+                className="max-sm:w-[45%] font-bold max-sm:text-[0.8rem] text-[0.8rem] md:text-[0.976rem] xl:text-[1.067rem] 2xl:text-[1.125rem] 3xl:text-[1.5rem] 4xl:text-[2rem] transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow block md:hidden"
               >
                 hire talent
               </Link>
-              <div className="text-[#6E6E6E] block md:hidden">|</div>
+              <div className="max-sm:w-[10%] text-center text-[#6E6E6E] block md:hidden">|</div>
               <Link
                 href="/agencies-signin"
-                className="max-sm:mr-[0rem] mr-[2.5rem] md:mr-[3.049rem] xl:mr-[3.335rem] 2xl:mr-[3.516rem] 3xl:mr-[4.688rem] 4xl:mr-[6.25rem] z-1 inline-flex items-center justify-end text-white gap-4 cursor-pointer transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow"
+                className="max-sm:w-[45%] max-sm:justify-start max-sm:mr-[0rem] mr-[2.5rem] md:mr-[3.049rem] xl:mr-[3.335rem] 2xl:mr-[3.516rem] 3xl:mr-[4.688rem] 4xl:mr-[6.25rem] z-1 inline-flex items-center justify-end text-white gap-4 cursor-pointer transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow"
               >
                 <span className="font-bold max-sm:text-[0.8rem] text-[0.8rem] md:text-[0.976rem] xl:text-[1.067rem] 2xl:text-[1.125rem] 3xl:text-[1.5rem] 4xl:text-[2rem] font-bold">
                   sign in
