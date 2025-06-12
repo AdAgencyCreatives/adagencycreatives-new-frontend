@@ -31,7 +31,7 @@ export default function Home() {
               <div className="flex gap-4 justify-center md:justify-start items-center mt-2">
                 <Link
                   href="/jobs-directory"
-                  className="font-bold text-lg transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow block md:hidden"
+                  className="font-bold max-sm:text-[0.8rem] text-[0.8rem] md:text-[0.976rem] xl:text-[1.067rem] 2xl:text-[1.125rem] 3xl:text-[1.5rem] 4xl:text-[2rem] transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow block md:hidden"
                 >
                   search jobs
                 </Link>
@@ -89,7 +89,7 @@ export default function Home() {
             <div className="flex gap-4 justify-center md:justify-end items-center mt-2">
               <Link
                 href="/creatives-directory"
-                className="font-bold text-lg transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow block md:hidden"
+                className="font-bold max-sm:text-[0.8rem] text-[0.8rem] md:text-[0.976rem] xl:text-[1.067rem] 2xl:text-[1.125rem] 3xl:text-[1.5rem] 4xl:text-[2rem] transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow block md:hidden"
               >
                 hire talent
               </Link>
