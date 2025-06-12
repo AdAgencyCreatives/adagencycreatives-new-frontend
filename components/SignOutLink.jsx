@@ -33,7 +33,7 @@ const SignOutLink = ({ placement="", setIsOpen }) => {
 
   return (
     <a
-      className={"text-[19px] xl:text-[21px] 2xl:text-[29px] transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow cursor-pointer" + (placement === "header" ? "" : " underline")}
+      className={"max-sm:text-[1.05rem] text-[1.05rem] md:text-[1.281rem] xl:text-[1.401rem] 2xl:text-[1.477rem] 3xl:text-[1.969rem] 4xl:text-[2.625rem] transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow cursor-pointer" + (placement === "header" ? "" : " underline")}
       onClick={handleSignOut}
     >
       sign out

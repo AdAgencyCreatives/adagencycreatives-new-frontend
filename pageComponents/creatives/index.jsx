@@ -166,12 +166,12 @@ const Creatives = () => {
               {idx === 6 && (
                 <div key={`ad-agency-${idx}`} className="relative col-span-2 text-center flex flex-col justify-around gap-5 max-md:py-10">
                   <AnimatedBackdrop className={'max-sm:py-16 max-sm:pt-[1.5rem]'} />
-                  <h2 className="relative z-1 text-2xl md:text-[44px] md:leading-[58.5px] 3xl:text-[57.07px] 3xl:leading-[78px] 4xl:text-[76.09px] 4xl:leading-[104px] ">
-                    <span className='font-arial font-bold'>We Are</span> <br />
-                    <span className="font-alta">AD AGENCY</span><br />
-                    <span className="font-alta">CREATIVES</span>
-                  </h2>
-                  <div className="relative z-1">
+                  <div className="relative z-1 flex flex-col">
+                    <h2 className="relative z-1 text-2xl md:text-[44px] md:leading-[58.5px] 3xl:text-[57.07px] 3xl:leading-[78px] 4xl:text-[76.09px] 4xl:leading-[104px] ">
+                      <span className='font-arial font-bold'>We Are</span> <br />
+                      <span className="font-alta">AD AGENCY</span><br />
+                      <span className="font-alta">CREATIVES</span>
+                    </h2>
                     <CallToActionButton href="/" className="uppercase">
                       Join Us
                     </CallToActionButton>
@@ -179,12 +179,12 @@ const Creatives = () => {
                 </div>
               )}
 
-              {width > 767 && idx === 15 && (
+              {width >= 767 && idx === 15 && (
                 <div key={`profile-${idx}`} className="relative col-span-2 text-center flex flex-col justify-around gap-10">
                   <AnimatedBackdrop className={''} />
                   <h2 className="relative z-1 font-inter font-bold">Want<br />Your <TmText text='ProFile' /><br />Featured?</h2>
                   <div className="relative z-1">
-                    <Link href="/" className="border-brand-yellow border-2 md:border-4 uppercase text-brand-yellow rounded-full font-sans sm:font-semibold md:font-hass75 md:font-bold text-xs md:text-sm 3xl:text-lg 4xl:text-2xl px-12 py-2 md:px-14  md:py-2.5 2xl:px-24 3xl:px-25.5 4xl:px-33.5 4xl:py-5 cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white">See How</Link>
+                    <Link href="/" className="border-brand-yellow border-2 md:border-4 uppercase text-brand-yellow rounded-full font-sans sm:font-semibold md:font-inter md:font-bold text-xs md:text-sm 3xl:text-lg 4xl:text-2xl px-12 py-2 md:px-14  md:py-2.5 2xl:px-24 3xl:px-25.5 4xl:px-33.5 4xl:py-5 cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white">See How</Link>
                   </div>
                 </div>
               )}
@@ -193,14 +193,14 @@ const Creatives = () => {
                 <div key={`skip-01--${idx}`} className="col-span-2 md:col-span-3 lg:col-span-5 mb-8 3xl:mb-12 4xl:mb-16"></div>
               )} */}
 
-              <CreativeLoopItem key={idx} creative={creative} />
+              <CreativeLoopItem key={idx} creative={creative} className={width < 767 && idx > 11 ? 'hidden' : ''} />
 
-              {width < 767 && idx === 15 && (
+              {width < 767 && idx === 11 && (
                 <div key={`profile-02-${idx}`} className="relative col-span-2 text-center flex flex-col justify-center gap-6 md:gap-10">
                   <AnimatedBackdrop className={'max-sm:py-8'} />
                   <h2 className="z-1 text-2xl md:text-[44px] md:leading-[58.5px] 3xl:text-[57.07px] 3xl:leading-[78px] 4xl:text-[76.09px] 4xl:leading-[104px] font-bold mt-[48px] md:mt-0 font-inter">Want<br />Your<br /><TmText text='ProFile' /><br />Featured?</h2>
                   <div className="z-1 mb-5">
-                    <Link href="/" className="border-brand-yellow border-0 outline-[2.05px] md:border-4 uppercase text-brand-yellow rounded-full font-sans sm:font-semibold md:font-hass75 md:font-bold text-xs md:text-sm 3xl:text-lg 4xl:text-2xl px-11.25 py-1.5 md:px-14  md:py-2.5 2xl:px-24 3xl:px-25.5 4xl:px-33.5 4xl:py-5 cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white font-inter">See How</Link>
+                    <Link href="/" className="border-brand-yellow border-0 outline-[2.05px] md:border-4 uppercase text-brand-yellow rounded-full font-sans sm:font-semibold md:font-inter md:font-bold text-xs md:text-sm 3xl:text-lg 4xl:text-2xl px-11.25 py-1.5 md:px-14  md:py-2.5 2xl:px-24 3xl:px-25.5 4xl:px-33.5 4xl:py-5 cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white font-inter">See How</Link>
                   </div>
                 </div>
               )}
@@ -223,19 +223,19 @@ const Creatives = () => {
           </div>
           <div className="steps">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-12 text-left">
-              <div className="font-wix flex flex-col gap-[5.62] md:gap-2 2xl:gap-5.5 3xl:gap-7 4xl:gap-9.5">
+              <div className="font-inter flex flex-col gap-[5.62] md:gap-2 2xl:gap-5.5 3xl:gap-7 4xl:gap-9.5">
                 <h3 className="count font-bold">1</h3>
                 <p className="text-brand-yellow font-bold step-heading font-inter ">
                   CREATE <TmText text='ProFile' />
                 </p>
                 <p className="text-white step-desc font-inter font-normal">Claim your space on the web.<br />Design your own stunning <TmText text='ProFile' /> page - crafted to impress, built to connect. Add your work, your voice, your values. You’ll instantly get a sleek webpage with your personal link and a downloadable version ready to share anywhere - from DMs to boardrooms. It's free. It’s yours. It’s the start of everything.</p>
               </div>
-              <div className="font-wix flex flex-col gap-[5.62] md:gap-2 2xl:gap-5.5 3xl:gap-7 4xl:gap-9.5">
+              <div className="font-inter flex flex-col gap-[5.62] md:gap-2 2xl:gap-5.5 3xl:gap-7 4xl:gap-9.5">
                 <h3 className="count font-bold">2</h3>
                 <p className="text-brand-yellow font-bold step-heading uppercase font-inter ">GET FEATURED & SHOWCASE</p>
                 <p className="text-white step-desc font-inter font-normal">Be seen where it matters.<br />Your <TmText text='ProFile' /> becomes part of a curated network - handpicked creatives, thinkers, and builders. Stand out in The Lounge, and The Agencies Homepage where talent is more than a portfolio - it’s a presence. No chasing. No noise. Just the right eyes on your work.</p>
               </div>
-              <div className="font-wix flex flex-col gap-[5.62] md:gap-2 2xl:gap-5.5 3xl:gap-7 4xl:gap-9.5">
+              <div className="font-inter flex flex-col gap-[5.62] md:gap-2 2xl:gap-5.5 3xl:gap-7 4xl:gap-9.5">
                 <h3 className="count font-bold">3</h3>
                 <p className="text-brand-yellow font-bold step-heading uppercase font-inter ">GET HIRED</p>
                 <p className="text-white step-desc font-inter font-normal">Let your work open doors.<br />Brands, agencies, and visionary clients are already here - searching, browsing, booking. With a <TmText text='ProFile' />, you're instantly visible and ready to be contacted, commissioned, or called in. Whether it’s a dream gig or a long-term collab, this is where it begins. With our help, on your terms.</p>
@@ -250,14 +250,16 @@ const Creatives = () => {
                 <Image src="/creatives/creative17.avif" width="720" height="720" alt="" className="image-mask" />
               </div>
               <div className="font-inter details max-sm:w-[120%]!">
-                <div>
+                <div className='max-sm:space-y-[0.35rem] space-y-[0.35rem] md:space-y-[0.427rem] xl:space-y-[0.467rem] 2xl:space-y-[0.492rem] 3xl:space-y-[0.656rem] 4xl:space-y-[0.875rem]'>
                   <h2 className="font-inter font-bold uppercase">Matthew Marcos</h2>
-                  <p className="lowercase font-bold text-brand-yellow my-2 md:my-4 title">Creative Director</p>
+                  <p className="lowercase font-bold text-white title">Creative Director</p>
+                  <p className="location uppercase">NEW YORK, NY</p>
                 </div>
-                <p className="location">NEW YORK, NY</p>
-                <p className="text-brand-yellow mt-4 mb-2 md:mt-4 md:mb-4 4xl:mt-14 about-title font-bold">ABOUT</p>
-                <p className="about-desc">I'm a Creative Director based in New York City; with a focus on art direction, brand storytelling, and concepting big ideas.I’ve been fortunate to work with brands like Keds, Louis XIII, Marantz, Wrangler, J.Crew, and USTA, crafting campaigns </p>
-                <Link href="/" className="read-more text-brand-yellow underline mt-6">Read more...</Link>
+                <div className='max-sm:space-y-[0.35rem] space-y-[0.35rem] md:space-y-[0.427rem] xl:space-y-[0.467rem] 2xl:space-y-[0.492rem] 3xl:space-y-[0.656rem] 4xl:space-y-[0.875rem]'>
+                  <p className="text-white max-sm:mt-[1.8rem] mt-[1.8rem] md:mt-[2.196rem] xl:mt-[2.401rem] 2xl:mt-[2.531rem] 3xl:mt-[3.375rem] 4xl:mt-[4.5rem] about-title font-bold">ABOUT</p>
+                  <p className="about-desc">I'm a Creative Director based in New York City; with a focus on art direction, brand storytelling, and concepting big ideas.I’ve been fortunate to work with brands like Keds, Louis XIII, Marantz, Wrangler, J.Crew, and USTA, crafting campaigns </p>
+                  <Link href="/" className="max-sm:text-[0.6rem] text-[0.6rem] md:text-[0.732rem] xl:text-[0.8rem] 2xl:text-[0.844rem] 3xl:text-[1.125rem] 4xl:text-[1.5rem] text-brand-yellow underline mt-6">Read more...</Link>
+                </div>
               </div>
               <div className="max-sm:w-[70%]! max-sm:ml-[20%]!">
                 <div className="max-w-[130px] md:max-w-[220px] 3xl:max-w-[295px] 4xl:max-w-[393px] mx-auto -mt-12 3xl:-mt-16 bg-black relative z-1">

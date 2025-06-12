@@ -232,7 +232,7 @@ button {
 
 .card .name {
   line-height: 1.15em;
-  height: 3.45em;
+  min-height: 2.30em;
   display: inline-block;
   align-items: start;
   min-width: 100%;

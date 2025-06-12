@@ -49,14 +49,14 @@ const Agencies = () => {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
           {featuredCreatives.map((creative, idx) => (
             <React.Fragment key={`creative-${creative.id || idx}`}>
-              {(width < 768 && idx === 4) || (width >= 768 && idx === 6) ? (
+              {(width < 768 && idx === 6) || (width >= 768 && idx === 6) ? (
                 <div id={`perfect-${idx}`} className="relative col-span-2 text-center flex flex-col justify-center gap-5 max-md:py-10">
                   <AnimatedBackdrop className={''} />
                   <h2 className="relative z-1 pb-0 pt-6 2xl:pb-14 2xl:pt-20 3xl:pb-20 3xl:pt-26 4xl:py-15 font-arial font-bold  md:leading-[58.5px] 3xl:leading-[78px] 4xl:leading-[104px]">Haven't<br />Found<br />The Perfect<br />Match?</h2>
                   <div className='relative z-1 '>
                     <Link
                       href="/"
-                      className="link-button border-brand-yellow border-2 md:border-4 uppercase text-brand-yellow rounded-full font-inter sm:font-semibold md:font-hass75 md:font-bold cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white"
+                      className="link-button border-brand-yellow border-2 md:border-4 uppercase text-brand-yellow rounded-full font-inter sm:font-semibold md:font-inter md:font-bold cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white"
                     >
                       Advanced Search
                     </Link>
@@ -73,20 +73,20 @@ const Agencies = () => {
                     Why<br />Search?<br />Post & Attract!
                   </h2>
                   <div className='relative z-1'>
-                    <Link href="/" className="border-brand-yellow border-2 md:border-4 uppercase text-brand-yellow rounded-full font-sans sm:font-semibold md:font-hass75 md:font-bold text-xs md:text-sm 3xl:text-lg 4xl:text-2xl px-12 py-2 md:px-14  md:py-2.5 2xl:px-24 3xl:px-25.5 4xl:px-33.5 4xl:py-5 cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white">POST A JOB</Link>
+                    <Link href="/" className="border-brand-yellow border-2 md:border-4 uppercase text-brand-yellow rounded-full font-sans sm:font-semibold md:font-inter md:font-bold text-xs md:text-sm 3xl:text-lg 4xl:text-2xl px-12 py-2 md:px-14  md:py-2.5 2xl:px-24 3xl:px-25.5 4xl:px-33.5 4xl:py-5 cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white">POST A JOB</Link>
                   </div>
                 </div>
               )}
 
-              <CreativeLoopItem key={idx} creative={creative} className={width < 768 && idx > 7 ? 'md:flex hidden' : ''} />
+              <CreativeLoopItem key={idx} creative={creative} className={width < 768 && idx > 11 ? 'md:flex hidden' : ''} />
 
-              {width < 768 && idx === 15 && (
+              {width < 768 && idx === 11 && (
                 <div key={`profile-${idx}`} className="relative col-span-2 text-center flex flex-col justify-center gap-6 md:gap-10">
                   <AnimatedBackdrop className={'block md:hidden w-[70%]'} />
                   <h2 className="z-1 text-2xl md:text-[44px] md:leading-[58.5px] 3xl:text-[57.07px] 3xl:leading-[78px] 4xl:text-[76.09px] 4xl:leading-[104px] font-bold mt-[48px] md:mt-0 font-inter"
                   >Why<br />Search?<br />Post & Attract!</h2>
                   <div className='z-1'>
-                    <Link href="/" className="border-brand-yellow border-0 outline-[2.05px] md:border-4 uppercase text-brand-yellow rounded-full font-sans sm:font-semibold md:font-hass75 md:font-bold text-xs md:text-sm 3xl:text-lg 4xl:text-2xl px-11.25 py-1.5 md:px-14  md:py-2.5 2xl:px-24 3xl:px-25.5 4xl:px-33.5 4xl:py-5 cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white font-inter">See How</Link>
+                    <Link href="/" className="border-brand-yellow border-0 outline-[2.05px] md:border-4 uppercase text-brand-yellow rounded-full font-sans sm:font-semibold md:font-inter md:font-bold text-xs md:text-sm 3xl:text-lg 4xl:text-2xl px-11.25 py-1.5 md:px-14  md:py-2.5 2xl:px-24 3xl:px-25.5 4xl:px-33.5 4xl:py-5 cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white font-inter">See How</Link>
                   </div>
                 </div>
               )}
@@ -166,20 +166,20 @@ const Agencies = () => {
           </div>
           <div className="steps">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-12 text-left">
-              <div className="font-wix flex flex-col gap-[5.62] md:gap-2 2xl:gap-5.5 3xl:gap-7 4xl:gap-9.5">
+              <div className="font-inter flex flex-col gap-[5.62] md:gap-2 2xl:gap-5.5 3xl:gap-7 4xl:gap-9.5">
                 <h3 className="count font-bold">1</h3>
                 <p className="text-brand-yellow font-bold step-heading font-inter ">CREATE A JOB</p>
                 <p className="text-white step-desc font-inter font-normal">Don’t chase - attract.<br />Instantly connect with top creative talent - no noise, no chasing. Just clarity, presence, and a clean path to the right fit. Post your role in a space built to draw in the right minds, effortlessly. Your job listing becomes more than a post - it becomes a signal. Smart. Simple. Seen.</p>
               </div>
-              <div className="font-wix flex flex-col gap-[5.62] md:gap-2 2xl:gap-5.5 3xl:gap-7 4xl:gap-9.5">
+              <div className="font-inter flex flex-col gap-[5.62] md:gap-2 2xl:gap-5.5 3xl:gap-7 4xl:gap-9.5">
                 <h3 className="count font-bold">2</h3>
                 <p className="text-brand-yellow font-bold step-heading uppercase font-inter ">GET FEATURED & SHOWCASE</p>
                 <p className="text-white step-desc font-inter font-normal">Showcase your agency.<br />This isn’t just a listing - it’s your presence in a curated space built for visibility and recognition. Your <TmText text='ProFile' /> connects your brand, culture, and creative energy in one place that speaks volumes. Get featured. Be remembered. This is where standout agencies meet standout talent.</p>
               </div>
-              <div className="font-wix flex flex-col gap-[5.62] md:gap-2 2xl:gap-5.5 3xl:gap-7 4xl:gap-9.5">
+              <div className="font-inter flex flex-col gap-[5.62] md:gap-2 2xl:gap-5.5 3xl:gap-7 4xl:gap-9.5">
                 <h3 className="count font-bold">3</h3>
                 <p className="text-brand-yellow font-bold step-heading uppercase font-inter ">HIRE</p>
-                <p className="text-white step-desc font-inter font-normal">Find who you're really looking for.<br />No endless scrolling. No guessing games. Just a curated network of standout creatives - ready to jump in, lead, or elevate your next project. Message directly. Review <span style={{whiteSpace: 'nowrap'}}><TmText text='ProFile' />s</span>. Build your dream team. This is hiring, reimagined. On your terms, at your pace, with talent that gets it.</p>
+                <p className="text-white step-desc font-inter font-normal">Find who you're really looking for.<br />No endless scrolling. No guessing games. Just a curated network of standout creatives - ready to jump in, lead, or elevate your next project. Message directly. Review <span style={{ whiteSpace: 'nowrap' }}><TmText text='ProFile' />s</span>. Build your dream team. This is hiring, reimagined. On your terms, at your pace, with talent that gets it.</p>
               </div>
             </div>
           </div>
@@ -192,14 +192,16 @@ const Agencies = () => {
                 <Image src="/jobs/job3.avif" width="720" height="720" alt="" className="image-mask" />
               </div>
               <div className="font-inter details max-sm:w-[120%]!">
-                <div>
+                <div className='max-sm:space-y-[0.35rem] space-y-[0.35rem] md:space-y-[0.427rem] xl:space-y-[0.467rem] 2xl:space-y-[0.492rem] 3xl:space-y-[0.656rem] 4xl:space-y-[0.875rem]'>
                   <h2 className="font-inter font-bold uppercase">AD CORP.</h2>
-                  <p className="lowercase font-bold text-brand-yellow my-2 md:my-4 title">Creative Director</p>
+                  <p className="lowercase font-bold text-white title">Creative Director</p>
+                  <p className="location uppercase">Orlando, FL</p>
                 </div>
-                <p className="location">Orlando, FL</p>
-                <p className="text-brand-yellow mt-4 mb-2 md:my-4 about-title font-bold">ABOUT</p>
-                <p className="about-desc">I'm an Associate Creative Director based in New York City; with a focus on art direction, brand storytelling, and concepting big ideas. I’ve been fortunate to work with brands like Keds, Louis XIII, Marantz, Wrangler, J.Crew, and USTA, crafting campaigns </p>
-                <Link href="/" className="read-more text-brand-yellow underline mt-6">Read more...</Link>
+                <div className='max-sm:space-y-[0.35rem] space-y-[0.35rem] md:space-y-[0.427rem] xl:space-y-[0.467rem] 2xl:space-y-[0.492rem] 3xl:space-y-[0.656rem] 4xl:space-y-[0.875rem]'>
+                  <p className="text-white max-sm:mt-[1.8rem] mt-[1.8rem] md:mt-[2.196rem] xl:mt-[2.401rem] 2xl:mt-[2.531rem] 3xl:mt-[3.375rem] 4xl:mt-[4.5rem] mb-2 md:my-4 about-title font-bold">ABOUT</p>
+                  <p className="about-desc">I'm an Associate Creative Director based in New York City; with a focus on art direction, brand storytelling, and concepting big ideas. I’ve been fortunate to work with brands like Keds, Louis XIII, Marantz, Wrangler, J.Crew, and USTA, crafting campaigns </p>
+                  <Link href="/" className="max-sm:text-[0.6rem] text-[0.6rem] md:text-[0.732rem] xl:text-[0.8rem] 2xl:text-[0.844rem] 3xl:text-[1.125rem] 4xl:text-[1.5rem] text-brand-yellow underline mt-6">Read more...</Link>
+                </div>
               </div>
               <div className="max-sm:w-[110%]">
                 <div className="max-sm:w-[106px] max-w-[130px] md:max-w-[220px] 3xl:max-w-[295px] 4xl:max-w-[393px] mx-auto -mt-12 3xl:-mt-16 bg-black relative z-1">

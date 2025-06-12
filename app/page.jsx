@@ -18,15 +18,15 @@ export default function Home() {
         </video>
       </div>
       {/* Center Split Section */}
-      <div className="absolute inset-0 h-[101%] z-1 w-[88%] mx-auto" style={{ background: 'radial-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 1) 100%)' }}></div>
+      <div className="absolute inset-0 h-[101%] z-1 mx-auto" style={{ background: 'radial-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 1) 100%)' }}></div>
       <section
-        className="w-[78%] mx-auto z-9 grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] px-0 md:px-10 xl:px-15 2xl:px-40 3xl:px-50 4xl:px-64 items-center justify-between h-full w-full gap-10 md:gap-0"
+        className="mx-auto z-9 grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] items-center justify-between h-full w-full gap-10 md:gap-0"
       >
         {/* Left Column */}
         <div className="flex flex-1 w-1.0 h-1.0 order-2 md:order-1">
           <div className="relative flex flex-1 flex-col justify-center md:aspect-square">
             <div className="home-box-left relative flex flex-1 flex-col justify-center md:aspect-square">
-              <Link href="/creatives" className="z-1 text-4xl md:text-6xl 2xl:text-7xl 3xl:text-8xl 4xl:text-9xl font-alta tracking-wide text-center md:text-left cursor-pointer transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow">
+              <Link href="/creatives" className="z-1 max-sm:text-[3.2rem] text-[3.2rem] md:text-[3.903rem] xl:text-[4.269rem] 2xl:text-[4.5rem] 3xl:text-[6rem] 4xl:text-[8rem] font-alta tracking-wide text-center md:text-left cursor-pointer transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow">
                 CREATIVES
               </Link>
               <div className="border-b border-white my-4 hidden md:block"></div>
@@ -42,15 +42,15 @@ export default function Home() {
                   href="/creatives-signin"
                   className="z-1 inline-flex items-center justify-start text-white gap-4 cursor-pointer flex-row-reverse md:flex-row  transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow"
                 >
-                  <LiaSignInAltSolid className="text-[36px] md:rotate-180" />
-                  <span className="font-bold text-lg 3xl:text-2xl 4xl:text-[32px] font-bold">
+                  <LiaSignInAltSolid className="max-sm:text-[1.6rem] text-[1.6rem] md:text-[1.952rem] xl:text-[2.134rem] 2xl:text-[2.25rem] 3xl:text-[3rem] 4xl:text-[4rem] md:rotate-180" />
+                  <span className="font-bold max-sm:text-[0.8rem] text-[0.8rem] md:text-[0.976rem] xl:text-[1.067rem] 2xl:text-[1.125rem] 3xl:text-[1.5rem] 4xl:text-[2rem] font-bold">
                     sign in
                   </span>
                 </Link>
               </div>
             </div>
             <div
-              className="z-0 spline-container spline-container-left w-[100%] h-[100%] hidden md:flex"
+              className="z-0 spline-container spline-container-left w-[100%] h-[100%] hidden md:flex scale-100 3xl:scale-115 4xl:scale-150"
               dangerouslySetInnerHTML={{
                 __html:
                   '<spline-viewer url="https://prod.spline.design/8Kk8n4FoXe4tjJBu/scene.splinecode"></spline-viewer>',
@@ -85,7 +85,7 @@ export default function Home() {
         {/* Right Column */}
         <div className="relative flex flex-1 flex-col justify-center md:aspect-square text-right order-4">
           <div className="home-box-right relative flex flex-1 flex-col justify-center md:aspect-square">
-            <Link href="/agencies" className="z-1 text-4xl md:text-6xl 2xl:text-7xl 3xl:text-8xl 4xl:text-9xl font-alta tracking-wide text-center md:text-right cursor-pointer transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow">
+            <Link href="/agencies" className="z-1 max-sm:text-[3.2rem] text-[3.2rem] md:text-[3.903rem] xl:text-[4.269rem] 2xl:text-[4.5rem] 3xl:text-[6rem] 4xl:text-[8rem] font-alta tracking-wide text-center md:text-right cursor-pointer transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow">
               AGENCIES
             </Link>
             <div className="border-b border-white my-4 hidden md:block"></div>
@@ -101,15 +101,15 @@ export default function Home() {
                 href="/agencies-signin"
                 className="z-1 inline-flex items-center justify-end text-white gap-4 cursor-pointer transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow"
               >
-                <span className="font-bold text-lg 3xl:text-2xl 4xl:text-[32px] font-bold">
+                <span className="font-bold max-sm:text-[0.8rem] text-[0.8rem] md:text-[0.976rem] xl:text-[1.067rem] 2xl:text-[1.125rem] 3xl:text-[1.5rem] 4xl:text-[2rem] font-bold">
                   sign in
                 </span>
-                <LiaSignInAltSolid className="text-[36px]" />
+                <LiaSignInAltSolid className="max-sm:text-[1.6rem] text-[1.6rem] md:text-[1.952rem] xl:text-[2.134rem] 2xl:text-[2.25rem] 3xl:text-[3rem] 4xl:text-[4rem]" />
               </Link>
             </div>
           </div>
           <div
-            className="z-0 spline-container spline-container-right w-[100%] h-[100%] hidden md:flex"
+            className="z-0 spline-container spline-container-right w-[100%] h-[100%] hidden md:flex scale-100 3xl:scale-115 4xl:scale-150"
             dangerouslySetInnerHTML={{
               __html:
                 '<spline-viewer url="https://prod.spline.design/8Kk8n4FoXe4tjJBu/scene.splinecode"></spline-viewer>',

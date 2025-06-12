@@ -131,15 +131,15 @@ const TheLounge = () => {
               <div className="flex justify-between border-b-1 border-white items-center gap-2">
                 <div className="flex gap-2 text-[14px] items-center">
                   <SearchIcon />
-                  <input type="text" className="font-wix w-3xs m-2 outline-none" placeholder="Find a member..." />
+                  <input type="text" className="font-inter w-3xs m-2 outline-none" placeholder="Find a member..." />
                 </div>
-                <div className="bg-black rounded-full font-wix text-[14px]">0</div>
+                <div className="bg-black rounded-full font-inter text-[14px]">0</div>
               </div>
             </div>
           </div>
           <div className="text-center min-h-[50vh] justify-center flex flex-col">
-            <p className="font-wix mb-4 text-[26px]">No members found.</p>
-            <p className="font-wix mb-4 text-[16px]">Try another search.</p>
+            <p className="font-inter mb-4 text-[26px]">No members found.</p>
+            <p className="font-inter mb-4 text-[16px]">Try another search.</p>
           </div> */}
         </div>
       </section>

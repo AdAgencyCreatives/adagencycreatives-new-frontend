@@ -40,7 +40,7 @@ const CreativesProfile = () => {
                 })}
               </ul>
               <p className="font-alta text-[16px] text-brand-yellow font-bold mb-2">ABOUT</p>
-              <p className="font-wix text-[18px]" dangerouslySetInnerHTML={{ __html: user.about }}></p>
+              <p className="font-inter text-[18px]" dangerouslySetInnerHTML={{ __html: user.about }}></p>
             </div>
           </div>
         </div>
@@ -97,7 +97,7 @@ const CreativesProfile = () => {
               })}
             </ul>
             <p className="font-alta text-[16px] text-brand-yellow font-bold mb-2">Info</p>
-            <p className="font-wix text-[18px]" dangerouslySetInnerHTML={{ __html: user.info }}></p>
+            <p className="font-inter text-[18px]" dangerouslySetInnerHTML={{ __html: user.info }}></p>
             <Link href="/" className="border-brand-yellow border-4 uppercase text-brand-yellow rounded-full text-base px-20 py-4 cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white mt-10 mb-20 inline-block">CTA</Link>
           </div>
         </div>

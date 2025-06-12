@@ -58,14 +58,14 @@ const AnimatedForm = ({
         onSubmit={onSubmit}
       >
         {({ validateForm }) => (
-          <Form className="flex items-start justify-between max-w-xl mx-auto mb-10 relative z-2 group">
+          <Form className="flex items-start justify-between w-full mx-auto relative z-2 group">
             {/* Back Button */}
             <div className="flex justify-between relative z-10 max-sm:opaticy-100 md:opacity-0 md:translate-x-4 md:group-hover:opacity-100 md:group-hover:translate-x-0 transition-all duration-500 ease-in-out">
               {step > 0 && (
                 <a
                   type="button"
                   onClick={() => handleBack()}
-                  className="max-sm:ml-5 text-white text-[37px] py-6 scale-x-[-1] cursor-pointer"
+                  className="text-white max-sm:text-[1.5rem] text-[2.1rem] md:text-[2.561rem] xl:text-[2.801rem] 2xl:text-[2.953rem] 3xl:text-[3.938rem] 4xl:text-[5.25rem] py-6 scale-x-[-1] cursor-pointer"
                 >
                   <LiaSignInAltSolid />
                 </a>
@@ -75,7 +75,7 @@ const AnimatedForm = ({
             {steps.map((stepConfig, index) => (
               <div
                 key={index}
-                className={`absolute w-full transition-all duration-500 ease-in-out transform px-20  ${step === index
+                className={`absolute w-full transition-all duration-500 ease-in-out transform max-sm:px-[2.8rem] px-[2.8rem] md:px-[3.415rem] xl:px-[3.735rem] 2xl:px-[3.938rem] 3xl:px-[5.25rem] 4xl:px-[7rem] ${step === index
                   ? "translate-x-0 opacity-100"
                   : step > index
                     ? "-translate-x-full opacity-0 pointer-events-none"
@@ -83,7 +83,7 @@ const AnimatedForm = ({
                   }`}
               >
                 {stepConfig.fields.map((field, index) => (
-                  <div key={field.name || index} onKeyDown={handleKeyDown}>
+                  <div key={field.name || index} onKeyDown={handleKeyDown} className="w-full">
                     {/* <label className="block mb-1 text-sm font-medium text-gray-700">
                     {field.label}
                   </label> */}
@@ -92,12 +92,12 @@ const AnimatedForm = ({
                       name={field.name}
                       type={field.type}
                       placeholder={field.type != "password" ? field.placeholder : ''}
-                      className="bg-transparent border-b-2 border-white outline-none w-full text-[19px] text-white placeholder-white font-wix py-6 focus:bg-black/50"
+                      className="bg-transparent border-b-2 border-white outline-none w-full max-sm:text-[1.05rem] text-[1.05rem] md:text-[1.281rem] xl:text-[1.401rem] 2xl:text-[1.477rem] 3xl:text-[1.969rem] 4xl:text-[2.625rem] text-white placeholder-white font-inter py-6 focus:bg-black/50"
                     />
                     <ErrorMessage
                       name={field.name}
                       component="div"
-                      className="text-sm text-red-500 mt-1 font-wix"
+                      className="max-sm:text-[0.8rem] text-[0.8rem] md:text-[0.976rem] xl:text-[1.067rem] 2xl:text-[1.125rem] 3xl:text-[1.5rem] 4xl:text-[2rem] text-red-500 mt-1 font-inter"
                     />
                   </div>
                 ))}
@@ -109,7 +109,7 @@ const AnimatedForm = ({
                 <button
                   ref={submitButtonRef}
                   type="submit"
-                  className="max-sm:-ml-15 ml-2 text-white text-[37px] py-6 cursor-pointer"
+                  className="max-sm:text-[1.5rem] text-[2.1rem] md:text-[2.561rem] xl:text-[2.801rem] 2xl:text-[2.953rem] 3xl:text-[3.938rem] 4xl:text-[5.25rem] py-6 cursor-pointer"
                 >
                   <LiaSignInAltSolid />
                 </button>
@@ -118,7 +118,7 @@ const AnimatedForm = ({
                   ref={nextButtonRef}
                   type="button"
                   onClick={() => handleNext(validateForm)}
-                  className="max-sm:-ml-15 ml-2 text-white text-[37px] py-6 cursor-pointer"
+                  className="text-white max-sm:text-[1.5rem] text-[2.1rem] md:text-[2.561rem] xl:text-[2.801rem] 2xl:text-[2.953rem] 3xl:text-[3.938rem] 4xl:text-[5.25rem] py-6 cursor-pointer"
                 >
                   <LiaSignInAltSolid />
                 </a>

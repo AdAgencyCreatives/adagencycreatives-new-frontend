@@ -40,7 +40,7 @@ export default function Accordion({ items }) {
                 transition={{ duration: 0.3, ease: 'easeInOut' }}
                 className="overflow-hidden"
               >
-                <div className="mt-2 text-gray-300 font-wix text-sm md:text-lg 3xl:text-2xl 4xl:text-[32px] py-2 px-0 md:py-6 md:px-10">{item.content}</div>
+                <div className="mt-2 text-gray-300 font-inter text-sm md:text-lg 3xl:text-2xl 4xl:text-[32px] py-2 px-0 md:py-6 md:px-10">{item.content}</div>
               </motion.div>
             )}
           </AnimatePresence>

@@ -23,7 +23,7 @@ const DropdownButton = ({ label, options, onSelect }) => {
     <div className="relative inline-block text-left" ref={dropdownRef}>
       <button
         onClick={() => setOpen(!open)}
-        className="bg-none font-wix text-[15px] outline-none flex items-center leading-[26px]"
+        className="bg-none font-inter text-[15px] outline-none flex items-center leading-[26px]"
       >
         {label}
         <svg
@@ -50,7 +50,7 @@ const DropdownButton = ({ label, options, onSelect }) => {
                   onSelect?.(option)
                   setOpen(false)
                 }}
-                className="block w-full text-left px-6 py-3 text-[18px] text-black font-wix leading-[26px]"
+                className="block w-full text-left px-6 py-3 text-[18px] text-black font-inter leading-[26px]"
               >
                 {option}
               </button>

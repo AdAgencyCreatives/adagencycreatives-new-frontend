@@ -375,7 +375,7 @@ const CreativesDirectory = () => {
                   <div className="relative z-1">
                     <Link
                       href="/"
-                      className="link-button border-brand-yellow border-2 md:border-4 uppercase text-brand-yellow rounded-full font-inter sm:font-semibold md:font-hass75 md:font-bold cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white"
+                      className="link-button border-brand-yellow border-2 md:border-4 uppercase text-brand-yellow rounded-full font-inter sm:font-semibold md:font-inter md:font-bold cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white"
                     >
                       POST A JOB
                     </Link>
