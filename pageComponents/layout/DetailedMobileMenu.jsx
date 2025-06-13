@@ -59,9 +59,9 @@ const DetailedMobileMenu = ({ isOpen = false, setIsOpen = (flag) => { }, user })
     },
     {
       text: 'directories', href: '#toggle', visibility: VISIBILITY.ALL, link_state: EXPAND_COLLAPSE_STATE.COLLAPSED, links: [
-        { text: 'Agencies Directory', href: '/agencies-directory', visibility: VISIBILITY.ALL, links: [] },
-        { text: 'Creatives Directory', href: '/creatives-directory', visibility: VISIBILITY.ALL, links: [] },
-        { text: 'Jobs Directory', href: '/jobs-directory', visibility: VISIBILITY.ALL, links: [] },
+        { text: 'Jobs', href: '/jobs-directory', visibility: VISIBILITY.ALL, links: [] },
+        { text: 'Creatives', href: '/creatives-directory', visibility: VISIBILITY.ALL, links: [] },
+        { text: 'Agencies', href: '/agencies-directory', visibility: VISIBILITY.ALL, links: [] },
       ]
     },
     { text: 'Faq', href: '/faq', visibility: VISIBILITY.ALL, links: [] },
