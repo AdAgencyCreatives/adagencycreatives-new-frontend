@@ -3,7 +3,7 @@
 import { useContext, useEffect } from "react";
 import { Context as DataContext } from "contexts/DataContext";
 
-const useMentorTopics = () => {
+const useMentorTopics = (autoLoad = true) => {
 
     const {
         state: { mentors },
@@ -11,15 +11,17 @@ const useMentorTopics = () => {
     } = useContext(DataContext);
 
     useEffect(() => {
-        getMentorTopics();
-    }, []);
+        if (autoLoad) {
+            getMentorTopics();
+        }
+    }, [autoLoad]);
 
     let mentorTopics = mentors?.map(item => {
 
         return {
             image: '/resource1.avif',
             title: item?.title || 'Mentor',
-            href: item?.slug || '',
+            href: item?.slug?.length > 0 ? `/creative-resources/${item?.slug}` : '',
             item: item,
         };
     });

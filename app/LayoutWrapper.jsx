@@ -28,7 +28,7 @@ export default function LayoutWrapper({ children }) {
     if (!footerRef.current) return;
 
     const updateFooterHeight = () => {
-      setFooterHeight(footerRef.current.offsetHeight);
+      setFooterHeight(footerRef?.current?.offsetHeight || 0);
     }
 
     // Initial measurement
@@ -52,7 +52,7 @@ export default function LayoutWrapper({ children }) {
     if (!contentRef.current) return;
 
     const updateContentHeight = () => {
-      setContentHeight(contentRef.current.offsetHeight);
+      setContentHeight(contentRef?.current?.offsetHeight || 0);
     }
 
     // Initial measurement

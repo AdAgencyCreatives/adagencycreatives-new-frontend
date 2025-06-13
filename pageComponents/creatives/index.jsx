@@ -17,6 +17,8 @@ import useFeaturedCreatives from 'hooks/useFeaturedCreatives';
 import AnimatedBackdrop from 'components/AnimatedBackdrop';
 import FeaturedAgenciesLoopItem from 'pageComponents/featured_agencies/loop/item';
 import CallToActionButton from 'components/CallToActionButton';
+import SectionHeading from 'components/SectionHeading';
+import useMentorTopics from 'hooks/useMentorTopics';
 
 const Creatives = () => {
 
@@ -35,6 +37,7 @@ const Creatives = () => {
   const { featuredJobs } = useFeaturedJobs(FEATURED_JOBS_PER_PAGE);
   const { featuredAgencies } = useFeaturedAgencies(FEATURED_AGENCIES_PER_PAGE);
   const { featuredCreatives } = useFeaturedCreatives(FEATURED_CREATIVES_PER_PAGE);
+  const { mentorTopics } = useMentorTopics();
 
   return (
     <div className="text-white">
@@ -83,40 +86,24 @@ const Creatives = () => {
 
       {/* Resources */}
       <div className="bg-black heading-wrap" id="resources">
-        <h2 className="heading font-bold font-inter text-right  leading-[25.78px] 2xl:leading-[99px] 3xl:leading-[132px] 4xl:leading-[176px]">Resources</h2>
+        <SectionHeading headingContent={'Resources'} className='text-right max-sm:px-5 px-10 max-sm:py-[0.659rem] py-[1.8rem] md:py-[2.196rem] xl:py-[2.401rem] 2xl:py-[2.531rem] 3xl:py-[3.375rem] 4xl:py-[4.5rem]' />
       </div>
       <section className="resources relative">
-        {/* Background */}
-        {/* <AnimatedBackdrop className={''} /> */}
-        <div className="grid grid-cols-4 gap-[12px] md:gap-[54px] 3xl:gap-[72px] 4xl:gap-[92px] w-full items-center">
-          {/* <!-- Column 1: 1 item --> */}
-          <div>
-            <ResourceLoopItem
-              resource={{ title: 'internships', image: '/resource1.avif', href: '/resources-internship' }}
-            />
-          </div>
-
-          {/* <!-- Column 2: 4 items stacked vertically --> */}
-          <div className="col-span-2 grid grid-cols-2 items-start gap-[14px] md:gap-[54px] 3xl:gap-[72px] 4xl:gap-[92px]">
-            <ResourceLoopItem
-              resource={{ title: 'inspiration', image: '/resource1.avif', href: '/resources-inspiration' }}
-            />
-            <ResourceLoopItem
-              resource={{ title: 'portfolio', image: '/resource1.avif', href: '/resources-portfolio' }}
-            />
-            <ResourceLoopItem
-              resource={{ title: 'WRITERS', image: '/resource1.avif', href: '/resources-writers' }}
-            />
-            <ResourceLoopItem
-              resource={{ title: 'DESIGNERS', image: '/resource1.avif', href: '/resources-designers' }}
-            />
-          </div>
-
-          {/* <!-- Column 4: 1 item --> */}
-          <div>
-            <ResourceLoopItem
-              resource={{ title: 'business', image: '/resource1.avif', href: '/resources-business' }}
-            />
+        <div className="mx-auto max-sm:px-5 px-10 relative z-1">
+          <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 max-sm:gap-3 gap-15 w-full items-center relative">
+            {mentorTopics?.length > 0 && (
+              <div><ResourceLoopItem resource={mentorTopics[0]} /></div>
+            )}
+            {(mentorTopics?.length > 4) && (
+              <div className='col-span-2 max-sm:space-y-1 space-y-4 grid grid-cols-2 max-sm:gap-3 gap-15 items-start'>
+                {mentorTopics.slice(1, 5).map((topic, idx) => (
+                  <ResourceLoopItem key={idx} resource={topic} />
+                ))}
+              </div>
+            )}
+            {mentorTopics?.length > 5 && (
+              <div><ResourceLoopItem resource={mentorTopics[5]} /></div>
+            )}
           </div>
         </div>
       </section>

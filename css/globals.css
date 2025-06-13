@@ -346,3 +346,9 @@ button {
   box-shadow: 0px 2px 7px 2px #3f3d3d;
   backdrop-filter: blur(3.906249761581421px)
 }
+
+.creative-resource-info .description b,
+.creative-resource-info .description strong {
+  color: var(--primary);
+  font-weight: 700;
+}
