@@ -85,7 +85,9 @@ const Agencies = () => {
                   <h2 className="z-1 text-2xl md:text-[44px] md:leading-[58.5px] 3xl:text-[57.07px] 3xl:leading-[78px] 4xl:text-[76.09px] 4xl:leading-[104px] font-bold mt-[48px] md:mt-0 font-inter"
                   >Why<br />Search?<br />Post & Attract!</h2>
                   <div className='z-1'>
-                    <Link href="/" className="border-brand-yellow border-0 outline-[2.05px] md:border-4 uppercase text-brand-yellow rounded-full font-sans sm:font-semibold md:font-inter md:font-bold text-xs md:text-sm 3xl:text-lg 4xl:text-2xl px-11.25 py-1.5 md:px-14  md:py-2.5 2xl:px-24 3xl:px-25.5 4xl:px-33.5 4xl:py-5 cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white font-inter">See How</Link>
+                    <CallToActionButton href="/" className="uppercase">
+                      See How
+                    </CallToActionButton>
                   </div>
                 </div>
               )}
@@ -146,7 +148,7 @@ const Agencies = () => {
           </div>
         </div>
       </section>
-      <div className="bg-black flex items-center justify-end 2xl:px-20 3xl:px-40 relative plans-button-wrap">
+      <div className="bg-black flex items-center justify-end max-sm:px-[1.4rem] px-[1.4rem] md:px-[1.708rem] xl:px-[1.868rem] 2xl:px-[1.969rem] 3xl:px-[2.625rem] 4xl:px-[3.5rem] relative max-sm:py-10">
         <CallToActionButton href="/" className="uppercase">
           Get Featured
         </CallToActionButton>
