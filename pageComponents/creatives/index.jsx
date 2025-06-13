@@ -69,7 +69,7 @@ const Creatives = () => {
                   <h2 className="relative z-1 pb-0 pt-6 2xl:pb-14 2xl:pt-20 3xl:pb-20 3xl:pt-26 4xl:py-15 font-arial font-bold  md:leading-[58.5px] 3xl:leading-[78px] 4xl:leading-[104px]">Haven't<br />Found<br />The Perfect<br />Job?</h2>
                   <div className="relative z-1">
                     <CallToActionButton href="/" className="uppercase">
-                      Advance Search
+                      Advanced Search
                     </CallToActionButton>
                   </div>
                 </div>
@@ -87,7 +87,7 @@ const Creatives = () => {
       </div>
       <section className="resources relative">
         {/* Background */}
-        <AnimatedBackdrop className={''} />
+        {/* <AnimatedBackdrop className={''} /> */}
         <div className="grid grid-cols-4 gap-[12px] md:gap-[54px] 3xl:gap-[72px] 4xl:gap-[92px] w-full items-center">
           {/* <!-- Column 1: 1 item --> */}
           <div>

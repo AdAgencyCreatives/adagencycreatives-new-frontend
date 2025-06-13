@@ -163,7 +163,7 @@ const TheLounge = () => {
                     </h2>
                     <div>
                       <CallToActionButton href="/" className="uppercase">
-                        Advannced Search
+                        Advanced Search
                       </CallToActionButton>
                     </div>
                   </div>
