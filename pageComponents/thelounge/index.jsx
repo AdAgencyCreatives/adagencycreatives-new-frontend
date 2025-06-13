@@ -218,17 +218,18 @@ const TheLounge = () => {
           <SectionHeading headingContent={'News'} className='max-sm:py-[0.659rem] py-[1.8rem] md:py-[2.196rem] xl:py-[2.401rem] 2xl:py-[2.531rem] 3xl:py-[3.375rem] 4xl:py-[4.5rem]' />
           <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 max-sm:gap-3 gap-15 w-full items-center relative">
             {mentorTopics?.length > 0 && (
-              <div><ResourceLoopItem resource={mentorTopics[0]} /></div>
+              <div><ResourceLoopItem resource={{ title: '10 tips to get hired', image: '/resource1.avif', href: '/resources-internship' }} /></div>
             )}
             {(mentorTopics?.length > 4) && (
               <div className='col-span-2 max-sm:space-y-1 space-y-4 grid grid-cols-2 max-sm:gap-3 gap-15 items-start'>
-                {mentorTopics.slice(1, 5).map((topic, idx) => (
-                  <ResourceLoopItem key={idx} resource={topic} />
-                ))}
+                <ResourceLoopItem resource={{ title: 'where is market', image: '/resource1.avif', href: '/resources-inspiration' }} />
+                <ResourceLoopItem resource={{ title: 'best portfolio', image: '/resource1.avif', href: '/resources-portfolio' }} />
+                <ResourceLoopItem resource={{ title: 'what to say in bio', image: '/resource1.avif', href: '/resources-writers' }} />
+                <ResourceLoopItem resource={{ title: 'how to run interview', image: '/resource1.avif', href: '/resources-designers' }} />
               </div>
             )}
             {mentorTopics?.length > 5 && (
-              <div><ResourceLoopItem resource={mentorTopics[5]} /></div>
+              <div><ResourceLoopItem resource={{ title: '10 tips to get hired', image: '/resource1.avif', href: '/resources-business' }} /></div>
             )}
           </div>
         </div>
