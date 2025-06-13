@@ -45,8 +45,8 @@ const MobileMenu = ({ isHomePage }) => {
         className={`p-[27.5px] 3xl:p-[37px] 4xl:p-[49px] border-l-[0.89px] border-brand-yellow space-y-4 overflow-y-auto z-20 fixed top-0 right-0 w-full md:w-[375px] 3xl:w-[500px] 4xl:w-[667px] h-full bg-black transform transition-transform duration-500 ease-in-out ${isOpen ? '-translate-x-0' : 'translate-x-full'} flex flex-col justify-between overflow-y-scroll mobile-menu-links-container`}
       >
         <div>
-          <div className="flex items-center justify-end max-md:justify-between mb-[32px] 3xl:mb-[42.67px] 4xl:mb-[56.89px]">
-            <Link href="/" onClick={() => setIsOpen(false)} className="cursor-pointer md:hidden">
+          <div className="flex items-center justify-between mb-[32px] 3xl:mb-[42.67px] 4xl:mb-[56.89px]">
+            <Link href="/" onClick={() => setIsOpen(false)} className="cursor-pointer">
               <img
                 src="/aac-logo-header.png"
                 alt="Logo"

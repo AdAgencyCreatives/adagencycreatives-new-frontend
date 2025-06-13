@@ -249,7 +249,7 @@ const TheLounge = () => {
       <section id="cities" className="max-sm:py-5 py-20 border-white border-y-2 relative max-sm:px-[0.549rem] px-[1.5rem] md:px-[1.83rem] xl:px-[2.001rem] 2xl:px-[2.109rem] 3xl:px-[2.813rem] 4xl:px-[3.75rem]">
         <div className="mx-auto relative z-1">
           <SectionHeading headingContent={'Featured Cities'} className='max-sm:pb-[1.282rem] pb-[3.5rem] md:pb-[4.269rem] xl:pb-[4.669rem] 2xl:pb-[4.922rem] 3xl:pb-[6.563rem] 4xl:pb-[8.75rem]' />
-          <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 max-sm:gap-[0.732rem] gap-[2rem] md:gap-[2.439rem] xl:gap-[2.668rem] 2xl:gap-[2.813rem] 3xl:gap-[3.75rem] 4xl:gap-[5rem] max-sm:mt-[0.659rem] mt-[1.8rem] md:mt-[2.196rem] xl:mt-[2.401rem] 2xl:mt-[2.531rem] 3xl:mt-[3.375rem] 4xl:mt-[4.5rem] w-full items-center relative">
+          <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 max-sm:gap-[0.732rem] gap-[2rem] md:gap-[2.439rem] xl:gap-[2.668rem] 2xl:gap-[2.813rem] 3xl:gap-[3.75rem] 4xl:gap-[5rem] max-sm:mt-[0.659rem] mt-[1.8rem] md:mt-[2.196rem] xl:mt-[2.401rem] 2xl:mt-[2.531rem] 3xl:mt-[3.375rem] 4xl:mt-[4.5rem] w-full items-center relative max-sm:mb-[0.366rem] mb-[1rem] md:mb-[1.22rem] xl:mb-[1.334rem] 2xl:mb-[1.406rem] 3xl:mb-[1.875rem] 4xl:mb-[2.5rem]">
             {featuredCities?.length > 0 && (
               <div className='col-span-2'><FeaturedCityLoopItem featuredCity={featuredCities[0]} /></div>
             )}

@@ -2,7 +2,8 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-
+import ChevronDownIcon from "icons/ChevronDownIcon";
+import ChevronUpIcon from "icons/ChevronUpIcon";
 export default function Accordion({ items }) {
   const [openIndex, setOpenIndex] = useState(null);
 
@@ -19,11 +20,7 @@ export default function Accordion({ items }) {
             className="w-full flex justify-between items-center text-left md:font-bold text-white hover:text-brand-yellow transition text-lg 3xl:text-2xl 4xl:text-3xl"
           >
             <span>{item.title}</span>
-            {/* <HiChevronDown
-              className={`w-5 h-5 transition-transform duration-300 ${
-                openIndex === index ? 'rotate-180' : ''
-              }`}
-            /> */}
+            {openIndex === index ? (<ChevronUpIcon />) : (<ChevronDownIcon />)}
           </button>
 
           <AnimatePresence initial={false}>

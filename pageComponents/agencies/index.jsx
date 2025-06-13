@@ -148,8 +148,8 @@ const Agencies = () => {
           </div>
         </div>
       </section>
-      <div className="bg-black flex items-center justify-end max-sm:px-[1.4rem] px-[1.4rem] md:px-[1.708rem] xl:px-[1.868rem] 2xl:px-[1.969rem] 3xl:px-[2.625rem] 4xl:px-[3.5rem] relative max-sm:py-10">
-        <CallToActionButton href="/" className="uppercase">
+      <div className="bg-black flex items-center justify-end max-sm:px-[1.172rem] px-[3.2rem] md:px-[3.903rem] xl:px-[4.269rem] 2xl:px-[4.5rem] 3xl:px-[6rem] 4xl:px-[8rem] relative max-sm:py-[1.4rem] py-[1.4rem] md:py-[1.708rem] xl:py-[1.868rem] 2xl:py-[1.969rem] 3xl:py-[2.625rem] 4xl:py-[3.5rem]">
+        <CallToActionButton href="/" className="uppercase max-sm:mb-[0.366rem] mb-[1rem] md:mb-[1.22rem] xl:mb-[1.334rem] 2xl:mb-[1.406rem] 3xl:mb-[1.875rem] 4xl:mb-[2.5rem]">
           Get Featured
         </CallToActionButton>
         <div className="absolute bottom-0 left-[50%] transform -translate-x-[50%] translate-y-0 border-white border-1 w-full md:w-[90%] h-px m-auto block"></div>

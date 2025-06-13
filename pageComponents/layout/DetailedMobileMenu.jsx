@@ -31,7 +31,7 @@ const DetailedMobileMenu = ({ isOpen = false, setIsOpen = (flag) => { }, user })
   };
 
   const INITIAL_LINKS = [
-    { text: 'Home', href: '/', visibility: VISIBILITY.ALL, links: [] },
+    { text: user ? 'Dashboard' : 'Home', href: user ? `/${user?.role == 'creative' ? 'creatives' : 'agencies'}-dashboard` : '/', visibility: VISIBILITY.ALL, links: [] },
     { text: 'About', href: '/about', visibility: VISIBILITY.ALL, links: [] },
     {
       text: 'Creatives', href: '/creatives', visibility: VISIBILITY.ALL, link_state: EXPAND_COLLAPSE_STATE.COLLAPSED, links: [

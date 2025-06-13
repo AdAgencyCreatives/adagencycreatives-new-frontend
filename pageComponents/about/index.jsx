@@ -3,7 +3,7 @@
 const About = () => {
   return (
     <>
-      <section className="mx-auto px-6 md:px-10 h-auto xl:h-[50vh] pt-[128px]">
+      <section className="mx-auto px-6 md:px-10 h-auto xl:h-[50vh] pt-[0px]">
         <h2 className="text-5xl 2xl:text-8xl 3xl:text-9xl 4xl:text-[166px] font-bold text-white text-right mb-10">About</h2>
 
         <p className="text-2xl 3xl:text-[40px] 4xl:text-[53px] font-bold text-right">
@@ -12,7 +12,7 @@ const About = () => {
           TO HELP AGENCIES AND BRANDS WITH <span className="text-brand-yellow">CREATIVE</span> TALENT.
         </p>
       </section>
-      <section className="bg-black w-full py-44 relative h-[50vh]">
+      <section className="bg-black w-full py-44 relative h-[100vh] max-sm:hidden">
         <video
           autoPlay
           loop
