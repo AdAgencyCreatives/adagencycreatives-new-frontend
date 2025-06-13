@@ -89,13 +89,6 @@
     font-size: 4.875rem;
   }
 
-  .featured-agency a {
-    width: 17.252rem;
-    font-size: 1.125rem;
-    line-height: 1.625rem;
-    padding: 0.858rem 0;
-  }
-
   .featured-jobs,
   .featured-creatives {
     padding: 3.516rem 2.672rem;
@@ -302,13 +295,6 @@
 
   .plans-button-wrap {
     padding: 1.625rem 9.387rem 2.864rem;
-  }
-
-  .plans-button-wrap a {
-    font-size: 1.125rem;
-    line-height: 1.424rem;
-    min-width: 17.252rem;
-    padding: 1.243rem 0;
   }
 
   .plans-button-wrap .border-row {

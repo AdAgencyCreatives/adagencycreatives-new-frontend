@@ -9,6 +9,7 @@ import { Context as SiteContext } from "contexts/SiteContext";
 import { Context as AuthContext } from "contexts/AuthContext";
 import DetailedMobileMenu from './DetailedMobileMenu';
 import LinkOrDiv from 'components/LinkOrDiv';
+import CallToActionButton from 'components/CallToActionButton';
 
 const MobileMenu = ({ isHomePage }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -65,24 +66,18 @@ const MobileMenu = ({ isHomePage }) => {
         </div>
         {user ? (
           <div className="flex flex-col gap-[12px] 3xl:gap-[16px] 4xl:gap-[21.33px]">
-            <Link href="/sign-out" onClick={() => setIsOpen(false)}
-              className="font-bold text-[14px] 3xl:text-[18px] 4xl:text-[24px] leading-[19.26px] 3xl:leading-[25.68px] 4xl:leading-[34.24px] p-[8px] 3xl:p-[10.63px] 4xl:p-[14px] border-[2.96px] 3xl:border-[3.95px] 4xl:border-[5.27px] block text-center border-brand-yellow hover:border-white text-brand-yellow hover:text-white bg-black hover:bg-brand-yellow uppercase rounded-full"
-            >
+            <CallToActionButton href="/sign-out" onClick={() => setIsOpen(false)}>
               Sign Out
-            </Link>
+            </CallToActionButton>
           </div>
         ) : (
           <div className="flex flex-col gap-[12px] 3xl:gap-[16px] 4xl:gap-[21.33px]">
-            <Link href="/" onClick={() => setIsOpen(false)}
-              className="font-bold text-[14px] 3xl:text-[18px] 4xl:text-[24px] leading-[19.26px] 3xl:leading-[25.68px] 4xl:leading-[34.24px] p-[8px] 3xl:p-[10.63px] 4xl:p-[14px] border-[2.96px] 3xl:border-[3.95px] 4xl:border-[5.27px] block text-center border-brand-yellow hover:border-white text-brand-yellow hover:text-white bg-black hover:bg-brand-yellow uppercase rounded-full"
-            >
+            <CallToActionButton href="/" onClick={() => setIsOpen(false)}>
               Sign In
-            </Link>
-            <Link href="/" onClick={() => setIsOpen(false)}
-              className="font-bold text-[14px] 3xl:text-[18px] 4xl:text-[24px] leading-[19.26px] 3xl:leading-[25.68px] 4xl:leading-[34.24px] p-[8px] 3xl:p-[10.63px] 4xl:p-[14px] border-[2.96px] 3xl:border-[3.95px] 4xl:border-[5.27px] block text-center border-brand-yellow hover:border-white text-brand-yellow hover:text-white bg-black hover:bg-brand-yellow uppercase rounded-full"
-            >
+            </CallToActionButton>
+            <CallToActionButton href="/" onClick={() => setIsOpen(false)}>
               Register
-            </Link>
+            </CallToActionButton>
           </div>
         )}
       </div>

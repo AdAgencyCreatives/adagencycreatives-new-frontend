@@ -164,14 +164,14 @@ const Creatives = () => {
           {featuredCreatives.map((creative, idx) => (
             <React.Fragment key={`creative-${creative.id || idx}`}>
               {idx === 6 && (
-                <div key={`ad-agency-${idx}`} className="relative col-span-2 text-center flex flex-col justify-around gap-5 max-md:py-10">
-                  <AnimatedBackdrop className={'max-sm:py-16 max-sm:pt-[1.5rem]'} />
-                  <div className="relative z-1 flex flex-col">
-                    <h2 className="relative z-1 text-2xl md:text-[44px] md:leading-[58.5px] 3xl:text-[57.07px] 3xl:leading-[78px] 4xl:text-[76.09px] 4xl:leading-[104px] ">
-                      <span className='font-arial font-bold'>We Are</span> <br />
-                      <span className="font-alta">AD AGENCY</span><br />
-                      <span className="font-alta">CREATIVES</span>
-                    </h2>
+                <div key={`ad-agency-${idx}`} id={`ad-agency-${idx}`} className="relative col-span-2 text-center flex flex-col justify-around gap-5 md:gap-10 max-md:py-10">
+                  <AnimatedBackdrop className={'block'} />
+                  <h2 className="relative z-1 pb-0 pt-6 2xl:pb-14 2xl:pt-20 3xl:pb-20 3xl:pt-26 4xl:py-15 md:leading-[58.5px] 3xl:leading-[78px] 4xl:leading-[104px]">
+                    <span className='font-bold font-arial'>We Are</span><br />
+                    <span className='font-alta uppercase'>AD AGENCY</span><br />
+                    <span className='font-alta uppercase'>CREATIVES</span>
+                  </h2>
+                  <div className="relative z-1">
                     <CallToActionButton href="/" className="uppercase">
                       Join Us
                     </CallToActionButton>
@@ -184,7 +184,9 @@ const Creatives = () => {
                   <AnimatedBackdrop className={''} />
                   <h2 className="relative z-1 font-inter font-bold">Want<br />Your <TmText text='ProFile' /><br />Featured?</h2>
                   <div className="relative z-1">
-                    <Link href="/" className="border-brand-yellow border-2 md:border-4 uppercase text-brand-yellow rounded-full font-sans sm:font-semibold md:font-inter md:font-bold text-xs md:text-sm 3xl:text-lg 4xl:text-2xl px-12 py-2 md:px-14  md:py-2.5 2xl:px-24 3xl:px-25.5 4xl:px-33.5 4xl:py-5 cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white">See How</Link>
+                    <CallToActionButton href="/" className="uppercase">
+                      See How
+                    </CallToActionButton>
                   </div>
                 </div>
               )}
@@ -258,7 +260,7 @@ const Creatives = () => {
                 <div className='max-sm:space-y-[0.35rem] space-y-[0.35rem] md:space-y-[0.427rem] xl:space-y-[0.467rem] 2xl:space-y-[0.492rem] 3xl:space-y-[0.656rem] 4xl:space-y-[0.875rem]'>
                   <p className="text-white max-sm:mt-[1.8rem] mt-[1.8rem] md:mt-[2.196rem] xl:mt-[2.401rem] 2xl:mt-[2.531rem] 3xl:mt-[3.375rem] 4xl:mt-[4.5rem] about-title font-bold">ABOUT</p>
                   <p className="about-desc">I'm a Creative Director based in New York City; with a focus on art direction, brand storytelling, and concepting big ideas.I’ve been fortunate to work with brands like Keds, Louis XIII, Marantz, Wrangler, J.Crew, and USTA, crafting campaigns </p>
-                  <Link href="/" className="max-sm:text-[0.6rem] text-[0.6rem] md:text-[0.732rem] xl:text-[0.8rem] 2xl:text-[0.844rem] 3xl:text-[1.125rem] 4xl:text-[1.5rem] text-brand-yellow underline mt-6">Read more...</Link>
+                  <Link href="/" className="max-sm:text-[0.6rem] text-[0.6rem] md:text-[0.732rem] xl:text-[0.8rem] 2xl:text-[0.844rem] 3xl:text-[1.125rem] 4xl:text-[1.5rem] text-brand-yellow hover:text-white underline mt-6">Read more...</Link>
                 </div>
               </div>
               <div className="max-sm:w-[70%]! max-sm:ml-[20%]!">
@@ -270,11 +272,10 @@ const Creatives = () => {
               </div>
             </div>
             <div className="relative text-center w-full bottom-0 button">
-              <TmTextLink
-                text='CREATE ProFile'
-                href='/creatives-signup'
-                className='font-inter block m-auto border-brand-yellow border-2 md:border-4 text-brand-yellow rounded-full font-inter font-bold px-5 xl:px-30 3xl:px-40 md:py-4 py-2 cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white'
-              />
+              <CallToActionButton href="/creatives-signup" className="w-full">
+                <span className='uppercase'>Create&nbsp;</span>
+                <TmText text='ProFile' />
+              </CallToActionButton>
               <footer className="flex flex-row justify-center w-full z-11 py-[10px] text-gray-400 space-y-1">
                 <p className="font-inter font-normal uppercase mt-2 px-12 md:px-2 transition delay-150 duration-300 ease-in-out text-[#6E6E6E] hover:text-[#FFFFFF]">© {(new Date()).getFullYear()} Ad Agency Creatives. All Rights Reserved.</p>
               </footer>

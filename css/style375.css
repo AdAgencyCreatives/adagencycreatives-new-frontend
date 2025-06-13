@@ -93,13 +93,6 @@
     font-size: 1.375rem;
   }
 
-  .featured-agency a {
-    width: 8.763rem;
-    font-size: 0.513rem;
-    line-height: 0.723rem;
-    padding: 0.509rem 0;
-  }
-
   .create-profile {
     margin-top: 2rem;
   }
@@ -322,13 +315,6 @@
 
   .plans-button-wrap {
     padding: 0.325rem 1.5rem 0.736rem;
-  }
-
-  .plans-button-wrap a {
-    font-size: 0.293rem;
-    line-height: 0.371rem;
-    min-width: 4.493rem;
-    padding: 0.25rem 0;
   }
 
   .plans-button-wrap .border-row {

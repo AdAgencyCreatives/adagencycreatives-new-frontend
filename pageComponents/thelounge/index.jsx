@@ -19,6 +19,7 @@ import LinkOrDiv from 'components/LinkOrDiv';
 import SectionHeading from 'components/SectionHeading';
 import useFeaturedJobs from 'hooks/useFeaturedJobs';
 import JobLoopItem from 'pageComponents/jobs/loop/item';
+import CallToActionButton from 'components/CallToActionButton';
 
 const TheLounge = () => {
 
@@ -151,15 +152,20 @@ const TheLounge = () => {
           {featuredJobs.map((job, idx) => (
             <React.Fragment key={`job-${job.id || idx}`}>
               {idx === 6 && (
-                <div key={`ad-agency-${idx}`} className="z-1 relative w-max mx-auto col-span-2 text-center flex flex-col justify-center max-sm:py-[2rem] max-sm:gap-[1.099rem] gap-[3rem] md:gap-[3.659rem] xl:gap-[4.002rem] 2xl:gap-[4.219rem] 3xl:gap-[5.625rem] 4xl:gap-[7.5rem]">
-                  <h2 className="leading-[1.33em] font-bold max-sm:text-[1.5rem] text-[1.9rem] md:text-[2.317rem] xl:text-[2.535rem] 2xl:text-[2.672rem] 3xl:text-[3.563rem] 4xl:text-[4.75rem]">
-                    Haven't<br />
-                    Found<br />
-                    The Perfect<br />
-                    Job?
-                  </h2>
-                  <div>
-                    <Link href="/" className="inline-block leading-none font-bold border-brand-yellow max-sm:border-[0.125rem] border-[0.138rem] md:border-[0.168rem] xl:border-[0.184rem] 2xl:border-[0.194rem] 3xl:border-[0.258rem] 4xl:border-[0.344rem] uppercase text-brand-yellow rounded-full cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white max-sm:text-[0.75rem] text-[0.6rem] md:text-[0.732rem] xl:text-[0.8rem] 2xl:text-[0.844rem] 3xl:text-[1.125rem] 4xl:text-[1.5rem] max-sm:py-[0.137rem] py-[0.375rem] md:py-[0.458rem] xl:py-[0.501rem] 2xl:py-[0.528rem] 3xl:py-[0.704rem] 4xl:py-[0.938rem] max-sm:px-[0.879rem] px-[2.4rem] md:px-[2.927rem] xl:px-[3.202rem] 2xl:px-[3.375rem] 3xl:px-[4.5rem] 4xl:px-[6rem]">Advanced Search</Link>
+                <div key={`ad-agency-${idx}`} className="z-1 w-full relative col-span-2 flex flex-col justify-between max-sm:py-[2rem] max-sm:gap-[1.099rem] gap-[3rem] md:gap-[3.659rem] xl:gap-[4.002rem] 2xl:gap-[4.219rem] 3xl:gap-[5.625rem] 4xl:gap-[7.5rem]">
+                  <AnimatedBackdrop className={'z-0'} />
+                  <div className='max-sm:gap-[3.55rem] gap-[3.55rem] md:gap-[4.33rem] xl:gap-[4.736rem] 2xl:gap-[4.992rem] 3xl:gap-[6.656rem] 4xl:gap-[8.875rem] w-max z-1 mx-auto text-center flex flex-col justify-center h-full'>
+                    <h2 className="leading-[1.33em] font-bold max-sm:text-[1.5rem] text-[1.9rem] md:text-[2.317rem] xl:text-[2.535rem] 2xl:text-[2.672rem] 3xl:text-[3.563rem] 4xl:text-[4.75rem]">
+                      Haven't<br />
+                      Found<br />
+                      The Perfect<br />
+                      Job?
+                    </h2>
+                    <div>
+                      <CallToActionButton href="/" className="uppercase">
+                        Advannced Search
+                      </CallToActionButton>
+                    </div>
                   </div>
                 </div>
               )}
@@ -171,14 +177,19 @@ const TheLounge = () => {
           {featuredCreatives.map((creative, idx) => (
             <React.Fragment key={`creative-${creative.id || idx}`}>
               {idx === 6 && (
-                <div key={`ad-agency-${idx}`} className="w-max mx-auto col-span-2 text-center flex flex-col justify-center max-sm:py-[2rem] max-sm:gap-[1.099rem] gap-[3rem] md:gap-[3.659rem] xl:gap-[4.002rem] 2xl:gap-[4.219rem] 3xl:gap-[5.625rem] 4xl:gap-[7.5rem]">
-                  <h2 className="leading-[1.33em] font-bold max-sm:text-[1.5rem] text-[1.9rem] md:text-[2.317rem] xl:text-[2.535rem] 2xl:text-[2.672rem] 3xl:text-[3.563rem] 4xl:text-[4.75rem]">
-                    Want<br />
-                    Your <TmText text='ProFile' /><br />
-                    Featured?
-                  </h2>
-                  <div>
-                    <Link href="/" className="block leading-none font-bold border-brand-yellow max-sm:border-[0.125rem] border-[0.138rem] md:border-[0.168rem] xl:border-[0.184rem] 2xl:border-[0.194rem] 3xl:border-[0.258rem] 4xl:border-[0.344rem] uppercase text-brand-yellow rounded-full cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white max-sm:text-[0.75rem] text-[0.6rem] md:text-[0.732rem] xl:text-[0.8rem] 2xl:text-[0.844rem] 3xl:text-[1.125rem] 4xl:text-[1.5rem] max-sm:py-[0.137rem] py-[0.375rem] md:py-[0.458rem] xl:py-[0.501rem] 2xl:py-[0.528rem] 3xl:py-[0.704rem] 4xl:py-[0.938rem] max-sm:px-[0.879rem] px-[2.4rem] md:px-[2.927rem] xl:px-[3.202rem] 2xl:px-[3.375rem] 3xl:px-[4.5rem] 4xl:px-[6rem]">See How</Link>
+                <div key={`ad-agency-${idx}`} className="relative col-span-2 flex flex-col justify-center max-sm:py-[2rem] max-sm:gap-[1.099rem] gap-[3rem] md:gap-[3.659rem] xl:gap-[4.002rem] 2xl:gap-[4.219rem] 3xl:gap-[5.625rem] 4xl:gap-[7.5rem]">
+                  <AnimatedBackdrop className={'z-0'} />
+                  <div className='max-sm:gap-[3.55rem] gap-[3.55rem] md:gap-[4.33rem] xl:gap-[4.736rem] 2xl:gap-[4.992rem] 3xl:gap-[6.656rem] 4xl:gap-[8.875rem] w-max z-1 mx-auto text-center flex flex-col justify-center h-full'>
+                    <h2 className="leading-[1.33em] font-bold max-sm:text-[1.5rem] text-[1.9rem] md:text-[2.317rem] xl:text-[2.535rem] 2xl:text-[2.672rem] 3xl:text-[3.563rem] 4xl:text-[4.75rem]">
+                      Want<br />
+                      Your <TmText text='ProFile' /><br />
+                      Featured?
+                    </h2>
+                    <div>
+                      <CallToActionButton href="/" className="uppercase w-full">
+                        See How
+                      </CallToActionButton>
+                    </div>
                   </div>
                 </div>
               )}
