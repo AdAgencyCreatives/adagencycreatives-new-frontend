@@ -23,8 +23,15 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <link rel="preload" href="/fonts/alta/Alta_regular.woff" as="font" type="font/woff" crossOrigin="anonymous" fetchPriority="high" />
-        <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.75/build/spline-viewer.js"></script>
         <link rel="icon" href="/favicon.ico" />
+        <style dangerouslySetInnerHTML={{
+          __html: `
+          @font-face {
+            font-family: 'AltaRegular';
+            src: url('/fonts/alta/Alta_regular.woff') format('woff');
+            font-display: block;
+          }`}}></style>
+        <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.75/build/spline-viewer.js"></script>
       </head>
       <ClientProviderWrapper>
         <ClientUseContextWrapper>
