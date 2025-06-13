@@ -18,13 +18,13 @@ const AgencyLoopItem = ({ agency, className }) => {
         <div className="">
           <img src={agency.image} alt="" className='agency-box-shadow rounded-full w-[143px] md:w-[190px] lg:w-[200px] 2xl:w-[204px] 3xl:w-[270px] 4xl:w-[362px] h-auto object-cover aspect-square' />
         </div>
-        <div className="absolute top-[120px] md:top-[170px] lg:top-[155px] xl:top-[175px] 2xl:top-[190px] 3xl:top-[255px] 4xl:top-[328px] flex justify-center">
+        <div className="absolute -bottom-[1rem] flex justify-center">
           <img src="/aac-logo-white.avif" alt={agency.name} className='w-[37px] h-[37px] lg:w-[45px] lg:h-[45px] xl:w-[48px] xl:h-[48px] md:w-[50px] md:h-[50px] 2xl:w-[61px] 2xl:h-[61px] 3xl:w-[81px] 3xl:h-[81px] 4xl:w-[108px] 4xl:h-[108px]' />
         </div>
       </div>
       <div className="w-full">
         <LinkOrDiv href={agency_url} className={`font-inter font-bold text-base ${agency_url?.length > 0 ? 'hover:text-brand-yellow cursor-pointer' : ''} name uppercase`}>{agency?.item?.name}</LinkOrDiv>
-        <LinkOrDiv href={agency_url} className={`text-white font-inter font-bold lowercase title`}>Open Jobs{agency?.item?.open_jobs > 0 ? ' (' + agency?.item?.open_jobs + ')' : ''}</LinkOrDiv>
+        <LinkOrDiv href={agency_url} className={`text-white font-inter font-bold lowercase title`}>{agency?.item?.open_jobs > 0 ? 'Open Jobs (' + agency?.item?.open_jobs + ')' : ''}</LinkOrDiv>
         <div className="separator w-full mx-auto"></div>
         {city_url?.length > 0 && state_url?.length > 0 ? (
           <div className="location">
