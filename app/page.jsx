@@ -65,6 +65,7 @@ export default function Home() {
                 src="/aac-logo-round.png"
                 alt="Center Logo"
                 className="hover:rotate-45 transition-transform duration-3000"
+                fetchPriority="high"
               />
             </Link>
           </div>
