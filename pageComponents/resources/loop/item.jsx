@@ -8,11 +8,11 @@ const ResourceLoopItem = ({ resource, target = '_self', showLogo = true, logoCla
         <Image src={'/dot.png'} width="257" height="257" alt="" className="bg-black w-full invisible" />
         <div className="absolute left-0 top-0 w-full h-full">
           {showLogo && (
-            <div className={logoClassName}>
+            <div className={`absolute right-0 m-2 md:m-5 ${logoClassName}`}>
               <Image
                 src={'/aac-logo-white.avif'}
                 width="48" height="48" alt=""
-                className="max-sm:w-[1.8rem] w-[1.8rem] md:w-[2.196rem] xl:w-[2.401rem] 2xl:w-[2.531rem] 3xl:w-[3.375rem] 4xl:w-[4.5rem]"
+                className="max-sm:w-[1.6rem] w-[2.4rem] md:w-[2.927rem] xl:w-[3.202rem] 2xl:w-[3.375rem] 3xl:w-[4.5rem] 4xl:w-[6rem]"
               />
             </div>
           )}

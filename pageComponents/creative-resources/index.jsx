@@ -31,7 +31,7 @@ const CreativeResources = ({ slug, path }) => {
       </section>
       {mentorResources?.length > 0 ? (<>
         <section className="creative-resource-items grid max-sm:grid-cols-3 grid-cols-5 max-sm:gap-[1.55rem] gap-[1.55rem] md:gap-[1.891rem] xl:gap-[2.068rem] 2xl:gap-[2.18rem] 3xl:gap-[2.906rem] 4xl:gap-[3.875rem] max-sm:mt-[4.35rem] mt-[4.35rem] md:mt-[5.306rem] xl:mt-[5.803rem] 2xl:mt-[6.117rem] 3xl:mt-[8.156rem] 4xl:mt-[10.875rem] max-sm:mb-[1.8rem] mb-[1.8rem] md:mb-[2.196rem] xl:mb-[2.401rem] 2xl:mb-[2.531rem] 3xl:mb-[3.375rem] 4xl:mb-[4.5rem] max-sm:p-[1rem] p-[1rem] md:p-[1.22rem] xl:p-[1.334rem] 2xl:p-[1.406rem] 3xl:p-[1.875rem] 4xl:p-[2.5rem]">
-          {mentorResources?.map((resource, index) => (<ResourceLoopItem key={index} resource={resource} target='_blank' showLogo={true} logoClassName='absolute right-0 m-2 md:m-5' />))}
+          {mentorResources?.map((resource, index) => (<ResourceLoopItem key={index} resource={resource} target='_blank' showLogo={true} />))}
         </section>
       </>) : (<>
         <TailwindCircularLoader size={30} />
