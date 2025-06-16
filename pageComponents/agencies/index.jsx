@@ -37,7 +37,7 @@ const Agencies = () => {
         <div className="font-bold space-x-6 2xl:space-x-[36px] 3xl:space-x-[48px] 4xl:space-x-[64px] text-sm md:text-2xl 3xl:text-[32px] 4xl:text-[42.67px] text-brand-yellow relative z-1">
           <a href="#creatives" className="sub-heading">hire creatives</a>
           <a href="#plans" className="sub-heading">choose a plan</a>
-          <a href="#post-job" className="sub-heading">post a job</a>
+          <a href="#post-a-job" className="sub-heading">post a job</a>
         </div>
       </DirectoryPageHeader>
 

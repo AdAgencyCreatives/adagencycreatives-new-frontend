@@ -51,6 +51,10 @@ html * {
 }
 
 html {
+  scroll-padding-top: 100px; /* height of your sticky header */
+}
+
+html {
   scroll-behavior: smooth;
   font-size: 16px !important;
 }
