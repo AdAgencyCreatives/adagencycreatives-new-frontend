@@ -5,15 +5,18 @@ import { useRouter } from "next/navigation";
 import PageHeader from "components/PageHeader";
 import { loginInitialValues, loginSteps, loginValidations } from "./constants";
 import AnimatedForm from "components/AnimatedForm";
-const { LiaSignInAltSolid } = require("react-icons/lia");
 import { useContext, useEffect, useState } from "react";
 import { Context as AnimatedAlertContext } from "contexts/AnimatedAlertContext";
 import { Context as AuthContext } from "contexts/AuthContext";
 import SignOutLink from "components/SignOutLink";
+import { storeValue, readValue, clearValue } from "utils/LocalStorageUtility";
 
 const SignIn = ({ role }) => {
   const [isLoading, setLoading] = useState(false);
   const [apiResponse, setApiResponse] = useState(null);
+
+  const [isPasswordVisible, setPasswordVisible] = useState(false);
+  const [rememberMe, setRememberMe] = useState(false);
 
   const router = useRouter();
 
@@ -29,12 +32,17 @@ const SignIn = ({ role }) => {
     setLoading(true);
     try {
       hideAnimatedAlert();
-      await signin(values, (data) => {
+      await signin(values, rememberMe, (data) => {
         setApiResponse(data);
         setLoading(false);
       });
     } catch (error) { }
   };
+
+  useEffect(() => {
+    const _rememberMe = readValue("rememberMe");
+    setRememberMe(_rememberMe == "true");
+  }, []);
 
   useEffect(() => {
     if (apiResponse?.type == "success") {
@@ -77,6 +85,10 @@ const SignIn = ({ role }) => {
             validations={loginValidations}
             onSubmit={handleSubmit}
             isLoading={isLoading}
+            isPasswordVisible={isPasswordVisible}
+            setPasswordVisible={setPasswordVisible}
+            rememberMe={rememberMe}
+            setRememberMe={setRememberMe}
           />
         </>
       )}

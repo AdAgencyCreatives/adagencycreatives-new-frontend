@@ -20,6 +20,9 @@ const SignUp = ({ role }) => {
   const [isLoading, setLoading] = useState(false);
   const [apiResponse, setApiResponse] = useState(null);
 
+  const [isPasswordVisible, setPasswordVisible] = useState(false);
+  const [rememberPassword, setRememberPassword] = useState(false);
+
   const { showAnimatedAlert, hideAnimatedAlert } = useContext(AnimatedAlertContext);
 
   const {
@@ -114,6 +117,10 @@ const SignUp = ({ role }) => {
             }
             onSubmit={handleSubmit}
             isLoading={isLoading}
+            isPasswordVisible={isPasswordVisible}
+            setPasswordVisible={setPasswordVisible}
+            rememberPassword={rememberPassword}
+            setRememberPassword={setRememberPassword}
           />
         </>
       )}

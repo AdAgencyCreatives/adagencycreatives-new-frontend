@@ -3,6 +3,8 @@
 import { api, setAuthToken, baseUrl } from "contexts/api";
 import createDataContext from "./createDataContext";
 import { storeToken, readToken, clearToken } from "utils/TokenUtility";
+import { storeValue, readValue, clearValue } from "utils/LocalStorageUtility";
+import moment from "moment";
 
 const state = {
   isSignedIn: false,
@@ -134,13 +136,23 @@ const setPageClass = (dispatch) => {
 };
 
 const signup = (dispatch) => {
-  return async (data, role, cb = (data) => { }) => {
+  return async (data, role, rememberMe, cb = (data) => { }) => {
     resetFormMessage(dispatch)();
     try {
       const formData = data;
       formData.role = role;
 
       const response = await api.post("/users", formData);
+
+      if (rememberMe) {
+        let remember_me_expiration = moment().add(1, 'year');
+        storeValue("rememberMe", "true");
+        storeValue("email", response.data.email, remember_me_expiration);
+
+      } else {
+        storeValue("rememberMe", "false");
+        clearValue("email");
+      }
 
       dispatch({
         type: "set_form_message",
@@ -170,7 +182,7 @@ const getRoleId = (role) => {
 };
 
 const signin = (dispatch) => {
-  return async (data, cb=(data)=>{}) => {
+  return async (data, rememberMe, cb = (data) => { }) => {
     resetFormMessage(dispatch)();
     try {
       const response = await api.post("/login", data);
@@ -179,7 +191,16 @@ const signin = (dispatch) => {
       setUserData(dispatch, response.data.user);
 
       storeToken(response.data.token);
-      // setCookie("cookie_token", response.data.token, 1000 * 60 * 60 * 24); // set for 24 hours
+
+      if (rememberMe) {
+        let remember_me_expiration = moment().add(1, 'year');
+        storeValue("rememberMe", "true");
+        storeValue("email", response.data.user.email, remember_me_expiration);
+
+      } else {
+        storeValue("rememberMe", "false");
+        clearValue("email");
+      }
 
       if (response.data.user.role == "creative") {
         let creative = await getCreativeById(response.data.user.uuid);

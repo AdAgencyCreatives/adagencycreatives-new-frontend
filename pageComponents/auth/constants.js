@@ -43,7 +43,7 @@ export const loginSteps = [
   },
   {
     fields: [
-      { name: "password", label: "Password", type: "password", placeholder: "••••••••" },
+      { name: "password", label: "Password", type: "password", placeholder: "type your password" },
     ],
   },
 ];
