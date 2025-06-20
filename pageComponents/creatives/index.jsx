@@ -22,6 +22,7 @@ import useMentorTopics from 'hooks/useMentorTopics';
 import JobLoopPreloader from 'pageComponents/jobs/loop/preloader';
 import CreativeLoopPreloader from './loop/preloader';
 import FeaturedAgenciesLoopPreloader from 'pageComponents/featured_agencies/loop/preloader';
+import ResourceLoopPreloader from 'pageComponents/resources/loop/preloader';
 
 const Creatives = () => {
 
@@ -102,19 +103,34 @@ const Creatives = () => {
       <section className="resources relative max-sm:px-[0rem]!">
         <div className="mx-auto max-sm:px-5 px-10 relative z-1">
           <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 max-sm:gap-3 gap-15 w-full items-center relative">
-            {mentorTopics?.length > 0 && (
-              <div><ResourceLoopItem resource={mentorTopics[0]} /></div>
-            )}
-            {(mentorTopics?.length > 4) && (
-              <div className='col-span-2 max-sm:space-y-1 space-y-4 grid grid-cols-2 max-sm:gap-3 gap-15 items-start'>
-                {mentorTopics.slice(1, 5).map((topic, idx) => (
-                  <ResourceLoopItem key={idx} resource={topic} />
-                ))}
+            {(mentorTopics && mentorTopics?.length > 0) ? (<>
+              {mentorTopics?.length > 0 && (
+                <div><ResourceLoopItem resource={mentorTopics[0]} titleClassName='uppercase!' /></div>
+              )}
+              {(mentorTopics?.length > 4) && (
+                <div className='col-span-2 max-sm:space-y-1 space-y-4 grid grid-cols-2 max-sm:gap-3 gap-15 items-start'>
+                  {mentorTopics.slice(1, 5).map((topic, idx) => (
+                    <ResourceLoopItem key={idx} resource={topic} titleClassName='uppercase!' />
+                  ))}
+                </div>
+              )}
+              {mentorTopics?.length > 5 && (
+                <div><ResourceLoopItem resource={mentorTopics[5]} titleClassName='uppercase!' /></div>
+              )}
+            </>) : (<>
+              <div>
+                <ResourceLoopPreloader className='' />
               </div>
-            )}
-            {mentorTopics?.length > 5 && (
-              <div><ResourceLoopItem resource={mentorTopics[5]} /></div>
-            )}
+              <div className='col-span-2 max-sm:space-y-1 space-y-4 grid grid-cols-2 max-sm:gap-3 gap-15 items-start'>
+                <ResourceLoopPreloader className='' />
+                <ResourceLoopPreloader className='' />
+                <ResourceLoopPreloader className='' />
+                <ResourceLoopPreloader className='' />
+              </div>
+              <div>
+                <ResourceLoopPreloader className='' />
+              </div>
+            </>)}
           </div>
         </div>
       </section>
