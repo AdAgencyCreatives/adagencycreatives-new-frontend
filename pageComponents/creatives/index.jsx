@@ -165,7 +165,7 @@ const Creatives = () => {
       </div>
       <section className="featured-creatives card-wrapper">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
-          {!(featuredCreatives && featuredCreatives?.length > 0) ? (<>
+          {(featuredCreatives && featuredCreatives?.length > 0) ? (<>
             {featuredCreatives.map((creative, idx) => (
               <React.Fragment key={`creative-${creative.id || idx}`}>
                 {idx === 6 && (
