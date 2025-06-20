@@ -92,17 +92,17 @@ const Creatives = () => {
         <div className="mx-auto max-sm:px-5 px-10 relative z-1">
           <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 max-sm:gap-3 gap-15 w-full items-center relative">
             {mentorTopics?.length > 0 && (
-              <div><ResourceLoopItem resource={mentorTopics[0]} /></div>
+              <div><ResourceLoopItem resource={mentorTopics[0]} titleClassName='max-sm:text-[0.55rem]!' /></div>
             )}
             {(mentorTopics?.length > 4) && (
               <div className='col-span-2 max-sm:space-y-1 space-y-4 grid grid-cols-2 max-sm:gap-3 gap-15 items-start'>
                 {mentorTopics.slice(1, 5).map((topic, idx) => (
-                  <ResourceLoopItem key={idx} resource={topic} />
+                  <ResourceLoopItem key={idx} resource={topic} titleClassName='max-sm:text-[0.55rem]!' />
                 ))}
               </div>
             )}
             {mentorTopics?.length > 5 && (
-              <div><ResourceLoopItem resource={mentorTopics[5]} /></div>
+              <div><ResourceLoopItem resource={mentorTopics[5]} titleClassName='max-sm:text-[0.55rem]!' /></div>
             )}
           </div>
         </div>

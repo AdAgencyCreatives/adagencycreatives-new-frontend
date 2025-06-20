@@ -1,10 +1,10 @@
 import LinkWrapper from 'components/LinkWrapper';
 import Image from 'next/image';
 
-const ResourceLoopItem = ({ resource, target = '_self', showLogo = true, logoClassName = '', titleClassName = '', showDescription=false }) => {
+const ResourceLoopItem = ({ resource, target = '_self', showLogo = true, logoClassName = '', titleClassName = '', descriptionClassName='', showDescription=false }) => {
   return (
     <LinkWrapper href={resource.href} target={target} className='group transition-all'>
-      <div className="relative max-sm:rounded-[0.146rem] rounded-[0.4rem] md:rounded-[0.488rem] xl:rounded-[0.534rem] 2xl:rounded-[0.563rem] 3xl:rounded-[0.75rem] 4xl:rounded-[1rem] outline max-sm:outline-[0.192rem] outline-[0.525rem] md:outline-[0.641rem] xl:outline-[0.701rem] 2xl:outline-[0.739rem] 3xl:outline-[0.985rem] 4xl:outline-[1.313rem] outline-white group-hover:outline-brand-yellow shadow-light md:shadow-(--ad-box-shadow) transition relative bg-black pt-3 md:pt-0 ">
+      <div className="relative max-sm:rounded-[0.146rem] rounded-[0.4rem] md:rounded-[0.488rem] xl:rounded-[0.534rem] 2xl:rounded-[0.563rem] 3xl:rounded-[0.75rem] 4xl:rounded-[1rem] outline max-sm:outline-[0.192rem] outline-[0.525rem] md:outline-[0.641rem] xl:outline-[0.701rem] 2xl:outline-[0.739rem] 3xl:outline-[0.985rem] 4xl:outline-[1.313rem] outline-white group-hover:outline-brand-yellow shadow-light md:shadow-(--ad-box-shadow) transition relative bg-black pt-0 ">
         <Image src={'/dot.png'} width="257" height="257" alt="" className="bg-black w-full invisible" />
         <div className="absolute left-0 top-0 w-full h-full">
           {showLogo && (
@@ -17,10 +17,10 @@ const ResourceLoopItem = ({ resource, target = '_self', showLogo = true, logoCla
             </div>
           )}
           <div className='absolute bottom-0 p-2 md:p-5 '>
-          <p className={`leading-[1.33em] text-white lowercase font-bold font-inter max-sm:text-[0.9rem] text-[1.1rem] md:text-[1.342rem] xl:text-[1.467rem] 2xl:text-[1.547rem] 3xl:text-[2.063rem] 4xl:text-[2.75rem] max-sm:mt-[0.22rem] mt-[0.6rem] md:mt-[0.732rem] xl:mt-[0.8rem] 2xl:mt-[0.844rem] 3xl:mt-[1.125rem] 4xl:mt-[1.5rem] ${titleClassName}`}
+          <p className={`leading-[1.33em] text-white lowercase font-bold font-inter max-sm:text-[0.725rem] text-[1.45rem] md:text-[1.769rem] xl:text-[1.934rem] 2xl:text-[2.039rem] 3xl:text-[2.719rem] 4xl:text-[3.625rem] max-sm:mt-[0.22rem] mt-[0.6rem] md:mt-[0.732rem] xl:mt-[0.8rem] 2xl:mt-[0.844rem] 3xl:mt-[1.125rem] 4xl:mt-[1.5rem] ${titleClassName}`}
             dangerouslySetInnerHTML={{ __html: resource.title || '' }} />
           {showDescription && resource?.item?.description?.length > 0 && (
-            <p className={`leading-[1.33em] text-white lowercase font-bold font-inter max-sm:text-[0.625rem] text-[0.6rem] md:text-[0.732rem] xl:text-[0.8rem] 2xl:text-[0.844rem] 3xl:text-[1.125rem] 4xl:text-[1.5rem] ${titleClassName}`}
+            <p className={`leading-[1.33em] text-white lowercase font-bold font-inter max-sm:text-[0.55rem] text-[1.05rem] md:text-[1.281rem] xl:text-[1.401rem] 2xl:text-[1.477rem] 3xl:text-[1.969rem] 4xl:text-[2.625rem] ${descriptionClassName}`}
               dangerouslySetInnerHTML={{ __html: resource.item.description || '' }} />
           )}
           </div>
