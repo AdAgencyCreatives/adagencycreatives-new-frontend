@@ -29,7 +29,7 @@ const useFeaturedJobs = (per_page = 10) => {
     if (featuredJobs?.length > 0) {
         featuredJobs = [...featuredJobs.slice(0, per_page), ...placeholderFeaturedJobs.slice(0, per_page - Math.min(per_page, featuredJobs.length))]
     } else {
-        featuredJobs = placeholderFeaturedJobs;
+        featuredJobs = [];
     }
 
     return {

@@ -29,7 +29,7 @@ const useFeaturedCreatives = (per_page = 10) => {
     if (featuredCreatives?.length > 0) {
         featuredCreatives = [...featuredCreatives.slice(0, per_page), ...placeholderFeaturedCreatives.slice(0, per_page - Math.min(per_page, featuredCreatives.length))]
     } else {
-        featuredCreatives = placeholderFeaturedCreatives;
+        featuredCreatives = [];
     }
 
     return {

@@ -19,6 +19,9 @@ import FeaturedAgenciesLoopItem from 'pageComponents/featured_agencies/loop/item
 import CallToActionButton from 'components/CallToActionButton';
 import SectionHeading from 'components/SectionHeading';
 import useMentorTopics from 'hooks/useMentorTopics';
+import JobLoopPreloader from 'pageComponents/jobs/loop/preloader';
+import CreativeLoopPreloader from './loop/preloader';
+import FeaturedAgenciesLoopPreloader from 'pageComponents/featured_agencies/loop/preloader';
 
 const Creatives = () => {
 
@@ -64,23 +67,31 @@ const Creatives = () => {
       </div>
       <section className="relative z-1 featured-jobs card-wrapper">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
-          {featuredJobs.map((job, idx) => (
-            <React.Fragment key={`job-${job.id || idx}`}>
-              {idx === 6 && (
-                <div key={`perfect-${idx}`} id={`perfect-${idx}`} className="relative col-span-2 text-center flex flex-col justify-around gap-5 md:gap-10 max-md:py-10">
-                  <AnimatedBackdrop className={'block'} />
-                  <h2 className="relative z-1 pb-0 pt-6 2xl:pb-14 2xl:pt-20 3xl:pb-20 3xl:pt-26 4xl:py-15 font-arial font-bold  md:leading-[58.5px] 3xl:leading-[78px] 4xl:leading-[104px]">Haven't<br />Found<br />The Perfect<br />Job?</h2>
-                  <div className="relative z-1">
-                    <CallToActionButton href="/" className="uppercase">
-                      Advanced Search
-                    </CallToActionButton>
+          {(featuredJobs && featuredJobs?.length > 0) ? (<>
+            {featuredJobs.map((job, idx) => (
+              <React.Fragment key={`job-${job.id || idx}`}>
+                {idx === 6 && (
+                  <div key={`perfect-${idx}`} id={`perfect-${idx}`} className="relative col-span-2 text-center flex flex-col justify-around gap-5 md:gap-10 max-md:py-10">
+                    <AnimatedBackdrop className={'block'} />
+                    <h2 className="relative z-1 pb-0 pt-6 2xl:pb-14 2xl:pt-20 3xl:pb-20 3xl:pt-26 4xl:py-15 font-arial font-bold  md:leading-[58.5px] 3xl:leading-[78px] 4xl:leading-[104px]">Haven't<br />Found<br />The Perfect<br />Job?</h2>
+                    <div className="relative z-1">
+                      <CallToActionButton href="/" className="uppercase">
+                        Advanced Search
+                      </CallToActionButton>
+                    </div>
                   </div>
-                </div>
-              )}
+                )}
 
-              <JobLoopItem key={idx} job={job} className={idx > 5 ? 'md:flex hidden' : ''} />
-            </React.Fragment>
-          ))}
+                <JobLoopItem key={idx} job={job} className={idx > 5 ? 'md:flex hidden' : ''} />
+              </React.Fragment>
+            ))}
+          </>) : (<>
+            <JobLoopPreloader className='' />
+            <JobLoopPreloader className='' />
+            <JobLoopPreloader className='max-sm:hidden' />
+            <JobLoopPreloader className='max-sm:hidden' />
+            <JobLoopPreloader className='max-sm:hidden' />
+          </>)}
         </div>
       </section>
 
@@ -88,21 +99,21 @@ const Creatives = () => {
       <div className="bg-black heading-wrap" id="resources">
         <SectionHeading headingContent={'Resources'} className='text-right max-sm:px-5 px-10 max-sm:py-[0.659rem] py-[1.8rem] md:py-[2.196rem] xl:py-[2.401rem] 2xl:py-[2.531rem] 3xl:py-[3.375rem] 4xl:py-[4.5rem]' />
       </div>
-      <section className="resources relative">
+      <section className="resources relative max-sm:px-[0rem]!">
         <div className="mx-auto max-sm:px-5 px-10 relative z-1">
           <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 max-sm:gap-3 gap-15 w-full items-center relative">
             {mentorTopics?.length > 0 && (
-              <div><ResourceLoopItem resource={mentorTopics[0]} titleClassName='max-sm:text-[0.55rem]!' /></div>
+              <div><ResourceLoopItem resource={mentorTopics[0]} /></div>
             )}
             {(mentorTopics?.length > 4) && (
               <div className='col-span-2 max-sm:space-y-1 space-y-4 grid grid-cols-2 max-sm:gap-3 gap-15 items-start'>
                 {mentorTopics.slice(1, 5).map((topic, idx) => (
-                  <ResourceLoopItem key={idx} resource={topic} titleClassName='max-sm:text-[0.55rem]!' />
+                  <ResourceLoopItem key={idx} resource={topic} />
                 ))}
               </div>
             )}
             {mentorTopics?.length > 5 && (
-              <div><ResourceLoopItem resource={mentorTopics[5]} titleClassName='max-sm:text-[0.55rem]!' /></div>
+              <div><ResourceLoopItem resource={mentorTopics[5]} /></div>
             )}
           </div>
         </div>
@@ -130,9 +141,15 @@ const Creatives = () => {
             <SectionHeading headingContent={'Featured Agencies'} className='' />
           </div>
           <div className="flex overflow-x-scroll py-10 -mt-3 2xl:mx-20 3xl:mx-40 overflow-hidden">
-            {featuredAgencies.map((agency, idx) => (
-              <FeaturedAgenciesLoopItem key={idx} agency={agency} />
-            ))}
+            {(featuredAgencies && featuredAgencies?.length > 0) ? (<>
+              {featuredAgencies.map((agency, idx) => (
+                <FeaturedAgenciesLoopItem key={idx} agency={agency} />
+              ))}
+            </>) : (<>
+              <FeaturedAgenciesLoopPreloader className='' />
+              <FeaturedAgenciesLoopPreloader className='' />
+              <FeaturedAgenciesLoopPreloader className='' />
+            </>)}
           </div>
           <div className="flex items-center justify-end mt-5 md:mt-20 2xl:mt-45 3xl:mt-60 4xl:mt-80 2xl:px-10 3xl:px-18 4xl:px-30">
             <CallToActionButton href="/" className="uppercase">
@@ -148,53 +165,61 @@ const Creatives = () => {
       </div>
       <section className="featured-creatives card-wrapper">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
-          {featuredCreatives.map((creative, idx) => (
-            <React.Fragment key={`creative-${creative.id || idx}`}>
-              {idx === 6 && (
-                <div key={`ad-agency-${idx}`} id={`ad-agency-${idx}`} className="relative col-span-2 text-center flex flex-col justify-around gap-5 md:gap-10 max-md:py-10">
-                  <AnimatedBackdrop className={'block'} />
-                  <h2 className="relative z-1 pb-0 pt-6 2xl:pb-14 2xl:pt-20 3xl:pb-20 3xl:pt-26 4xl:py-15 md:leading-[58.5px] 3xl:leading-[78px] 4xl:leading-[104px]">
-                    <span className='font-bold font-arial'>We Are</span><br />
-                    <span className='font-alta uppercase'>AD AGENCY</span><br />
-                    <span className='font-alta uppercase'>CREATIVES</span>
-                  </h2>
-                  <div className="relative z-1">
-                    <CallToActionButton href="/" className="uppercase">
-                      Join Us
-                    </CallToActionButton>
+          {!(featuredCreatives && featuredCreatives?.length > 0) ? (<>
+            {featuredCreatives.map((creative, idx) => (
+              <React.Fragment key={`creative-${creative.id || idx}`}>
+                {idx === 6 && (
+                  <div key={`ad-agency-${idx}`} id={`ad-agency-${idx}`} className="relative col-span-2 text-center flex flex-col justify-around gap-5 md:gap-10 max-md:py-10">
+                    <AnimatedBackdrop className={'block'} />
+                    <h2 className="relative z-1 pb-0 pt-6 2xl:pb-14 2xl:pt-20 3xl:pb-20 3xl:pt-26 4xl:py-15 md:leading-[58.5px] 3xl:leading-[78px] 4xl:leading-[104px]">
+                      <span className='font-bold font-arial'>We Are</span><br />
+                      <span className='font-alta uppercase'>AD AGENCY</span><br />
+                      <span className='font-alta uppercase'>CREATIVES</span>
+                    </h2>
+                    <div className="relative z-1">
+                      <CallToActionButton href="/" className="uppercase">
+                        Join Us
+                      </CallToActionButton>
+                    </div>
                   </div>
-                </div>
-              )}
+                )}
 
-              {width >= 767 && idx === 15 && (
-                <div key={`profile-${idx}`} className="relative col-span-2 text-center flex flex-col justify-around gap-10">
-                  <AnimatedBackdrop className={''} />
-                  <h2 className="relative z-1 font-inter font-bold">Want<br />Your <TmText text='ProFile' /><br />Featured?</h2>
-                  <div className="relative z-1">
-                    <CallToActionButton href="/" className="uppercase">
-                      See How
-                    </CallToActionButton>
+                {width >= 767 && idx === 15 && (
+                  <div key={`profile-${idx}`} className="relative col-span-2 text-center flex flex-col justify-around gap-10">
+                    <AnimatedBackdrop className={''} />
+                    <h2 className="relative z-1 font-inter font-bold">Want<br />Your <TmText text='ProFile' /><br />Featured?</h2>
+                    <div className="relative z-1">
+                      <CallToActionButton href="/" className="uppercase">
+                        See How
+                      </CallToActionButton>
+                    </div>
                   </div>
-                </div>
-              )}
+                )}
 
-              {/* {idx === 8 && (
+                {/* {idx === 8 && (
                 <div key={`skip-01--${idx}`} className="col-span-2 md:col-span-3 lg:col-span-5 mb-8 3xl:mb-12 4xl:mb-16"></div>
               )} */}
 
-              <CreativeLoopItem key={idx} creative={creative} className={width < 767 && idx > 11 ? 'hidden' : ''} />
+                <CreativeLoopItem key={idx} creative={creative} className={width < 767 && idx > 11 ? 'hidden' : ''} />
 
-              {width < 767 && idx === 11 && (
-                <div key={`profile-02-${idx}`} className="relative col-span-2 text-center flex flex-col justify-center gap-6 md:gap-10">
-                  <AnimatedBackdrop className={'max-sm:py-8'} />
-                  <h2 className="z-1 text-2xl md:text-[44px] md:leading-[58.5px] 3xl:text-[57.07px] 3xl:leading-[78px] 4xl:text-[76.09px] 4xl:leading-[104px] font-bold mt-[48px] md:mt-0 font-inter">Want<br />Your<br /><TmText text='ProFile' /><br />Featured?</h2>
-                  <div className="z-1 mb-5">
-                    <Link href="/" className="border-brand-yellow border-0 outline-[2.05px] md:border-4 uppercase text-brand-yellow rounded-full font-sans sm:font-semibold md:font-inter md:font-bold text-xs md:text-sm 3xl:text-lg 4xl:text-2xl px-11.25 py-1.5 md:px-14  md:py-2.5 2xl:px-24 3xl:px-25.5 4xl:px-33.5 4xl:py-5 cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white font-inter">See How</Link>
+                {width < 767 && idx === 11 && (
+                  <div key={`profile-02-${idx}`} className="relative col-span-2 text-center flex flex-col justify-center gap-6 md:gap-10">
+                    <AnimatedBackdrop className={'max-sm:py-8'} />
+                    <h2 className="z-1 text-2xl md:text-[44px] md:leading-[58.5px] 3xl:text-[57.07px] 3xl:leading-[78px] 4xl:text-[76.09px] 4xl:leading-[104px] font-bold mt-[48px] md:mt-0 font-inter">Want<br />Your<br /><TmText text='ProFile' /><br />Featured?</h2>
+                    <div className="z-1 mb-5">
+                      <Link href="/" className="border-brand-yellow border-0 outline-[2.05px] md:border-4 uppercase text-brand-yellow rounded-full font-sans sm:font-semibold md:font-inter md:font-bold text-xs md:text-sm 3xl:text-lg 4xl:text-2xl px-11.25 py-1.5 md:px-14  md:py-2.5 2xl:px-24 3xl:px-25.5 4xl:px-33.5 4xl:py-5 cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white font-inter">See How</Link>
+                    </div>
                   </div>
-                </div>
-              )}
-            </React.Fragment>
-          ))}
+                )}
+              </React.Fragment>
+            ))}
+          </>) : (<>
+            <CreativeLoopPreloader className='' />
+            <CreativeLoopPreloader className='' />
+            <CreativeLoopPreloader className='max-sm:hidden' />
+            <CreativeLoopPreloader className='max-sm:hidden' />
+            <CreativeLoopPreloader className='max-sm:hidden' />
+          </>)}
         </div>
       </section>
 

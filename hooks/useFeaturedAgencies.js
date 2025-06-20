@@ -27,7 +27,7 @@ const useFeaturedAgencies = (per_page = 10) => {
     if (featuredAgencies?.length > 0) {
         featuredAgencies = [...featuredAgencies.slice(0, per_page), ...placeholderFeaturedAgencies.slice(0, per_page - Math.min(per_page, featuredAgencies.length))]
     } else {
-        featuredAgencies = placeholderFeaturedAgencies;
+        featuredAgencies = [];
     }
 
     return {
