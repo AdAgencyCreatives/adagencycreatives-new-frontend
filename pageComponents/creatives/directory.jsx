@@ -19,6 +19,7 @@ import eventEmitter from "components/EventEmitter";
 
 import { useRouter, useSearchParams } from "next/navigation";
 import SearchBar from "components/SearchBar";
+import CreativeLoopPreloader from "./loop/preloader";
 
 const CreativesDirectory = () => {
 
@@ -366,33 +367,40 @@ const CreativesDirectory = () => {
       {/* Featured Creatives */}
       <section id="directory-creatives" className="relative z-1 jobs-directory card-wrapper">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
-          {directoryCreatives?.length > 0 && directoryCreatives.slice(0, directory_nextPage ? directoryCreatives.length - 2 : directoryCreatives.length)?.map((creative, idx) => (
-            <React.Fragment key={`creative-${creative.id || idx}`}>
-              {idx === 16 && (
-                <div key={`perfect-${idx}`} id={`perfect-${idx}`} className="relative col-span-2 text-center flex flex-col justify-around gap-5 md:gap-10 max-md:py-10">
-                  <AnimatedBackdrop className={'block'} />
-                  <h2 className="relative z-1 pb-0 pt-6 2xl:pb-14 2xl:pt-20 3xl:pb-20 3xl:pt-26 4xl:py-15 font-arial font-bold  md:leading-[58.5px] 3xl:leading-[78px] 4xl:leading-[104px]">Why<br />Search?<br />Post & Attract!</h2>
-                  <div className="relative z-1">
-                    <Link
-                      href="/"
-                      className="link-button border-brand-yellow border-2 md:border-4 uppercase text-brand-yellow rounded-full font-inter sm:font-semibold md:font-inter md:font-bold cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white"
-                    >
-                      POST A JOB
-                    </Link>
+          {(directoryCreatives && directoryCreatives?.length > 0) ? (<>
+            {directoryCreatives?.length > 0 && directoryCreatives.slice(0, directory_nextPage ? directoryCreatives.length - 2 : directoryCreatives.length)?.map((creative, idx) => (
+              <React.Fragment key={`creative-${creative.id || idx}`}>
+                {idx === 16 && (
+                  <div key={`perfect-${idx}`} id={`perfect-${idx}`} className="relative col-span-2 text-center flex flex-col justify-around gap-5 md:gap-10 max-md:py-10">
+                    <AnimatedBackdrop className={'block'} />
+                    <h2 className="relative z-1 pb-0 pt-6 2xl:pb-14 2xl:pt-20 3xl:pb-20 3xl:pt-26 4xl:py-15 font-arial font-bold  md:leading-[58.5px] 3xl:leading-[78px] 4xl:leading-[104px]">Why<br />Search?<br />Post & Attract!</h2>
+                    <div className="relative z-1">
+                      <Link
+                        href="/"
+                        className="link-button border-brand-yellow border-2 md:border-4 uppercase text-brand-yellow rounded-full font-inter sm:font-semibold md:font-inter md:font-bold cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white"
+                      >
+                        POST A JOB
+                      </Link>
+                    </div>
                   </div>
-                </div>
-              )}
-
-              <CreativeLoopItem key={`${idx}-3`} creative={creative} />
-            </React.Fragment>
-          ))}
+                )}
+                <CreativeLoopItem key={`${idx}-3`} creative={creative} />
+              </React.Fragment>
+            ))}
+          </>) : (<>
+            <CreativeLoopPreloader className='' />
+            <CreativeLoopPreloader className='' />
+            <CreativeLoopPreloader className='max-sm:hidden' />
+            <CreativeLoopPreloader className='max-sm:hidden' />
+            <CreativeLoopPreloader className='max-sm:hidden' />
+          </>)}
         </div>
       </section>
       {/* Directory Loader */}
       {directory_loading && (
         <section className="pt-31 pb-21 2xl:pb-36 2xl:pt-40 3xl:pb-44 3xl:pt-33 4xl:pb-40 4xl:pt-50">
           <div className="flex justify-center align-center">
-            <TailwindCircularLoader size={10} />
+            <TailwindCircularLoader />
           </div>
         </section>
       )}

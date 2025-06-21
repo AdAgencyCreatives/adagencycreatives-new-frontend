@@ -1,5 +1,6 @@
 'use client';
 import Accordion from 'components/Accordion';
+import ContentLinePreloader from 'components/ContentLinePreloader';
 import TailwindCircularLoader from 'components/TailwindCircularLoader';
 import useDirectoryFaqs from 'hooks/useFaqs';
 import { useEffect, useState } from 'react';
@@ -18,14 +19,21 @@ const FAQ = () => {
         <div className="text-right text-brand-yellow font-semibold mb-8 text-lg 3xl:text-[32px] 4xl:text-[42px]">
           faq
         </div>
+        {(directoryFaqs && directoryFaqs?.length > 0) ? (<>
+          <Accordion items={directoryFaqs} />
+        </>) : (<>
+          <ContentLinePreloader className='' />
+          <ContentLinePreloader className='' />
+          <ContentLinePreloader className='' />
+          <ContentLinePreloader className='' />
+        </>)}
         {directory_loading && (
-          <section className="pt-31 pb-21 2xl:pb-36 2xl:pt-40 3xl:pb-44 3xl:pt-33 4xl:pb-40 4xl:pt-50">
+          <section className="max-sm:mt-[1.5rem] mt-[2.5rem] md:mt-[3.049rem] xl:mt-[3.335rem] 2xl:mt-[3.516rem] 3xl:mt-[4.688rem] 4xl:mt-[6.25rem]">
             <div className="flex justify-center align-center">
-              <TailwindCircularLoader size={10} />
+              <TailwindCircularLoader />
             </div>
           </section>
         )}
-        <Accordion items={directoryFaqs} />
       </div>
       <p className="footer font-inter uppercase transition delay-150 duration-300 ease-in-out text-[#6E6E6E] hover:text-[#FFFFFF] text-center">© {(new Date()).getFullYear()} Ad Agency Creatives. <br className="md:hidden" />All Rights Reserved.</p>
     </section>

@@ -184,7 +184,7 @@ const AnimatedForm = ({
             </div>
             {isLoading && (
               <div className="absolute pb-25 w-full me-auto z-20">
-                <TailwindCircularLoader size={10} />
+                <TailwindCircularLoader />
               </div>
             )}
           </Form>

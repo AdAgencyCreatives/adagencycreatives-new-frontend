@@ -14,6 +14,7 @@ import { useScrollLoader } from "hooks/useScrollLoader";
 import { getUpdatedSearchParamString } from "utils/functions";
 import SearchBar from "components/SearchBar";
 import TailwindCircularLoader from "components/TailwindCircularLoader";
+import JobLoopPreloader from "./loop/preloader";
 
 const JobsDirectory = () => {
 
@@ -130,33 +131,40 @@ const JobsDirectory = () => {
       {/* Featured Jobs */}
       <section className="relative z-1 jobs-directory card-wrapper">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
-          {directoryJobs?.length > 0 && directoryJobs.slice(0, directory_nextPage ? directoryJobs.length - 2 : directoryJobs.length)?.map((job, idx) => (
-            <React.Fragment key={`job-${job.id || idx}`}>
-              {idx === 16 && (
-                <div key={`perfect-${idx}`} id={`perfect-${idx}`} className="relative col-span-2 text-center flex flex-col justify-around gap-5 md:gap-10 max-md:py-10">
-                  <AnimatedBackdrop className={'block'} />
-                  <h2 className="relative z-1 pb-0 pt-6 2xl:pb-14 2xl:pt-20 3xl:pb-20 3xl:pt-26 4xl:py-15 font-arial font-bold  md:leading-[58.5px] 3xl:leading-[78px] 4xl:leading-[104px]">Haven't<br />Found<br />The Perfect<br />Job?</h2>
-                  <div className="relative z-1">
-                    <Link
-                      href="/"
-                      className="link-button border-brand-yellow border-2 md:border-4 uppercase text-brand-yellow rounded-full font-inter sm:font-semibold md:font-inter md:font-bold cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white"
-                    >
-                      Advanced Search
-                    </Link>
+          {(directoryJobs && directoryJobs?.length > 0) ? (<>
+            {directoryJobs?.length > 0 && directoryJobs.slice(0, directory_nextPage ? directoryJobs.length - 2 : directoryJobs.length)?.map((job, idx) => (
+              <React.Fragment key={`job-${job.id || idx}`}>
+                {idx === 16 && (
+                  <div key={`perfect-${idx}`} id={`perfect-${idx}`} className="relative col-span-2 text-center flex flex-col justify-around gap-5 md:gap-10 max-md:py-10">
+                    <AnimatedBackdrop className={'block'} />
+                    <h2 className="relative z-1 pb-0 pt-6 2xl:pb-14 2xl:pt-20 3xl:pb-20 3xl:pt-26 4xl:py-15 font-arial font-bold  md:leading-[58.5px] 3xl:leading-[78px] 4xl:leading-[104px]">Haven't<br />Found<br />The Perfect<br />Job?</h2>
+                    <div className="relative z-1">
+                      <Link
+                        href="/"
+                        className="link-button border-brand-yellow border-2 md:border-4 uppercase text-brand-yellow rounded-full font-inter sm:font-semibold md:font-inter md:font-bold cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white"
+                      >
+                        Advanced Search
+                      </Link>
+                    </div>
                   </div>
-                </div>
-              )}
-
-              <JobLoopItem key={idx} job={job} className={''} />
-            </React.Fragment>
-          ))}
+                )}
+                <JobLoopItem key={idx} job={job} className={''} />
+              </React.Fragment>
+            ))}
+          </>) : (<>
+            <JobLoopPreloader className='' />
+            <JobLoopPreloader className='' />
+            <JobLoopPreloader className='max-sm:hidden' />
+            <JobLoopPreloader className='max-sm:hidden' />
+            <JobLoopPreloader className='max-sm:hidden' />
+          </>)}
         </div>
       </section>
       {/* Directory Loader */}
       {directory_loading && (
         <section className="pt-31 pb-21 2xl:pb-36 2xl:pt-40 3xl:pb-44 3xl:pt-33 4xl:pb-40 4xl:pt-50">
           <div className="flex justify-center align-center">
-            <TailwindCircularLoader size={10} />
+            <TailwindCircularLoader />
           </div>
         </section>
       )}
