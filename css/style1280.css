@@ -318,4 +318,8 @@
     top: 0px;
     cursor: pointer;
   }
+
+  :root {
+    --shimmer-width: 749px;
+  }
 }

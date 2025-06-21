@@ -17,8 +17,8 @@ const CreativeLoopItem = ({ creative, className }) => {
   return (
     <div className={`z-1 creative card relative text-center flex flex-col justify-between items-center ${className}`}>
       <div className='relative flex items-center justify-center h-[142px] md:h-[200px] 2xl:h-[224px] 3xl:h-[310px] 4xl:h-[416px]'>
-        <div className="image-mask">
-          <ImageLoader src={creative.image} alt="" className='grayscale h-auto object-cover aspect-square max-sm:w-[6rem] w-[9.05rem] md:w-[11.039rem] xl:w-[12.073rem] 2xl:w-[12.727rem] 3xl:w-[16.969rem] 4xl:w-[22.625rem]' />
+        <div className="">
+          <ImageLoader src={creative.image} alt="" className='image-mask grayscale h-auto object-cover aspect-square max-sm:w-[6rem] w-[9.05rem] md:w-[11.039rem] xl:w-[12.073rem] 2xl:w-[12.727rem] 3xl:w-[16.969rem] 4xl:w-[22.625rem]' />
         </div>
         <div className="absolute top-[120px] md:top-[170px] lg:top-[155px] xl:top-[175px] 2xl:top-[190px] 3xl:top-[255px] 4xl:top-[328px] flex justify-center">
           <img src="/aac-logo-white.avif" alt={creative.title} className='w-[37px] h-[37px] lg:w-[45px] lg:h-[45px] xl:w-[48px] xl:h-[48px] md:w-[50px] md:h-[50px] 2xl:w-[61px] 2xl:h-[61px] 3xl:w-[81px] 3xl:h-[81px] 4xl:w-[108px] 4xl:h-[108px]' />

@@ -1,6 +1,5 @@
 'use client';
 
-import Link from 'next/link';
 import SpotlightLoopItem from 'pageComponents/spotlights/loop/item';
 import CreativeLoopItem from 'pageComponents/creatives/loop/item';
 import ResourceLoopItem from 'pageComponents/resources/loop/item';
@@ -20,6 +19,11 @@ import SectionHeading from 'components/SectionHeading';
 import useFeaturedJobs from 'hooks/useFeaturedJobs';
 import JobLoopItem from 'pageComponents/jobs/loop/item';
 import CallToActionButton from 'components/CallToActionButton';
+import SpotlightLoopPreloader from 'pageComponents/spotlights/loop/preloader';
+import JobLoopPreloader from 'pageComponents/jobs/loop/preloader';
+import CreativeLoopPreloader from 'pageComponents/creatives/loop/preloader';
+import PublicationLoopPreloader from 'pageComponents/publications/loop/preloader';
+import FeaturedCityLoopPreloader from 'pageComponents/featured_cities/loop/preloader';
 
 const TheLounge = () => {
 
@@ -80,16 +84,35 @@ const TheLounge = () => {
           {/* Background */}
           <AnimatedBackdrop className={'max-sm:w-[100%]'} />
           <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 items-center relative max-sm:gap-[0.806rem] gap-[2.2rem] md:gap-[2.683rem] xl:gap-[2.935rem] 2xl:gap-[3.094rem] 3xl:gap-[4.125rem] 4xl:gap-[5.5rem] max-sm:h-[22.357rem] h-[61.05rem] md:h-[74.464rem] xl:h-[81.44rem] 2xl:h-[85.852rem] 3xl:h-[114.469rem] 4xl:h-[152.625rem]">
-            {spotlightCreatives?.length > 0 && spotlightCreatives.slice(0, Math.min(10, spotlightCreatives.length)).map((spotlight, idx) => {
-              return (
-                <React.Fragment key={`spotlight-${spotlight.id || idx}`}>
-                  <SpotlightLoopItem key={idx} spotlight={spotlight} />
-                  {idx == 3 && (<><div></div></>)}
-                  {idx == 6 && (<><div></div><div></div></>)}
-                  {idx == 8 && (<><div></div><div></div><div></div></>)}
-                </React.Fragment>
-              );
-            })}
+            {(spotlightCreatives && spotlightCreatives?.length > 0) ? (<>
+              {spotlightCreatives?.length > 0 && spotlightCreatives.slice(0, Math.min(10, spotlightCreatives.length)).map((spotlight, idx) => {
+                return (
+                  <React.Fragment key={`spotlight-${spotlight.id || idx}`}>
+                    <SpotlightLoopItem key={idx} spotlight={spotlight} />
+                    {idx == 3 && (<><div></div></>)}
+                    {idx == 6 && (<><div></div><div></div></>)}
+                    {idx == 8 && (<><div></div><div></div><div></div></>)}
+                  </React.Fragment>
+                );
+              })}
+            </>) : (<>
+              <SpotlightLoopPreloader className='' />
+              <SpotlightLoopPreloader className='' />
+              <SpotlightLoopPreloader className='' />
+              <SpotlightLoopPreloader className='' />
+              <div></div>
+              <SpotlightLoopPreloader className='' />
+              <SpotlightLoopPreloader className='' />
+              <SpotlightLoopPreloader className='' />
+              <div></div>
+              <div></div>
+              <SpotlightLoopPreloader className='' />
+              <SpotlightLoopPreloader className='' />
+              <div></div>
+              <div></div>
+              <div></div>
+              <SpotlightLoopPreloader className='' />
+            </>)}
             <div className="absolute left-0 font-bold leading-none max-sm:text-[1.375rem] text-[3.95rem] md:text-[4.818rem] xl:text-[5.269rem] 2xl:text-[5.555rem] 3xl:text-[7.406rem] 4xl:text-[9.875rem] max-sm:bottom-[1.044rem] bottom-[2.85rem] md:bottom-[3.476rem] xl:bottom-[3.802rem] 2xl:bottom-[4.008rem] 3xl:bottom-[5.344rem] 4xl:bottom-[7.125rem]">
               <div>Gather.</div>
               <div>Inspire.</div>
@@ -149,53 +172,70 @@ const TheLounge = () => {
       <section id="featured" className="mx-auto max-sm:pt-[1.125rem] max-sm:px-[0.458rem] px-[1.25rem] md:px-[1.525rem] xl:px-[1.667rem] 2xl:px-[1.758rem] 3xl:px-[2.344rem] 4xl:px-[3.125rem]">
         <SectionHeading headingContent={'Featured'} className='text-right max-sm:pb-[1.282rem] pb-[3.5rem] md:pb-[4.269rem] xl:pb-[4.669rem] 2xl:pb-[4.922rem] 3xl:pb-[6.563rem] 4xl:pb-[8.75rem]' />
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 max-sm:gap-[1rem] gap-[0.8rem] md:gap-[0.976rem] xl:gap-[1.067rem] 2xl:gap-[1.125rem] 3xl:gap-[1.5rem] 4xl:gap-[2rem] max-sm:py-[0.916rem] py-[2.5rem] md:py-[3.049rem] xl:py-[3.335rem] 2xl:py-[3.516rem] 3xl:py-[4.688rem] 4xl:py-[6.25rem] max-sm:px-[0.229rem] px-[0.625rem] md:px-[0.763rem] xl:px-[0.834rem] 2xl:px-[0.879rem] 3xl:px-[1.172rem] 4xl:px-[1.563rem]">
-          {featuredJobs.map((job, idx) => (
-            <React.Fragment key={`job-${job.id || idx}`}>
-              {idx === 6 && (
-                <div key={`ad-agency-${idx}`} className="z-1 w-full relative col-span-2 flex flex-col justify-between max-sm:py-[2rem] max-sm:gap-[1.099rem] gap-[3rem] md:gap-[3.659rem] xl:gap-[4.002rem] 2xl:gap-[4.219rem] 3xl:gap-[5.625rem] 4xl:gap-[7.5rem]">
-                  <AnimatedBackdrop className={'z-0'} />
-                  <div className='max-sm:gap-[3.55rem] gap-[3.55rem] md:gap-[4.33rem] xl:gap-[4.736rem] 2xl:gap-[4.992rem] 3xl:gap-[6.656rem] 4xl:gap-[8.875rem] w-max z-1 mx-auto text-center flex flex-col justify-center h-full'>
-                    <h2 className="leading-[1.33em] font-bold max-sm:text-[1.5rem] text-[1.9rem] md:text-[2.317rem] xl:text-[2.535rem] 2xl:text-[2.672rem] 3xl:text-[3.563rem] 4xl:text-[4.75rem]">
-                      Haven't<br />
-                      Found<br />
-                      The Perfect<br />
-                      Job?
-                    </h2>
-                    <div>
-                      <CallToActionButton href="/" className="uppercase">
-                        Advanced Search
-                      </CallToActionButton>
+          {(featuredJobs && featuredJobs?.length > 0) ? (<>
+            {featuredJobs.map((job, idx) => (
+              <React.Fragment key={`job-${job.id || idx}`}>
+                {idx === 6 && (
+                  <div key={`ad-agency-${idx}`} className="z-1 w-full relative col-span-2 flex flex-col justify-between max-sm:py-[2rem] max-sm:gap-[1.099rem] gap-[3rem] md:gap-[3.659rem] xl:gap-[4.002rem] 2xl:gap-[4.219rem] 3xl:gap-[5.625rem] 4xl:gap-[7.5rem]">
+                    <AnimatedBackdrop className={'z-0'} />
+                    <div className='max-sm:gap-[3.55rem] gap-[3.55rem] md:gap-[4.33rem] xl:gap-[4.736rem] 2xl:gap-[4.992rem] 3xl:gap-[6.656rem] 4xl:gap-[8.875rem] w-max z-1 mx-auto text-center flex flex-col justify-center h-full'>
+                      <h2 className="leading-[1.33em] font-bold max-sm:text-[1.5rem] text-[1.9rem] md:text-[2.317rem] xl:text-[2.535rem] 2xl:text-[2.672rem] 3xl:text-[3.563rem] 4xl:text-[4.75rem]">
+                        Haven't<br />
+                        Found<br />
+                        The Perfect<br />
+                        Job?
+                      </h2>
+                      <div>
+                        <CallToActionButton href="/" className="uppercase">
+                          Advanced Search
+                        </CallToActionButton>
+                      </div>
                     </div>
                   </div>
-                </div>
-              )}
-              <JobLoopItem key={idx} job={job} className={idx > 5 ? 'md:flex hidden' : ''} />
-            </React.Fragment>
-          ))}
+                )}
+                <JobLoopItem key={idx} job={job} className={idx > 5 ? 'md:flex hidden' : ''} />
+              </React.Fragment>
+            ))}
+          </>) : (<>
+            <JobLoopPreloader className='' />
+            <JobLoopPreloader className='' />
+            <JobLoopPreloader className='max-sm:hidden' />
+            <JobLoopPreloader className='max-sm:hidden' />
+            <JobLoopPreloader className='max-sm:hidden' />
+          </>)}
         </div>
+
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 max-sm:gap-[1rem] gap-[0.8rem] md:gap-[0.976rem] xl:gap-[1.067rem] 2xl:gap-[1.125rem] 3xl:gap-[1.5rem] 4xl:gap-[2rem] max-sm:py-[0.916rem] py-[2.5rem] md:py-[3.049rem] xl:py-[3.335rem] 2xl:py-[3.516rem] 3xl:py-[4.688rem] 4xl:py-[6.25rem] max-sm:px-[0.229rem] px-[0.625rem] md:px-[0.763rem] xl:px-[0.834rem] 2xl:px-[0.879rem] 3xl:px-[1.172rem] 4xl:px-[1.563rem]">
-          {featuredCreatives.map((creative, idx) => (
-            <React.Fragment key={`creative-${creative.id || idx}`}>
-              {idx === 6 && (
-                <div key={`ad-agency-${idx}`} className="relative col-span-2 flex flex-col justify-center max-sm:py-[2rem] max-sm:gap-[1.099rem] gap-[3rem] md:gap-[3.659rem] xl:gap-[4.002rem] 2xl:gap-[4.219rem] 3xl:gap-[5.625rem] 4xl:gap-[7.5rem]">
-                  <AnimatedBackdrop className={'z-0'} />
-                  <div className='max-sm:gap-[3.55rem] gap-[3.55rem] md:gap-[4.33rem] xl:gap-[4.736rem] 2xl:gap-[4.992rem] 3xl:gap-[6.656rem] 4xl:gap-[8.875rem] w-max z-1 mx-auto text-center flex flex-col justify-center h-full'>
-                    <h2 className="leading-[1.33em] font-bold max-sm:text-[1.5rem] text-[1.9rem] md:text-[2.317rem] xl:text-[2.535rem] 2xl:text-[2.672rem] 3xl:text-[3.563rem] 4xl:text-[4.75rem]">
-                      Want<br />
-                      Your <TmText text='ProFile' /><br />
-                      Featured?
-                    </h2>
-                    <div>
-                      <CallToActionButton href="/" className="uppercase w-full">
-                        See How
-                      </CallToActionButton>
+          {(featuredCreatives && featuredCreatives?.length > 0) ? (<>
+            {featuredCreatives.map((creative, idx) => (
+              <React.Fragment key={`creative-${creative.id || idx}`}>
+                {idx === 6 && (
+                  <div key={`ad-agency-${idx}`} className="relative col-span-2 flex flex-col justify-center max-sm:py-[2rem] max-sm:gap-[1.099rem] gap-[3rem] md:gap-[3.659rem] xl:gap-[4.002rem] 2xl:gap-[4.219rem] 3xl:gap-[5.625rem] 4xl:gap-[7.5rem]">
+                    <AnimatedBackdrop className={'z-0'} />
+                    <div className='max-sm:gap-[3.55rem] gap-[3.55rem] md:gap-[4.33rem] xl:gap-[4.736rem] 2xl:gap-[4.992rem] 3xl:gap-[6.656rem] 4xl:gap-[8.875rem] w-max z-1 mx-auto text-center flex flex-col justify-center h-full'>
+                      <h2 className="leading-[1.33em] font-bold max-sm:text-[1.5rem] text-[1.9rem] md:text-[2.317rem] xl:text-[2.535rem] 2xl:text-[2.672rem] 3xl:text-[3.563rem] 4xl:text-[4.75rem]">
+                        Want<br />
+                        Your <TmText text='ProFile' /><br />
+                        Featured?
+                      </h2>
+                      <div>
+                        <CallToActionButton href="/" className="uppercase w-full">
+                          See How
+                        </CallToActionButton>
+                      </div>
                     </div>
                   </div>
-                </div>
-              )}
-              <CreativeLoopItem key={idx} creative={creative} className={idx > 5 ? 'md:flex hidden' : ''} />
-            </React.Fragment>
-          ))}
+                )}
+                <CreativeLoopItem key={idx} creative={creative} className={idx > 5 ? 'md:flex hidden' : ''} />
+              </React.Fragment>
+            ))}
+          </>) : (<>
+            <CreativeLoopPreloader className='' />
+            <CreativeLoopPreloader className='' />
+            <CreativeLoopPreloader className='max-sm:hidden' />
+            <CreativeLoopPreloader className='max-sm:hidden' />
+            <CreativeLoopPreloader className='max-sm:hidden' />
+          </>)}
         </div>
       </section>
 
@@ -241,7 +281,30 @@ const TheLounge = () => {
         <div className="flex w-full justify-center relative max-sm:gap-[0.732rem] gap-[2rem] md:gap-[2.439rem] xl:gap-[2.668rem] 2xl:gap-[2.813rem] 3xl:gap-[3.75rem] 4xl:gap-[5rem]">
           {/* Background */}
           <AnimatedBackdrop className={'max-sm:py-0 py-0'} />
-          <PublicationList publications={publicationResources} />
+          {(publicationResources && publicationResources?.length > 0) ? (<>
+            <PublicationList publications={publicationResources} />
+          </>) : (<>
+            <div className={`item-group space-y-16 max-sm:mt-16 mt-80 flex flex-col max-sm:gap-[0.732rem] gap-[2rem] md:gap-[2.439rem] xl:gap-[2.668rem] 2xl:gap-[2.813rem] 3xl:gap-[3.75rem] 4xl:gap-[5rem]`}>
+              <PublicationLoopPreloader className='' />
+              <PublicationLoopPreloader className='' />
+              <PublicationLoopPreloader className='' />
+            </div>
+            <div className={`item-group space-y-16 flex flex-col max-sm:gap-[0.732rem] gap-[2rem] md:gap-[2.439rem] xl:gap-[2.668rem] 2xl:gap-[2.813rem] 3xl:gap-[3.75rem] 4xl:gap-[5rem]`}>
+              <PublicationLoopPreloader className='' />
+              <PublicationLoopPreloader className='' />
+              <PublicationLoopPreloader className='' />
+            </div>
+            <div className={`item-group space-y-16 max-sm:mt-16 mt-80 flex flex-col max-sm:gap-[0.732rem] gap-[2rem] md:gap-[2.439rem] xl:gap-[2.668rem] 2xl:gap-[2.813rem] 3xl:gap-[3.75rem] 4xl:gap-[5rem]`}>
+              <PublicationLoopPreloader className='' />
+              <PublicationLoopPreloader className='' />
+              <PublicationLoopPreloader className='' />
+            </div>
+            <div className={`item-group space-y-16 flex flex-col max-sm:gap-[0.732rem] gap-[2rem] md:gap-[2.439rem] xl:gap-[2.668rem] 2xl:gap-[2.813rem] 3xl:gap-[3.75rem] 4xl:gap-[5rem]`}>
+              <PublicationLoopPreloader className='' />
+              <PublicationLoopPreloader className='' />
+              <PublicationLoopPreloader className='' />
+            </div>
+          </>)}
         </div>
       </section>
 
@@ -250,16 +313,26 @@ const TheLounge = () => {
         <div className="mx-auto relative z-1">
           <SectionHeading headingContent={'Featured Cities'} className='max-sm:pb-[1.282rem] pb-[3.5rem] md:pb-[4.269rem] xl:pb-[4.669rem] 2xl:pb-[4.922rem] 3xl:pb-[6.563rem] 4xl:pb-[8.75rem]' />
           <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 max-sm:gap-[0.732rem] gap-[2rem] md:gap-[2.439rem] xl:gap-[2.668rem] 2xl:gap-[2.813rem] 3xl:gap-[3.75rem] 4xl:gap-[5rem] max-sm:mt-[0.659rem] mt-[1.8rem] md:mt-[2.196rem] xl:mt-[2.401rem] 2xl:mt-[2.531rem] 3xl:mt-[3.375rem] 4xl:mt-[4.5rem] w-full items-center relative max-sm:mb-[0.366rem] mb-[1rem] md:mb-[1.22rem] xl:mb-[1.334rem] 2xl:mb-[1.406rem] 3xl:mb-[1.875rem] 4xl:mb-[2.5rem]">
-            {featuredCities?.length > 0 && (
-              <div className='col-span-2'><FeaturedCityLoopItem featuredCity={featuredCities[0]} /></div>
-            )}
-            {(featuredCities?.length > 4) && (
+            {(featuredCities && featuredCities?.length > 0) ? (<>
+              {featuredCities?.length > 0 && (
+                <div className='col-span-2'><FeaturedCityLoopItem featuredCity={featuredCities[0]} /></div>
+              )}
+              {(featuredCities?.length > 4) && (
+                <div className='col-span-2 max-sm:space-y-1 space-y-4 grid grid-cols-2 items-start max-sm:gap-[0.732rem] gap-[2rem] md:gap-[2.439rem] xl:gap-[2.668rem] 2xl:gap-[2.813rem] 3xl:gap-[3.75rem] 4xl:gap-[5rem]'>
+                  {featuredCities.slice(1, 5).map((topic, idx) => (
+                    <FeaturedCityLoopItem key={idx} featuredCity={topic} />
+                  ))}
+                </div>
+              )}
+            </>) : (<>
+              <div className='col-span-2'><FeaturedCityLoopPreloader className='' /></div>
               <div className='col-span-2 max-sm:space-y-1 space-y-4 grid grid-cols-2 items-start max-sm:gap-[0.732rem] gap-[2rem] md:gap-[2.439rem] xl:gap-[2.668rem] 2xl:gap-[2.813rem] 3xl:gap-[3.75rem] 4xl:gap-[5rem]'>
-                {featuredCities.slice(1, 5).map((topic, idx) => (
-                  <FeaturedCityLoopItem key={idx} featuredCity={topic} />
-                ))}
+                <FeaturedCityLoopPreloader className='' />
+                <FeaturedCityLoopPreloader className='' />
+                <FeaturedCityLoopPreloader className='' />
+                <FeaturedCityLoopPreloader className='' />
               </div>
-            )}
+            </>)}
           </div>
         </div>
       </section>

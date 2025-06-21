@@ -13,6 +13,7 @@ import useFeaturedCreatives from 'hooks/useFeaturedCreatives';
 import AnimatedBackdrop from 'components/AnimatedBackdrop';
 import CallToActionButton from 'components/CallToActionButton';
 import SectionHeading from 'components/SectionHeading';
+import CreativeLoopPreloader from 'pageComponents/creatives/loop/preloader';
 
 const Agencies = () => {
 
@@ -48,52 +49,60 @@ const Agencies = () => {
       </div>
       <section className="featured-jobs card-wrapper">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
-          {featuredCreatives.map((creative, idx) => (
-            <React.Fragment key={`creative-${creative.id || idx}`}>
-              {(width < 768 && idx === 6) || (width >= 768 && idx === 6) ? (
-                <div id={`perfect-${idx}`} className="relative col-span-2 text-center flex flex-col justify-center gap-5 max-md:py-10">
-                  <AnimatedBackdrop className={''} />
-                  <h2 className="relative z-1 pb-0 pt-6 2xl:pb-14 2xl:pt-20 3xl:pb-20 3xl:pt-26 4xl:py-15 font-arial font-bold  md:leading-[58.5px] 3xl:leading-[78px] 4xl:leading-[104px]">Haven't<br />Found<br />The Perfect<br />Match?</h2>
-                  <div className='relative z-1 '>
-                    <CallToActionButton href="/" className="uppercase">
-                      Advanced Search
-                    </CallToActionButton>
+          {(featuredCreatives && featuredCreatives?.length > 0) ? (<>
+            {featuredCreatives.map((creative, idx) => (
+              <React.Fragment key={`creative-${creative.id || idx}`}>
+                {(width < 768 && idx === 6) || (width >= 768 && idx === 6) ? (
+                  <div id={`perfect-${idx}`} className="relative col-span-2 text-center flex flex-col justify-center gap-5 max-md:py-10">
+                    <AnimatedBackdrop className={''} />
+                    <h2 className="relative z-1 pb-0 pt-6 2xl:pb-14 2xl:pt-20 3xl:pb-20 3xl:pt-26 4xl:py-15 font-arial font-bold  md:leading-[58.5px] 3xl:leading-[78px] 4xl:leading-[104px]">Haven't<br />Found<br />The Perfect<br />Match?</h2>
+                    <div className='relative z-1 '>
+                      <CallToActionButton href="/" className="uppercase">
+                        Advanced Search
+                      </CallToActionButton>
+                    </div>
                   </div>
-                </div>
-              ) : (
-                <></>
-              )}
+                ) : (
+                  <></>
+                )}
 
-              {width >= 768 && idx === 15 && (
-                <div key={`profile-${idx}`} className="relative col-span-2 text-center flex flex-col justify-around gap-10">
-                  <AnimatedBackdrop className={''} />
-                  <h2 className="relative z-1 font-inter font-bold">
-                    Why<br />Search?<br />Post & Attract!
-                  </h2>
-                  <div className='relative z-1'>
-                    <CallToActionButton href="/" className="uppercase">
-                      Post A Job
-                    </CallToActionButton>
+                {width >= 768 && idx === 15 && (
+                  <div key={`profile-${idx}`} className="relative col-span-2 text-center flex flex-col justify-around gap-10">
+                    <AnimatedBackdrop className={''} />
+                    <h2 className="relative z-1 font-inter font-bold">
+                      Why<br />Search?<br />Post & Attract!
+                    </h2>
+                    <div className='relative z-1'>
+                      <CallToActionButton href="/" className="uppercase">
+                        Post A Job
+                      </CallToActionButton>
+                    </div>
                   </div>
-                </div>
-              )}
+                )}
 
-              <CreativeLoopItem key={idx} creative={creative} className={width < 768 && idx > 11 ? 'md:flex hidden' : ''} />
+                <CreativeLoopItem key={idx} creative={creative} className={width < 768 && idx > 11 ? 'md:flex hidden' : ''} />
 
-              {width < 768 && idx === 11 && (
-                <div key={`profile-${idx}`} className="relative col-span-2 text-center flex flex-col justify-center gap-6 md:gap-10">
-                  <AnimatedBackdrop className={'block md:hidden w-[70%]'} />
-                  <h2 className="z-1 text-2xl md:text-[44px] md:leading-[58.5px] 3xl:text-[57.07px] 3xl:leading-[78px] 4xl:text-[76.09px] 4xl:leading-[104px] font-bold mt-[48px] md:mt-0 font-inter"
-                  >Why<br />Search?<br />Post & Attract!</h2>
-                  <div className='z-1'>
-                    <CallToActionButton href="/" className="uppercase">
-                      See How
-                    </CallToActionButton>
+                {width < 768 && idx === 11 && (
+                  <div key={`profile-${idx}`} className="relative col-span-2 text-center flex flex-col justify-center gap-6 md:gap-10">
+                    <AnimatedBackdrop className={'block md:hidden w-[70%]'} />
+                    <h2 className="z-1 text-2xl md:text-[44px] md:leading-[58.5px] 3xl:text-[57.07px] 3xl:leading-[78px] 4xl:text-[76.09px] 4xl:leading-[104px] font-bold mt-[48px] md:mt-0 font-inter"
+                    >Why<br />Search?<br />Post & Attract!</h2>
+                    <div className='z-1'>
+                      <CallToActionButton href="/" className="uppercase">
+                        See How
+                      </CallToActionButton>
+                    </div>
                   </div>
-                </div>
-              )}
-            </React.Fragment>
-          ))}
+                )}
+              </React.Fragment>
+            ))}
+          </>) : (<>
+            <CreativeLoopPreloader className='' />
+            <CreativeLoopPreloader className='' />
+            <CreativeLoopPreloader className='max-sm:hidden' />
+            <CreativeLoopPreloader className='max-sm:hidden' />
+            <CreativeLoopPreloader className='max-sm:hidden' />
+          </>)}
         </div>
       </section>
 

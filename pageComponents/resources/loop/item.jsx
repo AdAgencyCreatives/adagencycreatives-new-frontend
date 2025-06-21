@@ -12,7 +12,7 @@ const ResourceLoopItem = ({ resource, target = '_self', showLogo = true, logoCla
               <Image src="/aac-logo-white.avif" width={36} height={36} alt="" className={`aspect-square max-sm:w-[1.318rem] w-[3.6rem] md:w-[4.391rem] xl:w-[4.802rem] 2xl:w-[5.063rem] 3xl:w-[6.75rem] 4xl:w-[9rem]`} />
             </div>
           )}
-          <div className='absolute bottom-0 p-1 md:p-5 '>
+          <div className='absolute bottom-0 p-1 md:p-3 '>
           <p className={`leading-[1.33em] text-white lowercase font-bold font-inter max-sm:text-[0.625rem] text-[1.45rem] md:text-[1.769rem] xl:text-[1.934rem] 2xl:text-[2.039rem] 3xl:text-[2.719rem] 4xl:text-[3.625rem] max-sm:mt-[0.22rem] mt-[0.6rem] md:mt-[0.732rem] xl:mt-[0.8rem] 2xl:mt-[0.844rem] 3xl:mt-[1.125rem] 4xl:mt-[1.5rem] ${titleClassName}`}
             dangerouslySetInnerHTML={{ __html: resource.title || '' }} />
           {showDescription && resource?.item?.description?.length > 0 && (

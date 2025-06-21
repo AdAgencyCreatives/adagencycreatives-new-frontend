@@ -337,4 +337,8 @@
     top: -2px;
     right: 20px;
   }
+
+  :root {
+    --shimmer-width: 219px;
+  }
 }
