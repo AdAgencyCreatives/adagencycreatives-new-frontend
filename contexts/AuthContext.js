@@ -158,7 +158,7 @@ const signup = (dispatch) => {
         type: "set_form_message",
         payload: { type: "success", message: getRegisterSuccessMessage() },
       });
-      logActivity(response.data.uuid, "signup", "You signed up as " + response.data.role + ", via email: " + response.data.email, "{user_id:" + response.data.uuid + "}");
+      //logActivity(response.data.uuid, "signup", "You signed up as " + response.data.role + ", via email: " + response.data.email, "{user_id:" + response.data.uuid + "}");
       cb({ type: "success", data: response.data });
     } catch (error) {
       console.log(error);

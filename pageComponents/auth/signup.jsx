@@ -21,7 +21,7 @@ const SignUp = ({ role }) => {
   const [apiResponse, setApiResponse] = useState(null);
 
   const [isPasswordVisible, setPasswordVisible] = useState(false);
-  const [rememberPassword, setRememberPassword] = useState(false);
+  const [rememberMe, setRememberPassword] = useState(false);
 
   const { showAnimatedAlert, hideAnimatedAlert } = useContext(AnimatedAlertContext);
 
@@ -38,12 +38,15 @@ const SignUp = ({ role }) => {
       await signup(
         values,
         role == "creatives" ? "creative" : "agency",
+        rememberMe,
         (data) => {
           setApiResponse(data);
           setLoading(false);
         }
       );
-    } catch (error) { }
+    } catch (error) { 
+      
+    }
   };
 
   const SuccessMessage = () => {
@@ -119,7 +122,7 @@ const SignUp = ({ role }) => {
             isLoading={isLoading}
             isPasswordVisible={isPasswordVisible}
             setPasswordVisible={setPasswordVisible}
-            rememberPassword={rememberPassword}
+            rememberMe={rememberMe}
             setRememberPassword={setRememberPassword}
           />
         </>

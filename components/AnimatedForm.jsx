@@ -51,16 +51,16 @@ const AnimatedForm = ({
   const submitButtonRef = useRef(null);
 
   useEffect(() => {
-    // todo: form gets left aligned when focus on next/back
     window.setTimeout(() => {
-      // document.querySelector(`#animated-form-field-id-${step}-0`)?.focus();
-    }, 500);
+      document.querySelector(`#animated-form-field-id-${step}-0`)?.focus();
+    }, 1000);
   }, [step]);
 
   const handleKeyDown = (e) => {
-    if (e.key === 'Enter') {
+    if (e.key === 'Enter' || e.key === 'Tab') {
       e.preventDefault();
-      if (step < 1) {
+      e.stopPropagation();
+      if (step < steps.length - 1) {
         nextButtonRef.current?.click();
       } else {
         submitButtonRef.current?.click();
