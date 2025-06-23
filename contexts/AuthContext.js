@@ -102,7 +102,7 @@ const getRegisterSuccessMessage = () => {
       Thank you for successfully registering. You'll receive an email with next steps.
       <br />
       <br />
-      It could be a few business days for us to verify your registration request. Be on the look out for our email.
+      It could be a few business days to verify your registration request. You'll receive an email when verification is complete.
       <br />
       <br />
       In the meantime, enjoy exploring our home page.
