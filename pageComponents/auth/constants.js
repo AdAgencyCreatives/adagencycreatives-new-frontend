@@ -1,19 +1,19 @@
 import * as Yup from "yup";
 
 // Add custom password validation method to Yup
-Yup.addMethod(Yup.string, 'password', function(message) {
-  return this.test('password', message || 'password does not meet requirements', function(value) {
+Yup.addMethod(Yup.string, 'password', function (message) {
+  return this.test('password', message || 'password does not meet requirements', function (value) {
     const { path, createError } = this;
-    
+
     if (!value) return true; // Skip validation if no value
-    
+
     // Password requirements
     const hasUpperCase = /[A-Z]/.test(value);
     const hasLowerCase = /[a-z]/.test(value);
     const hasNumber = /[0-9]/.test(value);
     const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(value);
     const isLongEnough = value.length >= 8;
-    
+
     // Check all requirements
     if (!isLongEnough) {
       return createError({ path, message: 'password must be at least 8 characters long' });
@@ -30,7 +30,7 @@ Yup.addMethod(Yup.string, 'password', function(message) {
     if (!hasSpecialChar) {
       return createError({ path, message: 'password must contain at least one special character' });
     }
-    
+
     return true;
   });
 });
@@ -86,7 +86,7 @@ export const creativeRegisterSteps = [
   },
   {
     fields: [
-      { name: "portfolio_site", label: "Portfolio Site", type: "url", placeholder: "what's your portfolio site?" },
+      { name: "portfolio_site", label: "Portfolio Site", type: "text", placeholder: "what's your portfolio site?" },
     ],
   },
 ];
@@ -110,7 +110,14 @@ export const creativeRegisterValidations = [
       .required("Confirm your password")
       .oneOf([Yup.ref("password"), null], "passwords must match"),
   }),
-  Yup.object({ portfolio_site: Yup.string().required("portfolio site is required") }),
+  Yup.object({
+    portfolio_site: Yup.string()
+      .required("portfolio site is required")
+      .matches(
+        /^(https?:\/\/)?(www\.)?[a-zA-Z0-9]+([\-\.]{1}[a-zA-Z0-9]+)*\.[a-zA-Z]{2,}(:[0-9]{1,5})?(\/.*)?$/i,
+        "URL not valid. Please try again."
+      )
+  }),
 ];
 
 
@@ -173,5 +180,12 @@ export const agencyRegisterValidations = [
       .required("Confirm your password")
       .oneOf([Yup.ref("password"), null], "passwords must match"),
   }),
-  Yup.object({ linkedin_profile: Yup.string().required("linked in profile link is required") }),
+  Yup.object({
+    linkedin_profile: Yup.string()
+      .required("linked in profile link is required")
+      .matches(
+        /^(https?:\/\/)?(www\.)?[a-zA-Z0-9]+([\-\.]{1}[a-zA-Z0-9]+)*\.[a-zA-Z]{2,}(:[0-9]{1,5})?(\/.*)?$/i,
+        "URL not valid. Please try again."
+      )
+  }),
 ];

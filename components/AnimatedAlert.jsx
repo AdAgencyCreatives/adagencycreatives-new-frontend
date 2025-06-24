@@ -14,6 +14,7 @@ const AnimatedAlert = ({
   message,
   autoDismiss = false,
   dismissTime = 5000,
+  onClose = () => {},
 }) => {
   const [isVisible, setIsVisible] = useState(true);
   const [isAnimatingOut, setIsAnimatingOut] = useState(false);
@@ -43,6 +44,7 @@ const AnimatedAlert = ({
       setBodyOverflowHidden(false);
       setIsVisible(false);
       hideAnimatedAlert();
+      onClose();
     }, 300);
   };
 

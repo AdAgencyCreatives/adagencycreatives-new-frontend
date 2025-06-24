@@ -25,6 +25,8 @@ const SignUp = ({ role }) => {
 
   const { showAnimatedAlert, hideAnimatedAlert } = useContext(AnimatedAlertContext);
 
+  const router = useRouter();
+
   const {
     state: { user },
     signup,
@@ -59,8 +61,8 @@ const SignUp = ({ role }) => {
         next steps.
         <br />
         <br />
-        It could be a few business days for us to verify your registration
-        request. Be on the look out for our email.
+        It could be a few business days to verify your registration request. 
+        You'll receive an email when verification is complete.
         <br />
         <br />
         In the meantime, enjoy exploring our home page.
@@ -74,10 +76,13 @@ const SignUp = ({ role }) => {
     if (apiResponse?.type == "success") {
       showAnimatedAlert({
         type: "success",
-        title: "Sign Up Success",
+        title: "Request Sent",
         message: <SuccessMessage />,
         autoDismiss: false,
         dismissTime: 5000,
+        onClose: ()=>{
+          router.push('/');
+        },
       });
     } else if (apiResponse?.type == "error") {
       showAnimatedAlert({
