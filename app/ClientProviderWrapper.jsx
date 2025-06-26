@@ -11,6 +11,8 @@ import { Provider as JobsProvider } from "contexts/JobsContext";
 import { Provider as DataProvider } from "contexts/DataContext";
 import { Provider as FaqsProvider } from "contexts/FaqsContext";
 import { Provider as SpotlightProvider } from "contexts/SpotlightContext";
+import { Provider as CommunityProvider } from "contexts/CommunityContext";
+import { Provider as NotificationsProvider } from "contexts/NotificationsContext";
 
 export default function ClientProviderWrapper({ children }) {
   return (
@@ -25,7 +27,11 @@ export default function ClientProviderWrapper({ children }) {
                     <DataProvider>
                       <FaqsProvider>
                         <SpotlightProvider>
-                          {children}
+                          <CommunityProvider>
+                            <NotificationsProvider>
+                              {children}
+                            </NotificationsProvider>
+                          </CommunityProvider>
                         </SpotlightProvider>
                       </FaqsProvider>
                     </DataProvider>

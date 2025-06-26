@@ -1,17 +1,16 @@
 import TmText from "components/TmText";
 
 export const sidebarMenu = [
-  { label: "pro DASHBOARD", href: "/creatives-dashboard" },
-  { label: <><TmText text='ProFile' /></>, href: "/creatives-profile" },
-  { label: "my resume", href: "#" },
-  { label: "JOB messages", href: "#" },
-  { label: "my opportunities", href: "#" },
-  { label: "job alerts", href: "#" },
-  { label: "creative JOBS", href: "#" },
-  { label: "AGENCIES SHORTLIST", href: "#" },
-  { label: "CHANGE PASSWORD", href: "#" },
-  { label: <>DELETE <TmText text='ProFile' /></>, href: "#" },
-  { label: "LOGOUT", href: "#" }
+  { label: "Pro Dashboard", href: "/creatives-dashboard" },
+  { label: "My Contact Info", href: "/profile" },
+  { label: <><span>My&nbsp;</span><TmText text='ProFile' /></>, href: "/resume" },
+  { label: "My Job Messages", href: "/messages" },
+  { label: "My Opportunities", href: "/my-jobs" },
+  { label: "My Job Alerts", href: "/job-alerts" },
+  { label: "Creative Jobs", href: "/jobs" },
+  { label: "Agencies Shortlist", href: "/agencies-shortlist" },
+  { label: "Change Password", href: "/change-password" },
+  { label: 'Delete Profile', href: "/delete-profile" },
 ];
 
 export const topMenu = [

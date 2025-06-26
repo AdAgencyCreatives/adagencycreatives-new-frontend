@@ -1,3 +1,5 @@
+'use client';
+
 const ChevronDownIcon = () => {
     return (
         <svg

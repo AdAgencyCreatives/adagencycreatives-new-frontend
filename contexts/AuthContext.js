@@ -10,6 +10,7 @@ const state = {
   isSignedIn: false,
   formMessage: null,
   token: null,
+  token_validated: false,
   fetchingToken: true,
   role: null,
   user: null,
@@ -62,6 +63,8 @@ const authReducer = (state, action) => {
       return { ...state, formMessage: null };
     case "set_fetching_token":
       return { ...state, fetchingToken: action.payload };
+      case "set_token_validated":
+      return { ...state, token_validated: action.payload };
     case "set_form_submit":
       return { ...state, formSubmit: action.payload };
     case "set_modal":
@@ -384,13 +387,9 @@ const getToken = (dispatch) => {
   return () => {
     // const token = Cookies.get("token");
     const token = readToken();
+
     if (token) {
       verifyToken(dispatch)(token);
-    } else {
-      dispatch({
-        type: "set_fetching_token",
-        payload: false,
-      });
     }
   };
 };
@@ -420,6 +419,11 @@ const setToken = (dispatch) => {
 
 const verifyToken = (dispatch) => async (token) => {
   try {
+    dispatch({
+      type: "set_token_validated",
+      payload: false,
+    });
+
     const response = await api.post(
       "/re_login",
       {},
@@ -429,6 +433,16 @@ const verifyToken = (dispatch) => async (token) => {
         },
       }
     );
+
+    dispatch({
+      type: "set_token_validated",
+      payload: true,
+    });
+
+    dispatch({
+      type: "set_fetching_token",
+      payload: false,
+    });
 
     setToken(dispatch)(response.data.token, response.data.user.role);
     setUserData(dispatch, response.data.user);
@@ -452,10 +466,6 @@ const verifyToken = (dispatch) => async (token) => {
     dispatch({
       type: "set_form_message",
       payload: { type: "success", message: getLoginSuccessMessage() },
-    });
-    dispatch({
-      type: "set_fetching_token",
-      payload: false,
     });
     return response;
   } catch (error) {

@@ -1,3 +1,5 @@
+'use client';
+
 const ListViewIcon = () => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="13" viewBox="0 0 16 13" style={{ fillRule: 'evenodd', fill: '#fff' }}>

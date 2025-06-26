@@ -10,6 +10,7 @@ import { Context as AuthContext } from "contexts/AuthContext";
 import DetailedMobileMenu from './DetailedMobileMenu';
 import LinkOrDiv from 'components/LinkOrDiv';
 import CallToActionButton from 'components/CallToActionButton';
+import LogoutIcon from 'icons/LogoutIcon';
 
 const MobileMenu = ({ isHomePage }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,11 +30,16 @@ const MobileMenu = ({ isHomePage }) => {
   }, [isOpen]);
 
   return (
-    <div className="relative flex items-center gap-[32px] 3xl:gap-[42.67px] 4xl:gap-[56.89px]">
-      {/* Toggle Button */}
+    <div className="relative flex items-center max-sm:gap-[1.067rem] gap-[1.067rem] md:gap-[1.301rem] xl:gap-[1.423rem] 2xl:gap-[1.5rem] 3xl:gap-[2rem] 4xl:gap-[2.667rem]">
+      {user!=null && (
+        <LinkOrDiv href='/sign-out' className="cursor-pointer transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow">
+          <LogoutIcon />
+        </LinkOrDiv>
+      )}
       <LinkOrDiv href='/chat' className="cursor-pointer transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow">
         <ChatIcon />
       </LinkOrDiv>
+      {/* Toggle Button */}
       <button
         className={`focus:outline-none ${isHomePage ? 'block' : 'lg:hidden inline-block'} cursor-pointer transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow`}
       >
@@ -48,9 +54,13 @@ const MobileMenu = ({ isHomePage }) => {
           <div className="flex items-center justify-between mb-[32px] 3xl:mb-[42.67px] 4xl:mb-[56.89px]">
             <Link href="/" onClick={() => setIsOpen(false)} className="cursor-pointer">
               <img
-                src="/aac-logo-header.png"
+                src="/aac-logo-white.avif"
                 alt="Logo"
-                className="w-[56px] h-[56px] hover:rotate-45 transition-transform duration-3000"
+                className={[
+                  "hover:rotate-45 transition-transform duration-3000",
+                  "max-sm:w-[3.5rem] w-[3.5rem] md:w-[4.269rem] xl:w-[4.669rem] 2xl:w-[4.922rem] 3xl:w-[6.563rem] 4xl:w-[8.75rem]",
+                  "max-sm:h-[3.5rem] h-[3.5rem] md:h-[4.269rem] xl:h-[4.669rem] 2xl:h-[4.922rem] 3xl:h-[6.563rem] 4xl:h-[8.75rem]",
+                ].join(' ')}
               />
             </Link>
             <div className="flex flex-row gap-[32px] 3xl:gap-[42.67px] 4xl:gap-[56.89px]">

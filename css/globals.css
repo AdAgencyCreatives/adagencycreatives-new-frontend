@@ -360,3 +360,19 @@ button {
 input {
   caret-color: white;
 }
+
+.w-dashboard-left-sidebar {
+  width: 25%;
+}
+
+.w-dashboard-content {
+  width: 50%;
+}
+
+.w-dashboard-content-full {
+  width: 75%;
+}
+
+.w-dashboard-right-sidebar {
+  width: 25%;
+}
