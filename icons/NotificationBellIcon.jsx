@@ -4,7 +4,7 @@ const NotificationBellIcon = () => {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 0 0 16 17"
+            viewBox="0 0 16 17"
             fill="none"
             className={[
                 "max-sm:w-[1.301rem] w-[1.067rem] md:w-[1.301rem] xl:w-[1.423rem] 2xl:w-[1.5rem] 3xl:w-[2rem] 4xl:w-[2.667rem]",

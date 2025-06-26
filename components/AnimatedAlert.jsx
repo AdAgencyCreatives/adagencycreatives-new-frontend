@@ -20,7 +20,7 @@ const AnimatedAlert = ({
   const [isAnimatingOut, setIsAnimatingOut] = useState(false);
 
   const baseClasses = [
-    "max-sm:w-[75%] md:min-w-[500px] md:max-w-[40%] flex items-start p-4 transition-opacity duration-300 outline outline-white rounded-[36px]",
+    "max-sm:w-[75%] md:min-w-[500px] md:max-w-[40%] flex items-start p-4 transition-opacity duration-300 outline outline-[#6E6E6E] rounded-[36px]",
     "max-sm:rounded-[0.5rem] rounded-[0.8rem] md:rounded-[0.976rem] xl:rounded-[1.067rem] 2xl:rounded-[1.125rem] 3xl:rounded-[1.5rem] 4xl:rounded-[2rem]",
     "max-sm:p-[0.25rem] p-[0.45rem] md:p-[0.549rem] xl:p-[0.6rem] 2xl:p-[0.633rem] 3xl:p-[0.844rem] 4xl:p-[1.125rem]"
   ].join(' ');

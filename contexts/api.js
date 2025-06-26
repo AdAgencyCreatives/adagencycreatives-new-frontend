@@ -1,3 +1,5 @@
+'use client';
+
 import axios from "axios";
 //console.log(process.env)
 export const baseUrl = process.env.NEXT_PUBLIC_APP_URL ? process.env.NEXT_PUBLIC_APP_URL : "https://staging-api.adagencycreatives.com";

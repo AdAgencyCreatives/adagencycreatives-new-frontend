@@ -8,21 +8,29 @@ import NotificationBellIcon from 'icons/NotificationBellIcon';
 import useDashboardNotifications from 'hooks/useDashboardNotifications';
 import DashboardContainer from 'pageComponents/dashboard/dashboard-container';
 import DashboardRoundedContainer from 'pageComponents/dashboard/dashboard-rounded-container';
-import ChatIcon from 'icons/ChatIcon';
 import MessageIcon from 'icons/MessageIcon';
 import DashboardChatIcon from 'icons/DashboardChatIcon';
 import BulkIcon from 'icons/BulkIcon';
 import TmText from 'components/TmText';
 import DashboardUserIcon from 'icons/DashboardUserIcon';
+import CustomTooltip from 'components/CustomTooltip';
+import useDashboardStats from 'hooks/useDashboardStats';
 
 const CreativesDashboard = () => {
 
   const new_members_show_limit = 5;
   const { dashboardNewMembers } = useDashboardNewMembers(new_members_show_limit);
-  const { dashboardNotifications } = useDashboardNotifications();
+  const { dashboardNotifications, reloadNotifications, markAsReadNotifications } = useDashboardNotifications();
+  const { dashboardStats } = useDashboardStats();
+
+  const handleMarkAsRead = async (notification_id) => {
+    await markAsReadNotifications(notification_id);
+    reloadNotifications();
+  };
 
   return (
     <DashboardContainer>
+      {/* Dashboard Content */}
       <div className="max-sm:w-full! w-dashboard-content flex flex-col justify-between max-sm:gap-[0.889rem] gap-[0.889rem] md:gap-[1.084rem] xl:gap-[1.186rem] 2xl:gap-[1.25rem] 3xl:gap-[1.667rem] 4xl:gap-[2.222rem] max-sm:rounded-[1.5rem] rounded-[1.422rem] md:rounded-[1.735rem] xl:rounded-[1.897rem] 2xl:rounded-[2rem] 3xl:rounded-[2.667rem] 4xl:rounded-[3.556rem] border-(--ad-gray) border shadow-(--ad-box-shadow) max-sm:p-[1.422rem] p-[1.422rem] md:p-[1.735rem] xl:p-[1.897rem] 2xl:p-[2rem] 3xl:p-[2.667rem] 4xl:p-[3.556rem] max-sm:col-span-1 col-span-10">
         <div className="">
           <h1 className='font-bold text-brand-yellow max-sm:text-[1.067rem] text-[1.067rem] md:text-[1.301rem] xl:text-[1.423rem] 2xl:text-[1.5rem] 3xl:text-[2rem] 4xl:text-[2.667rem]'>Pro Dashboard</h1>
@@ -33,11 +41,11 @@ const CreativesDashboard = () => {
             <div className="flex flex-row max-sm:gap-[0.711rem] gap-[0.711rem] md:gap-[0.867rem] xl:gap-[0.949rem] 2xl:gap-[1rem] 3xl:gap-[1.333rem] 4xl:gap-[1.778rem]">
               <MessageIcon />
               <div className="flex flex-1 flex-col max-sm:gap-[0.356rem] gap-[0.356rem] md:gap-[0.434rem] xl:gap-[0.474rem] 2xl:gap-[0.5rem] 3xl:gap-[0.667rem] 4xl:gap-[0.889rem]">
-                <div className="text-white leading-[1.33em] font-semibold max-sm:text-[0.711rem] text-[0.711rem] md:text-[0.867rem] xl:text-[0.949rem] 2xl:text-[1rem] 3xl:text-[1.333rem] 4xl:text-[1.778rem]">
+                <LinkOrDiv href='#' className="text-white leading-[1.33em] font-semibold max-sm:text-[0.711rem] text-[0.711rem] md:text-[0.867rem] xl:text-[0.949rem] 2xl:text-[1rem] 3xl:text-[1.333rem] 4xl:text-[1.778rem]">
                   Send a Message
-                </div>
+                </LinkOrDiv>
                 <div className="text-gray-700 leading-[1.33em] max-sm:text-[0.622rem] text-[0.622rem] md:text-[0.759rem] xl:text-[0.83rem] 2xl:text-[0.875rem] 3xl:text-[1.167rem] 4xl:text-[1.556rem]">
-                  Draft a message to inform agencies.
+                  continue or start a new one
                 </div>
               </div>
             </div>
@@ -46,11 +54,11 @@ const CreativesDashboard = () => {
             <div className="flex flex-row max-sm:gap-[0.711rem] gap-[0.711rem] md:gap-[0.867rem] xl:gap-[0.949rem] 2xl:gap-[1rem] 3xl:gap-[1.333rem] 4xl:gap-[1.778rem]">
               <DashboardChatIcon />
               <div className="flex flex-1 flex-col max-sm:gap-[0.356rem] gap-[0.356rem] md:gap-[0.434rem] xl:gap-[0.474rem] 2xl:gap-[0.5rem] 3xl:gap-[0.667rem] 4xl:gap-[0.889rem]">
-                <div className="text-white leading-[1.33em] font-semibold max-sm:text-[0.711rem] text-[0.711rem] md:text-[0.867rem] xl:text-[0.949rem] 2xl:text-[1rem] 3xl:text-[1.333rem] 4xl:text-[1.778rem]">
-                  Speak Your Mind - Creatives Only
-                </div>
+                <LinkOrDiv href='/thelounge' className="text-white leading-[1.33em] font-semibold max-sm:text-[0.711rem] text-[0.711rem] md:text-[0.867rem] xl:text-[0.949rem] 2xl:text-[1rem] 3xl:text-[1.333rem] 4xl:text-[1.778rem]">
+                  Speak Your Mind<br />Creatives Only
+                </LinkOrDiv>
                 <div className="text-gray-700 leading-[1.33em] max-sm:text-[0.622rem] text-[0.622rem] md:text-[0.759rem] xl:text-[0.83rem] 2xl:text-[0.875rem] 3xl:text-[1.167rem] 4xl:text-[1.556rem]">
-                  Jump into discussions or kick off.
+                  jump in or kick up something new
                 </div>
               </div>
             </div>
@@ -75,7 +83,7 @@ const CreativesDashboard = () => {
             <div className="flex flex-col justify-between max-sm:gap-[1.6rem] gap-[1.6rem] md:gap-[1.952rem] xl:gap-[2.134rem] 2xl:gap-[2.25rem] 3xl:gap-[3rem] 4xl:gap-[4rem]">
               <div className="flex flex-row items-center justify-between max-sm:gap-[0.711rem] gap-[0.711rem] md:gap-[0.867rem] xl:gap-[0.949rem] 2xl:gap-[1rem] 3xl:gap-[1.333rem] 4xl:gap-[1.778rem]">
                 <div className='text-white font-bold leading-none max-sm:text-[1.422rem] text-[1.422rem] md:text-[1.735rem] xl:text-[1.897rem] 2xl:text-[2rem] 3xl:text-[2.667rem] 4xl:text-[3.556rem]'>
-                  01
+                  {dashboardStats?.jobs_applied > 0 ? `${dashboardStats?.jobs_applied}`.padStart(2, '0') : '0'}
                 </div>
                 <BulkIcon />
               </div>
@@ -88,7 +96,7 @@ const CreativesDashboard = () => {
             <div className="flex flex-col justify-between max-sm:gap-[1.6rem] gap-[1.6rem] md:gap-[1.952rem] xl:gap-[2.134rem] 2xl:gap-[2.25rem] 3xl:gap-[3rem] 4xl:gap-[4rem]">
               <div className="flex flex-row items-center justify-between max-sm:gap-[0.711rem] gap-[0.711rem] md:gap-[0.867rem] xl:gap-[0.949rem] 2xl:gap-[1rem] 3xl:gap-[1.333rem] 4xl:gap-[1.778rem]">
                 <div className='text-white font-bold leading-none max-sm:text-[1.422rem] text-[1.422rem] md:text-[1.735rem] xl:text-[1.897rem] 2xl:text-[2rem] 3xl:text-[2.667rem] 4xl:text-[3.556rem]'>
-                  01
+                  {dashboardStats?.review > 0 ? `${dashboardStats?.review}`.padStart(2, '0') : '0'}
                 </div>
                 <MessageIcon />
               </div>
@@ -101,7 +109,7 @@ const CreativesDashboard = () => {
             <div className="flex flex-col justify-between max-sm:gap-[1.6rem] gap-[1.6rem] md:gap-[1.952rem] xl:gap-[2.134rem] 2xl:gap-[2.25rem] 3xl:gap-[3rem] 4xl:gap-[4rem]">
               <div className="flex flex-row items-center justify-between max-sm:gap-[0.711rem] gap-[0.711rem] md:gap-[0.867rem] xl:gap-[0.949rem] 2xl:gap-[1rem] 3xl:gap-[1.333rem] 4xl:gap-[1.778rem]">
                 <div className='text-white font-bold leading-none max-sm:text-[1.422rem] text-[1.422rem] md:text-[1.735rem] xl:text-[1.897rem] 2xl:text-[2rem] 3xl:text-[2.667rem] 4xl:text-[3.556rem]'>
-                  02
+                  {dashboardStats?.views > 0 ? `${dashboardStats?.views}`.padStart(2, '0') : '0'}
                 </div>
                 <DashboardUserIcon />
               </div>
@@ -112,7 +120,9 @@ const CreativesDashboard = () => {
           </DashboardRoundedContainer>
         </div>
       </div>
+      {/* Sidebar Content */}
       <div className='max-sm:w-full! w-dashboard-right-sidebar grid max-sm:gap-[0.889rem] gap-[0.889rem] md:gap-[1.084rem] xl:gap-[1.186rem] 2xl:gap-[1.25rem] 3xl:gap-[1.667rem] 4xl:gap-[2.222rem] max-sm:col-span-1 col-span-4'>
+        {/* New Members */}
         <div className="max-sm:rounded-[1.5rem] rounded-[1.422rem] md:rounded-[1.735rem] xl:rounded-[1.897rem] 2xl:rounded-[2rem] 3xl:rounded-[2.667rem] 4xl:rounded-[3.556rem] border-(--ad-gray) border shadow-(--ad-box-shadow)">
           <div className="flex flex-col max-sm:p-[1.067rem] p-[1.067rem] md:p-[1.301rem] xl:p-[1.423rem] 2xl:p-[1.5rem] 3xl:p-[2rem] 4xl:p-[2.667rem] max-sm:gap-[0.889rem] gap-[0.889rem] md:gap-[1.084rem] xl:gap-[1.186rem] 2xl:gap-[1.25rem] 3xl:gap-[1.667rem] 4xl:gap-[2.222rem]">
             <div className='font-bold leading-[1.33em] max-sm:text-[0.75rem] text-[0.622rem] md:text-[0.759rem] xl:text-[0.83rem] 2xl:text-[0.875rem] 3xl:text-[1.167rem] 4xl:text-[1.556rem]'>
@@ -141,6 +151,7 @@ const CreativesDashboard = () => {
             )}
           </div>
         </div>
+        {/* Notifications */}
         <div className="max-sm:rounded-[1.5rem] rounded-[1.422rem] md:rounded-[1.735rem] xl:rounded-[1.897rem] 2xl:rounded-[2rem] 3xl:rounded-[2.667rem] 4xl:rounded-[3.556rem] border-(--ad-gray) border shadow-(--ad-box-shadow)">
           <div className="flex flex-col max-sm:p-[1.067rem] p-[1.067rem] md:p-[1.301rem] xl:p-[1.423rem] 2xl:p-[1.5rem] 3xl:p-[2rem] 4xl:p-[2.667rem] max-sm:gap-[0.889rem] gap-[0.889rem] md:gap-[1.084rem] xl:gap-[1.186rem] 2xl:gap-[1.25rem] 3xl:gap-[1.667rem] 4xl:gap-[2.222rem]">
             <div className='font-bold leading-[1.33em] max-sm:text-[0.75rem] text-[0.622rem] md:text-[0.759rem] xl:text-[0.83rem] 2xl:text-[0.875rem] 3xl:text-[1.167rem] 4xl:text-[1.556rem]'>
@@ -160,9 +171,11 @@ const CreativesDashboard = () => {
                       <div className="font-bold max-sm:text-[0.651rem] text-[0.533rem] md:text-[0.651rem] xl:text-[0.711rem] 2xl:text-[0.75rem] 3xl:text-[1rem] 4xl:text-[1.333rem]">{notification.sender_name}</div>
                       <div className="max-sm:text-[0.542rem] text-[0.444rem] md:text-[0.542rem] xl:text-[0.593rem] 2xl:text-[0.625rem] 3xl:text-[0.833rem] 4xl:text-[1.111rem]" dangerouslySetInnerHTML={{ __html: notification.message || '' }}></div>
                     </div>
-                    <LinkOrDiv href={''} className="flex cursor-pointer text-white hover:text-brand-yellow">
-                      <NotificationBellIcon />
-                    </LinkOrDiv>
+                    <CustomTooltip title={'Clear Notification'} placement="top" arrow={true}>
+                      <LinkOrDiv href={'#'} className="flex cursor-pointer text-white hover:text-brand-yellow" onClick={() => handleMarkAsRead(notification.uuid)}>
+                        <NotificationBellIcon />
+                      </LinkOrDiv>
+                    </CustomTooltip>
                   </div>
                 ))}
               </>

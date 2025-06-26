@@ -19,6 +19,12 @@ const useDashboardNotifications = () => {
     }
   }, [user]);
 
+  const reloadNotifications = () => {
+    if (user) {
+      getNotifications(user.uuid, dashboard_notifications_meta?.current_page || 1);
+    }
+  };
+
   const dashboardNotificationsLoadMore = () => {
     dashboard_notifications_nextPage && loadNotifications(dashboard_notifications_nextPage);
   };
@@ -35,7 +41,7 @@ const useDashboardNotifications = () => {
     };
   });
 
-  return { dashboardNotifications, dashboard_notifications_loading, dashboard_notifications_meta, dashboardNotificationsLoadMore, markAsReadNotifications, getNotifications, };
+  return { dashboardNotifications, dashboard_notifications_loading, dashboard_notifications_meta, dashboardNotificationsLoadMore, markAsReadNotifications, getNotifications, reloadNotifications};
 };
 
 export default useDashboardNotifications;
