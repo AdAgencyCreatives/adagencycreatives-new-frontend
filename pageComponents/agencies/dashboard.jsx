@@ -78,7 +78,7 @@ const AgenciesDashboard = () => {
                   Create a new job
                 </ActionLinkDiv>
                 <div className="text-gray-700 leading-[1.33em] max-sm:text-[0.622rem] text-[0.622rem] md:text-[0.759rem] xl:text-[0.83rem] 2xl:text-[0.875rem] 3xl:text-[1.167rem] 4xl:text-[1.556rem]">
-                  Draft a message to inform agencies.
+                  don’t chase. post and attract.
                 </div>
               </div>
             </div>
@@ -91,7 +91,7 @@ const AgenciesDashboard = () => {
                   Get Featured
                 </ActionLinkDiv>
                 <div className="text-gray-700 leading-[1.33em] max-sm:text-[0.622rem] text-[0.622rem] md:text-[0.759rem] xl:text-[0.83rem] 2xl:text-[0.875rem] 3xl:text-[1.167rem] 4xl:text-[1.556rem]">
-                  Get premium placement and enhanced exposure.
+                  showcase your agency. been seen where it matters
                 </div>
               </div>
             </div>
