@@ -17,7 +17,7 @@ const DashboardContainer = ({ children }) => {
     const { token, user } = useAuth();
     const { dashboard_user_image, dashboard_user_name, dashboard_user_location, dashboard_user_profile_url, dashboard_user } = useDashboardUser();
 
-    const sidebarMenu = user?.role == "agency" ? agenciesSidebarMenu : creativeSidebarMenu;
+    const sidebarMenu = user?.role == "creative" ? creativeSidebarMenu : agenciesSidebarMenu;
 
     if (!token) {
         return (
