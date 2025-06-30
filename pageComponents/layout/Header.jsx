@@ -58,7 +58,7 @@ const Header = () => {
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <Image width={76} height={76} src="/aac-logo-round.png" alt="Ad Agency Creatives Logo" className={`${isHovered ? '' : ''} logo hover:rotate-45 transition-transform duration-3000`} />
+        <Image width={76} height={76} src="/aac-logo-round.png" priority fetchPriority="high" alt="Ad Agency Creatives Logo" className={`${isHovered ? '' : ''} logo hover:rotate-45 transition-transform duration-3000`} />
         {/* <Image width={76} height={76} src="/aac-logo-yellow.png" alt="Ad Agency Creatives Logo" className={`${isHovered ? '' : 'hidden'} logo hover:rotate-45 transition-transform duration-3000`} /> */}
       </Link>
       <div className="inline-block">

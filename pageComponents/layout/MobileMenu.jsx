@@ -8,9 +8,10 @@ import MenuIcon from 'icons/MenuIcon';
 import { Context as SiteContext } from "contexts/SiteContext";
 import { Context as AuthContext } from "contexts/AuthContext";
 import DetailedMobileMenu from './DetailedMobileMenu';
-import LinkOrDiv from 'components/LinkOrDiv';
+import ActionLinkDiv from 'components/ActionLinkDiv';
 import CallToActionButton from 'components/CallToActionButton';
 import LogoutIcon from 'icons/LogoutIcon';
+import NotificationBellIcon from 'icons/NotificationBellIcon';
 
 const MobileMenu = ({ isHomePage }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,23 +33,28 @@ const MobileMenu = ({ isHomePage }) => {
   return (
     <div className="relative flex items-center max-sm:gap-[1.067rem] gap-[1.067rem] md:gap-[1.301rem] xl:gap-[1.423rem] 2xl:gap-[1.5rem] 3xl:gap-[2rem] 4xl:gap-[2.667rem]">
       {user!=null && (
-        <LinkOrDiv href='/sign-out' className="cursor-pointer transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow">
+        <ActionLinkDiv href='/sign-out' className="cursor-pointer transition delay-150 duration-300 ease-in-out text-white hover:text-primary">
           <LogoutIcon />
-        </LinkOrDiv>
+        </ActionLinkDiv>
       )}
-      <LinkOrDiv href='/chat' className="cursor-pointer transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow">
+      <ActionLinkDiv href='/chat' className="cursor-pointer transition delay-150 duration-300 ease-in-out text-white hover:text-primary">
         <ChatIcon />
-      </LinkOrDiv>
+      </ActionLinkDiv>
+      {user!=null && (
+        <ActionLinkDiv href='/notifications' className="cursor-pointer transition delay-150 duration-300 ease-in-out text-white hover:text-primary">
+          <NotificationBellIcon />
+        </ActionLinkDiv>
+      )}
       {/* Toggle Button */}
       <button
-        className={`focus:outline-none ${isHomePage ? 'block' : 'lg:hidden inline-block'} cursor-pointer transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow`}
+        className={`focus:outline-none ${isHomePage ? 'block' : 'lg:hidden inline-block'} cursor-pointer transition delay-150 duration-300 ease-in-out text-white hover:text-primary`}
       >
         <MenuIcon onClick={toggleSidebar} />
       </button>
 
       {/* Sidebar */}
       <div
-        className={`p-[27.5px] 3xl:p-[37px] 4xl:p-[49px] border-l-[0.89px] border-brand-yellow space-y-4 overflow-y-auto z-20 fixed top-0 right-0 w-full md:w-[375px] 3xl:w-[500px] 4xl:w-[667px] h-full bg-black transform transition-transform duration-500 ease-in-out ${isOpen ? '-translate-x-0' : 'translate-x-full'} flex flex-col justify-between overflow-y-scroll mobile-menu-links-container`}
+        className={`p-[27.5px] 3xl:p-[37px] 4xl:p-[49px] border-l-[0.89px] border-primary space-y-4 overflow-y-auto z-20 fixed top-0 right-0 w-full md:w-[375px] 3xl:w-[500px] 4xl:w-[667px] h-full bg-black transform transition-transform duration-500 ease-in-out ${isOpen ? '-translate-x-0' : 'translate-x-full'} flex flex-col justify-between overflow-y-scroll mobile-menu-links-container`}
       >
         <div>
           <div className="flex items-center justify-between mb-[32px] 3xl:mb-[42.67px] 4xl:mb-[56.89px]">
@@ -64,10 +70,10 @@ const MobileMenu = ({ isHomePage }) => {
               />
             </Link>
             <div className="flex flex-row gap-[32px] 3xl:gap-[42.67px] 4xl:gap-[56.89px]">
-              <LinkOrDiv href='/chat' className="cursor-pointer transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow">
+              <ActionLinkDiv href='/chat' className="cursor-pointer transition delay-150 duration-300 ease-in-out text-white hover:text-primary">
                 <ChatIcon />
-              </LinkOrDiv>
-              <button className="cursor-pointer transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow">
+              </ActionLinkDiv>
+              <button className="cursor-pointer transition delay-150 duration-300 ease-in-out text-white hover:text-primary">
                 <CloseIcon onClick={toggleSidebar} />
               </button>
             </div>

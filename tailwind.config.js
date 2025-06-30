@@ -18,7 +18,6 @@ module.exports = {
         wix: ['var(--font-wix)', 'sans-serif'],
       },
       colors: {
-        primary: 'var(--primary)',
         default: '#6e6e6e'
       },
       boxShadow: {

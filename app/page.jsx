@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { LiaSignInAltSolid } from "react-icons/lia";
 
@@ -24,21 +25,21 @@ export default function Home() {
         <div className="max-sm:mt-2 flex flex-1 w-1.0 h-1.0 order-2 md:order-1">
           <div className="relative flex flex-1 flex-col justify-center md:aspect-square">
             <div className="home-box-left relative flex flex-1 flex-col justify-center md:aspect-square">
-              <Link href="/creatives" className="z-1 max-sm:leading-none max-sm:text-[3.2rem] text-[3.2rem] md:text-[3.903rem] xl:text-[4.269rem] 2xl:text-[4.5rem] 3xl:text-[6rem] 4xl:text-[8rem] font-alta tracking-wide text-center cursor-pointer transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow">
+              <Link href="/creatives" className="z-1 max-sm:leading-none max-sm:text-[3.2rem] text-[3.2rem] md:text-[3.903rem] xl:text-[4.269rem] 2xl:text-[4.5rem] 3xl:text-[6rem] 4xl:text-[8rem] font-alta tracking-wide text-center cursor-pointer transition delay-150 duration-300 ease-in-out text-white hover:text-primary">
                 CREATIVES
               </Link>
               <div className="max-sm:ml-[2.5rem] ml-[2.5rem] md:ml-[3.049rem] xl:ml-[3.335rem] 2xl:ml-[3.516rem] 3xl:ml-[4.688rem] 4xl:ml-[6.25rem] border-b border-white my-4 hidden md:block"></div>
               <div className="flex max-sm:gap-0 gap-4 justify-center md:justify-start items-center mt-2">
                 <Link
                   href="/jobs-directory"
-                  className="max-sm:w-[45%] max-sm:text-right font-bold max-sm:text-[0.8rem] text-[0.8rem] md:text-[0.976rem] xl:text-[1.067rem] 2xl:text-[1.125rem] 3xl:text-[1.5rem] 4xl:text-[2rem] transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow block md:hidden"
+                  className="max-sm:w-[45%] max-sm:text-right font-bold max-sm:text-[0.8rem] text-[0.8rem] md:text-[0.976rem] xl:text-[1.067rem] 2xl:text-[1.125rem] 3xl:text-[1.5rem] 4xl:text-[2rem] transition delay-150 duration-300 ease-in-out text-white hover:text-primary block md:hidden"
                 >
                   search jobs
                 </Link>
                 <div className="max-sm:w-[10%] max-sm:text-center text-[#6E6E6E] block md:hidden">|</div>
                 <Link
                   href="/creatives-signin"
-                  className="max-sm:w-[45%] max-sm:text-left max-sm:justify-end max-sm:ml-[0rem] ml-[2.5rem] md:ml-[3.049rem] xl:ml-[3.335rem] 2xl:ml-[3.516rem] 3xl:ml-[4.688rem] 4xl:ml-[6.25rem] z-1 inline-flex items-center justify-start text-white gap-4 cursor-pointer flex-row-reverse md:flex-row  transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow"
+                  className="max-sm:w-[45%] max-sm:text-left max-sm:justify-end max-sm:ml-[0rem] ml-[2.5rem] md:ml-[3.049rem] xl:ml-[3.335rem] 2xl:ml-[3.516rem] 3xl:ml-[4.688rem] 4xl:ml-[6.25rem] z-1 inline-flex items-center justify-start text-white gap-4 cursor-pointer flex-row-reverse md:flex-row  transition delay-150 duration-300 ease-in-out text-white hover:text-primary"
                 >
                   <LiaSignInAltSolid className="max-sm:text-[1.6rem] text-[1.6rem] md:text-[1.952rem] xl:text-[2.134rem] 2xl:text-[2.25rem] 3xl:text-[3rem] 4xl:text-[4rem] md:rotate-180" />
                   <span className="font-bold max-sm:text-[0.8rem] text-[0.8rem] md:text-[0.976rem] xl:text-[1.067rem] 2xl:text-[1.125rem] 3xl:text-[1.5rem] 4xl:text-[2rem] font-bold">
@@ -61,21 +62,24 @@ export default function Home() {
         <div className="relative shrink-0 order-1 md:order-2 aspect-square">
           <div className="max-sm:absolute max-sm:inset-0 max-sm:flex max-sm:flex-row max-sm:justify-center max-sm:items-center w-[112px] md:w-[300px] 3xl:w-[400px] 4xl:w-[533px] mx-auto relative">
             <Link href={"/thelounge"} className="z-1">
-              <img
+              <Image
+                width={988}
+                height={988}
                 src="/aac-logo-round.png"
                 alt="Center Logo"
                 className="hover:rotate-45 transition-transform duration-3000"
+                priority
                 fetchPriority="high"
               />
             </Link>
           </div>
           <div
-              className="z-0 spline-container w-[100%] h-[100%] hidden max-sm:flex"
-              dangerouslySetInnerHTML={{
-                __html:
-                  '<spline-viewer url="https://prod.spline.design/8Kk8n4FoXe4tjJBu/scene.splinecode"></spline-viewer>',
-              }}
-            ></div>
+            className="z-0 spline-container w-[100%] h-[100%] hidden max-sm:flex"
+            dangerouslySetInnerHTML={{
+              __html:
+                '<spline-viewer url="https://prod.spline.design/8Kk8n4FoXe4tjJBu/scene.splinecode"></spline-viewer>',
+            }}
+          ></div>
         </div>
 
         <div className="border-b border-[#F2F4FE] my-4 block md:hidden order-3 w-full"></div>
@@ -83,21 +87,21 @@ export default function Home() {
         {/* Right Column */}
         <div className="relative flex flex-1 flex-col justify-center md:aspect-square text-right order-4">
           <div className="home-box-right relative flex flex-1 flex-col justify-center md:aspect-square">
-            <Link href="/agencies" className="z-1 max-sm:leading-none max-sm:text-[3.2rem] text-[3.2rem] md:text-[3.903rem] xl:text-[4.269rem] 2xl:text-[4.5rem] 3xl:text-[6rem] 4xl:text-[8rem] font-alta tracking-wide text-center cursor-pointer transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow">
+            <Link href="/agencies" className="z-1 max-sm:leading-none max-sm:text-[3.2rem] text-[3.2rem] md:text-[3.903rem] xl:text-[4.269rem] 2xl:text-[4.5rem] 3xl:text-[6rem] 4xl:text-[8rem] font-alta tracking-wide text-center cursor-pointer transition delay-150 duration-300 ease-in-out text-white hover:text-primary">
               AGENCIES
             </Link>
             <div className="max-sm:mr-[2.5rem] mr-[2.5rem] md:mr-[3.049rem] xl:mr-[3.335rem] 2xl:mr-[3.516rem] 3xl:mr-[4.688rem] 4xl:mr-[6.25rem] border-b border-white my-4 hidden md:block"></div>
             <div className="flex max-sm:gap-0 gap-4 justify-center md:justify-end items-center mt-2">
               <Link
                 href="/creatives-directory"
-                className="max-sm:w-[45%] font-bold max-sm:text-[0.8rem] text-[0.8rem] md:text-[0.976rem] xl:text-[1.067rem] 2xl:text-[1.125rem] 3xl:text-[1.5rem] 4xl:text-[2rem] transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow block md:hidden"
+                className="max-sm:w-[45%] font-bold max-sm:text-[0.8rem] text-[0.8rem] md:text-[0.976rem] xl:text-[1.067rem] 2xl:text-[1.125rem] 3xl:text-[1.5rem] 4xl:text-[2rem] transition delay-150 duration-300 ease-in-out text-white hover:text-primary block md:hidden"
               >
                 hire talent
               </Link>
               <div className="max-sm:w-[10%] text-center text-[#6E6E6E] block md:hidden">|</div>
               <Link
                 href="/agencies-signin"
-                className="max-sm:w-[45%] max-sm:justify-start max-sm:mr-[0rem] mr-[2.5rem] md:mr-[3.049rem] xl:mr-[3.335rem] 2xl:mr-[3.516rem] 3xl:mr-[4.688rem] 4xl:mr-[6.25rem] z-1 inline-flex items-center justify-end text-white gap-4 cursor-pointer transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow"
+                className="max-sm:w-[45%] max-sm:justify-start max-sm:mr-[0rem] mr-[2.5rem] md:mr-[3.049rem] xl:mr-[3.335rem] 2xl:mr-[3.516rem] 3xl:mr-[4.688rem] 4xl:mr-[6.25rem] z-1 inline-flex items-center justify-end text-white gap-4 cursor-pointer transition delay-150 duration-300 ease-in-out text-white hover:text-primary"
               >
                 <span className="font-bold max-sm:text-[0.8rem] text-[0.8rem] md:text-[0.976rem] xl:text-[1.067rem] 2xl:text-[1.125rem] 3xl:text-[1.5rem] 4xl:text-[2rem] font-bold">
                   sign in

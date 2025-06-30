@@ -2,23 +2,34 @@
 
 import { useContext, useEffect } from "react";
 import { Context as CreativesContext } from "contexts/CreativesContext";
+import { Context as AgenciesContext } from "contexts/AgenciesContext";
 import { Context as AuthContext } from "contexts/AuthContext";
+import Agencies from "pageComponents/agencies";
 
 const useDashboardStats = () => {
 
-  const { state: { token } } = useContext(AuthContext);
+  const { state: { user } } = useContext(AuthContext);
 
   const {
-    state: { stats, },
-    getStats,
+    state: { stats:creatives_stats, },
+    getStats:getCreativesStats,
       } = useContext(CreativesContext);
 
+      const {
+    state: { stats:agencies_stats, },
+    getStats:getAgenciesStats,
+      } = useContext(AgenciesContext);
+
   useEffect(() => {
-    getStats();
-  }, [token]);
+    if(user?.role == 'creative') {
+      getCreativesStats();
+    } else if(user?.role == 'agency') {
+      getAgenciesStats();
+    }
+  }, [user]);
 
   
-  let dashboardStats = stats;
+  let dashboardStats = (user?.role == 'creative' ? creatives_stats : agencies_stats) || null;
 
   return { dashboardStats, };
 };

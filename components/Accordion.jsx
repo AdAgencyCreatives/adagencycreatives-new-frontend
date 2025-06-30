@@ -17,7 +17,7 @@ export default function Accordion({ items }) {
         <div key={index} className="py-2 border-b border-[#6E6E6E]">
           <button
             onClick={() => toggle(index)}
-            className="w-full flex justify-between items-center text-left md:font-bold text-white hover:text-brand-yellow transition text-lg 3xl:text-2xl 4xl:text-3xl"
+            className="w-full flex justify-between items-center text-left md:font-bold text-white hover:text-primary transition text-lg 3xl:text-2xl 4xl:text-3xl"
           >
             <span>{item.title}</span>
             {openIndex === index ? (<ChevronUpIcon />) : (<ChevronDownIcon />)}

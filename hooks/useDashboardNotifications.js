@@ -30,13 +30,13 @@ const useDashboardNotifications = () => {
   };
 
   let dashboardNotifications = notifications?.slice(0, 5)?.map(item => {
-    var sender = item?.sender || item?.user || {};
+    var sender = item?.sender || null;
     return {
       uuid: item?.uuid || item?.uuid || 'UUID',
       message: item?.message || item?.message || 'Message',
       created_at: item?.created_at || item?.created_at || '',
       sender_image: (sender?.user_thumbnail || sender?.profile_image) || '/placeholder.avif',
-      sender_name: sender?.name || "Sender Name",
+      sender_name: sender?.name || "Ad Agency Creatives",
       item: item,
     };
   });

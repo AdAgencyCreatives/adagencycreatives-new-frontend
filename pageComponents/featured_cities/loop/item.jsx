@@ -4,7 +4,7 @@ import Image from 'next/image';
 const FeaturedCityLoopItem = ({ featuredCity }) => {
     return (
         <LinkWrapper href={featuredCity.href} className='group transition-all'>
-            <div className="max-sm:rounded-[0.504rem] rounded-[1.375rem] md:rounded-[1.677rem] xl:rounded-[1.834rem] 2xl:rounded-[1.934rem] 3xl:rounded-[2.579rem] 4xl:rounded-[3.438rem] outline outline-3 md:outline-8 lg:outline-12 3xl:outline-16 4xl:outline-21 outline-white group-hover:outline-brand-yellow shadow-light md:shadow-(--ad-box-shadow) transition relative bg-black pt-3 md:pt-0 aspect-square">
+            <div className="max-sm:rounded-[0.504rem] rounded-[1.375rem] md:rounded-[1.677rem] xl:rounded-[1.834rem] 2xl:rounded-[1.934rem] 3xl:rounded-[2.579rem] 4xl:rounded-[3.438rem] outline outline-3 md:outline-8 lg:outline-12 3xl:outline-16 4xl:outline-21 outline-white group-hover:outline-primary shadow-light md:shadow-(--ad-box-shadow) transition relative bg-black pt-3 md:pt-0 aspect-square">
                 <div className="absolute inset-0">
                     <Image
                         src={featuredCity.image}

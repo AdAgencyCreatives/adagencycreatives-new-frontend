@@ -118,14 +118,14 @@ const AnimatedForm = ({
                           {field.type == 'password' && (<>
                             <div className="absolute top-[50%] transform-[translateY(-50%)] max-sm:right-1 right-4">
                               {isPasswordVisible ? (
-                                <IoEyeOff className="max-sm:text-[1.5rem] text-[1.6rem] md:text-[1.952rem] xl:text-[2.134rem] 2xl:text-[2.25rem] 3xl:text-[3rem] 4xl:text-[4rem] cursor-pointer text-white hover:text-brand-yellow" onClick={(e) => {
+                                <IoEyeOff className="max-sm:text-[1.5rem] text-[1.6rem] md:text-[1.952rem] xl:text-[2.134rem] 2xl:text-[2.25rem] 3xl:text-[3rem] 4xl:text-[4rem] cursor-pointer text-white hover:text-primary" onClick={(e) => {
                                   e.preventDefault();
                                   e.stopPropagation();
                                   setPasswordVisible(false);
                                   return false;
                                 }} />
                               ) : (
-                                <IoEye className="max-sm:text-[1.5rem] text-[1.6rem] md:text-[1.952rem] xl:text-[2.134rem] 2xl:text-[2.25rem] 3xl:text-[3rem] 4xl:text-[4rem] cursor-pointer text-white hover:text-brand-yellow" onClick={(e) => {
+                                <IoEye className="max-sm:text-[1.5rem] text-[1.6rem] md:text-[1.952rem] xl:text-[2.134rem] 2xl:text-[2.25rem] 3xl:text-[3rem] 4xl:text-[4rem] cursor-pointer text-white hover:text-primary" onClick={(e) => {
                                   e.preventDefault();
                                   e.stopPropagation();
                                   setPasswordVisible(true);

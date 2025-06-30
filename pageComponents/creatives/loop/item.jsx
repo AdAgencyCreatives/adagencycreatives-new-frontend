@@ -1,7 +1,7 @@
 'use client';
 
 import ImageLoader from "components/ImageLoader";
-import LinkOrDiv from "components/LinkOrDiv";
+import ActionLinkDiv from "components/ActionLinkDiv";
 import parse from "html-react-parser";
 
 /**
@@ -25,16 +25,16 @@ const CreativeLoopItem = ({ creative, className }) => {
         </div>
       </div>
       <div className="w-full">
-        <LinkOrDiv href={creative_url} className={`font-inter font-bold text-base ${creative_url?.length > 0 ? 'hover:text-brand-yellow cursor-pointer' : ''} name uppercase`}>{creative?.item?.first_name || ''}{parse(creative?.item?.last_name?.length > 0 ? `${creative?.item?.first_name?.length > 0 ? '<br>' : ''}${creative.item.last_name}` : '')}</LinkOrDiv>
-        <LinkOrDiv href={category_url} className={`text-white font-inter font-bold ${category_url?.length > 0 ? 'hover:text-brand-yellow cursor-pointer' : ''} lowercase title`}>{creative.title}</LinkOrDiv>
+        <ActionLinkDiv href={creative_url} className={`font-inter font-bold text-base ${creative_url?.length > 0 ? 'hover:text-primary cursor-pointer' : ''} name uppercase`}>{creative?.item?.first_name || ''}{parse(creative?.item?.last_name?.length > 0 ? `${creative?.item?.first_name?.length > 0 ? '<br>' : ''}${creative.item.last_name}` : '')}</ActionLinkDiv>
+        <ActionLinkDiv href={category_url} className={`text-white font-inter font-bold ${category_url?.length > 0 ? 'hover:text-primary cursor-pointer' : ''} lowercase title`}>{creative.title}</ActionLinkDiv>
         <div className="separator w-full mx-auto"></div>
         {city_url?.length > 0 && state_url?.length > 0 ? (
           <div className="location">
-            <LinkOrDiv href={city_url} className={`text-white ${city_url?.length > 0 ? 'hover:text-brand-yellow cursor-pointer' : ''} uppercase`}>{creative.item.location.city}</LinkOrDiv>{', '}
-            <LinkOrDiv href={state_url} className={`text-white ${state_url?.length > 0 ? 'hover:text-brand-yellow cursor-pointer' : ''} uppercase`}>{creative.item.location.state}</LinkOrDiv>
+            <ActionLinkDiv href={city_url} className={`text-white ${city_url?.length > 0 ? 'hover:text-primary cursor-pointer' : ''} uppercase`}>{creative.item.location.city}</ActionLinkDiv>{', '}
+            <ActionLinkDiv href={state_url} className={`text-white ${state_url?.length > 0 ? 'hover:text-primary cursor-pointer' : ''} uppercase`}>{creative.item.location.state}</ActionLinkDiv>
           </div>
         ) : (<>
-          <LinkOrDiv href="" className="text-white uppercase location">{creative.location}</LinkOrDiv>
+          <ActionLinkDiv href="" className="text-white uppercase location">{creative.location}</ActionLinkDiv>
         </>)}
       </div>
     </div>

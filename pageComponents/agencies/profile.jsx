@@ -24,23 +24,23 @@ const AgenciesProfile = () => {
                   <Image src="/aac-logo.png" width="67" height="67" alt={user.title} className="hover:rotate-45 transition-transform duration-3000" />
               </div>
               <div>
-                <div className="font-alta font-bold text-[30px] text-brand-yellow">{user.name}</div>
-                <div className="text-white font-semibold text-[20px] hover:text-brand-yellow lowercase leading-[26px]">{user.title}</div>
+                <div className="font-alta font-bold text-[30px] text-primary">{user.name}</div>
+                <div className="text-white font-semibold text-[20px] hover:text-primary lowercase leading-[26px]">{user.title}</div>
                 <div className="my-3 border-b-2 w-[60%] mx-auto" />
-                <div className="font-alta font-bold text-[16px] text-brand-yellow">{user.location}</div>
+                <div className="font-alta font-bold text-[16px] text-primary">{user.location}</div>
               </div>
             </div>
             <div className="text-left">
               <ul className="flex justify-between mb-10">
                 {profileMenu.map((item, index) => {
                   return (
-                    <li key={index} className="lowercase text-brand-yellow hover:text-white">
+                    <li key={index} className="lowercase text-primary hover:text-white">
                       <Link href={item.href}>{item.label}</Link>
                     </li>
                   )
                 })}
               </ul>
-              <p className="font-alta text-[16px] text-brand-yellow font-bold mb-2">ABOUT</p>
+              <p className="font-alta text-[16px] text-primary font-bold mb-2">ABOUT</p>
               <p className="font-inter text-[18px]" dangerouslySetInnerHTML={{ __html: user.about }}></p>
             </div>
           </div>
@@ -51,23 +51,23 @@ const AgenciesProfile = () => {
         >
           <div className="flex flex-col gap-14">
             <div>
-              <p className="font-alta font-bold uppercase text-base text-brand-yellow mb-2">Workplace Preference</p>
-              <p className="lowercase hover:text-brand-yellow text-white text-xl">{user.workplace}</p>
+              <p className="font-alta font-bold uppercase text-base text-primary mb-2">Workplace Preference</p>
+              <p className="lowercase hover:text-primary text-white text-xl">{user.workplace}</p>
             </div>
             <div>
-              <p className="font-alta font-bold uppercase text-base text-brand-yellow mb-2">Industry Specialty</p>
-              <p className="lowercase hover:text-brand-yellow text-white text-xl">{user.industry}</p>
+              <p className="font-alta font-bold uppercase text-base text-primary mb-2">Industry Specialty</p>
+              <p className="lowercase hover:text-primary text-white text-xl">{user.industry}</p>
             </div>
             <div>
-              <p className="font-alta font-bold uppercase text-base text-brand-yellow mb-2">Media Specialty</p>
-              <p className="lowercase hover:text-brand-yellow text-white text-xl">{user.media}</p>
+              <p className="font-alta font-bold uppercase text-base text-primary mb-2">Media Specialty</p>
+              <p className="lowercase hover:text-primary text-white text-xl">{user.media}</p>
             </div>
             <div>
-              <p className="font-alta font-bold uppercase text-base text-brand-yellow mb-2">Company Size</p>
-              <p className="lowercase hover:text-brand-yellow text-white text-xl">{user.companysize}</p>
+              <p className="font-alta font-bold uppercase text-base text-primary mb-2">Company Size</p>
+              <p className="lowercase hover:text-primary text-white text-xl">{user.companysize}</p>
             </div>
             <div>
-              <p className="font-alta font-bold uppercase text-base text-brand-yellow mb-2">SOCIAL</p>
+              <p className="font-alta font-bold uppercase text-base text-primary mb-2">SOCIAL</p>
               <div className="flex gap-10">
                 <SocialItem item={{ label: 'linkedin', href: '#' }} />
                 <SocialItem item={{ label: 'twitter', href: '#' }} />
@@ -95,15 +95,15 @@ const AgenciesProfile = () => {
             <ul className="flex justify-between mb-20">
               {infoMenu.map((item, index) => {
                 return (
-                  <li key={index} className="lowercase text-brand-yellow hover:text-white">
+                  <li key={index} className="lowercase text-primary hover:text-white">
                     <Link href={item.href}>{item.label}</Link>
                   </li>
                 )
               })}
             </ul>
-            <p className="font-alta text-[16px] text-brand-yellow font-bold mb-2">Info</p>
+            <p className="font-alta text-[16px] text-primary font-bold mb-2">Info</p>
             <p className="font-inter text-[18px]" dangerouslySetInnerHTML={{ __html: user.info }}></p>
-            <Link href="/" className="border-brand-yellow border-4 uppercase text-brand-yellow rounded-full text-base px-20 py-4 cursor-pointer hover:border-white hover:bg-brand-yellow hover:text-white mt-10 mb-20 inline-block">CTA</Link>
+            <Link href="/" className="border-primary border-4 uppercase text-primary rounded-full text-base px-20 py-4 cursor-pointer hover:border-white hover:bg-primary hover:text-white mt-10 mb-20 inline-block">CTA</Link>
           </div>
         </div>
       </div>

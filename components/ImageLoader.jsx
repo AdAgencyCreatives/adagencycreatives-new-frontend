@@ -11,7 +11,10 @@ const ImageLoader = ({ src = null, alt = '', className = '', loadingClassName=''
       img.src = src;
 
       const handleLoad = () => setStatus('loaded');
-      const handleError = () => setStatus('error');
+      const handleError = () => {
+        console.log(`Error loading image: ${src}`);
+        setStatus('error');
+      };
 
       img.addEventListener('load', handleLoad);
       img.addEventListener('error', handleError);

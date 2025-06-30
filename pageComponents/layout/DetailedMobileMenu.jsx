@@ -1,6 +1,6 @@
 'use client';
 
-import LinkOrDiv from "components/LinkOrDiv";
+import ActionLinkDiv from "components/ActionLinkDiv";
 import TmText from "components/TmText";
 import ChevronDownIcon from "icons/ChevronDownIcon";
 import ChevronUpIcon from "icons/ChevronUpIcon";
@@ -111,9 +111,9 @@ const DetailedMobileMenu = ({ isOpen = false, setIsOpen = (flag) => { }, user })
         {links.map((link, index) => (
           <div key={index} className="flex flex-col">
             <div className="flex flex-row justify-between items-center">
-              <LinkOrDiv onClick={(e) => handleLinkClick(e, { ...link, index: index })} href={link.href} className={`${link_class_name} ${link.href == pathname ? `text-brand-yellow ${link.href?.length > 0 ? 'hover:text-brand-yellow cursor-pointer' : 'select-none'}` : `text-white  ${link.href?.length > 0 ? 'hover:text-brand-yellow cursor-pointer' : 'select-none'}`}`}>{link.text}</LinkOrDiv>
+              <ActionLinkDiv onClick={(e) => handleLinkClick(e, { ...link, index: index })} href={link.href} className={`${link_class_name} ${link.href == pathname ? `text-primary ${link.href?.length > 0 ? 'hover:text-primary cursor-pointer' : 'select-none'}` : `text-white  ${link.href?.length > 0 ? 'hover:text-primary cursor-pointer' : 'select-none'}`}`}>{link.text}</ActionLinkDiv>
               {link.links?.length > 0 && (
-                <button onClick={() => toggleExpandCollapse(index)} className={`${link.href == pathname ? 'text-brand-yellow hover:text-brand-yellow' : 'text-white hover:text-brand-yellow'}`}>
+                <button onClick={() => toggleExpandCollapse(index)} className={`${link.href == pathname ? 'text-primary hover:text-primary' : 'text-white hover:text-primary'}`}>
                   {link.link_state == EXPAND_COLLAPSE_STATE.EXPANDED ? (<ChevronUpIcon />) : (<ChevronDownIcon />)}
                 </button>
               )}
@@ -124,7 +124,7 @@ const DetailedMobileMenu = ({ isOpen = false, setIsOpen = (flag) => { }, user })
                   const parsed_link_link_href = parseHref(link_link.href, link.href);
                   return (
                     <div key={`${index}-${link_index}`}>
-                      <LinkOrDiv onClick={(e) => handleLinkClick(e, { ...link_link, href: parsed_link_link_href, index: link_index })} href={parsed_link_link_href} className={`${link_class_name} ${parsed_link_link_href == pathname ? `text-brand-yellow ${parsed_link_link_href?.length > 0 ? 'hover:text-brand-yellow cursor-pointer' : 'select-none'}` : `text-white  ${parsed_link_link_href?.length > 0 ? 'hover:text-brand-yellow cursor-pointer' : 'select-none'}`}`}>{link_link.text}</LinkOrDiv>
+                      <ActionLinkDiv onClick={(e) => handleLinkClick(e, { ...link_link, href: parsed_link_link_href, index: link_index })} href={parsed_link_link_href} className={`${link_class_name} ${parsed_link_link_href == pathname ? `text-primary ${parsed_link_link_href?.length > 0 ? 'hover:text-primary cursor-pointer' : 'select-none'}` : `text-white  ${parsed_link_link_href?.length > 0 ? 'hover:text-primary cursor-pointer' : 'select-none'}`}`}>{link_link.text}</ActionLinkDiv>
                     </div>
                   );
                 })}

@@ -17,15 +17,15 @@ const FeaturedAgenciesLoopItem = ({ agency, className='' }) => {
         </div>
       </div>
       {/* <div className="w-full">
-        <LinkOrDiv href={agency_url} className={`font-inter font-bold text-base ${agency_url?.length > 0 ? 'hover:text-brand-yellow cursor-pointer' : ''} name uppercase`}>{agency?.item?.name}</LinkOrDiv>
+        <ActionLinkDiv href={agency_url} className={`font-inter font-bold text-base ${agency_url?.length > 0 ? 'hover:text-primary cursor-pointer' : ''} name uppercase`}>{agency?.item?.name}</ActionLinkDiv>
         <div className="separator w-full mx-auto"></div>
         {city_url?.length > 0 && state_url?.length > 0 ? (
           <div className="location">
-            <LinkOrDiv href={city_url} className={`text-white ${city_url?.length > 0 ? 'hover:text-brand-yellow cursor-pointer' : ''} uppercase`}>{agency.item.location.city}</LinkOrDiv>{', '}
-            <LinkOrDiv href={state_url} className={`text-white ${state_url?.length > 0 ? 'hover:text-brand-yellow cursor-pointer' : ''} uppercase`}>{agency.item.location.state}</LinkOrDiv>
+            <ActionLinkDiv href={city_url} className={`text-white ${city_url?.length > 0 ? 'hover:text-primary cursor-pointer' : ''} uppercase`}>{agency.item.location.city}</ActionLinkDiv>{', '}
+            <ActionLinkDiv href={state_url} className={`text-white ${state_url?.length > 0 ? 'hover:text-primary cursor-pointer' : ''} uppercase`}>{agency.item.location.state}</ActionLinkDiv>
           </div>
         ) : (<>
-          <LinkOrDiv href="" className="text-white uppercase location">{agency.location}</LinkOrDiv>
+          <ActionLinkDiv href="" className="text-white uppercase location">{agency.location}</ActionLinkDiv>
         </>)}
       </div> */}
     </div>

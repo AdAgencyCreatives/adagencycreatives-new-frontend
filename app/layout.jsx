@@ -1,5 +1,6 @@
 import "css/globals.css";
 import "css/pre-loader.css"
+import "css/tip-tap-editor.css"
 import "css/SearchBar.css";
 import "css/style2560.css";
 import "css/style1920.css";
@@ -7,6 +8,7 @@ import "css/style1440.css";
 import "css/style1280.css";
 import "css/style375.css";
 
+import "utils/polyfills";
 import ClientUseContextWrapper from "./ClientUseContextWrapper";
 import ClientProviderWrapper from "./ClientProviderWrapper";
 import LayoutWrapper from "./LayoutWrapper";

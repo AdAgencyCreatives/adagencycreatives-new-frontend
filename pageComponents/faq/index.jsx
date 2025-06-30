@@ -16,7 +16,7 @@ const FAQ = () => {
   return (
     <section className="faq-section flex flex-col">
       <div className="rounded-4xl border-(--ad-gray) border-1 shadow-(--ad-box-shadow) bg-black/50 backdrop-blur faqs flex-1">
-        <div className="text-right text-brand-yellow font-semibold mb-8 text-lg 3xl:text-[32px] 4xl:text-[42px]">
+        <div className="text-right text-primary font-semibold mb-8 text-lg 3xl:text-[32px] 4xl:text-[42px]">
           faq
         </div>
         {(directoryFaqs && directoryFaqs?.length > 0) ? (<>

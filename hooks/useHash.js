@@ -2,21 +2,34 @@
 
 import { useEffect, useState } from 'react'
 
-export default function useHash() {
-  const [hash, setHash] = useState('')
+export default function useHash(onHashChange = (hash) => {}) {
+  const [currentHash, setCurrentHash] = useState('');
 
   useEffect(() => {
-    const handleHashChange = () => {
-      setHash(window.location.hash)
-    }
-
     // Set initial hash
-    setHash(window.location.hash)
+    setCurrentHash(window.location.hash.substring(1));
+
+    // Handler for hash changes
+    const handleHashChange = () => {
+      const newHash = window.location.hash.substring(1);
+      setCurrentHash(newHash);
+      onHashChange(newHash);
+    };
 
     // Add event listener
-    window.addEventListener('hashchange', handleHashChange)
-    return () => window.removeEventListener('hashchange', handleHashChange)
-  }, [])
+    window.addEventListener('hashchange', handleHashChange);
 
-  return hash
+    // Cleanup
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+    };
+  }, []);
+
+  // You can also update the hash programmatically
+  const updateHash = (newHash) => {
+    window.location.hash = newHash;
+    // Note: This will trigger the hashchange event automatically
+  };
+
+  return { currentHash, updateHash };
 }

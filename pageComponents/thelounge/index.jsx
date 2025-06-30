@@ -14,7 +14,7 @@ import useScreen from 'hooks/useScreen';
 import useMentorTopics from 'hooks/useMentorTopics';
 import useFeaturedCities from 'hooks/useFeaturedCities';
 import FeaturedCityLoopItem from 'pageComponents/featured_cities/loop/item';
-import LinkOrDiv from 'components/LinkOrDiv';
+import ActionLinkDiv from 'components/ActionLinkDiv';
 import SectionHeading from 'components/SectionHeading';
 import useFeaturedJobs from 'hooks/useFeaturedJobs';
 import JobLoopItem from 'pageComponents/jobs/loop/item';
@@ -65,14 +65,14 @@ const TheLounge = () => {
         <div className="absolute inset-0 z-1 bg-[url(/dots.gif)] bg-auto bg-repeat bg-center opacity-40"></div>
         <div className="absolute inset-0 z-2" style={{ background: 'radial-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 1) 100%)' }}></div>
         <div className="relative z-3">
-          <h1 className="text-5xl md:text-9xl 2xl:text-[182px] 3xl:text-[242px] 4xl:text-[323.4px] font-bold text-brand-yellow">The Lounge</h1>
+          <h1 className="text-5xl md:text-9xl 2xl:text-[182px] 3xl:text-[242px] 4xl:text-[323.4px] font-bold text-primary">The Lounge</h1>
           <div className="font-bold max-sm:space-x-[0.586rem] space-x-[1.6rem] md:space-x-[1.952rem] xl:space-x-[2.134rem] 2xl:space-x-[2.25rem] 3xl:space-x-[3rem] 4xl:space-x-[4rem] mt-4 md:mt-10 3xl:mt-20 max-sm:text-[0.75rem] text-[1.05rem] md:text-[1.281rem] xl:text-[1.401rem] 2xl:text-[1.477rem] 3xl:text-[1.969rem] 4xl:text-[2.625rem] text-white relative z-1">
-            <LinkOrDiv href="#spotlight">spotlight</LinkOrDiv>
-            <LinkOrDiv href="#chat">chat</LinkOrDiv>
-            <LinkOrDiv href="#featured">featured</LinkOrDiv>
-            <LinkOrDiv href="#news">news</LinkOrDiv>
-            <LinkOrDiv href="#publications">publications</LinkOrDiv>
-            <LinkOrDiv href="#cities">cities</LinkOrDiv>
+            <ActionLinkDiv href="#spotlight">spotlight</ActionLinkDiv>
+            <ActionLinkDiv href="#chat">chat</ActionLinkDiv>
+            <ActionLinkDiv href="#featured">featured</ActionLinkDiv>
+            <ActionLinkDiv href="#news">news</ActionLinkDiv>
+            <ActionLinkDiv href="#publications">publications</ActionLinkDiv>
+            <ActionLinkDiv href="#cities">cities</ActionLinkDiv>
           </div>
         </div>
       </section>
@@ -116,7 +116,7 @@ const TheLounge = () => {
             <div className="absolute left-0 font-bold leading-none max-sm:text-[1.375rem] text-[3.95rem] md:text-[4.818rem] xl:text-[5.269rem] 2xl:text-[5.555rem] 3xl:text-[7.406rem] 4xl:text-[9.875rem] max-sm:bottom-[1.044rem] bottom-[2.85rem] md:bottom-[3.476rem] xl:bottom-[3.802rem] 2xl:bottom-[4.008rem] 3xl:bottom-[5.344rem] 4xl:bottom-[7.125rem]">
               <div>Gather.</div>
               <div>Inspire.</div>
-              <div className="text-brand-yellow">Do Cool $#*t!</div>
+              <div className="text-primary">Do Cool $#*t!</div>
             </div>
           </div>
         </div>

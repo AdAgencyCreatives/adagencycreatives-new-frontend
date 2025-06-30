@@ -7,9 +7,9 @@ const About = () => {
         <h2 className="text-5xl 2xl:text-8xl 3xl:text-9xl 4xl:text-[166px] font-bold text-white text-right mb-10">About</h2>
 
         <p className="text-2xl 3xl:text-[40px] 4xl:text-[53px] font-bold text-right">
-          AD AGENCY CREATIVES IS AN <span className="text-brand-yellow">EMPOWERMENT</span> PLATFORM DESIGNED TO GET CREATIVES <br />
-          HIRED BY AGENCIES IN THE U.S. <br className="block md:hidden" /> <br className="block md:hidden" /> WE <span className="text-brand-yellow">LEVERAGE</span> THE EXPERTISE OF CREATIVE RECRUITERS<br />
-          TO HELP AGENCIES AND BRANDS WITH <span className="text-brand-yellow">CREATIVE</span> TALENT.
+          AD AGENCY CREATIVES IS AN <span className="text-primary">EMPOWERMENT</span> PLATFORM DESIGNED TO GET CREATIVES <br />
+          HIRED BY AGENCIES IN THE U.S. <br className="block md:hidden" /> <br className="block md:hidden" /> WE <span className="text-primary">LEVERAGE</span> THE EXPERTISE OF CREATIVE RECRUITERS<br />
+          TO HELP AGENCIES AND BRANDS WITH <span className="text-primary">CREATIVE</span> TALENT.
         </p>
       </section>
       <section className="bg-black w-full py-44 relative h-[100vh] max-sm:hidden">

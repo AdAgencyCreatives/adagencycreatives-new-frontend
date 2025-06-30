@@ -1,7 +1,7 @@
 'use client';
 
 import ImageLoader from "components/ImageLoader";
-import LinkOrDiv from "components/LinkOrDiv";
+import ActionLinkDiv from "components/ActionLinkDiv";
 
 const JobLoopItem = ({ job, className }) => {
 
@@ -19,16 +19,16 @@ const JobLoopItem = ({ job, className }) => {
         </div>
       </div>
       <div className="w-full">
-        <LinkOrDiv href={agency_url} className={`text-white ${agency_url?.length > 0 ? 'hover:text-brand-yellow cursor-pointer' : ''} leading-[100%] name`}>{job.agency}</LinkOrDiv>
-        <LinkOrDiv href={job_url} className={`text-white ${job_url?.length > 0 ? 'hover:text-brand-yellow cursor-pointer' : ''} lowercase title`}>{job.title}</LinkOrDiv>
+        <ActionLinkDiv href={agency_url} className={`text-white ${agency_url?.length > 0 ? 'hover:text-primary cursor-pointer' : ''} leading-[100%] name`}>{job.agency}</ActionLinkDiv>
+        <ActionLinkDiv href={job_url} className={`text-white ${job_url?.length > 0 ? 'hover:text-primary cursor-pointer' : ''} lowercase title`}>{job.title}</ActionLinkDiv>
         <div className="separator w-full mx-auto"></div>
         {city_url?.length > 0 && state_url?.length > 0 ? (
           <div className="location">
-            <LinkOrDiv href={city_url} className={`text-white ${city_url?.length > 0 ? 'hover:text-brand-yellow cursor-pointer' : ''} uppercase`}>{job.item.location.city}</LinkOrDiv>{', '}
-            <LinkOrDiv href={state_url} className={`text-white ${state_url?.length > 0 ? 'hover:text-brand-yellow cursor-pointer' : ''} uppercase`}>{job.item.location.state}</LinkOrDiv>
+            <ActionLinkDiv href={city_url} className={`text-white ${city_url?.length > 0 ? 'hover:text-primary cursor-pointer' : ''} uppercase`}>{job.item.location.city}</ActionLinkDiv>{', '}
+            <ActionLinkDiv href={state_url} className={`text-white ${state_url?.length > 0 ? 'hover:text-primary cursor-pointer' : ''} uppercase`}>{job.item.location.state}</ActionLinkDiv>
           </div>
         ) : (<>
-          <LinkOrDiv href="" className="text-white uppercase location">{job.location}</LinkOrDiv>
+          <ActionLinkDiv href="" className="text-white uppercase location">{job.location}</ActionLinkDiv>
         </>)}
       </div>
     </div>

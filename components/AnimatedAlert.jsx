@@ -76,12 +76,12 @@ const AnimatedAlert = ({
           {icons[type]}
           </span>
           <div className="flex-grow max-sm:mt-[1.067rem] mt-[1.067rem] md:mt-[1.301rem] xl:mt-[1.423rem] 2xl:mt-[1.5rem] 3xl:mt-[2rem] 4xl:mt-[2.667rem] max-sm:mb-[1.067rem] mb-[1.067rem] md:mb-[1.301rem] xl:mb-[1.423rem] 2xl:mb-[1.5rem] 3xl:mb-[2rem] 4xl:mb-[2.667rem]">
-            {title && <div className="text-center text-brand-yellow font-bold max-sm:text-[1.067rem] text-[1.067rem] md:text-[1.301rem] xl:text-[1.423rem] 2xl:text-[1.5rem] 3xl:text-[2rem] 4xl:text-[2.667rem] max-sm:mb-[1.25rem] mb-[1.422rem] md:mb-[1.735rem] xl:mb-[1.897rem] 2xl:mb-[2rem] 3xl:mb-[2.667rem] 4xl:mb-[3.556rem]">{title}</div>}
+            {title && <div className="text-center text-primary font-bold max-sm:text-[1.067rem] text-[1.067rem] md:text-[1.301rem] xl:text-[1.423rem] 2xl:text-[1.5rem] 3xl:text-[2rem] 4xl:text-[2.667rem] max-sm:mb-[1.25rem] mb-[1.422rem] md:mb-[1.735rem] xl:mb-[1.897rem] 2xl:mb-[2rem] 3xl:mb-[2.667rem] 4xl:mb-[3.556rem]">{title}</div>}
             {message && <div className="font-bold max-sm:text-[0.759rem] text-[0.8rem] md:text-[0.976rem] xl:text-[1.067rem] 2xl:text-[1.125rem] 3xl:text-[1.5rem] 4xl:text-[2rem]">{message}</div>}
           </div>
           <button
             onClick={handleDismiss}
-            className="ml-2 text-current hover:text-brand-yellow max-sm:text-[1.25rem] text-[1.6rem] md:text-[1.952rem] xl:text-[2.134rem] 2xl:text-[2.25rem] 3xl:text-[3rem] 4xl:text-[4rem]"
+            className="ml-2 text-current hover:text-primary max-sm:text-[1.25rem] text-[1.6rem] md:text-[1.952rem] xl:text-[2.134rem] 2xl:text-[2.25rem] 3xl:text-[3rem] 4xl:text-[4rem]"
             aria-label="Close"
           >
             <IoClose />

@@ -21,7 +21,7 @@ const Footer = ({ref, style={}}) => {
           <div className="flex justify-between">
             <Link
               href="/jobs-directory"
-              className="hidden md:block whitespace-nowrap max-sm:text-[0.8rem] text-[0.8rem] md:text-[0.976rem] xl:text-[1.067rem] 2xl:text-[1.125rem] 3xl:text-[1.5rem] 4xl:text-[2rem] font-bold font-inter transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow"
+              className="hidden md:block whitespace-nowrap max-sm:text-[0.8rem] text-[0.8rem] md:text-[0.976rem] xl:text-[1.067rem] 2xl:text-[1.125rem] 3xl:text-[1.5rem] 4xl:text-[2rem] font-bold font-inter transition delay-150 duration-300 ease-in-out text-white hover:text-primary"
             >
               search jobs
             </Link>
@@ -35,7 +35,7 @@ const Footer = ({ref, style={}}) => {
             </div>
             <Link
               href="/creatives-directory"
-              className="hidden md:block whitespace-nowrap max-sm:text-[0.8rem] text-[0.8rem] md:text-[0.976rem] xl:text-[1.067rem] 2xl:text-[1.125rem] 3xl:text-[1.5rem] 4xl:text-[2rem] font-bold font-inter transition delay-150 duration-300 ease-in-out text-white hover:text-brand-yellow"
+              className="hidden md:block whitespace-nowrap max-sm:text-[0.8rem] text-[0.8rem] md:text-[0.976rem] xl:text-[1.067rem] 2xl:text-[1.125rem] 3xl:text-[1.5rem] 4xl:text-[2rem] font-bold font-inter transition delay-150 duration-300 ease-in-out text-white hover:text-primary"
             >
               hire talent
             </Link>
