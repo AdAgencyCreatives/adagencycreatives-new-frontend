@@ -23,7 +23,7 @@ const useDashboardStats = () => {
   useEffect(() => {
     if(user?.role == 'creative') {
       getCreativesStats();
-    } else if(user?.role == 'agency') {
+    } else if((user?.role == 'agency' || user?.role == 'advisor' || user?.role == 'recruiter')) {
       getAgenciesStats();
     }
   }, [user]);

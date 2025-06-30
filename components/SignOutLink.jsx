@@ -20,7 +20,7 @@ const SignOutLink = ({ placement="", setIsOpen }) => {
       await logout((user) => {
         if (user?.role == "creative") {
           router.push("/creatives-signin");
-        } else if (user?.role == "agency") {
+        } else if ((user?.role == "agency" || user?.role == "advisor" || user?.role == "recruiter")) {
           router.push("/agencies-signin");
         } else {
           router.push("/");
