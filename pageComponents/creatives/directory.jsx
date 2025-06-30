@@ -20,6 +20,7 @@ import eventEmitter from "components/EventEmitter";
 import { useRouter, useSearchParams } from "next/navigation";
 import SearchBar from "components/SearchBar";
 import CreativeLoopPreloader from "./loop/preloader";
+import CallToActionButton from "components/CallToActionButton";
 
 const CreativesDirectory = () => {
 
@@ -373,14 +374,13 @@ const CreativesDirectory = () => {
                 {idx === 16 && (
                   <div key={`perfect-${idx}`} id={`perfect-${idx}`} className="relative col-span-2 text-center flex flex-col justify-around gap-5 md:gap-10 max-md:py-10">
                     <AnimatedBackdrop className={'block'} />
-                    <h2 className="relative z-1 pb-0 pt-6 2xl:pb-14 2xl:pt-20 3xl:pb-20 3xl:pt-26 4xl:py-15 font-arial font-bold  md:leading-[58.5px] 3xl:leading-[78px] 4xl:leading-[104px]">Why<br />Search?<br />Post & Attract!</h2>
+                    <h2 className="relative z-1 pb-0 pt-6 2xl:pb-14 2xl:pt-20 3xl:pb-20 3xl:pt-26 4xl:py-15 font-arial font-bold  md:leading-[58.5px] 3xl:leading-[78px] 4xl:leading-[104px]">
+                      Why<br />Search?<br />Post & Attract!
+                    </h2>
                     <div className="relative z-1">
-                      <Link
-                        href="/"
-                        className="link-button border-primary border-2 md:border-4 uppercase text-primary rounded-full font-inter sm:font-semibold md:font-inter md:font-bold cursor-pointer hover:border-white hover:bg-primary hover:text-white"
-                      >
-                        POST A JOB
-                      </Link>
+                      <CallToActionButton href="/" className="uppercase text-primary hover:text-white!">
+                        Post A Job
+                      </CallToActionButton>
                     </div>
                   </div>
                 )}

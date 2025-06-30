@@ -222,12 +222,12 @@ const Agencies = () => {
                 </div>
               </div>
             </div>
-            <div className="relative text-center w-full bottom-0 button">
+            <div className="relative text-center max-w-max bottom-0 button m-auto max-sm:px-[1.5rem]">
               <CallToActionButton href="/" className="uppercase w-full">
                 Post A Job
               </CallToActionButton>
               <footer className="flex flex-row justify-center w-full z-11 py-[10px] text-gray-400 space-y-1">
-                <p className="font-inter font-normal uppercase mt-2 px-12 md:px-2 transition delay-150 duration-300 ease-in-out text-[#6E6E6E] hover:text-[#FFFFFF]">© {(new Date()).getFullYear()} Ad Agency Creatives. All Rights Reserved.</p>
+                <p className="font-inter font-normal uppercase mt-2 max-sm:px-0 px-12 md:px-2 transition delay-150 duration-300 ease-in-out text-[#6E6E6E] hover:text-[#FFFFFF]">© {(new Date()).getFullYear()} Ad Agency Creatives. All Rights Reserved.</p>
               </footer>
             </div>
           </div>
