@@ -53,7 +53,7 @@ const SignIn = ({ role }) => {
       //   autoDismiss: true,
       //   dismissTime: 500,
       // });
-      router.push(role == "creatives" ? "/creatives-dashboard" : "/agencies-dashboard");
+      router.push(user?.role == "creative" ? "/creatives-dashboard" : "/agencies-dashboard");
     } else if (apiResponse?.type == "error") {
       showAnimatedAlert({
         type: "error",

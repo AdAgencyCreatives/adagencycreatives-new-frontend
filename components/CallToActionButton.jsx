@@ -1,3 +1,5 @@
+'use client';
+
 import ActionLinkDiv from "./ActionLinkDiv";
 
 const CallToActionButton = ({ href = '', onClick = (e) => { }, disabled = false, className = '', children }) => {

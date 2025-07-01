@@ -401,10 +401,16 @@ input {
   color: #25324B;
 }
 
-.react-calendar__tile--now {
+.react-calendar__tile--now abbr {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1em;
   background-color: #FFFFFF;
   color: #000000;
   border-radius: 100%;
+  @apply max-sm:w-[1.301rem] w-[1.067rem] md:w-[1.301rem] xl:w-[1.423rem] 2xl:w-[1.5rem] 3xl:w-[2rem] 4xl:w-[2.667rem];
+  @apply max-sm:h-[1.301rem] h-[1.067rem] md:h-[1.301rem] xl:h-[1.423rem] 2xl:h-[1.5rem] 3xl:h-[2rem] 4xl:h-[2.667rem];
 }
 
 .react-calendar__navigation {

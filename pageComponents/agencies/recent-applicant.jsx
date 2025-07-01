@@ -123,13 +123,13 @@ const RecentApplicant = ({ job, application, setApplicationStatus, onRemoveFromR
                     </div>
                     <div className="flex">
                         <DropdownMenu>
-                            <DropdownMenuItem icon={<TfiNotepad />} text="Add Notes" onClick={() => { setAppId(thisApplication.creative_id); setOpen(true); }} />
+                            <DropdownMenuItem showIcon={false} icon={<TfiNotepad />} text="Add Notes" onClick={() => { setAppId(thisApplication.creative_id); setOpen(true); }} />
                             {!isJobDeleted && !isJobExpired && (!job?.advisor_id || user?.role == "advisor") && job?.apply_type.toLowerCase() != "external" && (
                                 <>
                                     {thisApplication.status == "pending" ? (
                                         <>
                                             {user?.role == "advisor" && (
-                                                <DropdownMenuItem icon={<TfiCheckBox className="icon-rounded" />} text="Share Recommended Talent" onClick={() => {
+                                                <DropdownMenuItem showIcon={false} icon={<TfiCheckBox className="icon-rounded" />} text="Share Recommended Talent" onClick={() => {
                                                     setChangingApplicationStatus(true);
                                                     setThisApplicationStatus(
                                                         job.id,
@@ -139,7 +139,7 @@ const RecentApplicant = ({ job, application, setApplicationStatus, onRemoveFromR
                                                     );
                                                 }} />
                                             )}
-                                            <DropdownMenuItem icon={<TfiCheck className="icon-rounded" />} text="Interested" onClick={() => {
+                                            <DropdownMenuItem showIcon={false} icon={<TfiCheck className="icon-rounded" />} text="Interested" onClick={() => {
                                                 setChangingApplicationStatus(true);
                                                 setThisApplicationStatus(
                                                     job.id,
@@ -150,7 +150,7 @@ const RecentApplicant = ({ job, application, setApplicationStatus, onRemoveFromR
                                             }} />
                                         </>
                                     ) : (
-                                        <DropdownMenuItem icon={<TfiBackRight className="icon-rounded" style={{ transform: "rotateY(180deg)" }} />} text="Undo" onClick={() => {
+                                        <DropdownMenuItem showIcon={false} icon={<TfiBackRight className="icon-rounded" style={{ transform: "rotateY(180deg)" }} />} text="Undo" onClick={() => {
                                             setChangingApplicationStatus(true);
                                             setThisApplicationStatus(
                                                 job.id,
@@ -162,13 +162,13 @@ const RecentApplicant = ({ job, application, setApplicationStatus, onRemoveFromR
                                     )}
                                 </>
                             )}
-                            <DropdownMenuItem icon={<TfiDownload className="icon-rounded" />} text="Download CV" onClick={(e) => {
+                            <DropdownMenuItem showIcon={false} icon={<TfiDownload className="icon-rounded" />} text="Download CV" onClick={(e) => {
                                 if (thisApplication?.resume_url?.length > 0) {
                                     router.push(thisApplication?.resume_url);
                                 }
                             }} />
                             {thisApplication.status == "pending" && !isJobDeleted && !isJobExpired && (!job?.advisor_id || user?.role == "advisor") && job?.apply_type.toLowerCase() != "external" && (
-                                <DropdownMenuItem icon={<TfiClose className="icon-rounded" />} text="Not Aligned" onClick={() => {
+                                <DropdownMenuItem showIcon={false} icon={<TfiClose className="icon-rounded" />} text="Not Aligned" onClick={() => {
                                     setChangingApplicationStatus(true);
                                     setThisApplicationStatus(
                                         job.id,
@@ -178,7 +178,7 @@ const RecentApplicant = ({ job, application, setApplicationStatus, onRemoveFromR
                                     );
                                 }} />
                             )}
-                            <DropdownMenuItem icon={<IoCloseCircleSharp />} text="Remove from Recent" onClick={(e) => onRemoveFromRecent(e, application)} />
+                            <DropdownMenuItem showIcon={false} icon={<IoCloseCircleSharp />} text="Remove from Recent" onClick={(e) => onRemoveFromRecent(e, application)} />
                         </DropdownMenu>
                     </div>
                 </div>
