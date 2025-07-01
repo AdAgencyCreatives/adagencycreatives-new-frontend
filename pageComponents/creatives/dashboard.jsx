@@ -27,27 +27,27 @@ const CreativesDashboard = () => {
         </div>
         <div className="text-white font-bold leading-none max-sm:text-[0.711rem] text-[0.711rem] md:text-[0.867rem] xl:text-[0.949rem] 2xl:text-[1rem] 3xl:text-[1.333rem] 4xl:text-[1.778rem]">&nbsp;</div>
         <div className="flex flex-row max-sm:flex-wrap item-center justify-between max-sm:gap-[1.067rem] gap-[1.067rem] md:gap-[1.301rem] xl:gap-[1.423rem] 2xl:gap-[1.5rem] 3xl:gap-[2rem] 4xl:gap-[2.667rem]">
-          <DashboardRoundedContainer>
+          <DashboardRoundedContainer className='group'>
             <div className="flex flex-row max-sm:gap-[0.711rem] gap-[0.711rem] md:gap-[0.867rem] xl:gap-[0.949rem] 2xl:gap-[1rem] 3xl:gap-[1.333rem] 4xl:gap-[1.778rem]">
               <MessageIcon />
               <div className="flex flex-1 flex-col max-sm:gap-[0.356rem] gap-[0.356rem] md:gap-[0.434rem] xl:gap-[0.474rem] 2xl:gap-[0.5rem] 3xl:gap-[0.667rem] 4xl:gap-[0.889rem]">
                 <ActionLinkDiv href='#' className="text-white leading-[1.33em] font-semibold max-sm:text-[0.711rem] text-[0.711rem] md:text-[0.867rem] xl:text-[0.949rem] 2xl:text-[1rem] 3xl:text-[1.333rem] 4xl:text-[1.778rem]">
                   Send A Message
                 </ActionLinkDiv>
-                <div className="text-gray-700 leading-[1.33em] max-sm:text-[0.622rem] text-[0.622rem] md:text-[0.759rem] xl:text-[0.83rem] 2xl:text-[0.875rem] 3xl:text-[1.167rem] 4xl:text-[1.556rem]">
+                <div className="text-gray-400 group-hover:text-white leading-[1.33em] max-sm:text-[0.622rem] text-[0.622rem] md:text-[0.759rem] xl:text-[0.83rem] 2xl:text-[0.875rem] 3xl:text-[1.167rem] 4xl:text-[1.556rem]">
                   continue or start a new one
                 </div>
               </div>
             </div>
           </DashboardRoundedContainer>
-          <DashboardRoundedContainer>
+          <DashboardRoundedContainer className='group'>
             <div className="flex flex-row max-sm:gap-[0.711rem] gap-[0.711rem] md:gap-[0.867rem] xl:gap-[0.949rem] 2xl:gap-[1rem] 3xl:gap-[1.333rem] 4xl:gap-[1.778rem]">
               <DashboardChatIcon />
               <div className="flex flex-1 flex-col max-sm:gap-[0.356rem] gap-[0.356rem] md:gap-[0.434rem] xl:gap-[0.474rem] 2xl:gap-[0.5rem] 3xl:gap-[0.667rem] 4xl:gap-[0.889rem]">
                 <ActionLinkDiv href='/thelounge' className="text-white leading-[1.33em] font-semibold max-sm:text-[0.711rem] text-[0.711rem] md:text-[0.867rem] xl:text-[0.949rem] 2xl:text-[1rem] 3xl:text-[1.333rem] 4xl:text-[1.778rem]">
                   Speak Your Mind<br />Creatives Only
                 </ActionLinkDiv>
-                <div className="text-gray-700 leading-[1.33em] max-sm:text-[0.622rem] text-[0.622rem] md:text-[0.759rem] xl:text-[0.83rem] 2xl:text-[0.875rem] 3xl:text-[1.167rem] 4xl:text-[1.556rem]">
+                <div className="text-gray-400 group-hover:text-white leading-[1.33em] max-sm:text-[0.622rem] text-[0.622rem] md:text-[0.759rem] xl:text-[0.83rem] 2xl:text-[0.875rem] 3xl:text-[1.167rem] 4xl:text-[1.556rem]">
                   jump in or kick up something new
                 </div>
               </div>

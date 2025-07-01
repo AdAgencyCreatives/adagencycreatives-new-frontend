@@ -75,7 +75,7 @@ const AgenciesDashboard = () => {
                 <ActionLinkDiv href='/post-a-job' className="text-white leading-[1.33em] font-semibold max-sm:text-[0.711rem] text-[0.711rem] md:text-[0.867rem] xl:text-[0.949rem] 2xl:text-[1rem] 3xl:text-[1.333rem] 4xl:text-[1.778rem]">
                   Create a new job
                 </ActionLinkDiv>
-                <div className="text-gray-700 group-hover:text-white leading-[1.33em] max-sm:text-[0.622rem] text-[0.622rem] md:text-[0.759rem] xl:text-[0.83rem] 2xl:text-[0.875rem] 3xl:text-[1.167rem] 4xl:text-[1.556rem]">
+                <div className="text-gray-400 group-hover:text-white leading-[1.33em] max-sm:text-[0.622rem] text-[0.622rem] md:text-[0.759rem] xl:text-[0.83rem] 2xl:text-[0.875rem] 3xl:text-[1.167rem] 4xl:text-[1.556rem]">
                   don’t chase. post and attract.
                 </div>
               </div>
@@ -88,7 +88,7 @@ const AgenciesDashboard = () => {
                 <ActionLinkDiv href='#get-featured' prevent={true} onClick={() => updateHash('get-featured')} className="text-white leading-[1.33em] font-semibold max-sm:text-[0.711rem] text-[0.711rem] md:text-[0.867rem] xl:text-[0.949rem] 2xl:text-[1rem] 3xl:text-[1.333rem] 4xl:text-[1.778rem]">
                   Get Featured
                 </ActionLinkDiv>
-                <div className="text-gray-700 group-hover:text-white leading-[1.33em] max-sm:text-[0.622rem] text-[0.622rem] md:text-[0.759rem] xl:text-[0.83rem] 2xl:text-[0.875rem] 3xl:text-[1.167rem] 4xl:text-[1.556rem]">
+                <div className="text-gray-400 group-hover:text-white leading-[1.33em] max-sm:text-[0.622rem] text-[0.622rem] md:text-[0.759rem] xl:text-[0.83rem] 2xl:text-[0.875rem] 3xl:text-[1.167rem] 4xl:text-[1.556rem]">
                   showcase your agency. be seen where it matters
                 </div>
               </div>

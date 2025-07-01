@@ -13,10 +13,10 @@ const ResourceLoopItem = ({ resource, target = '_self', showLogo = true, logoCla
             </div>
           )}
           <div className='absolute bottom-0 max-sm:p-[0.25rem] p-[0.3rem] md:p-[0.366rem] xl:p-[0.4rem] 2xl:p-[0.422rem] 3xl:p-[0.563rem] 4xl:p-[0.75rem]'>
-          <p className={`leading-[1.33em] text-white lowercase font-bold font-inter max-sm:text-[0.625rem] text-[1.2rem] md:text-[1.464rem] xl:text-[1.601rem] 2xl:text-[1.688rem] 3xl:text-[2.25rem] 4xl:text-[3rem] max-sm:mt-[0.22rem] mt-[0.6rem] md:mt-[0.732rem] xl:mt-[0.8rem] 2xl:mt-[0.844rem] 3xl:mt-[1.125rem] 4xl:mt-[1.5rem] ${titleClassName}`}
+          <p className={`leading-[1.33em] text-white lowercase font-bold font-inter overflow-hidden max-sm:h-[1.6rem] h-[3.2rem] md:h-[3.903rem] xl:h-[4.269rem] 2xl:h-[4.5rem] 3xl:h-[6rem] 4xl:h-[8rem] max-sm:text-[0.625rem] text-[1.2rem] md:text-[1.464rem] xl:text-[1.601rem] 2xl:text-[1.688rem] 3xl:text-[2.25rem] 4xl:text-[3rem] max-sm:mt-[0.22rem] mt-[0.6rem] md:mt-[0.732rem] xl:mt-[0.8rem] 2xl:mt-[0.844rem] 3xl:mt-[1.125rem] 4xl:mt-[1.5rem] ${titleClassName}`}
             dangerouslySetInnerHTML={{ __html: resource.title || '' }} />
           {showDescription && resource?.item?.description?.length > 0 && (
-            <p className={`leading-[1.33em] text-white lowercase font-inter max-sm:text-[0.625rem] text-[1.05rem] md:text-[1.281rem] xl:text-[1.401rem] 2xl:text-[1.477rem] 3xl:text-[1.969rem] 4xl:text-[2.625rem] ${descriptionClassName}`}
+            <p className={`leading-[1.33em] text-white lowercase font-inter overflow-hidden max-sm:h-[2.5rem] h-[3.982rem] md:h-[4.857rem] xl:h-[5.312rem] 2xl:h-[5.6rem] 3xl:h-[7.467rem] 4xl:h-[9.956rem] max-sm:text-[0.625rem] text-[1.05rem] md:text-[1.281rem] xl:text-[1.401rem] 2xl:text-[1.477rem] 3xl:text-[1.969rem] 4xl:text-[2.625rem] ${descriptionClassName}`}
               dangerouslySetInnerHTML={{ __html: resource.item.description || '' }} />
           )}
           </div>

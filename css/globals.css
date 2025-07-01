@@ -402,7 +402,7 @@ input {
 
 .react-calendar__month-view__days__day--neighboringMonth {
 
-  color: #25324B;
+  color: oklch(70.7% .022 261.325);
 }
 
 .react-calendar__tile--now abbr {

@@ -13,7 +13,7 @@ const SearchButton = ({ href = '', onClick = (e) => { }, disabled = false, class
                 'max-sm:px-[2.4rem] px-[2.4rem] md:px-[2.927rem] xl:px-[3.202rem] 2xl:px-[3.375rem] 3xl:px-[4.5rem] 4xl:px-[6rem]',
                 'max-sm:py-[0.525rem] py-[0.525rem] md:py-[0.641rem] xl:py-[0.701rem] 2xl:py-[0.739rem] 3xl:py-[0.985rem] 4xl:py-[1.313rem]',
                 'max-sm:rounded-[1.8rem] rounded-[1.8rem] md:rounded-[2.196rem] xl:rounded-[2.401rem] 2xl:rounded-[2.531rem] 3xl:rounded-[3.375rem] 4xl:rounded-[4.5rem]',
-                className
+                className,
             ].join(' ')}
             onClick={onClick}
         >
