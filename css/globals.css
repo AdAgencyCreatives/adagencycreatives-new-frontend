@@ -386,6 +386,10 @@ input {
   width: 25%;
 }
 
+.react-calendar__navigation__label {
+  @apply font-bold;
+}
+
 .react-calendar__month-view__weekdays__weekday {
   margin: 0px;
   padding: 0px;
@@ -422,5 +426,5 @@ input {
 }
 
 .react-calendar__navigation__arrow {
-  @apply max-sm:text-[0.867rem] text-[0.711rem] md:text-[0.867rem] xl:text-[0.949rem] 2xl:text-[1rem] 3xl:text-[1.333rem] 4xl:text-[1.778rem];
+  @apply max-sm:text-[1.301rem] text-[1.067rem] md:text-[1.301rem] xl:text-[1.423rem] 2xl:text-[1.5rem] 3xl:text-[2rem] 4xl:text-[2.667rem];
 }
