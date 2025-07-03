@@ -36,9 +36,9 @@ const SearchInput = ({ className = '', input = '', setInput = (value) => { }, pl
                             ].join(' ')} />
                     </div>
                 )}
-                <div className="cursor-pointer" onClick={(e) => onHelpClick(e)}>
+                {/* <div className="cursor-pointer" onClick={(e) => onHelpClick(e)}>
                     <HelpIcon className='text-white hover:text-primary' />
-                </div>
+                </div> */}
             </div>
         </div>
     );
