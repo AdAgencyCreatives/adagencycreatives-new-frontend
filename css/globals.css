@@ -428,3 +428,11 @@ input {
 .react-calendar__navigation__arrow {
   @apply max-sm:text-[1.301rem] text-[1.067rem] md:text-[1.301rem] xl:text-[1.423rem] 2xl:text-[1.5rem] 3xl:text-[2rem] 4xl:text-[2.667rem];
 }
+
+.MuiPaper-root {
+  background: transparent !important;
+}
+
+.show-delayed {
+  visibility: visible !important;
+}

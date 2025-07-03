@@ -1,6 +1,6 @@
 import TipTapEditor from 'components/TipTapEditor';
 
-const CustomEditor = ({ value, setValue, onValueChange = (value) => { }, enableAdvanceEditor = true, placeholder = "", height = 250 }) => {
+const CustomEditor = ({ value, setValue, onValueChange = (value) => { }, enableAdvanceEditor = true, placeholder = "", height = 250, className='' }) => {
 
     return (
         <>
@@ -13,11 +13,12 @@ const CustomEditor = ({ value, setValue, onValueChange = (value) => { }, enableA
                             onValueChange(e.target.value);
                         }}
                         style={{ height: height }}
+                        className={className}
                     />
                 </div>
             ) : (
                 <textarea
-                    className="form-control"
+                    className={`form-control ${className}`}
                     placeholder={placeholder}
                     required
                     value={value}

@@ -11,7 +11,7 @@ import Link from '@tiptap/extension-link';
 
 import 'remixicon/fonts/remixicon.css';
 
-const TipTapEditor = ({ label='', name='', value, onChange, style }) => {
+const TipTapEditor = ({ label='', name='', value, onChange, style, className = '' }) => {
     const editorRef = useRef(null);
     const editorInstance = useRef(null);
     const hiddenTextareaRef = useRef(null);
@@ -234,14 +234,14 @@ const TipTapEditor = ({ label='', name='', value, onChange, style }) => {
             {label && <label className="tiptap-label">{label}</label>}
             <textarea
                 ref={hiddenTextareaRef}
-                className="tip-tap-editor"
+                className={`tip-tap-editor`}
                 name={name}
                 defaultValue={value}
                 style={{ display: 'none' }}
             />
             <div ref={editorRef} className="tiptap-editor-container" style={style}>
                 <div className="tiptap-editor-header"></div>
-                <div className="tiptap-editor-content"></div>
+                <div className={`tiptap-editor-content ${className}`}></div>
                 <div className="tiptap-editor-statusbar">
                     <span className="status-hierarchy">Paragraph</span>
                 </div>
