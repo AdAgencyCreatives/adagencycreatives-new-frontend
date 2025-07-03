@@ -162,7 +162,7 @@ const RecentApplicant = ({ job, application, setApplicationStatus, onRemoveFromR
                                     )}
                                 </>
                             )}
-                            <DropdownMenuItem showIcon={false} icon={<TfiDownload className="icon-rounded" />} text="Download CV" onClick={(e) => {
+                            <DropdownMenuItem showIcon={false} icon={<TfiDownload className="icon-rounded" />} text="Download Resume" onClick={(e) => {
                                 if (thisApplication?.resume_url?.length > 0) {
                                     router.push(thisApplication?.resume_url);
                                 }

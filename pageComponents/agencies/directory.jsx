@@ -11,7 +11,7 @@ import { getUpdatedSearchParamString } from "utils/functions";
 
 import { Context as AuthContext } from "contexts/AuthContext";
 import { Context as DataContext } from "contexts/DataContext";
-import { Context as AlertContext } from "contexts/AlertContext";
+import { Context as AnimatedAlertContext } from "contexts/AnimatedAlertContext";
 
 import { useRouter, useSearchParams } from "next/navigation";
 import SearchBar from "components/SearchBar";
@@ -58,7 +58,7 @@ const AgenciesDirectory = () => {
     },
   } = useContext(AuthContext);
 
-  const { showAlert } = useContext(AlertContext);
+  const { showAlert } = useContext(AnimatedAlertContext);
 
   const [agencySearchPlaceholder, setAgencySearchPlaceholder] = useState(
     "name or location"
@@ -72,7 +72,7 @@ const AgenciesDirectory = () => {
 
   const removeFromShortlist = (id) => {
     removeBookmark(id, () => {
-      showAlert("Agency deleted from shortlist");
+      showAlert("Agency removed from shortlist");
     });
   };
 

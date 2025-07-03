@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { Context as JobsContext } from "contexts/JobsContext";
 import { Context as AuthContext } from "contexts/AuthContext";
-import { Context as AlertContext } from "contexts/AlertContext";
+import { Context as AnimatedAlertContext } from "contexts/AnimatedAlertContext";
 import AddNotesModal from "pageComponents/dashboard/AddNotesModal";
 import { CircularProgress } from "@mui/material";
 import Paginate from "components/Paginate";
@@ -24,7 +24,7 @@ const DashboardRecentApplicants = () => {
     state: { user },
   } = useContext(AuthContext);
 
-  const { showAlert } = useContext(AlertContext);
+  const { showAlert } = useContext(AnimatedAlertContext);
 
   const paginate = (page) => {
     getRecentApplications(user.uuid, 1, page, 1, false, "yes");

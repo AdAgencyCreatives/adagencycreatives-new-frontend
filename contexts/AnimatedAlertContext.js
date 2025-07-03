@@ -20,6 +20,22 @@ const showAnimatedAlert = (dispatch) => {
   };
 };
 
+const showAlert = (dispatch) => {
+  return async (message) => {
+    const data = {
+      type: "info",
+      title: "Notification",
+      message: message,
+      autoDismiss: false,
+      dismissTime: 10000,
+    };
+    dispatch({
+      type: "set_data",
+      payload: data,
+    });
+  };
+};
+
 const hideAnimatedAlert = (dispatch) => {
   return async () => {
     dispatch({
@@ -29,9 +45,21 @@ const hideAnimatedAlert = (dispatch) => {
   };
 };
 
+const hideAlert = (dispatch) => {
+  return async () => {
+    dispatch({
+      type: "set_data",
+      payload: null,
+    });
+  };
+};
+
+
 export const { Context, Provider } = createDataContext(
   reducer,
   {
+    showAlert,
+    hideAlert,
     showAnimatedAlert,
     hideAnimatedAlert
   },

@@ -1,5 +1,5 @@
 import CreativesShortlist from "pageComponents/creatives-shortlist";
 
-export default function FAQPage () {
+export default function CreativesShortlistPage () {
   return <CreativesShortlist />;
 }

@@ -9,7 +9,7 @@ import useDirectoryJobs from "hooks/useDirectoryJobs";
 import { useRouter, useSearchParams } from "next/navigation";
 import usePermissions from "hooks/usePermissions";
 import { Context as AuthContext } from "contexts/AuthContext";
-import { Context as AlertContext } from "contexts/AlertContext";
+import { Context as AnimatedAlertContext } from "contexts/AnimatedAlertContext";
 import { useScrollLoader } from "hooks/useScrollLoader";
 import { getUpdatedSearchParamString } from "utils/functions";
 import SearchBar from "components/SearchBar";
@@ -50,7 +50,7 @@ const JobsDirectory = () => {
     },
   } = useContext(AuthContext);
 
-  const { showAlert } = useContext(AlertContext);
+  const { showAlert } = useContext(AnimatedAlertContext);
 
   const [agencySearchPlaceholder, setAgencySearchPlaceholder] = useState(
     "title, name, location, etc"

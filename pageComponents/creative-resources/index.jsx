@@ -34,7 +34,7 @@ const CreativeResources = ({ slug, path }) => {
           {mentorResources?.map((resource, index) => (<ResourceLoopItem key={index} resource={resource} target='_blank' titleClassName='uppercase!' showDescription={true} />))}
         </section>
       </>) : (<>
-        <TailwindCircularLoader size={30} />
+        <TailwindCircularLoader />
       </>)}
     </>
   );

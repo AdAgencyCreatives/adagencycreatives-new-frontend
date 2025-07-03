@@ -6,7 +6,7 @@ import { Context as AuthContext } from "contexts/AuthContext";
 import { Context as AnimatedAlertContext } from "contexts/AnimatedAlertContext";
 import useQueryParams from "./useQueryParams";
 
-const useCreativesShortlist = () => {
+const useAgenciesShortlist = () => {
 
   const [searchInput, setSearchInput] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
@@ -23,7 +23,7 @@ const useCreativesShortlist = () => {
   const { state: { user } } = useContext(AuthContext);
   const { showAlert } = useContext(AnimatedAlertContext);
 
-  const { state: { bookmarks, meta: creativesShortlistMeta }, getBookmarks, removeBookmark, } = useContext(DataContext);
+  const { state: { bookmarks, meta: agenciesShortlistMeta }, getBookmarks, removeBookmark, } = useContext(DataContext);
 
   useEffect(() => {
     setSearchPerformed(false);
@@ -33,7 +33,7 @@ const useCreativesShortlist = () => {
     if (user) {
       setSearchPerformed(false);
       setIsLoading(true);
-      getBookmarks(searchInput, user.uuid, "creatives", currentPage, () => {
+      getBookmarks(searchInput, user.uuid, "agencies", currentPage, () => {
         setSearchPerformed(true);
         setIsLoading(false);
       });
@@ -42,7 +42,7 @@ const useCreativesShortlist = () => {
 
   const paginate = (page) => {
     setIsLoading(true);
-    getBookmarks(searchInput, user.uuid, "creatives", page, () => {
+    getBookmarks(searchInput, user.uuid, "agencies", page, () => {
       setQueryParams({ 'page': page });
       setIsLoading(false);
       // window.setTimeout(() => {
@@ -52,9 +52,9 @@ const useCreativesShortlist = () => {
   };
 
   const removeFromShortlist = (id) => {
-    let newPage = Math.ceil((creativesShortlistMeta?.total - 1) / 9);
+    let newPage = Math.ceil((agenciesShortlistMeta?.total - 1) / 9);
     removeBookmark(id, () => {
-      showAlert('Creative removed from shortlist');
+      showAlert('Agency removed from shortlist');
       paginate(currentPage <= newPage ? currentPage : newPage);
     });
   };
@@ -64,29 +64,29 @@ const useCreativesShortlist = () => {
     if (user) {
       setSearchPerformed(false);
       setIsLoading(true);
-      getBookmarks(search, user.uuid, "creatives", 1, () => {
+      getBookmarks(search, user.uuid, "agencies", 1, () => {
         setSearchPerformed(true);
         setIsLoading(false);
       });
     }
   }
 
-  const creativesShortlist = bookmarks?.map((item, index) => {
-    const creative = item?.resource;
+  const agenciesShortlist = bookmarks?.map((item, index) => {
+    const agency = item?.resource;
     return {
       id: item?.id,
-      title: creative?.category || creative?.title || 'TITLE',
-      image: (creative?.user_thumbnail || creative?.profile_image) || '/placeholder.avif',
-      name: creative?.name || 'CREATIVE',
-      location: `${creative?.location?.city || 'city'}, ${creative?.location?.state || 'state'}`,
-      profile_url: creative?.slug ? `/creative/${creative?.slug}` : '',
+      title: agency?.category || agency?.title || 'TITLE',
+      image: (agency?.user_thumbnail || agency?.profile_image) || '/placeholder.avif',
+      name: agency?.name || 'AGENCY',
+      location: `${agency?.location?.city || 'city'}, ${agency?.location?.state || 'state'}`,
+      profile_url: agency?.slug ? `/agency/${agency?.slug}` : '',
       created_at: item?.created_at,
       resource: item?.resource,
       item: item,
     };
   });
 
-  return { isLoading, setIsLoading, searchPerformed, setSearchPerformed, creativesShortlist, creativesShortlistMeta, paginate, removeFromShortlist, handleSearch };
+  return { isLoading, setIsLoading, searchPerformed, setSearchPerformed, agenciesShortlist, agenciesShortlistMeta, paginate, removeFromShortlist, handleSearch };
 };
 
-export default useCreativesShortlist;
+export default useAgenciesShortlist;

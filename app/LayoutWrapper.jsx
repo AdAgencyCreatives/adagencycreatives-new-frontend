@@ -73,9 +73,7 @@ export default function LayoutWrapper({ children }) {
 
   }, [contentRef.current]);
 
-  const {
-    state: { animatedAlertData },
-  } = useContext(AnimatedAlertContext);
+  const { state: { animatedAlertData }, showAnimatedAlert } = useContext(AnimatedAlertContext);
 
   return (
     <body className={`antialiased ${body_overflow_hidden ? 'overflow-hidden' : ''}`}>

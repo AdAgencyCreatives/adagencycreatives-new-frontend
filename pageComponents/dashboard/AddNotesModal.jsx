@@ -3,7 +3,7 @@ import "css/add-notes-modal.scss";
 import { useContext, useEffect, useRef, useState } from "react";
 import { Context as JobsContext } from "contexts/JobsContext";
 import { Context as AuthContext } from "contexts/AuthContext";
-import { Context as AlertContext } from "contexts/AlertContext";
+import { Context as AnimatedAlertContext } from "contexts/AnimatedAlertContext";
 import { usePopupScrollLoader } from "hooks/usePopupScrollLoader";
 import moment from "moment";
 import { CircularProgress, Link, Tooltip } from "@mui/material";
@@ -37,7 +37,7 @@ const AddNotesModal = ({ resource_id, type, open, setOpen, handleClose }) => {
 
   const {
     showAlert,
-  } = useContext(AlertContext);
+  } = useContext(AnimatedAlertContext);
 
   const submitNote = async () => {
     if (selectedNote?.id) {

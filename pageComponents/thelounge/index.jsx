@@ -18,7 +18,7 @@ import ActionLinkDiv from 'components/ActionLinkDiv';
 import SectionHeading from 'components/SectionHeading';
 import useFeaturedJobs from 'hooks/useFeaturedJobs';
 import JobLoopItem from 'pageComponents/jobs/loop/item';
-import CallToActionButton from 'components/CallToActionButton';
+import CallToActionLink from 'components/CallToActionLink';
 import SpotlightLoopPreloader from 'pageComponents/spotlights/loop/preloader';
 import JobLoopPreloader from 'pageComponents/jobs/loop/preloader';
 import CreativeLoopPreloader from 'pageComponents/creatives/loop/preloader';
@@ -186,9 +186,9 @@ const TheLounge = () => {
                         Job?
                       </h2>
                       <div>
-                        <CallToActionButton href="/" className="uppercase">
+                        <CallToActionLink href="/" className="uppercase">
                           Advanced Search
-                        </CallToActionButton>
+                        </CallToActionLink>
                       </div>
                     </div>
                   </div>
@@ -219,9 +219,9 @@ const TheLounge = () => {
                         Featured?
                       </h2>
                       <div>
-                        <CallToActionButton href="/" className="uppercase w-full">
+                        <CallToActionLink href="/" className="uppercase w-full">
                           See How
-                        </CallToActionButton>
+                        </CallToActionLink>
                       </div>
                     </div>
                   </div>

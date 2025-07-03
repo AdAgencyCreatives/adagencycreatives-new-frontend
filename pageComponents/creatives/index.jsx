@@ -16,7 +16,7 @@ import useFeaturedAgencies from 'hooks/useFeaturedAgencies';
 import useFeaturedCreatives from 'hooks/useFeaturedCreatives';
 import AnimatedBackdrop from 'components/AnimatedBackdrop';
 import FeaturedAgenciesLoopItem from 'pageComponents/featured_agencies/loop/item';
-import CallToActionButton from 'components/CallToActionButton';
+import CallToActionLink from 'components/CallToActionLink';
 import SectionHeading from 'components/SectionHeading';
 import useMentorTopics from 'hooks/useMentorTopics';
 import JobLoopPreloader from 'pageComponents/jobs/loop/preloader';
@@ -76,9 +76,9 @@ const Creatives = () => {
                     <AnimatedBackdrop className={'block'} />
                     <h2 className="relative z-1 pb-0 pt-6 2xl:pb-14 2xl:pt-20 3xl:pb-20 3xl:pt-26 4xl:py-15 font-arial font-bold  md:leading-[58.5px] 3xl:leading-[78px] 4xl:leading-[104px]">Haven't<br />Found<br />The Perfect<br />Job?</h2>
                     <div className="relative z-1">
-                      <CallToActionButton href="/" className="uppercase text-primary hover:text-white!">
+                      <CallToActionLink href="/" className="uppercase text-primary hover:text-white!">
                         Advanced Search
-                      </CallToActionButton>
+                      </CallToActionLink>
                     </div>
                   </div>
                 )}
@@ -168,9 +168,9 @@ const Creatives = () => {
             </>)}
           </div>
           <div className="flex items-center justify-end mt-5 md:mt-20 2xl:mt-45 3xl:mt-60 4xl:mt-80 2xl:px-10 3xl:px-18 4xl:px-30">
-            <CallToActionButton href="/" className="uppercase">
+            <CallToActionLink href="/" className="uppercase">
               Get Featured
-            </CallToActionButton>
+            </CallToActionLink>
           </div>
         </div>
       </section>
@@ -193,9 +193,9 @@ const Creatives = () => {
                       <span className='font-alta uppercase'>CREATIVES</span>
                     </h2>
                     <div className="relative z-1">
-                      <CallToActionButton href="/" className="uppercase">
+                      <CallToActionLink href="/" className="uppercase">
                         Join Us
-                      </CallToActionButton>
+                      </CallToActionLink>
                     </div>
                   </div>
                 )}
@@ -205,9 +205,9 @@ const Creatives = () => {
                     <AnimatedBackdrop className={''} />
                     <h2 className="relative z-1 font-inter font-bold">Want<br />Your <TmText text='ProFile' /><br />Featured?</h2>
                     <div className="relative z-1">
-                      <CallToActionButton href="/" className="uppercase">
+                      <CallToActionLink href="/" className="uppercase">
                         See How
-                      </CallToActionButton>
+                      </CallToActionLink>
                     </div>
                   </div>
                 )}
@@ -298,10 +298,10 @@ const Creatives = () => {
               </div>
             </div>
              <div className="relative text-center max-w-max bottom-0 button m-auto max-sm:px-[1.5rem]">
-              <CallToActionButton href="/creatives-signup" className="w-full">
+              <CallToActionLink href="/creatives-signup" className="w-full">
                 <span className='uppercase'>Create&nbsp;</span>
                 <TmText text='ProFile' />
-              </CallToActionButton>
+              </CallToActionLink>
               <footer className="flex flex-row justify-center w-full z-11 py-[10px] text-gray-400 space-y-1">
                 <p className="font-inter font-normal uppercase mt-2 max-sm:px-0 px-12 md:px-2 transition delay-150 duration-300 ease-in-out text-[#6E6E6E] hover:text-[#FFFFFF]">© {(new Date()).getFullYear()} Ad Agency Creatives. All Rights Reserved.</p>
               </footer>

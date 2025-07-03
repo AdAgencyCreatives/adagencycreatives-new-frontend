@@ -13,14 +13,14 @@ import { getUpdatedSearchParamString } from "utils/functions";
 
 import { Context as AuthContext } from "contexts/AuthContext";
 import { Context as DataContext } from "contexts/DataContext";
-import { Context as AlertContext } from "contexts/AlertContext";
+import { Context as AnimatedAlertContext } from "contexts/AnimatedAlertContext";
 
 import eventEmitter from "components/EventEmitter";
 
 import { useRouter, useSearchParams } from "next/navigation";
 import SearchBar from "components/SearchBar";
 import CreativeLoopPreloader from "./loop/preloader";
-import CallToActionButton from "components/CallToActionButton";
+import CallToActionLink from "components/CallToActionLink";
 
 const CreativesDirectory = () => {
 
@@ -69,7 +69,7 @@ const CreativesDirectory = () => {
     },
   } = useContext(AuthContext);
 
-  const { showAlert } = useContext(AlertContext);
+  const { showAlert } = useContext(AnimatedAlertContext);
 
   const [creativeSearchPlaceholder, setCreativeSearchPlaceholder] = useState(
     "name or location"
@@ -378,9 +378,9 @@ const CreativesDirectory = () => {
                       Why<br />Search?<br />Post & Attract!
                     </h2>
                     <div className="relative z-1">
-                      <CallToActionButton href="/" className="uppercase text-primary hover:text-white!">
+                      <CallToActionLink href="/" className="uppercase text-primary hover:text-white!">
                         Post A Job
-                      </CallToActionButton>
+                      </CallToActionLink>
                     </div>
                   </div>
                 )}

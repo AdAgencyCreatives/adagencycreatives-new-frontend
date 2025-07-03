@@ -11,7 +11,7 @@ import React from 'react';
 import TmText from 'components/TmText';
 import useFeaturedCreatives from 'hooks/useFeaturedCreatives';
 import AnimatedBackdrop from 'components/AnimatedBackdrop';
-import CallToActionButton from 'components/CallToActionButton';
+import CallToActionLink from 'components/CallToActionLink';
 import SectionHeading from 'components/SectionHeading';
 import CreativeLoopPreloader from 'pageComponents/creatives/loop/preloader';
 
@@ -57,9 +57,9 @@ const Agencies = () => {
                     <AnimatedBackdrop className={''} />
                     <h2 className="relative z-1 pb-0 pt-6 2xl:pb-14 2xl:pt-20 3xl:pb-20 3xl:pt-26 4xl:py-15 font-arial font-bold  md:leading-[58.5px] 3xl:leading-[78px] 4xl:leading-[104px]">Haven't<br />Found<br />The Perfect<br />Match?</h2>
                     <div className='relative z-1 '>
-                      <CallToActionButton href="/" className="uppercase">
+                      <CallToActionLink href="/" className="uppercase">
                         Advanced Search
-                      </CallToActionButton>
+                      </CallToActionLink>
                     </div>
                   </div>
                 ) : (
@@ -73,9 +73,9 @@ const Agencies = () => {
                       Why<br />Search?<br />Post & Attract!
                     </h2>
                     <div className='relative z-1'>
-                      <CallToActionButton href="/" className="uppercase">
+                      <CallToActionLink href="/" className="uppercase">
                         Post A Job
-                      </CallToActionButton>
+                      </CallToActionLink>
                     </div>
                   </div>
                 )}
@@ -88,9 +88,9 @@ const Agencies = () => {
                     <h2 className="z-1 text-2xl md:text-[44px] md:leading-[58.5px] 3xl:text-[57.07px] 3xl:leading-[78px] 4xl:text-[76.09px] 4xl:leading-[104px] font-bold mt-[48px] md:mt-0 font-inter"
                     >Why<br />Search?<br />Post & Attract!</h2>
                     <div className='z-1'>
-                      <CallToActionButton href="/" className="uppercase">
+                      <CallToActionLink href="/" className="uppercase">
                         See How
-                      </CallToActionButton>
+                      </CallToActionLink>
                     </div>
                   </div>
                 )}
@@ -159,9 +159,9 @@ const Agencies = () => {
         </div>
       </section>
       <div className="bg-black flex items-center justify-end max-sm:px-[1.172rem] px-[3.2rem] md:px-[3.903rem] xl:px-[4.269rem] 2xl:px-[4.5rem] 3xl:px-[6rem] 4xl:px-[8rem] relative max-sm:py-[1.4rem] py-[1.4rem] md:py-[1.708rem] xl:py-[1.868rem] 2xl:py-[1.969rem] 3xl:py-[2.625rem] 4xl:py-[3.5rem]">
-        <CallToActionButton href="/" className="uppercase max-sm:mb-[0.366rem] mb-[1rem] md:mb-[1.22rem] xl:mb-[1.334rem] 2xl:mb-[1.406rem] 3xl:mb-[1.875rem] 4xl:mb-[2.5rem]">
+        <CallToActionLink href="/" className="uppercase max-sm:mb-[0.366rem] mb-[1rem] md:mb-[1.22rem] xl:mb-[1.334rem] 2xl:mb-[1.406rem] 3xl:mb-[1.875rem] 4xl:mb-[2.5rem]">
           Get Featured
-        </CallToActionButton>
+        </CallToActionLink>
         <div className="absolute bottom-0 left-[50%] transform -translate-x-[50%] translate-y-0 border-white border-1 w-full md:w-[90%] h-px m-auto block"></div>
       </div>
 
@@ -223,9 +223,9 @@ const Agencies = () => {
               </div>
             </div>
             <div className="relative text-center max-w-max bottom-0 button m-auto max-sm:px-[1.5rem]">
-              <CallToActionButton href="/" className="uppercase w-full">
+              <CallToActionLink href="/" className="uppercase w-full">
                 Post A Job
-              </CallToActionButton>
+              </CallToActionLink>
               <footer className="flex flex-row justify-center w-full z-11 py-[10px] text-gray-400 space-y-1">
                 <p className="font-inter font-normal uppercase mt-2 max-sm:px-0 px-12 md:px-2 transition delay-150 duration-300 ease-in-out text-[#6E6E6E] hover:text-[#FFFFFF]">© {(new Date()).getFullYear()} Ad Agency Creatives. All Rights Reserved.</p>
               </footer>

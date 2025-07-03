@@ -2,12 +2,12 @@
 
 import { useContext, useEffect, useState } from "react";
 import { Context as AuthContext } from "contexts/AuthContext";
-import { Context as AlertContext } from "contexts/AlertContext";
+import { Context as AnimatedAlertContext } from "contexts/AnimatedAlertContext";
 import { Context as DataContext } from "contexts/DataContext";
 
 const usePermissions = () => {
 
-    const { showAlert } = useContext(AlertContext);
+    const { showAlert } = useContext(AnimatedAlertContext);
 
     const {
         state: {

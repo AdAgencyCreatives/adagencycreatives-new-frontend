@@ -2,11 +2,11 @@
 
 import { useContext } from "react";
 import { Context as AuthContext } from "contexts/AuthContext";
-import { Context as AlertContext } from "contexts/AlertContext";
+import { Context as AnimatedAlertContext } from "contexts/AnimatedAlertContext";
 
 const useHelper = () => {
 
-    const { showAlert } = useContext(AlertContext);
+    const { showAlert } = useContext(AnimatedAlertContext);
 
     const {
         state: { token, role },

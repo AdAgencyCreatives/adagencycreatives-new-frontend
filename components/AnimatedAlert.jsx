@@ -1,12 +1,7 @@
 import { useState, useEffect, useContext, use } from "react";
-import {
-  ExclamationCircleIcon,
-  CheckCircleIcon,
-  XMarkIcon,
-} from "@heroicons/react/24/solid";
 import { Context as AnimatedAlertContext } from "contexts/AnimatedAlertContext";
 import { Context as SiteContext } from "contexts/SiteContext";
-import { IoClose, IoInformationCircle, IoCheckmarkCircle } from "react-icons/io5";
+import { IoClose, IoInformationCircle, IoCheckmarkCircle, IoCloseCircle } from "react-icons/io5";
 
 const AnimatedAlert = ({
   type,
@@ -25,12 +20,14 @@ const AnimatedAlert = ({
     "max-sm:p-[0.25rem] p-[0.45rem] md:p-[0.549rem] xl:p-[0.6rem] 2xl:p-[0.633rem] 3xl:p-[0.844rem] 4xl:p-[1.125rem]"
   ].join(' ');
   const typeClasses = {
+    info: "bg-black text-white",
     error: "bg-black text-white",
     success: "bg-black text-white",
   };
 
   const icons = {
-    error: <IoInformationCircle />,
+    info: <IoInformationCircle />,
+    error: <IoCloseCircle />,
     success: <IoCheckmarkCircle />
   };
 

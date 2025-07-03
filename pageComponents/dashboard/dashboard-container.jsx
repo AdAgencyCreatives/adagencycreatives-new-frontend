@@ -1,7 +1,7 @@
 'use client';
 
 import ImageLoader from 'components/ImageLoader';
-import CallToActionButton from 'components/CallToActionButton';
+import CallToActionLink from 'components/CallToActionLink';
 import TmText from 'components/TmText';
 import ActionLinkDiv from 'components/ActionLinkDiv';
 import { usePathname } from 'next/navigation';
@@ -60,7 +60,7 @@ const DashboardContainer = ({ children }) => {
                             ].join(' ')}
                             >
                                 <div className="font-inter font-bold uppercase text-center max-sm:text-[1.5rem] text-[1.067rem] md:text-[1.301rem] xl:text-[1.423rem] 2xl:text-[1.5rem] 3xl:text-[2rem] 4xl:text-[2.667rem]">{dashboard_user_name}</div>
-                                <CallToActionButton
+                                <CallToActionLink
                                     className={[
                                         "outline-white! hover:outline-primary! text-white! hover:text-primary! max-w-max!",
                                         "max-sm:px-[1.067rem]! px-[1.067rem]! md:px-[1.301rem]! xl:px-[1.423rem]! 2xl:px-[1.5rem]! 3xl:px-[2rem]! 4xl:px-[2.667rem]!",
@@ -71,7 +71,7 @@ const DashboardContainer = ({ children }) => {
                                 >
                                     <span>View&nbsp;</span>
                                     <TmText text='ProFile' className='' />
-                                </CallToActionButton>
+                                </CallToActionLink>
                             </div>
                         </div>
                         <div className='max-sm:mt-[1.5rem] mt-[1.422rem] md:mt-[1.735rem] xl:mt-[1.897rem] 2xl:mt-[2rem] 3xl:mt-[2.667rem] 4xl:mt-[3.556rem]'>

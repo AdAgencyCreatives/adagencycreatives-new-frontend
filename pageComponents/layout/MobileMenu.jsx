@@ -9,7 +9,7 @@ import { Context as SiteContext } from "contexts/SiteContext";
 import { Context as AuthContext } from "contexts/AuthContext";
 import DetailedMobileMenu from './DetailedMobileMenu';
 import ActionLinkDiv from 'components/ActionLinkDiv';
-import CallToActionButton from 'components/CallToActionButton';
+import CallToActionLink from 'components/CallToActionLink';
 import LogoutIcon from 'icons/LogoutIcon';
 import NotificationBellIcon from 'icons/NotificationBellIcon';
 
@@ -82,18 +82,18 @@ const MobileMenu = ({ isHomePage }) => {
         </div>
         {user ? (
           <div className="flex flex-col gap-[12px] 3xl:gap-[16px] 4xl:gap-[21.33px]">
-            <CallToActionButton href="/sign-out" onClick={() => setIsOpen(false)}>
+            <CallToActionLink href="/sign-out" onClick={() => setIsOpen(false)}>
               Sign Out
-            </CallToActionButton>
+            </CallToActionLink>
           </div>
         ) : (
           <div className="flex flex-col gap-[12px] 3xl:gap-[16px] 4xl:gap-[21.33px]">
-            <CallToActionButton href="/" onClick={() => setIsOpen(false)}>
+            <CallToActionLink href="/" onClick={() => setIsOpen(false)}>
               Sign In
-            </CallToActionButton>
-            <CallToActionButton href="/" onClick={() => setIsOpen(false)}>
+            </CallToActionLink>
+            <CallToActionLink href="/" onClick={() => setIsOpen(false)}>
               Register
-            </CallToActionButton>
+            </CallToActionLink>
           </div>
         )}
       </div>
