@@ -21,10 +21,6 @@ const AgenciesShortlistItem = ({ item, openNotesDialog, openMessageDialog, remov
                         <div className="text-white font-bold leading-none max-sm:text-[0.711rem]! text-[0.711rem]! md:text-[0.867rem]! xl:text-[0.949rem]! 2xl:text-[1rem]! 3xl:text-[1.333rem]! 4xl:text-[1.778rem]!">{item?.name}</div>
                         <div className="inline-flex flex-row items-center flex-wrap max-sm:gap-x-[0.356rem] gap-x-[0.356rem] md:gap-x-[0.434rem] xl:gap-x-[0.474rem] 2xl:gap-x-[0.5rem] 3xl:gap-x-[0.667rem] 4xl:gap-x-[0.889rem] max-sm:gap-y-[0.178rem] gap-y-[0.178rem] md:gap-y-[0.217rem] xl:gap-y-[0.237rem] 2xl:gap-y-[0.25rem] 3xl:gap-y-[0.333rem] 4xl:gap-y-[0.444rem]">
                             <div className="max-sm:text-[0.533rem] text-[0.533rem] md:text-[0.651rem] xl:text-[0.711rem] 2xl:text-[0.75rem] 3xl:text-[1rem] 4xl:text-[1.333rem]">
-                                {item?.title}
-                            </div>
-                            <div className="font-bold max-sm:text-[0.533rem] text-[0.533rem] md:text-[0.651rem] xl:text-[0.711rem] 2xl:text-[0.75rem] 3xl:text-[1rem] 4xl:text-[1.333rem]">•</div>
-                            <div className="max-sm:text-[0.533rem] text-[0.533rem] md:text-[0.651rem] xl:text-[0.711rem] 2xl:text-[0.75rem] 3xl:text-[1rem] 4xl:text-[1.333rem]">
                                 {item?.location}
                             </div>
                         </div>

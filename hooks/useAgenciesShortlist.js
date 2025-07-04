@@ -75,7 +75,6 @@ const useAgenciesShortlist = () => {
     const agency = item?.resource;
     return {
       id: item?.id,
-      title: agency?.category || agency?.title || 'TITLE',
       image: (agency?.user_thumbnail || agency?.profile_image) || '/placeholder.avif',
       name: agency?.name || 'AGENCY',
       location: `${agency?.location?.city || 'city'}, ${agency?.location?.state || 'state'}`,
