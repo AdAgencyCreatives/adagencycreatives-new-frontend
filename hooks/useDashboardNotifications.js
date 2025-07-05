@@ -1,11 +1,12 @@
 'use client';
 
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Context as NotificationsContext } from "contexts/NotificationsContext";
 import { Context as AuthContext } from "contexts/AuthContext";
 
-const useDashboardNotifications = () => {
+const useDashboardNotifications = (PER_PAGE = 9) => {
 
+  const [isLoading, setIsLoading] = useState(false);
   const { state: { user } } = useContext(AuthContext);
 
   const {
@@ -15,13 +16,13 @@ const useDashboardNotifications = () => {
 
   useEffect(() => {
     if (user) {
-      getNotifications(user.uuid);
+      getNotifications(user.uuid, 1, PER_PAGE);
     }
   }, [user]);
 
   const reloadNotifications = () => {
     if (user) {
-      getNotifications(user.uuid, dashboard_notifications_meta?.current_page || 1);
+      getNotifications(user.uuid, dashboard_notifications_meta?.current_page || 1, PER_PAGE);
     }
   };
 
@@ -29,7 +30,14 @@ const useDashboardNotifications = () => {
     dashboard_notifications_nextPage && loadNotifications(dashboard_notifications_nextPage);
   };
 
-  let dashboardNotifications = notifications?.slice(0, 5)?.map(item => {
+  const paginate = (page) => {
+    setIsLoading(true);
+    getNotifications(user.uuid, page || 1, PER_PAGE, () => {
+      setIsLoading(false);
+    });
+  };
+
+  let dashboardNotifications = notifications?.map(item => {
     var sender = item?.sender || null;
     return {
       uuid: item?.uuid || item?.uuid || 'UUID',
@@ -41,7 +49,7 @@ const useDashboardNotifications = () => {
     };
   });
 
-  return { dashboardNotifications, dashboard_notifications_loading, dashboard_notifications_meta, dashboardNotificationsLoadMore, markAsReadNotifications, getNotifications, reloadNotifications};
+  return { isLoading, dashboardNotifications, dashboard_notifications_loading, dashboard_notifications_meta, dashboard_notifications_nextPage, dashboardNotificationsLoadMore, markAsReadNotifications, getNotifications, reloadNotifications, paginate };
 };
 
 export default useDashboardNotifications;

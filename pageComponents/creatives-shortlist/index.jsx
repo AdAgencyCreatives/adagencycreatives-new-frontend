@@ -9,7 +9,7 @@ import { Context as AnimatedAlertContext } from "contexts/AnimatedAlertContext"
 import useQueryParams from 'hooks/useQueryParams';
 import useCreativesShortlist from 'hooks/useCreativesShortlist';
 
-const CreativesShortList = () => {
+const CreativesShortlist = () => {
 
     const [searchInput, setSearchInput] = useState('');
 
@@ -85,4 +85,4 @@ const CreativesShortList = () => {
     );
 };
 
-export default CreativesShortList;
+export default CreativesShortlist;

@@ -38,14 +38,15 @@ const reducer = (state, action) => {
 };
 
 const getNotifications = (dispatch) => {
-  return async (user_id, page = false) => {
+  return async (user_id, page = false, per_page = 9, cb=()=>{}) => {
     setLoading(dispatch, true);
     try {
-      const response = await api.get("/notifications?sort=-created_at&status=0&filter[type]=job_alert,job_board,lounge_mention&filter[user_id]=" + user_id + (page ? "&page=" + page : ""));
+      const response = await api.get("/notifications?sort=-created_at&status=0&filter[type]=job_alert,job_board,lounge_mention&filter[user_id]=" + user_id + (page ? "&page=" + page : "") + ("&per_page=" + per_page));
       dispatch({
         type: "set_notifications",
         payload: response.data,
       });
+      cb();
     } catch (error) { }
     setLoading(dispatch, false);
   };

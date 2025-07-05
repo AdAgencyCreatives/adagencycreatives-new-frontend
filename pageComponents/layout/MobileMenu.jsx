@@ -12,9 +12,15 @@ import ActionLinkDiv from 'components/ActionLinkDiv';
 import CallToActionLink from 'components/CallToActionLink';
 import LogoutIcon from 'icons/LogoutIcon';
 import NotificationBellIcon from 'icons/NotificationBellIcon';
+import { usePathname } from 'next/navigation';
+import MobileDropMenu from 'components/MobileDropMenu';
+import DashboardNotificationsCompact from 'pageComponents/dashboard/dashboard-notifications-compact';
 
 const MobileMenu = ({ isHomePage }) => {
+
   const [isOpen, setIsOpen] = useState(false);
+
+  const pathname = usePathname();
 
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
@@ -31,19 +37,19 @@ const MobileMenu = ({ isHomePage }) => {
   }, [isOpen]);
 
   return (
-    <div className="relative flex items-center max-sm:gap-[1.067rem] gap-[1.067rem] md:gap-[1.301rem] xl:gap-[1.423rem] 2xl:gap-[1.5rem] 3xl:gap-[2rem] 4xl:gap-[2.667rem]">
-      {user!=null && (
-        <ActionLinkDiv href='/sign-out' className="cursor-pointer transition delay-150 duration-300 ease-in-out text-white hover:text-primary">
+    <div className="md:relative flex items-center max-sm:gap-[1.067rem] gap-[1.067rem] md:gap-[1.301rem] xl:gap-[1.423rem] 2xl:gap-[1.5rem] 3xl:gap-[2rem] 4xl:gap-[2.667rem]">
+      {user != null && (
+        <ActionLinkDiv href='/sign-out' className={`cursor-pointer transition delay-150 duration-300 ease-in-out ${pathname == "/sign-out" ? "text-primary hover:text-white!" : "text-white hover:text-primary"}`}>
           <LogoutIcon />
         </ActionLinkDiv>
       )}
-      <ActionLinkDiv href='/chat' className="cursor-pointer transition delay-150 duration-300 ease-in-out text-white hover:text-primary">
+      <ActionLinkDiv href='/chat' className={`cursor-pointer transition delay-150 duration-300 ease-in-out ${pathname == "/chat" ? "text-primary hover:text-white!" : "text-white hover:text-primary"}`}>
         <ChatIcon />
       </ActionLinkDiv>
-      {user!=null && (
-        <ActionLinkDiv href='/notifications' className="cursor-pointer transition delay-150 duration-300 ease-in-out text-white hover:text-primary">
-          <NotificationBellIcon />
-        </ActionLinkDiv>
+      {user != null && (
+        <MobileDropMenu icon={<NotificationBellIcon />}>
+          <DashboardNotificationsCompact />
+        </MobileDropMenu>
       )}
       {/* Toggle Button */}
       <button

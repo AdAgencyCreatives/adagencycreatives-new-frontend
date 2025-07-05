@@ -23,7 +23,7 @@ const DashboardNotifications = () => {
         </div>
         {dashboardNotifications && dashboardNotifications.length > 0 && (
           <>
-            {dashboardNotifications.map((notification, index) => (
+            {dashboardNotifications.slice(0, 5).map((notification, index) => (
               <div key={index} className='flex flex-row items-center justify-between max-sm:gap-[0.434rem] gap-[0.356rem] md:gap-[0.434rem] xl:gap-[0.474rem] 2xl:gap-[0.5rem] 3xl:gap-[0.667rem] 4xl:gap-[0.889rem]'>
                 <div className="flex">
                   <ImageLoader src={notification.sender_image} alt={notification.sender_name}

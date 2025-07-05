@@ -1,9 +1,7 @@
 import { useState } from "react";
 import AddNotesModal from "pageComponents/dashboard/AddNotesModal";
-import { CircularProgress } from "@mui/material";
 import Paginate from "components/Paginate";
 import CreativesShortlistItem from "./creatives-shortlist-item";
-import useCreativesShortlist from "hooks/useCreativesShortlist";
 import TailwindCircularLoader from "components/TailwindCircularLoader";
 
 const DashboardCreativesShortlist = ({isLoading, creativesShortlist, creativesShortlistMeta, removeFromShortlist, paginate }) => {
