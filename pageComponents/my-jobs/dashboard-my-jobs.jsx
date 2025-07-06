@@ -38,7 +38,6 @@ const DashboardMyJobs = ({ isLoading, myJobs, myJobs_meta, paginate, removeJob }
                                     <div className="agencies-shortlist-inner flex flex-col">
                                         <MyJobsItem
                                             item={item}
-                                            meta={myJobs_meta}
                                             removeJob={removeJob}
                                         />
                                     </div>

@@ -57,7 +57,6 @@ const reducer = (state, action) => {
       return {
         ...state,
         open_positions: state.open_positions.filter((job) => job.id != action.payload),
-        // cache: { ...state.cache, [action.payload.url]: state.open_positions.filter((job) => job.id != action.payload) },
       };
     case "load_agencies":
       return {
@@ -255,18 +254,10 @@ const searchOpenPositions = (dispatch, state) => {
     try {
       const endpoint = "/jobs?skip_applications=yes&sort=-created_at&filter[user_id]=" + uid + (searchText?.length > 0 ? ("&jobSearch=" + searchText) : "") + (status != null && status != '' ? "&filter[status]=" + status : "") + ("&applications_count=" + applications_count) + (page ? "&page=" + page : "");
 
-      const modified_cache = deleted_job_id ? { ...state.cache[endpoint], data: state.cache[endpoint].data.filter((job) => job.id != deleted_job_id) } : state.cache[endpoint];
-      
-      // if (deleted_job_id) {
-      //   console.log("deleted_job_id", deleted_job_id);
-      //   console.log('state.cache[endpoint]', state.cache[endpoint]);
-      //   console.log("Modified: ", modified_cache);
-      // }
-
       if (state.cache[endpoint]) {
         dispatch({
           type: "set_open_positions",
-          payload: modified_cache,
+          payload: state.cache[endpoint],
         });
         setLoading(dispatch, false);
         cb();

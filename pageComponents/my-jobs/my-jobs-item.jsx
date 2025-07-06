@@ -16,7 +16,7 @@ import { FaHandsHelping } from "react-icons/fa";
 import DropdownMenuItemButton from "components/DropdownMenuItemButton";
 import ConfirmModal from "components/ConfirmModal";
 
-const MyJobsItem = ({ item, meta, removeJob }) => {
+const MyJobsItem = ({ item, removeJob }) => {
 
     const [job, setJob] = useState(item);
     const [openConfirmDeleteModal, setOpenConfirmDeleteModal] = useState(false);
@@ -65,7 +65,7 @@ const MyJobsItem = ({ item, meta, removeJob }) => {
 
     return (
         <>
-            <div className="agencies-shortlist-item relative flex flex-col items-center w-full max-sm:my-[0.434rem] my-[0.356rem] md:my-[0.434rem] xl:my-[0.474rem] 2xl:my-[0.5rem] 3xl:my-[0.667rem] 4xl:my-[0.889rem] max-sm:p-[0.434rem] p-[0.356rem] md:p-[0.434rem] xl:p-[0.474rem] 2xl:p-[0.5rem] 3xl:p-[0.667rem] 4xl:p-[0.889rem]" data-meta={meta?.total || 0}>
+            <div className="agencies-shortlist-item relative flex flex-col items-center w-full max-sm:my-[0.434rem] my-[0.356rem] md:my-[0.434rem] xl:my-[0.474rem] 2xl:my-[0.5rem] 3xl:my-[0.667rem] 4xl:my-[0.889rem] max-sm:p-[0.434rem] p-[0.356rem] md:p-[0.434rem] xl:p-[0.474rem] 2xl:p-[0.5rem] 3xl:p-[0.667rem] 4xl:p-[0.889rem]">
                 <div className="flex flex-row items-center w-full max-sm:gap-[0.687rem] gap-[0.711rem] md:gap-[0.867rem] xl:gap-[0.949rem] 2xl:gap-[1rem] 3xl:gap-[1.333rem] 4xl:gap-[1.778rem]">
                     <div className="flex max-sm:w-[3.469rem] w-[2.844rem] md:w-[3.469rem] xl:w-[3.794rem] 2xl:w-[4rem] 3xl:w-[5.333rem] 4xl:w-[7.111rem]">
                         <CustomTooltip title={job?.agency_name} arrow placement="top">
