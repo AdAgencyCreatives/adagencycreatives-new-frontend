@@ -1,3 +1,5 @@
+'use client';
+
 import * as React from 'react';
 import Dialog from '@mui/material/Dialog';
 import Slide from '@mui/material/Slide';
@@ -60,10 +62,12 @@ export default function CommonDeleteModal({
             <IoClose />
           </button>
           <div className="inner flex flex-col max-sm:gap-[1.735rem] gap-[1.422rem] md:gap-[1.735rem] xl:gap-[1.897rem] 2xl:gap-[2rem] 3xl:gap-[2.667rem] 4xl:gap-[3.556rem]">
-            {title && <div className="text-center text-primary font-bold max-sm:text-[1.067rem] text-[1.067rem] md:text-[1.301rem] xl:text-[1.423rem] 2xl:text-[1.5rem] 3xl:text-[2rem] 4xl:text-[2.667rem] max-sm:mt-[0.867rem]! mt-[0.711rem]! md:mt-[0.867rem]! xl:mt-[0.949rem]! 2xl:mt-[1rem]! 3xl:mt-[1.333rem]! 4xl:mt-[1.778rem]!">
-              {title}
-            </div>}
-            {message && <div className="font-bold max-sm:text-[0.759rem] text-[0.8rem] md:text-[0.976rem] xl:text-[1.067rem] 2xl:text-[1.125rem] 3xl:text-[1.5rem] 4xl:text-[2rem]">{message}</div>}
+            <div className="text-center text-primary font-bold max-sm:text-[1.067rem] text-[1.067rem] md:text-[1.301rem] xl:text-[1.423rem] 2xl:text-[1.5rem] 3xl:text-[2rem] 4xl:text-[2.667rem] max-sm:mt-[0.867rem]! mt-[0.711rem]! md:mt-[0.867rem]! xl:mt-[0.949rem]! 2xl:mt-[1rem]! 3xl:mt-[1.333rem]! 4xl:mt-[1.778rem]!">
+              {title || "Confirm Delete?"}
+            </div>
+            <div className="font-bold max-sm:text-[0.759rem] text-[0.8rem] md:text-[0.976rem] xl:text-[1.067rem] 2xl:text-[1.125rem] 3xl:text-[1.5rem] 4xl:text-[2rem]">
+              {message || "Are you sure to delete this?"}
+            </div>
             <div className="flex justify-end max-sm:gap-[0.867rem] gap-[0.711rem] md:gap-[0.867rem] xl:gap-[0.949rem] 2xl:gap-[1rem] 3xl:gap-[1.333rem] 4xl:gap-[1.778rem]">
               <CallToActionButton
                 className={[

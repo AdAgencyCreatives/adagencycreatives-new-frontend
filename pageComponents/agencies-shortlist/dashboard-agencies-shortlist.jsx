@@ -1,9 +1,7 @@
 import { useState } from "react";
 import AddNotesModal from "pageComponents/dashboard/AddNotesModal";
-import { CircularProgress } from "@mui/material";
 import Paginate from "components/Paginate";
 import AgenciesShortlistItem from "./agencies-shortlist-item";
-import useAgenciesShortlist from "hooks/useAgenciesShortlist";
 import TailwindCircularLoader from "components/TailwindCircularLoader";
 
 const DashboardAgenciesShortlist = ({isLoading, agenciesShortlist, agenciesShortlistMeta, removeFromShortlist, paginate }) => {
@@ -54,7 +52,7 @@ const DashboardAgenciesShortlist = ({isLoading, agenciesShortlist, agenciesShort
                                     />
                                 </div>
                             ))}
-                            {agenciesShortlistMeta.total > 9 && (
+                            {(agenciesShortlistMeta?.total || 0) > 9 && (
                                 <Paginate
                                     meta={agenciesShortlistMeta}
                                     paginate={paginate}

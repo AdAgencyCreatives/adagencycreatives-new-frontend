@@ -78,7 +78,7 @@ const useCreativesShortlist = () => {
       title: creative?.category || creative?.title || 'TITLE',
       image: (creative?.user_thumbnail || creative?.profile_image) || '/placeholder.avif',
       name: creative?.name || 'CREATIVE',
-      location: `${creative?.location?.city || 'city'}, ${creative?.location?.state || 'state'}`,
+      location: `${creative?.location?.city || 'City'}, ${creative?.location?.state || 'State'}`,
       profile_url: creative?.slug ? `/creative/${creative?.slug}` : '',
       created_at: item?.created_at,
       resource: item?.resource,

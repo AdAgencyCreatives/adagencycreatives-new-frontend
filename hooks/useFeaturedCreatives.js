@@ -21,7 +21,7 @@ const useFeaturedCreatives = (per_page = 10) => {
             title: item?.category || item?.title || 'TITLE',
             image: (item?.user_thumbnail || item?.profile_image) || '/placeholder.avif',
             name: item?.name || 'CREATIVE',
-            location: `${item?.location?.city || 'city'}, ${item?.location?.state || 'state'}`,
+            location: `${item?.location?.city || 'City'}, ${item?.location?.state || 'State'}`,
             item: item,
         };
     });

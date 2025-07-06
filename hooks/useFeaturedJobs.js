@@ -21,7 +21,7 @@ const useFeaturedJobs = (per_page = 10) => {
             title: item?.title || 'coming soon',
             image: (item?.agency?.user_thumbnail || item?.agency?.logo) || '/jobs/job1.avif',
             agency: item?.agency?.name || 'AGENCY',
-            location: `${item?.location?.city || 'city'}, ${item?.location?.state || 'state'}`,
+            location: `${item?.location?.city || 'City'}, ${item?.location?.state || 'State'}`,
             item: item,
         };
     });

@@ -15,7 +15,7 @@ import CommonDeleteModal from "components/CommonDeleteModal";
 import TailwindCircularLoader from "components/TailwindCircularLoader";
 import CallToActionButton from "components/CallToActionButton";
 import DropdownMenu from "components/DropdownMenu";
-import DropdownMenuItem from "components/DropdownMenuItem";
+import DropdownMenuItemButton from "components/DropdownMenuItemButton";
 
 const AddNotesModal = ({ resource_id, type, open, setOpen, handleClose }) => {
 
@@ -241,8 +241,8 @@ const AddNotesModal = ({ resource_id, type, open, setOpen, handleClose }) => {
                               </div>
                             </div>
                             <DropdownMenu >
-                              <DropdownMenuItem text="Edit" onClick={(e) => onEditNote(note)} />
-                              <DropdownMenuItem text="Remove" onClick={(e) => setDeleteModalOpen(true)} />
+                              <DropdownMenuItemButton text="Edit" onClick={(e) => onEditNote(note)} />
+                              <DropdownMenuItemButton text="Remove" onClick={(e) => setDeleteModalOpen(true)} />
                             </DropdownMenu>
                             <CommonDeleteModal
                               title="Confirming Deletion Request"

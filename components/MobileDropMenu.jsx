@@ -44,7 +44,7 @@ const MobileDropMenu = ({ icon = <></>, className = '', dropMenuClassName = '', 
             {isOpen && (
                 <div className={[
                     "dropdown-menu flex flex-col absolute max-sm:left-[5%] max-sm:top-[100%] top-[150%] md:right-[40%] bg-black outline outline-white z-999997 shadow-(--ad-box-shadow)",
-                    "max-sm:py-[0.651rem] py-[0.533rem] md:py-[0.651rem] xl:py-[0.711rem] 2xl:py-[0.75rem] 3xl:py-[1rem] 4xl:py-[1.333rem]",
+                    "max-sm:py-[1.301rem] py-[1.067rem] md:py-[1.301rem] xl:py-[1.423rem] 2xl:py-[1.5rem] 3xl:py-[2rem] 4xl:py-[2.667rem]",
                     "max-sm:px-[0.976rem] px-[0.8rem] md:px-[0.976rem] xl:px-[1.067rem] 2xl:px-[1.125rem] 3xl:px-[1.5rem] 4xl:px-[2rem]",
                     "max-sm:outline-[0.108rem] outline-[0.089rem] md:outline-[0.108rem] xl:outline-[0.119rem] 2xl:outline-[0.125rem] 3xl:outline-[0.167rem] 4xl:outline-[0.222rem]",
                     "max-sm:rounded-[0.356rem] rounded-[0.356rem] md:rounded-[0.434rem] xl:rounded-[0.474rem] 2xl:rounded-[0.5rem] 3xl:rounded-[0.667rem] 4xl:rounded-[0.889rem]",

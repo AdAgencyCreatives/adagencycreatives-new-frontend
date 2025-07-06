@@ -52,7 +52,7 @@ const DashboardCreativesShortlist = ({isLoading, creativesShortlist, creativesSh
                                     />
                                 </div>
                             ))}
-                            {creativesShortlistMeta.total > 9 && (
+                            {(creativesShortlistMeta?.total || 0) > 9 && (
                                 <Paginate
                                     meta={creativesShortlistMeta}
                                     paginate={paginate}

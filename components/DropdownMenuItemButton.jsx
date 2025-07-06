@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import DropdownMenuContext from 'contexts/DropdownMenuContext';
 
-const DropdownMenuItem = ({ className = '', icon = <></>, text = '', onClick = (e) => { }, showIcon = true }) => {
+const DropdownMenuItemButton = ({ className = '', icon = <></>, text = '', onClick = (e) => { }, showIcon = true }) => {
 
     const { hideDropdown } = useContext(DropdownMenuContext);
 
@@ -17,4 +17,4 @@ const DropdownMenuItem = ({ className = '', icon = <></>, text = '', onClick = (
     );
 };
 
-export default DropdownMenuItem;
+export default DropdownMenuItemButton;

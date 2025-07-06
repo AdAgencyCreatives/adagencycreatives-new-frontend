@@ -77,7 +77,7 @@ const useAgenciesShortlist = () => {
       id: item?.id,
       image: (agency?.user_thumbnail || agency?.profile_image) || '/placeholder.avif',
       name: agency?.name || 'AGENCY',
-      location: `${agency?.location?.city || 'city'}, ${agency?.location?.state || 'state'}`,
+      location: `${agency?.location?.city || 'City'}, ${agency?.location?.state || 'State'}`,
       profile_url: agency?.slug ? `/agency/${agency?.slug}` : '',
       created_at: item?.created_at,
       resource: item?.resource,

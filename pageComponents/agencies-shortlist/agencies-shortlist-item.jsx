@@ -2,9 +2,10 @@
 
 import ImageLoader from "components/ImageLoader";
 import DropdownMenu from "components/DropdownMenu";
-import DropdownMenuItem from "components/DropdownMenuItem";
+import DropdownMenuItemButton from "components/DropdownMenuItemButton";
 import { useRouter } from "next/navigation";
 import CallToActionButton from "components/CallToActionButton";
+import DropdownMenuItemLink from "components/DropdownMenuItemLink";
 
 const AgenciesShortlistItem = ({ item, openNotesDialog, openMessageDialog, removeFromShortlist }) => {
 
@@ -41,9 +42,9 @@ const AgenciesShortlistItem = ({ item, openNotesDialog, openMessageDialog, remov
                     </div>
                     <div className="flex">
                         <DropdownMenu dropMenuClassName="top-[160%]!">
-                            <DropdownMenuItem showIcon={false} icon={<></>} text="View Profile" onClick={(e) => router.push(item?.profile_url)} />
-                            <DropdownMenuItem showIcon={false} icon={<></>} text="Send a Message" onClick={(e) => { openMessageDialog(item) }} />
-                            <DropdownMenuItem showIcon={false} icon={<></>} text="Remove from Shortlist" onClick={(e) => removeFromShortlist(item.id)} />
+                            <DropdownMenuItemLink showIcon={false} icon={<></>} text="View Profile" href={item?.profile_url} />
+                            <DropdownMenuItemButton showIcon={false} icon={<></>} text="Send a Message" onClick={(e) => { openMessageDialog(item) }} />
+                            <DropdownMenuItemButton showIcon={false} icon={<></>} text="Remove from Shortlist" onClick={(e) => removeFromShortlist(item.id)} />
                         </DropdownMenu>
                     </div>
                 </div>

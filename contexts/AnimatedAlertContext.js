@@ -21,13 +21,14 @@ const showAnimatedAlert = (dispatch) => {
 };
 
 const showAlert = (dispatch) => {
-  return async (message) => {
+  return async (message, cb = () => { }) => {
     const data = {
       type: "info",
       title: "Notification",
       message: message,
       autoDismiss: false,
       dismissTime: 10000,
+      onClose: cb,
     };
     dispatch({
       type: "set_data",

@@ -15,7 +15,7 @@ const useDirectoryJobs = () => {
             title: item?.category || item?.title || 'TITLE',
             image: (item?.agency?.user_thumbnail || item?.agency?.logo) || '/placeholder.avif',
             agency: item?.agency?.name || 'AGENCY',
-            location: `${item?.location?.city || 'city'}, ${item?.location?.state || 'state'}`,
+            location: `${item?.location?.city || 'City'}, ${item?.location?.state || 'State'}`,
             item: item,
         };
     });

@@ -169,7 +169,7 @@ const DashboardRecentApplicants = () => {
                     })}
                 </div>
               ))}
-              {recentApplicationMeta.total > 9 && (
+              {(recentApplicationMeta?.total || 0) > 9 && (
                 <Paginate
                   meta={recentApplicationMeta}
                   paginate={paginate}

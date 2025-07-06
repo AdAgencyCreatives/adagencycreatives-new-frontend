@@ -9,6 +9,7 @@
 
 :root {
   --primary: #FFCD1A;
+  --secondary: #1E1E1D;
   --background: #ffffff;
   --foreground: #171717;
   --font-wix: 'Wix Madefor Text', sans-serif;
@@ -190,6 +191,12 @@ button {
     color: var(--primary);
   }
 
+  .text-secondary,
+  .hover\:text-secondary:hover,
+  .group:hover .group-hover\:text-secondary {
+    color: var(--secondary);
+  }
+
   .hover\:text-white\!:hover {
     color: white !important;
   }
@@ -200,16 +207,34 @@ button {
     background-color: var(--primary);
   }
 
+  .bg-secondary,
+  .hover\:bg-secondary:hover,
+  .group:hover .group-hover\:bg-secondary {
+    background-color: var(--secondary);
+  }
+
   .border-primary,
   .hover\:border-primary:hover,
   .group:hover .group-hover\:border-primary {
     border-color: var(--primary);
   }
 
+  .border-secondary,
+  .hover\:border-secondary:hover,
+  .group:hover .group-hover\:border-secondary {
+    border-color: var(--secondary);
+  }
+
   .outline-primary,
   .hover\:outline-primary:hover,
   .group:hover .group-hover\:outline-primary {
     outline-color: var(--primary);
+  }
+
+  .outline-secondary,
+  .hover\:outline-secondary:hover,
+  .group:hover .group-hover\:outline-secondary {
+    outline-color: var(--secondary);
   }
 
   .hover\:outline-white\!:hover {
