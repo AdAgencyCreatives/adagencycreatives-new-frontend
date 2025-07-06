@@ -4,7 +4,8 @@ import TailwindCircularLoader from "components/TailwindCircularLoader";
 import React from "react";
 import Spacer from "components/Spacer";
 
-const DashboardMyJobs = ({ isLoading, myJobs, myJobs_meta, paginate }) => {
+const DashboardMyJobs = ({ isLoading, myJobs, myJobs_meta, paginate, removeJob }) => {
+
     return (
         <div className="flex w-full">
             <div className="flex flex-col w-full max-sm:gap-[1.301rem] gap-[1.067rem] md:gap-[1.301rem] xl:gap-[1.423rem] 2xl:gap-[1.5rem] 3xl:gap-[2rem] 4xl:gap-[2.667rem]">
@@ -33,10 +34,12 @@ const DashboardMyJobs = ({ isLoading, myJobs, myJobs_meta, paginate }) => {
                                 </div>
                             </div>
                             {myJobs?.map((item, index) => (
-                                <React.Fragment key={index}>
+                                <React.Fragment key={item.id}>
                                     <div className="agencies-shortlist-inner flex flex-col">
                                         <MyJobsItem
                                             item={item}
+                                            meta={myJobs_meta}
+                                            removeJob={removeJob}
                                         />
                                     </div>
                                     {index < myJobs?.length - 1 && (

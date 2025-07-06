@@ -25,7 +25,7 @@ const useMyJobs = () => {
 
     const {
         state: { open_positions, loading: myJobs_loading, meta: myJobs_meta },
-        searchOpenPositions,
+        searchOpenPositions, deleteJob,
     } = useContext(AgenciesContext);
 
     useEffect(() => {
@@ -33,10 +33,10 @@ const useMyJobs = () => {
     }, []);
 
     useEffect(() => {
-        let search = getQueryParam('search') || '';
+        const search = getQueryParam('search') || '';
         setSearchInput(search);
 
-        let page = parseInt(getQueryParam('page') || '1');
+        const page = parseInt(getQueryParam('page') || '1');
 
         setIsLoading(true);
         if (user) searchOpenPositions(search, user.uuid, page, null, 0, () => {
@@ -47,7 +47,7 @@ const useMyJobs = () => {
 
     const paginate = (page) => {
         setIsLoading(true);
-        let search = getQueryParam('search');
+        const search = getQueryParam('search') || '';
         searchOpenPositions(search, user.uuid, page, null, 0, () => {
             setQueryParams({ 'page': page });
             setSearchPerformed(searchInput.length > 0);
@@ -66,6 +66,15 @@ const useMyJobs = () => {
             });
         }
     }
+
+    const removeJob = (id, cb = () => { }) => {
+        deleteJob(id, () => {
+            const search = getQueryParam('search') || '';
+            const page = parseInt(getQueryParam('page') || '1');
+            searchOpenPositions(search, user.uuid, page, null, 0, () => { }, id);
+            cb();
+        });
+    };
 
     const myJobs = open_positions?.map((item, index) => {
         return {
@@ -87,7 +96,7 @@ const useMyJobs = () => {
         };
     });
 
-    return { isLoading, setIsLoading, searchPerformed, setSearchPerformed, myJobs, myJobs_loading, myJobs_meta, paginate, handleSearch };
+    return { isLoading, setIsLoading, searchPerformed, setSearchPerformed, myJobs, myJobs_loading, myJobs_meta, paginate, handleSearch, searchOpenPositions, removeJob };
 };
 
 export default useMyJobs;

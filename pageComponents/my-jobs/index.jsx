@@ -4,10 +4,8 @@ import SearchButton from 'components/SearchButton';
 import SearchInput from 'components/SearchInput';
 import DashboardContainer from 'pageComponents/dashboard/dashboard-container';
 import { useContext, useEffect, useState } from 'react';
-import DashboardAgenciesShortlist from 'pageComponents/agencies-shortlist/dashboard-agencies-shortlist';
 import { Context as AnimatedAlertContext } from "contexts/AnimatedAlertContext"
 import useQueryParams from 'hooks/useQueryParams';
-import useAgenciesShortlist from 'hooks/useAgenciesShortlist';
 import CallToActionLink from 'components/CallToActionLink';
 import PlusIcon from 'icons/PlusIcon';
 import useMyJobs from 'hooks/useMyJobs';
@@ -18,9 +16,9 @@ const MyJobs = () => {
 
     const [searchInput, setSearchInput] = useState('');
 
-    const { queryParams, getQueryParam, setQueryParams } = useQueryParams();
+    const { queryParams, getQueryParam } = useQueryParams();
 
-    const { isLoading, myJobs, myJobs_meta, myJobs_loading, paginate, handleSearch } = useMyJobs();
+    const { isLoading, myJobs, myJobs_meta, myJobs_loading, paginate, handleSearch, removeJob } = useMyJobs();
 
     const { showAlert } = useContext(AnimatedAlertContext);
 
@@ -69,7 +67,7 @@ const MyJobs = () => {
                     </CallToActionLink>
                 </div>
                 <div className={[
-                'flex flex-col bg-secondary',
+                    'flex flex-col bg-secondary',
                     'max-sm:p-[0.651rem] p-[0.533rem] md:p-[0.651rem] xl:p-[0.711rem] 2xl:p-[0.75rem] 3xl:p-[1rem] 4xl:p-[1.333rem]',
                     'max-sm:rounded-[0.651rem] rounded-[0.533rem] md:rounded-[0.651rem] xl:rounded-[0.711rem] 2xl:rounded-[0.75rem] 3xl:rounded-[1rem] 4xl:rounded-[1.333rem]',
                     'max-sm:gap-[1.301rem] gap-[1.067rem] md:gap-[1.301rem] xl:gap-[1.423rem] 2xl:gap-[1.5rem] 3xl:gap-[2rem] 4xl:gap-[2.667rem]',
@@ -102,6 +100,7 @@ const MyJobs = () => {
                             myJobs={myJobs}
                             myJobs_meta={myJobs_meta}
                             paginate={paginate}
+                            removeJob={removeJob}
                         />
                     </>)}
                 </div>

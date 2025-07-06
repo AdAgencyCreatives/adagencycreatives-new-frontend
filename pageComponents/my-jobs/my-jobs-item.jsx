@@ -11,16 +11,12 @@ import { useContext, useEffect, useState } from "react";
 import { Context as AuthContext } from "contexts/AuthContext";
 import { Context as AnimatedAlertContext } from "contexts/AnimatedAlertContext";
 import { Context as JobsContext } from "contexts/JobsContext";
-import { Context as AgenciesContext } from "contexts/AgenciesContext";
 import ActionButton from "components/ActionButton";
 import { FaHandsHelping } from "react-icons/fa";
 import DropdownMenuItemButton from "components/DropdownMenuItemButton";
 import ConfirmModal from "components/ConfirmModal";
-import useQueryParams from "hooks/useQueryParams";
 
-const MyJobsItem = ({ item }) => {
-
-    const { getQueryParam } = useQueryParams();
+const MyJobsItem = ({ item, meta, removeJob }) => {
 
     const [job, setJob] = useState(item);
     const [openConfirmDeleteModal, setOpenConfirmDeleteModal] = useState(false);
@@ -33,10 +29,6 @@ const MyJobsItem = ({ item }) => {
     const {
         markFilled,
     } = useContext(JobsContext);
-
-    const {
-        deleteJob, searchOpenPositions,
-    } = useContext(AgenciesContext);
 
     const handleMarkFilled = async (e, job) => {
         if (job?.status == 'filled') {
@@ -71,13 +63,9 @@ const MyJobsItem = ({ item }) => {
         })();
     };
 
-    const reloadOpenPositions = () => {
-        window.location.reload();
-    };
-
     return (
         <>
-            <div className="agencies-shortlist-item relative flex flex-col items-center w-full max-sm:my-[0.434rem] my-[0.356rem] md:my-[0.434rem] xl:my-[0.474rem] 2xl:my-[0.5rem] 3xl:my-[0.667rem] 4xl:my-[0.889rem] max-sm:p-[0.434rem] p-[0.356rem] md:p-[0.434rem] xl:p-[0.474rem] 2xl:p-[0.5rem] 3xl:p-[0.667rem] 4xl:p-[0.889rem]">
+            <div className="agencies-shortlist-item relative flex flex-col items-center w-full max-sm:my-[0.434rem] my-[0.356rem] md:my-[0.434rem] xl:my-[0.474rem] 2xl:my-[0.5rem] 3xl:my-[0.667rem] 4xl:my-[0.889rem] max-sm:p-[0.434rem] p-[0.356rem] md:p-[0.434rem] xl:p-[0.474rem] 2xl:p-[0.5rem] 3xl:p-[0.667rem] 4xl:p-[0.889rem]" data-meta={meta?.total || 0}>
                 <div className="flex flex-row items-center w-full max-sm:gap-[0.687rem] gap-[0.711rem] md:gap-[0.867rem] xl:gap-[0.949rem] 2xl:gap-[1rem] 3xl:gap-[1.333rem] 4xl:gap-[1.778rem]">
                     <div className="flex max-sm:w-[3.469rem] w-[2.844rem] md:w-[3.469rem] xl:w-[3.794rem] 2xl:w-[4rem] 3xl:w-[5.333rem] 4xl:w-[7.111rem]">
                         <CustomTooltip title={job?.agency_name} arrow placement="top">
@@ -163,8 +151,8 @@ const MyJobsItem = ({ item }) => {
                 title="Remove Job"
                 message="Are you sure you want to delete this job? If you simply want to close the job click on the lock icon."
                 onConfirm={() => {
-                    deleteJob(job.id, () => {
-                        reloadOpenPositions();
+                    removeJob(job.id, () => {
+                        showAlert("Job Removed Successfully");
                     });
                 }}
                 innerClassName='w-[100%]!'
