@@ -5,9 +5,8 @@ import ActionLinkDiv from 'components/ActionLinkDiv';
 import useDashboardNewMembers from 'hooks/useDashboardNewMembers';
 import RightArrowIcon from 'icons/RightArrowIcon';
 
-const DashboardNewMembers = () => {
+const DashboardNewMembers = ({new_members_show_limit = 5}) => {
 
-  const new_members_show_limit = 5;
   const { dashboardNewMembers } = useDashboardNewMembers(new_members_show_limit);
 
   return (

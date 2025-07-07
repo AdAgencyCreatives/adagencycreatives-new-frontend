@@ -5,7 +5,7 @@ export const sidebarMenu = [
   { label: "My Contact Info", href: "/profile" },
   { label: <><span>My&nbsp;</span><TmText text='ProFile' /></>, href: "/resume" },
   { label: "My Job Messages", href: "/messages" },
-  { label: "My Opportunities", href: "/my-jobs" },
+  { label: "My Opportunities", href: "/my-opportunities" },
   { label: "My Job Alerts", href: "/job-alerts" },
   { label: "Creative Jobs", href: "/jobs" },
   { label: "Agencies Shortlist", href: "/agencies-shortlist" },
