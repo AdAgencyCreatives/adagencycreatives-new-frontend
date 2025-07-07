@@ -8,17 +8,21 @@ import CustomTooltip from 'components/CustomTooltip';
 import ActionLinkDiv from 'components/ActionLinkDiv';
 import NotificationBellIcon from 'icons/NotificationBellIcon';
 import Spacer from 'components/Spacer';
-import React from 'react';
+import React, { useContext } from 'react';
+import { Context as AnimatedAlertContext } from "contexts/AnimatedAlertContext";
 
 const DashboardNotificationsFull = () => {
 
   const per_page = 12;
   const { dashboardNotifications, dashboard_notifications_meta, dashboard_notifications_loading, paginate, markAsReadNotifications, reloadNotifications } = useDashboardNotifications(per_page);
+  const { showAlert } = useContext(AnimatedAlertContext);
 
   const handleMarkAsRead = async (notification_id) => {
     await markAsReadNotifications(notification_id);
     reloadNotifications();
+    showAlert("Notification Removed Successfully");
   };
+
 
   return (
     <div className="flex w-full">

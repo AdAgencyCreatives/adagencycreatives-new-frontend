@@ -5,18 +5,21 @@ import ActionLinkDiv from 'components/ActionLinkDiv';
 import NotificationBellIcon from 'icons/NotificationBellIcon';
 import useDashboardNotifications from 'hooks/useDashboardNotifications';
 import CustomTooltip from 'components/CustomTooltip';
-import React from 'react';
+import React, { useContext } from 'react';
 import Spacer from 'components/Spacer';
+import { Context as AnimatedAlertContext } from "contexts/AnimatedAlertContext";
 
 const DashboardNotifications = () => {
 
   const LIMIT = 5;
 
   const { dashboardNotifications, reloadNotifications, markAsReadNotifications } = useDashboardNotifications();
+  const { showAlert } = useContext(AnimatedAlertContext);
 
   const handleMarkAsRead = async (notification_id) => {
     await markAsReadNotifications(notification_id);
     reloadNotifications();
+    showAlert("Notification Removed Successfully");
   };
 
   return (

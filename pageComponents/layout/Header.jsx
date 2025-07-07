@@ -52,7 +52,7 @@ const Header = () => {
   return (
     <header
       ref={headerRef}
-      className={`header flex items-center justify-between ${scrolled ? "bg-black/75" : "bg-transparent"} fixed w-full top-0 z-999999`}
+      className={`header flex items-center justify-between ${scrolled ? "bg-black/75" : "bg-transparent"} fixed w-full top-0 z-999995`}
     >
       <Link href="/" className="cursor-pointer"
         onMouseEnter={() => setIsHovered(true)}

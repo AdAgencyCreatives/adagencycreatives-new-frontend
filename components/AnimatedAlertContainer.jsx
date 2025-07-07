@@ -27,7 +27,7 @@ const AnimatedAlertContainer = ({ open = false, setOpen = (value) => { }, title,
     if (!open) return <></>;
 
     return (
-        <div className="fixed left-0 top-0 flex flex-row justify-center items-center min-w-screen min-h-screen z-999999">
+        <div className="fixed left-0 top-0 flex flex-row justify-center items-center min-w-screen min-h-screen z-999998">
             <div className="fixed left-0 top-0 flex flex-row justify-center items-center w-screen h-screen z-0 bg-gray/30 backdrop-blur-[5px]"></div>
             <div className="flex flex-row justify-center items-start w-screen h-screen z-1">
                 <div

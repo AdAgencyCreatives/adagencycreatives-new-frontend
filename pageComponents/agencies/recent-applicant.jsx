@@ -180,7 +180,7 @@ const RecentApplicant = ({ job, application, setApplicationStatus, onRemoveFromR
                     </div>
                 </div>
                 {changingApplicationStatus && (
-                    <div className="absolute flex justify-center items-center w-full h-full z-index-999997">
+                    <div className="absolute flex justify-center items-center w-full h-full z-index-999995">
                         <CircularProgress style={{ width: "30px", height: "30px" }} />
                     </div>
                 )}

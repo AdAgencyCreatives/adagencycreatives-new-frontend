@@ -121,7 +121,7 @@ const AddNotesModal = ({ resource_id, type, open, setOpen, handleClose }) => {
   usePopupScrollLoader(isLoading, loadMore);
 
   return open && (
-    <div className="fixed left-0 top-0 flex flex-row justify-center items-center min-w-screen min-h-screen z-999998">
+    <div className="fixed left-0 top-0 flex flex-row justify-center items-center min-w-screen min-h-screen z-999992">
       <div className="fixed left-0 top-0 flex flex-row justify-center items-center w-screen h-screen z-0 bg-gray/30 backdrop-blur-[5px]"></div>
       <Dialog
         open={open}
@@ -131,7 +131,7 @@ const AddNotesModal = ({ resource_id, type, open, setOpen, handleClose }) => {
         scroll="body"
         maxWidth="4xl"
         fullWidth
-        className="z-999998!"
+        className="z-999992!"
       >
         <div className={[
           "add-note-modal relative! max-sm:w-full! w-[70%]! mx-auto! bg-black! text-white! border! border-gray-400!",

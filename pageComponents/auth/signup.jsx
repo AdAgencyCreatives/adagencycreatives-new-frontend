@@ -103,7 +103,7 @@ const SignUp = ({ role }) => {
         heading="Register"
       />
       {user ? (
-        <div className="relative z-999998 flex flex-col justify-center items-center">
+        <div className="relative z-999990 flex flex-col justify-center items-center">
           <div className={"max-sm:text-[1.05rem] text-[1.05rem] md:text-[1.281rem] xl:text-[1.401rem] 2xl:text-[1.477rem] 3xl:text-[1.969rem] 4xl:text-[2.625rem] text-white"}>Welcome, {user?.name || ""}&nbsp;</div>
           <SignOutLink placement="" />
         </div>

@@ -330,7 +330,7 @@ const CreativesDirectory = () => {
         heading="Directory"
         className="directory"
       >
-        <div className="relative text-left search flex flex-col z-999998">
+        <div className="relative text-left search flex flex-col z-999990">
           {token && (
             <>
               <label className="text-[#c2c2c2]">search</label>

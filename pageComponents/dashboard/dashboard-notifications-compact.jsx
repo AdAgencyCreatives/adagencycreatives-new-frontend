@@ -10,6 +10,7 @@ import CustomTooltip from 'components/CustomTooltip';
 import ActionLinkDiv from 'components/ActionLinkDiv';
 import NotificationBellIcon from 'icons/NotificationBellIcon';
 import Spacer from 'components/Spacer';
+import { Context as AnimatedAlertContext } from "contexts/AnimatedAlertContext";
 
 const DashboardNotificationsCompact = () => {
 
@@ -19,10 +20,12 @@ const DashboardNotificationsCompact = () => {
     const LIMIT = 7;
 
     const { dashboardNotifications, dashboard_notifications_loading, markAsReadNotifications, reloadNotifications } = useDashboardNotifications(per_page);
+    const { showAlert } = useContext(AnimatedAlertContext);
 
     const handleMarkAsRead = async (notification_id) => {
         await markAsReadNotifications(notification_id);
         reloadNotifications();
+        showAlert("Notification Removed Successfully");
     };
 
     return (
@@ -40,7 +43,7 @@ const DashboardNotificationsCompact = () => {
                         <>
                             {dashboardNotifications.slice(0, LIMIT).map((notification, index) => (
                                 <React.Fragment key={index}>
-                                    <div className={`flex flex-row items-center justify-between max-sm:gap-[0.434rem] gap-[0.356rem] md:gap-[0.434rem] xl:gap-[0.474rem] 2xl:gap-[0.5rem] 3xl:gap-[0.667rem] 4xl:gap-[0.889rem]`}>
+                                    <div className={`relative flex flex-row items-center justify-between max-sm:gap-[0.434rem] gap-[0.356rem] md:gap-[0.434rem] xl:gap-[0.474rem] 2xl:gap-[0.5rem] 3xl:gap-[0.667rem] 4xl:gap-[0.889rem]`}>
                                         <div className="flex">
                                             <ImageLoader src={notification.sender_image} alt={notification.sender_name}
                                                 className='image-mask object-cover aspect-square max-sm:w-[2.602rem] w-[2.133rem] md:w-[2.602rem] xl:w-[2.846rem] 2xl:w-[3rem] 3xl:w-[4rem] 4xl:w-[5.333rem]'
@@ -51,7 +54,7 @@ const DashboardNotificationsCompact = () => {
                                             <div className="font-bold max-sm:text-[0.651rem] text-[0.533rem] md:text-[0.651rem] xl:text-[0.711rem] 2xl:text-[0.75rem] 3xl:text-[1rem] 4xl:text-[1.333rem]">{notification.sender_name}</div>
                                             <div className="max-sm:text-[0.542rem] text-[0.444rem] md:text-[0.542rem] xl:text-[0.593rem] 2xl:text-[0.625rem] 3xl:text-[0.833rem] 4xl:text-[1.111rem]" dangerouslySetInnerHTML={{ __html: notification.message || '' }}></div>
                                         </div>
-                                        <CustomTooltip title={'Clear Notification'} placement="top" arrow={true}>
+                                        <CustomTooltip title={'Clear Notification'} placement="top" arrow={true} className='z-999999!'>
                                             <ActionLinkDiv href={'#'} className="flex cursor-pointer text-white hover:text-primary" onClick={() => handleMarkAsRead(notification.uuid)}>
                                                 <NotificationBellIcon
                                                     className={[
