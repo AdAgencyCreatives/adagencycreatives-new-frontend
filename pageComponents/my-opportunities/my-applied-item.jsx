@@ -64,7 +64,7 @@ const MyAppliedItem = ({ item, setAppId, setOpen, removeApplication }) => {
                     <div className="flex max-sm:w-[1.735rem] w-[1.422rem] md:w-[1.735rem] xl:w-[1.897rem] 2xl:w-[2rem] 3xl:w-[2.667rem] 4xl:w-[3.556rem]">
                         <DropdownMenu dropMenuClassName="top-[160%]!">
                             <DropdownMenuItemButton showIcon={false} icon={<></>} text="Add Notes" onClick={() => { setAppId(item.id); setOpen(true); }} />
-                            <DropdownMenuItemButton showIcon={false} icon={<></>} text="Remove Application" onClick={() => setOpenConfirmDeleteModal(true)} />
+                            <DropdownMenuItemButton showIcon={false} icon={<></>} text="Withdraw Application" onClick={() => setOpenConfirmDeleteModal(true)} />
                             <DropdownMenuItemLink showIcon={false} icon={<></>} text="View Job" href={item?.job_url} />
                         </DropdownMenu>
                     </div>

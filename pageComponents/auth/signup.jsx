@@ -21,7 +21,7 @@ const SignUp = ({ role }) => {
   const [apiResponse, setApiResponse] = useState(null);
 
   const [isPasswordVisible, setPasswordVisible] = useState(false);
-  const [rememberMe, setRememberPassword] = useState(false);
+  const [rememberMe, setRememberMe] = useState(false);
 
   const { showAnimatedAlert, hideAnimatedAlert } = useContext(AnimatedAlertContext);
 
@@ -128,7 +128,7 @@ const SignUp = ({ role }) => {
             isPasswordVisible={isPasswordVisible}
             setPasswordVisible={setPasswordVisible}
             rememberMe={rememberMe}
-            setRememberPassword={setRememberPassword}
+            setRememberMe={setRememberMe}
           />
         </>
       )}

@@ -1,52 +1,62 @@
 'use client';
 
 import axios from "axios";
-//console.log(process.env)
-export const baseUrl = process.env.NEXT_PUBLIC_APP_URL ? process.env.NEXT_PUBLIC_APP_URL : "https://staging-api.adagencycreatives.com";
-// export const baseUrl = process.env.NEXT_PUBLIC_APP_URL ? process.env.NEXT_PUBLIC_APP_URL : "http://localhost:8000";
-let auth = null;
+
+export const baseUrl = process.env.NEXT_PUBLIC_APP_URL
+  ? process.env.NEXT_PUBLIC_APP_URL
+  : "https://staging-api.adagencycreatives.com";
 
 const api = axios.create({
   baseURL: baseUrl + "/api/v1",
 });
 
+// Set default headers
 api.defaults.headers.common["Content-Type"] = "application/json";
 api.defaults.headers.common["Accept"] = "application/json";
 
+// Try to get token from localStorage if it exists
+let authToken = typeof window !== 'undefined' ? localStorage.getItem('authToken') : null;
+if (authToken) {
+  api.defaults.headers.common["Authorization"] = `Bearer ${authToken}`;
+}
+
 const setAuthToken = (token) => {
-  api.defaults.headers.common["Authorization"] = token
-    ? `Bearer ${token}`
-    : null;
-  auth = token;
+  authToken = token;
+  if (token) {
+    api.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('authToken', token);
+    }
+  } else {
+    removeAuthToken();
+  }
+};
+
+const removeAuthToken = () => {
+  authToken = null;
+  delete api.defaults.headers.common["Authorization"];
+  if (typeof window !== 'undefined') {
+    localStorage.removeItem('authToken');
+  }
 };
 
 const getAuthToken = () => {
-  return auth;
+  return authToken;
 };
 
 api.interceptors.response.use(
-  (response) => {
-    // Do something with the response data
-    // console.log(response);
-    return response;
-  },
+  (response) => response,
   (error) => {
-    // Handle the error
     if (error.response) {
-      // The request was made and the server responded with a status code
-      // that falls out of the range of 2xx
-      // alert(error.response.data.message);
-      // console.log(error.response.status);
-      // console.log(error.response.headers);
-    } else if (error.request) {
-      // The request was made but no response was received
-      // console.log(error.request);
-    } else {
-      // Something happened in setting up the request that triggered an Error
-      console.log("Error", error.message);
+      // Handle specific status codes
+      if (error.response.status === 401) {
+        // Token might be expired, remove it
+        // removeAuthToken();
+        // Optionally redirect to login
+      }
     }
     return Promise.reject(error);
   }
 );
 
-export { api, setAuthToken, getAuthToken };
+export { api, setAuthToken, getAuthToken, removeAuthToken };

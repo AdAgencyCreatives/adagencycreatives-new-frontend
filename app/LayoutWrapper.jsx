@@ -6,15 +6,15 @@ import Footer from "pageComponents/layout/Footer";
 import Header from "pageComponents/layout/Header";
 import { Context as SiteContext } from "contexts/SiteContext";
 import { Context as AnimatedAlertContext } from "contexts/AnimatedAlertContext";
-
 import AnimatedAlert from "components/AnimatedAlert";
 import useScreen from "hooks/useScreen";
+import LayoutModals from "./LayoutModals";
 
 export default function LayoutWrapper({ children }) {
 
+  const pathname = usePathname();
   const { screenHeight } = useScreen();
 
-  const pathname = usePathname();
   const isHomePage = pathname === "/" || pathname === "/home" || pathname === "/home/";
   const { state: { body_overflow_hidden } } = useContext(SiteContext);
 
@@ -79,6 +79,7 @@ export default function LayoutWrapper({ children }) {
     <body className={`antialiased ${body_overflow_hidden ? 'overflow-hidden' : ''}`}>
       <Suspense fallback={<div className="text-white">Loading...</div>}>
         {animatedAlertData && <AnimatedAlert {...animatedAlertData} />}
+        <LayoutModals />
         <main className={`${isHomePage && "md:flex"} relative w-full min-h-screen bg-black text-white main`}>
           <Header />
           <div ref={contentRef} className={`${isHomePage && "md:flex md:flex-1"} max-w-full overflow-hidden ${!isHomePage ? 'layout' : ''}`}>{children}</div>

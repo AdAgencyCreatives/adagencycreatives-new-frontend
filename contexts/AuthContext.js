@@ -1,6 +1,6 @@
 "use client";
 
-import { api, setAuthToken, baseUrl } from "contexts/api";
+import { api, setAuthToken, removeAuthToken, baseUrl } from "contexts/api";
 import createDataContext from "./createDataContext";
 import { storeToken, readToken, clearToken } from "utils/TokenUtility";
 import { storeValue, readValue, clearValue } from "utils/LocalStorageUtility";
@@ -63,7 +63,7 @@ const authReducer = (state, action) => {
       return { ...state, formMessage: null };
     case "set_fetching_token":
       return { ...state, fetchingToken: action.payload };
-      case "set_token_validated":
+    case "set_token_validated":
       return { ...state, token_validated: action.payload };
     case "set_form_submit":
       return { ...state, formSubmit: action.payload };
@@ -150,7 +150,7 @@ const signup = (dispatch) => {
       if (rememberMe) {
         let remember_me_expiration = moment().add(1, 'year');
         storeValue("rememberMe", "true");
-        storeValue("email", response.data.email, remember_me_expiration);
+        storeValue("email", response.data.user.email, remember_me_expiration);
 
       } else {
         storeValue("rememberMe", "false");
@@ -281,6 +281,7 @@ const logout = (dispatch, state) => {
   return (cb) => {
     const user = state.user;
     clearToken();
+    removeAuthToken();
     setUserData(dispatch, null);
     dispatch({
       type: "set_token",
@@ -290,58 +291,86 @@ const logout = (dispatch, state) => {
   };
 };
 
+// const updatePassword = (dispatch) => {
+//   return async (data) => {
+//     setFormSubmit(dispatch, true);
+//     try {
+//       const response = await api.patch("/update_password", data);
+//       showMessageAlert(dispatch, {
+//         type: "success",
+//         message: "Password has been changed",
+//         display: "true",
+//       });
+//     } catch (error) {
+//       showMessageAlert(dispatch, {
+//         type: "error",
+//         message: error.response.data.message,
+//         display: "true",
+//       });
+//       // alert(error.response.data.message)
+//     }
+//     setFormSubmit(dispatch, false);
+//   };
+// };
+
 const updatePassword = (dispatch) => {
-  return async (data) => {
+  return async (data, cb = (data, error) => { }) => {
     setFormSubmit(dispatch, true);
     try {
       const response = await api.patch("/update_password", data);
-      showMessageAlert(dispatch, {
-        type: "success",
-        message: "Password has been changed",
-        display: "true",
-      });
+      cb(response.data, null);
     } catch (error) {
-      showMessageAlert(dispatch, {
-        type: "error",
-        message: error.response.data.message,
-        display: "true",
-      });
-      // alert(error.response.data.message)
+      cb(null, error);
     }
     setFormSubmit(dispatch, false);
   };
 };
 
+// const confirmPassword = (dispatch) => {
+//   return async (data) => {
+//     setFormSubmit(dispatch, true);
+//     try {
+//       const response = await api.patch("/confirm_password", data);
+//       setModal(dispatch, true);
+//       showMessageAlert(dispatch, {
+//         type: "",
+//         message: "",
+//         display: "",
+//       });
+//     } catch (error) {
+//       showMessageAlert(dispatch, {
+//         type: "error",
+//         message: error.response.data.message,
+//         display: "true",
+//       });
+//     }
+//     setFormSubmit(dispatch, false);
+//   };
+// };
+
+
 const confirmPassword = (dispatch) => {
-  return async (data) => {
+  return async (data, cb = (data, error) => { }) => {
     setFormSubmit(dispatch, true);
     try {
       const response = await api.patch("/confirm_password", data);
-      setModal(dispatch, true);
-      showMessageAlert(dispatch, {
-        type: "",
-        message: "",
-        display: "",
-      });
+      cb(response.data, null);
     } catch (error) {
-      showMessageAlert(dispatch, {
-        type: "error",
-        message: error.response.data.message,
-        display: "true",
-      });
+      cb(null, error);
     }
     setFormSubmit(dispatch, false);
   };
 };
 
 const deleteProfile = (dispatch) => {
-  return async (user_id, callback) => {
+  return async (user_id, cb = (data, error) => { }) => {
     setFormSubmit(dispatch, true);
     try {
       const response = await api.delete("/users/" + user_id);
-      logout();
-      callback();
-    } catch (error) { }
+      cb(response.data, null);
+    } catch (error) {
+      cb(null, error);
+    }
     setFormSubmit(dispatch, false);
   };
 };

@@ -28,7 +28,7 @@ const AnimatedForm = ({
 
   useEffect(() => {
     const _email = readValue("email")
-    setRememberMeEmail(_email || "");
+    setRememberMeEmail(_email == "undefined" ? "" : (_email || "") );
   }, []);
 
   const handleBack = () => {
@@ -71,7 +71,7 @@ const AnimatedForm = ({
   return (
     <>
       <Formik
-        initialValues={{ ...initialValues, "email": rememberMe && rememberMeEmail ? rememberMeEmail : "" }}
+        initialValues={{ ...initialValues, "email": rememberMeEmail }}
         validationSchema={validations?.[step]}
         onSubmit={onSubmit}
         enableReinitialize={true}
@@ -103,7 +103,6 @@ const AnimatedForm = ({
                     }`}
                 >
                   {stepConfig.fields.map((field, field_index) => {
-                    console.log(field);
                     return (
                       <div key={field.name || field_index} onKeyDown={handleKeyDown} className="w-full">
                         <div className="relative w-full">

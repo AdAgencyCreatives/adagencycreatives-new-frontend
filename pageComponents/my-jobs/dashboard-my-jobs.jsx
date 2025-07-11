@@ -25,9 +25,9 @@ const DashboardMyJobs = ({ isLoading, myJobs, myJobs_meta, paginate, removeJob }
                                         <div className="flex flex-col flex-1 font-bold max-sm:gap-[0.434rem] gap-[0.356rem] md:gap-[0.434rem] xl:gap-[0.474rem] 2xl:gap-[0.5rem] 3xl:gap-[0.667rem] 4xl:gap-[0.889rem]">
                                             Job Detail
                                         </div>
-                                        <div className="flex md:justify-center font-bold max-sm:w-[5.204rem] w-[4.267rem] md:w-[5.204rem] xl:w-[5.692rem] 2xl:w-[6rem] 3xl:w-[8rem] 4xl:w-[10.667rem]">Applicants</div>
-                                        <div className="flex md:justify-center font-bold max-sm:w-[9.541rem] w-[7.822rem] md:w-[9.541rem] xl:w-[10.435rem] 2xl:w-[11rem] 3xl:w-[14.667rem] 4xl:w-[19.556rem]">Expiration</div>
-                                        <div className="flex md:justify-center font-bold max-sm:w-[6.072rem] w-[4.978rem] md:w-[6.072rem] xl:w-[6.64rem] 2xl:w-[7rem] 3xl:w-[9.333rem] 4xl:w-[12.444rem]">Status</div>
+                                        <div className="max-sm:hidden flex md:justify-center font-bold max-sm:w-[5.204rem] w-[4.267rem] md:w-[5.204rem] xl:w-[5.692rem] 2xl:w-[6rem] 3xl:w-[8rem] 4xl:w-[10.667rem]">Applicants</div>
+                                        <div className="max-sm:hidden flex md:justify-center font-bold max-sm:w-[9.541rem] w-[7.822rem] md:w-[9.541rem] xl:w-[10.435rem] 2xl:w-[11rem] 3xl:w-[14.667rem] 4xl:w-[19.556rem]">Expiration</div>
+                                        <div className="max-sm:hidden flex md:justify-center font-bold max-sm:w-[6.072rem] w-[4.978rem] md:w-[6.072rem] xl:w-[6.64rem] 2xl:w-[7rem] 3xl:w-[9.333rem] 4xl:w-[12.444rem]">Status</div>
                                     </div>
                                     <div className="flex max-sm:w-[1.735rem] w-[1.422rem] md:w-[1.735rem] xl:w-[1.897rem] 2xl:w-[2rem] 3xl:w-[2.667rem] 4xl:w-[3.556rem]">
                                     </div>

@@ -105,7 +105,7 @@ const MyJobsItem = ({ item, removeJob }) => {
                             </div>
                         </div>
                         <div className="flex md:justify-center max-sm:text-[0.759rem] text-[0.622rem] md:text-[0.759rem] xl:text-[0.83rem] 2xl:text-[0.875rem] 3xl:text-[1.167rem] 4xl:text-[1.556rem] max-sm:w-[5.204rem] w-[4.267rem] md:w-[5.204rem] xl:w-[5.692rem] 2xl:w-[6rem] 3xl:w-[8rem] 4xl:w-[10.667rem]">
-                            <strong>{job?.applications_count}</strong>&nbsp;Applicant(s)
+                            {`${job?.applications_count} Applicant(s)`}
                         </div>
                         <div className="flex md:justify-center max-sm:text-[0.759rem] text-[0.622rem] md:text-[0.759rem] xl:text-[0.83rem] 2xl:text-[0.875rem] 3xl:text-[1.167rem] 4xl:text-[1.556rem] max-sm:w-[9.541rem] w-[7.822rem] md:w-[9.541rem] xl:w-[10.435rem] 2xl:w-[11rem] 3xl:w-[14.667rem] 4xl:w-[19.556rem]">
                             {moment(job?.expired_at).format(
@@ -134,7 +134,7 @@ const MyJobsItem = ({ item, removeJob }) => {
                                     {job?.status == 'filled' ? (
                                         <DropdownMenuItemButton showIcon={false} icon={<></>} text="Approve Job" onClick={(e) => handleMarkApprove(e, job)} />
                                     ) : (
-                                        <DropdownMenuItemButton showIcon={false} icon={<></>} text="Mark Close" onClick={(e) => handleMarkFilled(e, job)} />
+                                        <DropdownMenuItemButton showIcon={false} icon={<></>} text="Mark Closed" onClick={(e) => handleMarkFilled(e, job)} />
                                     )}
                                     <DropdownMenuItemLink showIcon={false} icon={<></>} text="Edit Job" href={"/job/edit/" + job.id} />
                                     <DropdownMenuItemLink showIcon={false} icon={<></>} text="Repost Job" href={`/post-a-job/${job.id}`} />

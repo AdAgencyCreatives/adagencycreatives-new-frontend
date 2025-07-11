@@ -27,7 +27,7 @@ const showAlert = (dispatch) => {
       title: "Notification",
       message: message,
       autoDismiss: false,
-      dismissTime: 10000,
+      dismissTime: 0,
       onClose: cb,
     };
     dispatch({

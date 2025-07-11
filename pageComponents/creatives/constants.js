@@ -9,8 +9,8 @@ export const sidebarMenu = [
   { label: "My Job Alerts", href: "/job-alerts" },
   { label: "Creative Jobs", href: "/jobs" },
   { label: "Agencies Shortlist", href: "/agencies-shortlist" },
-  { label: "Change Password", href: "/change-password" },
-  { label: 'Delete Profile', href: "/delete-profile" },
+  { label: "Change Password", href: "#change-password" },
+  { label: 'Delete Profile', href: "#delete-profile" },
 ];
 
 export const topMenu = [

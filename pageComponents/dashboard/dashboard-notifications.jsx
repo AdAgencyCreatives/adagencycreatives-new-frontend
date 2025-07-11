@@ -8,6 +8,7 @@ import CustomTooltip from 'components/CustomTooltip';
 import React, { useContext } from 'react';
 import Spacer from 'components/Spacer';
 import { Context as AnimatedAlertContext } from "contexts/AnimatedAlertContext";
+import CloseIcon from 'icons/CloseIcon';
 
 const DashboardNotifications = () => {
 
@@ -45,10 +46,10 @@ const DashboardNotifications = () => {
                   </div>
                   <CustomTooltip title={'Clear Notification'} placement="top" arrow={true}>
                     <ActionLinkDiv href={'#'} className="flex cursor-pointer text-white hover:text-primary" onClick={() => handleMarkAsRead(notification.uuid)}>
-                      <NotificationBellIcon
+                      <CloseIcon
                         className={[
-                          "max-sm:w-[1.301rem]! w-[1.067rem]! md:w-[1.301rem]! xl:w-[1.423rem]! 2xl:w-[1.5rem]! 3xl:w-[2rem]! 4xl:w-[2.667rem]!",
-                          "max-sm:h-[1.301rem]! h-[1.067rem]! md:h-[1.301rem]! xl:h-[1.423rem]! 2xl:h-[1.5rem]! 3xl:h-[2rem]! 4xl:h-[2.667rem]!",
+                          "max-sm:w-[0.867rem]! w-[0.711rem]! md:w-[0.867rem]! xl:w-[0.949rem]! 2xl:w-[1rem]! 3xl:w-[1.333rem]! 4xl:w-[1.778rem]!",
+                          "max-sm:h-[0.867rem]! h-[0.711rem]! md:h-[0.867rem]! xl:h-[0.949rem]! 2xl:h-[1rem]! 3xl:h-[1.333rem]! 4xl:h-[1.778rem]!",
                         ].join(' ')}
                       />
                     </ActionLinkDiv>

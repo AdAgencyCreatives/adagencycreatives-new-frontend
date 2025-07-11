@@ -1,35 +1,65 @@
 'use client';
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react';
+import { usePathname, useSearchParams } from 'next/navigation';
 
 export default function useHash(onHashChange = (hash) => {}) {
   const [currentHash, setCurrentHash] = useState('');
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const ignoreNextHashChange = useRef(false);
 
   useEffect(() => {
     // Set initial hash
-    setCurrentHash(window.location.hash.substring(1));
+    // const hash = window.location.hash.substring(1);
+    // setCurrentHash(hash);
+    // onHashChange(hash);
 
-    // Handler for hash changes
+    // Handler for native hash changes
     const handleHashChange = () => {
+      if (ignoreNextHashChange.current) {
+        ignoreNextHashChange.current = false;
+        return;
+      }
+
       const newHash = window.location.hash.substring(1);
-      setCurrentHash(newHash);
-      onHashChange(newHash);
+      if (newHash !== currentHash) {
+        setCurrentHash(newHash);
+        onHashChange(newHash);
+      }
     };
 
-    // Add event listener
     window.addEventListener('hashchange', handleHashChange);
 
-    // Cleanup
     return () => {
       window.removeEventListener('hashchange', handleHashChange);
     };
   }, []);
 
-  // You can also update the hash programmatically
-  const updateHash = (newHash) => {
-    window.location.hash = newHash;
-    // Note: This will trigger the hashchange event automatically
+  // Effect for Next.js route changes
+  useEffect(() => {
+    const newHash = window.location.hash.substring(1);
+    if (newHash !== currentHash) {
+      ignoreNextHashChange.current = true;
+      setCurrentHash(newHash);
+      onHashChange(newHash);
+    }
+  }, [pathname, searchParams]);
+
+  const setHash = (newHash) => {
+    if (!newHash) {
+      // Remove the hash completely
+      history.replaceState(null, '', ' ');
+      // Force a scroll to top when hash is removed
+      window.scrollTo(0, 0);
+      // Update state immediately
+      setCurrentHash('');
+      onHashChange('');
+    } else {
+      // Update the hash
+      window.location.hash = newHash;
+    }
   };
 
-  return { currentHash, updateHash };
+  return { currentHash, setHash };
 }

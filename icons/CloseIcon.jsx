@@ -1,6 +1,6 @@
 'use client';
 
-const CloseIcon = ({ onClick }) => {
+const CloseIcon = ({ className = '', onClick = (e) => { } }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -8,7 +8,8 @@ const CloseIcon = ({ onClick }) => {
       fill="none"
       className={[
         "max-sm:w-[1.6rem] w-[1.6rem] md:w-[1.952rem] xl:w-[2.134rem] 2xl:w-[2.25rem] 3xl:w-[3rem] 4xl:w-[4rem]",
-        "max-sm:h-[1.6rem] h-[1.6rem] md:h-[1.952rem] xl:h-[2.134rem] 2xl:h-[2.25rem] 3xl:h-[3rem] 4xl:h-[4rem]"
+        "max-sm:h-[1.6rem] h-[1.6rem] md:h-[1.952rem] xl:h-[2.134rem] 2xl:h-[2.25rem] 3xl:h-[3rem] 4xl:h-[4rem]",
+        className,
       ].join(' ')}
       onClick={onClick}
     >
